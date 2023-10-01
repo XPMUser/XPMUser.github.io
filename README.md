@@ -69,9 +69,9 @@ List of version choices:
 
   This doesn't even have the Dark Tower.
 
-- 1.3.1 | Version 1.16.5! (The real one is coming soon.)
+- 1.3.1 | Coming Soon!
 
-  This is 1.16.5 alike, not the one that JordanHH used.
+  The house icon has the words 'Coming Soon' on the map.
 
 - 1.5.0 | Coming Soon!
 
