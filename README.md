@@ -156,7 +156,7 @@ before the battle starts, rather than in the pet menu.
 
   TBA    
 
-- 1.35.0 | Coming Soon!
+- 1.35.2 | Pumpkinfest!
 
   TBA
 
