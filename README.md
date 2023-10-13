@@ -96,7 +96,7 @@ List of version choices:
 
 - 1.8.9 | Early 2015 Beta Testing!
 
-  This was supposed to be in early 2015, but we think that nobody has seen this version before.
+  This was supposed to be in early 2015.
 
 - 1.9.0 | March 2015
 
