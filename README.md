@@ -5,14 +5,16 @@ Site Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
 
 Introducers: Ao28th28 a.k.a XPMUser, Mr. Inquiry, and more
 
-DM me at xpmuser#5918
-
 Original Prodigy Makers: Rohan Mahimker/Alexander Peters
 
 I gave credits above.
 
 XPMUser is the default username of an account to use in Windows XP Mode in Windows 7.
 I'm Ao28th28 (The PVZ Unknown Edition Maker).
+
+Version 1.3.1 is not the same as in 2014 yet!
+
+Old Prodigy English is coming soon!
 
 # Old Prodigy
 
@@ -33,9 +35,9 @@ There are also forks of my mods. Check them out whenever you get the chance! The
 Playing this couldn't be more simple. First thing you have to do is open the site, which is automatically updated from this
 repository!
 
-To do so, you just click on any link here: https://xpmuser.github.io/oldprodigy/select
+To do so, you just click this link: https://xpmuser.github.io/oldprodigy/select
 
-Once you're there, you can select a version to play. There are LOTS of versions to choose from, so try not to be overwhelmed
+Once you're there, you can select a version to play. There are lots of versions to choose from, so try not to be overwhelmed
 by the number of choices, and there are still more versions and updates to come!
 
 Once you've selected a version, it'll take you to the login screen where you have 3 options. To create a new wizard, to start in offline mode,
@@ -72,9 +74,9 @@ List of version choices:
 
   This doesn't even have the Dark Tower.
 
-- 1.3.1 | Coming Soon!
+- 1.3.1 | Version 1.16.5! (The real one is coming soon.)
 
-  The house icon has the words 'Coming Soon' on the map.
+  This is 1.16.5 alike, not the one that JordanHH used.
 
 - 1.5.0 | Coming Soon!
 
@@ -96,18 +98,15 @@ List of version choices:
 
   This was supposed to be in early 2015, but we think that nobody has seen this version before.
 
-- 1.9.0 | March 2015!
+- 1.9.0 | March 2015
 
-  This version is really special, because it's the oldest one on this site! This is also the oldest version that has been preserved via the Internet Archive. This 
-  version features a tutorial that is different from all of these versions! You start off in the Academy, but then it falls under attack! You help defend the academy 
-  by battling off some of the monsters that are attacking the Academy! The wizard maker is also different here! You also setup which pet you start with in battle just 
-before the battle starts, rather than in the pet menu.
+  This version is really special, because it's the oldest one on this site! This version features a tutorial that is different from all of these versions! You start off in the Academy, but then it falls under attack! You help defend the academy by battling off some of the monsters that are attacking the Academy! The wizard maker is also different here! You also setup which pet you start with in battle just before the battle starts, rather than in the pet menu.
 
-- 1.10.0 | March 2015!
+- 1.10.0 | March 2015
 
-  This is exactly the same as 1.9.0.
+  This was exactly the same as 1.9.0. This is also the oldest version that has been preserved via the Internet Archive.
 
-- 1.11.0 | April 2015!
+- 1.11.0 | April 2015
 
   This is the first version with Clockwork Town.
 
@@ -154,7 +153,7 @@ before the battle starts, rather than in the pet menu.
 
 - 1.30.0 | Same as 1.29.0!
 
-  TBA    
+  TBA  
 
 - 1.35.2 | New Lamplight Town, new tutorial and Pumpkinfest!?
   
@@ -232,11 +231,11 @@ before the battle starts, rather than in the pet menu.
 
 - 2.45.0 | The Earth Tower!
 
-  The Earth Tower is back in business plus, you can have All-Out-Attack once the energy's full.
+  The Earth Tower is back in business and plus, you can have All-Out-Attack once the energy's full.
 
 - 3.0.0 | Coming Soon!
 
-  TBA
+  The Lost Island doesn't exist anymore.
 
 - 6.136.0 | Coming Soon! NEW AVATAR!? EW! 2
 
@@ -249,6 +248,22 @@ before the battle starts, rather than in the pet menu.
     
 - The Current Version | Multiplayer Mode!
   
-  https://sso.prodigygame.com/game/login/ Time Travel to the past to get the Multiplayer Mode for the earlier versions!
+  https://play.prodigygame.com/ Time Travel to the past to get the Multiplayer Mode for the earlier versions!
+
+- Prodigy Insider Preview (Release Preview) | Coming Soon!
+
+  Coming Soon!
+
+- Prodigy Insider Preview (Beta Channel) | Coming Soon!
+
+  Coming Soon!
+
+- Prodigy Insider Preview (Dev Channel) | Coming Soon!
+
+  Coming Soon!
+
+- Prodigy Insider Preview (Canary Channel) | Coming Soon!
+
+  The lights have now removed the shadows.
 
 Pick any version you want!
