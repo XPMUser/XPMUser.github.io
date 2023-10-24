@@ -255,6 +255,10 @@ List of version choices:
 - Prodigy Reborn 1.0 | Not Recommended!
 
   Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves.
+
+- 1.50.0 2 | Prodigy Definitive Edition
+
+  This is the same as 1.50.0, except that you have to start over and the W12-4RD name is unavailable. The only nicknames that are available are Buccaneer, Captain, Treasure Hunter, First-mate, and beard the Pirate.   
     
 - The Current Version | Multiplayer Mode!
   
