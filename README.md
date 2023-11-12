@@ -139,6 +139,10 @@ List of version choices:
 
   This is the same as 1.18.0.
 
+- 1.19.0 | TBA!
+
+  Need to add. 
+
 - 1.20.1 | New Shiverchill Mountains! Coming Soon!
 
   Shiverchill Mountains now has the walking quests. 
