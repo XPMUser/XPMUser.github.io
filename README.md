@@ -261,13 +261,11 @@ List of version choices:
 
   Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves.
 
-- 1.50.0 2 | Prodigy Definitive Edition
-
-  This is the same as 1.50.0, except that you have to start over and the W12-4RD name is unavailable. The only nicknames that are available are Buccaneer, Captain, Treasure Hunter, First-mate, and beard the Pirate.   
+Prodigy Definitive Edition | Fake Multiplayer Mode!
     
-- The Current Version | Multiplayer Mode!
+- The Current Version | Actual Multiplayer Mode!
   
-  https://play.prodigygame.com/ Time Travel to the past to get the Multiplayer Mode for the earlier versions!
+  https://play.prodigygame.com/ Time Travel to the past to get the Real Multiplayer Mode for the earlier versions!
 
 - Prodigy Insider Preview (Release Preview) | Coming Soon!
 
@@ -283,6 +281,6 @@ List of version choices:
 
 - Prodigy Insider Preview (Canary Channel) | Coming Soon!
 
-  The lights have now removed the shadows.
+  The lights have now removed the shadows. Too many art updates and more walkways!
 
 Pick any version you want!
