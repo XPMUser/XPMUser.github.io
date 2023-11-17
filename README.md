@@ -55,6 +55,8 @@ you're playing in, click the 'other' tab instead.
 
 This repository features dynamic modpacks, you will be able to toggle mods as you see fit, and be able to combine multiple mods together for dynamic modpacks.
 
+My Prodigy Definitve Edition still doesn't support modpacks yet.
+
 Currently, these are the versions that support modpacks:
  - 1-28-1 Beta (Not marked as beta in the version selection screen!)
  - 1-29-0
@@ -66,25 +68,25 @@ Currently, these are the versions that support modpacks:
 
 List of version choices:
 
-- 1.0.0 | Coming Soon!
+- 1.0.0 | TBA!
 
   No house, skywatch or the dark tower found in this version!
 
-- 1.2.0 | Coming Soon!
+- 1.2.0 | TBA!
 
   This doesn't even have the Dark Tower.
 
-- 1.3.1 | Coming Soon!
+- 1.3.1 | TBA!
 
   This might be the last version without the house.
 
-- 1.5.0 | Coming Soon!
+- 1.5.0 | TBA!
 
   This was the last version to have the Leaderboards available and to name the Barnacle Cove, 'Pirate Isle'.
 
-- 1.6.0 | Coming Soon!
+- 1.6.0 | TBA!
 
-  This has the 1-11-0's quests thing. The leaderboards can't be viewed yet. Pirate Isle's name is Barnacle Cove.
+  This has the 1-11-0's quests thing. The leaderboards can't be viewed yet. Pirate Isle's name is Barnacle Cove. The actual one doesn't have the transformotron.
 
 - 1.7.0 | TBA!
 
@@ -153,24 +155,36 @@ List of version choices:
   This version introduced a new tile-based Lamplight town, and a LOT of new menu designs added in. There's a problem going from Barnacle Cove to Lamplight Town without actually using the map.
   Pretty safe to say a LOT happened between 1.20.1, and this version.
 
+- 1.25.0 | Sidequests! Coming Soon!
+
+  This version introduced sidequests. You can collect Fireflies, Frozen Somethings and Ice Crystals.
+
 - 1.25.3 | Big Hex now exists! Coming Soon!
 
   You can now adopt Big Hex by using settings (the options menu) and another way to adopt Big Hex was in 2016 and it's no longer doable. The portal is now on the 2014-2016's map.
 
-- 1.29.0 | Just as many radical changes!
+- 1.28.1 | Just as many radical changes!
 
-  This version had the updated Skywatch, the updated Bonfire Spire, AND an updated map screen! This version also introduced achievements and all kinds of
-  other, more subtle changes. This version is another one that I really recommend trying out, another definitive update.
+  This version had the updated Skywatch and an updated map screen! This version also introduced achievements and all kinds of
+  other, more subtle changes. This version is another one that I really recommend trying out, another definitive update.  
+
+- 1.29.0 | New Bonfire Spire!
+
+  This version had the updated Bonfire Spire! This version also introduced the say something thing on the chat feature. This version is also another one that I really recommend trying out, another definitive update.
 
 - 1.30.0 | Same as 1.29.0!
 
-  TBA  
+  TBA
 
-- 1.35.2 | New Lamplight Town, new tutorial and Pumpkinfest!?
+- 1.34.0 | Lamplight Town is now reborn-a-new!
   
   This version had a brand-new tutorial, which is the base for the MODERN DAY Prodigy tutorial, even though it's been changed in multiple ways, the resemblance is
   uncanny! This also brought in the modern-style Lamplight Town, now some things are arranged differently, but it's still essentially the same. 
-  Happy Halloween, plus the toolbar has gotten a new design. The pet buddy shop is still currently closed. The icons on the bar are also redesigned.
+  The pet buddy shop is still currently closed. The icons on the bar are also redesigned.  
+
+- 1.35.2 | Pumpkinfest!?
+ 
+  Happy Halloween, plus the toolbar has gotten a new design. Candy Corn can be used instead of gold to buy anything from The Pumpkinfest Shop!
 
 - 1.37.0 | Winterfest!?
 
@@ -200,9 +214,9 @@ List of version choices:
   The loading system also got a bit of internal reworking in this update, meaning that some icons would have some loading issues, which is the main reason I
   recommend 1.50.0 over this update.
 
-- 1.52.0 | TBA
+- 1.52.0 | TBA!
 
-  TBA 
+  Need to add...
 
 - 1.60.0 | ARGH! OUR SHIP IS SINKING MATEYS! I THINK WE MIGHT WRECK!
 
@@ -248,20 +262,37 @@ List of version choices:
 
   The Earth Tower is back in business and plus, you can have All-Out-Attack once the energy's full.
 
+- 2.65.0 | Coming Soon!
+
+  Need to add...
+
 - 3.0.0 | Coming Soon!
 
   The Lost Island doesn't exist anymore.
 
 - 6.136.0 | Coming Soon! NEW AVATAR!? EW! 2
 
-  New wizard looks and other new stuff. Making faces for free is no longer available. 
-  New unknown outfit: seafoam tank top with fuchsia underwear.
+  New wizard looks and other new stuff. Making faces for free is no longer possible. You can now battle the Puppet Master. New unknown outfit: seafoam tank top with fuchsia underwear.
+
+- 6.139.0 | Coming Soon! Merchant Art Update!
+
+  The merchants were redesigned.  
 
 - Prodigy Reborn 1.0 | Not Recommended!
 
   Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves.
 
-Prodigy Definitive Edition | Fake Multiplayer Mode!
+- My Prodigy Definitive Edition | Fake Multiplayer Mode!
+
+  You can now view copies of bots' player cards. The bots don't talk or leave the zone. The bot's house is your house. The gift means Rickroll and the battle icon can give you a video of Good Time by Owl City. The map does nothing in the player menu and the leaderboards were replaced by the PDE info that's coming soon.
+
+- Daboss7173's Prodigy Definitive Edition | Closed Source!
+
+  This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
+
+- Ao28th28's Prodigy Definitive Edition | Prodigy Insider Program in 2014.
+
+  This is a modified Summer 2014 beta testing version!
     
 - The Current Version | Actual Multiplayer Mode!
   
