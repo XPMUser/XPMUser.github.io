@@ -561,7 +561,7 @@ Prodigy.Assets = function () {
 		},
 		"zone-academy": {
 			type: "atlas",
-			base: "assets/images/zones/",
+			base: D,
 			url: "zone-academy.png",
 			json: "zone-academy.json"
 		},
@@ -17779,35 +17779,6 @@ Monsters.areEqual = function (e, t) {
 		}],
 		flavorText: "Flarias can turn into flames at any time, but only do so when they get hungry."
 	},
-	77: {
-		ID: 77,
-		name: "Ignios",
-		R: 2,
-		element: "fire",
-		life: "B+",
-		power: "B",
-		growth: "B",
-		curve: [{
-			lvl: 1,
-			a: 1
-		}, {
-			lvl: 9,
-			a: 2
-		}, {
-			lvl: 12,
-			a: 3
-		}, {
-			lvl: 35,
-			a: 4
-		}, {
-			lvl: 41,
-			a: 5
-		}, {
-			lvl: 51,
-			a: 6
-		}],
-		flavorText: "Ignios can turn into flames at any time, but only do so when they get hungry."
-	},
 	78: {
 		ID: 78,
 		name: "Rascal",
@@ -26045,10 +26016,10 @@ var Tutorial = function () {
 		}, e.prototype.openIntro = function () {
 			this.game.state.start("Intro")
 		}, e.prototype.openWalkSpeed = function () {
-			this.clearContents(), this.title.setText("Walking Speed"), new BitmapFont(this.game, this.content, 0, 30, "walking speed", {
+			this.clearContents(), this.title.setText("Sound Settings"), new BitmapFont(this.game, this.content, 0, 30, "sound volume", {
 				width: 400,
 				align: "center"
-			}), this.game.prodigy.player.walkSpeed = new ProgressBar(this.game, this.content, 50, 60, 300, 80, 1, this.game.prodigy.player.walkSpeed), this.game.prodigy.player.walkSpeed = (this.walkSpeedBar.page + 1) / 10, this.WalkSpeed.setBarAnimationSpeed(ProgressBar.SPEED_VERYSLOW), new BitmapFont(this.game, this.content, 0, 130, "music volume", {
+			}), this.soundVolumeBar = new ProgressBar(this.game, this.content, 50, 60, 300, 80, 1, this.game.prodigy.audio.getSFXVolume()), this.soundVolumeBar.setDraggable(), this.soundVolumeBar.setBarAnimationSpeed(ProgressBar.SPEED_VERYSLOW), new BitmapFont(this.game, this.content, 0, 130, "music volume", {
 				width: 400,
 				align: "center"
 			}), this.bgmVolumeBar = new ProgressBar(this.game, this.content, 50, 160, 300, 80, 1, this.game.prodigy.audio.getBGMVolume()), this.bgmVolumeBar.setDraggable(), this.bgmVolumeBar.setBarAnimationSpeed(ProgressBar.SPEED_VERYSLOW), new BitmapFont(this.game, this.content, 0, 230, "voice volume", {
@@ -27191,7 +27162,7 @@ var CharSelect = function () {
 	}(),
 	NavBar = function () {
 		function e(e, t, a, s) {
-			Element.call(this, e, t), this.menu = s, this.disable = a, this.btns = [], this.addBook(), this.addBag(), this.addPets(), this.addLeaderboard(), this.addMap(), this.addStore(), this.addChat(), this.addSettings();
+			Element.call(this, e, t), this.menu = s, this.disable = a, this.btns = [], this.addBook(), this.addBag(), this.addPets(), this.addLeaderboard(), this.addMap(), this.addStore(), this.addChat(), this.addSettings(), this.addControlPanel();
 			for (var i = 0; i < this.btns.length; i++) i > 0 && (this.btns[i].x = this.btns[i - 1].x + this.btns[i - 1].width + 5), this.btns[i].y = -this.btns[i].height
 		}
 		return e.prototype = Object.create(Element.prototype), e.prototype.checkNew = function (e, t, a) {
@@ -27230,7 +27201,7 @@ var CharSelect = function () {
 			var e = new Button(this.game, this, 0, 0, "icons", "catalogue", this.openStore.bind(this), this);
 			this.checkNew(e, 0, 1), this.btns.push(e)
 		}, e.prototype.openStore = function () {
-			this.game.prodigy.player.tutorial.setMenuValue(1, 0, 1), this.game.prodigy.open.store([Store.WANDS, Store.HATS, Store.OUTFITS, Store.PETS], !0), this.menu.openNav()
+			this.game.prodigy.player.tutorial.setMenuValue(1, 0, 1), this.game.prodigy.open.store([Store.WANDS, Store.HATS, Store.OUTFITS], !0), this.menu.openNav()
 		}, e.prototype.addChat = function () {
 			this.btns.push(new Button(this.game, this, 0, 0, "icons", "chat", this.openChat.bind(this), this))
 		}, e.prototype.openChat = function () {
@@ -28088,9 +28059,6 @@ Store.WANDS = {
 		}, {
 			ID: 61,
 			type: "weapon"
-		}, {
-			ID: 60,
-			type: "weapon"
 		}]
 	}]
 }, Store.HATS = {
@@ -28158,15 +28126,6 @@ Store.WANDS = {
 		items: [{
 			ID: 30,
 			type: "hat"
-		}, {
-			ID: 31,
-			type: "hat"
-		}, {
-			ID: 32,
-			type: "hat"
-		}, {
-			ID: 33,
-			type: "hat"
 		}]
 	}]
 }, Store.OUTFITS = {
@@ -28229,79 +28188,6 @@ Store.WANDS = {
 		}, {
 			ID: 30,
 			type: "outfit"
-		}]
-	}]
-}, Store.PETS = {
-	name: "ACADEMY PET SHOP",
-	icon: "pets/1",
-	pages: [{
-		items: [{
-			ID: 1,
-			type: "pet"
-		}, {
-			ID: 2,
-			type: "pet"
-		}, {
-			ID: 3,
-			type: "pet"
-		}, {
-			ID: 4,
-			type: "pet"
-		}, {
-			ID: 5,
-			type: "pet"
-		}, {
-			ID: 6,
-			type: "pet"
-		}, {
-			ID: 7,
-			type: "pet"
-		}, {
-			ID: 8,
-			type: "pet"
-		}, {
-			ID: 9,
-			type: "pet"
-		}]
-	}, {
-		items: [{
-			ID: 10,
-			type: "pet"
-		}, {
-			ID: 11,
-			type: "pet"
-		}, {
-			ID: 12,
-			type: "pet"
-		}, {
-			ID: 13,
-			type: "pet"
-		}, {
-			ID: 14,
-			type: "pet"
-		}, {
-			ID: 15,
-			type: "pet"
-		}, {
-			ID: 16,
-			type: "pet"
-		}, {
-			ID: 17,
-			type: "pet"
-		}, {
-			ID: 18,
-			type: "pet"
-		}]
-	}, {
-		items: [{
-			ID: 19,
-			type: "pet"
-		}, {
-			ID: 20,
-			type: "pet"
-		}, {
-			ID: 114,
-			type: "pet"
 		}]
 	}]
 };
@@ -41289,7 +41175,7 @@ Prodigy.MenuFactory = function (e) {
 		new Store(this.game, this.menuLayer, e, t, a).setup()
 	}
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function (e) {
-	this.version = "Definitive Edition version 1.0.8b",
+	this.version = "Definitive Edition version 1.0.7b",
     this.player = new Player,
     this.assets = new Prodigy.Assets,
     this.load = new Prodigy.Loader(e),

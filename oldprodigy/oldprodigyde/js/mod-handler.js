@@ -80,7 +80,7 @@ class ModHandler {
 				Util.isDefined(a) ? (a.onComplete.addOnce(this.stand, this), Util.isDefined(t) && a.onComplete.addOnce(t), this.walk(), this.mode = 0, Util.isDefined(a) && a.start(), Util.isDefined(s) && s.start()) : (Util.isDefined(t) && t(), this.stand())
 			}
 		};
-		Prodigy.Menu.SystemMenu.prototype.openOther = function () {
+		SystemMenu = function () {
 			this.game.prodigy.create.textButton(this.content, 150, 50, {
 				text: "Watch Intro",
 				size: Prodigy.Control.TextButton.MED
@@ -91,7 +91,7 @@ class ModHandler {
 			this.walkSpeedBar = this.game.prodigy.create.slider(this.content, 37, 215, 525, !1, !1),
 			this.walkSpeedBar.reset(200, 0, Math.floor((this.game.prodigy.player.walkSpeed - 0.1) * 10), this.setWalkSpeed.bind(this))
 		};
-		Prodigy.Menu.SystemMenu.prototype.setWalkSpeed = function () {
+		SystemMenu.setWalkSpeed = function () {
 			this.game.prodigy.player.walkSpeed = (this.walkSpeedBar.page + 1) / 10,
 			this.game.prodigy.create.font(this.content, 37, 185, "Walk Speed", {
 				width: 525,
