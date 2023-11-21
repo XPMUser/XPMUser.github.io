@@ -68,6 +68,10 @@ Currently, these are the versions that support modpacks:
 
 List of version choices:
 
+- 0.0.0 | 2014!
+
+  I forgot to make the fonts the same as the one from mid-2014.
+
 - 1.0.0 | TBA!
 
   No house, skywatch or the dark tower found in this version!
