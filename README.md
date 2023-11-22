@@ -292,15 +292,11 @@ List of version choices:
 
 - My Prodigy Definitive Edition | Fake Multiplayer Mode!
 
-  You can now view copies of bots' player cards. The bots don't talk or leave the zone. The bot's house is your house. The gift means Rickroll and the battle icon can give you a video of Good Time by Owl City. The map does nothing in the player menu and the leaderboards were replaced by the PDE info that's coming soon.
+  You can now view copies of bots' player cards. The bots don't talk or leave the zone. The bot's house is your house. The gift means Rickroll and the battle icon can give you a video of Good Time by Owl City. The map does nothing in the player menu and the leaderboards were replaced by the PDE info that's coming soon. You can now buy pets from the shop.
 
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
   This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
-
-- Ao28th28's Prodigy Definitive Edition | Prodigy Insider Program in 2014.
-
-  This is a modified Summer 2014 beta testing version!
     
 - The Current Version | Actual Multiplayer Mode!
   
