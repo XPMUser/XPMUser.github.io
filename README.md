@@ -152,12 +152,16 @@ List of version choices:
 
 - 1.20.1 | New Shiverchill Mountains! Coming Soon!
 
-  Shiverchill Mountains now has the walking quests. 
+  Shiverchill Mountains now has the walking quests.
 
-- 1.24.0 | A whole lot of stuff added in!
+- 1.22.1 | New Lamplight Town! Coming Soon! Doesn't boot up?!
 
-  This version introduced a new tile-based Lamplight town, and a LOT of new menu designs added in. There's a problem going from Barnacle Cove to Lamplight Town without actually using the map.
-  Pretty safe to say a LOT happened between 1.20.1, and this version.
+  This version introduced a new tile-based Lamplight town, and a LOT of new menu designs added in.  
+
+- 1.24.0 | Bounty Hunting Time!
+
+  There's a problem going from Barnacle Cove to Lamplight Town without actually using the map. Bounties are also available as well.
+  Pretty safe to say a LOT happened between 1.22.1, and this version.
 
 - 1.25.0 | Sidequests! Coming Soon!
 
