@@ -55,9 +55,8 @@ you're playing in, click the 'other' tab instead.
 
 This repository features dynamic modpacks, you will be able to toggle mods as you see fit, and be able to combine multiple mods together for dynamic modpacks.
 
-My Prodigy Definitve Edition still doesn't support modpacks yet.
-
 Currently, these are the versions that support modpacks:
+ - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
  - 1-28-1 Beta (Not marked as beta in the version selection screen!)
  - 1-29-0
  - 1-30-0
