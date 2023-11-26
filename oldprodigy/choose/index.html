@@ -230,6 +230,18 @@
 			</a>
 		</div>
 		
+		<div class="button" style="bottom: 104px; left: 24px;" draggable="false">
+			<a onclick="BackPage()" draggable="false">
+				<img alt="Go back" src="./images/Back.png" draggable="false">
+			</a>
+		</div>
+		
+		<div class="button" style="bottom: 104px; right: 24px;" draggable="false">
+			<a onclick="NextPage()" draggable="false">
+				<img alt="Next page" src="./images/Next.png" draggable="false">
+			</a>
+		</div>
+		
 	</div>
 	
 	<div id="bg-toggle" class="background-banner" draggable="false">
@@ -247,7 +259,7 @@
 <script>
 Menu = {
 	Select: {
-		id: "pick a version"
+		id: "version-select"
 	},
 	BetaPopup: {
 		id: "beta-popup"
@@ -270,8 +282,28 @@ Versions = [
 	},
 	{
 		src: "./images/1-18-2.png",
-		alt: "Version 1.18.2",
+		alt: "Version 1.19.0",
 		ver: "pde"
+	},
+	{
+		src: "./images/1-30-0.png",
+		alt: "Version 1.30.0",
+		ver: "pde2016"
+	},
+	{
+		src: "./images/Mods .png",
+		alt: "Mods 1",
+		ver: "pde2016/?mods=WalkSpeed"
+	},
+	{
+		src: "./images/Mods .png",
+		alt: "Mods 2",
+		ver: "pde2016/?mods=FastGameSpeed"
+	},
+	{
+		src: "./images/Mods .png",
+		alt: "Mods 3",
+		ver: "pde2016/?mods=WalkSpeed,FastGameSpeed"
 	}
 ],
 ModPages = {
