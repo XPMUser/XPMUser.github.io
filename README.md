@@ -289,9 +289,31 @@ List of version choices:
 
   Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves.
 
-- My Prodigy Definitive Edition | Fake Multiplayer Mode!
+- My Prodigy Definitive Editions List | More!
 
-  You can now view copies of bots' player cards. The bots don't talk or leave the zone. The bot's house is your house. The gift means Rickroll and the battle icon can give you a video of Good Time by Owl City. The map does nothing in the player menu and the leaderboards were replaced by the PDE info that's coming soon. You can now buy pets from the shop.
+ - Prodigyde (1.10.0) | Defintive Edition on March 2015!
+
+   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis quest data's still viewable even if all the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. In The Tree has been fixed, but still unavailable in the game for now.
+   
+ - Oldprodigyde (1.16.5) | Fake Multiplayer Mode!
+
+   You can now view copies of bots' player cards. The bots don't talk or leave the zone. The bot's house is your house. The gift means Rickroll and the battle icon can give you a video of Good Time by Owl City. The map does nothing in the player menu. The bots are also able to go to your house.
+
+ - Pde (1.18.2) | 2014-2015's Firefly Forest!
+
+   2014-2015's Firefly Forest is still accessible which means that you'll learn the Earthsprite spell.
+
+ - Pde2016 (1.30.0) | First Definitive Edition with the speed mods?!
+
+   You can still learn Thunderdome, Shocksphere, Razorfire and Fire Rain from 2014-2016's Skywatch and 2014-2016's Bonfire Spire.
+
+ - Pde2019 (2.45.0) | Titans!
+
+   You can now battle the Titan if you use the following links:
+   1. https://xpmuser.github.io/oldprodigy/pde2019/?mods=ImitationTitan/
+   2. https://xpmuser.github.io/oldprodigy/pde2019/?mods=WalkSpeed,ImitationTitan/
+   3. https://xpmuser.github.io/oldprodigy/pde2019/?mods=FastGameSpeed,ImitationTitan/
+   4. https://xpmuser.github.io/oldprodigy/pde2019/?mods=WalkSpeed,FastGameSpeed,ImitationTitan/   
 
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
