@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<head>
-<title>Old Prodigy</title>
-<meta name="description" content="Welcome to Old Prodigy!"/>
-<style type="text/css">	
-body {
+
+<html>
+	<head>
+    <title>Old Prodigy (Version Selection)</title>
+    </head>
+    
+    <style>
+	body {
 		background-image: url("/oldprodigy/images/Background.png");
 		background-attachment: fixed;
 		background-repeat: no-repeat;
@@ -11,49 +14,132 @@ body {
 		background-position: center center;
 		margin: auto;
 		height: 100%;
-		background-color: #5a9cff;
-}
-
-.title {
-	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 50px
-}
-
-</style>
-</head>
-
-<body class="title">
-<div align="center">Credits to Daboss7173, Slappygig, Prodigy Education, XPMUser/Ao28th28 and more.
-</div>
-<div align="center" style="position: relative; top: 20px">
-<button onclick="window.location.href='/oldprodigy'" id="oldprodigy" style="background: linear-gradient(rgb(85, 186, 151), rgb(69, 143, 130)); border: 1px solid rgb(65, 141, 168); border-radius: 11px; padding: 20px 30px; color: rgb(255, 255, 255); display: inline-block; font: 26px / 1 &quot;Open Sans&quot;, sans-serif; text-align: center; text-shadow: rgb(0, 0, 0) 1px 1px;">Old Prodigy</button>
-</div>
-</html>
-
-<body class="title">
-<div align="center">Credits and more
-
-</div>
-<div align="center" style="position: relative; top: 20px">
-<button onclick="window.location.href='https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md'" id="https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md" style="background: linear-gradient(rgb(85, 186, 151), rgb(69, 143, 130)); border: 1px solid rgb(65, 141, 168); border-radius: 11px; padding: 20px 30px; color: rgb(255, 255, 255); display: inline-block; font: 26px / 1 &quot;Open Sans&quot;, sans-serif; text-align: center; text-shadow: rgb(0, 0, 0) 1px 1px;">Help & Support</button>
-</div>
-</html>		
-
-<body class="title">
-<div align="center">Send Us Some Feedbacks
-
-</div>
-<div align="center" style="position: relative; top: 20px">
-<button onclick="window.location.href='https://github.com/XPMUser/XPMUser.github.io/issues'" id="https://github.com/XPMUser/XPMUser.github.io/issues" style="background: linear-gradient(rgb(85, 186, 151), rgb(69, 143, 130)); border: 1px solid rgb(65, 141, 168); border-radius: 11px; padding: 20px 30px; color: rgb(255, 255, 255); display: inline-block; font: 26px / 1 &quot;Open Sans&quot;, sans-serif; text-align: center; text-shadow: rgb(0, 0, 0) 1px 1px;">Send Feedbacks</button>
-</div>
-</html>			
+		background-color: #55B9A7;
+	}
 	
-<body class="title">
-<div align="center">Ao28th28 Old Prodigy
+	.select-panel {
+        display: block;
+        position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	.button {
+		display: block;
+		position: fixed;
+	}
+	
+	.button:hover {
+		transform: translate(0px, -3px)
+	}
+	
+	.select-panel .banner {
+		position: fixed;
+		display: block;
+		top: 20px;
+		left: 55px;
+	}
+	
+	.select-panel .overlay {
+		position: fixed;
+		display: block;
+		top: 170px;
+		left: 11px;
+	}
+    </style>
+    
+<body>
+    
+	<div class="select-panel">
+        <img src="/oldprodigy/images/MenuPanel-3.png">
+        
+        <div class="banner">
+       	  <img alt="Version Select" src="/oldprodigy/images/MenuPanel-Banner.png">
+        </div>
+        
+        <div class="overlay">
+        	<img src="/oldprodigy/images/MenuPanel-Overlay.png">
+            
+            <a onclick="XPMUser('')" class="button" style="top: 12px; left: 12px; position: absolute">
+            	<img alt="" src="/oldprodigy/images/1-11-0.png">
+            </a>
+            
+            <a onclick="Feedbacks('')" class="button" style="top: 68px; left: 12px; position: absolute">
+            	<img alt="1-16-5" src="/oldprodigy/images/1-16-5.png">
+            </a>
+            
+            <a onclick="Help('')" class="button" style="top: 124px; left: 12px; position: absolute">
+            	<img alt="1-17-0" src="/oldprodigy/images/1-17-0.png">
+            </a>
+        </div>
+        
+        <div class="button" style="bottom: 110px; left: 150px;">
+            <a onclick="ExitSelection()">
+            	<img alt="Ao28th28" src="/oldprodigy/images/Ao28th28.png">
+            </a>
+        </div>
+        
+	</div>
+        
+</body>
 
-</div>
-<div align="center" style="position: relative; top: 20px">
-<button onclick="window.location.href='https://ao28th28.github.io/oldprodigy.com/'" id="https://ao28th28.github.io/oldprodigy.com/" style="background: linear-gradient(rgb(85, 186, 151), rgb(69, 143, 130)); border: 1px solid rgb(65, 141, 168); border-radius: 11px; padding: 20px 30px; color: rgb(255, 255, 255); display: inline-block; font: 26px / 1 &quot;Open Sans&quot;, sans-serif; text-align: center; text-shadow: rgb(0, 0, 0) 1px 1px;">Ao28th28 Old Prodigy</button>
-</div>
-</html>	
-<link rel="icon" type="image/x-icon" href="../assets/favicon.png">	
+<script>
+var ClickSound = new Audio("/oldprodigy/audio/click.mp3"),
+Menu = {
+	Select: 0,
+	BetaPopup: 1,
+	ModSelect: 2,
+},
+currentMenu = Menu.Select,
+PlayClick = function() {
+	ClickSound.play()
+},
+ExitSelection = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://ao28th28.github.io/oldprodigy.com/";
+	}, 200);
+},
+Feedbacks = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://github.com/XPMUser/XPMUser.github.io/issues";
+	}, 200);
+},
+Help = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md";
+	}, 200);
+},
+XPMUser = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://xpmuser.github.io/oldprodigy/select/";
+	}, 200);
+},
+EnterGame = function(version) {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "/oldprodigy" + version + "";
+	}, 200);
+}
+</script>
+
+</html>
