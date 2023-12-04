@@ -294,7 +294,7 @@ List of version choices:
 
  - Prodigyde (1.10.0) | Defintive Edition on March 2015!
 
-   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis quest data's still viewable even if all the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. In The Tree has been fixed, but still unavailable in the game for now.
+   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis quest data's still viewable even if all the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. In The Tree has been renamed to 'The Tiles Workout Room' and it's also a place to take your character for walks. Going home from the map will take you here. https://xpmuser.github.io/oldprodigy/oldprodigyde/undefined/
    
  - Oldprodigyde (1.16.5) | Fake Multiplayer Mode!
 
@@ -319,6 +319,10 @@ List of version choices:
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
   This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
+
+- Going Home (oldprodigyde/undefined/) | Your character is at home.
+
+  You get this version from the map on one of my Definitive Editions.
     
 - The Current Version | Actual Multiplayer Mode!
   
