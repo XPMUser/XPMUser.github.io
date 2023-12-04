@@ -322,7 +322,7 @@ List of version choices:
 
 - Going Home (oldprodigyde/undefined/) | Your character is at home.
 
-  You get this version from the map on one of my Definitive Editions.
+  You get this version from the map on one of my Definitive Editions. The saves from March 2015 can't go home.
     
 - The Current Version | Actual Multiplayer Mode!
   
