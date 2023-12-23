@@ -120,12 +120,16 @@ List of version choices:
 
   Now don't get me wrong, this isn't the oldest version of Prodigy ever, but it's pretty old! Lots of old elements around that aren't seen in newer versions.
   
-- 1.16.5 | The older version with all of the legacy quests, and the element selection.
+- 1.16.2 | The older version with all of the legacy quests, and the element selection.
 
   This is a version that I recommend in particular, it's kind of like 1.11.0 - but it's generally a lot more stable. In fact this version
   is one of the most stable Prodigy versions on this site!
+  
+- 1.16.5 | The same as 1.16.5!
 
-- 1.16.6 | The same as 1.16.5!
+  TBA
+
+- 1.16.6 | The same as 1.16.5 2!
 
   TBA
 
@@ -270,6 +274,10 @@ List of version choices:
 
   The Earth Tower is back in business and plus, you can have All-Out-Attack once the energy's full.
 
+- 2.50.0 | Coming Soon!
+
+  Need to add... 
+
 - 2.65.0 | Coming Soon!
 
   Need to add...
@@ -294,23 +302,39 @@ List of version choices:
 
  - Prodigyde (1.10.0) | Defintive Edition on March 2015!
 
-   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis quest data's still viewable even if all the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. In The Tree has been renamed to 'The Tiles Workout Room' and it's also a place to take your character for walks. Going home from the map will take you here instead. https://xpmuser.github.io/oldprodigy/oldprodigyde/undefined/
+   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis quest data's still viewable even if all the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. In The Tree has been renamed to 'The Tiles Workout Room' and it's also a place to take your character for walks. Going home from the map will take you here instead. There are a few more coliseum opponents. https://xpmuser.github.io/oldprodigy/oldprodigyde/undefined/
+
+ - Pde2015 (1.11.0) | Extra Coliseum Opponents!
+
+   The Prodigy Store is still the same as earlier than summer 2015. Even more coliseum opponents are ready to battle. This version also has the fake leaderboards that's private back in April 2015. In the Tree has been renamed to 'The Walking Room' and parts of core.png can be seen. 
    
  - Oldprodigyde (1.16.5) | Fake Multiplayer Mode!
 
-   You can now view copies of bots' player cards. The bots don't talk or leave the zone. The bot's house is your house. The gift means Rickroll and the battle icon can give you a video of Good Time by Owl City. The map does nothing in the player menu. The bots are also able to go to your house.
+   You can now view copies of bots' player cards. The bots don't talk or leave the zone. The bot's house is your house. The gift means Rickroll and the battle icon can give you a video of Good Time by Owl City. The map does nothing in the player menu. The bots are also able to go to your house. You can also open this version by clicking on the member icon that's on the top left corner in pde2015 if you're a non-member.
 
  - Pde (1.18.2) | 2014-2015's Firefly Forest!
 
    2014-2015's Firefly Forest is still accessible which means that you'll learn the Earthsprite spell.
 
+ - Pdemar2016 (1.24.0) | TBA
+
+   TBA    
+
  - Pde2016 (1.30.0) | First Definitive Edition with the speed mods?!
 
-   You can still learn Thunderdome, Shocksphere, Razorfire and Fire Rain from 2014-2016's Skywatch and 2014-2016's Bonfire Spire.
+   TBA
+
+ - Pdewinter2016 (1.37.0) | TBA
+
+   TBA  
+
+ - Pde2017 (1.60.0) | TBA
+
+   TBA
 
  - Pde2019 (2.45.0) | Titans!
 
-   You can now battle the Titan if you use the following links:
+   You can now battle the Titan if you use any of the following links:
    1. https://xpmuser.github.io/oldprodigy/pde2019/?mods=ImitationTitan/
    2. https://xpmuser.github.io/oldprodigy/pde2019/?mods=WalkSpeed,ImitationTitan/
    3. https://xpmuser.github.io/oldprodigy/pde2019/?mods=FastGameSpeed,ImitationTitan/
@@ -318,7 +342,7 @@ List of version choices:
 
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
-  This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
+  This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. The Ice Worm crashes the game.
 
 - Going Home (oldprodigyde/undefined/) | Your character is at home.
 
@@ -342,6 +366,6 @@ List of version choices:
 
 - Prodigy Insider Preview (Canary Channel) | Coming Soon!
 
-  The lights have now removed the shadows. Too many art updates and more walkways!
+  The lights have now removed the shadows. Too many art updates and more walkways! The house items are also interactable again.
 
-Pick any version you want!
+You can choose any version you want!
