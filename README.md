@@ -1,4 +1,5 @@
 # XPMUser.github.io
+
 Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
 Site Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
@@ -14,6 +15,13 @@ I'm Ao28th28 (The PVZ Unknown Edition Maker).
 
 Old Prodigy English is coming soon!
 
+# Table of Contents 
+1. XPMUser.github.io
+2. Old Prodigy
+3. How to play
+4. Modpacks
+5. List of Versions
+   
 # Old Prodigy
 
 This is some pretty simple modding of older versions of Prodigy, to get them to work right now, in the present day!
@@ -64,9 +72,9 @@ Currently, these are the versions that support modpacks:
  - 1-50-0
  - 2-45-0
 
-## List of Versions!
+## List of Versions
 
-List of version choices:
+List of versions:
 
 - 0.0.0 | 2014!
 
@@ -326,7 +334,15 @@ List of version choices:
 
  - Pdewinter2016 (1.37.0) | TBA
 
-   TBA  
+   TBA
+   
+ - Pdenot1.50.0 (1.46.2) | The Rebalanced Battles Mod is a no-go!?
+
+   This also supports modpacks, but the rebalanced battles mod due to crashes. Like in some versions, you can't walk in 2014-2016's Bonfire Spire due to too many zeros in game.min.js. The only mods I recommend using are Walk Speed and Fast Game Speed.
+
+ - Pde1.51.0 (1.51.0) | 2017-2022's Avatar!
+
+   Some people didn't like the 2017-2022 avatar, but I had trouble replacing the character back to 2013-2017. 
 
  - Pde2017 (1.60.0) | TBA
 
@@ -342,7 +358,7 @@ List of version choices:
 
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
-  This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. The Ice Worm crashes the game.
+  This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
 
 - Going Home (oldprodigyde/undefined/) | Your character is at home.
 
