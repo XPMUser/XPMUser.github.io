@@ -69,6 +69,8 @@ Currently, these are the versions that support modpacks:
  - 1-28-1 Beta (Not marked as beta in the version selection screen!)
  - 1-29-0
  - 1-30-0
+ - My Ultimate Edition: http://opxpmuser.byethost7.com/, http://opxpmuser.byethost7.com/?mods=WalkSpeed/, http://opxpmuser.byethost7.com/?mods=FastGameSpeed/, http://opxpmuser.byethost7.com/?mods=WalkSpeed,FastGameSpeed/ 
+ - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-50-0
  - 2-45-0
 
@@ -359,6 +361,10 @@ List of versions:
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
   This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
+
+- My Ultimate Edition | The first byethost site to have the open source version of Old Prodigy!
+
+  TBA http://opxpmuser.byethost7.com/
 
 - Going Home (oldprodigyde/undefined/) | Your character is at home.
 
