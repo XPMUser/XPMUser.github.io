@@ -1,5 +1,7 @@
 # XPMUser.github.io
 
+Scroll down until you see the modpacks area to pick any url that gives you my Prodigy Ultimate Edition with speed mods.
+
 Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
 Site Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
