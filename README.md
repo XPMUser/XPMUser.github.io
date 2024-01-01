@@ -1,6 +1,6 @@
 # XPMUser.github.io
 
-Scroll down until you see the modpacks area to pick any url that gives you my Prodigy Ultimate Edition with speed mods.
+Scroll down until you see the modpacks area to pick any url that gives you my Prodigy Ultimate Edition with speed mods or you can click on this url below. [https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md ](https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks)
 
 Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
