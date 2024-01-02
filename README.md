@@ -6,6 +6,12 @@ Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
 Site Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
 
+Song Makers: Jamie Christopherson and Matthew Pablo
+Song Editors: Prodigy Education a.k.a Prodigy Game
+Font Makers: Prodigy Education and more
+Playtesters: Daboss7173, XPMUser/Ao28th28, Mr. Inquiry and more
+Pictures: Prodigy Education and the mustache creator.
+
 Introducers: Ao28th28 a.k.a XPMUser, Mr. Inquiry, and more
 
 Original Prodigy Makers: Rohan Mahimker/Alexander Peters
