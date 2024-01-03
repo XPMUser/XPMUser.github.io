@@ -1,5 +1,6 @@
 # XPMUser.github.io
 
+Ultimate Editon 1.10.0: http://op2015.byethost7.com/
 Ultimate Editon 1.16.5: http://oppickles.byethost14.com/
 
 Scroll down until you see the modpacks area to pick any url that gives you my Prodigy Ultimate Edition with speed mods or you can click on this url below. [https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md ](https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks)
