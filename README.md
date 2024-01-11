@@ -142,16 +142,20 @@ List of versions:
 
   Now don't get me wrong, this isn't the oldest version of Prodigy ever, but it's pretty old! Lots of old elements around that aren't seen in newer versions.
   
-- 1.16.2 | The older version with all of the legacy quests, and the element selection.
+- 1.13.0 | The older version with all of the legacy quests, and the element selection.
 
-  This is a version that I recommend in particular, it's kind of like 1.11.0 - but it's generally a lot more stable. In fact this version
+  This is a version that I recommend in particular, it's kind of like 1.12.2 - but it's generally a lot more stable. In fact this version
   is one of the most stable Prodigy versions on this site!
+
+- 1.16.2 | The same as 1.16.5 1!
+
+  TBA
   
-- 1.16.5 | The same as 1.16.5!
+- 1.16.5 | The same as 1.16.5 2!
 
   TBA
 
-- 1.16.6 | The same as 1.16.5 2!
+- 1.16.6 | The same as 1.16.5 3!
 
   TBA
 
