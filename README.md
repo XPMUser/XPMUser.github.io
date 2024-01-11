@@ -318,7 +318,7 @@ List of versions:
 
 - Prodigy Reborn 1.0 | Not Recommended!
 
-  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves. The successor to this is My Prodigy Ultimate Edition.
+  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves. The successor to this is My Prodigy Ultimate Edition opxpmuser.byethost7.com.
 
 - My Prodigy Definitive Editions List | More!
 
@@ -372,15 +372,23 @@ List of versions:
 
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
-  This is version 1.50.0. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
+  This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. Signing in with Google makes the account work the same way as on the original Prodigy site making you imagine you're in 2017 with just the transformotron removed. You have to get luckier than ever to get the Trialmaster's Gear from The Lost Island. 2017 in 2023-present! 
 
 - My Ultimate Edition | The first byethost site to have the open source version of Old Prodigy!
 
-  TBA http://opxpmuser.byethost7.com/
+  You get this version from the map in my 1.10.0 Mode Ultimate Edition.
 
-- Going Home (oldprodigyde/undefined/) | Your character is at home.
+- My Ultimate Edition 2 | The second byethost site to have the open source version of Old Prodigy!
 
-  You get this version from the map on one of my Definitive Editions. The saves from March 2015 can't go home.
+  This has fake Multiplayer Mode.
+
+- My Ultimate Edition 3 | The third byethost site to have the open source version of Old Prodigy!
+
+  2 versions can open from the map. 
+
+- Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
+
+  You get this version from the map on one of my Definitive Editions and one of my Ultimate Editions. The saves from March/April 2015 can't go home.
     
 - The Current Version | Actual Multiplayer Mode!
   
