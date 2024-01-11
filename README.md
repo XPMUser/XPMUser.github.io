@@ -300,9 +300,9 @@ List of versions:
 
   The Earth Tower is back in business and plus, you can have All-Out-Attack once the energy's full.
 
-- 2.50.0 | Coming Soon!
+- 2.50.0 | R.I.P. The Lost Island 2017-2019!
 
-  Need to add... 
+  The Lost Island is gone, but is still accessible due to codes. 
 
 - 2.65.0 | Coming Soon!
 
