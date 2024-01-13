@@ -308,9 +308,9 @@ List of versions:
 
   Need to add...
 
-- 3.0.0 | Coming Soon!
+- 3.0.0 | It's actually a debug mode! Coming Soon! Credits to Slappygig/Toonigy and Prodigy Education!
 
-  The Lost Island doesn't exist anymore.
+ (This is in beta) Wizards like me found this 3.0.0 version in the archives, it was labeled, "DEBUG BUILD" and once we enabled debug and during our fix it up stages, you are free to play around this game so Now its a sandbox mode so lots of interesting stuff!
 
 - 6.136.0 | Coming Soon! NEW AVATAR!? EW! 2
 
