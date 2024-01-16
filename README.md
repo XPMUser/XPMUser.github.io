@@ -81,7 +81,8 @@ Currently, these are the versions that support modpacks:
  - 1-28-1 Beta (Not marked as beta in the version selection screen!)
  - 1-29-0
  - 1-30-0
- - My Ultimate Edition: http://opxpmuser.byethost7.com/, http://opxpmuser.byethost7.com/?mods=WalkSpeed/, http://opxpmuser.byethost7.com/?mods=FastGameSpeed/, http://opxpmuser.byethost7.com/?mods=WalkSpeed,FastGameSpeed/ 
+ - My Ultimate Edition: http://opxpmuser.byethost7.com/, http://opxpmuser.byethost7.com/?mods=WalkSpeed/, http://opxpmuser.byethost7.com/?mods=FastGameSpeed/, http://opxpmuser.byethost7.com/?mods=WalkSpeed,FastGameSpeed/
+ - My Ultimate Edition (I can't move!): http://op2017.byethost32.com/, http://op2017.byethost32.com/?mods=WalkSpeed/, http://op2017.byethost32.com/?mods=FastGameSpeed/, http://op2017.byethost32.com/?mods=WalkSpeed,FastGameSpeed/ 
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-50-0
  - 2-45-0
