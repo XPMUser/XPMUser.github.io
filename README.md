@@ -82,7 +82,7 @@ Currently, these are the versions that support modpacks:
  - 1-29-0
  - 1-30-0
  - My Ultimate Edition: http://opxpmuser.byethost7.com/, http://opxpmuser.byethost7.com/?mods=WalkSpeed/, http://opxpmuser.byethost7.com/?mods=FastGameSpeed/, http://opxpmuser.byethost7.com/?mods=WalkSpeed,FastGameSpeed/
- - My Ultimate Edition (I can't move!): http://op2017.byethost32.com/, http://op2017.byethost32.com/?mods=WalkSpeed/, http://op2017.byethost32.com/?mods=FastGameSpeed/, http://op2017.byethost32.com/?mods=WalkSpeed,FastGameSpeed/ 
+ - My Ultimate Edition (I'm at the Robolymics doing 2014-2015's quests!): http://op2017.byethost32.com/, http://op2017.byethost32.com/?mods=WalkSpeed/, http://op2017.byethost32.com/?mods=FastGameSpeed/, http://op2017.byethost32.com/?mods=WalkSpeed,FastGameSpeed/ 
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-50-0
  - 2-45-0
@@ -379,17 +379,18 @@ List of versions:
 
   This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. Signing in with Google makes the account work the same way as on the original Prodigy site making you imagine you're in 2017 with just the transformotron removed. You have to get luckier than ever to get the Trialmaster's Gear from The Lost Island. 2017 in 2023-present! 
 
-- My Ultimate Edition | The first byethost site to have the open source version of Old Prodigy!
+- My Ultimate Edition Versions:
+ - My Ultimate Edition in 1.10.0 | 2014-2015's plot?!
 
-  You get this version from the map in my 1.10.0 Mode Ultimate Edition.
+   2 versions can open from the map.
+   
+ - 1.16.5 | Like oldprodigyde!?
 
-- My Ultimate Edition 2 | The second byethost site to have the open source version of Old Prodigy!
+   This has fake Multiplayer Mode.
 
-  This has fake Multiplayer Mode.
+ - My Ultimate Edition | The first byethost site to have the open source version of Old Prodigy!
 
-- My Ultimate Edition 3 | The third byethost site to have the open source version of Old Prodigy!
-
-  2 versions can open from the map. 
+  You get this version from the map in my 1.10.0 Mode Ultimate Edition.  
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
