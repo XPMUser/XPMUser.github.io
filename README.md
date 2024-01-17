@@ -380,17 +380,21 @@ List of versions:
   This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. Signing in with Google makes the account work the same way as on the original Prodigy site making you imagine you're in 2017 with just the transformotron removed. You have to get luckier than ever to get the Trialmaster's Gear from The Lost Island. 2017 in 2023-present! 
 
 - My Ultimate Edition Versions:
- - My Ultimate Edition in 1.10.0 | 2014-2015's plot?!
+ - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?!
 
    2 versions can open from the map.
    
- - 1.16.5 | Like oldprodigyde!?
+ - My Ultimate Edition in 1.16.5 Mode | Like oldprodigyde!?
 
    This has fake Multiplayer Mode.
 
- - My Ultimate Edition | The first byethost site to have the open source version of Old Prodigy!
+ - My Ultimate Edition in 1.30.0 Mode | The first byethost site to have the open source version of Old Prodigy!
 
   You get this version from the map in my 1.10.0 Mode Ultimate Edition.  
+
+ - My Ultimate Edition in 1.46.2 Mode | Goodbye Robolymics...
+
+   Parts of Clockwork Town covered some of the things that couldn't be installed.
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
