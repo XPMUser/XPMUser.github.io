@@ -1,10 +1,5 @@
 # XPMUser.github.io
 
-Ultimate Editon 1.10.0: http://op2015.byethost7.com/
-Ultimate Editon 1.16.5: http://oppickles.byethost14.com/
-
-Scroll down until you see the modpacks area to pick any url that gives you my Prodigy Ultimate Edition with speed mods or you can click on this url below. [https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md ](https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks)
-
 Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
 Site Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
@@ -381,21 +376,29 @@ List of versions:
 
 - My Education Edition Versions:
   
-  - 1.11.0 Mode | Directions of Files!
+  - 1.11.0 Mode | Directions of Files! http://op2015.byethost5.com/?i=1
 
     This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on byethost.
     
 - My Ultimate Edition Versions:
-
- - My Ultimate Edition (1.5.0) | 1.10.0?!
+  
+ - My Ultimate Edition (1.0.0) | 1.10.0?!
 
     I installed the questdata and the quests to fix the boredom.
+
+ - My Ultimate Edition (1.2.0) | 1.10.0?!
+
+    Welcome to the Cloud Zone!
    
- - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?!
+ - My Ultimate Edition (1.5.0) | 1.10.0?!
+
+    Dark Tower is included in the game.
+   
+ - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?! http://op2015.byethost7.com/
 
    2 versions can open from the map.
    
- - My Ultimate Edition in 1.16.5 Mode | Like oldprodigyde!?
+ - My Ultimate Edition in 1.16.5 Mode | Like oldprodigyde!? http://oppickles.byethost14.com/
 
    This has fake Multiplayer Mode.
 
