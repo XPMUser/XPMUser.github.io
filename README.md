@@ -378,7 +378,7 @@ List of versions:
   
   - 1.11.0 Mode | Directions of Files! http://op2015.byethost5.com/?i=1
 
-    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on byethost.
+    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on Byethost.
     
 - My Ultimate Edition Versions:
   
