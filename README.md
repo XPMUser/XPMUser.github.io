@@ -377,12 +377,20 @@ List of versions:
 
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
-  This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. Signing in with Google makes the account work the same way as on the original Prodigy site making you imagine you're in 2017 with just the transformotron removed. You have to get luckier than ever to get the Trialmaster's Gear from The Lost Island. 2017 in 2023-present! 
+  This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. Signing in with Google makes the account work the same way as on the original Prodigy site making you imagine you're in 2017 with just the transformotron removed. You have to get luckier than ever to get the Trialmaster's Gear from The Lost Island. 2017 in 2023-present!
 
+- My Education Edition Versions:
+  
+  - 1.11.0 Mode | Directions of Files!
+
+    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on byethost.
+    
 - My Ultimate Edition Versions:
 
  - My Ultimate Edition (1.5.0) | 1.10.0?!
-    
+
+    I installed the questdata and the quests to fix the boredom.
+   
  - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?!
 
    2 versions can open from the map.
