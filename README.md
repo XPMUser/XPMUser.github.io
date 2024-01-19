@@ -378,7 +378,7 @@ List of versions:
   
   - 1.11.0 Mode | Directions of Files! http://op2015.byethost5.com/?i=1
 
-    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on Byethost.
+    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on Byethost. The E-Nigma hat has been fixed.
     
 - My Ultimate Edition Versions:
   
@@ -408,7 +408,7 @@ List of versions:
 
  - My Ultimate Edition in 1.46.2 Mode | Goodbye Robolymics...
 
-   Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well.
+   I've rolled back a version after the version a few days ago was lost to time due to game.min.js for the new update being gone. New Update Coming Soon: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well.
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
