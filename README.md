@@ -408,7 +408,7 @@ List of versions:
 
  - My Ultimate Edition in 1.46.2 Mode | Goodbye Robolymics...
 
-   I've rolled back a version after the version a few days ago was lost to time due to game.min.js for the new update being gone. New Update Coming Soon: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well.
+   It got reupdated again. New Update Coming Soon: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well.
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
