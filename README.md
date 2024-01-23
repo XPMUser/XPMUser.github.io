@@ -1,6 +1,6 @@
 # XPMUser.github.io
 
-Warning: Please don't go on sites that were made from byethost on any school or work devices that are owned by the school or work companies! Don't go on any byethost site in a country where byethost is banned. Github sites aren't for users who have to deal with Github sites being blocked on certain devices.
+Warning: Please don't go on sites that were made from byethost on any school or work devices that are owned by the school or work companies! Don't go on any byethost site in a country where byethost is banned. Github sites aren't for users who have to deal with Github sites being blocked on school or work devices.
 
 Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
