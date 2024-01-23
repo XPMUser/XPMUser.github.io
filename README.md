@@ -356,7 +356,7 @@ List of versions:
    
  - Pdenot1.50.0 (1.46.2) | The Rebalanced Battles Mod is a no-go!?
 
-   This also supports modpacks, but the rebalanced battles mod due to crashes. Like in some versions, you can't walk in 2014-2016's Bonfire Spire due to too many zeros in game.min.js. The only mods I recommend using are Walk Speed and Fast Game Speed.
+   This also supports modpacks except for the rebalanced battles mod due to crashes during the battle. The only mods I recommend using are Walk Speed and Fast Game Speed.
 
  - Pde1.51.0 (1.51.0) | 2017-2022's Avatar!
 
@@ -412,7 +412,7 @@ List of versions:
 
  - My Ultimate Edition in 1.46.2 Mode | Goodbye Robolymics...
 
-   It got reupdated again. New Update: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well. I'm still working on Sign in with Google, Clockwork Town, etc. You can still get Fishbol from other versions with the same save from here.
+   It got reupdated again. New Update: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well. I'm still working on Sign in with Google, Clockwork Town, etc. 
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
