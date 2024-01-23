@@ -412,13 +412,13 @@ List of versions:
 
  - My Ultimate Edition in 1.46.2 Mode | Goodbye Robolymics...
 
-   It got reupdated again. New Update Coming Soon: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well.
+   It got reupdated again. New Update: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well. I'm still working on Sign in with Google, Clockwork Town, etc. You can still get Fishbol from other versions with the same save from here.
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
-  You get this version from the map on one of my Definitive Editions and one of my Ultimate Editions. The saves from March/April 2015 can't go home.
+  You get this version from the map on one of my Definitive Editions and one of my Ultimate Editions. The saves from March/Early June 2015 can't go home.
     
-- The Current Version | Actual Multiplayer Mode!
+- The Current Version | The Actual Multiplayer Mode!
   
   https://play.prodigygame.com/ Time Travel to the past to get the Real Multiplayer Mode for the earlier versions!
 
