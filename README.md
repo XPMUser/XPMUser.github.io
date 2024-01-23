@@ -172,6 +172,10 @@ List of versions:
 
   This is the same as 1.18.0.
 
+- 1.18.3 | TBA!
+
+  Pumpkinfest is over!
+
 - 1.19.0 | TBA!
 
   Need to add. 
