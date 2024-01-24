@@ -180,7 +180,11 @@ List of versions:
 
 - 1.19.0 | TBA!
 
-  Need to add. 
+  Need to add.
+
+- 1.20.0 | TBA!
+
+  Need to add.  
 
 - 1.20.1 | New Shiverchill Mountains! Coming Soon!
 
