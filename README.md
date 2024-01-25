@@ -385,10 +385,14 @@ List of versions:
   This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. Signing in with Google makes the account work the same way as on the original Prodigy site making you imagine you're in 2017 with just the transformotron removed. You have to get luckier than ever to get the Trialmaster's Gear from The Lost Island. 2017 in 2023-present!
 
 - My Education Edition Versions:
+
+  - 1.10.0 Mode | Directions of Files! http://op1100.byethost9.com/?i=1
+
+    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the second Education Edition on Byethost. Play this version during your free time.
   
   - 1.11.0 Mode | Directions of Files! http://op2015.byethost5.com/?i=1
 
-    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on Byethost. The E-Nigma hat has been fixed.
+    This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on Byethost. The E-Nigma hat has been fixed. Play this version during your free time.
     
 - My Ultimate Edition Versions:
   
