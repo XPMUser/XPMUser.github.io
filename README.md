@@ -418,7 +418,7 @@ List of versions:
 
  - My Ultimate Edition in 1.24.0 Mode | R.I.P. Fake Multiplayer Mode! http://op2016.byethost8.com/play/?i=1
 
-   Fake Multiplayer Mode is no longer restorable. 
+   Fake Multiplayer Mode is no longer restorable. The relics can now be bought from Plank's Tanks in Barnacle Cove, but they do nothing at all which is why they're only some worlds' logos.
 
  - My Ultimate Edition in 1.30.0 Mode | The first byethost site to have the open source version of Old Prodigy!
 
