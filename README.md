@@ -416,6 +416,10 @@ List of versions:
 
    This has fake Multiplayer Mode.
 
+ - My Ultimate Edition in 1.24.0 Mode | R.I.P. Fake Multiplayer Mode! http://op2016.byethost8.com/play/?i=1
+
+   Fake Multiplayer Mode is no longer restorable. 
+
  - My Ultimate Edition in 1.30.0 Mode | The first byethost site to have the open source version of Old Prodigy!
 
    You'll get this version from the map in my 1.10.0 Mode Ultimate Edition.  
