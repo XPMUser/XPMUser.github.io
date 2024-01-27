@@ -262,6 +262,10 @@ List of versions:
 
   Need to add...
 
+- 1.55.0 | TBA! (Coming Soon!)
+
+  I'm still working on the colon token incident in game.min.js. 
+
 - 1.60.0 | ARGH! OUR SHIP IS SINKING MATEYS! I THINK WE MIGHT WRECK!
 
   Ahem - anyway, this update was one of the first with the Starlight Festival! This update also introduced the new in-game chat, although it's not a big deal anyway since
