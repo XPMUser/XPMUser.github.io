@@ -430,7 +430,7 @@ List of versions:
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
-  You get this version from the map on one of my Definitive Editions and one of my Ultimate Editions. The saves from March/Early June 2015 can't go home.
+  You can get this version from the map on one of my Definitive Editions and one of my Ultimate Editions. The saves from March/Early June 2015 can't go home.
     
 - The Current Version | The Actual Multiplayer Mode!
   
