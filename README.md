@@ -1,6 +1,6 @@
 # XPMUser.github.io
 
-Warning: Please don't go on sites that were made from byethost on any school or work devices that are owned by the school or work companies! 
+Warning: Please don't go on sites that were made from Byethost on any school or work devices that are owned by the school or work companies! Please be careful when visiting/using the sites from Byethost.
 
 Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
