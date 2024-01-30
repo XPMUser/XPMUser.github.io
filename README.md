@@ -420,6 +420,10 @@ List of versions:
 
    This has fake Multiplayer Mode.
 
+ - My Ultimate Edition in 1.17.0 Mode | http://op1170.byethost32.com/play/?i=1
+
+   This also has fake Multiplayer Mode.  
+
  - My Ultimate Edition in 1.24.0 Mode | R.I.P. Fake Multiplayer Mode! http://op2016.byethost8.com/play/?i=1
 
    Fake Multiplayer Mode is no longer restorable. The relics can now be bought from Plank's Tanks in Barnacle Cove, but they do nothing at all which is why they're only some worlds' logos.
