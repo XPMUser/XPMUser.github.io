@@ -83,6 +83,7 @@ Currently, these are the versions that support modpacks:
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-50-0
  - 2-45-0
+ - 2-50-0
 
 ## List of Versions
 
