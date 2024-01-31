@@ -413,7 +413,7 @@ List of versions:
 
     Dark Tower is included in the game.
    
- - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?! http://op2015.byethost7.com/
+ - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?! http://op2015.byethost7.com/ http://op2015.byethost7.com/play/
 
    2 versions can open from the map.
    
