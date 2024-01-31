@@ -6,6 +6,7 @@ Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
 Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
 Reborn maker: Craftersshaft
+Prodigy Maker: Prodigy Education
 
 Song Makers: Jamie Christopherson and Matthew Pablo
 Song Editors: Prodigy Education a.k.a Prodigy Game
