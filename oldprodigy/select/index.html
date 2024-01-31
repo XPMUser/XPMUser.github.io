@@ -227,7 +227,15 @@
 						<div class="intext" draggable="false">
 							<img alt="2-50-0" src="./images/2-50-0.png" draggable="false">
 						</div>
-					</a>					
+					</a>	
+
+					<a onclick="ModSelector('1-30-R')" class="button" style="top: 10px; left: 270px; position: absolute" draggable="false">
+						<img src="./images/ModSelectButton.png" draggable="false">
+						
+						<div class="intext" draggable="false">
+							<img alt="1-30-R" src="./images/1-30-R.png" draggable="false">
+						</div>
+					</a>						
 					
 				</div>
 
@@ -324,6 +332,30 @@
 					<a onclick="StartGameMod('1-30-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
 						<img alt="Start" src="./images/Start.png" draggable="false">
 					</a>
+
+				</div>
+			
+				<div id="mods-1-30-R" style="display: none" draggable="false">
+				
+					<a onclick="AddMod('WalkSpeed', '1-30-R')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
+						<img id="mod-WalkSpeed-1-30-R" src="./images/ModSelectButton.png" draggable="false">
+						
+						<div class="intext" id="select-mod-version" draggable="false">
+							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
+						</div>
+					</a>
+				
+					<a onclick="AddMod('FastGameSpeed', '1-30-R')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
+						<img id="mod-FastGameSpeed-1-30-R" src="./images/ModSelectButton.png" draggable="false">
+						
+						<div class="intext" id="select-mod-version" draggable="false">
+							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
+						</div>
+					</a>
+					
+					<a onclick="StartGameMod('1-30-R')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
+						<img alt="Start" src="./images/Start.png" draggable="false">
+					</a>					
 				
 				</div>
 				<div id="mods-1-50-0" style="display: none" draggable="false">
@@ -755,6 +787,12 @@ Versions = [
 		alt: "Version 2.50.0",
 		ver: "2-50-0",
 		beta: true
+	},
+	{
+		src: "./images/1-30-R.png",
+		alt: "Version 1.30.R",
+		ver: "1-30-R",
+		beta: true
 	}	
 ],
 ModPages = {	
@@ -774,7 +812,10 @@ ModPages = {
 		id: "mods-2-45-0"
 	},	
 	"2-50-0": {
-		id: "mods-2-50-0"		
+		id: "mods-2-50-0"
+	},
+	"1-30-R": {
+		id: "mods-1-30-R"	
 	},
 	selection: {
 		id: "versions-1"
