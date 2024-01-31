@@ -86,6 +86,7 @@ Currently, these are the versions that support modpacks:
  - 1-50-0
  - 2-45-0
  - 2-50-0
+ - 1-30-R (Prodigy Reborn 1.0)
 
 ## List of Versions
 
@@ -324,6 +325,10 @@ List of versions:
 - 3.0.0 | It's actually a debug mode! Coming Soon! Credits to Slappygig/Toonigy and Prodigy Education!
 
  (This is in beta) Wizards like me found this 3.0.0 version in the archives, it was labeled, "DEBUG BUILD" and once we enabled debug and during our fix it up stages, you are free to play around this game so Now its a sandbox mode so lots of interesting stuff!
+
+- 1.30.R | Credits to Craftersshaft and more!
+
+ This is now a fixed version of Prodigy Reborn 1.0. I made Plumber's Cap unobtainable and member only due to the hair loss which means your hair style is set to hair style 0 from New Prodigy.
 
 - 6.136.0 | Coming Soon! NEW AVATAR!? EW! 2
 
