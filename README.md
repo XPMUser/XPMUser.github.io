@@ -338,9 +338,9 @@ List of versions:
 
   The merchants were redesigned.  
 
-- Prodigy Reborn 1.0 | Not Recommended!
+- Prodigy Reborn 1.0 | Not Recommended (If using the one that isn't the fixed version)!
 
-  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves. The successor to this is My Prodigy Ultimate Edition opxpmuser.byethost7.com.
+  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves. The successor to this is My Prodigy Ultimate Edition http://opxpmuser.byethost7.com. The fixed version: https://xpmuser.github.io/oldprodigy/1-30-R/ 
 
 - My Prodigy Definitive Editions List | More!
 
