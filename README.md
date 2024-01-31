@@ -4,7 +4,8 @@ Warning: Please don't go on sites that were made from Byethost on any school or 
 
 Click on the left arrow to go back.
 Credits: Sitemakers: Daboss7173 
-Site Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
+Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
+Reborn maker: Craftersshaft
 
 Song Makers: Jamie Christopherson and Matthew Pablo
 Song Editors: Prodigy Education a.k.a Prodigy Game
