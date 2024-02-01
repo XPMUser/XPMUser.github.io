@@ -86,7 +86,7 @@ Currently, these are the versions that support modpacks:
  - 1-50-0
  - 2-45-0
  - 2-50-0
- - 1-30-R (Prodigy Reborn 1.0)
+ - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
 
 ## List of Versions
 
