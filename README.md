@@ -153,15 +153,19 @@ List of versions:
   This is a version that I recommend in particular, it's kind of like 1.12.2 - but it's generally a lot more stable. In fact this version
   is one of the most stable Prodigy versions on this site!
 
-- 1.16.2 | The same as 1.16.5 1!
+- 1.16.0 | The same as 1.16.5 1!
+
+  TBA   
+
+- 1.16.2 | The same as 1.16.5 2!
 
   TBA
   
-- 1.16.5 | The same as 1.16.5 2!
+- 1.16.5 | The same as 1.16.5 3!
 
   TBA
 
-- 1.16.6 | The same as 1.16.5 3!
+- 1.16.6 | The same as 1.16.5 4!
 
   TBA
 
