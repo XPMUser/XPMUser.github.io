@@ -140,9 +140,13 @@ List of versions:
 
   This is the first version with Clockwork Town.
 
-- 1.12.2 | The older version that can run essentially flawlessly.
+- 1.12.0 | The older version that can run essentially flawlessly.
 
   Now don't get me wrong, this isn't the oldest version of Prodigy ever, but it's pretty old! Lots of old elements around that aren't seen in newer versions.
+
+- 1.12.2 | Removed map filters?!
+
+  R.I.P. 2 map filters (stores and games) 2015-2015 
   
 - 1.13.0 | The older version with all of the legacy quests, and the element selection.
 
