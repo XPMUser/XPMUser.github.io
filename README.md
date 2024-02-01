@@ -146,7 +146,7 @@ List of versions:
 
 - 1.12.2 | Removed map filters?!
 
-  R.I.P. 2 map filters (stores and games) 2015-2015 
+  R.I.P. 2 map filters (stores and games) 2015-2015 Plus, the leaderboards are back in business.
   
 - 1.13.0 | The older version with all of the legacy quests, and the element selection.
 
