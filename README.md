@@ -85,6 +85,9 @@ Currently, these are the versions that support modpacks:
  - My Ultimate Edition (I'm at the Robolymics doing 2014-2015's quests!): http://op2017.byethost32.com/, http://op2017.byethost32.com/?mods=WalkSpeed/, http://op2017.byethost32.com/?mods=FastGameSpeed/, http://op2017.byethost32.com/?mods=WalkSpeed,FastGameSpeed/ 
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-50-0
+ - 1-51-0
+ - 1-51-1
+ - 1-52-0
  - 2-45-0
  - 2-50-0
  - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
@@ -270,6 +273,10 @@ List of versions:
   that the animations could be a LOT smoother than before! However, it just plain didn't have the same amount of detail that the previous avatar had.
   The loading system also got a bit of internal reworking in this update, meaning that some icons would have some loading issues, which is the main reason I
   recommend 1.50.0 over this update.
+
+- 1.51.1 | TBA!
+
+  Need to add... 
 
 - 1.52.0 | TBA!
 
