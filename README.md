@@ -337,7 +337,7 @@ List of versions:
 
 - 1.30.R | Credits to Craftersshaft and more!
 
- This is now a fixed version of Prodigy Reborn 1.0. I made Plumber's Cap unobtainable and member only due to the hair loss which means your hair style is set to hair style 0 from New Prodigy.
+ This is now a fixed version of Prodigy Reborn 1.0. I made Plumber's Cap unobtainable and member only due to the reasons that are mentioned here: https://old-prodigy.fandom.com/wiki/Plumber%27s_Cap.
 
 - 6.136.0 | Coming Soon! NEW AVATAR!? EW! 2
 
