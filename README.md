@@ -78,6 +78,7 @@ This repository features dynamic modpacks, you will be able to toggle mods as yo
 Currently, these are the versions that support modpacks:
  - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
+ - 1-24-0 https://xpmuser.github.io/oldprodigy/1-24-0/?mods=WalkSpeed FastGameSpeed's a no go.
  - 1-28-1 Beta (Not marked as beta in the version selection screen!)
  - 1-29-0
  - 1-30-0
