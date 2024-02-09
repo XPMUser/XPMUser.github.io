@@ -84,7 +84,7 @@ Currently, these are the versions that support modpacks:
  - 1-30-0
  - My Ultimate Edition 1-30-0: http://opxpmuser.byethost7.com/, http://opxpmuser.byethost7.com/?mods=WalkSpeed/, http://opxpmuser.byethost7.com/?mods=FastGameSpeed/, http://opxpmuser.byethost7.com/?mods=WalkSpeed,FastGameSpeed/
  - My Ultimate Edition (I'm at the Robolymics doing 2014-2015's quests!) 1-46-2: http://op2017.byethost32.com/, http://op2017.byethost32.com/?mods=WalkSpeed/, http://op2017.byethost32.com/?mods=FastGameSpeed/, http://op2017.byethost32.com/?mods=WalkSpeed,FastGameSpeed/
- - - My Ultimate Edition (I can't walk that fast.) 1-80-0: http://op2018.byethost4.com/play/?i=1/?mods=FastGameSpeed
+ - My Ultimate Edition (I can't walk that fast.) 1-80-0: http://op2018.byethost4.com/play/?i=1/?mods=FastGameSpeed
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-46-2 https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed,FastGameSpeed/ 
  - 1-50-0
