@@ -414,6 +414,15 @@
 	"sourceSize": {"w":640,"h":60},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"namer":
+{
+	"frame": {"x":872,"y":923,"w":60,"h":98},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":60,"h":98},
+	"sourceSize": {"w":60,"h":100},
+	"pivot": {"x":0.5,"y":0.5}
+},
 "node":
 {
 	"frame": {"x":676,"y":780,"w":50,"h":27},
