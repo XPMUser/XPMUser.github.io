@@ -105,15 +105,27 @@ List of versions:
 
 - 1.0.0 | TBA!
 
-  No house, skywatch or the dark tower found in this version!
+  No house, skywatch or the dark tower found in this version! The pixel fonts are still placeholders for now.
+
+- 1.1.0 | TBA!
+
+  TBA!
 
 - 1.2.0 | TBA!
 
   This doesn't even have the Dark Tower.
 
+- 1.3.0 | TBA!
+
+  This is the last version with the missed reservation sides for the version name and the new wizard button.
+
 - 1.3.1 | TBA!
 
   This might be the last version without the house.
+
+- 1.4.6 | TBA!
+
+  TBA!
 
 - 1.5.0 | TBA!
 
@@ -426,18 +438,6 @@ List of versions:
     This version doesn't have the question interface, but it's bypassed. I fixed the directions of files bugs. This is the first Education Edition on Byethost. The E-Nigma hat has been fixed. Play this version during your free time.
     
 - My Ultimate Edition Versions:
-  
- - My Ultimate Edition (1.0.0) | 1.10.0?!
-
-    I installed the questdata and the quests to fix the boredom.
-
- - My Ultimate Edition (1.2.0) | 1.10.0?!
-
-    Welcome to the Cloud Zone!
-   
- - My Ultimate Edition (1.5.0) | 1.10.0?!
-
-    Dark Tower is included in the game.
    
  - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?! http://op2015.byethost7.com/ http://op2015.byethost7.com/play/
 
