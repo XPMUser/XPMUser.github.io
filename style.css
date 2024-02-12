@@ -3,7 +3,7 @@ body {
 }
 
 .title {
-	font-family: BrianneTod, sans-serif;
+	font-family: BrianneTod, Pipe Dream;
 	font-size: 50px;
 	border-bottom: 1px solid;
 	border-color: #0002;
@@ -12,7 +12,7 @@ body {
 }
 
 .description {
-	font-family: BrianneTod, sans-serif;
+	font-family: BrianneTod, Pipe Dream;
 	font-size: 20px;
 }
 
@@ -25,7 +25,7 @@ body {
 	height: 60px;
 	color: #ffffff;
 	display: inline-block;
-	font: normal normal 26px/60px "BrianneTod", sans-serif;
+	font: normal normal 26px/60px "BrianneTod", Pipe Dream;
 	text-align: center;
 	cursor: pointer;
 }
@@ -50,6 +50,6 @@ body {
 }
 
 .footer {
-	font-family: Ubuntu, sans-serif;
+	font-family: BrianneTod, Pipe Dream;
 	position: relative;
 }
