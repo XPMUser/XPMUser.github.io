@@ -14,8 +14,8 @@ Mod makers: Daboss7173, Slappygig/Toonigy, and XPMUser/Ao28th28
 Song Makers: Jamie Christopherson and Matthew Pablo
 Song Editors: Prodigy Education a.k.a Prodigy Game
 Font Makers: Prodigy Education and more
-Playtesters: Daboss7173, XPMUser/Ao28th28, Mr. Inquiry and more
-Pictures: Prodigy Education and the mustache creator.
+Playtesters: Daboss7173, XPMUser/Ao28th28, Mr. Inquiry, and more
+Pictures: Prodigy Education, the mustache creator, and more.
 
 Introducers: Ao28th28 a.k.a XPMUser, Mr. Inquiry, and more
 
