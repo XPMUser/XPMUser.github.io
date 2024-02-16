@@ -96,6 +96,7 @@ Currently, these are the versions that support modpacks:
  - 2-45-0
  - 2-50-0
  - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
+ - 2-50-0 Pro Edition http://op2019.byethost18.com/play/?mods=WalkSpeed,FastGameSpeed,ImitationTitan
 
 ## List of Versions
 
@@ -428,6 +429,12 @@ List of versions:
 - Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
 
   This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version. Signing in with Google makes the account work the same way as on the original Prodigy site making you imagine you're in 2017 with just the transformotron removed. You have to get luckier than ever to get the Trialmaster's Gear from The Lost Island. 2017 in 2023-present!
+
+- My Pro Edition Versions:
+
+  - 2.50.0 Mode | 2.45.0! http://op2019.byethost18.com/play/
+
+    No need to go shopping for now. The Titan modpack is supported for this version as well. This is the first byethost site that has the titan feature available. The zones that are like Barnacle Cove are currently unavailable. Clockwork Town covers/placeholders are coming soon. The W12-4RD name is now available in Shipwreck Shore.
 
 - My Education Edition Versions:
 
