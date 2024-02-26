@@ -382,9 +382,9 @@ List of versions:
 
 - My Prodigy Definitive Editions List | More!
 
- - Prodigyde (1.10.0) | Defintive Edition on March 2015!
+ - Prodigyde (1.10.0) | Defintive Edition in March 2015!
 
-   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis quest data's still viewable even if all the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. In The Tree has been renamed to 'The Tiles Workout Room' and it's also a place to take your character for walks. Going home from the map will take you here instead. There are a few more coliseum opponents. https://xpmuser.github.io/oldprodigy/oldprodigyde/undefined/ The Wintertide Outfit is a placeholder for the heart hoodie sweater, a skirt, and cat ears.
+   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis quest data's still viewable even if all the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. Going home from the map will take you [here](https://xpmuser.github.io/oldprodigy/oldprodigyde/undefined/ ) instead. There are a few more coliseum opponents. The Wintertide Outfit is a placeholder for the heart hoodie sweater, a skirt, and cat ears.
 
  - Pde2015 (1.11.0) | Extra Coliseum Opponents!
 
