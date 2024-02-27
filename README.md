@@ -388,7 +388,7 @@ List of versions:
 
  - Pde2015 (1.11.0) | Extra Coliseum Opponents!
 
-   The Prodigy Store is still the same as earlier than summer 2015. Even more coliseum opponents are ready to battle. This version also has the fake leaderboards that's private back in April 2015. In the Tree has been renamed to 'The Walking Room' and parts of core.png can be seen. 
+   The Prodigy Store is still the same as earlier than summer 2015. Even more coliseum opponents are ready to battle. This version also has the fake leaderboards that's private back in April 2015. In the Tree has been renamed to 'The Walking Room' and parts of core.png can be seen. The upside down pyramid icons are still used instead of the orange things.
    
  - Oldprodigyde (1.16.5) | Fake Multiplayer Mode!
 
