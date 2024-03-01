@@ -39257,7 +39257,8 @@ Prodigy.ForestBoss = function(e, t) {
 		var e = this.data.drops[0];
 		if ("gold" === e.type ? this.itemIcon.setValue("item/26", e.N) : this.itemIcon.setValue(e.type + "/" + e.ID, 1), this.index > Math.floor(this.player.getLevel() / 5) || this.index > this.game.prodigy.player.getColiseum()) {
 			var t = "";
-			this.index > Math.floor(this.player.getLevel() / 5) && (t = "You must be at least level " + 5 * this.index), this.index > this.game.prodigy.player.getColiseum() && (t += (t.length > 0 ? " and you " : "You ") + "must defeat the previous " + (1 == this.index ? "wizard" : "wizards")), t += " to challenge " + this.opponent.getName() + ".", this.locked = !0, this.challengeButton.visible = !0, this.challengeButton.setInactive(), this.defeat.visible = !1
+			this.index < this.game.prodigy.player.getColiseum() ? (t = this.data.description, this.locked = !0, this.challengeButton.visible = !1, this.challengeButton.setInactive(), this.defeat.visible = !0) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
+		this.opponentName.setText(this.opponent.getName()), this.opponentTitle.setText("- " + this.data.title + " -"), this.description.setText(t)
 		} else this.index < this.game.prodigy.player.getColiseum() ? (t = this.data.description, this.locked = !0, this.challengeButton.visible = !1, this.challengeButton.setInactive(), this.defeat.visible = !0) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
 		this.opponentName.setText(this.opponent.getName()), this.opponentTitle.setText("- " + this.data.title + " -"), this.description.setText(t)
 	},
@@ -39294,6 +39295,19 @@ Prodigy.ForestBoss = function(e, t) {
 		}
 	}
 }), Prodigy.Menu.Coliseum.data = [{
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Bob", "gender":"male", "hairStyle":5, "hairColor":3, "skinColor":2, "eyeColor":5}',
+		equipment: '{"weapon":1}'
+	},
+	title: "The New Boy",
+	description: "Bob just arrived at the academy since late 2023, but he is new to Prodigy.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
+	}]
+}, {
 	opponent: {
 		data: '{"level":5}',
 		appearance: '{"name":"Gina", "gender":"female", "hairStyle":5, "hairColor":3, "skinColor":3, "eyeColor":5}',
@@ -39675,6 +39689,281 @@ Prodigy.ForestBoss = function(e, t) {
 	drops: [{
 		type: "weapon",
 		ID: 62
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Olivia", "gender":"female", "hairStyle":5, "hairColor":16, "skinColor":2, "eyeColor":10}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 900000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Prince", "gender":"male", "hairStyle":5, "hairColor":16, "skinColor":2, "eyeColor":10}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 900000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Princess", "gender":"female", "hairStyle":14, "hairColor":16, "skinColor":2, "eyeColor":15}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 900000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Jack", "gender":"male", "hairStyle":3, "hairColor":10, "skinColor":2, "eyeColor":15}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 900000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Robot", "gender":"female", "hairStyle":5, "hairColor":2, "skinColor":3, "eyeColor":15}',
+		equipment: '{"hat":46, "outfit":43, "weapon":69}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Robot 2", "gender":"male", "hairStyle":3, "hairColor":2, "skinColor":3, "eyeColor":15}',
+		equipment: '{"hat":46, "outfit":43, "weapon":69}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Pirate", "gender":"female", "hairStyle":5, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":39, "outfit":35, "weapon":65}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Pirate 2", "gender":"male", "hairStyle":3, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":39, "outfit":35, "weapon":65}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Buccaneer", "gender":"female", "hairStyle":5, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":40, "outfit":35, "weapon":66}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Buccaneer", "gender":"male", "hairStyle":3, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":40, "outfit":36, "weapon":66}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Eddie", "gender":"female", "hairStyle":5, "hairColor":13, "skinColor":2, "eyeColor":10}',
+		equipment: '{"outfit":26}'
+	},
+	title: "Ai Girlfriend",
+	description: "Eddie came from a game called Yandere Ai Girlfriend Simulator.",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
 	}]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
