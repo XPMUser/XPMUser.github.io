@@ -39965,6 +39965,31 @@ Prodigy.ForestBoss = function(e, t) {
 		type: "gold",
 		N: 9000
 	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Senpai", "gender":"male", "hairStyle":1, "hairColor":5, "skinColor":2, "eyeColor":14}',
+		equipment: '{"outfit":1}'
+	},
+	title: "YAGS Player",
+	description: "Credits to DGSpitzer and Vivianna Yan for the YAGS game.",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
 		hideMenu: !0,
@@ -56565,7 +56590,7 @@ Arena.AUDIO = [{
 	tag: "Arena",
 	zoneName: "zone-academy",
 	atlas: "zone-academy",
-	fullName: "Coliseum",
+	fullName: "Arena Academy",
 	battle: {
 		screen: "bg-battle-arena"
 	},
@@ -57152,7 +57177,7 @@ Arena.AUDIO = [{
 		this._zone.util.addDoor(e, t, 920, 240, 120, 160, 980, 400, a, !0), this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223)
 	}
 }), Prodigy.Lamplight_C3 = function(e, t) {
-	Prodigy.Map.call(this, e, "C3", "Coliseum", 160, 540, ["lamplight-B3", "lamplight-C2", "lamplight-C4"], t.concat(["npc-sprite-noot"]))
+	Prodigy.Map.call(this, e, "C3", "Old Academy Entrance", 160, 540, ["lamplight-B3", "lamplight-C2", "lamplight-C4"], t.concat(["npc-sprite-noot"]))
 }, Prodigy.extends(Prodigy.Lamplight_C3, Prodigy.Map, {
 	constructor: Prodigy.Lamplight_C3,
 	setup: function(e, t, i) {
