@@ -206,7 +206,7 @@ List of versions:
   
 - 1.18.0 | All Hallow's Eve!
 
-  This version is really neat because it has the first Pumpkinfest! This means Halloween decorations are all around the map, and there's a Pumpkinfest shop, with all-kinds of exclusive, creepy items and gear you can buy with your gold! Other than that it's pretty much just like 1.17.0.
+  This version is really neat because it has the first Pumpkinfest! This means Halloween decorations are all around the map, and there's a Pumpkinfest shop, with all-kinds of exclusive, creepy items and gear you can buy with your gold! Other than that it's pretty much just like 1.17.0. This version became the first version to be released to the public. 2014-2015's Firefly Forest didn't make it to the public release.
 
 - 1.18.2 | 1.18.0!
 
