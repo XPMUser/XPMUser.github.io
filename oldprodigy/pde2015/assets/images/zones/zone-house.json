@@ -696,6 +696,126 @@
                 "y": 0.5
             }
         },
+        "bar-shell": {
+            "frame": {
+                "x": 1393,
+                "y": 642,
+                "w": 39,
+                "h": 114
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 4,
+                "w": 39,
+                "h": 114
+            },
+            "sourceSize": {
+                "w": 40,
+                "h": 120
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "interface-circle": {
+            "frame": {
+                "x": 1393,
+                "y": 642,
+                "w": 39,
+                "h": 114
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 4,
+                "w": 39,
+                "h": 114
+            },
+            "sourceSize": {
+                "w": 40,
+                "h": 120
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icon-house": {
+            "frame": {
+                "x": 1393,
+                "y": 642,
+                "w": 39,
+                "h": 114
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 4,
+                "w": 39,
+                "h": 114
+            },
+            "sourceSize": {
+                "w": 40,
+                "h": 120
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "icon-back": {
+            "frame": {
+                "x": 1393,
+                "y": 642,
+                "w": 39,
+                "h": 114
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 4,
+                "w": 39,
+                "h": 114
+            },
+            "sourceSize": {
+                "w": 40,
+                "h": 120
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "interface-arrow": {
+            "frame": {
+                "x": 1393,
+                "y": 642,
+                "w": 39,
+                "h": 114
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 4,
+                "w": 39,
+                "h": 114
+            },
+            "sourceSize": {
+                "w": 40,
+                "h": 120
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }            
+        },
         "item-background": {
             "frame": {
                 "x": 1393,
