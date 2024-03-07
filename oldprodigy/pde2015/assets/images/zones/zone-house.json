@@ -24,6 +24,78 @@
                 "y": 0.5
             }
         },
+        "book": {
+            "frame": {
+                "x": 2,
+                "y": 935,
+                "w": 73,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 4,
+                "y": 0,
+                "w": 73,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "flip-left": {
+            "frame": {
+                "x": 2,
+                "y": 935,
+                "w": 73,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 4,
+                "y": 0,
+                "w": 73,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },  
+        "flip-right": {
+            "frame": {
+                "x": 2,
+                "y": 935,
+                "w": 73,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 4,
+                "y": 0,
+                "w": 73,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },        
         "5": {
             "frame": {
                 "x": 1268,
