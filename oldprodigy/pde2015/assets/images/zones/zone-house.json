@@ -144,6 +144,30 @@
                 "y": 0.5
             }
         },
+        "bg": {
+            "frame": {
+                "x": 1421,
+                "y": 972,
+                "w": 31,
+                "h": 46
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 5,
+                "y": 25,
+                "w": 31,
+                "h": 46
+            },
+            "sourceSize": {
+                "w": 40,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }            
+        },
         "14": {
             "frame": {
                 "x": 1135,
