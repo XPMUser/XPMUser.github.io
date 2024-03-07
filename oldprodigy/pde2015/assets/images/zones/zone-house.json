@@ -842,18 +842,18 @@
         },
         "icon-A": {
             "frame": {
-                "x": 1393,
-                "y": 642,
-                "w": 39,
-                "h": 114
+                "x": 1038,
+                "y": 497,
+                "w": 40,
+                "h": 120
             },
             "rotated": false,
-            "trimmed": true,
+            "trimmed": false,
             "spriteSourceSize": {
                 "x": 0,
-                "y": 4,
-                "w": 39,
-                "h": 114
+                "y": 0,
+                "w": 40,
+                "h": 120
             },
             "sourceSize": {
                 "w": 40,
