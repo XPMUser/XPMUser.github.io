@@ -94,6 +94,7 @@ Currently, these are the versions that support modpacks:
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-46-2 https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed,FastGameSpeed/ 
  - 1-50-0
+ - pde1500 Beta (Prodigy Definitive Edition/Modified 1-50-0)
  - 1-51-0
  - 1-51-1
  - 1-52-0
