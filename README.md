@@ -416,7 +416,7 @@ List of versions:
 
  - Pde1500 (1.50.0) | Open Source!
 
-   TBA  
+   Credits to Daboss7173 for the login thing.
 
  - Pde1.51.0 (1.51.0) | 2017-2022's Avatar!
 
