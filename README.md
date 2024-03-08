@@ -414,6 +414,10 @@ List of versions:
 
    This also supports modpacks except for the rebalanced battles mod due to crashes during the battle. The only mods I recommend using are Walk Speed and Fast Game Speed.
 
+ - Pde1500 (1.50.0) | Open Source!
+
+   TBA  
+
  - Pde1.51.0 (1.51.0) | 2017-2022's Avatar!
 
    Some people didn't like the 2017-2022 avatar, but I had trouble replacing the character back to 2013-2017. 
