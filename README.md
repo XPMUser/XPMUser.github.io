@@ -163,7 +163,7 @@ List of versions:
 
   This was exactly the same as 1.9.0. This is also the oldest version that has been preserved via the Internet Archive.
 
-- 1.11.0 | April 2015
+- 1.11.0 in almost Vanilla Mode | April 2015
 
   This is the first version with Clockwork Town.
 
@@ -379,7 +379,11 @@ List of versions:
 
 - Prodigy Reborn 1.0 | Not Recommended (If using the one that isn't the fixed version)!
 
-  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves. The successor to this is My Prodigy Ultimate Edition http://opxpmuser.byethost7.com. The fixed version: https://xpmuser.github.io/oldprodigy/1-30-R/ 
+  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves. The successor to this is My Prodigy Ultimate Edition http://opxpmuser.byethost7.com. The fixed version: https://xpmuser.github.io/oldprodigy/1-30-R/
+
+- 1.11.0 | April 2015
+
+  Slappygig/Toonigy wanted the Toontown battle music.
 
 - My Prodigy Definitive Editions List | More!
 
