@@ -188,6 +188,15 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":60,"h":74},
 	"sourceSize": {"w":60,"h":74},
 	"pivot": {"x":0.5,"y":0.5}
+},
+"bg-tile-green":
+{
+	"frame": {"x":934,"y":406,"w":60,"h":74},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":60,"h":74},
+	"sourceSize": {"w":60,"h":74},
+	"pivot": {"x":0.5,"y":0.5}
 },	
 "area-marker":
 {
