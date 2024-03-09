@@ -384,7 +384,7 @@ List of versions:
 
 - 1.11.0 | April 2015
 
-  Slappygig/Toonigy wanted the Toontown battle music.
+  ...
 
 - My Prodigy Definitive Editions List | More!
 
