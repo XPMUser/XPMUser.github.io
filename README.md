@@ -446,6 +446,10 @@ List of versions:
 
 - My Pro Edition Versions:
 
+  - 1.11.0 Mode | Fixed House UI! http://op1110.byethost7.com/play/
+
+    I fixed 2014-2015's house ui.
+
   - 2.50.0 Mode | 2.45.0! http://op2019.byethost18.com/play/
 
     No need to go shopping for now. The Titan modpack is supported for this version as well. This is the first byethost site that has the titan feature available. The zones that are like Barnacle Cove are currently unavailable. Clockwork Town covers/placeholders are coming soon. The W12-4RD name is now available in Shipwreck Shore.
