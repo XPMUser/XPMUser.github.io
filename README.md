@@ -422,7 +422,7 @@ List of versions:
 
  - Pde1500 (1.50.0) | Open Source!
 
-   Credits to Daboss7173 for the login thing. https://ao28th28.github.io/oldprodigy/pde1500/?mods=WalkSpeed,FastGameSpeed,RebalancedBattles/ can make robo-dancing a lot better. Failed Jobs can make updating undoable.
+   Credits to Daboss7173 for the login thing.
 
  - Pde1.51.0 (1.51.0) | 2017-2022's Avatar!
 
