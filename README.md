@@ -95,6 +95,7 @@ Currently, these are the versions that support modpacks:
  - 1-46-2 https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed,FastGameSpeed/ 
  - 1-50-0
  - pde1500 Beta (Prodigy Definitive Edition/Modified 1-50-0)
+ - 1-50-0 Ulimate Edition: http://op1500.byethost22.com/play/?mods=WalkSpeed,FastGameSpeed,RebalancedBattles/
  - 1-51-0
  - 1-51-1
  - 1-52-0
@@ -484,6 +485,10 @@ List of versions:
  - My Ultimate Edition in 1.46.2 Mode | Goodbye Robolymics...
 
    It got reupdated again. New Update: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well. I'm still working on Sign in with Google, Clockwork Town, etc.
+
+ - My Ultimate Edition in 1.50.0 Mode | Credits to Daboss7173 for the login thing! http://op1500.byethost22.com/play/
+
+   It somehow is like pdenot1.50.0. This is an open source version. I had to use the pretty print feature to easily make some changes in less time.
 
  - My Ultimate Edition in 1.80.0 Mode | 
 
