@@ -73,6 +73,10 @@
             <a onclick="Help('')" class="button" style="top: 124px; left: 12px; position: absolute">
             	<img alt="1-17-0" src="/oldprodigy/images/1-17-0.png">
             </a>
+		
+            <a onclick="Math('')" class="button" style="top: 180px; left: 12px; position: absolute">
+            	<img alt="1-37-0" src="/oldprodigy/images/1-37-0.png">
+            </a>		
         </div>
         
         <div class="button" style="bottom: 110px; left: 150px;">
@@ -123,6 +127,15 @@ Help = function() {
 		window.location.href = "https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md";
 	}, 200);
 },
+Math = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://xpmuser.github.io/prodigy-classic/prodigy.html";
+	}, 200);
+},	
 XPMUser = function() {
 	if (currentMenu != Menu.Select) {
 		return
