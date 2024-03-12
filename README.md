@@ -468,10 +468,6 @@ List of versions:
     
 - My Ultimate Edition Versions:
    
- - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?! http://op2015.byethost7.com/ http://op2015.byethost7.com/play/
-
-   I fixed 2014-2015's house ui.
-   
  - My Ultimate Edition in 1.16.5 Mode | Like oldprodigyde!? http://oppickles.byethost14.com/
 
    This has fake Multiplayer Mode.
