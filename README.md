@@ -392,11 +392,11 @@ List of versions:
 
  - Prodigyde (1.10.0) | Defintive Edition in March 2015!
 
-   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis and Tech Zone quest data's still viewable even if all of the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. Going home from the map will take you [here](https://xpmuser.github.io/oldprodigy/oldprodigyde/undefined/ ) instead. There are a few more coliseum opponents. The Wintertide Outfit is a placeholder for the heart hoodie sweater, a skirt, and cat ears. Tech Zone's quests are like Skywatch quests.
+   The bots still exist, but you still can't view their player cards. The house is unavailable due to the house files from 2014-2015 being gone since 2019. You can now buy lots of items from the Prodigy Store. The Dyno Dig Oasis and Tech Zone quest data's still viewable even if all of the quests are completed. The tutorial is resettable, but only TutorialBattleOne and the end of the tutorial are doable. You can also go to Lamplight Square from the Dark Tower without using the map. There are a few more coliseum opponents. The Wintertide Outfit is a placeholder for the heart hoodie sweater, a skirt, and cat ears. Tech Zone's quests are like Skywatch quests.
 
  - Pde2015 (1.11.0) | Extra Coliseum Opponents!
 
-   The Prodigy Store is still the same as earlier than summer 2015. Even more coliseum opponents are ready to battle. This version also has the fake leaderboards that's private back in April 2015. In the Tree has been renamed to 'The Walking Room' and parts of core.png can be seen. The upside down pyramid icons are still used instead of the orange things. Good News: 2014-2015's house ui got fixed! You can also go home from the Academy. Prodigy House Simulator can't be gone to from here anymore since 2014-2015's house ui got fixed.
+   The Prodigy Store is still the same as earlier than summer 2015. Even more coliseum opponents are ready to battle. This version also has the fake leaderboards that's private back in April 2015. In the Tree has been renamed to 'The Walking Room' and parts of core.png can be seen. The upside down pyramid icons are still used instead of the orange things. Good News: 2014-2015's house ui got fixed! You can also go home from the Academy.
    
  - Oldprodigyde (1.16.5) | Fake Multiplayer Mode!
 
@@ -502,7 +502,7 @@ List of versions:
 
 - Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
 
-  You can get this version from the map on one of my Definitive Editions and one of my Ultimate Editions. The saves from March/Early June 2015 can't go home.
+  The saves from March/Early June 2015 can't go home.
     
 - The Current Version | The Actual Multiplayer Mode!
   
