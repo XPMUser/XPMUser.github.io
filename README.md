@@ -7,13 +7,21 @@ Discord Server: https://discord.gg/ywAa5FzjAF
 Warning: Please don't go on sites that were made from Byethost on any school or work devices that are owned by the school or work companies! Please be careful when visiting/using the sites from Byethost.
 
 Click on the left arrow to go back.
+
 Credits: Sitemakers: Daboss7173 
+
 Siteforkers: XPMUser/Ao28th28 and Slappygig/Toonigy
+
 Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
+
 Reborn maker: Craftersshaft
+
 Prodigy Maker: Prodigy Education
+
 Mod makers: Daboss7173, Slappygig/Toonigy, and XPMUser/Ao28th28
+
 Yandere Ai Girlfriend (Eddie) maker: Anthropic
+
 Prodigen Developers: Kussa, XPMUser/Ao28th28, Daboss7173, Slappygig/Toonigy, etc
 
 Song Makers: Jamie Christopherson and Matthew Pablo
