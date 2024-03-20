@@ -61,6 +61,8 @@ There are a lot of versions to choose from based on your preferences, covering Y
 I am still actively working on bettering it, so if you have any problems with bugs, glitches, etc. Just make an issue
 and I'll try to address it as soon as I can!
 
+For iPad users: Use a different device to load your save file.
+
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
 ## How to play
@@ -84,7 +86,7 @@ If you want to load a character that you've already saved, you click load charac
 
 To save your character, you can just go into the settings menu, go under 'network' and click the button called "save character". It'll automatically download
 to your computer, For this I recommend manually choosing a folder to save it in so you can organize it as you need. If there is no network tab in the version
-you're playing in, click the 'other' tab instead.
+you're playing in, click the 'other' tab instead. 
 
 ## Modpacks
 
