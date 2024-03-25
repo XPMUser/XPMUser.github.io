@@ -2,7 +2,8 @@
 
 Old Prodigy Wiki: https://old-prodigy.fandom.com/f
 Reddit Community: https://www.reddit.com/r/OldProdigy/
-Discord Server: https://discord.gg/ywAa5FzjAF
+Prodigen Discord Server: https://discord.gg/ywAa5FzjAF
+Old Prodigy Discord Server: https://discord.gg/9HMtcgFQRc
 
 Warning: Please don't go on sites that were made from Byethost on any school or work devices that are owned by the school or work companies! Please be careful when visiting/using the sites from Byethost.
 
