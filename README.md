@@ -6,7 +6,7 @@ Prodigen Discord Server: https://discord.gg/ywAa5FzjAF
 Old Prodigy Discord Server: https://discord.gg/9HMtcgFQRc
 Prodigen Wiki: https://prodigen.fandom.com/wiki/Prodigen_Wiki
 
-Warning: Please don't go on sites that were made from Byethost on any school or work devices that are owned by the school or work companies! Please be careful when visiting/using the sites from Byethost.
+Warning: Please don't go on sites that were made from Byethost on any school or work devices that are owned by the school or work companies! Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended.
 
 Click on the left arrow to go back.
 
