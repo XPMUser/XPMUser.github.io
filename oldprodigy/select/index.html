@@ -592,7 +592,16 @@
 			</a>
 		</div>
 	</div>
-		
+	
+	<div id="ultimate-edition" class="ultimate-banner" draggable="false">
+		<img src="./images/FreeButton-Banner.png" draggable="false" style="width: 410px; text-align: center;">
+		<div style="left: 50%; top: 0px; transform: translate(-50%); position: fixed; width: 300px;">
+			<a class="button" onclick="playUltimateEdition()" style="top: 13px;" draggable="false">
+				<img src="./images/FreeButton-Ultimate.png" draggable="false">
+			</a>
+		</div>
+	</div>
+	
 </body>
 
 <script>
@@ -1256,6 +1265,12 @@ playDefinitiveEdition = function() {
 	setTimeout(()=> {
 		window.location.href = "https://xpmuser.github.io/oldprodigy/choose/";
 	}, 200);
+},
+playUltimateEdition = function() {
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://xpmuser.github.io/oldprodigy/play/";
+	}, 200);	
 },
 resizeFromWindow = function(element) {
 	let verSelect = element;
