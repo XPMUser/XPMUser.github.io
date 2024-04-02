@@ -1,1 +1,1 @@
-Credits to Daboss7173 for this one and Slappygig for the audio files.
+Credits to Daboss7173 for this one and for the audio files.
