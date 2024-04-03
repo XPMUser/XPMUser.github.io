@@ -1,5 +1,23 @@
 {
     "frames": {
+        "bg":
+{
+	"frame": {"x":2,"y":104,"w":1280,"h":720},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1280,"h":720},
+	"sourceSize": {"w":1280,"h":720},
+	"pivot": {"x":0.5,"y":0.5}
+},
+        "loadcharacter":
+{
+	"frame": {"x":2,"y":2,"w":300,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":300,"h":80},
+	"sourceSize": {"w":300,"h":80},
+	"pivot": {"x":0.5,"y":0.5}
+},
         "student": {
             "frame": {
                 "x": 2,
