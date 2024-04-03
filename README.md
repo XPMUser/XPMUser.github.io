@@ -6,7 +6,7 @@ Prodigen Discord Server: https://discord.gg/ywAa5FzjAF
 Old Prodigy Discord Server: https://discord.gg/9HMtcgFQRc
 Prodigen Wiki: https://prodigen.fandom.com/wiki/Prodigen_Wiki
 
-Warning: Please don't go on sites that were made from Byethost on any school or work devices that are owned by the school or work companies! Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended.
+Warning: Please don't go on sites that were made from Byethost on any school or work devices that are owned by the school or work companies! Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, and Fandom. If you're at least 16 years old in California, you can use Fandom.
 
 Click on the left arrow to go back.
 
