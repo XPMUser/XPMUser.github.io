@@ -36,6 +36,15 @@
 	"sourceSize": {"w":299,"h":80},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"google-signin-btn":
+{
+	"frame": {"x":713,"y":2,"w":299,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":299,"h":80},
+	"sourceSize": {"w":299,"h":80},
+	"pivot": {"x":0.5,"y":0.5}
+},	
 "website":
 {
 	"frame": {"x":304,"y":2,"w":106,"h":90},
