@@ -53,5 +53,13 @@
 	"size": {"w":1284,"h":826},
 	"scale": "1",
 	"smartupdate": "$TexturePacker:SmartUpdate:d9a4b25ba947f832d2d54c1b78e315b7:13fdbff1298ebe22cbd839737c241a48:ffb62af756263e4644c882ff552ab6d3$"
-}
+},
+"google-signin-btn": {
+	"frame": {"x":1576,"y":2,"w":294,"h":67},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":294,"h":67},
+	"sourceSize": {"w":294,"h":68},
+	"pivot": {"x":0.5,"y":0.5}
+}	
 }
