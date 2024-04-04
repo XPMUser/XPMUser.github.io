@@ -53,6 +53,8 @@ Old Prodigy English is coming soon!
    
 # Old Prodigy
 
+Craftersshaft was the first coder to restore Old Prodigy (1.30.0). Unfortunately, it turned into a broken version of 1.30.0 (Prodigy Reborn 1.0 Version 1.30.R).
+
 This is some pretty simple modding of older versions of Prodigy, to get them to work right now, in the present day!
 If you want a little dose of nostalgia from older Prodigy versions, no matter what the purpose - 
 seeing the older battle systems, the older quests, or anything of the sort - 
