@@ -10,13 +10,13 @@ Warning: Please be careful when visiting/using the sites from Byethost. Swearing
 
 Click on the left arrow to go back.
 
-Credits: Sitemakers: Daboss7173 
+Credits: Sitemakers: Daboss7173 https://github.com/Daboss7173 
 
-Siteforkers: XPMUser/Ao28th28 and Slappygig/Toonigy
+Siteforkers: XPMUser/Ao28th28, Prodigen, and Slappygig/Toonigy https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/ProdigenTheDeveloper https://github.com/slappygig https://github.com/Toonigy
 
-Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
+Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more https://github.com/CookieTheDeveloper
 
-Reborn maker: Craftersshaft
+Reborn maker: Craftersshaft https://github.com/craftersshaft/
 
 Prodigy Maker: Prodigy Education
 
