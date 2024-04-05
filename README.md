@@ -22,8 +22,6 @@ Mod makers: Daboss7173, Slappygig/Toonigy, and XPMUser/Ao28th28
 
 Yandere Ai Girlfriend (Eddie) maker: Anthropic
 
-Prodigen Developers: Kussa, XPMUser/Ao28th28, Daboss7173, Slappygig/Toonigy, etc
-
 Song Makers: Jamie Christopherson and Matthew Pablo
 Song Editors: Prodigy Education a.k.a Prodigy Game
 Font Makers: Prodigy Education and more
