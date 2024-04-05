@@ -2,9 +2,7 @@
 
 Old Prodigy Wiki: https://old-prodigy.fandom.com/f
 Reddit Community: https://www.reddit.com/r/OldProdigy/
-Prodigen Discord Server: https://discord.gg/ywAa5FzjAF
-Old Prodigy Discord Server: https://discord.gg/9HMtcgFQRc
-Prodigen Wiki: https://prodigen.fandom.com/wiki/Prodigen_Wiki
+Discord Server: https://discord.gg/9HMtcgFQRc
 
 Warning: Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, and Fandom. If you're at least 16 years old in California, you can use Fandom.
 
@@ -12,7 +10,7 @@ Click on the left arrow to go back.
 
 Credits: Sitemakers: Daboss7173 https://github.com/Daboss7173 
 
-Siteforkers: XPMUser/Ao28th28, Prodigen, and Slappygig/Toonigy https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/ProdigenTheDeveloper https://github.com/slappygig https://github.com/Toonigy
+Siteforkers: XPMUser/Ao28th28 and Slappygig/Toonigy https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
 
 Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more https://github.com/CookieTheDeveloper
 
