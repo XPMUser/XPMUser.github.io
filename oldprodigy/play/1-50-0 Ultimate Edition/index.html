@@ -3,10 +3,6 @@
 
 <head>
     <title>Prodigy Ultimate Edition</title>
-	<script>
-		const updateID = "1.6.4.1"
-	</script>
-        <script src="http://oldprodigy.byethost5.com/play/js/load.min.js?v=0.6.2"></script>
         <meta charset="UTF-8" />
 <meta content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="description" content="The legendary math game Prodigy is now legendary again, and no longer a math game!"/>
@@ -22,7 +18,7 @@
             overflow: hidden;
         }
         
-        body {
+        body {    
             margin: 0;
             background-color: #627CDE;
             height: 100%;
@@ -547,7 +543,7 @@
     </div>
 
     <div id="membership-flow"></div>
-    <script src="https://xpmuser.github.io/prodigy-classic/public.min.js"></script>
+    <script src="https://prodigygame.com/assets/scripts/app/build/public.min.js"></script>
     <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/lodash.min.js"></script>
     <script src="https://xpmuser.github.io/prodigy-classic/game-helpers.min.js"></script>
     <script src="https://xpmuser.github.io/prodigy-classic/phaser.min.js"></script>
@@ -564,6 +560,9 @@
     <script src="https://xpmuser.github.io/oldprodigy/1-50-0/js/mod-handler.js"></script>
     <script src="./js/game.min.js"></script>
     <script src="https://prodigy.blob.core.windows.net/edu-controls-2-2-12/controls.css"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onGooglePlatformLoad"></script>
+    <script src="https://www.googletagmanager.com/gtm.js?id=GTM-T7TSN5K"></script>
+    <script src="https://accounts.google.com/gsi/client?onload=onGooglePlatformLoad" async defer></script>
     <script type="text/javascript">
         var prodigyWeb = {};
         prodigyWeb.country = undefined;
@@ -631,7 +630,6 @@
             }
         }
     </script>
-
 </body>
     <div id="game-loading-container-div" class="game-loading container">
         <div id="loading-div">
@@ -664,5 +662,24 @@
     <div id="membership-flow" class="game-page-overlay"></div>
     <div id="game-page-overlay" class="game-page-overlay"></div>
 
+    </body>
+<div id="g_id_onload"
+     data-client_id="220442635630-9tjlg48pualfqmef01i1bsq0453ecucv.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     ##data-login_uri=""
+     data-nonce=""
+     data-auto_select="true"
+     data-itp_support="true">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="filled_blue"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
     </body>
 </html>
