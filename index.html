@@ -76,6 +76,10 @@
 		
             <a onclick="Math('')" class="button" style="top: 180px; left: 12px; position: absolute">
             	<img alt="1-37-0" src="/oldprodigy/images/1-37-0.png">
+            </a>
+		
+            <a onclick="Subscribe('')" class="button" style="top: 180px; left: 12px; position: absolute">
+            	<img alt="Subscribe" src="/oldprodigy/images/1-24-0.png">
             </a>		
         </div>
         
@@ -133,7 +137,7 @@ Math = function() {
 	};
 	PlayClick();
 	setTimeout(()=> {
-		window.location.href = "https://xpmuser.github.io/prodigen-classic/prodigen.html";
+		window.location.href = "https://xpmuser.github.io/prodigy-classic/prodigy.html";
 	}, 200);
 },	
 XPMUser = function() {
@@ -153,6 +157,15 @@ EnterGame = function(version) {
 	setTimeout(()=> {
 		window.location.href = "/oldprodigy" + version + "";
 	}, 200);
+},
+Subscribe = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://www.youtube.com/channel/UC0dCD_TrUDVQpFCTK6Lyz7Q?sub_confirmation=1";
+	}, 200);	
 }
 </script>
 
