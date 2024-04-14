@@ -5139,6 +5139,15 @@
 	"sourceSize": {"w":80,"h":80},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"pets/77":
+{
+	"frame": {"x":1961,"y":481,"w":76,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":0,"w":76,"h":77},
+	"sourceSize": {"w":80,"h":80},
+	"pivot": {"x":0.5,"y":0.5}
+},	
 "pets/78":
 {
 	"frame": {"x":1967,"y":248,"w":77,"h":80},
