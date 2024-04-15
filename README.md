@@ -482,7 +482,11 @@ List of versions:
    
  - My Ultimate Edition in 1.10.0 Mode | 2014-2015's plot?! http://op2015.byethost7.com/ http://op2015.byethost7.com/play/
 
-   I fixed 2014-2015's house ui. 
+   I fixed 2014-2015's house ui.
+
+ - My Ultimate Edition in 1.11.0 Mode | http://op1500.byethost22.com/play/
+
+   This looks like 1.11.0 Definitive Edition. This version also replaced 1.50.0 Ultimate Edition due to a problem with game.min.js.
    
  - My Ultimate Edition in 1.16.5 Mode | Like oldprodigyde!? http://oppickles.byethost14.com/
 
