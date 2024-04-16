@@ -380,14222 +380,14560 @@ Prodigy.extends = function(e, t, a) {
     e.prototype = Object.create(t.prototype);
     for (var i in a) e.prototype[i] = a[i]
 }, Prodigy.Assets = function() {
-    var e = "images/player/reduced/outfits/male/",
-        t = "images/player/reduced/outfits/female/",
-        a = "images/player/reduced/hair/male/",
-        i = "images/player/reduced/hair/female/",
-        s = "images/player/reduced/hats/",
-        r = "images/player/normal/outfits/male/",
-        o = "images/player/normal/outfits/female/",
-        n = "images/player/normal/hair/male/",
-        h = "images/player/normal/hair/female/",
-        l = "images/player/normal/hats/",
-        p = "images/player/normal/weapons/",
-        d = "images/player/",
-        c = "fonts/",
-        u = "audio/bgm/",
-        m = "audio/sfx/",
-        g = "audio/voice/",
-        y = "images/popups/",
-        f = "images/tilesets/",
-        b = "data/maps/",
-        w = "images/battle/",
-        v = "images/stores/",
-        D = "images/backgrounds/",
-        x = "images/zones/",
-        I = "images/games/",
-        P = "images/npc/",
-        k = "images/icons/",
-        S = "images/attacks/",
-        q = "images/monsters/",
-        T = "images/events/",
-        A = "images/monsters/reduced/",
-        E = "images/monsters/small/",
-        M = "images/boss/",
-        B = "images/boss/small/",
-        C = "images/prompts/",
-        N = "images/scenes/";
-    this._assets = {
-        "tmp-13": {
-            type: "atlas",
-            base: "images/pets/",
-            url: "13.png",
-            json: "13.json"
-        },
-        "battle-skill": {
-            type: "json",
-            base: "",
-            url: ""
-        },
-        attacks: {
-            type: "atlas",
-            base: S,
-            url: "attacks.png",
-            json: "attacks.json"
-        },
-        battle: {
-            type: "atlas",
-            base: w,
-            url: "battle.png",
-            json: "battle.json"
-        },
-        "font-general": {
-            type: "atlas",
-            base: c,
-            url: "font-general.png",
-            json: "font-general.json"
-        },
-        "font-button": {
-            type: "atlas",
-            base: c,
-            url: "font-button.png",
-            json: "font-button.json"
-        },
-        "font-black": {
-            type: "atlas",
-            base: c,
-            url: "font-black.png",
-            json: "font-black.json"
-        },
-        "popup-member": {
-            type: "atlas",
-            base: y,
-            url: "popup-member.png",
-            json: "popup-member.json"
-        },
-        "tileset-core": {
-            type: "atlas",
-            base: f,
-            url: "tileset-core.png",
-            json: "tileset-core.json"
-        },
-        "tileset-forest": {
-            type: "spritesheet",
-            base: f,
-            url: "tileset-forest.png",
-            w: 40,
-            h: 40
-        },
-        "tileset-generic": {
-            type: "spritesheet",
-            base: f,
-            url: "tileset-generic.png",
-            w: 40,
-            h: 40
-        },
-        "tileset-outside": {
-            type: "spritesheet",
-            base: f,
-            url: "tileset-outside.png",
-            w: 40,
-            h: 40
-        },
-        "tileset-outsidesnow": {
-            type: "spritesheet",
-            base: f,
-            url: "tileset-outsidesnow.png",
-            w: 40,
-            h: 40
-        },
-        "tileset-icecave": {
-            type: "spritesheet",
-            base: f,
-            url: "tileset-icecave.png",
-            w: 40,
-            h: 40
-        },
-        "tileset-railruins": {
-            type: "spritesheet",
-            base: f,
-            url: "tileset-railruins.png",
-            w: 40,
-            h: 40
-        },
-        "tileset-town": {
-            type: "spritesheet",
-            base: f,
-            url: "tileset-town.png",
-            w: 40,
-            h: 40
-        },
-        "map-pathing": {
-            type: "json",
-            base: b,
-            url: "map-pathing.json"
-        },
-        "map-tutorial-b9": {
-            type: "json",
-            base: b,
-            url: "map-tutorial-b9.json"
-        },
-        "map-tutorial-c9": {
-            type: "json",
-            base: b,
-            url: "map-tutorial-c9.json"
-        },
-        "map-tutorial-d8": {
-            type: "json",
-            base: b,
-            url: "map-tutorial-d8.json"
-        },
-        "map-tutorial-d9": {
-            type: "json",
-            base: b,
-            url: "map-tutorial-d9.json"
-        },
-        "map-forest-a3": {
-            type: "json",
-            base: b,
-            url: "map-forest-a3.json"
-        },
-        "map-forest-a4": {
-            type: "json",
-            base: b,
-            url: "map-forest-a4.json"
-        },
-        "map-forest-a5": {
-            type: "json",
-            base: b,
-            url: "map-forest-a5.json"
-        },
-        "map-forest-b5": {
-            type: "json",
-            base: b,
-            url: "map-forest-b5.json"
-        },
-        "map-forest-b6": {
-            type: "json",
-            base: b,
-            url: "map-forest-b6.json"
-        },
-        "map-forest-b7": {
-            type: "json",
-            base: b,
-            url: "map-forest-b7.json"
-        },
-        "map-forest-b8": {
-            type: "json",
-            base: b,
-            url: "map-forest-b8.json"
-        },
-        "map-forest-c4": {
-            type: "json",
-            base: b,
-            url: "map-forest-c4.json"
-        },
-        "map-forest-c7": {
-            type: "json",
-            base: b,
-            url: "map-forest-c7.json"
-        },
-        "map-forest-c8": {
-            type: "json",
-            base: b,
-            url: "map-forest-c8.json"
-        },
-        "map-forest-d3": {
-            type: "json",
-            base: b,
-            url: "map-forest-d3.json"
-        },
-        "map-shiverchill-a5": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a5.json"
-        },
-        "map-shiverchill-a6": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a6.json"
-        },
-        "map-shiverchill-a7": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a7.json"
-        },
-        "map-shiverchill-a11": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a11.json"
-        },
-        "map-shiverchill-a10": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a10.json"
-        },
-        "map-shiverchill-a9": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a9.json"
-        },
-        "map-shiverchill-b3": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b3.json"
-        },
-        "map-shiverchill-b6": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b6.json"
-        },
-        "map-shiverchill-b7": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b7.json"
-        },
-        "map-shiverchill-b1": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b1.json"
-        },
-        "map-shiverchill-b10": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b10.json"
-        },
-        "map-shiverchill-a4": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a4.json"
-        },
-        "map-shiverchill-a3": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a3.json"
-        },
-        "map-shiverchill-a2": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-a2.json"
-        },
-        "map-shiverchill-b2": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b2.json"
-        },
-        "map-shiverchill-b8": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b8.json"
-        },
-        "map-shiverchill-b9": {
-            type: "json",
-            base: b,
-            url: "map-shiverchill-b9.json"
-        },
-        "map-lamplight-a1": {
-            type: "json",
-            base: b,
-            url: "map-lamplight-a1.json"
-        },
-        "map-lamplight-b1": {
-            type: "json",
-            base: b,
-            url: "map-lamplight-b1.json"
-        },
-        "map-lamplight-b2": {
-            type: "json",
-            base: b,
-            url: "map-lamplight-b2.json"
-        },
-        "map-lamplight-b3": {
-            type: "json",
-            base: b,
-            url: "map-lamplight-b3.json"
-        },
-        "map-lamplight-c1": {
-            type: "json",
-            base: b,
-            url: "map-lamplight-c1.json"
-        },
-        "scene-intro": {
-            type: "atlas",
-            base: N,
-            url: "scene-intro.png",
-            json: "scene-intro.json"
-        },
-        "scene-intro-bg1": {
-            type: "sprite",
-            base: N,
-            url: "scene-intro-bg1.jpg"
-        },
-        "scene-intro-bg2": {
-            type: "sprite",
-            base: N,
-            url: "scene-intro-bg2.jpg"
-        },
-        "scene-intro-bg3": {
-            type: "sprite",
-            base: N,
-            url: "scene-intro-bg3.jpg"
-        },
-        "npc-face-bok": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-bok.png",
-            json: "npc-face-bok.json"
-        },
-        "npc-sprite-bok": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-bok.png",
-            json: "npc-sprite-bok.json"
-        },
-        "npc-face-clankboot": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-clankboot.png",
-            json: "npc-face-clankboot.json"
-        },
-        "npc-sprite-clankboot": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-clankboot.png",
-            json: "npc-sprite-clankboot.json"
-        },
-        "npc-face-cumulo": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-cumulo.png",
-            json: "npc-face-cumulo.json"
-        },
-        "npc-sprite-cumulo": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-cumulo.png",
-            json: "npc-sprite-cumulo.json"
-        },
-        "npc-face-eve": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-eve.png",
-            json: "npc-face-eve.json"
-        },
-        "npc-sprite-eve": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-eve.png",
-            json: "npc-sprite-eve.json"
-        },
-        "npc-face-flora": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-flora.png",
-            json: "npc-face-flora.json"
-        },
-        "npc-sprite-flora": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-flora.png",
-            json: "npc-sprite-flora.json"
-        },
-        "npc-face-merchant": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-merchant.png",
-            json: "npc-face-merchant.json"
-        },
-        "npc-sprite-merchant": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-merchant.png",
-            json: "npc-sprite-merchant.json"
-        },
-        "npc-face-mira": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-mira.png",
-            json: "npc-face-mira.json"
-        },
-        "npc-sprite-mira": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-mira.png",
-            json: "npc-sprite-mira.json"
-        },
-        "npc-face-mugs": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-mugs.png",
-            json: "npc-face-mugs.json"
-        },
-        "npc-sprite-mugs": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-mugs.png",
-            json: "npc-sprite-mugs.json"
-        },
-        "npc-face-noot": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-noot.png",
-            json: "npc-face-noot.json"
-        },
-        "npc-sprite-noot": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-noot.png",
-            json: "npc-sprite-noot.json"
-        },
-        "npc-face-scoog": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-scoog.png",
-            json: "npc-face-scoog.json"
-        },
-        "npc-sprite-scoog": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-scoog.png",
-            json: "npc-sprite-scoog.json"
-        },
-        "npc-face-stache": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-stache.png",
-            json: "npc-face-stache.json"
-        },
-        "npc-sprite-stache": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-stache.png",
-            json: "npc-sprite-stache.json"
-        },
-        "npc-face-boombox": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-boombox.png",
-            json: "npc-face-boombox.json"
-        },
-        "npc-sprite-boombox": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-boombox.png",
-            json: "npc-sprite-boombox.json"
-        },
-        "npc-face-wizard": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-wizard.png",
-            json: "npc-face-wizard.json"
-        },
-        "npc-sprite-wizard": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-wizard.png",
-            json: "npc-sprite-wizard.json"
-        },
-        "npc-face-guard": {
-            type: "atlas",
-            base: P,
-            url: "npc-face-guard.png",
-            json: "npc-face-guard.json"
-        },
-        "npc-sprite-guard": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-guard.png",
-            json: "npc-sprite-guard.json"
-        },
-        "npc-sprite-gnome": {
-            type: "atlas",
-            base: P,
-            url: "npc-sprite-gnome.png",
-            json: "npc-sprite-gnome.json"
-        },
-        "zone-forest": {
-            type: "atlas",
-            base: x,
-            url: "zone-forest.png",
-            json: "zone-forest.json"
-        },
-        "zone-shiverchill": {
-            type: "atlas",
-            base: x,
-            url: "zone-shiverchill.png",
-            json: "zone-shiverchill.json"
-        },
-        "zone-volcano": {
-            type: "atlas",
-            base: x,
-            url: "zone-volcano.png",
-            json: "zone-volcano.json"
-        },
-        "zone-lamplight": {
-            type: "atlas",
-            base: x,
-            url: "zone-lamplight.png",
-            json: "zone-lamplight.json"
-        },
-        "zone-pirate": {
-            type: "atlas",
-            base: x,
-            url: "zone-pirate.png",
-            json: "zone-pirate.json"
-        },
-        "zone-arena": {
-            type: "atlas",
-            base: x,
-            url: "zone-arena.png",
-            json: "zone-arena.json"
-        },
-        "zone-academy": {
-            type: "atlas",
-            base: x,
-            url: "zone-academy.png",
-            json: "zone-academy.json"
-        },
-        "zone-tower": {
-            type: "atlas",
-            base: x,
-            url: "zone-tower.png",
-            json: "zone-tower.json"
-        },
-        "zone-towerbase": {
-            type: "atlas",
-            base: x,
-            url: "zone-towerbase.png",
-            json: "zone-towerbase.json"
-        },
-        "zone-plains": {
-            type: "atlas",
-            base: x,
-            url: "zone-plains.png",
-            json: "zone-plains.json"
-        },
-        "zone-cloud": {
-            type: "atlas",
-            base: x,
-            url: "zone-cloud.png",
-            json: "zone-cloud.json"
-        },
-        "zone-house": {
-            type: "atlas",
-            base: x,
-            url: "zone-house.png",
-            json: "zone-house.json"
-        },
-        "zone-dino": {
-            type: "atlas",
-            base: x,
-            url: "zone-dino.png",
-            json: "zone-dino.json"
-        },
-        "zone-museum": {
-            type: "atlas",
-            base: x,
-            url: "zone-museum.png",
-            json: "zone-museum.json"
-        },
-        "zone-tech": {
-            type: "atlas",
-            base: x,
-            url: "zone-tech.png",
-            json: "zone-tech.json"
-        },
-        "zone-docks": {
-            type: "atlas",
-            base: x,
-            url: "zone-docks.png",
-            json: "zone-docks.json"
-        },
-        "event-october": {
-            type: "atlas",
-            base: T,
-            url: "event-october.png",
-            json: "event-october.json"
-        },
-        "event-winterfest": {
-            type: "atlas",
-            base: T,
-            url: "event-winterfest.png",
-            json: "event-winterfest.json"
-        },
-        "game-dinodig": {
-            type: "atlas",
-            base: I,
-            url: "game-dinodig.png",
-            json: "game-dinodig.json"
-        },
-        "game-dancedance": {
-            type: "atlas",
-            base: I,
-            url: "game-dancedance.png",
-            json: "game-dancedance.json"
-        },
-        core: {
-            type: "atlas",
-            base: "images/",
-            url: "core.png",
-            json: "core.json"
-        },
-        login: {
-            type: "atlas",
-            base: "images/",
-            url: "login.png",
-            json: "login.json"
-        },
-        map: {
-            type: "atlas",
-            base: "images/",
-            url: "map.png",
-            json: "map.json"
-        },
-        manipulatives: {
-            type: "atlas",
-            base: "images/education/",
-            url: "manipulatives.png",
-            json: "manipulatives.json"
-        },
-        "prompt-more-gold": {
-            type: "sprite",
-            base: C,
-            url: "prompt-more-gold.png"
-        },
-        "prompt-more-exp": {
-            type: "sprite",
-            base: C,
-            url: "prompt-more-exp.png"
-        },
-        "prompt-premium-item": {
-            type: "sprite",
-            base: C,
-            url: "prompt-premium-item.png"
-        },
-        "prompt-wheel-spin": {
-            type: "sprite",
-            base: C,
-            url: "prompt-wheel-spin.png"
-        },
-        "prompt-bigger-team": {
-            type: "sprite",
-            base: C,
-            url: "prompt-bigger-team.png"
-        },
-        "prompt-bigger-roster": {
-            type: "sprite",
-            base: C,
-            url: "prompt-bigger-roster.png"
-        },
-        "store-pirate": {
-            type: "atlas",
-            base: v,
-            url: "store-pirate.png",
-            json: "store-pirate.json"
-        },
-        "store-forest": {
-            type: "atlas",
-            base: v,
-            url: "store-forest.png",
-            json: "store-forest.json"
-        },
-        "store-mountain": {
-            type: "atlas",
-            base: v,
-            url: "store-mountain.png",
-            json: "store-mountain.json"
-        },
-        "store-volcano": {
-            type: "atlas",
-            base: v,
-            url: "store-volcano.png",
-            json: "store-volcano.json"
-        },
-        "store-cloud": {
-            type: "atlas",
-            base: v,
-            url: "store-cloud.png",
-            json: "store-cloud.json"
-        },
-        "store-dorm": {
-            type: "atlas",
-            base: v,
-            url: "store-dorm.png",
-            json: "store-dorm.json"
-        },
-        "store-tech": {
-            type: "atlas",
-            base: v,
-            url: "store-tech.png",
-            json: "store-tech.json"
-        },
-        "voice-0": {
-            type: "sfx",
-            base: g,
-            url: "voice-0.mp3"
-        },
-        "voice-2": {
-            type: "sfx",
-            base: g,
-            url: "voice-2.mp3"
-        },
-        "voice-3": {
-            type: "sfx",
-            base: g,
-            url: "voice-3.mp3"
-        },
-        "voice-4": {
-            type: "sfx",
-            base: g,
-            url: "voice-4.mp3"
-        },
-        "voice-5": {
-            type: "sfx",
-            base: g,
-            url: "voice-5.mp3"
-        },
-        "voice-6": {
-            type: "sfx",
-            base: g,
-            url: "voice-6.mp3"
-        },
-        "voice-7": {
-            type: "sfx",
-            base: g,
-            url: "voice-7.mp3"
-        },
-        "voice-8-1": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-1.mp3"
-        },
-        "voice-8-2": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-2.mp3"
-        },
-        "voice-8-3": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-3.mp3"
-        },
-        "voice-8-4": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-4.mp3"
-        },
-        "voice-8-5": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-5.mp3"
-        },
-        "voice-8-6": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-6.mp3"
-        },
-        "voice-8-7": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-7.mp3"
-        },
-        "voice-8-8": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-8.mp3"
-        },
-        "voice-8-9": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-9.mp3"
-        },
-        "voice-8-10": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-10.mp3"
-        },
-        "voice-8-11": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-11.mp3"
-        },
-        "voice-8-12": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-12.mp3"
-        },
-        "voice-8-13": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-13.mp3"
-        },
-        "voice-8-14": {
-            type: "sfx",
-            base: g,
-            url: "voice-8-14.mp3"
-        },
-        "voice-9": {
-            type: "sfx",
-            base: g,
-            url: "voice-9.mp3"
-        },
-        "voice-10-1": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-1.mp3"
-        },
-        "voice-10-2": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-2.mp3"
-        },
-        "voice-10-3": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-3.mp3"
-        },
-        "voice-10-4": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-4.mp3"
-        },
-        "voice-10-5": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-5.mp3"
-        },
-        "voice-10-6": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-6.mp3"
-        },
-        "voice-10-7": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-7.mp3"
-        },
-        "voice-10-8": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-8.mp3"
-        },
-        "voice-10-9": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-9.mp3"
-        },
-        "voice-10-10": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-10.mp3"
-        },
-        "voice-10-11": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-11.mp3"
-        },
-        "voice-10-12": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-12.mp3"
-        },
-        "voice-10-13": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-13.mp3"
-        },
-        "voice-10-14": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-14.mp3"
-        },
-        "voice-10-15": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-15.mp3"
-        },
-        "voice-10-16": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-16.mp3"
-        },
-        "voice-10-17": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-17.mp3"
-        },
-        "voice-10-18": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-18.mp3"
-        },
-        "voice-10-19": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-19.mp3"
-        },
-        "voice-10-20": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-20.mp3"
-        },
-        "voice-10-21": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-21.mp3"
-        },
-        "voice-10-22": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-22.mp3"
-        },
-        "voice-10-23": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-23.mp3"
-        },
-        "voice-10-24": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-24.mp3"
-        },
-        "voice-10-25": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-25.mp3"
-        },
-        "voice-10-26": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-26.mp3"
-        },
-        "voice-10-27": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-27.mp3"
-        },
-        "voice-10-28": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-28.mp3"
-        },
-        "voice-11": {
-            type: "sfx",
-            base: g,
-            url: "voice-11.mp3"
-        },
-        "voice-11-1": {
-            type: "sfx",
-            base: g,
-            url: "voice-11-1.mp3"
-        },
-        "voice-11-2": {
-            type: "sfx",
-            base: g,
-            url: "voice-11-2.mp3"
-        },
-        "voice-10-29": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-29.mp3"
-        },
-        "voice-10-30": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-30.mp3"
-        },
-        "voice-10-31": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-31.mp3"
-        },
-        "voice-10-32": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-32.mp3"
-        },
-        "voice-10-33": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-33.mp3"
-        },
-        "voice-10-34": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-34.mp3"
-        },
-        "voice-10-35": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-35.mp3"
-        },
-        "voice-10-36": {
-            type: "sfx",
-            base: g,
-            url: "voice-10-36.mp3"
-        },
-        "voice-1-1": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-1.mp3"
-        },
-        "voice-1-2": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-2.mp3"
-        },
-        "voice-1-3": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-3.mp3"
-        },
-        "voice-1-4": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-4.mp3"
-        },
-        "voice-1-5": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-5.mp3"
-        },
-        "voice-1-6": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-6.mp3"
-        },
-        "voice-1-7": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-7.mp3"
-        },
-        "voice-1-8": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-8.mp3"
-        },
-        "voice-1-9": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-9.mp3"
-        },
-        "voice-1-10": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-10.mp3"
-        },
-        "voice-1-11": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-11.mp3"
-        },
-        "voice-1-12": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-12.mp3"
-        },
-        "voice-1-13": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-13.mp3"
-        },
-        "voice-1-14": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-14.mp3"
-        },
-        "voice-1-15": {
-            type: "sfx",
-            base: g,
-            url: "voice-1-15.mp3"
-        },
-        "bgm-victory": {
-            type: "bgm",
-            base: u,
-            url: "bgm-victory.mp3"
-        },
-        "bgm-battle": {
-            type: "bgm",
-            base: u,
-            url: "bgm-battle.mp3"
-        },
-        "bgm-intro": {
-            type: "bgm",
-            base: u,
-            url: "bgm-intro.mp3"
-        },
-        "bgm-space": {
-            type: "bgm",
-            base: u,
-            url: "bgm-space.mp3"
-        },
-        "bgm-game": {
-            type: "bgm",
-            base: u,
-            url: "bgm-game.mp3"
-        },
-        "bgm-dance1": {
-            type: "bgm",
-            base: u,
-            url: "bgm-dance1.mp3"
-        },
-        "bgm-dance2": {
-            type: "bgm",
-            base: u,
-            url: "bgm-dance2.mp3"
-        },
-        "bgm-intro-1": {
-            type: "bgm",
-            base: u,
-            url: "bgm-intro-1.mp3"
-        },
-        "sfx-main": {
-            type: "sfx",
-            base: m,
-            url: "sfx-main.mp3"
-        },
-        "bg-battle-forest": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-forest.png"
-        },
-        "bg-battle-mountain": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-mountain.png"
-        },
-        "bg-battle-volcano": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-volcano.png"
-        },
-        "bg-battle-pirate": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-pirate.png"
-        },
-        "bg-battle-arena": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-arena.png"
-        },
-        "bg-battle-academy": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-academy.png"
-        },
-        "bg-battle-cloud": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-cloud.png"
-        },
-        "bg-battle-tower": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-tower.png"
-        },
-        "bg-battle-dino": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-dino.png"
-        },
-        "bg-battle-tech": {
-            type: "sprite",
-            base: D,
-            url: "bg-battle-tech.png"
-        },
-        "bg-dorm-house": {
-            type: "sprite",
-            base: D,
-            url: "bg-dorm-house.png"
-        },
-        "bg-dorm-cave": {
-            type: "sprite",
-            base: D,
-            url: "bg-dorm-cave.png"
-        },
-        "bg-dorm-tree": {
-            type: "sprite",
-            base: D,
-            url: "bg-dorm-tree.png"
-        },
-        icons: {
-            type: "atlas",
-            base: "images/",
-            url: "icons.png",
-            json: "icons.json"
-        },
-        "icons-membership": {
-            type: "spritesheet",
-            base: k,
-            url: "icons-membership.png",
-            w: 60,
-            h: 70
-        },
-        "boss-small-1": {
-            type: "sprite",
-            base: B,
-            url: "1.png",
-            x: 390
-        },
-        "boss-1": {
-            type: "spritesheet",
-            base: M,
-            url: "1.png",
-            x: 390,
-            w: 717,
-            h: 634
-        },
-        "boss-small-10": {
-            type: "sprite",
-            base: B,
-            url: "10.png",
-            x: 256
-        },
-        "boss-10": {
-            type: "spritesheet",
-            base: M,
-            url: "10.png",
-            x: 256,
-            w: 344,
-            h: 351
-        },
-        "boss-small-11": {
-            type: "sprite",
-            base: B,
-            url: "11.png",
-            x: 145
-        },
-        "boss-11": {
-            type: "spritesheet",
-            base: M,
-            url: "11.png",
-            x: 145,
-            w: 363,
-            h: 438
-        },
-        "boss-small-2": {
-            type: "sprite",
-            base: B,
-            url: "2.png",
-            x: 450
-        },
-        "boss-2": {
-            type: "spritesheet",
-            base: M,
-            url: "2.png",
-            x: 450,
-            w: 853,
-            h: 785
-        },
-        "boss-small-3": {
-            type: "sprite",
-            base: B,
-            url: "3.png",
-            x: 178
-        },
-        "boss-3": {
-            type: "spritesheet",
-            base: M,
-            url: "3.png",
-            x: 178,
-            w: 440,
-            h: 410
-        },
-        "boss-small-4": {
-            type: "sprite",
-            base: B,
-            url: "4.png",
-            x: 270
-        },
-        "boss-4": {
-            type: "spritesheet",
-            base: M,
-            url: "4.png",
-            x: 270,
-            w: 664,
-            h: 640
-        },
-        "boss-small-5": {
-            type: "sprite",
-            base: B,
-            url: "5.png",
-            x: 366
-        },
-        "boss-5": {
-            type: "spritesheet",
-            base: M,
-            url: "5.png",
-            x: 366,
-            w: 745,
-            h: 712
-        },
-        "boss-small-6": {
-            type: "sprite",
-            base: B,
-            url: "6.png",
-            x: 280
-        },
-        "boss-6": {
-            type: "spritesheet",
-            base: M,
-            url: "6.png",
-            x: 280,
-            w: 634,
-            h: 621
-        },
-        "boss-small-7": {
-            type: "sprite",
-            base: B,
-            url: "7.png",
-            x: 250
-        },
-        "boss-7": {
-            type: "spritesheet",
-            base: M,
-            url: "7.png",
-            x: 250,
-            w: 712,
-            h: 638
-        },
-        "boss-small-8": {
-            type: "sprite",
-            base: B,
-            url: "8.png",
-            x: 267
-        },
-        "boss-8": {
-            type: "spritesheet",
-            base: M,
-            url: "8.png",
-            x: 267,
-            w: 599,
-            h: 572
-        },
-        "boss-small-9": {
-            type: "sprite",
-            base: B,
-            url: "9.png",
-            x: 128
-        },
-        "boss-9": {
-            type: "spritesheet",
-            base: M,
-            url: "9.png",
-            x: 128,
-            w: 133,
-            h: 175
-        },
-        "monster-small-1": {
-            type: "sprite",
-            base: E,
-            url: "1.png",
-            x: 45
-        },
-        "monster-normal-1": {
-            type: "spritesheet",
-            base: q,
-            url: "1.png",
-            x: 45,
-            w: 74,
-            h: 91
-        },
-        "monster-reduced-1": {
-            type: "spritesheet",
-            base: A,
-            url: "1.png",
-            x: 22,
-            w: 37,
-            h: 46
-        },
-        "monster-small-10": {
-            type: "sprite",
-            base: E,
-            url: "10.png",
-            x: 55
-        },
-        "monster-normal-10": {
-            type: "spritesheet",
-            base: q,
-            url: "10.png",
-            x: 55,
-            w: 113,
-            h: 107
-        },
-        "monster-reduced-10": {
-            type: "spritesheet",
-            base: A,
-            url: "10.png",
-            x: 27,
-            w: 54,
-            h: 42
-        },
-        "monster-small-100": {
-            type: "sprite",
-            base: E,
-            url: "100.png",
-            x: 110
-        },
-        "monster-normal-100": {
-            type: "spritesheet",
-            base: q,
-            url: "100.png",
-            x: 110,
-            w: 216,
-            h: 185
-        },
-        "monster-reduced-100": {
-            type: "spritesheet",
-            base: A,
-            url: "100.png",
-            x: 55,
-            w: 107,
-            h: 93
-        },
-        "monster-small-101": {
-            type: "sprite",
-            base: E,
-            url: "101.png",
-            x: 260
-        },
-        "monster-normal-101": {
-            type: "spritesheet",
-            base: q,
-            url: "101.png",
-            x: 260,
-            w: 460,
-            h: 270
-        },
-        "monster-reduced-101": {
-            type: "spritesheet",
-            base: A,
-            url: "101.png",
-            x: 130,
-            w: 190,
-            h: 116
-        },
-        "monster-small-102": {
-            type: "sprite",
-            base: E,
-            url: "102.png",
-            x: 40
-        },
-        "monster-normal-102": {
-            type: "spritesheet",
-            base: q,
-            url: "102.png",
-            x: 40,
-            w: 81,
-            h: 111
-        },
-        "monster-reduced-102": {
-            type: "spritesheet",
-            base: A,
-            url: "102.png",
-            x: 20,
-            w: 35,
-            h: 47
-        },
-        "monster-small-103": {
-            type: "sprite",
-            base: E,
-            url: "103.png",
-            x: 58
-        },
-        "monster-normal-103": {
-            type: "spritesheet",
-            base: q,
-            url: "103.png",
-            x: 58,
-            w: 163,
-            h: 179
-        },
-        "monster-reduced-103": {
-            type: "spritesheet",
-            base: A,
-            url: "103.png",
-            x: 29,
-            w: 65,
-            h: 59
-        },
-        "monster-small-104": {
-            type: "sprite",
-            base: E,
-            url: "104.png",
-            x: 113
-        },
-        "monster-normal-104": {
-            type: "spritesheet",
-            base: q,
-            url: "104.png",
-            x: 113,
-            w: 214,
-            h: 249
-        },
-        "monster-reduced-104": {
-            type: "spritesheet",
-            base: A,
-            url: "104.png",
-            x: 56,
-            w: 96,
-            h: 87
-        },
-        "monster-small-105": {
-            type: "sprite",
-            base: E,
-            url: "105.png",
-            x: 120
-        },
-        "monster-normal-105": {
-            type: "spritesheet",
-            base: q,
-            url: "105.png",
-            x: 120,
-            w: 246,
-            h: 212
-        },
-        "monster-reduced-105": {
-            type: "spritesheet",
-            base: A,
-            url: "105.png",
-            x: 60,
-            w: 102,
-            h: 99
-        },
-        "monster-small-106": {
-            type: "sprite",
-            base: E,
-            url: "106.png",
-            x: 130
-        },
-        "monster-normal-106": {
-            type: "spritesheet",
-            base: q,
-            url: "106.png",
-            x: 130,
-            w: 392,
-            h: 224
-        },
-        "monster-reduced-106": {
-            type: "spritesheet",
-            base: A,
-            url: "106.png",
-            x: 65,
-            w: 127,
-            h: 101
-        },
-        "monster-small-107": {
-            type: "sprite",
-            base: E,
-            url: "107.png",
-            x: 90
-        },
-        "monster-normal-107": {
-            type: "spritesheet",
-            base: q,
-            url: "107.png",
-            x: 90,
-            w: 193,
-            h: 150
-        },
-        "monster-reduced-107": {
-            type: "spritesheet",
-            base: A,
-            url: "107.png",
-            x: 45,
-            w: 85,
-            h: 64
-        },
-        "monster-small-108": {
-            type: "sprite",
-            base: E,
-            url: "108.png",
-            x: 90
-        },
-        "monster-normal-108": {
-            type: "spritesheet",
-            base: q,
-            url: "108.png",
-            x: 90,
-            w: 252,
-            h: 187
-        },
-        "monster-reduced-108": {
-            type: "spritesheet",
-            base: A,
-            url: "108.png",
-            x: 45,
-            w: 93,
-            h: 94
-        },
-        "monster-small-109": {
-            type: "sprite",
-            base: E,
-            url: "109.png",
-            x: 110
-        },
-        "monster-normal-109": {
-            type: "spritesheet",
-            base: q,
-            url: "109.png",
-            x: 110,
-            w: 208,
-            h: 176
-        },
-        "monster-reduced-109": {
-            type: "spritesheet",
-            base: A,
-            url: "109.png",
-            x: 55,
-            w: 105,
-            h: 88
-        },
-        "monster-small-11": {
-            type: "sprite",
-            base: E,
-            url: "11.png",
-            x: 100
-        },
-        "monster-normal-11": {
-            type: "spritesheet",
-            base: q,
-            url: "11.png",
-            x: 100,
-            w: 196,
-            h: 174
-        },
-        "monster-reduced-11": {
-            type: "spritesheet",
-            base: A,
-            url: "11.png",
-            x: 50,
-            w: 76,
-            h: 75
-        },
-        "monster-small-110": {
-            type: "sprite",
-            base: E,
-            url: "110.png",
-            x: 160
-        },
-        "monster-normal-110": {
-            type: "spritesheet",
-            base: q,
-            url: "110.png",
-            x: 160,
-            w: 254,
-            h: 239
-        },
-        "monster-reduced-110": {
-            type: "spritesheet",
-            base: A,
-            url: "110.png",
-            x: 80,
-            w: 128,
-            h: 120
-        },
-        "monster-small-111": {
-            type: "sprite",
-            base: E,
-            url: "111.png",
-            x: 105
-        },
-        "monster-normal-111": {
-            type: "spritesheet",
-            base: q,
-            url: "111.png",
-            x: 105,
-            w: 175,
-            h: 180
-        },
-        "monster-reduced-111": {
-            type: "spritesheet",
-            base: A,
-            url: "111.png",
-            x: 52,
-            w: 82,
-            h: 86
-        },
-        "monster-small-112": {
-            type: "sprite",
-            base: E,
-            url: "112.png",
-            x: 180
-        },
-        "monster-normal-112": {
-            type: "spritesheet",
-            base: q,
-            url: "112.png",
-            x: 180,
-            w: 436,
-            h: 352
-        },
-        "monster-reduced-112": {
-            type: "spritesheet",
-            base: A,
-            url: "112.png",
-            x: 90,
-            w: 157,
-            h: 143
-        },
-        "monster-small-113": {
-            type: "sprite",
-            base: E,
-            url: "113.png",
-            x: 124
-        },
-        "monster-normal-113": {
-            type: "spritesheet",
-            base: q,
-            url: "113.png",
-            x: 124,
-            w: 246,
-            h: 142
-        },
-        "monster-reduced-113": {
-            type: "spritesheet",
-            base: A,
-            url: "113.png",
-            x: 62,
-            w: 35,
-            h: 59
-        },
-        "monster-small-114": {
-            type: "sprite",
-            base: E,
-            url: "114.png",
-            x: 126
-        },
-        "monster-normal-114": {
-            type: "spritesheet",
-            base: q,
-            url: "114.png",
-            x: 126,
-            w: 252,
-            h: 207
-        },
-        "monster-reduced-114": {
-            type: "spritesheet",
-            base: A,
-            url: "114.png",
-            x: 63,
-            w: 63,
-            h: 78
-        },
-        "monster-small-115": {
-            type: "sprite",
-            base: E,
-            url: "115.png",
-            x: 65
-        },
-        "monster-normal-115": {
-            type: "spritesheet",
-            base: q,
-            url: "115.png",
-            x: 65,
-            w: 150,
-            h: 220
-        },
-        "monster-reduced-115": {
-            type: "spritesheet",
-            base: A,
-            url: "115.png",
-            x: 32,
-            w: 42,
-            h: 53
-        },
-        "monster-small-116": {
-            type: "sprite",
-            base: E,
-            url: "116.png",
-            x: 116
-        },
-        "monster-normal-116": {
-            type: "spritesheet",
-            base: q,
-            url: "116.png",
-            x: 116,
-            w: 239,
-            h: 173
-        },
-        "monster-reduced-116": {
-            type: "spritesheet",
-            base: A,
-            url: "116.png",
-            x: 58,
-            w: 108,
-            h: 76
-        },
-        "monster-small-117": {
-            type: "sprite",
-            base: E,
-            url: "117.png",
-            x: 147
-        },
-        "monster-normal-117": {
-            type: "spritesheet",
-            base: q,
-            url: "117.png",
-            x: 147,
-            w: 474,
-            h: 421
-        },
-        "monster-reduced-117": {
-            type: "spritesheet",
-            base: A,
-            url: "117.png",
-            x: 73,
-            w: 134,
-            h: 149
-        },
-        "monster-small-118": {
-            type: "sprite",
-            base: E,
-            url: "118.png",
-            x: 120
-        },
-        "monster-normal-118": {
-            type: "spritesheet",
-            base: q,
-            url: "118.png",
-            x: 120,
-            w: 254,
-            h: 209
-        },
-        "monster-reduced-118": {
-            type: "spritesheet",
-            base: A,
-            url: "118.png",
-            x: 60,
-            w: 73,
-            h: 69
-        },
-        "monster-small-119": {
-            type: "sprite",
-            base: E,
-            url: "119.png",
-            x: 100
-        },
-        "monster-normal-119": {
-            type: "spritesheet",
-            base: q,
-            url: "119.png",
-            x: 100,
-            w: 241,
-            h: 163
-        },
-        "monster-reduced-119": {
-            type: "spritesheet",
-            base: A,
-            url: "119.png",
-            x: 50,
-            w: 105,
-            h: 82
-        },
-        "monster-small-12": {
-            type: "sprite",
-            base: E,
-            url: "12.png",
-            x: 64
-        },
-        "monster-normal-12": {
-            type: "spritesheet",
-            base: q,
-            url: "12.png",
-            x: 64,
-            w: 191,
-            h: 150
-        },
-        "monster-reduced-12": {
-            type: "spritesheet",
-            base: A,
-            url: "12.png",
-            x: 32,
-            w: 61,
-            h: 73
-        },
-        "monster-small-120": {
-            type: "sprite",
-            base: E,
-            url: "120.png",
-            x: 118
-        },
-        "monster-normal-120": {
-            type: "spritesheet",
-            base: q,
-            url: "120.png",
-            x: 118,
-            w: 256,
-            h: 256
-        },
-        "monster-reduced-120": {
-            type: "spritesheet",
-            base: A,
-            url: "120.png",
-            x: 59,
-            w: 128,
-            h: 128
-        },
-        "monster-small-121": {
-            type: "sprite",
-            base: E,
-            url: "121.png",
-            x: 132
-        },
-        "monster-normal-121": {
-            type: "spritesheet",
-            base: q,
-            url: "121.png",
-            x: 132,
-            w: 256,
-            h: 256
-        },
-        "monster-reduced-121": {
-            type: "spritesheet",
-            base: A,
-            url: "121.png",
-            x: 66,
-            w: 128,
-            h: 128
-        },
-        "monster-small-122": {
-            type: "sprite",
-            base: E,
-            url: "122.png",
-            x: 63
-        },
-        "monster-normal-122": {
-            type: "spritesheet",
-            base: q,
-            url: "122.png",
-            x: 63,
-            w: 211,
-            h: 150
-        },
-        "monster-reduced-122": {
-            type: "spritesheet",
-            base: A,
-            url: "122.png",
-            x: 31,
-            w: 84,
-            h: 76
-        },
-        "monster-small-123": {
-            type: "sprite",
-            base: E,
-            url: "123.png",
-            x: 112
-        },
-        "monster-normal-123": {
-            type: "spritesheet",
-            base: q,
-            url: "123.png",
-            x: 112,
-            w: 301,
-            h: 224
-        },
-        "monster-reduced-123": {
-            type: "spritesheet",
-            base: A,
-            url: "123.png",
-            x: 56,
-            w: 98,
-            h: 93
-        },
-        "monster-small-124": {
-            type: "sprite",
-            base: E,
-            url: "124.png",
-            x: 132
-        },
-        "monster-normal-124": {
-            type: "spritesheet",
-            base: q,
-            url: "124.png",
-            x: 132,
-            w: 330,
-            h: 236
-        },
-        "monster-reduced-124": {
-            type: "spritesheet",
-            base: A,
-            url: "124.png",
-            x: 66,
-            w: 107,
-            h: 117
-        },
-        "monster-small-13": {
-            type: "sprite",
-            base: E,
-            url: "13.png",
-            x: 65
-        },
-        "monster-normal-13": {
-            type: "spritesheet",
-            base: q,
-            url: "13.png",
-            x: 65,
-            w: 170,
-            h: 170
-        },
-        "monster-reduced-13": {
-            type: "spritesheet",
-            base: A,
-            url: "13.png",
-            x: 32,
-            w: 79,
-            h: 81
-        },
-        "monster-small-14": {
-            type: "sprite",
-            base: E,
-            url: "14.png",
-            x: 65
-        },
-        "monster-normal-14": {
-            type: "spritesheet",
-            base: q,
-            url: "14.png",
-            x: 65,
-            w: 170,
-            h: 168
-        },
-        "monster-reduced-14": {
-            type: "spritesheet",
-            base: A,
-            url: "14.png",
-            x: 32,
-            w: 79,
-            h: 81
-        },
-        "monster-small-15": {
-            type: "sprite",
-            base: E,
-            url: "15.png",
-            x: 134
-        },
-        "monster-normal-15": {
-            type: "spritesheet",
-            base: q,
-            url: "15.png",
-            x: 134,
-            w: 247,
-            h: 200
-        },
-        "monster-reduced-15": {
-            type: "spritesheet",
-            base: A,
-            url: "15.png",
-            x: 67,
-            w: 124,
-            h: 87
-        },
-        "monster-small-16": {
-            type: "sprite",
-            base: E,
-            url: "16.png",
-            x: 60
-        },
-        "monster-normal-16": {
-            type: "spritesheet",
-            base: q,
-            url: "16.png",
-            x: 60,
-            w: 185,
-            h: 158
-        },
-        "monster-reduced-16": {
-            type: "spritesheet",
-            base: A,
-            url: "16.png",
-            x: 30,
-            w: 66,
-            h: 74
-        },
-        "monster-small-17": {
-            type: "sprite",
-            base: E,
-            url: "17.png",
-            x: 127
-        },
-        "monster-normal-17": {
-            type: "spritesheet",
-            base: q,
-            url: "17.png",
-            x: 127,
-            w: 252,
-            h: 186
-        },
-        "monster-reduced-17": {
-            type: "spritesheet",
-            base: A,
-            url: "17.png",
-            x: 63,
-            w: 104,
-            h: 91
-        },
-        "monster-small-18": {
-            type: "sprite",
-            base: E,
-            url: "18.png",
-            x: 25
-        },
-        "monster-normal-18": {
-            type: "spritesheet",
-            base: q,
-            url: "18.png",
-            x: 25,
-            w: 92,
-            h: 75
-        },
-        "monster-reduced-18": {
-            type: "spritesheet",
-            base: A,
-            url: "18.png",
-            x: 12,
-            w: 27,
-            h: 24
-        },
-        "monster-small-19": {
-            type: "sprite",
-            base: E,
-            url: "19.png",
-            x: 78
-        },
-        "monster-normal-19": {
-            type: "spritesheet",
-            base: q,
-            url: "19.png",
-            x: 78,
-            w: 203,
-            h: 162
-        },
-        "monster-reduced-19": {
-            type: "spritesheet",
-            base: A,
-            url: "19.png",
-            x: 39,
-            w: 82,
-            h: 80
-        },
-        "monster-small-2": {
-            type: "sprite",
-            base: E,
-            url: "2.png",
-            x: 63
-        },
-        "monster-normal-2": {
-            type: "spritesheet",
-            base: q,
-            url: "2.png",
-            x: 63,
-            w: 135,
-            h: 103
-        },
-        "monster-reduced-2": {
-            type: "spritesheet",
-            base: A,
-            url: "2.png",
-            x: 31,
-            w: 63,
-            h: 52
-        },
-        "monster-small-20": {
-            type: "sprite",
-            base: E,
-            url: "20.png",
-            x: 80
-        },
-        "monster-normal-20": {
-            type: "spritesheet",
-            base: q,
-            url: "20.png",
-            x: 80,
-            w: 137,
-            h: 132
-        },
-        "monster-reduced-20": {
-            type: "spritesheet",
-            base: A,
-            url: "20.png",
-            x: 40,
-            w: 69,
-            h: 50
-        },
-        "monster-small-21": {
-            type: "sprite",
-            base: E,
-            url: "21.png",
-            x: 110
-        },
-        "monster-normal-21": {
-            type: "spritesheet",
-            base: q,
-            url: "21.png",
-            x: 110,
-            w: 240,
-            h: 193
-        },
-        "monster-reduced-21": {
-            type: "spritesheet",
-            base: A,
-            url: "21.png",
-            x: 55,
-            w: 120,
-            h: 97
-        },
-        "monster-small-22": {
-            type: "sprite",
-            base: E,
-            url: "22.png",
-            x: 120
-        },
-        "monster-normal-22": {
-            type: "spritesheet",
-            base: q,
-            url: "22.png",
-            x: 120,
-            w: 254,
-            h: 213
-        },
-        "monster-reduced-22": {
-            type: "spritesheet",
-            base: A,
-            url: "22.png",
-            x: 60,
-            w: 128,
-            h: 106
-        },
-        "monster-small-23": {
-            type: "sprite",
-            base: E,
-            url: "23.png",
-            x: 95
-        },
-        "monster-normal-23": {
-            type: "spritesheet",
-            base: q,
-            url: "23.png",
-            x: 95,
-            w: 202,
-            h: 140
-        },
-        "monster-reduced-23": {
-            type: "spritesheet",
-            base: A,
-            url: "23.png",
-            x: 47,
-            w: 75,
-            h: 64
-        },
-        "monster-small-24": {
-            type: "sprite",
-            base: E,
-            url: "24.png",
-            x: 92
-        },
-        "monster-normal-24": {
-            type: "spritesheet",
-            base: q,
-            url: "24.png",
-            x: 92,
-            w: 188,
-            h: 150
-        },
-        "monster-reduced-24": {
-            type: "spritesheet",
-            base: A,
-            url: "24.png",
-            x: 46,
-            w: 88,
-            h: 75
-        },
-        "monster-small-25": {
-            type: "sprite",
-            base: E,
-            url: "25.png",
-            x: 30
-        },
-        "monster-normal-25": {
-            type: "spritesheet",
-            base: q,
-            url: "25.png",
-            x: 30,
-            w: 77,
-            h: 78
-        },
-        "monster-reduced-25": {
-            type: "spritesheet",
-            base: A,
-            url: "25.png",
-            x: 15,
-            w: 31,
-            h: 34
-        },
-        "monster-small-26": {
-            type: "sprite",
-            base: E,
-            url: "26.png",
-            x: 75
-        },
-        "monster-normal-26": {
-            type: "spritesheet",
-            base: q,
-            url: "26.png",
-            x: 75,
-            w: 132,
-            h: 117
-        },
-        "monster-reduced-26": {
-            type: "spritesheet",
-            base: A,
-            url: "26.png",
-            x: 37,
-            w: 57,
-            h: 52
-        },
-        "monster-small-27": {
-            type: "sprite",
-            base: E,
-            url: "27.png",
-            x: 35
-        },
-        "monster-normal-27": {
-            type: "spritesheet",
-            base: q,
-            url: "27.png",
-            x: 35,
-            w: 112,
-            h: 111
-        },
-        "monster-reduced-27": {
-            type: "spritesheet",
-            base: A,
-            url: "27.png",
-            x: 17,
-            w: 35,
-            h: 45
-        },
-        "monster-small-28": {
-            type: "sprite",
-            base: E,
-            url: "28.png",
-            x: 70
-        },
-        "monster-normal-28": {
-            type: "spritesheet",
-            base: q,
-            url: "28.png",
-            x: 70,
-            w: 122,
-            h: 133
-        },
-        "monster-reduced-28": {
-            type: "spritesheet",
-            base: A,
-            url: "28.png",
-            x: 35,
-            w: 58,
-            h: 55
-        },
-        "monster-small-29": {
-            type: "sprite",
-            base: E,
-            url: "29.png",
-            x: 50
-        },
-        "monster-normal-29": {
-            type: "spritesheet",
-            base: q,
-            url: "29.png",
-            x: 50,
-            w: 104,
-            h: 98
-        },
-        "monster-reduced-29": {
-            type: "spritesheet",
-            base: A,
-            url: "29.png",
-            x: 25,
-            w: 49,
-            h: 47
-        },
-        "monster-small-3": {
-            type: "sprite",
-            base: E,
-            url: "3.png",
-            x: 109
-        },
-        "monster-normal-3": {
-            type: "spritesheet",
-            base: q,
-            url: "3.png",
-            x: 109,
-            w: 246,
-            h: 185
-        },
-        "monster-reduced-3": {
-            type: "spritesheet",
-            base: A,
-            url: "3.png",
-            x: 54,
-            w: 109,
-            h: 93
-        },
-        "monster-small-30": {
-            type: "sprite",
-            base: E,
-            url: "30.png",
-            x: 105
-        },
-        "monster-normal-30": {
-            type: "spritesheet",
-            base: q,
-            url: "30.png",
-            x: 105,
-            w: 216,
-            h: 145
-        },
-        "monster-reduced-30": {
-            type: "spritesheet",
-            base: A,
-            url: "30.png",
-            x: 52,
-            w: 68,
-            h: 73
-        },
-        "monster-small-31": {
-            type: "sprite",
-            base: E,
-            url: "31.png",
-            x: 80
-        },
-        "monster-normal-31": {
-            type: "spritesheet",
-            base: q,
-            url: "31.png",
-            x: 80,
-            w: 183,
-            h: 137
-        },
-        "monster-reduced-31": {
-            type: "spritesheet",
-            base: A,
-            url: "31.png",
-            x: 40,
-            w: 75,
-            h: 56
-        },
-        "monster-small-32": {
-            type: "sprite",
-            base: E,
-            url: "32.png",
-            x: 72
-        },
-        "monster-normal-32": {
-            type: "spritesheet",
-            base: q,
-            url: "32.png",
-            x: 72,
-            w: 207,
-            h: 238
-        },
-        "monster-reduced-32": {
-            type: "spritesheet",
-            base: A,
-            url: "32.png",
-            x: 36,
-            w: 61,
-            h: 64
-        },
-        "monster-small-33": {
-            type: "sprite",
-            base: E,
-            url: "33.png",
-            x: 80
-        },
-        "monster-normal-33": {
-            type: "spritesheet",
-            base: q,
-            url: "33.png",
-            x: 80,
-            w: 206,
-            h: 136
-        },
-        "monster-reduced-33": {
-            type: "spritesheet",
-            base: A,
-            url: "33.png",
-            x: 40,
-            w: 80,
-            h: 51
-        },
-        "monster-small-34": {
-            type: "sprite",
-            base: E,
-            url: "34.png",
-            x: 112
-        },
-        "monster-normal-34": {
-            type: "spritesheet",
-            base: q,
-            url: "34.png",
-            x: 112,
-            w: 230,
-            h: 214
-        },
-        "monster-reduced-34": {
-            type: "spritesheet",
-            base: A,
-            url: "34.png",
-            x: 56,
-            w: 99,
-            h: 103
-        },
-        "monster-small-35": {
-            type: "sprite",
-            base: E,
-            url: "35.png",
-            x: 115
-        },
-        "monster-normal-35": {
-            type: "spritesheet",
-            base: q,
-            url: "35.png",
-            x: 115,
-            w: 215,
-            h: 167
-        },
-        "monster-reduced-35": {
-            type: "spritesheet",
-            base: A,
-            url: "35.png",
-            x: 57,
-            w: 103,
-            h: 81
-        },
-        "monster-small-36": {
-            type: "sprite",
-            base: E,
-            url: "36.png",
-            x: 115
-        },
-        "monster-normal-36": {
-            type: "spritesheet",
-            base: q,
-            url: "36.png",
-            x: 115,
-            w: 212,
-            h: 182
-        },
-        "monster-reduced-36": {
-            type: "spritesheet",
-            base: A,
-            url: "36.png",
-            x: 57,
-            w: 102,
-            h: 89
-        },
-        "monster-small-37": {
-            type: "sprite",
-            base: E,
-            url: "37.png",
-            x: 105
-        },
-        "monster-normal-37": {
-            type: "spritesheet",
-            base: q,
-            url: "37.png",
-            x: 105,
-            w: 201,
-            h: 190
-        },
-        "monster-reduced-37": {
-            type: "spritesheet",
-            base: A,
-            url: "37.png",
-            x: 52,
-            w: 98,
-            h: 92
-        },
-        "monster-small-38": {
-            type: "sprite",
-            base: E,
-            url: "38.png",
-            x: 105
-        },
-        "monster-normal-38": {
-            type: "spritesheet",
-            base: q,
-            url: "38.png",
-            x: 105,
-            w: 201,
-            h: 155
-        },
-        "monster-reduced-38": {
-            type: "spritesheet",
-            base: A,
-            url: "38.png",
-            x: 52,
-            w: 91,
-            h: 71
-        },
-        "monster-small-39": {
-            type: "sprite",
-            base: E,
-            url: "39.png",
-            x: 125
-        },
-        "monster-normal-39": {
-            type: "spritesheet",
-            base: q,
-            url: "39.png",
-            x: 125,
-            w: 239,
-            h: 181
-        },
-        "monster-reduced-39": {
-            type: "spritesheet",
-            base: A,
-            url: "39.png",
-            x: 62,
-            w: 103,
-            h: 88
-        },
-        "monster-small-4": {
-            type: "sprite",
-            base: E,
-            url: "4.png",
-            x: 65
-        },
-        "monster-normal-4": {
-            type: "spritesheet",
-            base: q,
-            url: "4.png",
-            x: 65,
-            w: 100,
-            h: 74
-        },
-        "monster-reduced-4": {
-            type: "spritesheet",
-            base: A,
-            url: "4.png",
-            x: 32,
-            w: 51,
-            h: 38
-        },
-        "monster-small-40": {
-            type: "sprite",
-            base: E,
-            url: "40.png",
-            x: 90
-        },
-        "monster-normal-40": {
-            type: "spritesheet",
-            base: q,
-            url: "40.png",
-            x: 90,
-            w: 150,
-            h: 185
-        },
-        "monster-reduced-40": {
-            type: "spritesheet",
-            base: A,
-            url: "40.png",
-            x: 45,
-            w: 67,
-            h: 80
-        },
-        "monster-small-41": {
-            type: "sprite",
-            base: E,
-            url: "41.png",
-            x: 120
-        },
-        "monster-normal-41": {
-            type: "spritesheet",
-            base: q,
-            url: "41.png",
-            x: 120,
-            w: 240,
-            h: 239
-        },
-        "monster-reduced-41": {
-            type: "spritesheet",
-            base: A,
-            url: "41.png",
-            x: 60,
-            w: 110,
-            h: 78
-        },
-        "monster-small-42": {
-            type: "sprite",
-            base: E,
-            url: "42.png",
-            x: 115
-        },
-        "monster-normal-42": {
-            type: "spritesheet",
-            base: q,
-            url: "42.png",
-            x: 115,
-            w: 240,
-            h: 239
-        },
-        "monster-reduced-42": {
-            type: "spritesheet",
-            base: A,
-            url: "42.png",
-            x: 57,
-            w: 110,
-            h: 78
-        },
-        "monster-small-43": {
-            type: "sprite",
-            base: E,
-            url: "43.png",
-            x: 90
-        },
-        "monster-normal-43": {
-            type: "spritesheet",
-            base: q,
-            url: "43.png",
-            x: 90,
-            w: 167,
-            h: 183
-        },
-        "monster-reduced-43": {
-            type: "spritesheet",
-            base: A,
-            url: "43.png",
-            x: 45,
-            w: 84,
-            h: 87
-        },
-        "monster-small-44": {
-            type: "sprite",
-            base: E,
-            url: "44.png",
-            x: 90
-        },
-        "monster-normal-44": {
-            type: "spritesheet",
-            base: q,
-            url: "44.png",
-            x: 90,
-            w: 167,
-            h: 183
-        },
-        "monster-reduced-44": {
-            type: "spritesheet",
-            base: A,
-            url: "44.png",
-            x: 45,
-            w: 84,
-            h: 87
-        },
-        "monster-small-45": {
-            type: "sprite",
-            base: E,
-            url: "45.png",
-            x: 95
-        },
-        "monster-normal-45": {
-            type: "spritesheet",
-            base: q,
-            url: "45.png",
-            x: 95,
-            w: 222,
-            h: 167
-        },
-        "monster-reduced-45": {
-            type: "spritesheet",
-            base: A,
-            url: "45.png",
-            x: 47,
-            w: 102,
-            h: 84
-        },
-        "monster-small-46": {
-            type: "sprite",
-            base: E,
-            url: "46.png",
-            x: 60
-        },
-        "monster-normal-46": {
-            type: "spritesheet",
-            base: q,
-            url: "46.png",
-            x: 60,
-            w: 180,
-            h: 140
-        },
-        "monster-reduced-46": {
-            type: "spritesheet",
-            base: A,
-            url: "46.png",
-            x: 30,
-            w: 58,
-            h: 59
-        },
-        "monster-small-47": {
-            type: "sprite",
-            base: E,
-            url: "47.png",
-            x: 86
-        },
-        "monster-normal-47": {
-            type: "spritesheet",
-            base: q,
-            url: "47.png",
-            x: 86,
-            w: 208,
-            h: 167
-        },
-        "monster-reduced-47": {
-            type: "spritesheet",
-            base: A,
-            url: "47.png",
-            x: 43,
-            w: 77,
-            h: 78
-        },
-        "monster-small-48": {
-            type: "sprite",
-            base: E,
-            url: "48.png",
-            x: 85
-        },
-        "monster-normal-48": {
-            type: "spritesheet",
-            base: q,
-            url: "48.png",
-            x: 85,
-            w: 175,
-            h: 223
-        },
-        "monster-reduced-48": {
-            type: "spritesheet",
-            base: A,
-            url: "48.png",
-            x: 42,
-            w: 88,
-            h: 101
-        },
-        "monster-small-49": {
-            type: "sprite",
-            base: E,
-            url: "49.png",
-            x: 120
-        },
-        "monster-normal-49": {
-            type: "spritesheet",
-            base: q,
-            url: "49.png",
-            x: 120,
-            w: 221,
-            h: 245
-        },
-        "monster-reduced-49": {
-            type: "spritesheet",
-            base: A,
-            url: "49.png",
-            x: 60,
-            w: 104,
-            h: 118
-        },
-        "monster-small-5": {
-            type: "sprite",
-            base: E,
-            url: "5.png",
-            x: 85
-        },
-        "monster-normal-5": {
-            type: "spritesheet",
-            base: q,
-            url: "5.png",
-            x: 85,
-            w: 185,
-            h: 204
-        },
-        "monster-reduced-5": {
-            type: "spritesheet",
-            base: A,
-            url: "5.png",
-            x: 42,
-            w: 93,
-            h: 101
-        },
-        "monster-small-50": {
-            type: "sprite",
-            base: E,
-            url: "50.png",
-            x: 115
-        },
-        "monster-normal-50": {
-            type: "spritesheet",
-            base: q,
-            url: "50.png",
-            x: 115,
-            w: 227,
-            h: 169
-        },
-        "monster-reduced-50": {
-            type: "spritesheet",
-            base: A,
-            url: "50.png",
-            x: 57,
-            w: 96,
-            h: 83
-        },
-        "monster-small-51": {
-            type: "sprite",
-            base: E,
-            url: "51.png",
-            x: 122
-        },
-        "monster-normal-51": {
-            type: "spritesheet",
-            base: q,
-            url: "51.png",
-            x: 122,
-            w: 235,
-            h: 174
-        },
-        "monster-reduced-51": {
-            type: "spritesheet",
-            base: A,
-            url: "51.png",
-            x: 61,
-            w: 104,
-            h: 85
-        },
-        "monster-small-52": {
-            type: "sprite",
-            base: E,
-            url: "52.png",
-            x: 55
-        },
-        "monster-normal-52": {
-            type: "spritesheet",
-            base: q,
-            url: "52.png",
-            x: 55,
-            w: 107,
-            h: 163
-        },
-        "monster-reduced-52": {
-            type: "spritesheet",
-            base: A,
-            url: "52.png",
-            x: 27,
-            w: 54,
-            h: 79
-        },
-        "monster-small-53": {
-            type: "sprite",
-            base: E,
-            url: "53.png",
-            x: 90
-        },
-        "monster-normal-53": {
-            type: "spritesheet",
-            base: q,
-            url: "53.png",
-            x: 90,
-            w: 166,
-            h: 240
-        },
-        "monster-reduced-53": {
-            type: "spritesheet",
-            base: A,
-            url: "53.png",
-            x: 45,
-            w: 84,
-            h: 117
-        },
-        "monster-small-54": {
-            type: "sprite",
-            base: E,
-            url: "54.png",
-            x: 150
-        },
-        "monster-normal-54": {
-            type: "spritesheet",
-            base: q,
-            url: "54.png",
-            x: 150,
-            w: 344,
-            h: 333
-        },
-        "monster-reduced-54": {
-            type: "spritesheet",
-            base: A,
-            url: "54.png",
-            x: 75,
-            w: 143,
-            h: 161
-        },
-        "monster-small-55": {
-            type: "sprite",
-            base: E,
-            url: "55.png",
-            x: 80
-        },
-        "monster-normal-55": {
-            type: "spritesheet",
-            base: q,
-            url: "55.png",
-            x: 80,
-            w: 157,
-            h: 194
-        },
-        "monster-reduced-55": {
-            type: "spritesheet",
-            base: A,
-            url: "55.png",
-            x: 40,
-            w: 79,
-            h: 98
-        },
-        "monster-small-56": {
-            type: "sprite",
-            base: E,
-            url: "56.png",
-            x: 82
-        },
-        "monster-normal-56": {
-            type: "spritesheet",
-            base: q,
-            url: "56.png",
-            x: 82,
-            w: 160,
-            h: 140
-        },
-        "monster-reduced-56": {
-            type: "spritesheet",
-            base: A,
-            url: "56.png",
-            x: 41,
-            w: 69,
-            h: 54
-        },
-        "monster-small-57": {
-            type: "sprite",
-            base: E,
-            url: "57.png",
-            x: 100
-        },
-        "monster-normal-57": {
-            type: "spritesheet",
-            base: q,
-            url: "57.png",
-            x: 100,
-            w: 182,
-            h: 136
-        },
-        "monster-reduced-57": {
-            type: "spritesheet",
-            base: A,
-            url: "57.png",
-            x: 50,
-            w: 91,
-            h: 65
-        },
-        "monster-small-58": {
-            type: "sprite",
-            base: E,
-            url: "58.png",
-            x: 80
-        },
-        "monster-normal-58": {
-            type: "spritesheet",
-            base: q,
-            url: "58.png",
-            x: 80,
-            w: 157,
-            h: 194
-        },
-        "monster-reduced-58": {
-            type: "spritesheet",
-            base: A,
-            url: "58.png",
-            x: 40,
-            w: 78,
-            h: 98
-        },
-        "monster-small-59": {
-            type: "sprite",
-            base: E,
-            url: "59.png",
-            x: 80
-        },
-        "monster-normal-59": {
-            type: "spritesheet",
-            base: q,
-            url: "59.png",
-            x: 80,
-            w: 197,
-            h: 177
-        },
-        "monster-reduced-59": {
-            type: "spritesheet",
-            base: A,
-            url: "59.png",
-            x: 40,
-            w: 85,
-            h: 87
-        },
-        "monster-small-6": {
-            type: "sprite",
-            base: E,
-            url: "6.png",
-            x: 90
-        },
-        "monster-normal-6": {
-            type: "spritesheet",
-            base: q,
-            url: "6.png",
-            x: 90,
-            w: 235,
-            h: 215
-        },
-        "monster-reduced-6": {
-            type: "spritesheet",
-            base: A,
-            url: "6.png",
-            x: 45,
-            w: 91,
-            h: 107
-        },
-        "monster-small-60": {
-            type: "sprite",
-            base: E,
-            url: "60.png",
-            x: 82
-        },
-        "monster-normal-60": {
-            type: "spritesheet",
-            base: q,
-            url: "60.png",
-            x: 82,
-            w: 253,
-            h: 235
-        },
-        "monster-reduced-60": {
-            type: "spritesheet",
-            base: A,
-            url: "60.png",
-            x: 41,
-            w: 97,
-            h: 110
-        },
-        "monster-small-61": {
-            type: "sprite",
-            base: E,
-            url: "61.png",
-            x: 102
-        },
-        "monster-normal-61": {
-            type: "spritesheet",
-            base: q,
-            url: "61.png",
-            x: 102,
-            w: 233,
-            h: 208
-        },
-        "monster-reduced-61": {
-            type: "spritesheet",
-            base: A,
-            url: "61.png",
-            x: 51,
-            w: 99,
-            h: 99
-        },
-        "monster-small-62": {
-            type: "sprite",
-            base: E,
-            url: "62.png",
-            x: 80
-        },
-        "monster-normal-62": {
-            type: "spritesheet",
-            base: q,
-            url: "62.png",
-            x: 80,
-            w: 201,
-            h: 193
-        },
-        "monster-reduced-62": {
-            type: "spritesheet",
-            base: A,
-            url: "62.png",
-            x: 40,
-            w: 89,
-            h: 96
-        },
-        "monster-small-63": {
-            type: "sprite",
-            base: E,
-            url: "63.png",
-            x: 60
-        },
-        "monster-normal-63": {
-            type: "spritesheet",
-            base: q,
-            url: "63.png",
-            x: 60,
-            w: 197,
-            h: 150
-        },
-        "monster-reduced-63": {
-            type: "spritesheet",
-            base: A,
-            url: "63.png",
-            x: 30,
-            w: 81,
-            h: 76
-        },
-        "monster-small-64": {
-            type: "sprite",
-            base: E,
-            url: "64.png",
-            x: 122
-        },
-        "monster-normal-64": {
-            type: "spritesheet",
-            base: q,
-            url: "64.png",
-            x: 122,
-            w: 295,
-            h: 212
-        },
-        "monster-reduced-64": {
-            type: "spritesheet",
-            base: A,
-            url: "64.png",
-            x: 61,
-            w: 97,
-            h: 102
-        },
-        "monster-small-65": {
-            type: "sprite",
-            base: E,
-            url: "65.png",
-            x: 134
-        },
-        "monster-normal-65": {
-            type: "spritesheet",
-            base: q,
-            url: "65.png",
-            x: 134,
-            w: 343,
-            h: 249
-        },
-        "monster-reduced-65": {
-            type: "spritesheet",
-            base: A,
-            url: "65.png",
-            x: 67,
-            w: 107,
-            h: 125
-        },
-        "monster-small-66": {
-            type: "sprite",
-            base: E,
-            url: "66.png",
-            x: 60
-        },
-        "monster-normal-66": {
-            type: "spritesheet",
-            base: q,
-            url: "66.png",
-            x: 60,
-            w: 197,
-            h: 144
-        },
-        "monster-reduced-66": {
-            type: "spritesheet",
-            base: A,
-            url: "66.png",
-            x: 30,
-            w: 82,
-            h: 73
-        },
-        "monster-small-67": {
-            type: "sprite",
-            base: E,
-            url: "67.png",
-            x: 122
-        },
-        "monster-normal-67": {
-            type: "spritesheet",
-            base: q,
-            url: "67.png",
-            x: 122,
-            w: 297,
-            h: 222
-        },
-        "monster-reduced-67": {
-            type: "spritesheet",
-            base: A,
-            url: "67.png",
-            x: 61,
-            w: 96,
-            h: 90
-        },
-        "monster-small-68": {
-            type: "sprite",
-            base: E,
-            url: "68.png",
-            x: 134
-        },
-        "monster-normal-68": {
-            type: "spritesheet",
-            base: q,
-            url: "68.png",
-            x: 134,
-            w: 330,
-            h: 233
-        },
-        "monster-reduced-68": {
-            type: "spritesheet",
-            base: A,
-            url: "68.png",
-            x: 67,
-            w: 107,
-            h: 114
-        },
-        "monster-small-69": {
-            type: "sprite",
-            base: E,
-            url: "69.png",
-            x: 60
-        },
-        "monster-normal-69": {
-            type: "spritesheet",
-            base: q,
-            url: "69.png",
-            x: 60,
-            w: 196,
-            h: 137
-        },
-        "monster-reduced-69": {
-            type: "spritesheet",
-            base: A,
-            url: "69.png",
-            x: 30,
-            w: 83,
-            h: 69
-        },
-        "monster-small-7": {
-            type: "sprite",
-            base: E,
-            url: "7.png",
-            x: 55
-        },
-        "monster-normal-7": {
-            type: "spritesheet",
-            base: q,
-            url: "7.png",
-            x: 55,
-            w: 108,
-            h: 75
-        },
-        "monster-reduced-7": {
-            type: "spritesheet",
-            base: A,
-            url: "7.png",
-            x: 27,
-            w: 55,
-            h: 38
-        },
-        "monster-small-70": {
-            type: "sprite",
-            base: E,
-            url: "70.png",
-            x: 122
-        },
-        "monster-normal-70": {
-            type: "spritesheet",
-            base: q,
-            url: "70.png",
-            x: 122,
-            w: 303,
-            h: 234
-        },
-        "monster-reduced-70": {
-            type: "spritesheet",
-            base: A,
-            url: "70.png",
-            x: 61,
-            w: 97,
-            h: 99
-        },
-        "monster-small-71": {
-            type: "sprite",
-            base: E,
-            url: "71.png",
-            x: 134
-        },
-        "monster-normal-71": {
-            type: "spritesheet",
-            base: q,
-            url: "71.png",
-            x: 134,
-            w: 343,
-            h: 247
-        },
-        "monster-reduced-71": {
-            type: "spritesheet",
-            base: A,
-            url: "71.png",
-            x: 67,
-            w: 107,
-            h: 124
-        },
-        "monster-small-72": {
-            type: "sprite",
-            base: E,
-            url: "72.png",
-            x: 60
-        },
-        "monster-normal-72": {
-            type: "spritesheet",
-            base: q,
-            url: "72.png",
-            x: 60,
-            w: 196,
-            h: 144
-        },
-        "monster-reduced-72": {
-            type: "spritesheet",
-            base: A,
-            url: "72.png",
-            x: 30,
-            w: 80,
-            h: 73
-        },
-        "monster-small-73": {
-            type: "sprite",
-            base: E,
-            url: "73.png",
-            x: 122
-        },
-        "monster-normal-73": {
-            type: "spritesheet",
-            base: q,
-            url: "73.png",
-            x: 122,
-            w: 292,
-            h: 212
-        },
-        "monster-reduced-73": {
-            type: "spritesheet",
-            base: A,
-            url: "73.png",
-            x: 61,
-            w: 98,
-            h: 100
-        },
-        "monster-small-74": {
-            type: "sprite",
-            base: E,
-            url: "74.png",
-            x: 134
-        },
-        "monster-normal-74": {
-            type: "spritesheet",
-            base: q,
-            url: "74.png",
-            x: 134,
-            w: 343,
-            h: 242
-        },
-        "monster-reduced-74": {
-            type: "spritesheet",
-            base: A,
-            url: "74.png",
-            x: 67,
-            w: 107,
-            h: 122
-        },
-        "monster-small-75": {
-            type: "sprite",
-            base: E,
-            url: "75.png",
-            x: 95
-        },
-        "monster-normal-75": {
-            type: "spritesheet",
-            base: q,
-            url: "75.png",
-            x: 95,
-            w: 154,
-            h: 168
-        },
-        "monster-reduced-75": {
-            type: "spritesheet",
-            base: A,
-            url: "75.png",
-            x: 47,
-            w: 75,
-            h: 85
-        },
-        "monster-small-76": {
-            type: "sprite",
-            base: E,
-            url: "76.png",
-            x: 95
-        },
-        "monster-normal-76": {
-            type: "spritesheet",
-            base: q,
-            url: "76.png",
-            x: 95,
-            w: 201,
-            h: 217
-        },
-        "monster-reduced-76": {
-            type: "spritesheet",
-            base: A,
-            url: "76.png",
-            x: 47,
-            w: 93,
-            h: 108
-        },
-        "monster-small-78": {
-            type: "sprite",
-            base: E,
-            url: "78.png",
-            x: 93
-        },
-        "monster-normal-78": {
-            type: "spritesheet",
-            base: q,
-            url: "78.png",
-            x: 93,
-            w: 156,
-            h: 185
-        },
-        "monster-reduced-78": {
-            type: "spritesheet",
-            base: A,
-            url: "78.png",
-            x: 46,
-            w: 75,
-            h: 91
-        },
-        "monster-small-79": {
-            type: "sprite",
-            base: E,
-            url: "79.png",
-            x: 88
-        },
-        "monster-normal-79": {
-            type: "spritesheet",
-            base: q,
-            url: "79.png",
-            x: 88,
-            w: 213,
-            h: 194
-        },
-        "monster-reduced-79": {
-            type: "spritesheet",
-            base: A,
-            url: "79.png",
-            x: 44,
-            w: 93,
-            h: 97
-        },
-        "monster-small-8": {
-            type: "sprite",
-            base: E,
-            url: "8.png",
-            x: 55
-        },
-        "monster-normal-8": {
-            type: "spritesheet",
-            base: q,
-            url: "8.png",
-            x: 55,
-            w: 162,
-            h: 117
-        },
-        "monster-reduced-8": {
-            type: "spritesheet",
-            base: A,
-            url: "8.png",
-            x: 27,
-            w: 56,
-            h: 59
-        },
-        "monster-small-80": {
-            type: "sprite",
-            base: E,
-            url: "80.png",
-            x: 100
-        },
-        "monster-normal-80": {
-            type: "spritesheet",
-            base: q,
-            url: "80.png",
-            x: 100,
-            w: 229,
-            h: 225
-        },
-        "monster-reduced-80": {
-            type: "spritesheet",
-            base: A,
-            url: "80.png",
-            x: 50,
-            w: 82,
-            h: 112
-        },
-        "monster-small-81": {
-            type: "sprite",
-            base: E,
-            url: "81.png",
-            x: 95
-        },
-        "monster-normal-81": {
-            type: "spritesheet",
-            base: q,
-            url: "81.png",
-            x: 95,
-            w: 157,
-            h: 162
-        },
-        "monster-reduced-81": {
-            type: "spritesheet",
-            base: A,
-            url: "81.png",
-            x: 47,
-            w: 74,
-            h: 80
-        },
-        "monster-small-82": {
-            type: "sprite",
-            base: E,
-            url: "82.png",
-            x: 102
-        },
-        "monster-normal-82": {
-            type: "spritesheet",
-            base: q,
-            url: "82.png",
-            x: 102,
-            w: 212,
-            h: 187
-        },
-        "monster-reduced-82": {
-            type: "spritesheet",
-            base: A,
-            url: "82.png",
-            x: 51,
-            w: 93,
-            h: 94
-        },
-        "monster-small-83": {
-            type: "sprite",
-            base: E,
-            url: "83.png",
-            x: 85
-        },
-        "monster-normal-83": {
-            type: "spritesheet",
-            base: q,
-            url: "83.png",
-            x: 85,
-            w: 217,
-            h: 223
-        },
-        "monster-reduced-83": {
-            type: "spritesheet",
-            base: A,
-            url: "83.png",
-            x: 42,
-            w: 75,
-            h: 108
-        },
-        "monster-small-84": {
-            type: "sprite",
-            base: E,
-            url: "84.png",
-            x: 90
-        },
-        "monster-normal-84": {
-            type: "spritesheet",
-            base: q,
-            url: "84.png",
-            x: 90,
-            w: 156,
-            h: 171
-        },
-        "monster-reduced-84": {
-            type: "spritesheet",
-            base: A,
-            url: "84.png",
-            x: 45,
-            w: 79,
-            h: 85
-        },
-        "monster-small-85": {
-            type: "sprite",
-            base: E,
-            url: "85.png",
-            x: 88
-        },
-        "monster-normal-85": {
-            type: "spritesheet",
-            base: q,
-            url: "85.png",
-            x: 88,
-            w: 200,
-            h: 190
-        },
-        "monster-reduced-85": {
-            type: "spritesheet",
-            base: A,
-            url: "85.png",
-            x: 44,
-            w: 93,
-            h: 95
-        },
-        "monster-small-86": {
-            type: "sprite",
-            base: E,
-            url: "86.png",
-            x: 115
-        },
-        "monster-normal-86": {
-            type: "spritesheet",
-            base: q,
-            url: "86.png",
-            x: 115,
-            w: 242,
-            h: 242
-        },
-        "monster-reduced-86": {
-            type: "spritesheet",
-            base: A,
-            url: "86.png",
-            x: 57,
-            w: 84,
-            h: 115
-        },
-        "monster-small-87": {
-            type: "sprite",
-            base: E,
-            url: "87.png",
-            x: 65
-        },
-        "monster-normal-87": {
-            type: "spritesheet",
-            base: q,
-            url: "87.png",
-            x: 65,
-            w: 189,
-            h: 120
-        },
-        "monster-reduced-87": {
-            type: "spritesheet",
-            base: A,
-            url: "87.png",
-            x: 32,
-            w: 65,
-            h: 54
-        },
-        "monster-small-88": {
-            type: "sprite",
-            base: E,
-            url: "88.png",
-            x: 115
-        },
-        "monster-normal-88": {
-            type: "spritesheet",
-            base: q,
-            url: "88.png",
-            x: 115,
-            w: 252,
-            h: 212
-        },
-        "monster-reduced-88": {
-            type: "spritesheet",
-            base: A,
-            url: "88.png",
-            x: 57,
-            w: 113,
-            h: 93
-        },
-        "monster-small-89": {
-            type: "sprite",
-            base: E,
-            url: "89.png",
-            x: 120
-        },
-        "monster-normal-89": {
-            type: "spritesheet",
-            base: q,
-            url: "89.png",
-            x: 120,
-            w: 253,
-            h: 254
-        },
-        "monster-reduced-89": {
-            type: "spritesheet",
-            base: A,
-            url: "89.png",
-            x: 60,
-            w: 123,
-            h: 127
-        },
-        "monster-small-9": {
-            type: "sprite",
-            base: E,
-            url: "9.png",
-            x: 120
-        },
-        "monster-normal-9": {
-            type: "spritesheet",
-            base: q,
-            url: "9.png",
-            x: 120,
-            w: 250,
-            h: 224
-        },
-        "monster-reduced-9": {
-            type: "spritesheet",
-            base: A,
-            url: "9.png",
-            x: 60,
-            w: 126,
-            h: 111
-        },
-        "monster-small-90": {
-            type: "sprite",
-            base: E,
-            url: "90.png",
-            x: 80
-        },
-        "monster-normal-90": {
-            type: "spritesheet",
-            base: q,
-            url: "90.png",
-            x: 80,
-            w: 155,
-            h: 128
-        },
-        "monster-reduced-90": {
-            type: "spritesheet",
-            base: A,
-            url: "90.png",
-            x: 40,
-            w: 78,
-            h: 63
-        },
-        "monster-small-91": {
-            type: "sprite",
-            base: E,
-            url: "91.png",
-            x: 85
-        },
-        "monster-normal-91": {
-            type: "spritesheet",
-            base: q,
-            url: "91.png",
-            x: 85,
-            w: 219,
-            h: 204
-        },
-        "monster-reduced-91": {
-            type: "spritesheet",
-            base: A,
-            url: "91.png",
-            x: 42,
-            w: 88,
-            h: 98
-        },
-        "monster-small-92": {
-            type: "sprite",
-            base: E,
-            url: "92.png",
-            x: 80
-        },
-        "monster-normal-92": {
-            type: "spritesheet",
-            base: q,
-            url: "92.png",
-            x: 80,
-            w: 155,
-            h: 128
-        },
-        "monster-reduced-92": {
-            type: "spritesheet",
-            base: A,
-            url: "92.png",
-            x: 40,
-            w: 78,
-            h: 63
-        },
-        "monster-small-93": {
-            type: "sprite",
-            base: E,
-            url: "93.png",
-            x: 65
-        },
-        "monster-normal-93": {
-            type: "spritesheet",
-            base: q,
-            url: "93.png",
-            x: 65,
-            w: 171,
-            h: 150
-        },
-        "monster-reduced-93": {
-            type: "spritesheet",
-            base: A,
-            url: "93.png",
-            x: 32,
-            w: 84,
-            h: 73
-        },
-        "monster-small-94": {
-            type: "sprite",
-            base: E,
-            url: "94.png",
-            x: 80
-        },
-        "monster-normal-94": {
-            type: "spritesheet",
-            base: q,
-            url: "94.png",
-            x: 80,
-            w: 176,
-            h: 187
-        },
-        "monster-reduced-94": {
-            type: "spritesheet",
-            base: A,
-            url: "94.png",
-            x: 40,
-            w: 88,
-            h: 53
-        },
-        "monster-small-95": {
-            type: "sprite",
-            base: E,
-            url: "95.png",
-            x: 115
-        },
-        "monster-normal-95": {
-            type: "spritesheet",
-            base: q,
-            url: "95.png",
-            x: 115,
-            w: 203,
-            h: 196
-        },
-        "monster-reduced-95": {
-            type: "spritesheet",
-            base: A,
-            url: "95.png",
-            x: 57,
-            w: 101,
-            h: 67
-        },
-        "monster-small-96": {
-            type: "sprite",
-            base: E,
-            url: "96.png",
-            x: 130
-        },
-        "monster-normal-96": {
-            type: "spritesheet",
-            base: q,
-            url: "96.png",
-            x: 130,
-            w: 233,
-            h: 206
-        },
-        "monster-reduced-96": {
-            type: "spritesheet",
-            base: A,
-            url: "96.png",
-            x: 65,
-            w: 117,
-            h: 79
-        },
-        "monster-small-97": {
-            type: "sprite",
-            base: E,
-            url: "97.png",
-            x: 135
-        },
-        "monster-normal-97": {
-            type: "spritesheet",
-            base: q,
-            url: "97.png",
-            x: 135,
-            w: 488,
-            h: 245
-        },
-        "monster-reduced-97": {
-            type: "spritesheet",
-            base: A,
-            url: "97.png",
-            x: 67,
-            w: 135,
-            h: 123
-        },
-        "monster-small-98": {
-            type: "sprite",
-            base: E,
-            url: "98.png",
-            x: 70
-        },
-        "monster-normal-98": {
-            type: "spritesheet",
-            base: q,
-            url: "98.png",
-            x: 70,
-            w: 183,
-            h: 178
-        },
-        "monster-reduced-98": {
-            type: "spritesheet",
-            base: A,
-            url: "98.png",
-            x: 35,
-            w: 74,
-            h: 69
-        },
-        "monster-small-99": {
-            type: "sprite",
-            base: E,
-            url: "99.png",
-            x: 130
-        },
-        "monster-normal-99": {
-            type: "spritesheet",
-            base: q,
-            url: "99.png",
-            x: 130,
-            w: 254,
-            h: 171
-        },
-        "monster-reduced-99": {
-            type: "spritesheet",
-            base: A,
-            url: "99.png",
-            x: 65,
-            w: 76,
-            h: 86
-        },
-        heads: {
-            type: "atlas",
-            base: d,
-            url: "head.png",
-            json: "head.json"
-        },
-        "normal-outfit-male-1": {
-            type: "spritesheet",
-            base: r,
-            url: "1.png",
-            x: 91,
-            y: 144,
-            w: 75,
-            h: 91
-        },
-        "normal-outfit-male-10": {
-            type: "spritesheet",
-            base: r,
-            url: "10.png",
-            x: 91,
-            y: 129,
-            w: 75,
-            h: 106
-        },
-        "normal-outfit-male-11": {
-            type: "spritesheet",
-            base: r,
-            url: "11.png",
-            x: 91,
-            y: 150,
-            w: 75,
-            h: 85
-        },
-        "normal-outfit-male-12": {
-            type: "spritesheet",
-            base: r,
-            url: "12.png",
-            x: 91,
-            y: 138,
-            w: 75,
-            h: 97
-        },
-        "normal-outfit-male-13": {
-            type: "spritesheet",
-            base: r,
-            url: "13.png",
-            x: 91,
-            y: 155,
-            w: 75,
-            h: 80
-        },
-        "normal-outfit-male-14": {
-            type: "spritesheet",
-            base: r,
-            url: "14.png",
-            x: 91,
-            y: 155,
-            w: 75,
-            h: 80
-        },
-        "normal-outfit-male-15": {
-            type: "spritesheet",
-            base: r,
-            url: "15.png",
-            x: 91,
-            y: 155,
-            w: 75,
-            h: 80
-        },
-        "normal-outfit-male-16": {
-            type: "spritesheet",
-            base: r,
-            url: "16.png",
-            x: 91,
-            y: 153,
-            w: 75,
-            h: 82
-        },
-        "normal-outfit-male-17": {
-            type: "spritesheet",
-            base: r,
-            url: "17.png",
-            x: 61,
-            y: 144,
-            w: 120,
-            h: 91
-        },
-        "normal-outfit-male-18": {
-            type: "spritesheet",
-            base: r,
-            url: "18.png",
-            x: 91,
-            y: 156,
-            w: 75,
-            h: 79
-        },
-        "normal-outfit-male-19": {
-            type: "spritesheet",
-            base: r,
-            url: "19.png",
-            x: 91,
-            y: 154,
-            w: 75,
-            h: 81
-        },
-        "normal-outfit-male-2": {
-            type: "spritesheet",
-            base: r,
-            url: "2.png",
-            x: 68,
-            y: 152,
-            w: 98,
-            h: 83
-        },
-        "normal-outfit-male-20": {
-            type: "spritesheet",
-            base: r,
-            url: "20.png",
-            x: 91,
-            y: 154,
-            w: 75,
-            h: 81
-        },
-        "normal-outfit-male-21": {
-            type: "spritesheet",
-            base: r,
-            url: "21.png",
-            x: 91,
-            y: 156,
-            w: 75,
-            h: 79
-        },
-        "normal-outfit-male-22": {
-            type: "spritesheet",
-            base: r,
-            url: "22.png",
-            x: 91,
-            y: 153,
-            w: 75,
-            h: 82
-        },
-        "normal-outfit-male-23": {
-            type: "spritesheet",
-            base: r,
-            url: "23.png",
-            x: 91,
-            y: 153,
-            w: 75,
-            h: 82
-        },
-        "normal-outfit-male-24": {
-            type: "spritesheet",
-            base: r,
-            url: "24.png",
-            x: 54,
-            y: 141,
-            w: 112,
-            h: 94
-        },
-        "normal-outfit-male-25": {
-            type: "spritesheet",
-            base: r,
-            url: "25.png",
-            x: 91,
-            y: 155,
-            w: 75,
-            h: 80
-        },
-        "normal-outfit-male-26": {
-            type: "spritesheet",
-            base: r,
-            url: "26.png",
-            x: 91,
-            y: 153,
-            w: 75,
-            h: 82
-        },
-        "normal-outfit-male-27": {
-            type: "spritesheet",
-            base: r,
-            url: "27.png",
-            x: 91,
-            y: 140,
-            w: 75,
-            h: 95
-        },
-        "normal-outfit-male-28": {
-            type: "spritesheet",
-            base: r,
-            url: "28.png",
-            x: 86,
-            y: 154,
-            w: 80,
-            h: 81
-        },
-        "normal-outfit-male-29": {
-            type: "spritesheet",
-            base: r,
-            url: "29.png",
-            x: 91,
-            y: 155,
-            w: 75,
-            h: 80
-        },
-        "normal-outfit-male-3": {
-            type: "spritesheet",
-            base: r,
-            url: "3.png",
-            x: 91,
-            y: 153,
-            w: 75,
-            h: 82
-        },
-        "normal-outfit-male-30": {
-            type: "spritesheet",
-            base: r,
-            url: "30.png",
-            x: 91,
-            y: 153,
-            w: 75,
-            h: 82
-        },
-        "normal-outfit-male-31": {
-            type: "spritesheet",
-            base: r,
-            url: "31.png",
-            x: 72,
-            y: 144,
-            w: 94,
-            h: 91
-        },
-        "normal-outfit-male-32": {
-            type: "spritesheet",
-            base: r,
-            url: "32.png",
-            x: 88,
-            y: 68,
-            w: 78,
-            h: 167
-        },
-        "normal-outfit-male-33": {
-            type: "spritesheet",
-            base: r,
-            url: "33.png",
-            x: 74,
-            y: 150,
-            w: 92,
-            h: 85
-        },
-        "normal-outfit-male-34": {
-            type: "spritesheet",
-            base: r,
-            url: "34.png",
-            x: 66,
-            y: 138,
-            w: 100,
-            h: 97
-        },
-        "normal-outfit-male-35": {
-            type: "spritesheet",
-            base: r,
-            url: "35.png",
-            x: 88,
-            y: 155,
-            w: 79,
-            h: 80
-        },
-        "normal-outfit-male-36": {
-            type: "spritesheet",
-            base: r,
-            url: "36.png",
-            x: 91,
-            y: 155,
-            w: 76,
-            h: 80
-        },
-        "normal-outfit-male-37": {
-            type: "spritesheet",
-            base: r,
-            url: "37.png",
-            x: 61,
-            y: 153,
-            w: 105,
-            h: 82
-        },
-        "normal-outfit-male-38": {
-            type: "spritesheet",
-            base: r,
-            url: "38.png",
-            x: 30,
-            y: 34,
-            w: 165,
-            h: 221
-        },
-        "normal-outfit-male-39": {
-            type: "spritesheet",
-            base: r,
-            url: "39.png",
-            x: 91,
-            y: 151,
-            w: 75,
-            h: 84
-        },
-        "normal-outfit-male-4": {
-            type: "spritesheet",
-            base: r,
-            url: "4.png",
-            x: 91,
-            y: 154,
-            w: 75,
-            h: 81
-        },
-        "normal-outfit-male-40": {
-            type: "spritesheet",
-            base: r,
-            url: "40.png",
-            x: 75,
-            y: 153,
-            w: 91,
-            h: 82
-        },
-        "normal-outfit-male-41": {
-            type: "spritesheet",
-            base: r,
-            url: "41.png",
-            x: 91,
-            y: 150,
-            w: 75,
-            h: 85
-        },
-        "normal-outfit-male-42": {
-            type: "spritesheet",
-            base: r,
-            url: "42.png",
-            x: 92,
-            y: 154,
-            w: 74,
-            h: 81
-        },
-        "normal-outfit-male-43": {
-            type: "spritesheet",
-            base: r,
-            url: "43.png",
-            x: 89,
-            y: 151,
-            w: 95,
-            h: 86
-        },
-        "normal-outfit-male-44": {
-            type: "spritesheet",
-            base: r,
-            url: "44.png",
-            x: 78,
-            y: 137,
-            w: 96,
-            h: 98
-        },
-        "normal-outfit-male-45": {
-            type: "spritesheet",
-            base: r,
-            url: "45.png",
-            x: 90,
-            y: 153,
-            w: 79,
-            h: 83
-        },
-        "normal-outfit-male-46": {
-            type: "spritesheet",
-            base: r,
-            url: "46.png",
-            x: 84,
-            y: 155,
-            w: 77,
-            h: 80
-        },
-        "normal-outfit-male-47": {
-            type: "spritesheet",
-            base: r,
-            url: "47.png",
-            x: 89,
-            y: 149,
-            w: 77,
-            h: 88
-        },
-        "normal-outfit-male-48": {
-            type: "spritesheet",
-            base: r,
-            url: "48.png",
-            x: 56,
-            y: 138,
-            w: 110,
-            h: 97
-        },
-        "normal-outfit-male-49": {
-            type: "spritesheet",
-            base: r,
-            url: "49.png",
-            x: 87,
-            y: 152,
-            w: 83,
-            h: 81
-        },
-        "normal-outfit-male-5": {
-            type: "spritesheet",
-            base: r,
-            url: "5.png",
-            x: 54,
-            y: 141,
-            w: 112,
-            h: 94
-        },
-        "normal-outfit-male-6": {
-            type: "spritesheet",
-            base: r,
-            url: "6.png",
-            x: 88,
-            y: 139,
-            w: 78,
-            h: 96
-        },
-        "normal-outfit-male-7": {
-            type: "spritesheet",
-            base: r,
-            url: "7.png",
-            x: 74,
-            y: 145,
-            w: 92,
-            h: 90
-        },
-        "normal-outfit-male-8": {
-            type: "spritesheet",
-            base: r,
-            url: "8.png",
-            x: 83,
-            y: 137,
-            w: 83,
-            h: 98
-        },
-        "normal-outfit-male-9": {
-            type: "spritesheet",
-            base: r,
-            url: "9.png",
-            x: 91,
-            y: 154,
-            w: 75,
-            h: 81
-        },
-        "reduced-outfit-male-1": {
-            type: "spritesheet",
-            base: e,
-            url: "1.png",
-            x: 43,
-            y: 82,
-            w: 38,
-            h: 43
-        },
-        "reduced-outfit-male-10": {
-            type: "spritesheet",
-            base: e,
-            url: "10.png",
-            x: 43,
-            y: 72,
-            w: 38,
-            h: 53
-        },
-        "reduced-outfit-male-11": {
-            type: "spritesheet",
-            base: e,
-            url: "11.png",
-            x: 43,
-            y: 82,
-            w: 38,
-            h: 43
-        },
-        "reduced-outfit-male-12": {
-            type: "spritesheet",
-            base: e,
-            url: "12.png",
-            x: 43,
-            y: 80,
-            w: 38,
-            h: 45
-        },
-        "reduced-outfit-male-13": {
-            type: "spritesheet",
-            base: e,
-            url: "13.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-14": {
-            type: "spritesheet",
-            base: e,
-            url: "14.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-15": {
-            type: "spritesheet",
-            base: e,
-            url: "15.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-16": {
-            type: "spritesheet",
-            base: e,
-            url: "16.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-17": {
-            type: "spritesheet",
-            base: e,
-            url: "17.png",
-            x: 28,
-            y: 82,
-            w: 60,
-            h: 43
-        },
-        "reduced-outfit-male-18": {
-            type: "spritesheet",
-            base: e,
-            url: "18.png",
-            x: 43,
-            y: 86,
-            w: 38,
-            h: 39
-        },
-        "reduced-outfit-male-19": {
-            type: "spritesheet",
-            base: e,
-            url: "19.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-2": {
-            type: "spritesheet",
-            base: e,
-            url: "2.png",
-            x: 32,
-            y: 83,
-            w: 49,
-            h: 42
-        },
-        "reduced-outfit-male-20": {
-            type: "spritesheet",
-            base: e,
-            url: "20.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-21": {
-            type: "spritesheet",
-            base: e,
-            url: "21.png",
-            x: 43,
-            y: 86,
-            w: 38,
-            h: 39
-        },
-        "reduced-outfit-male-22": {
-            type: "spritesheet",
-            base: e,
-            url: "22.png",
-            x: 43,
-            y: 84,
-            w: 38,
-            h: 41
-        },
-        "reduced-outfit-male-23": {
-            type: "spritesheet",
-            base: e,
-            url: "23.png",
-            x: 43,
-            y: 84,
-            w: 38,
-            h: 41
-        },
-        "reduced-outfit-male-24": {
-            type: "spritesheet",
-            base: e,
-            url: "24.png",
-            x: 25,
-            y: 78,
-            w: 56,
-            h: 47
-        },
-        "reduced-outfit-male-25": {
-            type: "spritesheet",
-            base: e,
-            url: "25.png",
-            x: 43,
-            y: 84,
-            w: 38,
-            h: 41
-        },
-        "reduced-outfit-male-26": {
-            type: "spritesheet",
-            base: e,
-            url: "26.png",
-            x: 43,
-            y: 84,
-            w: 38,
-            h: 41
-        },
-        "reduced-outfit-male-27": {
-            type: "spritesheet",
-            base: e,
-            url: "27.png",
-            x: 43,
-            y: 78,
-            w: 38,
-            h: 47
-        },
-        "reduced-outfit-male-28": {
-            type: "spritesheet",
-            base: e,
-            url: "28.png",
-            x: 41,
-            y: 85,
-            w: 40,
-            h: 40
-        },
-        "reduced-outfit-male-29": {
-            type: "spritesheet",
-            base: e,
-            url: "29.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-3": {
-            type: "spritesheet",
-            base: e,
-            url: "3.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-30": {
-            type: "spritesheet",
-            base: e,
-            url: "30.png",
-            x: 43,
-            y: 84,
-            w: 38,
-            h: 41
-        },
-        "reduced-outfit-male-31": {
-            type: "spritesheet",
-            base: e,
-            url: "31.png",
-            x: 33,
-            y: 80,
-            w: 48,
-            h: 45
-        },
-        "reduced-outfit-male-32": {
-            type: "spritesheet",
-            base: e,
-            url: "32.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-33": {
-            type: "spritesheet",
-            base: e,
-            url: "33.png",
-            x: 37,
-            y: 82,
-            w: 44,
-            h: 43
-        },
-        "reduced-outfit-male-34": {
-            type: "spritesheet",
-            base: e,
-            url: "34.png",
-            x: 31,
-            y: 77,
-            w: 50,
-            h: 48
-        },
-        "reduced-outfit-male-35": {
-            type: "spritesheet",
-            base: e,
-            url: "35.png",
-            x: 42,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-36": {
-            type: "spritesheet",
-            base: e,
-            url: "36.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "reduced-outfit-male-37": {
-            type: "spritesheet",
-            base: e,
-            url: "37.png",
-            x: 39,
-            y: 84,
-            w: 44,
-            h: 41
-        },
-        "reduced-outfit-male-38": {
-            type: "spritesheet",
-            base: e,
-            url: "38.png",
-            x: 17,
-            y: 0,
-            w: 78,
-            h: 128
-        },
-        "reduced-outfit-male-39": {
-            type: "spritesheet",
-            base: e,
-            url: "39.png",
-            x: 17,
-            y: 66,
-            w: 79,
-            h: 59
-        },
-        "reduced-outfit-male-4": {
-            type: "spritesheet",
-            base: e,
-            url: "4.png",
-            x: 43,
-            y: 84,
-            w: 38,
-            h: 41
-        },
-        "reduced-outfit-male-40": {
-            type: "spritesheet",
-            base: e,
-            url: "40.png",
-            x: 41,
-            y: 84,
-            w: 42,
-            h: 44
-        },
-        "reduced-outfit-male-41": {
-            type: "spritesheet",
-            base: e,
-            url: "41.png",
-            x: 45,
-            y: 83,
-            w: 38,
-            h: 42
-        },
-        "reduced-outfit-male-42": {
-            type: "spritesheet",
-            base: e,
-            url: "42.png",
-            x: 45,
-            y: 84,
-            w: 37,
-            h: 42
-        },
-        "reduced-outfit-male-43": {
-            type: "spritesheet",
-            base: e,
-            url: "43.png",
-            x: 40,
-            y: 84,
-            w: 52,
-            h: 42
-        },
-        "reduced-outfit-male-44": {
-            type: "spritesheet",
-            base: e,
-            url: "44.png",
-            x: 39,
-            y: 79,
-            w: 48,
-            h: 46
-        },
-        "reduced-outfit-male-45": {
-            type: "spritesheet",
-            base: e,
-            url: "45.png",
-            x: 42,
-            y: 85,
-            w: 43,
-            h: 41
-        },
-        "reduced-outfit-male-46": {
-            type: "spritesheet",
-            base: e,
-            url: "46.png",
-            x: 41,
-            y: 85,
-            w: 38,
-            h: 38
-        },
-        "reduced-outfit-male-47": {
-            type: "spritesheet",
-            base: e,
-            url: "47.png",
-            x: 45,
-            y: 82,
-            w: 38,
-            h: 43
-        },
-        "reduced-outfit-male-48": {
-            type: "spritesheet",
-            base: e,
-            url: "48.png",
-            x: 28,
-            y: 77,
-            w: 55,
-            h: 48
-        },
-        "reduced-outfit-male-49": {
-            type: "spritesheet",
-            base: e,
-            url: "49.png",
-            x: 40,
-            y: 85,
-            w: 44,
-            h: 40
-        },
-        "reduced-outfit-male-5": {
-            type: "spritesheet",
-            base: e,
-            url: "5.png",
-            x: 25,
-            y: 78,
-            w: 56,
-            h: 47
-        },
-        "reduced-outfit-male-6": {
-            type: "spritesheet",
-            base: e,
-            url: "6.png",
-            x: 42,
-            y: 78,
-            w: 39,
-            h: 47
-        },
-        "reduced-outfit-male-7": {
-            type: "spritesheet",
-            base: e,
-            url: "7.png",
-            x: 35,
-            y: 80,
-            w: 46,
-            h: 45
-        },
-        "reduced-outfit-male-8": {
-            type: "spritesheet",
-            base: e,
-            url: "8.png",
-            x: 39,
-            y: 76,
-            w: 42,
-            h: 49
-        },
-        "reduced-outfit-male-9": {
-            type: "spritesheet",
-            base: e,
-            url: "9.png",
-            x: 43,
-            y: 85,
-            w: 38,
-            h: 40
-        },
-        "normal-outfit-female-1": {
-            type: "spritesheet",
-            base: o,
-            url: "1.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-10": {
-            type: "spritesheet",
-            base: o,
-            url: "10.png",
-            x: 94,
-            y: 129,
-            w: 68,
-            h: 105
-        },
-        "normal-outfit-female-11": {
-            type: "spritesheet",
-            base: o,
-            url: "11.png",
-            x: 94,
-            y: 151,
-            w: 68,
-            h: 83
-        },
-        "normal-outfit-female-12": {
-            type: "spritesheet",
-            base: o,
-            url: "12.png",
-            x: 94,
-            y: 141,
-            w: 68,
-            h: 93
-        },
-        "normal-outfit-female-13": {
-            type: "spritesheet",
-            base: o,
-            url: "13.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-14": {
-            type: "spritesheet",
-            base: o,
-            url: "14.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-15": {
-            type: "spritesheet",
-            base: o,
-            url: "15.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-16": {
-            type: "spritesheet",
-            base: o,
-            url: "16.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-17": {
-            type: "spritesheet",
-            base: o,
-            url: "17.png",
-            x: 69,
-            y: 155,
-            w: 104,
-            h: 79
-        },
-        "normal-outfit-female-18": {
-            type: "spritesheet",
-            base: o,
-            url: "18.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-19": {
-            type: "spritesheet",
-            base: o,
-            url: "19.png",
-            x: 94,
-            y: 154,
-            w: 68,
-            h: 80
-        },
-        "normal-outfit-female-2": {
-            type: "spritesheet",
-            base: o,
-            url: "2.png",
-            x: 94,
-            y: 157,
-            w: 68,
-            h: 77
-        },
-        "normal-outfit-female-20": {
-            type: "spritesheet",
-            base: o,
-            url: "20.png",
-            x: 94,
-            y: 154,
-            w: 68,
-            h: 80
-        },
-        "normal-outfit-female-21": {
-            type: "spritesheet",
-            base: o,
-            url: "21.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-22": {
-            type: "spritesheet",
-            base: o,
-            url: "22.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-23": {
-            type: "spritesheet",
-            base: o,
-            url: "23.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-24": {
-            type: "spritesheet",
-            base: o,
-            url: "24.png",
-            x: 63,
-            y: 145,
-            w: 104,
-            h: 89
-        },
-        "normal-outfit-female-25": {
-            type: "spritesheet",
-            base: o,
-            url: "25.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-26": {
-            type: "spritesheet",
-            base: o,
-            url: "26.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-27": {
-            type: "spritesheet",
-            base: o,
-            url: "27.png",
-            x: 93,
-            y: 140,
-            w: 69,
-            h: 94
-        },
-        "normal-outfit-female-28": {
-            type: "spritesheet",
-            base: o,
-            url: "28.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-29": {
-            type: "spritesheet",
-            base: o,
-            url: "29.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-3": {
-            type: "spritesheet",
-            base: o,
-            url: "3.png",
-            x: 94,
-            y: 157,
-            w: 68,
-            h: 77
-        },
-        "normal-outfit-female-30": {
-            type: "spritesheet",
-            base: o,
-            url: "30.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-31": {
-            type: "spritesheet",
-            base: o,
-            url: "31.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-32": {
-            type: "spritesheet",
-            base: o,
-            url: "32.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-33": {
-            type: "spritesheet",
-            base: o,
-            url: "33.png",
-            x: 74,
-            y: 151,
-            w: 88,
-            h: 83
-        },
-        "normal-outfit-female-34": {
-            type: "spritesheet",
-            base: o,
-            url: "34.png",
-            x: 66,
-            y: 145,
-            w: 99,
-            h: 89
-        },
-        "normal-outfit-female-35": {
-            type: "spritesheet",
-            base: o,
-            url: "35.png",
-            x: 94,
-            y: 154,
-            w: 68,
-            h: 80
-        },
-        "normal-outfit-female-36": {
-            type: "spritesheet",
-            base: o,
-            url: "36.png",
-            x: 91,
-            y: 156,
-            w: 72,
-            h: 78
-        },
-        "normal-outfit-female-37": {
-            type: "spritesheet",
-            base: o,
-            url: "37.png",
-            x: 72,
-            y: 153,
-            w: 90,
-            h: 81
-        },
-        "normal-outfit-female-38": {
-            type: "spritesheet",
-            base: o,
-            url: "38.png",
-            x: 30,
-            y: 34,
-            w: 165,
-            h: 221
-        },
-        "normal-outfit-female-39": {
-            type: "spritesheet",
-            base: o,
-            url: "39.png",
-            x: 94,
-            y: 155,
-            w: 68,
-            h: 79
-        },
-        "normal-outfit-female-4": {
-            type: "spritesheet",
-            base: o,
-            url: "4.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-40": {
-            type: "spritesheet",
-            base: o,
-            url: "40.png",
-            x: 75,
-            y: 155,
-            w: 87,
-            h: 79
-        },
-        "normal-outfit-female-41": {
-            type: "spritesheet",
-            base: o,
-            url: "41.png",
-            x: 70,
-            y: 153,
-            w: 92,
-            h: 86
-        },
-        "normal-outfit-female-42": {
-            type: "spritesheet",
-            base: o,
-            url: "42.png",
-            x: 94,
-            y: 156,
-            w: 68,
-            h: 78
-        },
-        "normal-outfit-female-43": {
-            type: "spritesheet",
-            base: o,
-            url: "43.png",
-            x: 89,
-            y: 151,
-            w: 95,
-            h: 86
-        },
-        "normal-outfit-female-44": {
-            type: "spritesheet",
-            base: o,
-            url: "44.png",
-            x: 78,
-            y: 135,
-            w: 95,
-            h: 99
-        },
-        "normal-outfit-female-45": {
-            type: "spritesheet",
-            base: o,
-            url: "45.png",
-            x: 94,
-            y: 154,
-            w: 79,
-            h: 82
-        },
-        "normal-outfit-female-46": {
-            type: "spritesheet",
-            base: o,
-            url: "46.png",
-            x: 89,
-            y: 156,
-            w: 74,
-            h: 77
-        },
-        "normal-outfit-female-47": {
-            type: "spritesheet",
-            base: o,
-            url: "47.png",
-            x: 94,
-            y: 149,
-            w: 68,
-            h: 87
-        },
-        "normal-outfit-female-48": {
-            type: "spritesheet",
-            base: o,
-            url: "48.png",
-            x: 64,
-            y: 138,
-            w: 98,
-            h: 96
-        },
-        "normal-outfit-female-49": {
-            type: "spritesheet",
-            base: o,
-            url: "49.png",
-            x: 87,
-            y: 152,
-            w: 83,
-            h: 81
-        },
-        "normal-outfit-female-5": {
-            type: "spritesheet",
-            base: o,
-            url: "5.png",
-            x: 63,
-            y: 145,
-            w: 104,
-            h: 89
-        },
-        "normal-outfit-female-6": {
-            type: "spritesheet",
-            base: o,
-            url: "6.png",
-            x: 91,
-            y: 140,
-            w: 71,
-            h: 94
-        },
-        "normal-outfit-female-7": {
-            type: "spritesheet",
-            base: o,
-            url: "7.png",
-            x: 75,
-            y: 149,
-            w: 87,
-            h: 85
-        },
-        "normal-outfit-female-8": {
-            type: "spritesheet",
-            base: o,
-            url: "8.png",
-            x: 92,
-            y: 137,
-            w: 70,
-            h: 97
-        },
-        "normal-outfit-female-9": {
-            type: "spritesheet",
-            base: o,
-            url: "9.png",
-            x: 94,
-            y: 153,
-            w: 68,
-            h: 81
-        },
-        "reduced-outfit-female-1": {
-            type: "spritesheet",
-            base: t,
-            url: "1.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-10": {
-            type: "spritesheet",
-            base: t,
-            url: "10.png",
-            x: 44,
-            y: 72,
-            w: 35,
-            h: 53
-        },
-        "reduced-outfit-female-11": {
-            type: "spritesheet",
-            base: t,
-            url: "11.png",
-            x: 44,
-            y: 83,
-            w: 35,
-            h: 42
-        },
-        "reduced-outfit-female-12": {
-            type: "spritesheet",
-            base: t,
-            url: "12.png",
-            x: 44,
-            y: 78,
-            w: 35,
-            h: 47
-        },
-        "reduced-outfit-female-13": {
-            type: "spritesheet",
-            base: t,
-            url: "13.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-14": {
-            type: "spritesheet",
-            base: t,
-            url: "14.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-15": {
-            type: "spritesheet",
-            base: t,
-            url: "15.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-16": {
-            type: "spritesheet",
-            base: t,
-            url: "16.png",
-            x: 44,
-            y: 85,
-            w: 35,
-            h: 40
-        },
-        "reduced-outfit-female-17": {
-            type: "spritesheet",
-            base: t,
-            url: "17.png",
-            x: 32,
-            y: 84,
-            w: 53,
-            h: 41
-        },
-        "reduced-outfit-female-18": {
-            type: "spritesheet",
-            base: t,
-            url: "18.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-19": {
-            type: "spritesheet",
-            base: t,
-            url: "19.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-2": {
-            type: "spritesheet",
-            base: t,
-            url: "2.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-20": {
-            type: "spritesheet",
-            base: t,
-            url: "20.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-21": {
-            type: "spritesheet",
-            base: t,
-            url: "21.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-22": {
-            type: "spritesheet",
-            base: t,
-            url: "22.png",
-            x: 44,
-            y: 85,
-            w: 35,
-            h: 40
-        },
-        "reduced-outfit-female-23": {
-            type: "spritesheet",
-            base: t,
-            url: "23.png",
-            x: 44,
-            y: 85,
-            w: 35,
-            h: 40
-        },
-        "reduced-outfit-female-24": {
-            type: "spritesheet",
-            base: t,
-            url: "24.png",
-            x: 29,
-            y: 79,
-            w: 51,
-            h: 46
-        },
-        "reduced-outfit-female-25": {
-            type: "spritesheet",
-            base: t,
-            url: "25.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-26": {
-            type: "spritesheet",
-            base: t,
-            url: "26.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-27": {
-            type: "spritesheet",
-            base: t,
-            url: "27.png",
-            x: 43,
-            y: 77,
-            w: 36,
-            h: 48
-        },
-        "reduced-outfit-female-28": {
-            type: "spritesheet",
-            base: t,
-            url: "28.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-29": {
-            type: "spritesheet",
-            base: t,
-            url: "29.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-3": {
-            type: "spritesheet",
-            base: t,
-            url: "3.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-30": {
-            type: "spritesheet",
-            base: t,
-            url: "30.png",
-            x: 44,
-            y: 85,
-            w: 35,
-            h: 40
-        },
-        "reduced-outfit-female-31": {
-            type: "spritesheet",
-            base: t,
-            url: "31.png",
-            x: 44,
-            y: 85,
-            w: 35,
-            h: 40
-        },
-        "reduced-outfit-female-32": {
-            type: "spritesheet",
-            base: t,
-            url: "32.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-33": {
-            type: "spritesheet",
-            base: t,
-            url: "33.png",
-            x: 39,
-            y: 83,
-            w: 40,
-            h: 42
-        },
-        "reduced-outfit-female-34": {
-            type: "spritesheet",
-            base: t,
-            url: "34.png",
-            x: 31,
-            y: 80,
-            w: 48,
-            h: 45
-        },
-        "reduced-outfit-female-35": {
-            type: "spritesheet",
-            base: t,
-            url: "35.png",
-            x: 44,
-            y: 84,
-            w: 35,
-            h: 41
-        },
-        "reduced-outfit-female-36": {
-            type: "spritesheet",
-            base: t,
-            url: "36.png",
-            x: 43,
-            y: 86,
-            w: 36,
-            h: 39
-        },
-        "reduced-outfit-female-37": {
-            type: "spritesheet",
-            base: t,
-            url: "37.png",
-            x: 36,
-            y: 83,
-            w: 45,
-            h: 42
-        },
-        "reduced-outfit-female-38": {
-            type: "spritesheet",
-            base: t,
-            url: "38.png",
-            x: 17,
-            y: 0,
-            w: 78,
-            h: 128
-        },
-        "reduced-outfit-female-39": {
-            type: "spritesheet",
-            base: t,
-            url: "39.png",
-            x: 16,
-            y: 68,
-            w: 79,
-            h: 57
-        },
-        "reduced-outfit-female-4": {
-            type: "spritesheet",
-            base: t,
-            url: "4.png",
-            x: 44,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-40": {
-            type: "spritesheet",
-            base: t,
-            url: "40.png",
-            x: 41,
-            y: 85,
-            w: 39,
-            h: 43
-        },
-        "reduced-outfit-female-41": {
-            type: "spritesheet",
-            base: t,
-            url: "41.png",
-            x: 45,
-            y: 84,
-            w: 35,
-            h: 41
-        },
-        "reduced-outfit-female-42": {
-            type: "spritesheet",
-            base: t,
-            url: "42.png",
-            x: 45,
-            y: 86,
-            w: 35,
-            h: 39
-        },
-        "reduced-outfit-female-43": {
-            type: "spritesheet",
-            base: t,
-            url: "43.png",
-            x: 40,
-            y: 84,
-            w: 52,
-            h: 42
-        },
-        "reduced-outfit-female-44": {
-            type: "spritesheet",
-            base: t,
-            url: "44.png",
-            x: 37,
-            y: 75,
-            w: 47,
-            h: 50
-        },
-        "reduced-outfit-female-45": {
-            type: "spritesheet",
-            base: t,
-            url: "45.png",
-            x: 42,
-            y: 85,
-            w: 43,
-            h: 41
-        },
-        "reduced-outfit-female-46": {
-            type: "spritesheet",
-            base: t,
-            url: "46.png",
-            x: 43,
-            y: 85,
-            w: 36,
-            h: 36
-        },
-        "reduced-outfit-female-47": {
-            type: "spritesheet",
-            base: t,
-            url: "47.png",
-            x: 45,
-            y: 82,
-            w: 35,
-            h: 43
-        },
-        "reduced-outfit-female-48": {
-            type: "spritesheet",
-            base: t,
-            url: "48.png",
-            x: 31,
-            y: 77,
-            w: 49,
-            h: 48
-        },
-        "reduced-outfit-female-49": {
-            type: "spritesheet",
-            base: t,
-            url: "49.png",
-            x: 40,
-            y: 85,
-            w: 44,
-            h: 40
-        },
-        "reduced-outfit-female-5": {
-            type: "spritesheet",
-            base: t,
-            url: "5.png",
-            x: 29,
-            y: 79,
-            w: 51,
-            h: 46
-        },
-        "reduced-outfit-female-6": {
-            type: "spritesheet",
-            base: t,
-            url: "6.png",
-            x: 43,
-            y: 77,
-            w: 36,
-            h: 48
-        },
-        "reduced-outfit-female-7": {
-            type: "spritesheet",
-            base: t,
-            url: "7.png",
-            x: 38,
-            y: 82,
-            w: 41,
-            h: 43
-        },
-        "reduced-outfit-female-8": {
-            type: "spritesheet",
-            base: t,
-            url: "8.png",
-            x: 40,
-            y: 76,
-            w: 39,
-            h: 49
-        },
-        "reduced-outfit-female-9": {
-            type: "spritesheet",
-            base: t,
-            url: "9.png",
-            x: 44,
-            y: 85,
-            w: 35,
-            h: 40
-        },
-        "normal-hat-1": {
-            type: "spritesheet",
-            base: l,
-            url: "1.png",
-            x: 49,
-            y: 39,
-            w: 131,
-            h: 89
-        },
-        "normal-hat-10": {
-            type: "spritesheet",
-            base: l,
-            url: "10.png",
-            x: 97,
-            y: 14,
-            w: 75,
-            h: 105
-        },
-        "normal-hat-11": {
-            type: "spritesheet",
-            base: l,
-            url: "11.png",
-            x: 11,
-            y: 28,
-            w: 172,
-            h: 139
-        },
-        "normal-hat-12": {
-            type: "spritesheet",
-            base: l,
-            url: "12.png",
-            x: 73,
-            y: 64,
-            w: 105,
-            h: 61
-        },
-        "normal-hat-13": {
-            type: "spritesheet",
-            base: l,
-            url: "13.png",
-            x: 73,
-            y: 64,
-            w: 105,
-            h: 61
-        },
-        "normal-hat-14": {
-            type: "spritesheet",
-            base: l,
-            url: "14.png",
-            x: 73,
-            y: 64,
-            w: 105,
-            h: 61
-        },
-        "normal-hat-15": {
-            type: "spritesheet",
-            base: l,
-            url: "15.png",
-            x: 58,
-            y: 38,
-            w: 129,
-            h: 85
-        },
-        "normal-hat-16": {
-            type: "spritesheet",
-            base: l,
-            url: "16.png",
-            x: 58,
-            y: 38,
-            w: 129,
-            h: 85
-        },
-        "normal-hat-17": {
-            type: "spritesheet",
-            base: l,
-            url: "17.png",
-            x: 71,
-            y: 35,
-            w: 118,
-            h: 89
-        },
-        "normal-hat-18": {
-            type: "spritesheet",
-            base: l,
-            url: "18.png",
-            x: 65,
-            y: 40,
-            w: 117,
-            h: 84
-        },
-        "normal-hat-19": {
-            type: "spritesheet",
-            base: l,
-            url: "19.png",
-            x: 63,
-            y: 37,
-            w: 132,
-            h: 90
-        },
-        "normal-hat-2": {
-            type: "spritesheet",
-            base: l,
-            url: "2.png",
-            x: 85,
-            y: 34,
-            w: 94,
-            h: 93
-        },
-        "normal-hat-20": {
-            type: "spritesheet",
-            base: l,
-            url: "20.png",
-            x: 71,
-            y: 35,
-            w: 118,
-            h: 89
-        },
-        "normal-hat-21": {
-            type: "spritesheet",
-            base: l,
-            url: "21.png",
-            x: 65,
-            y: 40,
-            w: 117,
-            h: 84
-        },
-        "normal-hat-22": {
-            type: "spritesheet",
-            base: l,
-            url: "22.png",
-            x: 60,
-            y: 37,
-            w: 117,
-            h: 85
-        },
-        "normal-hat-23": {
-            type: "spritesheet",
-            base: l,
-            url: "23.png",
-            x: 93,
-            y: 52,
-            w: 77,
-            h: 58
-        },
-        "normal-hat-24": {
-            type: "spritesheet",
-            base: l,
-            url: "24.png",
-            x: 49,
-            y: 53,
-            w: 137,
-            h: 78
-        },
-        "normal-hat-25": {
-            type: "spritesheet",
-            base: l,
-            url: "25.png",
-            x: 85,
-            y: 43,
-            w: 95,
-            h: 82
-        },
-        "normal-hat-26": {
-            type: "spritesheet",
-            base: l,
-            url: "26.png",
-            x: 69,
-            y: 25,
-            w: 124,
-            h: 99
-        },
-        "normal-hat-27": {
-            type: "spritesheet",
-            base: l,
-            url: "27.png",
-            x: 88,
-            y: 80,
-            w: 67,
-            h: 65
-        },
-        "normal-hat-28": {
-            type: "spritesheet",
-            base: l,
-            url: "28.png",
-            x: 77,
-            y: 68,
-            w: 100,
-            h: 89
-        },
-        "normal-hat-29": {
-            type: "spritesheet",
-            base: l,
-            url: "29.png",
-            x: 62,
-            y: 49,
-            w: 118,
-            h: 99
-        },
-        "normal-hat-3": {
-            type: "spritesheet",
-            base: l,
-            url: "3.png",
-            x: 93,
-            y: 61,
-            w: 77,
-            h: 56
-        },
-        "normal-hat-30": {
-            type: "spritesheet",
-            base: l,
-            url: "30.png",
-            x: 66,
-            y: 16,
-            w: 124,
-            h: 144
-        },
-        "normal-hat-31": {
-            type: "spritesheet",
-            base: l,
-            url: "31.png",
-            x: 55,
-            y: 31,
-            w: 130,
-            h: 110
-        },
-        "normal-hat-32": {
-            type: "spritesheet",
-            base: l,
-            url: "32.png",
-            x: 26,
-            y: 35,
-            w: 154,
-            h: 109
-        },
-        "normal-hat-33": {
-            type: "spritesheet",
-            base: l,
-            url: "33.png",
-            x: 72,
-            y: 32,
-            w: 117,
-            h: 96
-        },
-        "normal-hat-34": {
-            type: "spritesheet",
-            base: l,
-            url: "34.png",
-            x: 99,
-            y: 49,
-            w: 76,
-            h: 71
-        },
-        "normal-hat-35": {
-            type: "spritesheet",
-            base: l,
-            url: "35.png",
-            x: 102,
-            y: 54,
-            w: 75,
-            h: 70
-        },
-        "normal-hat-36": {
-            type: "spritesheet",
-            base: l,
-            url: "36.png",
-            x: 65,
-            y: 15,
-            w: 129,
-            h: 113
-        },
-        "normal-hat-37": {
-            type: "spritesheet",
-            base: l,
-            url: "37.png",
-            x: 61,
-            y: 37,
-            w: 124,
-            h: 104
-        },
-        "normal-hat-38": {
-            type: "spritesheet",
-            base: l,
-            url: "38.png",
-            x: 57,
-            y: 37,
-            w: 125,
-            h: 96
-        },
-        "normal-hat-39": {
-            type: "spritesheet",
-            base: l,
-            url: "39.png",
-            x: 72,
-            y: 63,
-            w: 120,
-            h: 109
-        },
-        "normal-hat-4": {
-            type: "spritesheet",
-            base: l,
-            url: "4.png",
-            x: 61,
-            y: 49,
-            w: 141,
-            h: 78
-        },
-        "normal-hat-40": {
-            type: "spritesheet",
-            base: l,
-            url: "40.png",
-            x: 79,
-            y: 84,
-            w: 96,
-            h: 77
-        },
-        "normal-hat-41": {
-            type: "spritesheet",
-            base: l,
-            url: "41.png",
-            x: 73,
-            y: 72,
-            w: 109,
-            h: 107
-        },
-        "normal-hat-42": {
-            type: "spritesheet",
-            base: l,
-            url: "42.png",
-            x: 63,
-            y: 61,
-            w: 112,
-            h: 93
-        },
-        "normal-hat-43": {
-            type: "spritesheet",
-            base: l,
-            url: "43.png",
-            x: 78,
-            y: 48,
-            w: 106,
-            h: 83
-        },
-        "normal-hat-44": {
-            type: "spritesheet",
-            base: l,
-            url: "44.png",
-            x: 68,
-            y: 54,
-            w: 125,
-            h: 75
-        },
-        "normal-hat-45": {
-            type: "spritesheet",
-            base: l,
-            url: "45.png",
-            x: 73,
-            y: 32,
-            w: 115,
-            h: 93
-        },
-        "normal-hat-46": {
-            type: "spritesheet",
-            base: l,
-            url: "46.png",
-            x: 59,
-            y: 41,
-            w: 130,
-            h: 117
-        },
-        "normal-hat-47": {
-            type: "spritesheet",
-            base: l,
-            url: "47.png",
-            x: 84,
-            y: 70,
-            w: 85,
-            h: 80
-        },
-        "normal-hat-48": {
-            type: "spritesheet",
-            base: l,
-            url: "48.png",
-            x: 64,
-            y: 34,
-            w: 136,
-            h: 124
-        },
-        "normal-hat-49": {
-            type: "spritesheet",
-            base: l,
-            url: "49.png",
-            x: 72,
-            y: 45,
-            w: 110,
-            h: 117
-        },
-        "normal-hat-5": {
-            type: "spritesheet",
-            base: l,
-            url: "5.png",
-            x: 61,
-            y: 26,
-            w: 151,
-            h: 108
-        },
-        "normal-hat-50": {
-            type: "spritesheet",
-            base: l,
-            url: "50.png",
-            x: 27,
-            y: 67,
-            w: 149,
-            h: 110
-        },
-        "normal-hat-51": {
-            type: "spritesheet",
-            base: l,
-            url: "51.png",
-            x: 88,
-            y: 83,
-            w: 91,
-            h: 91
-        },
-        "normal-hat-52": {
-            type: "spritesheet",
-            base: l,
-            url: "52.png",
-            x: 104,
-            y: 99,
-            w: 69,
-            h: 69
-        },
-        "normal-hat-53": {
-            type: "spritesheet",
-            base: l,
-            url: "53.png",
-            x: 93,
-            y: 69,
-            w: 80,
-            h: 95
-        },
-        "normal-hat-54": {
-            type: "spritesheet",
-            base: l,
-            url: "54.png",
-            x: 80,
-            y: 55,
-            w: 97,
-            h: 79
-        },
-        "normal-hat-55": {
-            type: "spritesheet",
-            base: l,
-            url: "55.png",
-            x: 56,
-            y: 37,
-            w: 118,
-            h: 110
-        },
-        "normal-hat-56": {
-            type: "spritesheet",
-            base: l,
-            url: "56.png",
-            x: 75,
-            y: 35,
-            w: 115,
-            h: 163
-        },
-        "normal-hat-57": {
-            type: "spritesheet",
-            base: l,
-            url: "57.png",
-            x: 77,
-            y: 34,
-            w: 102,
-            h: 135
-        },
-        "normal-hat-58": {
-            type: "spritesheet",
-            base: l,
-            url: "58.png",
-            x: 79,
-            y: 57,
-            w: 100,
-            h: 139
-        },
-        "normal-hat-6": {
-            type: "spritesheet",
-            base: l,
-            url: "6.png",
-            x: 105,
-            y: 34,
-            w: 64,
-            h: 89
-        },
-        "normal-hat-7": {
-            type: "spritesheet",
-            base: l,
-            url: "7.png",
-            x: 69,
-            y: 35,
-            w: 116,
-            h: 83
-        },
-        "normal-hat-8": {
-            type: "spritesheet",
-            base: l,
-            url: "8.png",
-            x: 72,
-            y: 57,
-            w: 97,
-            h: 58
-        },
-        "normal-hat-9": {
-            type: "spritesheet",
-            base: l,
-            url: "9.png",
-            x: 62,
-            y: 33,
-            w: 127,
-            h: 95
-        },
-        "reduced-hat-1": {
-            type: "spritesheet",
-            base: s,
-            url: "1.png",
-            x: 23,
-            y: 29,
-            w: 65,
-            h: 45
-        },
-        "reduced-hat-10": {
-            type: "spritesheet",
-            base: s,
-            url: "10.png",
-            x: 48,
-            y: 15,
-            w: 37,
-            h: 52
-        },
-        "reduced-hat-11": {
-            type: "spritesheet",
-            base: s,
-            url: "11.png",
-            x: 7,
-            y: 24,
-            w: 86,
-            h: 67
-        },
-        "reduced-hat-12": {
-            type: "spritesheet",
-            base: s,
-            url: "12.png",
-            x: 35,
-            y: 39,
-            w: 53,
-            h: 31
-        },
-        "reduced-hat-13": {
-            type: "spritesheet",
-            base: s,
-            url: "13.png",
-            x: 35,
-            y: 39,
-            w: 53,
-            h: 31
-        },
-        "reduced-hat-14": {
-            type: "spritesheet",
-            base: s,
-            url: "14.png",
-            x: 35,
-            y: 39,
-            w: 53,
-            h: 31
-        },
-        "reduced-hat-15": {
-            type: "spritesheet",
-            base: s,
-            url: "15.png",
-            x: 26,
-            y: 29,
-            w: 64,
-            h: 42
-        },
-        "reduced-hat-16": {
-            type: "spritesheet",
-            base: s,
-            url: "16.png",
-            x: 26,
-            y: 29,
-            w: 64,
-            h: 42
-        },
-        "reduced-hat-17": {
-            type: "spritesheet",
-            base: s,
-            url: "17.png",
-            x: 33,
-            y: 25,
-            w: 59,
-            h: 45
-        },
-        "reduced-hat-18": {
-            type: "spritesheet",
-            base: s,
-            url: "18.png",
-            x: 28,
-            y: 29,
-            w: 60,
-            h: 42
-        },
-        "reduced-hat-19": {
-            type: "spritesheet",
-            base: s,
-            url: "19.png",
-            x: 24,
-            y: 24,
-            w: 69,
-            h: 46
-        },
-        "reduced-hat-2": {
-            type: "spritesheet",
-            base: s,
-            url: "2.png",
-            x: 40,
-            y: 23,
-            w: 48,
-            h: 48
-        },
-        "reduced-hat-20": {
-            type: "spritesheet",
-            base: s,
-            url: "20.png",
-            x: 33,
-            y: 25,
-            w: 59,
-            h: 45
-        },
-        "reduced-hat-21": {
-            type: "spritesheet",
-            base: s,
-            url: "21.png",
-            x: 28,
-            y: 29,
-            w: 60,
-            h: 42
-        },
-        "reduced-hat-22": {
-            type: "spritesheet",
-            base: s,
-            url: "22.png",
-            x: 28,
-            y: 30,
-            w: 60,
-            h: 42
-        },
-        "reduced-hat-23": {
-            type: "spritesheet",
-            base: s,
-            url: "23.png",
-            x: 44,
-            y: 34,
-            w: 39,
-            h: 27
-        },
-        "reduced-hat-24": {
-            type: "spritesheet",
-            base: s,
-            url: "24.png",
-            x: 21,
-            y: 35,
-            w: 69,
-            h: 40
-        },
-        "reduced-hat-25": {
-            type: "spritesheet",
-            base: s,
-            url: "25.png",
-            x: 39,
-            y: 27,
-            w: 48,
-            h: 41
-        },
-        "reduced-hat-26": {
-            type: "spritesheet",
-            base: s,
-            url: "26.png",
-            x: 32,
-            y: 20,
-            w: 62,
-            h: 49
-        },
-        "reduced-hat-27": {
-            type: "spritesheet",
-            base: s,
-            url: "27.png",
-            x: 42,
-            y: 48,
-            w: 33,
-            h: 32
-        },
-        "reduced-hat-28": {
-            type: "spritesheet",
-            base: s,
-            url: "28.png",
-            x: 36,
-            y: 42,
-            w: 50,
-            h: 45
-        },
-        "reduced-hat-29": {
-            type: "spritesheet",
-            base: s,
-            url: "29.png",
-            x: 29,
-            y: 32,
-            w: 59,
-            h: 49
-        },
-        "reduced-hat-3": {
-            type: "spritesheet",
-            base: s,
-            url: "3.png",
-            x: 44,
-            y: 34,
-            w: 39,
-            h: 27
-        },
-        "reduced-hat-30": {
-            type: "spritesheet",
-            base: s,
-            url: "30.png",
-            x: 31,
-            y: 16,
-            w: 62,
-            h: 72
-        },
-        "reduced-hat-31": {
-            type: "spritesheet",
-            base: s,
-            url: "31.png",
-            x: 25,
-            y: 24,
-            w: 65,
-            h: 55
-        },
-        "reduced-hat-32": {
-            type: "spritesheet",
-            base: s,
-            url: "32.png",
-            x: 9,
-            y: 33,
-            w: 77,
-            h: 50
-        },
-        "reduced-hat-33": {
-            type: "spritesheet",
-            base: s,
-            url: "33.png",
-            x: 32,
-            y: 24,
-            w: 59,
-            h: 48
-        },
-        "reduced-hat-34": {
-            type: "spritesheet",
-            base: s,
-            url: "34.png",
-            x: 48,
-            y: 31,
-            w: 38,
-            h: 33
-        },
-        "reduced-hat-35": {
-            type: "spritesheet",
-            base: s,
-            url: "35.png",
-            x: 46,
-            y: 30,
-            w: 39,
-            h: 35
-        },
-        "reduced-hat-36": {
-            type: "spritesheet",
-            base: s,
-            url: "36.png",
-            x: 29,
-            y: 16,
-            w: 65,
-            h: 57
-        },
-        "reduced-hat-37": {
-            type: "spritesheet",
-            base: s,
-            url: "37.png",
-            x: 26,
-            y: 25,
-            w: 62,
-            h: 52
-        },
-        "reduced-hat-38": {
-            type: "spritesheet",
-            base: s,
-            url: "38.png",
-            x: 25,
-            y: 28,
-            w: 63,
-            h: 49
-        },
-        "reduced-hat-39": {
-            type: "spritesheet",
-            base: s,
-            url: "39.png",
-            x: 33,
-            y: 39,
-            w: 61,
-            h: 55
-        },
-        "reduced-hat-4": {
-            type: "spritesheet",
-            base: s,
-            url: "4.png",
-            x: 28,
-            y: 31,
-            w: 70,
-            h: 40
-        },
-        "reduced-hat-40": {
-            type: "spritesheet",
-            base: s,
-            url: "40.png",
-            x: 37,
-            y: 47,
-            w: 49,
-            h: 39
-        },
-        "reduced-hat-41": {
-            type: "spritesheet",
-            base: s,
-            url: "41.png",
-            x: 36,
-            y: 42,
-            w: 55,
-            h: 54
-        },
-        "reduced-hat-42": {
-            type: "spritesheet",
-            base: s,
-            url: "42.png",
-            x: 31,
-            y: 38,
-            w: 57,
-            h: 47
-        },
-        "reduced-hat-43": {
-            type: "spritesheet",
-            base: s,
-            url: "43.png",
-            x: 37,
-            y: 32,
-            w: 54,
-            h: 43
-        },
-        "reduced-hat-44": {
-            type: "spritesheet",
-            base: s,
-            url: "44.png",
-            x: 32,
-            y: 34,
-            w: 63,
-            h: 39
-        },
-        "reduced-hat-45": {
-            type: "spritesheet",
-            base: s,
-            url: "45.png",
-            x: 35,
-            y: 22,
-            w: 58,
-            h: 48
-        },
-        "reduced-hat-46": {
-            type: "spritesheet",
-            base: s,
-            url: "46.png",
-            x: 29,
-            y: 28,
-            w: 66,
-            h: 59
-        },
-        "reduced-hat-47": {
-            type: "spritesheet",
-            base: s,
-            url: "47.png",
-            x: 41,
-            y: 43,
-            w: 44,
-            h: 39
-        },
-        "reduced-hat-48": {
-            type: "spritesheet",
-            base: s,
-            url: "48.png",
-            x: 31,
-            y: 24,
-            w: 68,
-            h: 63
-        },
-        "reduced-hat-49": {
-            type: "spritesheet",
-            base: s,
-            url: "49.png",
-            x: 34,
-            y: 30,
-            w: 55,
-            h: 58
-        },
-        "reduced-hat-5": {
-            type: "spritesheet",
-            base: s,
-            url: "5.png",
-            x: 29,
-            y: 20,
-            w: 76,
-            h: 56
-        },
-        "reduced-hat-50": {
-            type: "spritesheet",
-            base: s,
-            url: "50.png",
-            x: 10,
-            y: 41,
-            w: 76,
-            h: 56
-        },
-        "reduced-hat-51": {
-            type: "spritesheet",
-            base: s,
-            url: "51.png",
-            x: 43,
-            y: 48,
-            w: 46,
-            h: 46
-        },
-        "reduced-hat-52": {
-            type: "spritesheet",
-            base: s,
-            url: "52.png",
-            x: 50,
-            y: 56,
-            w: 35,
-            h: 35
-        },
-        "reduced-hat-53": {
-            type: "spritesheet",
-            base: s,
-            url: "53.png",
-            x: 46,
-            y: 43,
-            w: 40,
-            h: 48
-        },
-        "reduced-hat-54": {
-            type: "spritesheet",
-            base: s,
-            url: "54.png",
-            x: 37,
-            y: 31,
-            w: 50,
-            h: 40
-        },
-        "reduced-hat-55": {
-            type: "spritesheet",
-            base: s,
-            url: "55.png",
-            x: 25,
-            y: 26,
-            w: 60,
-            h: 56
-        },
-        "reduced-hat-56": {
-            type: "spritesheet",
-            base: s,
-            url: "56.png",
-            x: 34,
-            y: 26,
-            w: 59,
-            h: 81
-        },
-        "reduced-hat-57": {
-            type: "spritesheet",
-            base: s,
-            url: "57.png",
-            x: 38,
-            y: 21,
-            w: 52,
-            h: 69
-        },
-        "reduced-hat-58": {
-            type: "spritesheet",
-            base: s,
-            url: "58.png",
-            x: 39,
-            y: 32,
-            w: 51,
-            h: 71
-        },
-        "reduced-hat-6": {
-            type: "spritesheet",
-            base: s,
-            url: "6.png",
-            x: 50,
-            y: 23,
-            w: 32,
-            h: 44
-        },
-        "reduced-hat-7": {
-            type: "spritesheet",
-            base: s,
-            url: "7.png",
-            x: 31,
-            y: 28,
-            w: 58,
-            h: 41
-        },
-        "reduced-hat-8": {
-            type: "spritesheet",
-            base: s,
-            url: "8.png",
-            x: 32,
-            y: 35,
-            w: 49,
-            h: 29
-        },
-        "reduced-hat-9": {
-            type: "spritesheet",
-            base: s,
-            url: "9.png",
-            x: 27,
-            y: 23,
-            w: 64,
-            h: 49
-        },
-        "normal-weapon-1": {
-            type: "spritesheet",
-            base: p,
-            url: "1.png",
-            x: 137,
-            y: 140,
-            w: 59,
-            h: 53
-        },
-        "normal-weapon-10": {
-            type: "spritesheet",
-            base: p,
-            url: "10.png",
-            x: 142,
-            y: 131,
-            w: 64,
-            h: 64
-        },
-        "normal-weapon-11": {
-            type: "spritesheet",
-            base: p,
-            url: "11.png",
-            x: 139,
-            y: 133,
-            w: 64,
-            h: 65
-        },
-        "normal-weapon-12": {
-            type: "spritesheet",
-            base: p,
-            url: "12.png",
-            x: 140,
-            y: 132,
-            w: 63,
-            h: 66
-        },
-        "normal-weapon-13": {
-            type: "spritesheet",
-            base: p,
-            url: "13.png",
-            x: 140,
-            y: 131,
-            w: 66,
-            h: 66
-        },
-        "normal-weapon-14": {
-            type: "spritesheet",
-            base: p,
-            url: "14.png",
-            x: 142,
-            y: 130,
-            w: 61,
-            h: 65
-        },
-        "normal-weapon-15": {
-            type: "spritesheet",
-            base: p,
-            url: "15.png",
-            x: 143,
-            y: 138,
-            w: 56,
-            h: 56
-        },
-        "normal-weapon-16": {
-            type: "spritesheet",
-            base: p,
-            url: "16.png",
-            x: 131,
-            y: 58,
-            w: 106,
-            h: 169
-        },
-        "normal-weapon-17": {
-            type: "spritesheet",
-            base: p,
-            url: "17.png",
-            x: 130,
-            y: 49,
-            w: 105,
-            h: 177
-        },
-        "normal-weapon-18": {
-            type: "spritesheet",
-            base: p,
-            url: "18.png",
-            x: 129,
-            y: 41,
-            w: 114,
-            h: 182
-        },
-        "normal-weapon-19": {
-            type: "spritesheet",
-            base: p,
-            url: "19.png",
-            x: 126,
-            y: 57,
-            w: 110,
-            h: 172
-        },
-        "normal-weapon-2": {
-            type: "spritesheet",
-            base: p,
-            url: "2.png",
-            x: 143,
-            y: 142,
-            w: 52,
-            h: 52
-        },
-        "normal-weapon-20": {
-            type: "spritesheet",
-            base: p,
-            url: "20.png",
-            x: 119,
-            y: 15,
-            w: 141,
-            h: 217
-        },
-        "normal-weapon-21": {
-            type: "spritesheet",
-            base: p,
-            url: "21.png",
-            x: 127,
-            y: 31,
-            w: 141,
-            h: 196
-        },
-        "normal-weapon-22": {
-            type: "spritesheet",
-            base: p,
-            url: "22.png",
-            x: 120,
-            y: 13,
-            w: 130,
-            h: 216
-        },
-        "normal-weapon-23": {
-            type: "spritesheet",
-            base: p,
-            url: "23.png",
-            x: 129,
-            y: 32,
-            w: 149,
-            h: 192
-        },
-        "normal-weapon-24": {
-            type: "spritesheet",
-            base: p,
-            url: "24.png",
-            x: 123,
-            y: 37,
-            w: 141,
-            h: 192
-        },
-        "normal-weapon-25": {
-            type: "spritesheet",
-            base: p,
-            url: "25.png",
-            x: 144,
-            y: 142,
-            w: 51,
-            h: 52
-        },
-        "normal-weapon-26": {
-            type: "spritesheet",
-            base: p,
-            url: "26.png",
-            x: 144,
-            y: 142,
-            w: 51,
-            h: 52
-        },
-        "normal-weapon-27": {
-            type: "spritesheet",
-            base: p,
-            url: "27.png",
-            x: 148,
-            y: 137,
-            w: 52,
-            h: 52
-        },
-        "normal-weapon-28": {
-            type: "spritesheet",
-            base: p,
-            url: "28.png",
-            x: 148,
-            y: 137,
-            w: 52,
-            h: 52
-        },
-        "normal-weapon-29": {
-            type: "spritesheet",
-            base: p,
-            url: "29.png",
-            x: 148,
-            y: 137,
-            w: 52,
-            h: 52
-        },
-        "normal-weapon-3": {
-            type: "spritesheet",
-            base: p,
-            url: "3.png",
-            x: 141,
-            y: 136,
-            w: 62,
-            h: 59
-        },
-        "normal-weapon-30": {
-            type: "spritesheet",
-            base: p,
-            url: "30.png",
-            x: 144,
-            y: 131,
-            w: 61,
-            h: 62
-        },
-        "normal-weapon-31": {
-            type: "spritesheet",
-            base: p,
-            url: "31.png",
-            x: 144,
-            y: 129,
-            w: 64,
-            h: 64
-        },
-        "normal-weapon-32": {
-            type: "spritesheet",
-            base: p,
-            url: "32.png",
-            x: 144,
-            y: 131,
-            w: 61,
-            h: 62
-        },
-        "normal-weapon-33": {
-            type: "spritesheet",
-            base: p,
-            url: "33.png",
-            x: 144,
-            y: 129,
-            w: 64,
-            h: 64
-        },
-        "normal-weapon-34": {
-            type: "spritesheet",
-            base: p,
-            url: "34.png",
-            x: 142,
-            y: 125,
-            w: 71,
-            h: 70
-        },
-        "normal-weapon-35": {
-            type: "spritesheet",
-            base: p,
-            url: "35.png",
-            x: 142,
-            y: 125,
-            w: 71,
-            h: 70
-        },
-        "normal-weapon-36": {
-            type: "spritesheet",
-            base: p,
-            url: "36.png",
-            x: 133,
-            y: 90,
-            w: 86,
-            h: 128
-        },
-        "normal-weapon-37": {
-            type: "spritesheet",
-            base: p,
-            url: "37.png",
-            x: 133,
-            y: 90,
-            w: 86,
-            h: 128
-        },
-        "normal-weapon-38": {
-            type: "spritesheet",
-            base: p,
-            url: "38.png",
-            x: 127,
-            y: 68,
-            w: 112,
-            h: 159
-        },
-        "normal-weapon-39": {
-            type: "spritesheet",
-            base: p,
-            url: "39.png",
-            x: 127,
-            y: 68,
-            w: 112,
-            h: 159
-        },
-        "normal-weapon-4": {
-            type: "spritesheet",
-            base: p,
-            url: "4.png",
-            x: 144,
-            y: 140,
-            w: 53,
-            h: 55
-        },
-        "normal-weapon-40": {
-            type: "spritesheet",
-            base: p,
-            url: "40.png",
-            x: 127,
-            y: 68,
-            w: 112,
-            h: 159
-        },
-        "normal-weapon-41": {
-            type: "spritesheet",
-            base: p,
-            url: "41.png",
-            x: 127,
-            y: 51,
-            w: 108,
-            h: 173
-        },
-        "normal-weapon-42": {
-            type: "spritesheet",
-            base: p,
-            url: "42.png",
-            x: 129,
-            y: 48,
-            w: 119,
-            h: 179
-        },
-        "normal-weapon-43": {
-            type: "spritesheet",
-            base: p,
-            url: "43.png",
-            x: 127,
-            y: 51,
-            w: 108,
-            h: 173
-        },
-        "normal-weapon-44": {
-            type: "spritesheet",
-            base: p,
-            url: "44.png",
-            x: 129,
-            y: 48,
-            w: 119,
-            h: 179
-        },
-        "normal-weapon-45": {
-            type: "spritesheet",
-            base: p,
-            url: "45.png",
-            x: 128,
-            y: 31,
-            w: 113,
-            h: 196
-        },
-        "normal-weapon-46": {
-            type: "spritesheet",
-            base: p,
-            url: "46.png",
-            x: 128,
-            y: 31,
-            w: 113,
-            h: 196
-        },
-        "normal-weapon-47": {
-            type: "spritesheet",
-            base: p,
-            url: "47.png",
-            x: 131,
-            y: 58,
-            w: 106,
-            h: 169
-        },
-        "normal-weapon-48": {
-            type: "spritesheet",
-            base: p,
-            url: "48.png",
-            x: 140,
-            y: 143,
-            w: 54,
-            h: 53
-        },
-        "normal-weapon-49": {
-            type: "spritesheet",
-            base: p,
-            url: "49.png",
-            x: 141,
-            y: 126,
-            w: 70,
-            h: 70
-        },
-        "normal-weapon-5": {
-            type: "spritesheet",
-            base: p,
-            url: "5.png",
-            x: 139,
-            y: 128,
-            w: 54,
-            h: 69
-        },
-        "normal-weapon-50": {
-            type: "spritesheet",
-            base: p,
-            url: "50.png",
-            x: 141,
-            y: 134,
-            w: 62,
-            h: 63
-        },
-        "normal-weapon-51": {
-            type: "spritesheet",
-            base: p,
-            url: "51.png",
-            x: 139,
-            y: 137,
-            w: 62,
-            h: 62
-        },
-        "normal-weapon-52": {
-            type: "spritesheet",
-            base: p,
-            url: "52.png",
-            x: 139,
-            y: 133,
-            w: 66,
-            h: 65
-        },
-        "normal-weapon-53": {
-            type: "spritesheet",
-            base: p,
-            url: "53.png",
-            x: 138,
-            y: 127,
-            w: 72,
-            h: 72
-        },
-        "normal-weapon-54": {
-            type: "spritesheet",
-            base: p,
-            url: "54.png",
-            x: 142,
-            y: 130,
-            w: 63,
-            h: 67
-        },
-        "normal-weapon-55": {
-            type: "spritesheet",
-            base: p,
-            url: "55.png",
-            x: 129,
-            y: 50,
-            w: 108,
-            h: 175
-        },
-        "normal-weapon-56": {
-            type: "spritesheet",
-            base: p,
-            url: "56.png",
-            x: 126,
-            y: 56,
-            w: 115,
-            h: 171
-        },
-        "normal-weapon-57": {
-            type: "spritesheet",
-            base: p,
-            url: "57.png",
-            x: 129,
-            y: 52,
-            w: 109,
-            h: 174
-        },
-        "normal-weapon-58": {
-            type: "spritesheet",
-            base: p,
-            url: "58.png",
-            x: 128,
-            y: 30,
-            w: 124,
-            h: 198
-        },
-        "normal-weapon-59": {
-            type: "spritesheet",
-            base: p,
-            url: "59.png",
-            x: 128,
-            y: 46,
-            w: 113,
-            h: 184
-        },
-        "normal-weapon-6": {
-            type: "spritesheet",
-            base: p,
-            url: "6.png",
-            x: 141,
-            y: 127,
-            w: 64,
-            h: 70
-        },
-        "normal-weapon-60": {
-            type: "spritesheet",
-            base: p,
-            url: "60.png",
-            x: 123,
-            y: 16,
-            w: 129,
-            h: 210
-        },
-        "normal-weapon-61": {
-            type: "spritesheet",
-            base: p,
-            url: "61.png",
-            x: 132,
-            y: 33,
-            w: 103,
-            h: 190
-        },
-        "normal-weapon-62": {
-            type: "spritesheet",
-            base: p,
-            url: "62.png",
-            x: 128,
-            y: 26,
-            w: 127,
-            h: 198
-        },
-        "normal-weapon-63": {
-            type: "spritesheet",
-            base: p,
-            url: "63.png",
-            x: 127,
-            y: 43,
-            w: 118,
-            h: 183
-        },
-        "normal-weapon-64": {
-            type: "spritesheet",
-            base: p,
-            url: "64.png",
-            x: 128,
-            y: 28,
-            w: 122,
-            h: 199
-        },
-        "normal-weapon-65": {
-            type: "spritesheet",
-            base: p,
-            url: "65.png",
-            x: 80,
-            y: 109,
-            w: 48,
-            h: 68
-        },
-        "normal-weapon-66": {
-            type: "spritesheet",
-            base: p,
-            url: "66.png",
-            x: 83,
-            y: 143,
-            w: 107,
-            h: 75
-        },
-        "normal-weapon-67": {
-            type: "spritesheet",
-            base: p,
-            url: "67.png",
-            x: 152,
-            y: 116,
-            w: 55,
-            h: 74
-        },
-        "normal-weapon-68": {
-            type: "spritesheet",
-            base: p,
-            url: "68.png",
-            x: 121,
-            y: 3,
-            w: 144,
-            h: 223
-        },
-        "normal-weapon-69": {
-            type: "spritesheet",
-            base: p,
-            url: "69.png",
-            x: 141,
-            y: 124,
-            w: 55,
-            h: 73
-        },
-        "normal-weapon-7": {
-            type: "spritesheet",
-            base: p,
-            url: "7.png",
-            x: 130,
-            y: 53,
-            w: 108,
-            h: 173
-        },
-        "normal-weapon-70": {
-            type: "spritesheet",
-            base: p,
-            url: "70.png",
-            x: 78,
-            y: 120,
-            w: 66,
-            h: 75
-        },
-        "normal-weapon-71": {
-            type: "spritesheet",
-            base: p,
-            url: "71.png",
-            x: 150,
-            y: 131,
-            w: 59,
-            h: 59
-        },
-        "normal-weapon-72": {
-            type: "spritesheet",
-            base: p,
-            url: "72.png",
-            x: 156,
-            y: 143,
-            w: 47,
-            h: 50
-        },
-        "normal-weapon-73": {
-            type: "spritesheet",
-            base: p,
-            url: "73.png",
-            x: 150,
-            y: 119,
-            w: 70,
-            h: 72
-        },
-        "normal-weapon-74": {
-            type: "spritesheet",
-            base: p,
-            url: "74.png",
-            x: 150,
-            y: 139,
-            w: 48,
-            h: 52
-        },
-        "normal-weapon-75": {
-            type: "spritesheet",
-            base: p,
-            url: "75.png",
-            x: 80,
-            y: 98,
-            w: 156,
-            h: 117
-        },
-        "normal-weapon-8": {
-            type: "spritesheet",
-            base: p,
-            url: "8.png",
-            x: 131,
-            y: 61,
-            w: 104,
-            h: 162
-        },
-        "normal-weapon-9": {
-            type: "spritesheet",
-            base: p,
-            url: "9.png",
-            x: 142,
-            y: 136,
-            w: 59,
-            h: 59
-        },
-        "normal-hair-male-1-1": {
-            type: "spritesheet",
-            base: n,
-            url: "1-1.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-10": {
-            type: "spritesheet",
-            base: n,
-            url: "1-10.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-11": {
-            type: "spritesheet",
-            base: n,
-            url: "1-11.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-12": {
-            type: "spritesheet",
-            base: n,
-            url: "1-12.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-13": {
-            type: "spritesheet",
-            base: n,
-            url: "1-13.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-14": {
-            type: "spritesheet",
-            base: n,
-            url: "1-14.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-15": {
-            type: "spritesheet",
-            base: n,
-            url: "1-15.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-16": {
-            type: "spritesheet",
-            base: n,
-            url: "1-16.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-2": {
-            type: "spritesheet",
-            base: n,
-            url: "1-2.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-3": {
-            type: "spritesheet",
-            base: n,
-            url: "1-3.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-4": {
-            type: "spritesheet",
-            base: n,
-            url: "1-4.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-5": {
-            type: "spritesheet",
-            base: n,
-            url: "1-5.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-6": {
-            type: "spritesheet",
-            base: n,
-            url: "1-6.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-7": {
-            type: "spritesheet",
-            base: n,
-            url: "1-7.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-8": {
-            type: "spritesheet",
-            base: n,
-            url: "1-8.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-1-9": {
-            type: "spritesheet",
-            base: n,
-            url: "1-9.png",
-            x: 88,
-            y: 74,
-            w: 90,
-            h: 75
-        },
-        "normal-hair-male-2-1": {
-            type: "spritesheet",
-            base: n,
-            url: "2-1.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-10": {
-            type: "spritesheet",
-            base: n,
-            url: "2-10.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-11": {
-            type: "spritesheet",
-            base: n,
-            url: "2-11.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-12": {
-            type: "spritesheet",
-            base: n,
-            url: "2-12.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-13": {
-            type: "spritesheet",
-            base: n,
-            url: "2-13.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-14": {
-            type: "spritesheet",
-            base: n,
-            url: "2-14.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-15": {
-            type: "spritesheet",
-            base: n,
-            url: "2-15.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-16": {
-            type: "spritesheet",
-            base: n,
-            url: "2-16.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-2": {
-            type: "spritesheet",
-            base: n,
-            url: "2-2.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-3": {
-            type: "spritesheet",
-            base: n,
-            url: "2-3.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-4": {
-            type: "spritesheet",
-            base: n,
-            url: "2-4.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-5": {
-            type: "spritesheet",
-            base: n,
-            url: "2-5.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-6": {
-            type: "spritesheet",
-            base: n,
-            url: "2-6.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-7": {
-            type: "spritesheet",
-            base: n,
-            url: "2-7.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-8": {
-            type: "spritesheet",
-            base: n,
-            url: "2-8.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-2-9": {
-            type: "spritesheet",
-            base: n,
-            url: "2-9.png",
-            x: 87,
-            y: 51,
-            w: 94,
-            h: 101
-        },
-        "normal-hair-male-3-1": {
-            type: "spritesheet",
-            base: n,
-            url: "3-1.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-10": {
-            type: "spritesheet",
-            base: n,
-            url: "3-10.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-11": {
-            type: "spritesheet",
-            base: n,
-            url: "3-11.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-12": {
-            type: "spritesheet",
-            base: n,
-            url: "3-12.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-13": {
-            type: "spritesheet",
-            base: n,
-            url: "3-13.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-14": {
-            type: "spritesheet",
-            base: n,
-            url: "3-14.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-15": {
-            type: "spritesheet",
-            base: n,
-            url: "3-15.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-16": {
-            type: "spritesheet",
-            base: n,
-            url: "3-16.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-2": {
-            type: "spritesheet",
-            base: n,
-            url: "3-2.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-3": {
-            type: "spritesheet",
-            base: n,
-            url: "3-3.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-4": {
-            type: "spritesheet",
-            base: n,
-            url: "3-4.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-5": {
-            type: "spritesheet",
-            base: n,
-            url: "3-5.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-6": {
-            type: "spritesheet",
-            base: n,
-            url: "3-6.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-7": {
-            type: "spritesheet",
-            base: n,
-            url: "3-7.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-8": {
-            type: "spritesheet",
-            base: n,
-            url: "3-8.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-3-9": {
-            type: "spritesheet",
-            base: n,
-            url: "3-9.png",
-            x: 86,
-            y: 55,
-            w: 100,
-            h: 97
-        },
-        "normal-hair-male-4-1": {
-            type: "spritesheet",
-            base: n,
-            url: "4-1.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-10": {
-            type: "spritesheet",
-            base: n,
-            url: "4-10.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-11": {
-            type: "spritesheet",
-            base: n,
-            url: "4-11.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-12": {
-            type: "spritesheet",
-            base: n,
-            url: "4-12.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-13": {
-            type: "spritesheet",
-            base: n,
-            url: "4-13.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-14": {
-            type: "spritesheet",
-            base: n,
-            url: "4-14.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-15": {
-            type: "spritesheet",
-            base: n,
-            url: "4-15.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-16": {
-            type: "spritesheet",
-            base: n,
-            url: "4-16.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-2": {
-            type: "spritesheet",
-            base: n,
-            url: "4-2.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-3": {
-            type: "spritesheet",
-            base: n,
-            url: "4-3.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-4": {
-            type: "spritesheet",
-            base: n,
-            url: "4-4.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-5": {
-            type: "spritesheet",
-            base: n,
-            url: "4-5.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-6": {
-            type: "spritesheet",
-            base: n,
-            url: "4-6.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-7": {
-            type: "spritesheet",
-            base: n,
-            url: "4-7.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-8": {
-            type: "spritesheet",
-            base: n,
-            url: "4-8.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-4-9": {
-            type: "spritesheet",
-            base: n,
-            url: "4-9.png",
-            x: 86,
-            y: 73,
-            w: 92,
-            h: 77
-        },
-        "normal-hair-male-5-1": {
-            type: "spritesheet",
-            base: n,
-            url: "5-1.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-10": {
-            type: "spritesheet",
-            base: n,
-            url: "5-10.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-11": {
-            type: "spritesheet",
-            base: n,
-            url: "5-11.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-12": {
-            type: "spritesheet",
-            base: n,
-            url: "5-12.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-13": {
-            type: "spritesheet",
-            base: n,
-            url: "5-13.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-14": {
-            type: "spritesheet",
-            base: n,
-            url: "5-14.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-15": {
-            type: "spritesheet",
-            base: n,
-            url: "5-15.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-16": {
-            type: "spritesheet",
-            base: n,
-            url: "5-16.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-2": {
-            type: "spritesheet",
-            base: n,
-            url: "5-2.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-3": {
-            type: "spritesheet",
-            base: n,
-            url: "5-3.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-4": {
-            type: "spritesheet",
-            base: n,
-            url: "5-4.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-5": {
-            type: "spritesheet",
-            base: n,
-            url: "5-5.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-6": {
-            type: "spritesheet",
-            base: n,
-            url: "5-6.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-7": {
-            type: "spritesheet",
-            base: n,
-            url: "5-7.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-8": {
-            type: "spritesheet",
-            base: n,
-            url: "5-8.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-5-9": {
-            type: "spritesheet",
-            base: n,
-            url: "5-9.png",
-            x: 89,
-            y: 75,
-            w: 87,
-            h: 76
-        },
-        "normal-hair-male-6-1": {
-            type: "spritesheet",
-            base: n,
-            url: "6-1.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-10": {
-            type: "spritesheet",
-            base: n,
-            url: "6-10.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-11": {
-            type: "spritesheet",
-            base: n,
-            url: "6-11.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-12": {
-            type: "spritesheet",
-            base: n,
-            url: "6-12.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-13": {
-            type: "spritesheet",
-            base: n,
-            url: "6-13.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-14": {
-            type: "spritesheet",
-            base: n,
-            url: "6-14.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-15": {
-            type: "spritesheet",
-            base: n,
-            url: "6-15.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-16": {
-            type: "spritesheet",
-            base: n,
-            url: "6-16.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-2": {
-            type: "spritesheet",
-            base: n,
-            url: "6-2.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-3": {
-            type: "spritesheet",
-            base: n,
-            url: "6-3.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-4": {
-            type: "spritesheet",
-            base: n,
-            url: "6-4.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-5": {
-            type: "spritesheet",
-            base: n,
-            url: "6-5.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-6": {
-            type: "spritesheet",
-            base: n,
-            url: "6-6.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-7": {
-            type: "spritesheet",
-            base: n,
-            url: "6-7.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-8": {
-            type: "spritesheet",
-            base: n,
-            url: "6-8.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-6-9": {
-            type: "spritesheet",
-            base: n,
-            url: "6-9.png",
-            x: 87,
-            y: 75,
-            w: 85,
-            h: 76
-        },
-        "normal-hair-male-7-1": {
-            type: "spritesheet",
-            base: n,
-            url: "7-1.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-10": {
-            type: "spritesheet",
-            base: n,
-            url: "7-10.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-11": {
-            type: "spritesheet",
-            base: n,
-            url: "7-11.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-12": {
-            type: "spritesheet",
-            base: n,
-            url: "7-12.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-13": {
-            type: "spritesheet",
-            base: n,
-            url: "7-13.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-14": {
-            type: "spritesheet",
-            base: n,
-            url: "7-14.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-15": {
-            type: "spritesheet",
-            base: n,
-            url: "7-15.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-16": {
-            type: "spritesheet",
-            base: n,
-            url: "7-16.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-2": {
-            type: "spritesheet",
-            base: n,
-            url: "7-2.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-3": {
-            type: "spritesheet",
-            base: n,
-            url: "7-3.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-4": {
-            type: "spritesheet",
-            base: n,
-            url: "7-4.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-5": {
-            type: "spritesheet",
-            base: n,
-            url: "7-5.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-6": {
-            type: "spritesheet",
-            base: n,
-            url: "7-6.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-7": {
-            type: "spritesheet",
-            base: n,
-            url: "7-7.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-8": {
-            type: "spritesheet",
-            base: n,
-            url: "7-8.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-7-9": {
-            type: "spritesheet",
-            base: n,
-            url: "7-9.png",
-            x: 76,
-            y: 73,
-            w: 105,
-            h: 78
-        },
-        "normal-hair-male-8-1": {
-            type: "spritesheet",
-            base: n,
-            url: "8-1.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-10": {
-            type: "spritesheet",
-            base: n,
-            url: "8-10.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-11": {
-            type: "spritesheet",
-            base: n,
-            url: "8-11.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-12": {
-            type: "spritesheet",
-            base: n,
-            url: "8-12.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-13": {
-            type: "spritesheet",
-            base: n,
-            url: "8-13.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-14": {
-            type: "spritesheet",
-            base: n,
-            url: "8-14.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-15": {
-            type: "spritesheet",
-            base: n,
-            url: "8-15.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-16": {
-            type: "spritesheet",
-            base: n,
-            url: "8-16.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-2": {
-            type: "spritesheet",
-            base: n,
-            url: "8-2.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-3": {
-            type: "spritesheet",
-            base: n,
-            url: "8-3.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-4": {
-            type: "spritesheet",
-            base: n,
-            url: "8-4.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-5": {
-            type: "spritesheet",
-            base: n,
-            url: "8-5.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-6": {
-            type: "spritesheet",
-            base: n,
-            url: "8-6.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-7": {
-            type: "spritesheet",
-            base: n,
-            url: "8-7.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-8": {
-            type: "spritesheet",
-            base: n,
-            url: "8-8.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "normal-hair-male-8-9": {
-            type: "spritesheet",
-            base: n,
-            url: "8-9.png",
-            x: 82,
-            y: 73,
-            w: 104,
-            h: 81
-        },
-        "reduced-hair-male-1-1": {
-            type: "spritesheet",
-            base: a,
-            url: "1-1.png",
-            x: 41,
-            y: 45,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-10": {
-            type: "spritesheet",
-            base: a,
-            url: "1-10.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-11": {
-            type: "spritesheet",
-            base: a,
-            url: "1-11.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-12": {
-            type: "spritesheet",
-            base: a,
-            url: "1-12.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-13": {
-            type: "spritesheet",
-            base: a,
-            url: "1-13.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-14": {
-            type: "spritesheet",
-            base: a,
-            url: "1-14.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-15": {
-            type: "spritesheet",
-            base: a,
-            url: "1-15.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-16": {
-            type: "spritesheet",
-            base: a,
-            url: "1-16.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-2": {
-            type: "spritesheet",
-            base: a,
-            url: "1-2.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-3": {
-            type: "spritesheet",
-            base: a,
-            url: "1-3.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-4": {
-            type: "spritesheet",
-            base: a,
-            url: "1-4.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-5": {
-            type: "spritesheet",
-            base: a,
-            url: "1-5.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-6": {
-            type: "spritesheet",
-            base: a,
-            url: "1-6.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-7": {
-            type: "spritesheet",
-            base: a,
-            url: "1-7.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-8": {
-            type: "spritesheet",
-            base: a,
-            url: "1-8.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-1-9": {
-            type: "spritesheet",
-            base: a,
-            url: "1-9.png",
-            x: 41,
-            y: 44,
-            w: 46,
-            h: 38
-        },
-        "reduced-hair-male-2-1": {
-            type: "spritesheet",
-            base: a,
-            url: "2-1.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-10": {
-            type: "spritesheet",
-            base: a,
-            url: "2-10.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-11": {
-            type: "spritesheet",
-            base: a,
-            url: "2-11.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-12": {
-            type: "spritesheet",
-            base: a,
-            url: "2-12.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-13": {
-            type: "spritesheet",
-            base: a,
-            url: "2-13.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-14": {
-            type: "spritesheet",
-            base: a,
-            url: "2-14.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-15": {
-            type: "spritesheet",
-            base: a,
-            url: "2-15.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-16": {
-            type: "spritesheet",
-            base: a,
-            url: "2-16.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-2": {
-            type: "spritesheet",
-            base: a,
-            url: "2-2.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-3": {
-            type: "spritesheet",
-            base: a,
-            url: "2-3.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-4": {
-            type: "spritesheet",
-            base: a,
-            url: "2-4.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-5": {
-            type: "spritesheet",
-            base: a,
-            url: "2-5.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-6": {
-            type: "spritesheet",
-            base: a,
-            url: "2-6.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-7": {
-            type: "spritesheet",
-            base: a,
-            url: "2-7.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-8": {
-            type: "spritesheet",
-            base: a,
-            url: "2-8.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-2-9": {
-            type: "spritesheet",
-            base: a,
-            url: "2-9.png",
-            x: 41,
-            y: 32,
-            w: 47,
-            h: 52
-        },
-        "reduced-hair-male-3-1": {
-            type: "spritesheet",
-            base: a,
-            url: "3-1.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-10": {
-            type: "spritesheet",
-            base: a,
-            url: "3-10.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-11": {
-            type: "spritesheet",
-            base: a,
-            url: "3-11.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-12": {
-            type: "spritesheet",
-            base: a,
-            url: "3-12.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-13": {
-            type: "spritesheet",
-            base: a,
-            url: "3-13.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-14": {
-            type: "spritesheet",
-            base: a,
-            url: "3-14.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-15": {
-            type: "spritesheet",
-            base: a,
-            url: "3-15.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-16": {
-            type: "spritesheet",
-            base: a,
-            url: "3-16.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-2": {
-            type: "spritesheet",
-            base: a,
-            url: "3-2.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-3": {
-            type: "spritesheet",
-            base: a,
-            url: "3-3.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-4": {
-            type: "spritesheet",
-            base: a,
-            url: "3-4.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-5": {
-            type: "spritesheet",
-            base: a,
-            url: "3-5.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-6": {
-            type: "spritesheet",
-            base: a,
-            url: "3-6.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-7": {
-            type: "spritesheet",
-            base: a,
-            url: "3-7.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-8": {
-            type: "spritesheet",
-            base: a,
-            url: "3-8.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-3-9": {
-            type: "spritesheet",
-            base: a,
-            url: "3-9.png",
-            x: 41,
-            y: 36,
-            w: 50,
-            h: 48
-        },
-        "reduced-hair-male-4-1": {
-            type: "spritesheet",
-            base: a,
-            url: "4-1.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-10": {
-            type: "spritesheet",
-            base: a,
-            url: "4-10.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-11": {
-            type: "spritesheet",
-            base: a,
-            url: "4-11.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-12": {
-            type: "spritesheet",
-            base: a,
-            url: "4-12.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-13": {
-            type: "spritesheet",
-            base: a,
-            url: "4-13.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-14": {
-            type: "spritesheet",
-            base: a,
-            url: "4-14.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-15": {
-            type: "spritesheet",
-            base: a,
-            url: "4-15.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-16": {
-            type: "spritesheet",
-            base: a,
-            url: "4-16.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-2": {
-            type: "spritesheet",
-            base: a,
-            url: "4-2.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-3": {
-            type: "spritesheet",
-            base: a,
-            url: "4-3.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-4": {
-            type: "spritesheet",
-            base: a,
-            url: "4-4.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-5": {
-            type: "spritesheet",
-            base: a,
-            url: "4-5.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-6": {
-            type: "spritesheet",
-            base: a,
-            url: "4-6.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-7": {
-            type: "spritesheet",
-            base: a,
-            url: "4-7.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-8": {
-            type: "spritesheet",
-            base: a,
-            url: "4-8.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-4-9": {
-            type: "spritesheet",
-            base: a,
-            url: "4-9.png",
-            x: 40,
-            y: 44,
-            w: 47,
-            h: 39
-        },
-        "reduced-hair-male-5-1": {
-            type: "spritesheet",
-            base: a,
-            url: "5-1.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-10": {
-            type: "spritesheet",
-            base: a,
-            url: "5-10.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-11": {
-            type: "spritesheet",
-            base: a,
-            url: "5-11.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-12": {
-            type: "spritesheet",
-            base: a,
-            url: "5-12.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-13": {
-            type: "spritesheet",
-            base: a,
-            url: "5-13.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-14": {
-            type: "spritesheet",
-            base: a,
-            url: "5-14.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-15": {
-            type: "spritesheet",
-            base: a,
-            url: "5-15.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-16": {
-            type: "spritesheet",
-            base: a,
-            url: "5-16.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-2": {
-            type: "spritesheet",
-            base: a,
-            url: "5-2.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-3": {
-            type: "spritesheet",
-            base: a,
-            url: "5-3.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-4": {
-            type: "spritesheet",
-            base: a,
-            url: "5-4.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-5": {
-            type: "spritesheet",
-            base: a,
-            url: "5-5.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-6": {
-            type: "spritesheet",
-            base: a,
-            url: "5-6.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-7": {
-            type: "spritesheet",
-            base: a,
-            url: "5-7.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-8": {
-            type: "spritesheet",
-            base: a,
-            url: "5-8.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-5-9": {
-            type: "spritesheet",
-            base: a,
-            url: "5-9.png",
-            x: 42,
-            y: 44,
-            w: 44,
-            h: 39
-        },
-        "reduced-hair-male-6-1": {
-            type: "spritesheet",
-            base: a,
-            url: "6-1.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-10": {
-            type: "spritesheet",
-            base: a,
-            url: "6-10.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-11": {
-            type: "spritesheet",
-            base: a,
-            url: "6-11.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-12": {
-            type: "spritesheet",
-            base: a,
-            url: "6-12.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-13": {
-            type: "spritesheet",
-            base: a,
-            url: "6-13.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-14": {
-            type: "spritesheet",
-            base: a,
-            url: "6-14.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-15": {
-            type: "spritesheet",
-            base: a,
-            url: "6-15.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-16": {
-            type: "spritesheet",
-            base: a,
-            url: "6-16.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-2": {
-            type: "spritesheet",
-            base: a,
-            url: "6-2.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-3": {
-            type: "spritesheet",
-            base: a,
-            url: "6-3.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-4": {
-            type: "spritesheet",
-            base: a,
-            url: "6-4.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-5": {
-            type: "spritesheet",
-            base: a,
-            url: "6-5.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-6": {
-            type: "spritesheet",
-            base: a,
-            url: "6-6.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-7": {
-            type: "spritesheet",
-            base: a,
-            url: "6-7.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-8": {
-            type: "spritesheet",
-            base: a,
-            url: "6-8.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-6-9": {
-            type: "spritesheet",
-            base: a,
-            url: "6-9.png",
-            x: 41,
-            y: 44,
-            w: 45,
-            h: 38
-        },
-        "reduced-hair-male-7-1": {
-            type: "spritesheet",
-            base: a,
-            url: "7-1.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-10": {
-            type: "spritesheet",
-            base: a,
-            url: "7-10.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-11": {
-            type: "spritesheet",
-            base: a,
-            url: "7-11.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-12": {
-            type: "spritesheet",
-            base: a,
-            url: "7-12.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-13": {
-            type: "spritesheet",
-            base: a,
-            url: "7-13.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-14": {
-            type: "spritesheet",
-            base: a,
-            url: "7-14.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-15": {
-            type: "spritesheet",
-            base: a,
-            url: "7-15.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-16": {
-            type: "spritesheet",
-            base: a,
-            url: "7-16.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-2": {
-            type: "spritesheet",
-            base: a,
-            url: "7-2.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-3": {
-            type: "spritesheet",
-            base: a,
-            url: "7-3.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-4": {
-            type: "spritesheet",
-            base: a,
-            url: "7-4.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-5": {
-            type: "spritesheet",
-            base: a,
-            url: "7-5.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-6": {
-            type: "spritesheet",
-            base: a,
-            url: "7-6.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-7": {
-            type: "spritesheet",
-            base: a,
-            url: "7-7.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-8": {
-            type: "spritesheet",
-            base: a,
-            url: "7-8.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-7-9": {
-            type: "spritesheet",
-            base: a,
-            url: "7-9.png",
-            x: 36,
-            y: 44,
-            w: 53,
-            h: 38
-        },
-        "reduced-hair-male-8-1": {
-            type: "spritesheet",
-            base: a,
-            url: "8-1.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-10": {
-            type: "spritesheet",
-            base: a,
-            url: "8-10.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-11": {
-            type: "spritesheet",
-            base: a,
-            url: "8-11.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-12": {
-            type: "spritesheet",
-            base: a,
-            url: "8-12.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-13": {
-            type: "spritesheet",
-            base: a,
-            url: "8-13.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-14": {
-            type: "spritesheet",
-            base: a,
-            url: "8-14.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-15": {
-            type: "spritesheet",
-            base: a,
-            url: "8-15.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-16": {
-            type: "spritesheet",
-            base: a,
-            url: "8-16.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-2": {
-            type: "spritesheet",
-            base: a,
-            url: "8-2.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-3": {
-            type: "spritesheet",
-            base: a,
-            url: "8-3.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-4": {
-            type: "spritesheet",
-            base: a,
-            url: "8-4.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-5": {
-            type: "spritesheet",
-            base: a,
-            url: "8-5.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-6": {
-            type: "spritesheet",
-            base: a,
-            url: "8-6.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-7": {
-            type: "spritesheet",
-            base: a,
-            url: "8-7.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-8": {
-            type: "spritesheet",
-            base: a,
-            url: "8-8.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "reduced-hair-male-8-9": {
-            type: "spritesheet",
-            base: a,
-            url: "8-9.png",
-            x: 40,
-            y: 44,
-            w: 50,
-            h: 40
-        },
-        "normal-hair-female-1-1": {
-            type: "spritesheet",
-            base: h,
-            url: "1-1.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-10": {
-            type: "spritesheet",
-            base: h,
-            url: "1-10.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-11": {
-            type: "spritesheet",
-            base: h,
-            url: "1-11.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-12": {
-            type: "spritesheet",
-            base: h,
-            url: "1-12.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-13": {
-            type: "spritesheet",
-            base: h,
-            url: "1-13.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-14": {
-            type: "spritesheet",
-            base: h,
-            url: "1-14.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-15": {
-            type: "spritesheet",
-            base: h,
-            url: "1-15.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-16": {
-            type: "spritesheet",
-            base: h,
-            url: "1-16.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-2": {
-            type: "spritesheet",
-            base: h,
-            url: "1-2.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-3": {
-            type: "spritesheet",
-            base: h,
-            url: "1-3.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-4": {
-            type: "spritesheet",
-            base: h,
-            url: "1-4.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-5": {
-            type: "spritesheet",
-            base: h,
-            url: "1-5.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-6": {
-            type: "spritesheet",
-            base: h,
-            url: "1-6.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-7": {
-            type: "spritesheet",
-            base: h,
-            url: "1-7.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-8": {
-            type: "spritesheet",
-            base: h,
-            url: "1-8.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-1-9": {
-            type: "spritesheet",
-            base: h,
-            url: "1-9.png",
-            x: 54,
-            y: 77,
-            w: 120,
-            h: 107
-        },
-        "normal-hair-female-10-1": {
-            type: "spritesheet",
-            base: h,
-            url: "10-1.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-10": {
-            type: "spritesheet",
-            base: h,
-            url: "10-10.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-11": {
-            type: "spritesheet",
-            base: h,
-            url: "10-11.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-12": {
-            type: "spritesheet",
-            base: h,
-            url: "10-12.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-13": {
-            type: "spritesheet",
-            base: h,
-            url: "10-13.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-14": {
-            type: "spritesheet",
-            base: h,
-            url: "10-14.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-15": {
-            type: "spritesheet",
-            base: h,
-            url: "10-15.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-16": {
-            type: "spritesheet",
-            base: h,
-            url: "10-16.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-2": {
-            type: "spritesheet",
-            base: h,
-            url: "10-2.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-3": {
-            type: "spritesheet",
-            base: h,
-            url: "10-3.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-4": {
-            type: "spritesheet",
-            base: h,
-            url: "10-4.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-5": {
-            type: "spritesheet",
-            base: h,
-            url: "10-5.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-6": {
-            type: "spritesheet",
-            base: h,
-            url: "10-6.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-7": {
-            type: "spritesheet",
-            base: h,
-            url: "10-7.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-8": {
-            type: "spritesheet",
-            base: h,
-            url: "10-8.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-10-9": {
-            type: "spritesheet",
-            base: h,
-            url: "10-9.png",
-            x: 68,
-            y: 77,
-            w: 108,
-            h: 102
-        },
-        "normal-hair-female-11-1": {
-            type: "spritesheet",
-            base: h,
-            url: "11-1.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-10": {
-            type: "spritesheet",
-            base: h,
-            url: "11-10.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-11": {
-            type: "spritesheet",
-            base: h,
-            url: "11-11.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-12": {
-            type: "spritesheet",
-            base: h,
-            url: "11-12.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-13": {
-            type: "spritesheet",
-            base: h,
-            url: "11-13.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-14": {
-            type: "spritesheet",
-            base: h,
-            url: "11-14.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-15": {
-            type: "spritesheet",
-            base: h,
-            url: "11-15.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-16": {
-            type: "spritesheet",
-            base: h,
-            url: "11-16.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-2": {
-            type: "spritesheet",
-            base: h,
-            url: "11-2.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-3": {
-            type: "spritesheet",
-            base: h,
-            url: "11-3.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-4": {
-            type: "spritesheet",
-            base: h,
-            url: "11-4.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-5": {
-            type: "spritesheet",
-            base: h,
-            url: "11-5.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-6": {
-            type: "spritesheet",
-            base: h,
-            url: "11-6.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-7": {
-            type: "spritesheet",
-            base: h,
-            url: "11-7.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-8": {
-            type: "spritesheet",
-            base: h,
-            url: "11-8.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-11-9": {
-            type: "spritesheet",
-            base: h,
-            url: "11-9.png",
-            x: 68,
-            y: 77,
-            w: 106,
-            h: 102
-        },
-        "normal-hair-female-12-1": {
-            type: "spritesheet",
-            base: h,
-            url: "12-1.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-10": {
-            type: "spritesheet",
-            base: h,
-            url: "12-10.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-11": {
-            type: "spritesheet",
-            base: h,
-            url: "12-11.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-12": {
-            type: "spritesheet",
-            base: h,
-            url: "12-12.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-13": {
-            type: "spritesheet",
-            base: h,
-            url: "12-13.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-14": {
-            type: "spritesheet",
-            base: h,
-            url: "12-14.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-15": {
-            type: "spritesheet",
-            base: h,
-            url: "12-15.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-16": {
-            type: "spritesheet",
-            base: h,
-            url: "12-16.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-2": {
-            type: "spritesheet",
-            base: h,
-            url: "12-2.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-3": {
-            type: "spritesheet",
-            base: h,
-            url: "12-3.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-4": {
-            type: "spritesheet",
-            base: h,
-            url: "12-4.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-5": {
-            type: "spritesheet",
-            base: h,
-            url: "12-5.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-6": {
-            type: "spritesheet",
-            base: h,
-            url: "12-6.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-7": {
-            type: "spritesheet",
-            base: h,
-            url: "12-7.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-8": {
-            type: "spritesheet",
-            base: h,
-            url: "12-8.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-12-9": {
-            type: "spritesheet",
-            base: h,
-            url: "12-9.png",
-            x: 68,
-            y: 75,
-            w: 106,
-            h: 104
-        },
-        "normal-hair-female-13-1": {
-            type: "spritesheet",
-            base: h,
-            url: "13-1.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-10": {
-            type: "spritesheet",
-            base: h,
-            url: "13-10.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-11": {
-            type: "spritesheet",
-            base: h,
-            url: "13-11.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-12": {
-            type: "spritesheet",
-            base: h,
-            url: "13-12.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-13": {
-            type: "spritesheet",
-            base: h,
-            url: "13-13.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-14": {
-            type: "spritesheet",
-            base: h,
-            url: "13-14.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-15": {
-            type: "spritesheet",
-            base: h,
-            url: "13-15.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-16": {
-            type: "spritesheet",
-            base: h,
-            url: "13-16.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-2": {
-            type: "spritesheet",
-            base: h,
-            url: "13-2.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-3": {
-            type: "spritesheet",
-            base: h,
-            url: "13-3.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-4": {
-            type: "spritesheet",
-            base: h,
-            url: "13-4.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-5": {
-            type: "spritesheet",
-            base: h,
-            url: "13-5.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-6": {
-            type: "spritesheet",
-            base: h,
-            url: "13-6.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-7": {
-            type: "spritesheet",
-            base: h,
-            url: "13-7.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-8": {
-            type: "spritesheet",
-            base: h,
-            url: "13-8.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-13-9": {
-            type: "spritesheet",
-            base: h,
-            url: "13-9.png",
-            x: 48,
-            y: 77,
-            w: 126,
-            h: 110
-        },
-        "normal-hair-female-14-1": {
-            type: "spritesheet",
-            base: h,
-            url: "14-1.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-10": {
-            type: "spritesheet",
-            base: h,
-            url: "14-10.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-11": {
-            type: "spritesheet",
-            base: h,
-            url: "14-11.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-12": {
-            type: "spritesheet",
-            base: h,
-            url: "14-12.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-13": {
-            type: "spritesheet",
-            base: h,
-            url: "14-13.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-14": {
-            type: "spritesheet",
-            base: h,
-            url: "14-14.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-15": {
-            type: "spritesheet",
-            base: h,
-            url: "14-15.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-16": {
-            type: "spritesheet",
-            base: h,
-            url: "14-16.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-2": {
-            type: "spritesheet",
-            base: h,
-            url: "14-2.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-3": {
-            type: "spritesheet",
-            base: h,
-            url: "14-3.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-4": {
-            type: "spritesheet",
-            base: h,
-            url: "14-4.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-5": {
-            type: "spritesheet",
-            base: h,
-            url: "14-5.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-6": {
-            type: "spritesheet",
-            base: h,
-            url: "14-6.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-7": {
-            type: "spritesheet",
-            base: h,
-            url: "14-7.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-8": {
-            type: "spritesheet",
-            base: h,
-            url: "14-8.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-14-9": {
-            type: "spritesheet",
-            base: h,
-            url: "14-9.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-1": {
-            type: "spritesheet",
-            base: h,
-            url: "15-1.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-10": {
-            type: "spritesheet",
-            base: h,
-            url: "15-10.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-11": {
-            type: "spritesheet",
-            base: h,
-            url: "15-11.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-12": {
-            type: "spritesheet",
-            base: h,
-            url: "15-12.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-13": {
-            type: "spritesheet",
-            base: h,
-            url: "15-13.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-14": {
-            type: "spritesheet",
-            base: h,
-            url: "15-14.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-15": {
-            type: "spritesheet",
-            base: h,
-            url: "15-15.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-16": {
-            type: "spritesheet",
-            base: h,
-            url: "15-16.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-2": {
-            type: "spritesheet",
-            base: h,
-            url: "15-2.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-3": {
-            type: "spritesheet",
-            base: h,
-            url: "15-3.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-4": {
-            type: "spritesheet",
-            base: h,
-            url: "15-4.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-5": {
-            type: "spritesheet",
-            base: h,
-            url: "15-5.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-6": {
-            type: "spritesheet",
-            base: h,
-            url: "15-6.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-7": {
-            type: "spritesheet",
-            base: h,
-            url: "15-7.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-8": {
-            type: "spritesheet",
-            base: h,
-            url: "15-8.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-15-9": {
-            type: "spritesheet",
-            base: h,
-            url: "15-9.png",
-            x: 48,
-            y: 74,
-            w: 125,
-            h: 111
-        },
-        "normal-hair-female-2-1": {
-            type: "spritesheet",
-            base: h,
-            url: "2-1.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-10": {
-            type: "spritesheet",
-            base: h,
-            url: "2-10.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-11": {
-            type: "spritesheet",
-            base: h,
-            url: "2-11.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-12": {
-            type: "spritesheet",
-            base: h,
-            url: "2-12.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-13": {
-            type: "spritesheet",
-            base: h,
-            url: "2-13.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-14": {
-            type: "spritesheet",
-            base: h,
-            url: "2-14.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-15": {
-            type: "spritesheet",
-            base: h,
-            url: "2-15.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-16": {
-            type: "spritesheet",
-            base: h,
-            url: "2-16.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-2": {
-            type: "spritesheet",
-            base: h,
-            url: "2-2.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-3": {
-            type: "spritesheet",
-            base: h,
-            url: "2-3.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-4": {
-            type: "spritesheet",
-            base: h,
-            url: "2-4.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-5": {
-            type: "spritesheet",
-            base: h,
-            url: "2-5.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-6": {
-            type: "spritesheet",
-            base: h,
-            url: "2-6.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-7": {
-            type: "spritesheet",
-            base: h,
-            url: "2-7.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-8": {
-            type: "spritesheet",
-            base: h,
-            url: "2-8.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-2-9": {
-            type: "spritesheet",
-            base: h,
-            url: "2-9.png",
-            x: 54,
-            y: 77,
-            w: 122,
-            h: 107
-        },
-        "normal-hair-female-3-1": {
-            type: "spritesheet",
-            base: h,
-            url: "3-1.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-10": {
-            type: "spritesheet",
-            base: h,
-            url: "3-10.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-11": {
-            type: "spritesheet",
-            base: h,
-            url: "3-11.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-12": {
-            type: "spritesheet",
-            base: h,
-            url: "3-12.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-13": {
-            type: "spritesheet",
-            base: h,
-            url: "3-13.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-14": {
-            type: "spritesheet",
-            base: h,
-            url: "3-14.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-15": {
-            type: "spritesheet",
-            base: h,
-            url: "3-15.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-16": {
-            type: "spritesheet",
-            base: h,
-            url: "3-16.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-2": {
-            type: "spritesheet",
-            base: h,
-            url: "3-2.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-3": {
-            type: "spritesheet",
-            base: h,
-            url: "3-3.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-4": {
-            type: "spritesheet",
-            base: h,
-            url: "3-4.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-5": {
-            type: "spritesheet",
-            base: h,
-            url: "3-5.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-6": {
-            type: "spritesheet",
-            base: h,
-            url: "3-6.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-7": {
-            type: "spritesheet",
-            base: h,
-            url: "3-7.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-8": {
-            type: "spritesheet",
-            base: h,
-            url: "3-8.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-3-9": {
-            type: "spritesheet",
-            base: h,
-            url: "3-9.png",
-            x: 54,
-            y: 77,
-            w: 134,
-            h: 107
-        },
-        "normal-hair-female-4-1": {
-            type: "spritesheet",
-            base: h,
-            url: "4-1.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-10": {
-            type: "spritesheet",
-            base: h,
-            url: "4-10.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-11": {
-            type: "spritesheet",
-            base: h,
-            url: "4-11.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-12": {
-            type: "spritesheet",
-            base: h,
-            url: "4-12.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-13": {
-            type: "spritesheet",
-            base: h,
-            url: "4-13.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-14": {
-            type: "spritesheet",
-            base: h,
-            url: "4-14.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-15": {
-            type: "spritesheet",
-            base: h,
-            url: "4-15.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-16": {
-            type: "spritesheet",
-            base: h,
-            url: "4-16.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-2": {
-            type: "spritesheet",
-            base: h,
-            url: "4-2.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-3": {
-            type: "spritesheet",
-            base: h,
-            url: "4-3.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-4": {
-            type: "spritesheet",
-            base: h,
-            url: "4-4.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-5": {
-            type: "spritesheet",
-            base: h,
-            url: "4-5.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-6": {
-            type: "spritesheet",
-            base: h,
-            url: "4-6.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-7": {
-            type: "spritesheet",
-            base: h,
-            url: "4-7.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-8": {
-            type: "spritesheet",
-            base: h,
-            url: "4-8.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-4-9": {
-            type: "spritesheet",
-            base: h,
-            url: "4-9.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-1": {
-            type: "spritesheet",
-            base: h,
-            url: "5-1.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-10": {
-            type: "spritesheet",
-            base: h,
-            url: "5-10.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-11": {
-            type: "spritesheet",
-            base: h,
-            url: "5-11.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-12": {
-            type: "spritesheet",
-            base: h,
-            url: "5-12.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-13": {
-            type: "spritesheet",
-            base: h,
-            url: "5-13.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-14": {
-            type: "spritesheet",
-            base: h,
-            url: "5-14.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-15": {
-            type: "spritesheet",
-            base: h,
-            url: "5-15.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-16": {
-            type: "spritesheet",
-            base: h,
-            url: "5-16.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-2": {
-            type: "spritesheet",
-            base: h,
-            url: "5-2.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-3": {
-            type: "spritesheet",
-            base: h,
-            url: "5-3.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-4": {
-            type: "spritesheet",
-            base: h,
-            url: "5-4.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-5": {
-            type: "spritesheet",
-            base: h,
-            url: "5-5.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-6": {
-            type: "spritesheet",
-            base: h,
-            url: "5-6.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-7": {
-            type: "spritesheet",
-            base: h,
-            url: "5-7.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-8": {
-            type: "spritesheet",
-            base: h,
-            url: "5-8.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-5-9": {
-            type: "spritesheet",
-            base: h,
-            url: "5-9.png",
-            x: 54,
-            y: 77,
-            w: 119,
-            h: 107
-        },
-        "normal-hair-female-6-1": {
-            type: "spritesheet",
-            base: h,
-            url: "6-1.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-10": {
-            type: "spritesheet",
-            base: h,
-            url: "6-10.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-11": {
-            type: "spritesheet",
-            base: h,
-            url: "6-11.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-12": {
-            type: "spritesheet",
-            base: h,
-            url: "6-12.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-13": {
-            type: "spritesheet",
-            base: h,
-            url: "6-13.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-14": {
-            type: "spritesheet",
-            base: h,
-            url: "6-14.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-15": {
-            type: "spritesheet",
-            base: h,
-            url: "6-15.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-16": {
-            type: "spritesheet",
-            base: h,
-            url: "6-16.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-2": {
-            type: "spritesheet",
-            base: h,
-            url: "6-2.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-3": {
-            type: "spritesheet",
-            base: h,
-            url: "6-3.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-4": {
-            type: "spritesheet",
-            base: h,
-            url: "6-4.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-5": {
-            type: "spritesheet",
-            base: h,
-            url: "6-5.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-6": {
-            type: "spritesheet",
-            base: h,
-            url: "6-6.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-7": {
-            type: "spritesheet",
-            base: h,
-            url: "6-7.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-8": {
-            type: "spritesheet",
-            base: h,
-            url: "6-8.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-6-9": {
-            type: "spritesheet",
-            base: h,
-            url: "6-9.png",
-            x: 48,
-            y: 77,
-            w: 140,
-            h: 110
-        },
-        "normal-hair-female-7-1": {
-            type: "spritesheet",
-            base: h,
-            url: "7-1.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-10": {
-            type: "spritesheet",
-            base: h,
-            url: "7-10.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-11": {
-            type: "spritesheet",
-            base: h,
-            url: "7-11.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-12": {
-            type: "spritesheet",
-            base: h,
-            url: "7-12.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-13": {
-            type: "spritesheet",
-            base: h,
-            url: "7-13.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-14": {
-            type: "spritesheet",
-            base: h,
-            url: "7-14.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-15": {
-            type: "spritesheet",
-            base: h,
-            url: "7-15.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-16": {
-            type: "spritesheet",
-            base: h,
-            url: "7-16.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-2": {
-            type: "spritesheet",
-            base: h,
-            url: "7-2.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-3": {
-            type: "spritesheet",
-            base: h,
-            url: "7-3.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-4": {
-            type: "spritesheet",
-            base: h,
-            url: "7-4.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-5": {
-            type: "spritesheet",
-            base: h,
-            url: "7-5.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-6": {
-            type: "spritesheet",
-            base: h,
-            url: "7-6.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-7": {
-            type: "spritesheet",
-            base: h,
-            url: "7-7.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-8": {
-            type: "spritesheet",
-            base: h,
-            url: "7-8.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-7-9": {
-            type: "spritesheet",
-            base: h,
-            url: "7-9.png",
-            x: 75,
-            y: 74,
-            w: 98,
-            h: 93
-        },
-        "normal-hair-female-8-1": {
-            type: "spritesheet",
-            base: h,
-            url: "8-1.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-10": {
-            type: "spritesheet",
-            base: h,
-            url: "8-10.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-11": {
-            type: "spritesheet",
-            base: h,
-            url: "8-11.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-12": {
-            type: "spritesheet",
-            base: h,
-            url: "8-12.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-13": {
-            type: "spritesheet",
-            base: h,
-            url: "8-13.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-14": {
-            type: "spritesheet",
-            base: h,
-            url: "8-14.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-15": {
-            type: "spritesheet",
-            base: h,
-            url: "8-15.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-16": {
-            type: "spritesheet",
-            base: h,
-            url: "8-16.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-2": {
-            type: "spritesheet",
-            base: h,
-            url: "8-2.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-3": {
-            type: "spritesheet",
-            base: h,
-            url: "8-3.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-4": {
-            type: "spritesheet",
-            base: h,
-            url: "8-4.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-5": {
-            type: "spritesheet",
-            base: h,
-            url: "8-5.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-6": {
-            type: "spritesheet",
-            base: h,
-            url: "8-6.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-7": {
-            type: "spritesheet",
-            base: h,
-            url: "8-7.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-8": {
-            type: "spritesheet",
-            base: h,
-            url: "8-8.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-8-9": {
-            type: "spritesheet",
-            base: h,
-            url: "8-9.png",
-            x: 73,
-            y: 75,
-            w: 101,
-            h: 90
-        },
-        "normal-hair-female-9-1": {
-            type: "spritesheet",
-            base: h,
-            url: "9-1.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-10": {
-            type: "spritesheet",
-            base: h,
-            url: "9-10.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-11": {
-            type: "spritesheet",
-            base: h,
-            url: "9-11.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-12": {
-            type: "spritesheet",
-            base: h,
-            url: "9-12.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-13": {
-            type: "spritesheet",
-            base: h,
-            url: "9-13.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-14": {
-            type: "spritesheet",
-            base: h,
-            url: "9-14.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-15": {
-            type: "spritesheet",
-            base: h,
-            url: "9-15.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-16": {
-            type: "spritesheet",
-            base: h,
-            url: "9-16.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-2": {
-            type: "spritesheet",
-            base: h,
-            url: "9-2.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-3": {
-            type: "spritesheet",
-            base: h,
-            url: "9-3.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-4": {
-            type: "spritesheet",
-            base: h,
-            url: "9-4.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-5": {
-            type: "spritesheet",
-            base: h,
-            url: "9-5.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-6": {
-            type: "spritesheet",
-            base: h,
-            url: "9-6.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-7": {
-            type: "spritesheet",
-            base: h,
-            url: "9-7.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-8": {
-            type: "spritesheet",
-            base: h,
-            url: "9-8.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "normal-hair-female-9-9": {
-            type: "spritesheet",
-            base: h,
-            url: "9-9.png",
-            x: 75,
-            y: 77,
-            w: 113,
-            h: 88
-        },
-        "reduced-hair-female-1-1": {
-            type: "spritesheet",
-            base: i,
-            url: "1-1.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-10": {
-            type: "spritesheet",
-            base: i,
-            url: "1-10.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-11": {
-            type: "spritesheet",
-            base: i,
-            url: "1-11.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-12": {
-            type: "spritesheet",
-            base: i,
-            url: "1-12.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-13": {
-            type: "spritesheet",
-            base: i,
-            url: "1-13.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-14": {
-            type: "spritesheet",
-            base: i,
-            url: "1-14.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-15": {
-            type: "spritesheet",
-            base: i,
-            url: "1-15.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-16": {
-            type: "spritesheet",
-            base: i,
-            url: "1-16.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-2": {
-            type: "spritesheet",
-            base: i,
-            url: "1-2.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-3": {
-            type: "spritesheet",
-            base: i,
-            url: "1-3.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-4": {
-            type: "spritesheet",
-            base: i,
-            url: "1-4.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-5": {
-            type: "spritesheet",
-            base: i,
-            url: "1-5.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-6": {
-            type: "spritesheet",
-            base: i,
-            url: "1-6.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-7": {
-            type: "spritesheet",
-            base: i,
-            url: "1-7.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-8": {
-            type: "spritesheet",
-            base: i,
-            url: "1-8.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-1-9": {
-            type: "spritesheet",
-            base: i,
-            url: "1-9.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-10-1": {
-            type: "spritesheet",
-            base: i,
-            url: "10-1.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-10": {
-            type: "spritesheet",
-            base: i,
-            url: "10-10.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-11": {
-            type: "spritesheet",
-            base: i,
-            url: "10-11.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-12": {
-            type: "spritesheet",
-            base: i,
-            url: "10-12.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-13": {
-            type: "spritesheet",
-            base: i,
-            url: "10-13.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-14": {
-            type: "spritesheet",
-            base: i,
-            url: "10-14.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-15": {
-            type: "spritesheet",
-            base: i,
-            url: "10-15.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-16": {
-            type: "spritesheet",
-            base: i,
-            url: "10-16.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-2": {
-            type: "spritesheet",
-            base: i,
-            url: "10-2.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-3": {
-            type: "spritesheet",
-            base: i,
-            url: "10-3.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-4": {
-            type: "spritesheet",
-            base: i,
-            url: "10-4.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-5": {
-            type: "spritesheet",
-            base: i,
-            url: "10-5.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-6": {
-            type: "spritesheet",
-            base: i,
-            url: "10-6.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-7": {
-            type: "spritesheet",
-            base: i,
-            url: "10-7.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-8": {
-            type: "spritesheet",
-            base: i,
-            url: "10-8.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-10-9": {
-            type: "spritesheet",
-            base: i,
-            url: "10-9.png",
-            x: 33,
-            y: 46,
-            w: 53,
-            h: 50
-        },
-        "reduced-hair-female-11-1": {
-            type: "spritesheet",
-            base: i,
-            url: "11-1.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-10": {
-            type: "spritesheet",
-            base: i,
-            url: "11-10.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-11": {
-            type: "spritesheet",
-            base: i,
-            url: "11-11.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-12": {
-            type: "spritesheet",
-            base: i,
-            url: "11-12.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-13": {
-            type: "spritesheet",
-            base: i,
-            url: "11-13.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-14": {
-            type: "spritesheet",
-            base: i,
-            url: "11-14.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-15": {
-            type: "spritesheet",
-            base: i,
-            url: "11-15.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-16": {
-            type: "spritesheet",
-            base: i,
-            url: "11-16.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-2": {
-            type: "spritesheet",
-            base: i,
-            url: "11-2.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-3": {
-            type: "spritesheet",
-            base: i,
-            url: "11-3.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-4": {
-            type: "spritesheet",
-            base: i,
-            url: "11-4.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-5": {
-            type: "spritesheet",
-            base: i,
-            url: "11-5.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-6": {
-            type: "spritesheet",
-            base: i,
-            url: "11-6.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-7": {
-            type: "spritesheet",
-            base: i,
-            url: "11-7.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-8": {
-            type: "spritesheet",
-            base: i,
-            url: "11-8.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-11-9": {
-            type: "spritesheet",
-            base: i,
-            url: "11-9.png",
-            x: 33,
-            y: 46,
-            w: 52,
-            h: 50
-        },
-        "reduced-hair-female-12-1": {
-            type: "spritesheet",
-            base: i,
-            url: "12-1.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-10": {
-            type: "spritesheet",
-            base: i,
-            url: "12-10.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-11": {
-            type: "spritesheet",
-            base: i,
-            url: "12-11.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-12": {
-            type: "spritesheet",
-            base: i,
-            url: "12-12.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-13": {
-            type: "spritesheet",
-            base: i,
-            url: "12-13.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-14": {
-            type: "spritesheet",
-            base: i,
-            url: "12-14.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-15": {
-            type: "spritesheet",
-            base: i,
-            url: "12-15.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-16": {
-            type: "spritesheet",
-            base: i,
-            url: "12-16.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-2": {
-            type: "spritesheet",
-            base: i,
-            url: "12-2.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-3": {
-            type: "spritesheet",
-            base: i,
-            url: "12-3.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-4": {
-            type: "spritesheet",
-            base: i,
-            url: "12-4.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-5": {
-            type: "spritesheet",
-            base: i,
-            url: "12-5.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-6": {
-            type: "spritesheet",
-            base: i,
-            url: "12-6.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-7": {
-            type: "spritesheet",
-            base: i,
-            url: "12-7.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-8": {
-            type: "spritesheet",
-            base: i,
-            url: "12-8.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-12-9": {
-            type: "spritesheet",
-            base: i,
-            url: "12-9.png",
-            x: 33,
-            y: 44,
-            w: 52,
-            h: 52
-        },
-        "reduced-hair-female-13-1": {
-            type: "spritesheet",
-            base: i,
-            url: "13-1.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-10": {
-            type: "spritesheet",
-            base: i,
-            url: "13-10.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-11": {
-            type: "spritesheet",
-            base: i,
-            url: "13-11.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-12": {
-            type: "spritesheet",
-            base: i,
-            url: "13-12.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-13": {
-            type: "spritesheet",
-            base: i,
-            url: "13-13.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-14": {
-            type: "spritesheet",
-            base: i,
-            url: "13-14.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-15": {
-            type: "spritesheet",
-            base: i,
-            url: "13-15.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-16": {
-            type: "spritesheet",
-            base: i,
-            url: "13-16.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-2": {
-            type: "spritesheet",
-            base: i,
-            url: "13-2.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-3": {
-            type: "spritesheet",
-            base: i,
-            url: "13-3.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-4": {
-            type: "spritesheet",
-            base: i,
-            url: "13-4.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-5": {
-            type: "spritesheet",
-            base: i,
-            url: "13-5.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-6": {
-            type: "spritesheet",
-            base: i,
-            url: "13-6.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-7": {
-            type: "spritesheet",
-            base: i,
-            url: "13-7.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-8": {
-            type: "spritesheet",
-            base: i,
-            url: "13-8.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-13-9": {
-            type: "spritesheet",
-            base: i,
-            url: "13-9.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-1": {
-            type: "spritesheet",
-            base: i,
-            url: "14-1.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-10": {
-            type: "spritesheet",
-            base: i,
-            url: "14-10.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-11": {
-            type: "spritesheet",
-            base: i,
-            url: "14-11.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-12": {
-            type: "spritesheet",
-            base: i,
-            url: "14-12.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-13": {
-            type: "spritesheet",
-            base: i,
-            url: "14-13.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-14": {
-            type: "spritesheet",
-            base: i,
-            url: "14-14.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-15": {
-            type: "spritesheet",
-            base: i,
-            url: "14-15.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-16": {
-            type: "spritesheet",
-            base: i,
-            url: "14-16.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-2": {
-            type: "spritesheet",
-            base: i,
-            url: "14-2.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-3": {
-            type: "spritesheet",
-            base: i,
-            url: "14-3.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-4": {
-            type: "spritesheet",
-            base: i,
-            url: "14-4.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-5": {
-            type: "spritesheet",
-            base: i,
-            url: "14-5.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-6": {
-            type: "spritesheet",
-            base: i,
-            url: "14-6.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-7": {
-            type: "spritesheet",
-            base: i,
-            url: "14-7.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-8": {
-            type: "spritesheet",
-            base: i,
-            url: "14-8.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-14-9": {
-            type: "spritesheet",
-            base: i,
-            url: "14-9.png",
-            x: 22,
-            y: 46,
-            w: 63,
-            h: 55
-        },
-        "reduced-hair-female-15-1": {
-            type: "spritesheet",
-            base: i,
-            url: "15-1.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-10": {
-            type: "spritesheet",
-            base: i,
-            url: "15-10.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-11": {
-            type: "spritesheet",
-            base: i,
-            url: "15-11.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-12": {
-            type: "spritesheet",
-            base: i,
-            url: "15-12.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-13": {
-            type: "spritesheet",
-            base: i,
-            url: "15-13.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-14": {
-            type: "spritesheet",
-            base: i,
-            url: "15-14.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-15": {
-            type: "spritesheet",
-            base: i,
-            url: "15-15.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-16": {
-            type: "spritesheet",
-            base: i,
-            url: "15-16.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-2": {
-            type: "spritesheet",
-            base: i,
-            url: "15-2.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-3": {
-            type: "spritesheet",
-            base: i,
-            url: "15-3.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-4": {
-            type: "spritesheet",
-            base: i,
-            url: "15-4.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-5": {
-            type: "spritesheet",
-            base: i,
-            url: "15-5.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-6": {
-            type: "spritesheet",
-            base: i,
-            url: "15-6.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-7": {
-            type: "spritesheet",
-            base: i,
-            url: "15-7.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-8": {
-            type: "spritesheet",
-            base: i,
-            url: "15-8.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-15-9": {
-            type: "spritesheet",
-            base: i,
-            url: "15-9.png",
-            x: 22,
-            y: 46,
-            w: 64,
-            h: 55
-        },
-        "reduced-hair-female-2-1": {
-            type: "spritesheet",
-            base: i,
-            url: "2-1.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-10": {
-            type: "spritesheet",
-            base: i,
-            url: "2-10.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-11": {
-            type: "spritesheet",
-            base: i,
-            url: "2-11.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-12": {
-            type: "spritesheet",
-            base: i,
-            url: "2-12.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-13": {
-            type: "spritesheet",
-            base: i,
-            url: "2-13.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-14": {
-            type: "spritesheet",
-            base: i,
-            url: "2-14.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-15": {
-            type: "spritesheet",
-            base: i,
-            url: "2-15.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-16": {
-            type: "spritesheet",
-            base: i,
-            url: "2-16.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-2": {
-            type: "spritesheet",
-            base: i,
-            url: "2-2.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-3": {
-            type: "spritesheet",
-            base: i,
-            url: "2-3.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-4": {
-            type: "spritesheet",
-            base: i,
-            url: "2-4.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-5": {
-            type: "spritesheet",
-            base: i,
-            url: "2-5.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-6": {
-            type: "spritesheet",
-            base: i,
-            url: "2-6.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-7": {
-            type: "spritesheet",
-            base: i,
-            url: "2-7.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-8": {
-            type: "spritesheet",
-            base: i,
-            url: "2-8.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-2-9": {
-            type: "spritesheet",
-            base: i,
-            url: "2-9.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-3-1": {
-            type: "spritesheet",
-            base: i,
-            url: "3-1.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-10": {
-            type: "spritesheet",
-            base: i,
-            url: "3-10.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-11": {
-            type: "spritesheet",
-            base: i,
-            url: "3-11.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-12": {
-            type: "spritesheet",
-            base: i,
-            url: "3-12.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-13": {
-            type: "spritesheet",
-            base: i,
-            url: "3-13.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-14": {
-            type: "spritesheet",
-            base: i,
-            url: "3-14.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-15": {
-            type: "spritesheet",
-            base: i,
-            url: "3-15.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-16": {
-            type: "spritesheet",
-            base: i,
-            url: "3-16.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-2": {
-            type: "spritesheet",
-            base: i,
-            url: "3-2.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-3": {
-            type: "spritesheet",
-            base: i,
-            url: "3-3.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-4": {
-            type: "spritesheet",
-            base: i,
-            url: "3-4.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-5": {
-            type: "spritesheet",
-            base: i,
-            url: "3-5.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-6": {
-            type: "spritesheet",
-            base: i,
-            url: "3-6.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-7": {
-            type: "spritesheet",
-            base: i,
-            url: "3-7.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-8": {
-            type: "spritesheet",
-            base: i,
-            url: "3-8.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-3-9": {
-            type: "spritesheet",
-            base: i,
-            url: "3-9.png",
-            x: 25,
-            y: 46,
-            w: 70,
-            h: 54
-        },
-        "reduced-hair-female-4-1": {
-            type: "spritesheet",
-            base: i,
-            url: "4-1.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-10": {
-            type: "spritesheet",
-            base: i,
-            url: "4-10.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-11": {
-            type: "spritesheet",
-            base: i,
-            url: "4-11.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-12": {
-            type: "spritesheet",
-            base: i,
-            url: "4-12.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-13": {
-            type: "spritesheet",
-            base: i,
-            url: "4-13.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-14": {
-            type: "spritesheet",
-            base: i,
-            url: "4-14.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-15": {
-            type: "spritesheet",
-            base: i,
-            url: "4-15.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-16": {
-            type: "spritesheet",
-            base: i,
-            url: "4-16.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-2": {
-            type: "spritesheet",
-            base: i,
-            url: "4-2.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-3": {
-            type: "spritesheet",
-            base: i,
-            url: "4-3.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-4": {
-            type: "spritesheet",
-            base: i,
-            url: "4-4.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-5": {
-            type: "spritesheet",
-            base: i,
-            url: "4-5.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-6": {
-            type: "spritesheet",
-            base: i,
-            url: "4-6.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-7": {
-            type: "spritesheet",
-            base: i,
-            url: "4-7.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-8": {
-            type: "spritesheet",
-            base: i,
-            url: "4-8.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-4-9": {
-            type: "spritesheet",
-            base: i,
-            url: "4-9.png",
-            x: 25,
-            y: 46,
-            w: 61,
-            h: 54
-        },
-        "reduced-hair-female-5-1": {
-            type: "spritesheet",
-            base: i,
-            url: "5-1.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-10": {
-            type: "spritesheet",
-            base: i,
-            url: "5-10.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-11": {
-            type: "spritesheet",
-            base: i,
-            url: "5-11.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-12": {
-            type: "spritesheet",
-            base: i,
-            url: "5-12.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-13": {
-            type: "spritesheet",
-            base: i,
-            url: "5-13.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-14": {
-            type: "spritesheet",
-            base: i,
-            url: "5-14.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-15": {
-            type: "spritesheet",
-            base: i,
-            url: "5-15.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-16": {
-            type: "spritesheet",
-            base: i,
-            url: "5-16.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-2": {
-            type: "spritesheet",
-            base: i,
-            url: "5-2.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-3": {
-            type: "spritesheet",
-            base: i,
-            url: "5-3.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-4": {
-            type: "spritesheet",
-            base: i,
-            url: "5-4.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-5": {
-            type: "spritesheet",
-            base: i,
-            url: "5-5.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-6": {
-            type: "spritesheet",
-            base: i,
-            url: "5-6.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-7": {
-            type: "spritesheet",
-            base: i,
-            url: "5-7.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-8": {
-            type: "spritesheet",
-            base: i,
-            url: "5-8.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-5-9": {
-            type: "spritesheet",
-            base: i,
-            url: "5-9.png",
-            x: 25,
-            y: 46,
-            w: 60,
-            h: 54
-        },
-        "reduced-hair-female-6-1": {
-            type: "spritesheet",
-            base: i,
-            url: "6-1.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-10": {
-            type: "spritesheet",
-            base: i,
-            url: "6-10.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-11": {
-            type: "spritesheet",
-            base: i,
-            url: "6-11.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-12": {
-            type: "spritesheet",
-            base: i,
-            url: "6-12.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-13": {
-            type: "spritesheet",
-            base: i,
-            url: "6-13.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-14": {
-            type: "spritesheet",
-            base: i,
-            url: "6-14.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-15": {
-            type: "spritesheet",
-            base: i,
-            url: "6-15.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-16": {
-            type: "spritesheet",
-            base: i,
-            url: "6-16.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-2": {
-            type: "spritesheet",
-            base: i,
-            url: "6-2.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-3": {
-            type: "spritesheet",
-            base: i,
-            url: "6-3.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-4": {
-            type: "spritesheet",
-            base: i,
-            url: "6-4.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-5": {
-            type: "spritesheet",
-            base: i,
-            url: "6-5.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-6": {
-            type: "spritesheet",
-            base: i,
-            url: "6-6.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-7": {
-            type: "spritesheet",
-            base: i,
-            url: "6-7.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-8": {
-            type: "spritesheet",
-            base: i,
-            url: "6-8.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-6-9": {
-            type: "spritesheet",
-            base: i,
-            url: "6-9.png",
-            x: 22,
-            y: 46,
-            w: 73,
-            h: 55
-        },
-        "reduced-hair-female-7-1": {
-            type: "spritesheet",
-            base: i,
-            url: "7-1.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-10": {
-            type: "spritesheet",
-            base: i,
-            url: "7-10.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-11": {
-            type: "spritesheet",
-            base: i,
-            url: "7-11.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-12": {
-            type: "spritesheet",
-            base: i,
-            url: "7-12.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-13": {
-            type: "spritesheet",
-            base: i,
-            url: "7-13.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-14": {
-            type: "spritesheet",
-            base: i,
-            url: "7-14.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-15": {
-            type: "spritesheet",
-            base: i,
-            url: "7-15.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-16": {
-            type: "spritesheet",
-            base: i,
-            url: "7-16.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-2": {
-            type: "spritesheet",
-            base: i,
-            url: "7-2.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-3": {
-            type: "spritesheet",
-            base: i,
-            url: "7-3.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-4": {
-            type: "spritesheet",
-            base: i,
-            url: "7-4.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-5": {
-            type: "spritesheet",
-            base: i,
-            url: "7-5.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-6": {
-            type: "spritesheet",
-            base: i,
-            url: "7-6.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-7": {
-            type: "spritesheet",
-            base: i,
-            url: "7-7.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-8": {
-            type: "spritesheet",
-            base: i,
-            url: "7-8.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-7-9": {
-            type: "spritesheet",
-            base: i,
-            url: "7-9.png",
-            x: 36,
-            y: 44,
-            w: 49,
-            h: 47
-        },
-        "reduced-hair-female-8-1": {
-            type: "spritesheet",
-            base: i,
-            url: "8-1.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-10": {
-            type: "spritesheet",
-            base: i,
-            url: "8-10.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-11": {
-            type: "spritesheet",
-            base: i,
-            url: "8-11.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-12": {
-            type: "spritesheet",
-            base: i,
-            url: "8-12.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-13": {
-            type: "spritesheet",
-            base: i,
-            url: "8-13.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-14": {
-            type: "spritesheet",
-            base: i,
-            url: "8-14.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-15": {
-            type: "spritesheet",
-            base: i,
-            url: "8-15.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-16": {
-            type: "spritesheet",
-            base: i,
-            url: "8-16.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-2": {
-            type: "spritesheet",
-            base: i,
-            url: "8-2.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-3": {
-            type: "spritesheet",
-            base: i,
-            url: "8-3.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-4": {
-            type: "spritesheet",
-            base: i,
-            url: "8-4.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-5": {
-            type: "spritesheet",
-            base: i,
-            url: "8-5.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-6": {
-            type: "spritesheet",
-            base: i,
-            url: "8-6.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-7": {
-            type: "spritesheet",
-            base: i,
-            url: "8-7.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-8": {
-            type: "spritesheet",
-            base: i,
-            url: "8-8.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-8-9": {
-            type: "spritesheet",
-            base: i,
-            url: "8-9.png",
-            x: 34,
-            y: 44,
-            w: 51,
-            h: 45
-        },
-        "reduced-hair-female-9-1": {
-            type: "spritesheet",
-            base: i,
-            url: "9-1.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-10": {
-            type: "spritesheet",
-            base: i,
-            url: "9-10.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-11": {
-            type: "spritesheet",
-            base: i,
-            url: "9-11.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-12": {
-            type: "spritesheet",
-            base: i,
-            url: "9-12.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-13": {
-            type: "spritesheet",
-            base: i,
-            url: "9-13.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-14": {
-            type: "spritesheet",
-            base: i,
-            url: "9-14.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-15": {
-            type: "spritesheet",
-            base: i,
-            url: "9-15.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-16": {
-            type: "spritesheet",
-            base: i,
-            url: "9-16.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-2": {
-            type: "spritesheet",
-            base: i,
-            url: "9-2.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-3": {
-            type: "spritesheet",
-            base: i,
-            url: "9-3.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-4": {
-            type: "spritesheet",
-            base: i,
-            url: "9-4.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-5": {
-            type: "spritesheet",
-            base: i,
-            url: "9-5.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-6": {
-            type: "spritesheet",
-            base: i,
-            url: "9-6.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-7": {
-            type: "spritesheet",
-            base: i,
-            url: "9-7.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-8": {
-            type: "spritesheet",
-            base: i,
-            url: "9-8.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        },
-        "reduced-hair-female-9-9": {
-            type: "spritesheet",
-            base: i,
-            url: "9-9.png",
-            x: 36,
-            y: 46,
-            w: 59,
-            h: 43
-        }
-    }
+    var e = "https://cdn.prodigygame.com/game/assets/images/player/reduced/outfits/male/",
+		t = "https://cdn.prodigygame.com/game/assets/images/player/reduced/outfits/female/",
+		i = "https://cdn.prodigygame.com/game/assets/images/player/reduced/hair/male/",
+		a = "https://cdn.prodigygame.com/game/assets/images/player/reduced/hair/female/",
+		s = "https://cdn.prodigygame.com/game/assets/images/player/reduced/hats/",
+		r = "https://cdn.prodigygame.com/game/assets/images/player/normal/outfits/male/",
+		o = "https://cdn.prodigygame.com/game/assets/images/player/normal/outfits/female/",
+		n = "https://cdn.prodigygame.com/game/assets/images/player/normal/hair/male/",
+		l = "https://cdn.prodigygame.com/game/assets/images/player/normal/hair/female/",
+		h = "https://cdn.prodigygame.com/game/assets/images/player/normal/hats/",
+		d = "https://cdn.prodigygame.com/game/assets/images/player/normal/weapons/",
+		p = "https://cdn.prodigygame.com/game/assets/images/player/",
+		c = "https://cdn.prodigygame.com/game/assets/fonts/",
+		u = "https://cdn.prodigygame.com/game/assets/audio/bgm/",
+		g = "https://cdn.prodigygame.com/game/assets/audio/sfx/",
+		m = "https://cdn.prodigygame.com/game/assets/audio/voice/",
+		y = "https://cdn.prodigygame.com/game/assets/images/popups/",
+		f = "https://cdn.prodigygame.com/game/assets/images/tilesets/",
+		D = "https://cdn.prodigygame.com/game/assets/data/maps/",
+		b = "https://cdn.prodigygame.com/game/assets/images/battle/",
+		I = "https://cdn.prodigygame.com/game/assets/images/stores/",
+		v = "https://cdn.prodigygame.com/game/assets/images/backgrounds/",
+		q = "https://cdn.prodigygame.com/game/assets/images/zones/",
+		w = "https://cdn.prodigygame.com/game/assets/images/games/",
+		x = "https://cdn.prodigygame.com/game/assets/images/npc/",
+		P = "https://cdn.prodigygame.com/game/assets/images/icons/",
+		k = "https://cdn.prodigygame.com/game/assets/images/attacks/",
+		M = "https://cdn.prodigygame.com/game/assets/images/monsters/",
+		C = "https://cdn.prodigygame.com/game/assets/images/events/",
+		S = "https://cdn.prodigygame.com/game/assets/images/monsters/reduced/",
+		A = "https://cdn.prodigygame.com/game/assets/images/monsters/small/",
+		T = "https://cdn.prodigygame.com/game/assets/images/boss/",
+		E = "https://cdn.prodigygame.com/game/assets/images/boss/small/",
+		N = "https://cdn.prodigygame.com/game/assets/images/prompts/",
+		B = "https://cdn.prodigygame.com/game/assets/images/scenes/";
+	this._assets = {
+		"tmp-13": {
+			type: "atlas",
+			base: "https://cdn.prodigygame.com/game/assets/images/pets/",
+			url: "13.png",
+			json: "13.json"
+		},
+		"battle-skill": {
+			type: "json",
+			base: "",
+			url: ""
+		},
+		attacks: {
+			type: "atlas",
+			base: k,
+			url: "attacks.png",
+			json: "attacks.json"
+		},
+		battle: {
+			type: "atlas",
+			base: b,
+			url: "battle.png",
+			json: "battle.json"
+		},
+		"font-general": {
+			type: "atlas",
+			base: c,
+			url: "font-general.png",
+			json: "font-general.json"
+		},
+		"font-button": {
+			type: "atlas",
+			base: c,
+			url: "font-button.png",
+			json: "font-button.json"
+		},
+		"font-black": {
+			type: "atlas",
+			base: c,
+			url: "font-black.png",
+			json: "font-black.json"
+		},
+		"popup-member": {
+			type: "atlas",
+			base: y,
+			url: "popup-member.png",
+			json: "popup-member.json"
+		},
+		"tileset-collisions": {
+			type: "spritesheet",
+			base: f,
+			url: "tileset-collisions.png",
+			w: 40,
+			h: 40
+		},
+		"tileset-core": {
+			type: "atlas",
+			base: f,
+			url: "tileset-core.png",
+			json: "tileset-core.json"
+		},
+		"tileset-forest": {
+			type: "spritesheet",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/images/tilesets/",
+			url: "tileset-forest.png",
+			w: 40,
+			h: 40
+		},
+		"tileset-generic": {
+			type: "spritesheet",
+			base: f,
+			url: "tileset-generic.png",
+			w: 40,
+			h: 40
+		},
+		"tileset-outside": {
+			type: "spritesheet",
+			base: f,
+			url: "tileset-outside.png",
+			w: 40,
+			h: 40
+		},
+		"tileset-outsidesnow": {
+			type: "spritesheet",
+			base: f,
+			url: "tileset-outsidesnow.png",
+			w: 40,
+			h: 40
+		},
+		"tileset-icecave": {
+			type: "spritesheet",
+			base: f,
+			url: "tileset-icecave.png",
+			w: 40,
+			h: 40
+		},
+		"tileset-railruins": {
+			type: "spritesheet",
+			base: f,
+			url: "tileset-railruins.png",
+			w: 40,
+			h: 40
+		},
+		"tileset-town": {
+			type: "spritesheet",
+			base: f,
+			url: "tileset-town.png",
+			w: 40,
+			h: 40
+		},
+		"map-pathing": {
+			type: "json",
+			base: D,
+			url: "map-pathing.json"
+		},
+		"map-tutorial-b9": {
+			type: "json",
+			base: D,
+			url: "map-tutorial-b9.json"
+		},
+		"map-tutorial-c9": {
+			type: "json",
+			base: D,
+			url: "map-tutorial-c9.json"
+		},
+		"map-tutorial-d8": {
+			type: "json",
+			base: D,
+			url: "map-tutorial-d8.json"
+		},
+		"map-tutorial-d9": {
+			type: "json",
+			base: D,
+			url: "map-tutorial-d9.json"
+		},
+		"map-forest-a3": {
+			type: "json",
+			base: D,
+			url: "map-forest-a3.json"
+		},
+		"map-forest-a4": {
+			type: "json",
+			base: D,
+			url: "map-forest-a4.json"
+		},
+		"map-forest-a5": {
+			type: "json",
+			base: D,
+			url: "map-forest-a5.json"
+		},
+		"map-forest-b5": {
+			type: "json",
+			base: D,
+			url: "map-forest-b5.json"
+		},
+		"map-forest-b6": {
+			type: "json",
+			base: D,
+			url: "map-forest-b6.json"
+		},
+		"map-forest-b7": {
+			type: "json",
+			base: D,
+			url: "map-forest-b7.json"
+		},
+		"map-forest-b8": {
+			type: "json",
+			base: D,
+			url: "map-forest-b8.json"
+		},
+		"map-forest-c4": {
+			type: "json",
+			base: D,
+			url: "map-forest-c4.json"
+		},
+		"map-forest-c7": {
+			type: "json",
+			base: D,
+			url: "map-forest-c7.json"
+		},
+		"map-forest-c8": {
+			type: "json",
+			base: D,
+			url: "map-forest-c8.json"
+		},
+		"map-forest-d3": {
+			type: "json",
+			base: D,
+			url: "map-forest-d3.json"
+		},
+		"map-shiverchill-a5": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a5.json"
+		},
+		"map-shiverchill-a6": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a6.json"
+		},
+		"map-shiverchill-a7": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a7.json"
+		},
+		"map-shiverchill-a11": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a11.json"
+		},
+		"map-shiverchill-a10": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a10.json"
+		},
+		"map-shiverchill-a9": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a9.json"
+		},
+		"map-shiverchill-b3": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b3.json"
+		},
+		"map-shiverchill-b6": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b6.json"
+		},
+		"map-shiverchill-b7": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b7.json"
+		},
+		"map-shiverchill-b1": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b1.json"
+		},
+		"map-shiverchill-b10": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b10.json"
+		},
+		"map-shiverchill-a4": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a4.json"
+		},
+		"map-shiverchill-a3": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a3.json"
+		},
+		"map-shiverchill-a2": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-a2.json"
+		},
+		"map-shiverchill-b2": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b2.json"
+		},
+		"map-shiverchill-b8": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b8.json"
+		},
+		"map-shiverchill-b9": {
+			type: "json",
+			base: D,
+			url: "map-shiverchill-b9.json"
+		},
+		"map-lamplight-a1": {
+			type: "json",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/data/",
+			url: "map-lamplight-a1.json"
+		},
+		"map-lamplight-b1": {
+			type: "json",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/data/",
+			url: "map-lamplight-b1.json"
+		},
+		"map-lamplight-b2": {
+			type: "json",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/data/",
+			url: "map-lamplight-b2.json"
+		},
+		"map-lamplight-b3": {
+			type: "json",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/data/",
+			url: "map-lamplight-b3.json"
+		},
+		"map-lamplight-c1": {
+			type: "json",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/data/",
+			url: "map-lamplight-c1.json"
+		},
+		"scene-intro": {
+			type: "atlas",
+			base: B,
+			url: "scene-intro.png",
+			json: "scene-intro.json"
+		},
+		"scene-intro-bg1": {
+			type: "sprite",
+			base: B,
+			url: "scene-intro-bg1.jpg"
+		},
+		"scene-intro-bg2": {
+			type: "sprite",
+			base: B,
+			url: "scene-intro-bg2.jpg"
+		},
+		"scene-intro-bg3": {
+			type: "sprite",
+			base: B,
+			url: "scene-intro-bg3.jpg"
+		},
+		"npc-face-bok": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-bok.png",
+			json: "npc-face-bok.json"
+		},
+		"npc-sprite-bok": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-bok.png",
+			json: "npc-sprite-bok.json"
+		},
+		"npc-face-clankboot": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-clankboot.png",
+			json: "npc-face-clankboot.json"
+		},
+		"npc-sprite-clankboot": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-clankboot.png",
+			json: "npc-sprite-clankboot.json"
+		},
+		"npc-face-cumulo": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-cumulo.png",
+			json: "npc-face-cumulo.json"
+		},
+		"npc-sprite-cumulo": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-cumulo.png",
+			json: "npc-sprite-cumulo.json"
+		},
+		"npc-face-eve": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-eve.png",
+			json: "npc-face-eve.json"
+		},
+		"npc-sprite-eve": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-eve.png",
+			json: "npc-sprite-eve.json"
+		},
+		"npc-face-flora": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-flora.png",
+			json: "npc-face-flora.json"
+		},
+		"npc-sprite-flora": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-flora.png",
+			json: "npc-sprite-flora.json"
+		},
+		"npc-face-merchant": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-merchant.png",
+			json: "npc-face-merchant.json"
+		},
+		"npc-sprite-merchant": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-merchant.png",
+			json: "npc-sprite-merchant.json"
+		},
+		"npc-face-mira": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-mira.png",
+			json: "npc-face-mira.json"
+		},
+		"npc-sprite-mira": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-mira.png",
+			json: "npc-sprite-mira.json"
+		},
+		"npc-face-mugs": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-mugs.png",
+			json: "npc-face-mugs.json"
+		},
+		"npc-sprite-mugs": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-mugs.png",
+			json: "npc-sprite-mugs.json"
+		},
+		"npc-face-noot": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-noot.png",
+			json: "npc-face-noot.json"
+		},
+		"npc-sprite-noot": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-noot.png",
+			json: "npc-sprite-noot.json"
+		},
+		"npc-face-scoog": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-scoog.png",
+			json: "npc-face-scoog.json"
+		},
+		"npc-sprite-scoog": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-scoog.png",
+			json: "npc-sprite-scoog.json"
+		},
+		"npc-face-stache": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-stache.png",
+			json: "npc-face-stache.json"
+		},
+		"npc-sprite-stache": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-stache.png",
+			json: "npc-sprite-stache.json"
+		},
+		"npc-face-boombox": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-boombox.png",
+			json: "npc-face-boombox.json"
+		},
+		"npc-sprite-boombox": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-boombox.png",
+			json: "npc-sprite-boombox.json"
+		},
+		"npc-face-wizard": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-wizard.png",
+			json: "npc-face-wizard.json"
+		},
+		"npc-sprite-wizard": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-wizard.png",
+			json: "npc-sprite-wizard.json"
+		},
+		"npc-face-guard": {
+			type: "atlas",
+			base: x,
+			url: "npc-face-guard.png",
+			json: "npc-face-guard.json"
+		},
+		"npc-sprite-guard": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-guard.png",
+			json: "npc-sprite-guard.json"
+		},
+		"npc-sprite-gnome": {
+			type: "atlas",
+			base: x,
+			url: "npc-sprite-gnome.png",
+			json: "npc-sprite-gnome.json"
+		},
+		"zone-forest": {
+			type: "atlas",
+			base: q,
+			url: "zone-forest.png",
+			json: "zone-forest.json"
+		},
+		"zone-shiverchill": {
+			type: "atlas",
+			base: q,
+			url: "zone-shiverchill.png",
+			json: "zone-shiverchill.json"
+		},
+		"zone-volcano": {
+			type: "atlas",
+			base: q,
+			url: "zone-volcano.png",
+			json: "zone-volcano.json"
+		},
+		"zone-lamplight": {
+			type: "atlas",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/images/zones/",
+			url: "zone-lamplight.png",
+			json: "zone-lamplight.json"
+		},
+		"zone-pirate": {
+			type: "atlas",
+			base: q,
+			url: "zone-pirate.png",
+			json: "zone-pirate.json"
+		},
+		"zone-arena": {
+			type: "atlas",
+			base: q,
+			url: "zone-arena.png",
+			json: "zone-arena.json"
+		},
+		"zone-academy": {
+			type: "atlas",
+			base: q,
+			url: "zone-academy.png",
+			json: "zone-academy.json"
+		},
+		"zone-tower": {
+			type: "atlas",
+			base: q,
+			url: "zone-tower.png",
+			json: "zone-tower.json"
+		},
+		"zone-towerbase": {
+			type: "atlas",
+			base: q,
+			url: "zone-towerbase.png",
+			json: "zone-towerbase.json"
+		},
+		"zone-plains": {
+			type: "atlas",
+			base: q,
+			url: "zone-plains.png",
+			json: "zone-plains.json"
+		},
+		"zone-cloud": {
+			type: "atlas",
+			base: q,
+			url: "zone-cloud.png",
+			json: "zone-cloud.json"
+		},
+		"zone-house": {
+			type: "atlas",
+			base: q,
+			url: "zone-house.png",
+			json: "zone-house.json"
+		},
+		"zone-dino": {
+			type: "atlas",
+			base: q,
+			url: "zone-dino.png",
+			json: "zone-dino.json"
+		},
+		"zone-museum": {
+			type: "atlas",
+			base: q,
+			url: "zone-museum.png",
+			json: "zone-museum.json"
+		},
+		"zone-tech": {
+			type: "atlas",
+			base: q,
+			url: "zone-tech.png",
+			json: "zone-tech.json"
+		},
+		"zone-docks": {
+			type: "atlas",
+			base: q,
+			url: "zone-docks.png",
+			json: "zone-docks.json"
+		},
+		"event-october": {
+			type: "atlas",
+			base: C,
+			url: "event-october.png",
+			json: "event-october.json"
+		},
+		"event-winterfest": {
+			type: "atlas",
+			base: "assets/images/events/",
+			url: "event-winterfest.png",
+			json: "event-winterfest.json"
+		},
+		"game-dinodig": {
+			type: "atlas",
+			base: w,
+			url: "game-dinodig.png",
+			json: "game-dinodig.json"
+		},
+		"game-dancedance": {
+			type: "atlas",
+			base: w,
+			url: "game-dancedance.png",
+			json: "game-dancedance.json"
+		},
+		core: {
+			type: "atlas",
+			base: "https://xpmuser.github.io/oldprodigy/1-25-2/assets/images/",
+			url: "core.png",
+			json: "core.json"
+		},
+		login: {
+			type: "atlas",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/images/",
+			url: "login.png",
+			json: "login.json"
+		},
+		map: {
+			type: "atlas",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/images/",
+			url: "map.png",
+			json: "map.json"
+		},
+		manipulatives: {
+			type: "atlas",
+			base: "https://cdn.prodigygame.com/game/assets/images/education/",
+			url: "manipulatives.png",
+			json: "manipulatives.json"
+		},
+		"prompt-more-gold": {
+			type: "sprite",
+			base: N,
+			url: "prompt-more-gold.png"
+		},
+		"prompt-more-exp": {
+			type: "sprite",
+			base: N,
+			url: "prompt-more-exp.png"
+		},
+		"prompt-premium-item": {
+			type: "sprite",
+			base: N,
+			url: "prompt-premium-item.png"
+		},
+		"prompt-wheel-spin": {
+			type: "sprite",
+			base: N,
+			url: "prompt-wheel-spin.png"
+		},
+		"prompt-bigger-team": {
+			type: "sprite",
+			base: N,
+			url: "prompt-bigger-team.png"
+		},
+		"prompt-bigger-roster": {
+			type: "sprite",
+			base: N,
+			url: "prompt-bigger-roster.png"
+		},
+		"store-pirate": {
+			type: "atlas",
+			base: I,
+			url: "store-pirate.png",
+			json: "store-pirate.json"
+		},
+		"store-forest": {
+			type: "atlas",
+			base: I,
+			url: "store-forest.png",
+			json: "store-forest.json"
+		},
+		"store-mountain": {
+			type: "atlas",
+			base: I,
+			url: "store-mountain.png",
+			json: "store-mountain.json"
+		},
+		"store-volcano": {
+			type: "atlas",
+			base: I,
+			url: "store-volcano.png",
+			json: "store-volcano.json"
+		},
+		"store-cloud": {
+			type: "atlas",
+			base: I,
+			url: "store-cloud.png",
+			json: "store-cloud.json"
+		},
+		"store-dorm": {
+			type: "atlas",
+			base: I,
+			url: "store-dorm.png",
+			json: "store-dorm.json"
+		},
+		"store-tech": {
+			type: "atlas",
+			base: I,
+			url: "store-tech.png",
+			json: "store-tech.json"
+		},
+		"voice-0": {
+			type: "sfx",
+			base: m,
+			url: "voice-0.mp3"
+		},
+		"voice-2": {
+			type: "sfx",
+			base: m,
+			url: "voice-2.mp3"
+		},
+		"voice-3": {
+			type: "sfx",
+			base: m,
+			url: "voice-3.mp3"
+		},
+		"voice-4": {
+			type: "sfx",
+			base: m,
+			url: "voice-4.mp3"
+		},
+		"voice-5": {
+			type: "sfx",
+			base: m,
+			url: "voice-5.mp3"
+		},
+		"voice-6": {
+			type: "sfx",
+			base: m,
+			url: "voice-6.mp3"
+		},
+		"voice-7": {
+			type: "sfx",
+			base: m,
+			url: "voice-7.mp3"
+		},
+		"voice-8-1": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-1.mp3"
+		},
+		"voice-8-2": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-2.mp3"
+		},
+		"voice-8-3": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-3.mp3"
+		},
+		"voice-8-4": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-4.mp3"
+		},
+		"voice-8-5": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-5.mp3"
+		},
+		"voice-8-6": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-6.mp3"
+		},
+		"voice-8-7": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-7.mp3"
+		},
+		"voice-8-8": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-8.mp3"
+		},
+		"voice-8-9": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-9.mp3"
+		},
+		"voice-8-10": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-10.mp3"
+		},
+		"voice-8-11": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-11.mp3"
+		},
+		"voice-8-12": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-12.mp3"
+		},
+		"voice-8-13": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-13.mp3"
+		},
+		"voice-8-14": {
+			type: "sfx",
+			base: m,
+			url: "voice-8-14.mp3"
+		},
+		"voice-9": {
+			type: "sfx",
+			base: m,
+			url: "voice-9.mp3"
+		},
+		"voice-10-1": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-1.mp3"
+		},
+		"voice-10-2": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-2.mp3"
+		},
+		"voice-10-3": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-3.mp3"
+		},
+		"voice-10-4": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-4.mp3"
+		},
+		"voice-10-5": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-5.mp3"
+		},
+		"voice-10-6": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-6.mp3"
+		},
+		"voice-10-7": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-7.mp3"
+		},
+		"voice-10-8": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-8.mp3"
+		},
+		"voice-10-9": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-9.mp3"
+		},
+		"voice-10-10": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-10.mp3"
+		},
+		"voice-10-11": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-11.mp3"
+		},
+		"voice-10-12": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-12.mp3"
+		},
+		"voice-10-13": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-13.mp3"
+		},
+		"voice-10-14": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-14.mp3"
+		},
+		"voice-10-15": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-15.mp3"
+		},
+		"voice-10-16": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-16.mp3"
+		},
+		"voice-10-17": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-17.mp3"
+		},
+		"voice-10-18": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-18.mp3"
+		},
+		"voice-10-19": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-19.mp3"
+		},
+		"voice-10-20": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-20.mp3"
+		},
+		"voice-10-21": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-21.mp3"
+		},
+		"voice-10-22": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-22.mp3"
+		},
+		"voice-10-23": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-23.mp3"
+		},
+		"voice-10-24": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-24.mp3"
+		},
+		"voice-10-25": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-25.mp3"
+		},
+		"voice-10-26": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-26.mp3"
+		},
+		"voice-10-27": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-27.mp3"
+		},
+		"voice-10-28": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-28.mp3"
+		},
+		"voice-11": {
+			type: "sfx",
+			base: m,
+			url: "voice-11.mp3"
+		},
+		"voice-11-1": {
+			type: "sfx",
+			base: m,
+			url: "voice-11-1.mp3"
+		},
+		"voice-11-2": {
+			type: "sfx",
+			base: m,
+			url: "voice-11-2.mp3"
+		},
+		"voice-10-29": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-29.mp3"
+		},
+		"voice-10-30": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-30.mp3"
+		},
+		"voice-10-31": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-31.mp3"
+		},
+		"voice-10-32": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-32.mp3"
+		},
+		"voice-10-33": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-33.mp3"
+		},
+		"voice-10-34": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-34.mp3"
+		},
+		"voice-10-35": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-35.mp3"
+		},
+		"voice-10-36": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-36.mp3"
+		},
+		"voice-10-37": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-37.mp3"
+		},
+		"voice-10-38": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-38.mp3"
+		},
+		"voice-10-39": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-39.mp3"
+		},
+		"voice-10-40": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-40.mp3"
+		},
+		"voice-10-41": {
+			type: "sfx",
+			base: m,
+			url: "voice-10-41.mp3"
+		},
+		"voice-1-1": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-1.mp3"
+		},
+		"voice-1-2": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-2.mp3"
+		},
+		"voice-1-3": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-3.mp3"
+		},
+		"voice-1-4": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-4.mp3"
+		},
+		"voice-1-5": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-5.mp3"
+		},
+		"voice-1-6": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-6.mp3"
+		},
+		"voice-1-7": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-7.mp3"
+		},
+		"voice-1-8": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-8.mp3"
+		},
+		"voice-1-9": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-9.mp3"
+		},
+		"voice-1-10": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-10.mp3"
+		},
+		"voice-1-11": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-11.mp3"
+		},
+		"voice-1-12": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-12.mp3"
+		},
+		"voice-1-13": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-13.mp3"
+		},
+		"voice-1-14": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-14.mp3"
+		},
+		"voice-1-15": {
+			type: "sfx",
+			base: m,
+			url: "voice-1-15.mp3"
+		},
+		"bgm-victory": {
+			type: "bgm",
+			base: u,
+			url: "bgm-victory.mp3"
+		},
+		"bgm-battle": {
+			type: "bgm",
+			base: u,
+			url: "bgm-battle.mp3"
+		},
+		"bgm-intro": {
+			type: "bgm",
+			base: u,
+			url: "bgm-intro.mp3"
+		},
+		"bgm-space": {
+			type: "bgm",
+			base: u,
+			url: "bgm-space.mp3"
+		},
+		"bgm-game": {
+			type: "bgm",
+			base: u,
+			url: "bgm-game.mp3"
+		},
+		"bgm-dance1": {
+			type: "bgm",
+			base: u,
+			url: "bgm-dance1.mp3"
+		},
+		"bgm-dance2": {
+			type: "bgm",
+			base: u,
+			url: "bgm-dance2.mp3"
+		},
+		"bgm-intro-1": {
+			type: "bgm",
+			base: u,
+			url: "bgm-intro-1.mp3"
+		},
+		"sfx-main": {
+			type: "sfx",
+			base: g,
+			url: "sfx-main.mp3"
+		},
+		"bg-battle-forest": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-forest.png"
+		},
+		"bg-battle-mountain": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-mountain.png"
+		},
+		"bg-battle-volcano": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-volcano.png"
+		},
+		"bg-battle-pirate": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-pirate.png"
+		},
+		"bg-battle-arena": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-arena.png"
+		},
+		"bg-battle-academy": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-academy.png"
+		},
+		"bg-battle-cloud": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-cloud.png"
+		},
+		"bg-battle-tower": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-tower.png"
+		},
+		"bg-battle-dino": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-dino.png"
+		},
+		"bg-battle-tech": {
+			type: "sprite",
+			base: v,
+			url: "bg-battle-tech.png"
+		},
+		"bg-dorm-house": {
+			type: "sprite",
+			base: v,
+			url: "bg-dorm-house.png"
+		},
+		"bg-dorm-cave": {
+			type: "sprite",
+			base: v,
+			url: "bg-dorm-cave.png"
+		},
+		"bg-dorm-tree": {
+			type: "sprite",
+			base: v,
+			url: "bg-dorm-tree.png"
+		},
+		icons: {
+			type: "atlas",
+			base: "https://xpmuser.github.io/oldprodigy/1-25-2/assets/images/",
+			url: "icons.png",
+			json: "icons.json"
+		},
+		"icons-membership": {
+			type: "spritesheet",
+			base: P,
+			url: "icons-membership.png",
+			w: 60,
+			h: 70
+		},
+		"boss-small-1": {
+			type: "sprite",
+			base: E,
+			url: "1.png",
+			x: 390
+		},
+		"boss-1": {
+			type: "spritesheet",
+			base: T,
+			url: "1.png",
+			x: 390,
+			w: 717,
+			h: 634
+		},
+		"boss-small-10": {
+			type: "sprite",
+			base: E,
+			url: "10.png",
+			x: 256
+		},
+		"boss-10": {
+			type: "spritesheet",
+			base: T,
+			url: "10.png",
+			x: 256,
+			w: 344,
+			h: 351
+		},
+		"boss-small-11": {
+			type: "sprite",
+			base: E,
+			url: "11.png",
+			x: 145
+		},
+		"boss-11": {
+			type: "spritesheet",
+			base: T,
+			url: "11.png",
+			x: 145,
+			w: 363,
+			h: 438
+		},
+		"boss-small-2": {
+			type: "sprite",
+			base: E,
+			url: "2.png",
+			x: 450
+		},
+		"boss-2": {
+			type: "spritesheet",
+			base: T,
+			url: "2.png",
+			x: 450,
+			w: 853,
+			h: 785
+		},
+		"boss-small-3": {
+			type: "sprite",
+			base: E,
+			url: "3.png",
+			x: 178
+		},
+		"boss-3": {
+			type: "spritesheet",
+			base: T,
+			url: "3.png",
+			x: 178,
+			w: 440,
+			h: 410
+		},
+		"boss-small-4": {
+			type: "sprite",
+			base: E,
+			url: "4.png",
+			x: 270
+		},
+		"boss-4": {
+			type: "spritesheet",
+			base: T,
+			url: "4.png",
+			x: 270,
+			w: 664,
+			h: 640
+		},
+		"boss-small-5": {
+			type: "sprite",
+			base: E,
+			url: "5.png",
+			x: 366
+		},
+		"boss-5": {
+			type: "spritesheet",
+			base: T,
+			url: "5.png",
+			x: 366,
+			w: 745,
+			h: 712
+		},
+		"boss-small-6": {
+			type: "sprite",
+			base: E,
+			url: "6.png",
+			x: 280
+		},
+		"boss-6": {
+			type: "spritesheet",
+			base: T,
+			url: "6.png",
+			x: 280,
+			w: 634,
+			h: 621
+		},
+		"boss-small-7": {
+			type: "sprite",
+			base: E,
+			url: "7.png",
+			x: 250
+		},
+		"boss-7": {
+			type: "spritesheet",
+			base: T,
+			url: "7.png",
+			x: 250,
+			w: 712,
+			h: 638
+		},
+		"boss-small-8": {
+			type: "sprite",
+			base: E,
+			url: "8.png",
+			x: 267
+		},
+		"boss-8": {
+			type: "spritesheet",
+			base: T,
+			url: "8.png",
+			x: 267,
+			w: 599,
+			h: 572
+		},
+		"boss-small-9": {
+			type: "sprite",
+			base: E,
+			url: "9.png",
+			x: 128
+		},
+		"boss-9": {
+			type: "spritesheet",
+			base: T,
+			url: "9.png",
+			x: 128,
+			w: 133,
+			h: 175
+		},
+		"monster-small-1": {
+			type: "sprite",
+			base: A,
+			url: "1.png",
+			x: 45
+		},
+		"monster-normal-1": {
+			type: "spritesheet",
+			base: M,
+			url: "1.png",
+			x: 45,
+			w: 74,
+			h: 91
+		},
+		"monster-reduced-1": {
+			type: "spritesheet",
+			base: S,
+			url: "1.png",
+			x: 22,
+			w: 37,
+			h: 46
+		},
+		"monster-small-10": {
+			type: "sprite",
+			base: A,
+			url: "10.png",
+			x: 55
+		},
+		"monster-normal-10": {
+			type: "spritesheet",
+			base: M,
+			url: "10.png",
+			x: 55,
+			w: 113,
+			h: 107
+		},
+		"monster-reduced-10": {
+			type: "spritesheet",
+			base: S,
+			url: "10.png",
+			x: 27,
+			w: 54,
+			h: 42
+		},
+		"monster-small-100": {
+			type: "sprite",
+			base: A,
+			url: "100.png",
+			x: 110
+		},
+		"monster-normal-100": {
+			type: "spritesheet",
+			base: M,
+			url: "100.png",
+			x: 110,
+			w: 216,
+			h: 185
+		},
+		"monster-reduced-100": {
+			type: "spritesheet",
+			base: S,
+			url: "100.png",
+			x: 55,
+			w: 107,
+			h: 93
+		},
+		"monster-small-101": {
+			type: "sprite",
+			base: A,
+			url: "101.png",
+			x: 260
+		},
+		"monster-normal-101": {
+			type: "spritesheet",
+			base: M,
+			url: "101.png",
+			x: 260,
+			w: 460,
+			h: 270
+		},
+		"monster-reduced-101": {
+			type: "spritesheet",
+			base: S,
+			url: "101.png",
+			x: 130,
+			w: 190,
+			h: 116
+		},
+		"monster-small-102": {
+			type: "sprite",
+			base: A,
+			url: "102.png",
+			x: 40
+		},
+		"monster-normal-102": {
+			type: "spritesheet",
+			base: M,
+			url: "102.png",
+			x: 40,
+			w: 81,
+			h: 111
+		},
+		"monster-reduced-102": {
+			type: "spritesheet",
+			base: S,
+			url: "102.png",
+			x: 20,
+			w: 35,
+			h: 47
+		},
+		"monster-small-103": {
+			type: "sprite",
+			base: A,
+			url: "103.png",
+			x: 58
+		},
+		"monster-normal-103": {
+			type: "spritesheet",
+			base: M,
+			url: "103.png",
+			x: 58,
+			w: 163,
+			h: 179
+		},
+		"monster-reduced-103": {
+			type: "spritesheet",
+			base: S,
+			url: "103.png",
+			x: 29,
+			w: 65,
+			h: 59
+		},
+		"monster-small-104": {
+			type: "sprite",
+			base: A,
+			url: "104.png",
+			x: 113
+		},
+		"monster-normal-104": {
+			type: "spritesheet",
+			base: M,
+			url: "104.png",
+			x: 113,
+			w: 214,
+			h: 249
+		},
+		"monster-reduced-104": {
+			type: "spritesheet",
+			base: S,
+			url: "104.png",
+			x: 56,
+			w: 96,
+			h: 87
+		},
+		"monster-small-105": {
+			type: "sprite",
+			base: A,
+			url: "105.png",
+			x: 120
+		},
+		"monster-normal-105": {
+			type: "spritesheet",
+			base: M,
+			url: "105.png",
+			x: 120,
+			w: 246,
+			h: 212
+		},
+		"monster-reduced-105": {
+			type: "spritesheet",
+			base: S,
+			url: "105.png",
+			x: 60,
+			w: 102,
+			h: 99
+		},
+		"monster-small-106": {
+			type: "sprite",
+			base: A,
+			url: "106.png",
+			x: 130
+		},
+		"monster-normal-106": {
+			type: "spritesheet",
+			base: M,
+			url: "106.png",
+			x: 130,
+			w: 392,
+			h: 224
+		},
+		"monster-reduced-106": {
+			type: "spritesheet",
+			base: S,
+			url: "106.png",
+			x: 65,
+			w: 127,
+			h: 101
+		},
+		"monster-small-107": {
+			type: "sprite",
+			base: A,
+			url: "107.png",
+			x: 90
+		},
+		"monster-normal-107": {
+			type: "spritesheet",
+			base: M,
+			url: "107.png",
+			x: 90,
+			w: 193,
+			h: 150
+		},
+		"monster-reduced-107": {
+			type: "spritesheet",
+			base: S,
+			url: "107.png",
+			x: 45,
+			w: 85,
+			h: 64
+		},
+		"monster-small-108": {
+			type: "sprite",
+			base: A,
+			url: "108.png",
+			x: 90
+		},
+		"monster-normal-108": {
+			type: "spritesheet",
+			base: M,
+			url: "108.png",
+			x: 90,
+			w: 252,
+			h: 187
+		},
+		"monster-reduced-108": {
+			type: "spritesheet",
+			base: S,
+			url: "108.png",
+			x: 45,
+			w: 93,
+			h: 94
+		},
+		"monster-small-109": {
+			type: "sprite",
+			base: A,
+			url: "109.png",
+			x: 110
+		},
+		"monster-normal-109": {
+			type: "spritesheet",
+			base: M,
+			url: "109.png",
+			x: 110,
+			w: 208,
+			h: 176
+		},
+		"monster-reduced-109": {
+			type: "spritesheet",
+			base: S,
+			url: "109.png",
+			x: 55,
+			w: 105,
+			h: 88
+		},
+		"monster-small-11": {
+			type: "sprite",
+			base: A,
+			url: "11.png",
+			x: 100
+		},
+		"monster-normal-11": {
+			type: "spritesheet",
+			base: M,
+			url: "11.png",
+			x: 100,
+			w: 196,
+			h: 174
+		},
+		"monster-reduced-11": {
+			type: "spritesheet",
+			base: S,
+			url: "11.png",
+			x: 50,
+			w: 76,
+			h: 75
+		},
+		"monster-small-110": {
+			type: "sprite",
+			base: A,
+			url: "110.png",
+			x: 160
+		},
+		"monster-normal-110": {
+			type: "spritesheet",
+			base: M,
+			url: "110.png",
+			x: 160,
+			w: 254,
+			h: 239
+		},
+		"monster-reduced-110": {
+			type: "spritesheet",
+			base: S,
+			url: "110.png",
+			x: 80,
+			w: 128,
+			h: 120
+		},
+		"monster-small-111": {
+			type: "sprite",
+			base: A,
+			url: "111.png",
+			x: 105
+		},
+		"monster-normal-111": {
+			type: "spritesheet",
+			base: M,
+			url: "111.png",
+			x: 105,
+			w: 175,
+			h: 180
+		},
+		"monster-reduced-111": {
+			type: "spritesheet",
+			base: S,
+			url: "111.png",
+			x: 52,
+			w: 82,
+			h: 86
+		},
+		"monster-small-112": {
+			type: "sprite",
+			base: A,
+			url: "112.png",
+			x: 180
+		},
+		"monster-normal-112": {
+			type: "spritesheet",
+			base: M,
+			url: "112.png",
+			x: 180,
+			w: 436,
+			h: 352
+		},
+		"monster-reduced-112": {
+			type: "spritesheet",
+			base: S,
+			url: "112.png",
+			x: 90,
+			w: 157,
+			h: 143
+		},
+		"monster-small-113": {
+			type: "sprite",
+			base: A,
+			url: "113.png",
+			x: 124
+		},
+		"monster-normal-113": {
+			type: "spritesheet",
+			base: M,
+			url: "113.png",
+			x: 124,
+			w: 246,
+			h: 142
+		},
+		"monster-reduced-113": {
+			type: "spritesheet",
+			base: S,
+			url: "113.png",
+			x: 62,
+			w: 35,
+			h: 59
+		},
+		"monster-small-114": {
+			type: "sprite",
+			base: A,
+			url: "114.png",
+			x: 126
+		},
+		"monster-normal-114": {
+			type: "spritesheet",
+			base: M,
+			url: "114.png",
+			x: 126,
+			w: 252,
+			h: 207
+		},
+		"monster-reduced-114": {
+			type: "spritesheet",
+			base: S,
+			url: "114.png",
+			x: 63,
+			w: 63,
+			h: 78
+		},
+		"monster-small-115": {
+			type: "sprite",
+			base: A,
+			url: "115.png",
+			x: 65
+		},
+		"monster-normal-115": {
+			type: "spritesheet",
+			base: M,
+			url: "115.png",
+			x: 65,
+			w: 150,
+			h: 220
+		},
+		"monster-reduced-115": {
+			type: "spritesheet",
+			base: S,
+			url: "115.png",
+			x: 32,
+			w: 42,
+			h: 53
+		},
+		"monster-small-116": {
+			type: "sprite",
+			base: A,
+			url: "116.png",
+			x: 116
+		},
+		"monster-normal-116": {
+			type: "spritesheet",
+			base: M,
+			url: "116.png",
+			x: 116,
+			w: 239,
+			h: 173
+		},
+		"monster-reduced-116": {
+			type: "spritesheet",
+			base: S,
+			url: "116.png",
+			x: 58,
+			w: 108,
+			h: 76
+		},
+		"monster-small-117": {
+			type: "sprite",
+			base: A,
+			url: "117.png",
+			x: 147
+		},
+		"monster-normal-117": {
+			type: "spritesheet",
+			base: M,
+			url: "117.png",
+			x: 147,
+			w: 474,
+			h: 421
+		},
+		"monster-reduced-117": {
+			type: "spritesheet",
+			base: S,
+			url: "117.png",
+			x: 73,
+			w: 134,
+			h: 149
+		},
+		"monster-small-118": {
+			type: "sprite",
+			base: A,
+			url: "118.png",
+			x: 120
+		},
+		"monster-normal-118": {
+			type: "spritesheet",
+			base: M,
+			url: "118.png",
+			x: 120,
+			w: 254,
+			h: 209
+		},
+		"monster-reduced-118": {
+			type: "spritesheet",
+			base: S,
+			url: "118.png",
+			x: 60,
+			w: 73,
+			h: 69
+		},
+		"monster-small-119": {
+			type: "sprite",
+			base: A,
+			url: "119.png",
+			x: 100
+		},
+		"monster-normal-119": {
+			type: "spritesheet",
+			base: M,
+			url: "119.png",
+			x: 100,
+			w: 241,
+			h: 163
+		},
+		"monster-reduced-119": {
+			type: "spritesheet",
+			base: S,
+			url: "119.png",
+			x: 50,
+			w: 105,
+			h: 82
+		},
+		"monster-small-12": {
+			type: "sprite",
+			base: A,
+			url: "12.png",
+			x: 64
+		},
+		"monster-normal-12": {
+			type: "spritesheet",
+			base: M,
+			url: "12.png",
+			x: 64,
+			w: 191,
+			h: 150
+		},
+		"monster-reduced-12": {
+			type: "spritesheet",
+			base: S,
+			url: "12.png",
+			x: 32,
+			w: 61,
+			h: 73
+		},
+		"monster-small-120": {
+			type: "sprite",
+			base: A,
+			url: "120.png",
+			x: 118
+		},
+		"monster-normal-120": {
+			type: "spritesheet",
+			base: M,
+			url: "120.png",
+			x: 118,
+			w: 256,
+			h: 256
+		},
+		"monster-reduced-120": {
+			type: "spritesheet",
+			base: S,
+			url: "120.png",
+			x: 59,
+			w: 128,
+			h: 128
+		},
+		"monster-small-121": {
+			type: "sprite",
+			base: A,
+			url: "121.png",
+			x: 132
+		},
+		"monster-normal-121": {
+			type: "spritesheet",
+			base: M,
+			url: "121.png",
+			x: 132,
+			w: 256,
+			h: 256
+		},
+		"monster-reduced-121": {
+			type: "spritesheet",
+			base: S,
+			url: "121.png",
+			x: 66,
+			w: 128,
+			h: 128
+		},
+		"monster-small-122": {
+			type: "sprite",
+			base: A,
+			url: "122.png",
+			x: 63
+		},
+		"monster-normal-122": {
+			type: "spritesheet",
+			base: M,
+			url: "122.png",
+			x: 63,
+			w: 211,
+			h: 150
+		},
+		"monster-reduced-122": {
+			type: "spritesheet",
+			base: S,
+			url: "122.png",
+			x: 31,
+			w: 84,
+			h: 76
+		},
+		"monster-small-123": {
+			type: "sprite",
+			base: A,
+			url: "123.png",
+			x: 112
+		},
+		"monster-normal-123": {
+			type: "spritesheet",
+			base: M,
+			url: "123.png",
+			x: 112,
+			w: 301,
+			h: 224
+		},
+		"monster-reduced-123": {
+			type: "spritesheet",
+			base: S,
+			url: "123.png",
+			x: 56,
+			w: 98,
+			h: 93
+		},
+		"monster-small-124": {
+			type: "sprite",
+			base: A,
+			url: "124.png",
+			x: 132
+		},
+		"monster-normal-124": {
+			type: "spritesheet",
+			base: M,
+			url: "124.png",
+			x: 132,
+			w: 330,
+			h: 236
+		},
+		"monster-reduced-124": {
+			type: "spritesheet",
+			base: S,
+			url: "124.png",
+			x: 66,
+			w: 107,
+			h: 117
+		},
+		"monster-small-13": {
+			type: "sprite",
+			base: A,
+			url: "13.png",
+			x: 65
+		},
+		"monster-normal-13": {
+			type: "spritesheet",
+			base: M,
+			url: "13.png",
+			x: 65,
+			w: 170,
+			h: 170
+		},
+		"monster-reduced-13": {
+			type: "spritesheet",
+			base: S,
+			url: "13.png",
+			x: 32,
+			w: 79,
+			h: 81
+		},
+		"monster-small-14": {
+			type: "sprite",
+			base: A,
+			url: "14.png",
+			x: 65
+		},
+		"monster-normal-14": {
+			type: "spritesheet",
+			base: M,
+			url: "14.png",
+			x: 65,
+			w: 170,
+			h: 168
+		},
+		"monster-reduced-14": {
+			type: "spritesheet",
+			base: S,
+			url: "14.png",
+			x: 32,
+			w: 79,
+			h: 81
+		},
+		"monster-small-15": {
+			type: "sprite",
+			base: A,
+			url: "15.png",
+			x: 134
+		},
+		"monster-normal-15": {
+			type: "spritesheet",
+			base: M,
+			url: "15.png",
+			x: 134,
+			w: 247,
+			h: 200
+		},
+		"monster-reduced-15": {
+			type: "spritesheet",
+			base: S,
+			url: "15.png",
+			x: 67,
+			w: 124,
+			h: 87
+		},
+		"monster-small-16": {
+			type: "sprite",
+			base: A,
+			url: "16.png",
+			x: 60
+		},
+		"monster-normal-16": {
+			type: "spritesheet",
+			base: M,
+			url: "16.png",
+			x: 60,
+			w: 185,
+			h: 158
+		},
+		"monster-reduced-16": {
+			type: "spritesheet",
+			base: S,
+			url: "16.png",
+			x: 30,
+			w: 66,
+			h: 74
+		},
+		"monster-small-17": {
+			type: "sprite",
+			base: A,
+			url: "17.png",
+			x: 127
+		},
+		"monster-normal-17": {
+			type: "spritesheet",
+			base: M,
+			url: "17.png",
+			x: 127,
+			w: 252,
+			h: 186
+		},
+		"monster-reduced-17": {
+			type: "spritesheet",
+			base: S,
+			url: "17.png",
+			x: 63,
+			w: 104,
+			h: 91
+		},
+		"monster-small-18": {
+			type: "sprite",
+			base: A,
+			url: "18.png",
+			x: 25
+		},
+		"monster-normal-18": {
+			type: "spritesheet",
+			base: M,
+			url: "18.png",
+			x: 25,
+			w: 92,
+			h: 75
+		},
+		"monster-reduced-18": {
+			type: "spritesheet",
+			base: S,
+			url: "18.png",
+			x: 12,
+			w: 27,
+			h: 24
+		},
+		"monster-small-19": {
+			type: "sprite",
+			base: A,
+			url: "19.png",
+			x: 78
+		},
+		"monster-normal-19": {
+			type: "spritesheet",
+			base: M,
+			url: "19.png",
+			x: 78,
+			w: 203,
+			h: 162
+		},
+		"monster-reduced-19": {
+			type: "spritesheet",
+			base: S,
+			url: "19.png",
+			x: 39,
+			w: 82,
+			h: 80
+		},
+		"monster-small-2": {
+			type: "sprite",
+			base: A,
+			url: "2.png",
+			x: 63
+		},
+		"monster-normal-2": {
+			type: "spritesheet",
+			base: M,
+			url: "2.png",
+			x: 63,
+			w: 135,
+			h: 103
+		},
+		"monster-reduced-2": {
+			type: "spritesheet",
+			base: S,
+			url: "2.png",
+			x: 31,
+			w: 63,
+			h: 52
+		},
+		"monster-small-20": {
+			type: "sprite",
+			base: A,
+			url: "20.png",
+			x: 80
+		},
+		"monster-normal-20": {
+			type: "spritesheet",
+			base: M,
+			url: "20.png",
+			x: 80,
+			w: 137,
+			h: 132
+		},
+		"monster-reduced-20": {
+			type: "spritesheet",
+			base: S,
+			url: "20.png",
+			x: 40,
+			w: 69,
+			h: 50
+		},
+		"monster-small-21": {
+			type: "sprite",
+			base: A,
+			url: "21.png",
+			x: 110
+		},
+		"monster-normal-21": {
+			type: "spritesheet",
+			base: M,
+			url: "21.png",
+			x: 110,
+			w: 240,
+			h: 193
+		},
+		"monster-reduced-21": {
+			type: "spritesheet",
+			base: S,
+			url: "21.png",
+			x: 55,
+			w: 120,
+			h: 97
+		},
+		"monster-small-22": {
+			type: "sprite",
+			base: A,
+			url: "22.png",
+			x: 120
+		},
+		"monster-normal-22": {
+			type: "spritesheet",
+			base: M,
+			url: "22.png",
+			x: 120,
+			w: 254,
+			h: 213
+		},
+		"monster-reduced-22": {
+			type: "spritesheet",
+			base: S,
+			url: "22.png",
+			x: 60,
+			w: 128,
+			h: 106
+		},
+		"monster-small-23": {
+			type: "sprite",
+			base: A,
+			url: "23.png",
+			x: 95
+		},
+		"monster-normal-23": {
+			type: "spritesheet",
+			base: M,
+			url: "23.png",
+			x: 95,
+			w: 202,
+			h: 140
+		},
+		"monster-reduced-23": {
+			type: "spritesheet",
+			base: S,
+			url: "23.png",
+			x: 47,
+			w: 75,
+			h: 64
+		},
+		"monster-small-24": {
+			type: "sprite",
+			base: A,
+			url: "24.png",
+			x: 92
+		},
+		"monster-normal-24": {
+			type: "spritesheet",
+			base: M,
+			url: "24.png",
+			x: 92,
+			w: 188,
+			h: 150
+		},
+		"monster-reduced-24": {
+			type: "spritesheet",
+			base: S,
+			url: "24.png",
+			x: 46,
+			w: 88,
+			h: 75
+		},
+		"monster-small-25": {
+			type: "sprite",
+			base: A,
+			url: "25.png",
+			x: 30
+		},
+		"monster-normal-25": {
+			type: "spritesheet",
+			base: M,
+			url: "25.png",
+			x: 30,
+			w: 77,
+			h: 78
+		},
+		"monster-reduced-25": {
+			type: "spritesheet",
+			base: S,
+			url: "25.png",
+			x: 15,
+			w: 31,
+			h: 34
+		},
+		"monster-small-26": {
+			type: "sprite",
+			base: A,
+			url: "26.png",
+			x: 75
+		},
+		"monster-normal-26": {
+			type: "spritesheet",
+			base: M,
+			url: "26.png",
+			x: 75,
+			w: 132,
+			h: 117
+		},
+		"monster-reduced-26": {
+			type: "spritesheet",
+			base: S,
+			url: "26.png",
+			x: 37,
+			w: 57,
+			h: 52
+		},
+		"monster-small-27": {
+			type: "sprite",
+			base: A,
+			url: "27.png",
+			x: 35
+		},
+		"monster-normal-27": {
+			type: "spritesheet",
+			base: M,
+			url: "27.png",
+			x: 35,
+			w: 112,
+			h: 111
+		},
+		"monster-reduced-27": {
+			type: "spritesheet",
+			base: S,
+			url: "27.png",
+			x: 17,
+			w: 35,
+			h: 45
+		},
+		"monster-small-28": {
+			type: "sprite",
+			base: A,
+			url: "28.png",
+			x: 70
+		},
+		"monster-normal-28": {
+			type: "spritesheet",
+			base: M,
+			url: "28.png",
+			x: 70,
+			w: 122,
+			h: 133
+		},
+		"monster-reduced-28": {
+			type: "spritesheet",
+			base: S,
+			url: "28.png",
+			x: 35,
+			w: 58,
+			h: 55
+		},
+		"monster-small-29": {
+			type: "sprite",
+			base: A,
+			url: "29.png",
+			x: 50
+		},
+		"monster-normal-29": {
+			type: "spritesheet",
+			base: M,
+			url: "29.png",
+			x: 50,
+			w: 104,
+			h: 98
+		},
+		"monster-reduced-29": {
+			type: "spritesheet",
+			base: S,
+			url: "29.png",
+			x: 25,
+			w: 49,
+			h: 47
+		},
+		"monster-small-3": {
+			type: "sprite",
+			base: A,
+			url: "3.png",
+			x: 109
+		},
+		"monster-normal-3": {
+			type: "spritesheet",
+			base: M,
+			url: "3.png",
+			x: 109,
+			w: 246,
+			h: 185
+		},
+		"monster-reduced-3": {
+			type: "spritesheet",
+			base: S,
+			url: "3.png",
+			x: 54,
+			w: 109,
+			h: 93
+		},
+		"monster-small-30": {
+			type: "sprite",
+			base: A,
+			url: "30.png",
+			x: 105
+		},
+		"monster-normal-30": {
+			type: "spritesheet",
+			base: M,
+			url: "30.png",
+			x: 105,
+			w: 216,
+			h: 145
+		},
+		"monster-reduced-30": {
+			type: "spritesheet",
+			base: S,
+			url: "30.png",
+			x: 52,
+			w: 68,
+			h: 73
+		},
+		"monster-small-31": {
+			type: "sprite",
+			base: A,
+			url: "31.png",
+			x: 80
+		},
+		"monster-normal-31": {
+			type: "spritesheet",
+			base: M,
+			url: "31.png",
+			x: 80,
+			w: 183,
+			h: 137
+		},
+		"monster-reduced-31": {
+			type: "spritesheet",
+			base: S,
+			url: "31.png",
+			x: 40,
+			w: 75,
+			h: 56
+		},
+		"monster-small-32": {
+			type: "sprite",
+			base: A,
+			url: "32.png",
+			x: 72
+		},
+		"monster-normal-32": {
+			type: "spritesheet",
+			base: M,
+			url: "32.png",
+			x: 72,
+			w: 207,
+			h: 238
+		},
+		"monster-reduced-32": {
+			type: "spritesheet",
+			base: S,
+			url: "32.png",
+			x: 36,
+			w: 61,
+			h: 64
+		},
+		"monster-small-33": {
+			type: "sprite",
+			base: A,
+			url: "33.png",
+			x: 80
+		},
+		"monster-normal-33": {
+			type: "spritesheet",
+			base: M,
+			url: "33.png",
+			x: 80,
+			w: 206,
+			h: 136
+		},
+		"monster-reduced-33": {
+			type: "spritesheet",
+			base: S,
+			url: "33.png",
+			x: 40,
+			w: 80,
+			h: 51
+		},
+		"monster-small-34": {
+			type: "sprite",
+			base: A,
+			url: "34.png",
+			x: 112
+		},
+		"monster-normal-34": {
+			type: "spritesheet",
+			base: M,
+			url: "34.png",
+			x: 112,
+			w: 230,
+			h: 214
+		},
+		"monster-reduced-34": {
+			type: "spritesheet",
+			base: S,
+			url: "34.png",
+			x: 56,
+			w: 99,
+			h: 103
+		},
+		"monster-small-35": {
+			type: "sprite",
+			base: A,
+			url: "35.png",
+			x: 115
+		},
+		"monster-normal-35": {
+			type: "spritesheet",
+			base: M,
+			url: "35.png",
+			x: 115,
+			w: 215,
+			h: 167
+		},
+		"monster-reduced-35": {
+			type: "spritesheet",
+			base: S,
+			url: "35.png",
+			x: 57,
+			w: 103,
+			h: 81
+		},
+		"monster-small-36": {
+			type: "sprite",
+			base: A,
+			url: "36.png",
+			x: 115
+		},
+		"monster-normal-36": {
+			type: "spritesheet",
+			base: M,
+			url: "36.png",
+			x: 115,
+			w: 212,
+			h: 182
+		},
+		"monster-reduced-36": {
+			type: "spritesheet",
+			base: S,
+			url: "36.png",
+			x: 57,
+			w: 102,
+			h: 89
+		},
+		"monster-small-37": {
+			type: "sprite",
+			base: A,
+			url: "37.png",
+			x: 105
+		},
+		"monster-normal-37": {
+			type: "spritesheet",
+			base: M,
+			url: "37.png",
+			x: 105,
+			w: 201,
+			h: 190
+		},
+		"monster-reduced-37": {
+			type: "spritesheet",
+			base: S,
+			url: "37.png",
+			x: 52,
+			w: 98,
+			h: 92
+		},
+		"monster-small-38": {
+			type: "sprite",
+			base: A,
+			url: "38.png",
+			x: 105
+		},
+		"monster-normal-38": {
+			type: "spritesheet",
+			base: M,
+			url: "38.png",
+			x: 105,
+			w: 201,
+			h: 155
+		},
+		"monster-reduced-38": {
+			type: "spritesheet",
+			base: S,
+			url: "38.png",
+			x: 52,
+			w: 91,
+			h: 71
+		},
+		"monster-small-39": {
+			type: "sprite",
+			base: A,
+			url: "39.png",
+			x: 125
+		},
+		"monster-normal-39": {
+			type: "spritesheet",
+			base: M,
+			url: "39.png",
+			x: 125,
+			w: 239,
+			h: 181
+		},
+		"monster-reduced-39": {
+			type: "spritesheet",
+			base: S,
+			url: "39.png",
+			x: 62,
+			w: 103,
+			h: 88
+		},
+		"monster-small-4": {
+			type: "sprite",
+			base: A,
+			url: "4.png",
+			x: 65
+		},
+		"monster-normal-4": {
+			type: "spritesheet",
+			base: M,
+			url: "4.png",
+			x: 65,
+			w: 100,
+			h: 74
+		},
+		"monster-reduced-4": {
+			type: "spritesheet",
+			base: S,
+			url: "4.png",
+			x: 32,
+			w: 51,
+			h: 38
+		},
+		"monster-small-40": {
+			type: "sprite",
+			base: A,
+			url: "40.png",
+			x: 90
+		},
+		"monster-normal-40": {
+			type: "spritesheet",
+			base: M,
+			url: "40.png",
+			x: 90,
+			w: 150,
+			h: 185
+		},
+		"monster-reduced-40": {
+			type: "spritesheet",
+			base: S,
+			url: "40.png",
+			x: 45,
+			w: 67,
+			h: 80
+		},
+		"monster-small-41": {
+			type: "sprite",
+			base: A,
+			url: "41.png",
+			x: 120
+		},
+		"monster-normal-41": {
+			type: "spritesheet",
+			base: M,
+			url: "41.png",
+			x: 120,
+			w: 240,
+			h: 239
+		},
+		"monster-reduced-41": {
+			type: "spritesheet",
+			base: S,
+			url: "41.png",
+			x: 60,
+			w: 110,
+			h: 78
+		},
+		"monster-small-42": {
+			type: "sprite",
+			base: A,
+			url: "42.png",
+			x: 115
+		},
+		"monster-normal-42": {
+			type: "spritesheet",
+			base: M,
+			url: "42.png",
+			x: 115,
+			w: 240,
+			h: 239
+		},
+		"monster-reduced-42": {
+			type: "spritesheet",
+			base: S,
+			url: "42.png",
+			x: 57,
+			w: 110,
+			h: 78
+		},
+		"monster-small-43": {
+			type: "sprite",
+			base: A,
+			url: "43.png",
+			x: 90
+		},
+		"monster-normal-43": {
+			type: "spritesheet",
+			base: M,
+			url: "43.png",
+			x: 90,
+			w: 167,
+			h: 183
+		},
+		"monster-reduced-43": {
+			type: "spritesheet",
+			base: S,
+			url: "43.png",
+			x: 45,
+			w: 84,
+			h: 87
+		},
+		"monster-small-44": {
+			type: "sprite",
+			base: A,
+			url: "44.png",
+			x: 90
+		},
+		"monster-normal-44": {
+			type: "spritesheet",
+			base: M,
+			url: "44.png",
+			x: 90,
+			w: 167,
+			h: 183
+		},
+		"monster-reduced-44": {
+			type: "spritesheet",
+			base: S,
+			url: "44.png",
+			x: 45,
+			w: 84,
+			h: 87
+		},
+		"monster-small-45": {
+			type: "sprite",
+			base: A,
+			url: "45.png",
+			x: 95
+		},
+		"monster-normal-45": {
+			type: "spritesheet",
+			base: M,
+			url: "45.png",
+			x: 95,
+			w: 222,
+			h: 167
+		},
+		"monster-reduced-45": {
+			type: "spritesheet",
+			base: S,
+			url: "45.png",
+			x: 47,
+			w: 102,
+			h: 84
+		},
+		"monster-small-46": {
+			type: "sprite",
+			base: A,
+			url: "46.png",
+			x: 60
+		},
+		"monster-normal-46": {
+			type: "spritesheet",
+			base: M,
+			url: "46.png",
+			x: 60,
+			w: 180,
+			h: 140
+		},
+		"monster-reduced-46": {
+			type: "spritesheet",
+			base: S,
+			url: "46.png",
+			x: 30,
+			w: 58,
+			h: 59
+		},
+		"monster-small-47": {
+			type: "sprite",
+			base: A,
+			url: "47.png",
+			x: 86
+		},
+		"monster-normal-47": {
+			type: "spritesheet",
+			base: M,
+			url: "47.png",
+			x: 86,
+			w: 208,
+			h: 167
+		},
+		"monster-reduced-47": {
+			type: "spritesheet",
+			base: S,
+			url: "47.png",
+			x: 43,
+			w: 77,
+			h: 78
+		},
+		"monster-small-48": {
+			type: "sprite",
+			base: A,
+			url: "48.png",
+			x: 85
+		},
+		"monster-normal-48": {
+			type: "spritesheet",
+			base: M,
+			url: "48.png",
+			x: 85,
+			w: 175,
+			h: 223
+		},
+		"monster-reduced-48": {
+			type: "spritesheet",
+			base: S,
+			url: "48.png",
+			x: 42,
+			w: 88,
+			h: 101
+		},
+		"monster-small-49": {
+			type: "sprite",
+			base: A,
+			url: "49.png",
+			x: 120
+		},
+		"monster-normal-49": {
+			type: "spritesheet",
+			base: M,
+			url: "49.png",
+			x: 120,
+			w: 221,
+			h: 245
+		},
+		"monster-reduced-49": {
+			type: "spritesheet",
+			base: S,
+			url: "49.png",
+			x: 60,
+			w: 104,
+			h: 118
+		},
+		"monster-small-5": {
+			type: "sprite",
+			base: A,
+			url: "5.png",
+			x: 85
+		},
+		"monster-normal-5": {
+			type: "spritesheet",
+			base: M,
+			url: "5.png",
+			x: 85,
+			w: 185,
+			h: 204
+		},
+		"monster-reduced-5": {
+			type: "spritesheet",
+			base: S,
+			url: "5.png",
+			x: 42,
+			w: 93,
+			h: 101
+		},
+		"monster-small-50": {
+			type: "sprite",
+			base: A,
+			url: "50.png",
+			x: 115
+		},
+		"monster-normal-50": {
+			type: "spritesheet",
+			base: M,
+			url: "50.png",
+			x: 115,
+			w: 227,
+			h: 169
+		},
+		"monster-reduced-50": {
+			type: "spritesheet",
+			base: S,
+			url: "50.png",
+			x: 57,
+			w: 96,
+			h: 83
+		},
+		"monster-small-51": {
+			type: "sprite",
+			base: A,
+			url: "51.png",
+			x: 122
+		},
+		"monster-normal-51": {
+			type: "spritesheet",
+			base: M,
+			url: "51.png",
+			x: 122,
+			w: 235,
+			h: 174
+		},
+		"monster-reduced-51": {
+			type: "spritesheet",
+			base: S,
+			url: "51.png",
+			x: 61,
+			w: 104,
+			h: 85
+		},
+		"monster-small-52": {
+			type: "sprite",
+			base: A,
+			url: "52.png",
+			x: 55
+		},
+		"monster-normal-52": {
+			type: "spritesheet",
+			base: M,
+			url: "52.png",
+			x: 55,
+			w: 107,
+			h: 163
+		},
+		"monster-reduced-52": {
+			type: "spritesheet",
+			base: S,
+			url: "52.png",
+			x: 27,
+			w: 54,
+			h: 79
+		},
+		"monster-small-53": {
+			type: "sprite",
+			base: A,
+			url: "53.png",
+			x: 90
+		},
+		"monster-normal-53": {
+			type: "spritesheet",
+			base: M,
+			url: "53.png",
+			x: 90,
+			w: 166,
+			h: 240
+		},
+		"monster-reduced-53": {
+			type: "spritesheet",
+			base: S,
+			url: "53.png",
+			x: 45,
+			w: 84,
+			h: 117
+		},
+		"monster-small-54": {
+			type: "sprite",
+			base: A,
+			url: "54.png",
+			x: 150
+		},
+		"monster-normal-54": {
+			type: "spritesheet",
+			base: M,
+			url: "54.png",
+			x: 150,
+			w: 344,
+			h: 333
+		},
+		"monster-reduced-54": {
+			type: "spritesheet",
+			base: S,
+			url: "54.png",
+			x: 75,
+			w: 143,
+			h: 161
+		},
+		"monster-small-55": {
+			type: "sprite",
+			base: A,
+			url: "55.png",
+			x: 80
+		},
+		"monster-normal-55": {
+			type: "spritesheet",
+			base: M,
+			url: "55.png",
+			x: 80,
+			w: 157,
+			h: 194
+		},
+		"monster-reduced-55": {
+			type: "spritesheet",
+			base: S,
+			url: "55.png",
+			x: 40,
+			w: 79,
+			h: 98
+		},
+		"monster-small-56": {
+			type: "sprite",
+			base: A,
+			url: "56.png",
+			x: 82
+		},
+		"monster-normal-56": {
+			type: "spritesheet",
+			base: M,
+			url: "56.png",
+			x: 82,
+			w: 160,
+			h: 140
+		},
+		"monster-reduced-56": {
+			type: "spritesheet",
+			base: S,
+			url: "56.png",
+			x: 41,
+			w: 69,
+			h: 54
+		},
+		"monster-small-57": {
+			type: "sprite",
+			base: A,
+			url: "57.png",
+			x: 100
+		},
+		"monster-normal-57": {
+			type: "spritesheet",
+			base: M,
+			url: "57.png",
+			x: 100,
+			w: 182,
+			h: 136
+		},
+		"monster-reduced-57": {
+			type: "spritesheet",
+			base: S,
+			url: "57.png",
+			x: 50,
+			w: 91,
+			h: 65
+		},
+		"monster-small-58": {
+			type: "sprite",
+			base: A,
+			url: "58.png",
+			x: 80
+		},
+		"monster-normal-58": {
+			type: "spritesheet",
+			base: M,
+			url: "58.png",
+			x: 80,
+			w: 157,
+			h: 194
+		},
+		"monster-reduced-58": {
+			type: "spritesheet",
+			base: S,
+			url: "58.png",
+			x: 40,
+			w: 78,
+			h: 98
+		},
+		"monster-small-59": {
+			type: "sprite",
+			base: A,
+			url: "59.png",
+			x: 80
+		},
+		"monster-normal-59": {
+			type: "spritesheet",
+			base: M,
+			url: "59.png",
+			x: 80,
+			w: 197,
+			h: 177
+		},
+		"monster-reduced-59": {
+			type: "spritesheet",
+			base: S,
+			url: "59.png",
+			x: 40,
+			w: 85,
+			h: 87
+		},
+		"monster-small-6": {
+			type: "sprite",
+			base: A,
+			url: "6.png",
+			x: 90
+		},
+		"monster-normal-6": {
+			type: "spritesheet",
+			base: M,
+			url: "6.png",
+			x: 90,
+			w: 235,
+			h: 215
+		},
+		"monster-reduced-6": {
+			type: "spritesheet",
+			base: S,
+			url: "6.png",
+			x: 45,
+			w: 91,
+			h: 107
+		},
+		"monster-small-60": {
+			type: "sprite",
+			base: A,
+			url: "60.png",
+			x: 82
+		},
+		"monster-normal-60": {
+			type: "spritesheet",
+			base: M,
+			url: "60.png",
+			x: 82,
+			w: 253,
+			h: 235
+		},
+		"monster-reduced-60": {
+			type: "spritesheet",
+			base: S,
+			url: "60.png",
+			x: 41,
+			w: 97,
+			h: 110
+		},
+		"monster-small-61": {
+			type: "sprite",
+			base: A,
+			url: "61.png",
+			x: 102
+		},
+		"monster-normal-61": {
+			type: "spritesheet",
+			base: M,
+			url: "61.png",
+			x: 102,
+			w: 233,
+			h: 208
+		},
+		"monster-reduced-61": {
+			type: "spritesheet",
+			base: S,
+			url: "61.png",
+			x: 51,
+			w: 99,
+			h: 99
+		},
+		"monster-small-62": {
+			type: "sprite",
+			base: A,
+			url: "62.png",
+			x: 80
+		},
+		"monster-normal-62": {
+			type: "spritesheet",
+			base: M,
+			url: "62.png",
+			x: 80,
+			w: 201,
+			h: 193
+		},
+		"monster-reduced-62": {
+			type: "spritesheet",
+			base: S,
+			url: "62.png",
+			x: 40,
+			w: 89,
+			h: 96
+		},
+		"monster-small-63": {
+			type: "sprite",
+			base: A,
+			url: "63.png",
+			x: 60
+		},
+		"monster-normal-63": {
+			type: "spritesheet",
+			base: M,
+			url: "63.png",
+			x: 60,
+			w: 197,
+			h: 150
+		},
+		"monster-reduced-63": {
+			type: "spritesheet",
+			base: S,
+			url: "63.png",
+			x: 30,
+			w: 81,
+			h: 76
+		},
+		"monster-small-64": {
+			type: "sprite",
+			base: A,
+			url: "64.png",
+			x: 122
+		},
+		"monster-normal-64": {
+			type: "spritesheet",
+			base: M,
+			url: "64.png",
+			x: 122,
+			w: 295,
+			h: 212
+		},
+		"monster-reduced-64": {
+			type: "spritesheet",
+			base: S,
+			url: "64.png",
+			x: 61,
+			w: 97,
+			h: 102
+		},
+		"monster-small-65": {
+			type: "sprite",
+			base: A,
+			url: "65.png",
+			x: 134
+		},
+		"monster-normal-65": {
+			type: "spritesheet",
+			base: M,
+			url: "65.png",
+			x: 134,
+			w: 343,
+			h: 249
+		},
+		"monster-reduced-65": {
+			type: "spritesheet",
+			base: S,
+			url: "65.png",
+			x: 67,
+			w: 107,
+			h: 125
+		},
+		"monster-small-66": {
+			type: "sprite",
+			base: A,
+			url: "66.png",
+			x: 60
+		},
+		"monster-normal-66": {
+			type: "spritesheet",
+			base: M,
+			url: "66.png",
+			x: 60,
+			w: 197,
+			h: 144
+		},
+		"monster-reduced-66": {
+			type: "spritesheet",
+			base: S,
+			url: "66.png",
+			x: 30,
+			w: 82,
+			h: 73
+		},
+		"monster-small-67": {
+			type: "sprite",
+			base: A,
+			url: "67.png",
+			x: 122
+		},
+		"monster-normal-67": {
+			type: "spritesheet",
+			base: M,
+			url: "67.png",
+			x: 122,
+			w: 297,
+			h: 222
+		},
+		"monster-reduced-67": {
+			type: "spritesheet",
+			base: S,
+			url: "67.png",
+			x: 61,
+			w: 96,
+			h: 90
+		},
+		"monster-small-68": {
+			type: "sprite",
+			base: A,
+			url: "68.png",
+			x: 134
+		},
+		"monster-normal-68": {
+			type: "spritesheet",
+			base: M,
+			url: "68.png",
+			x: 134,
+			w: 330,
+			h: 233
+		},
+		"monster-reduced-68": {
+			type: "spritesheet",
+			base: S,
+			url: "68.png",
+			x: 67,
+			w: 107,
+			h: 114
+		},
+		"monster-small-69": {
+			type: "sprite",
+			base: A,
+			url: "69.png",
+			x: 60
+		},
+		"monster-normal-69": {
+			type: "spritesheet",
+			base: M,
+			url: "69.png",
+			x: 60,
+			w: 196,
+			h: 137
+		},
+		"monster-reduced-69": {
+			type: "spritesheet",
+			base: S,
+			url: "69.png",
+			x: 30,
+			w: 83,
+			h: 69
+		},
+		"monster-small-7": {
+			type: "sprite",
+			base: A,
+			url: "7.png",
+			x: 55
+		},
+		"monster-normal-7": {
+			type: "spritesheet",
+			base: M,
+			url: "7.png",
+			x: 55,
+			w: 108,
+			h: 75
+		},
+		"monster-reduced-7": {
+			type: "spritesheet",
+			base: S,
+			url: "7.png",
+			x: 27,
+			w: 55,
+			h: 38
+		},
+		"monster-small-70": {
+			type: "sprite",
+			base: A,
+			url: "70.png",
+			x: 122
+		},
+		"monster-normal-70": {
+			type: "spritesheet",
+			base: M,
+			url: "70.png",
+			x: 122,
+			w: 303,
+			h: 234
+		},
+		"monster-reduced-70": {
+			type: "spritesheet",
+			base: S,
+			url: "70.png",
+			x: 61,
+			w: 97,
+			h: 99
+		},
+		"monster-small-71": {
+			type: "sprite",
+			base: A,
+			url: "71.png",
+			x: 134
+		},
+		"monster-normal-71": {
+			type: "spritesheet",
+			base: M,
+			url: "71.png",
+			x: 134,
+			w: 343,
+			h: 247
+		},
+		"monster-reduced-71": {
+			type: "spritesheet",
+			base: S,
+			url: "71.png",
+			x: 67,
+			w: 107,
+			h: 124
+		},
+		"monster-small-72": {
+			type: "sprite",
+			base: A,
+			url: "72.png",
+			x: 60
+		},
+		"monster-normal-72": {
+			type: "spritesheet",
+			base: M,
+			url: "72.png",
+			x: 60,
+			w: 196,
+			h: 144
+		},
+		"monster-reduced-72": {
+			type: "spritesheet",
+			base: S,
+			url: "72.png",
+			x: 30,
+			w: 80,
+			h: 73
+		},
+		"monster-small-73": {
+			type: "sprite",
+			base: A,
+			url: "73.png",
+			x: 122
+		},
+		"monster-normal-73": {
+			type: "spritesheet",
+			base: M,
+			url: "73.png",
+			x: 122,
+			w: 292,
+			h: 212
+		},
+		"monster-reduced-73": {
+			type: "spritesheet",
+			base: S,
+			url: "73.png",
+			x: 61,
+			w: 98,
+			h: 100
+		},
+		"monster-small-74": {
+			type: "sprite",
+			base: A,
+			url: "74.png",
+			x: 134
+		},
+		"monster-normal-74": {
+			type: "spritesheet",
+			base: M,
+			url: "74.png",
+			x: 134,
+			w: 343,
+			h: 242
+		},
+		"monster-reduced-74": {
+			type: "spritesheet",
+			base: S,
+			url: "74.png",
+			x: 67,
+			w: 107,
+			h: 122
+		},
+		"monster-small-75": {
+			type: "sprite",
+			base: A,
+			url: "75.png",
+			x: 95
+		},
+		"monster-normal-75": {
+			type: "spritesheet",
+			base: M,
+			url: "75.png",
+			x: 95,
+			w: 154,
+			h: 168
+		},
+		"monster-reduced-75": {
+			type: "spritesheet",
+			base: S,
+			url: "75.png",
+			x: 47,
+			w: 75,
+			h: 85
+		},
+		"monster-small-76": {
+			type: "sprite",
+			base: A,
+			url: "76.png",
+			x: 95
+		},
+		"monster-normal-76": {
+			type: "spritesheet",
+			base: M,
+			url: "76.png",
+			x: 95,
+			w: 201,
+			h: 217
+		},
+		"monster-reduced-76": {
+			type: "spritesheet",
+			base: S,
+			url: "76.png",
+			x: 47,
+			w: 93,
+			h: 108
+		},
+		"monster-small-78": {
+			type: "sprite",
+			base: A,
+			url: "78.png",
+			x: 93
+		},
+		"monster-normal-78": {
+			type: "spritesheet",
+			base: M,
+			url: "78.png",
+			x: 93,
+			w: 156,
+			h: 185
+		},
+		"monster-reduced-78": {
+			type: "spritesheet",
+			base: S,
+			url: "78.png",
+			x: 46,
+			w: 75,
+			h: 91
+		},
+		"monster-small-79": {
+			type: "sprite",
+			base: A,
+			url: "79.png",
+			x: 88
+		},
+		"monster-normal-79": {
+			type: "spritesheet",
+			base: M,
+			url: "79.png",
+			x: 88,
+			w: 213,
+			h: 194
+		},
+		"monster-reduced-79": {
+			type: "spritesheet",
+			base: S,
+			url: "79.png",
+			x: 44,
+			w: 93,
+			h: 97
+		},
+		"monster-small-8": {
+			type: "sprite",
+			base: A,
+			url: "8.png",
+			x: 55
+		},
+		"monster-normal-8": {
+			type: "spritesheet",
+			base: M,
+			url: "8.png",
+			x: 55,
+			w: 162,
+			h: 117
+		},
+		"monster-reduced-8": {
+			type: "spritesheet",
+			base: S,
+			url: "8.png",
+			x: 27,
+			w: 56,
+			h: 59
+		},
+		"monster-small-80": {
+			type: "sprite",
+			base: A,
+			url: "80.png",
+			x: 100
+		},
+		"monster-normal-80": {
+			type: "spritesheet",
+			base: M,
+			url: "80.png",
+			x: 100,
+			w: 229,
+			h: 225
+		},
+		"monster-reduced-80": {
+			type: "spritesheet",
+			base: S,
+			url: "80.png",
+			x: 50,
+			w: 82,
+			h: 112
+		},
+		"monster-small-81": {
+			type: "sprite",
+			base: A,
+			url: "81.png",
+			x: 95
+		},
+		"monster-normal-81": {
+			type: "spritesheet",
+			base: M,
+			url: "81.png",
+			x: 95,
+			w: 157,
+			h: 162
+		},
+		"monster-reduced-81": {
+			type: "spritesheet",
+			base: S,
+			url: "81.png",
+			x: 47,
+			w: 74,
+			h: 80
+		},
+		"monster-small-82": {
+			type: "sprite",
+			base: A,
+			url: "82.png",
+			x: 102
+		},
+		"monster-normal-82": {
+			type: "spritesheet",
+			base: M,
+			url: "82.png",
+			x: 102,
+			w: 212,
+			h: 187
+		},
+		"monster-reduced-82": {
+			type: "spritesheet",
+			base: S,
+			url: "82.png",
+			x: 51,
+			w: 93,
+			h: 94
+		},
+		"monster-small-83": {
+			type: "sprite",
+			base: A,
+			url: "83.png",
+			x: 85
+		},
+		"monster-normal-83": {
+			type: "spritesheet",
+			base: M,
+			url: "83.png",
+			x: 85,
+			w: 217,
+			h: 223
+		},
+		"monster-reduced-83": {
+			type: "spritesheet",
+			base: S,
+			url: "83.png",
+			x: 42,
+			w: 75,
+			h: 108
+		},
+		"monster-small-84": {
+			type: "sprite",
+			base: A,
+			url: "84.png",
+			x: 90
+		},
+		"monster-normal-84": {
+			type: "spritesheet",
+			base: M,
+			url: "84.png",
+			x: 90,
+			w: 156,
+			h: 171
+		},
+		"monster-reduced-84": {
+			type: "spritesheet",
+			base: S,
+			url: "84.png",
+			x: 45,
+			w: 79,
+			h: 85
+		},
+		"monster-small-85": {
+			type: "sprite",
+			base: A,
+			url: "85.png",
+			x: 88
+		},
+		"monster-normal-85": {
+			type: "spritesheet",
+			base: M,
+			url: "85.png",
+			x: 88,
+			w: 200,
+			h: 190
+		},
+		"monster-reduced-85": {
+			type: "spritesheet",
+			base: S,
+			url: "85.png",
+			x: 44,
+			w: 93,
+			h: 95
+		},
+		"monster-small-86": {
+			type: "sprite",
+			base: A,
+			url: "86.png",
+			x: 115
+		},
+		"monster-normal-86": {
+			type: "spritesheet",
+			base: M,
+			url: "86.png",
+			x: 115,
+			w: 242,
+			h: 242
+		},
+		"monster-reduced-86": {
+			type: "spritesheet",
+			base: S,
+			url: "86.png",
+			x: 57,
+			w: 84,
+			h: 115
+		},
+		"monster-small-87": {
+			type: "sprite",
+			base: A,
+			url: "87.png",
+			x: 65
+		},
+		"monster-normal-87": {
+			type: "spritesheet",
+			base: M,
+			url: "87.png",
+			x: 65,
+			w: 189,
+			h: 120
+		},
+		"monster-reduced-87": {
+			type: "spritesheet",
+			base: S,
+			url: "87.png",
+			x: 32,
+			w: 65,
+			h: 54
+		},
+		"monster-small-88": {
+			type: "sprite",
+			base: A,
+			url: "88.png",
+			x: 115
+		},
+		"monster-normal-88": {
+			type: "spritesheet",
+			base: M,
+			url: "88.png",
+			x: 115,
+			w: 252,
+			h: 212
+		},
+		"monster-reduced-88": {
+			type: "spritesheet",
+			base: S,
+			url: "88.png",
+			x: 57,
+			w: 113,
+			h: 93
+		},
+		"monster-small-89": {
+			type: "sprite",
+			base: A,
+			url: "89.png",
+			x: 120
+		},
+		"monster-normal-89": {
+			type: "spritesheet",
+			base: M,
+			url: "89.png",
+			x: 120,
+			w: 253,
+			h: 254
+		},
+		"monster-reduced-89": {
+			type: "spritesheet",
+			base: S,
+			url: "89.png",
+			x: 60,
+			w: 123,
+			h: 127
+		},
+		"monster-small-9": {
+			type: "sprite",
+			base: A,
+			url: "9.png",
+			x: 120
+		},
+		"monster-normal-9": {
+			type: "spritesheet",
+			base: M,
+			url: "9.png",
+			x: 120,
+			w: 250,
+			h: 224
+		},
+		"monster-reduced-9": {
+			type: "spritesheet",
+			base: S,
+			url: "9.png",
+			x: 60,
+			w: 126,
+			h: 111
+		},
+		"monster-small-90": {
+			type: "sprite",
+			base: A,
+			url: "90.png",
+			x: 80
+		},
+		"monster-normal-90": {
+			type: "spritesheet",
+			base: M,
+			url: "90.png",
+			x: 80,
+			w: 155,
+			h: 128
+		},
+		"monster-reduced-90": {
+			type: "spritesheet",
+			base: S,
+			url: "90.png",
+			x: 40,
+			w: 78,
+			h: 63
+		},
+		"monster-small-91": {
+			type: "sprite",
+			base: A,
+			url: "91.png",
+			x: 85
+		},
+		"monster-normal-91": {
+			type: "spritesheet",
+			base: M,
+			url: "91.png",
+			x: 85,
+			w: 219,
+			h: 204
+		},
+		"monster-reduced-91": {
+			type: "spritesheet",
+			base: S,
+			url: "91.png",
+			x: 42,
+			w: 88,
+			h: 98
+		},
+		"monster-small-92": {
+			type: "sprite",
+			base: A,
+			url: "92.png",
+			x: 80
+		},
+		"monster-normal-92": {
+			type: "spritesheet",
+			base: M,
+			url: "92.png",
+			x: 80,
+			w: 155,
+			h: 128
+		},
+		"monster-reduced-92": {
+			type: "spritesheet",
+			base: S,
+			url: "92.png",
+			x: 40,
+			w: 78,
+			h: 63
+		},
+		"monster-small-93": {
+			type: "sprite",
+			base: A,
+			url: "93.png",
+			x: 65
+		},
+		"monster-normal-93": {
+			type: "spritesheet",
+			base: M,
+			url: "93.png",
+			x: 65,
+			w: 171,
+			h: 150
+		},
+		"monster-reduced-93": {
+			type: "spritesheet",
+			base: S,
+			url: "93.png",
+			x: 32,
+			w: 84,
+			h: 73
+		},
+		"monster-small-94": {
+			type: "sprite",
+			base: A,
+			url: "94.png",
+			x: 80
+		},
+		"monster-normal-94": {
+			type: "spritesheet",
+			base: M,
+			url: "94.png",
+			x: 80,
+			w: 176,
+			h: 187
+		},
+		"monster-reduced-94": {
+			type: "spritesheet",
+			base: S,
+			url: "94.png",
+			x: 40,
+			w: 88,
+			h: 53
+		},
+		"monster-small-95": {
+			type: "sprite",
+			base: A,
+			url: "95.png",
+			x: 115
+		},
+		"monster-normal-95": {
+			type: "spritesheet",
+			base: M,
+			url: "95.png",
+			x: 115,
+			w: 203,
+			h: 196
+		},
+		"monster-reduced-95": {
+			type: "spritesheet",
+			base: S,
+			url: "95.png",
+			x: 57,
+			w: 101,
+			h: 67
+		},
+		"monster-small-96": {
+			type: "sprite",
+			base: A,
+			url: "96.png",
+			x: 130
+		},
+		"monster-normal-96": {
+			type: "spritesheet",
+			base: M,
+			url: "96.png",
+			x: 130,
+			w: 233,
+			h: 206
+		},
+		"monster-reduced-96": {
+			type: "spritesheet",
+			base: S,
+			url: "96.png",
+			x: 65,
+			w: 117,
+			h: 79
+		},
+		"monster-small-97": {
+			type: "sprite",
+			base: A,
+			url: "97.png",
+			x: 135
+		},
+		"monster-normal-97": {
+			type: "spritesheet",
+			base: M,
+			url: "97.png",
+			x: 135,
+			w: 488,
+			h: 245
+		},
+		"monster-reduced-97": {
+			type: "spritesheet",
+			base: S,
+			url: "97.png",
+			x: 67,
+			w: 135,
+			h: 123
+		},
+		"monster-small-98": {
+			type: "sprite",
+			base: A,
+			url: "98.png",
+			x: 70
+		},
+		"monster-normal-98": {
+			type: "spritesheet",
+			base: M,
+			url: "98.png",
+			x: 70,
+			w: 183,
+			h: 178
+		},
+		"monster-reduced-98": {
+			type: "spritesheet",
+			base: S,
+			url: "98.png",
+			x: 35,
+			w: 74,
+			h: 69
+		},
+		"monster-small-99": {
+			type: "sprite",
+			base: A,
+			url: "99.png",
+			x: 130
+		},
+		"monster-normal-99": {
+			type: "spritesheet",
+			base: M,
+			url: "99.png",
+			x: 130,
+			w: 254,
+			h: 171
+		},
+		"monster-reduced-99": {
+			type: "spritesheet",
+			base: S,
+			url: "99.png",
+			x: 65,
+			w: 76,
+			h: 86
+		},
+		heads: {
+			type: "atlas",
+			base: p,
+			url: "head.png",
+			json: "head.json"
+		},
+		"normal-outfit-male-1": {
+			type: "spritesheet",
+			base: r,
+			url: "1.png",
+			x: 91,
+			y: 144,
+			w: 75,
+			h: 91
+		},
+		"normal-outfit-male-10": {
+			type: "spritesheet",
+			base: r,
+			url: "10.png",
+			x: 91,
+			y: 129,
+			w: 75,
+			h: 106
+		},
+		"normal-outfit-male-11": {
+			type: "spritesheet",
+			base: r,
+			url: "11.png",
+			x: 91,
+			y: 150,
+			w: 75,
+			h: 85
+		},
+		"normal-outfit-male-12": {
+			type: "spritesheet",
+			base: r,
+			url: "12.png",
+			x: 91,
+			y: 138,
+			w: 75,
+			h: 97
+		},
+		"normal-outfit-male-13": {
+			type: "spritesheet",
+			base: r,
+			url: "13.png",
+			x: 91,
+			y: 155,
+			w: 75,
+			h: 80
+		},
+		"normal-outfit-male-14": {
+			type: "spritesheet",
+			base: r,
+			url: "14.png",
+			x: 91,
+			y: 155,
+			w: 75,
+			h: 80
+		},
+		"normal-outfit-male-15": {
+			type: "spritesheet",
+			base: r,
+			url: "15.png",
+			x: 91,
+			y: 155,
+			w: 75,
+			h: 80
+		},
+		"normal-outfit-male-16": {
+			type: "spritesheet",
+			base: r,
+			url: "16.png",
+			x: 91,
+			y: 153,
+			w: 75,
+			h: 82
+		},
+		"normal-outfit-male-17": {
+			type: "spritesheet",
+			base: r,
+			url: "17.png",
+			x: 61,
+			y: 144,
+			w: 120,
+			h: 91
+		},
+		"normal-outfit-male-18": {
+			type: "spritesheet",
+			base: r,
+			url: "18.png",
+			x: 91,
+			y: 156,
+			w: 75,
+			h: 79
+		},
+		"normal-outfit-male-19": {
+			type: "spritesheet",
+			base: r,
+			url: "19.png",
+			x: 91,
+			y: 154,
+			w: 75,
+			h: 81
+		},
+		"normal-outfit-male-2": {
+			type: "spritesheet",
+			base: r,
+			url: "2.png",
+			x: 68,
+			y: 152,
+			w: 98,
+			h: 83
+		},
+		"normal-outfit-male-20": {
+			type: "spritesheet",
+			base: r,
+			url: "20.png",
+			x: 91,
+			y: 154,
+			w: 75,
+			h: 81
+		},
+		"normal-outfit-male-21": {
+			type: "spritesheet",
+			base: r,
+			url: "21.png",
+			x: 91,
+			y: 156,
+			w: 75,
+			h: 79
+		},
+		"normal-outfit-male-22": {
+			type: "spritesheet",
+			base: r,
+			url: "22.png",
+			x: 91,
+			y: 153,
+			w: 75,
+			h: 82
+		},
+		"normal-outfit-male-23": {
+			type: "spritesheet",
+			base: r,
+			url: "23.png",
+			x: 91,
+			y: 153,
+			w: 75,
+			h: 82
+		},
+		"normal-outfit-male-24": {
+			type: "spritesheet",
+			base: r,
+			url: "24.png",
+			x: 54,
+			y: 141,
+			w: 112,
+			h: 94
+		},
+		"normal-outfit-male-25": {
+			type: "spritesheet",
+			base: r,
+			url: "25.png",
+			x: 91,
+			y: 155,
+			w: 75,
+			h: 80
+		},
+		"normal-outfit-male-26": {
+			type: "spritesheet",
+			base: r,
+			url: "26.png",
+			x: 91,
+			y: 153,
+			w: 75,
+			h: 82
+		},
+		"normal-outfit-male-27": {
+			type: "spritesheet",
+			base: r,
+			url: "27.png",
+			x: 91,
+			y: 140,
+			w: 75,
+			h: 95
+		},
+		"normal-outfit-male-28": {
+			type: "spritesheet",
+			base: r,
+			url: "28.png",
+			x: 86,
+			y: 154,
+			w: 80,
+			h: 81
+		},
+		"normal-outfit-male-29": {
+			type: "spritesheet",
+			base: r,
+			url: "29.png",
+			x: 91,
+			y: 155,
+			w: 75,
+			h: 80
+		},
+		"normal-outfit-male-3": {
+			type: "spritesheet",
+			base: r,
+			url: "3.png",
+			x: 91,
+			y: 153,
+			w: 75,
+			h: 82
+		},
+		"normal-outfit-male-30": {
+			type: "spritesheet",
+			base: r,
+			url: "30.png",
+			x: 91,
+			y: 153,
+			w: 75,
+			h: 82
+		},
+		"normal-outfit-male-31": {
+			type: "spritesheet",
+			base: r,
+			url: "31.png",
+			x: 72,
+			y: 144,
+			w: 94,
+			h: 91
+		},
+		"normal-outfit-male-32": {
+			type: "spritesheet",
+			base: r,
+			url: "32.png",
+			x: 88,
+			y: 68,
+			w: 78,
+			h: 167
+		},
+		"normal-outfit-male-33": {
+			type: "spritesheet",
+			base: r,
+			url: "33.png",
+			x: 74,
+			y: 150,
+			w: 92,
+			h: 85
+		},
+		"normal-outfit-male-34": {
+			type: "spritesheet",
+			base: r,
+			url: "34.png",
+			x: 66,
+			y: 138,
+			w: 100,
+			h: 97
+		},
+		"normal-outfit-male-35": {
+			type: "spritesheet",
+			base: r,
+			url: "35.png",
+			x: 88,
+			y: 155,
+			w: 79,
+			h: 80
+		},
+		"normal-outfit-male-36": {
+			type: "spritesheet",
+			base: r,
+			url: "36.png",
+			x: 91,
+			y: 155,
+			w: 76,
+			h: 80
+		},
+		"normal-outfit-male-37": {
+			type: "spritesheet",
+			base: r,
+			url: "37.png",
+			x: 61,
+			y: 153,
+			w: 105,
+			h: 82
+		},
+		"normal-outfit-male-38": {
+			type: "spritesheet",
+			base: r,
+			url: "38.png",
+			x: 30,
+			y: 34,
+			w: 165,
+			h: 221
+		},
+		"normal-outfit-male-39": {
+			type: "spritesheet",
+			base: r,
+			url: "39.png",
+			x: 91,
+			y: 151,
+			w: 75,
+			h: 84
+		},
+		"normal-outfit-male-4": {
+			type: "spritesheet",
+			base: r,
+			url: "4.png",
+			x: 91,
+			y: 154,
+			w: 75,
+			h: 81
+		},
+		"normal-outfit-male-40": {
+			type: "spritesheet",
+			base: r,
+			url: "40.png",
+			x: 75,
+			y: 153,
+			w: 91,
+			h: 82
+		},
+		"normal-outfit-male-41": {
+			type: "spritesheet",
+			base: r,
+			url: "41.png",
+			x: 91,
+			y: 150,
+			w: 75,
+			h: 85
+		},
+		"normal-outfit-male-42": {
+			type: "spritesheet",
+			base: r,
+			url: "42.png",
+			x: 92,
+			y: 154,
+			w: 74,
+			h: 81
+		},
+		"normal-outfit-male-43": {
+			type: "spritesheet",
+			base: r,
+			url: "43.png",
+			x: 89,
+			y: 151,
+			w: 95,
+			h: 86
+		},
+		"normal-outfit-male-44": {
+			type: "spritesheet",
+			base: r,
+			url: "44.png",
+			x: 78,
+			y: 137,
+			w: 96,
+			h: 98
+		},
+		"normal-outfit-male-45": {
+			type: "spritesheet",
+			base: r,
+			url: "45.png",
+			x: 90,
+			y: 153,
+			w: 79,
+			h: 83
+		},
+		"normal-outfit-male-46": {
+			type: "spritesheet",
+			base: r,
+			url: "46.png",
+			x: 84,
+			y: 155,
+			w: 77,
+			h: 80
+		},
+		"normal-outfit-male-47": {
+			type: "spritesheet",
+			base: r,
+			url: "47.png",
+			x: 89,
+			y: 149,
+			w: 77,
+			h: 88
+		},
+		"normal-outfit-male-48": {
+			type: "spritesheet",
+			base: r,
+			url: "48.png",
+			x: 56,
+			y: 138,
+			w: 110,
+			h: 97
+		},
+		"normal-outfit-male-49": {
+			type: "spritesheet",
+			base: r,
+			url: "49.png",
+			x: 87,
+			y: 152,
+			w: 83,
+			h: 81
+		},
+		"normal-outfit-male-5": {
+			type: "spritesheet",
+			base: r,
+			url: "5.png",
+			x: 54,
+			y: 141,
+			w: 112,
+			h: 94
+		},
+		"normal-outfit-male-50": {
+			type: "spritesheet",
+			base: r,
+			url: "50.png",
+			x: 74,
+			y: 150,
+			w: 107,
+			h: 99
+		},
+		"normal-outfit-male-51": {
+			type: "spritesheet",
+			base: r,
+			url: "51.png",
+			x: 71,
+			y: 147,
+			w: 98,
+			h: 87
+		},
+		"normal-outfit-male-52": {
+			type: "spritesheet",
+			base: r,
+			url: "52.png",
+			x: 78,
+			y: 139,
+			w: 90,
+			h: 99
+		},
+		"normal-outfit-male-53": {
+			type: "spritesheet",
+			base: r,
+			url: "53.png",
+			x: 21,
+			y: 75,
+			w: 145,
+			h: 160
+		},
+		"normal-outfit-male-54": {
+			type: "spritesheet",
+			base: r,
+			url: "54.png",
+			x: 51,
+			y: 151,
+			w: 123,
+			h: 84
+		},
+		"normal-outfit-male-6": {
+			type: "spritesheet",
+			base: r,
+			url: "6.png",
+			x: 88,
+			y: 139,
+			w: 78,
+			h: 96
+		},
+		"normal-outfit-male-7": {
+			type: "spritesheet",
+			base: r,
+			url: "7.png",
+			x: 74,
+			y: 145,
+			w: 92,
+			h: 90
+		},
+		"normal-outfit-male-8": {
+			type: "spritesheet",
+			base: r,
+			url: "8.png",
+			x: 83,
+			y: 137,
+			w: 83,
+			h: 98
+		},
+		"normal-outfit-male-9": {
+			type: "spritesheet",
+			base: r,
+			url: "9.png",
+			x: 91,
+			y: 154,
+			w: 75,
+			h: 81
+		},
+		"reduced-outfit-male-1": {
+			type: "spritesheet",
+			base: e,
+			url: "1.png",
+			x: 43,
+			y: 82,
+			w: 38,
+			h: 43
+		},
+		"reduced-outfit-male-10": {
+			type: "spritesheet",
+			base: e,
+			url: "10.png",
+			x: 43,
+			y: 72,
+			w: 38,
+			h: 53
+		},
+		"reduced-outfit-male-11": {
+			type: "spritesheet",
+			base: e,
+			url: "11.png",
+			x: 43,
+			y: 82,
+			w: 38,
+			h: 43
+		},
+		"reduced-outfit-male-12": {
+			type: "spritesheet",
+			base: e,
+			url: "12.png",
+			x: 43,
+			y: 80,
+			w: 38,
+			h: 45
+		},
+		"reduced-outfit-male-13": {
+			type: "spritesheet",
+			base: e,
+			url: "13.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-14": {
+			type: "spritesheet",
+			base: e,
+			url: "14.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-15": {
+			type: "spritesheet",
+			base: e,
+			url: "15.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-16": {
+			type: "spritesheet",
+			base: e,
+			url: "16.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-17": {
+			type: "spritesheet",
+			base: e,
+			url: "17.png",
+			x: 28,
+			y: 82,
+			w: 60,
+			h: 43
+		},
+		"reduced-outfit-male-18": {
+			type: "spritesheet",
+			base: e,
+			url: "18.png",
+			x: 43,
+			y: 86,
+			w: 38,
+			h: 39
+		},
+		"reduced-outfit-male-19": {
+			type: "spritesheet",
+			base: e,
+			url: "19.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-2": {
+			type: "spritesheet",
+			base: e,
+			url: "2.png",
+			x: 32,
+			y: 83,
+			w: 49,
+			h: 42
+		},
+		"reduced-outfit-male-20": {
+			type: "spritesheet",
+			base: e,
+			url: "20.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-21": {
+			type: "spritesheet",
+			base: e,
+			url: "21.png",
+			x: 43,
+			y: 86,
+			w: 38,
+			h: 39
+		},
+		"reduced-outfit-male-22": {
+			type: "spritesheet",
+			base: e,
+			url: "22.png",
+			x: 43,
+			y: 84,
+			w: 38,
+			h: 41
+		},
+		"reduced-outfit-male-23": {
+			type: "spritesheet",
+			base: e,
+			url: "23.png",
+			x: 43,
+			y: 84,
+			w: 38,
+			h: 41
+		},
+		"reduced-outfit-male-24": {
+			type: "spritesheet",
+			base: e,
+			url: "24.png",
+			x: 25,
+			y: 78,
+			w: 56,
+			h: 47
+		},
+		"reduced-outfit-male-25": {
+			type: "spritesheet",
+			base: e,
+			url: "25.png",
+			x: 43,
+			y: 84,
+			w: 38,
+			h: 41
+		},
+		"reduced-outfit-male-26": {
+			type: "spritesheet",
+			base: e,
+			url: "26.png",
+			x: 43,
+			y: 84,
+			w: 38,
+			h: 41
+		},
+		"reduced-outfit-male-27": {
+			type: "spritesheet",
+			base: e,
+			url: "27.png",
+			x: 43,
+			y: 78,
+			w: 38,
+			h: 47
+		},
+		"reduced-outfit-male-28": {
+			type: "spritesheet",
+			base: e,
+			url: "28.png",
+			x: 41,
+			y: 85,
+			w: 40,
+			h: 40
+		},
+		"reduced-outfit-male-29": {
+			type: "spritesheet",
+			base: e,
+			url: "29.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-3": {
+			type: "spritesheet",
+			base: e,
+			url: "3.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-30": {
+			type: "spritesheet",
+			base: e,
+			url: "30.png",
+			x: 43,
+			y: 84,
+			w: 38,
+			h: 41
+		},
+		"reduced-outfit-male-31": {
+			type: "spritesheet",
+			base: e,
+			url: "31.png",
+			x: 33,
+			y: 80,
+			w: 48,
+			h: 45
+		},
+		"reduced-outfit-male-32": {
+			type: "spritesheet",
+			base: e,
+			url: "32.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-33": {
+			type: "spritesheet",
+			base: e,
+			url: "33.png",
+			x: 37,
+			y: 82,
+			w: 44,
+			h: 43
+		},
+		"reduced-outfit-male-34": {
+			type: "spritesheet",
+			base: e,
+			url: "34.png",
+			x: 31,
+			y: 77,
+			w: 50,
+			h: 48
+		},
+		"reduced-outfit-male-35": {
+			type: "spritesheet",
+			base: e,
+			url: "35.png",
+			x: 42,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-36": {
+			type: "spritesheet",
+			base: e,
+			url: "36.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"reduced-outfit-male-37": {
+			type: "spritesheet",
+			base: e,
+			url: "37.png",
+			x: 39,
+			y: 84,
+			w: 44,
+			h: 41
+		},
+		"reduced-outfit-male-38": {
+			type: "spritesheet",
+			base: e,
+			url: "38.png",
+			x: 17,
+			y: 0,
+			w: 78,
+			h: 128
+		},
+		"reduced-outfit-male-39": {
+			type: "spritesheet",
+			base: e,
+			url: "39.png",
+			x: 17,
+			y: 66,
+			w: 79,
+			h: 59
+		},
+		"reduced-outfit-male-4": {
+			type: "spritesheet",
+			base: e,
+			url: "4.png",
+			x: 43,
+			y: 84,
+			w: 38,
+			h: 41
+		},
+		"reduced-outfit-male-40": {
+			type: "spritesheet",
+			base: e,
+			url: "40.png",
+			x: 41,
+			y: 84,
+			w: 42,
+			h: 44
+		},
+		"reduced-outfit-male-41": {
+			type: "spritesheet",
+			base: e,
+			url: "41.png",
+			x: 45,
+			y: 83,
+			w: 38,
+			h: 42
+		},
+		"reduced-outfit-male-42": {
+			type: "spritesheet",
+			base: e,
+			url: "42.png",
+			x: 45,
+			y: 84,
+			w: 37,
+			h: 42
+		},
+		"reduced-outfit-male-43": {
+			type: "spritesheet",
+			base: e,
+			url: "43.png",
+			x: 40,
+			y: 84,
+			w: 52,
+			h: 42
+		},
+		"reduced-outfit-male-44": {
+			type: "spritesheet",
+			base: e,
+			url: "44.png",
+			x: 39,
+			y: 79,
+			w: 48,
+			h: 46
+		},
+		"reduced-outfit-male-45": {
+			type: "spritesheet",
+			base: e,
+			url: "45.png",
+			x: 42,
+			y: 85,
+			w: 43,
+			h: 41
+		},
+		"reduced-outfit-male-46": {
+			type: "spritesheet",
+			base: e,
+			url: "46.png",
+			x: 41,
+			y: 85,
+			w: 38,
+			h: 38
+		},
+		"reduced-outfit-male-47": {
+			type: "spritesheet",
+			base: e,
+			url: "47.png",
+			x: 45,
+			y: 82,
+			w: 38,
+			h: 43
+		},
+		"reduced-outfit-male-48": {
+			type: "spritesheet",
+			base: e,
+			url: "48.png",
+			x: 28,
+			y: 77,
+			w: 55,
+			h: 48
+		},
+		"reduced-outfit-male-49": {
+			type: "spritesheet",
+			base: e,
+			url: "49.png",
+			x: 40,
+			y: 85,
+			w: 44,
+			h: 40
+		},
+		"reduced-outfit-male-5": {
+			type: "spritesheet",
+			base: e,
+			url: "5.png",
+			x: 25,
+			y: 78,
+			w: 56,
+			h: 47
+		},
+		"reduced-outfit-male-50": {
+			type: "spritesheet",
+			base: e,
+			url: "50.png",
+			x: 36,
+			y: 82,
+			w: 53,
+			h: 45
+		},
+		"reduced-outfit-male-51": {
+			type: "spritesheet",
+			base: e,
+			url: "51.png",
+			x: 36,
+			y: 81,
+			w: 49,
+			h: 44
+		},
+		"reduced-outfit-male-52": {
+			type: "spritesheet",
+			base: e,
+			url: "52.png",
+			x: 40,
+			y: 78,
+			w: 45,
+			h: 49
+		},
+		"reduced-outfit-male-53": {
+			type: "spritesheet",
+			base: e,
+			url: "53.png",
+			x: 27,
+			y: 77,
+			w: 56,
+			h: 48
+		},
+		"reduced-outfit-male-54": {
+			type: "spritesheet",
+			base: e,
+			url: "54.png",
+			x: 25,
+			y: 83,
+			w: 63,
+			h: 42
+		},
+		"reduced-outfit-male-6": {
+			type: "spritesheet",
+			base: e,
+			url: "6.png",
+			x: 42,
+			y: 78,
+			w: 39,
+			h: 47
+		},
+		"reduced-outfit-male-7": {
+			type: "spritesheet",
+			base: e,
+			url: "7.png",
+			x: 35,
+			y: 80,
+			w: 46,
+			h: 45
+		},
+		"reduced-outfit-male-8": {
+			type: "spritesheet",
+			base: e,
+			url: "8.png",
+			x: 39,
+			y: 76,
+			w: 42,
+			h: 49
+		},
+		"reduced-outfit-male-9": {
+			type: "spritesheet",
+			base: e,
+			url: "9.png",
+			x: 43,
+			y: 85,
+			w: 38,
+			h: 40
+		},
+		"normal-outfit-female-1": {
+			type: "spritesheet",
+			base: o,
+			url: "1.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-10": {
+			type: "spritesheet",
+			base: o,
+			url: "10.png",
+			x: 94,
+			y: 129,
+			w: 68,
+			h: 105
+		},
+		"normal-outfit-female-11": {
+			type: "spritesheet",
+			base: o,
+			url: "11.png",
+			x: 94,
+			y: 151,
+			w: 68,
+			h: 83
+		},
+		"normal-outfit-female-12": {
+			type: "spritesheet",
+			base: o,
+			url: "12.png",
+			x: 94,
+			y: 141,
+			w: 68,
+			h: 93
+		},
+		"normal-outfit-female-13": {
+			type: "spritesheet",
+			base: o,
+			url: "13.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-14": {
+			type: "spritesheet",
+			base: o,
+			url: "14.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-15": {
+			type: "spritesheet",
+			base: o,
+			url: "15.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-16": {
+			type: "spritesheet",
+			base: o,
+			url: "16.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-17": {
+			type: "spritesheet",
+			base: o,
+			url: "17.png",
+			x: 69,
+			y: 155,
+			w: 104,
+			h: 79
+		},
+		"normal-outfit-female-18": {
+			type: "spritesheet",
+			base: o,
+			url: "18.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-19": {
+			type: "spritesheet",
+			base: o,
+			url: "19.png",
+			x: 94,
+			y: 154,
+			w: 68,
+			h: 80
+		},
+		"normal-outfit-female-2": {
+			type: "spritesheet",
+			base: o,
+			url: "2.png",
+			x: 94,
+			y: 157,
+			w: 68,
+			h: 77
+		},
+		"normal-outfit-female-20": {
+			type: "spritesheet",
+			base: o,
+			url: "20.png",
+			x: 94,
+			y: 154,
+			w: 68,
+			h: 80
+		},
+		"normal-outfit-female-21": {
+			type: "spritesheet",
+			base: o,
+			url: "21.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-22": {
+			type: "spritesheet",
+			base: o,
+			url: "22.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-23": {
+			type: "spritesheet",
+			base: o,
+			url: "23.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-24": {
+			type: "spritesheet",
+			base: o,
+			url: "24.png",
+			x: 63,
+			y: 145,
+			w: 104,
+			h: 89
+		},
+		"normal-outfit-female-25": {
+			type: "spritesheet",
+			base: o,
+			url: "25.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-26": {
+			type: "spritesheet",
+			base: o,
+			url: "26.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-27": {
+			type: "spritesheet",
+			base: o,
+			url: "27.png",
+			x: 93,
+			y: 140,
+			w: 69,
+			h: 94
+		},
+		"normal-outfit-female-28": {
+			type: "spritesheet",
+			base: o,
+			url: "28.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-29": {
+			type: "spritesheet",
+			base: o,
+			url: "29.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-3": {
+			type: "spritesheet",
+			base: o,
+			url: "3.png",
+			x: 94,
+			y: 157,
+			w: 68,
+			h: 77
+		},
+		"normal-outfit-female-30": {
+			type: "spritesheet",
+			base: o,
+			url: "30.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-31": {
+			type: "spritesheet",
+			base: o,
+			url: "31.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-32": {
+			type: "spritesheet",
+			base: o,
+			url: "32.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-33": {
+			type: "spritesheet",
+			base: o,
+			url: "33.png",
+			x: 74,
+			y: 151,
+			w: 88,
+			h: 83
+		},
+		"normal-outfit-female-34": {
+			type: "spritesheet",
+			base: o,
+			url: "34.png",
+			x: 66,
+			y: 145,
+			w: 99,
+			h: 89
+		},
+		"normal-outfit-female-35": {
+			type: "spritesheet",
+			base: o,
+			url: "35.png",
+			x: 94,
+			y: 154,
+			w: 68,
+			h: 80
+		},
+		"normal-outfit-female-36": {
+			type: "spritesheet",
+			base: o,
+			url: "36.png",
+			x: 91,
+			y: 156,
+			w: 72,
+			h: 78
+		},
+		"normal-outfit-female-37": {
+			type: "spritesheet",
+			base: o,
+			url: "37.png",
+			x: 72,
+			y: 153,
+			w: 90,
+			h: 81
+		},
+		"normal-outfit-female-38": {
+			type: "spritesheet",
+			base: o,
+			url: "38.png",
+			x: 30,
+			y: 34,
+			w: 165,
+			h: 221
+		},
+		"normal-outfit-female-39": {
+			type: "spritesheet",
+			base: o,
+			url: "39.png",
+			x: 94,
+			y: 155,
+			w: 68,
+			h: 79
+		},
+		"normal-outfit-female-4": {
+			type: "spritesheet",
+			base: o,
+			url: "4.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-40": {
+			type: "spritesheet",
+			base: o,
+			url: "40.png",
+			x: 75,
+			y: 155,
+			w: 87,
+			h: 79
+		},
+		"normal-outfit-female-41": {
+			type: "spritesheet",
+			base: o,
+			url: "41.png",
+			x: 70,
+			y: 153,
+			w: 92,
+			h: 86
+		},
+		"normal-outfit-female-42": {
+			type: "spritesheet",
+			base: o,
+			url: "42.png",
+			x: 94,
+			y: 156,
+			w: 68,
+			h: 78
+		},
+		"normal-outfit-female-43": {
+			type: "spritesheet",
+			base: o,
+			url: "43.png",
+			x: 89,
+			y: 151,
+			w: 95,
+			h: 86
+		},
+		"normal-outfit-female-44": {
+			type: "spritesheet",
+			base: o,
+			url: "44.png",
+			x: 78,
+			y: 135,
+			w: 95,
+			h: 99
+		},
+		"normal-outfit-female-45": {
+			type: "spritesheet",
+			base: o,
+			url: "45.png",
+			x: 94,
+			y: 154,
+			w: 79,
+			h: 82
+		},
+		"normal-outfit-female-46": {
+			type: "spritesheet",
+			base: o,
+			url: "46.png",
+			x: 89,
+			y: 156,
+			w: 74,
+			h: 77
+		},
+		"normal-outfit-female-47": {
+			type: "spritesheet",
+			base: o,
+			url: "47.png",
+			x: 94,
+			y: 149,
+			w: 68,
+			h: 87
+		},
+		"normal-outfit-female-48": {
+			type: "spritesheet",
+			base: o,
+			url: "48.png",
+			x: 64,
+			y: 138,
+			w: 98,
+			h: 96
+		},
+		"normal-outfit-female-49": {
+			type: "spritesheet",
+			base: o,
+			url: "49.png",
+			x: 87,
+			y: 152,
+			w: 83,
+			h: 81
+		},
+		"normal-outfit-female-5": {
+			type: "spritesheet",
+			base: o,
+			url: "5.png",
+			x: 63,
+			y: 145,
+			w: 104,
+			h: 89
+		},
+		"normal-outfit-female-50": {
+			type: "spritesheet",
+			base: o,
+			url: "50.png",
+			x: 89,
+			y: 150,
+			w: 77,
+			h: 84
+		},
+		"normal-outfit-female-51": {
+			type: "spritesheet",
+			base: o,
+			url: "51.png",
+			x: 88,
+			y: 147,
+			w: 76,
+			h: 87
+		},
+		"normal-outfit-female-52": {
+			type: "spritesheet",
+			base: o,
+			url: "52.png",
+			x: 82,
+			y: 139,
+			w: 83,
+			h: 94
+		},
+		"normal-outfit-female-53": {
+			type: "spritesheet",
+			base: o,
+			url: "53.png",
+			x: 76,
+			y: 146,
+			w: 90,
+			h: 88
+		},
+		"normal-outfit-female-54": {
+			type: "spritesheet",
+			base: o,
+			url: "54.png",
+			x: 57,
+			y: 154,
+			w: 123,
+			h: 80
+		},
+		"normal-outfit-female-6": {
+			type: "spritesheet",
+			base: o,
+			url: "6.png",
+			x: 91,
+			y: 140,
+			w: 71,
+			h: 94
+		},
+		"normal-outfit-female-7": {
+			type: "spritesheet",
+			base: o,
+			url: "7.png",
+			x: 75,
+			y: 149,
+			w: 87,
+			h: 85
+		},
+		"normal-outfit-female-8": {
+			type: "spritesheet",
+			base: o,
+			url: "8.png",
+			x: 92,
+			y: 137,
+			w: 70,
+			h: 97
+		},
+		"normal-outfit-female-9": {
+			type: "spritesheet",
+			base: o,
+			url: "9.png",
+			x: 94,
+			y: 153,
+			w: 68,
+			h: 81
+		},
+		"reduced-outfit-female-1": {
+			type: "spritesheet",
+			base: t,
+			url: "1.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-10": {
+			type: "spritesheet",
+			base: t,
+			url: "10.png",
+			x: 44,
+			y: 72,
+			w: 35,
+			h: 53
+		},
+		"reduced-outfit-female-11": {
+			type: "spritesheet",
+			base: t,
+			url: "11.png",
+			x: 44,
+			y: 83,
+			w: 35,
+			h: 42
+		},
+		"reduced-outfit-female-12": {
+			type: "spritesheet",
+			base: t,
+			url: "12.png",
+			x: 44,
+			y: 78,
+			w: 35,
+			h: 47
+		},
+		"reduced-outfit-female-13": {
+			type: "spritesheet",
+			base: t,
+			url: "13.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-14": {
+			type: "spritesheet",
+			base: t,
+			url: "14.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-15": {
+			type: "spritesheet",
+			base: t,
+			url: "15.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-16": {
+			type: "spritesheet",
+			base: t,
+			url: "16.png",
+			x: 44,
+			y: 85,
+			w: 35,
+			h: 40
+		},
+		"reduced-outfit-female-17": {
+			type: "spritesheet",
+			base: t,
+			url: "17.png",
+			x: 32,
+			y: 84,
+			w: 53,
+			h: 41
+		},
+		"reduced-outfit-female-18": {
+			type: "spritesheet",
+			base: t,
+			url: "18.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-19": {
+			type: "spritesheet",
+			base: t,
+			url: "19.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-2": {
+			type: "spritesheet",
+			base: t,
+			url: "2.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-20": {
+			type: "spritesheet",
+			base: t,
+			url: "20.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-21": {
+			type: "spritesheet",
+			base: t,
+			url: "21.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-22": {
+			type: "spritesheet",
+			base: t,
+			url: "22.png",
+			x: 44,
+			y: 85,
+			w: 35,
+			h: 40
+		},
+		"reduced-outfit-female-23": {
+			type: "spritesheet",
+			base: t,
+			url: "23.png",
+			x: 44,
+			y: 85,
+			w: 35,
+			h: 40
+		},
+		"reduced-outfit-female-24": {
+			type: "spritesheet",
+			base: t,
+			url: "24.png",
+			x: 29,
+			y: 79,
+			w: 51,
+			h: 46
+		},
+		"reduced-outfit-female-25": {
+			type: "spritesheet",
+			base: t,
+			url: "25.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-26": {
+			type: "spritesheet",
+			base: t,
+			url: "26.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-27": {
+			type: "spritesheet",
+			base: t,
+			url: "27.png",
+			x: 43,
+			y: 77,
+			w: 36,
+			h: 48
+		},
+		"reduced-outfit-female-28": {
+			type: "spritesheet",
+			base: t,
+			url: "28.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-29": {
+			type: "spritesheet",
+			base: t,
+			url: "29.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-3": {
+			type: "spritesheet",
+			base: t,
+			url: "3.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-30": {
+			type: "spritesheet",
+			base: t,
+			url: "30.png",
+			x: 44,
+			y: 85,
+			w: 35,
+			h: 40
+		},
+		"reduced-outfit-female-31": {
+			type: "spritesheet",
+			base: t,
+			url: "31.png",
+			x: 44,
+			y: 85,
+			w: 35,
+			h: 40
+		},
+		"reduced-outfit-female-32": {
+			type: "spritesheet",
+			base: t,
+			url: "32.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-33": {
+			type: "spritesheet",
+			base: t,
+			url: "33.png",
+			x: 39,
+			y: 83,
+			w: 40,
+			h: 42
+		},
+		"reduced-outfit-female-34": {
+			type: "spritesheet",
+			base: t,
+			url: "34.png",
+			x: 31,
+			y: 80,
+			w: 48,
+			h: 45
+		},
+		"reduced-outfit-female-35": {
+			type: "spritesheet",
+			base: t,
+			url: "35.png",
+			x: 44,
+			y: 84,
+			w: 35,
+			h: 41
+		},
+		"reduced-outfit-female-36": {
+			type: "spritesheet",
+			base: t,
+			url: "36.png",
+			x: 43,
+			y: 86,
+			w: 36,
+			h: 39
+		},
+		"reduced-outfit-female-37": {
+			type: "spritesheet",
+			base: t,
+			url: "37.png",
+			x: 36,
+			y: 83,
+			w: 45,
+			h: 42
+		},
+		"reduced-outfit-female-38": {
+			type: "spritesheet",
+			base: t,
+			url: "38.png",
+			x: 17,
+			y: 0,
+			w: 78,
+			h: 128
+		},
+		"reduced-outfit-female-39": {
+			type: "spritesheet",
+			base: t,
+			url: "39.png",
+			x: 16,
+			y: 68,
+			w: 79,
+			h: 57
+		},
+		"reduced-outfit-female-4": {
+			type: "spritesheet",
+			base: t,
+			url: "4.png",
+			x: 44,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-40": {
+			type: "spritesheet",
+			base: t,
+			url: "40.png",
+			x: 41,
+			y: 85,
+			w: 39,
+			h: 43
+		},
+		"reduced-outfit-female-41": {
+			type: "spritesheet",
+			base: t,
+			url: "41.png",
+			x: 45,
+			y: 84,
+			w: 35,
+			h: 41
+		},
+		"reduced-outfit-female-42": {
+			type: "spritesheet",
+			base: t,
+			url: "42.png",
+			x: 45,
+			y: 86,
+			w: 35,
+			h: 39
+		},
+		"reduced-outfit-female-43": {
+			type: "spritesheet",
+			base: t,
+			url: "43.png",
+			x: 40,
+			y: 84,
+			w: 52,
+			h: 42
+		},
+		"reduced-outfit-female-44": {
+			type: "spritesheet",
+			base: t,
+			url: "44.png",
+			x: 37,
+			y: 75,
+			w: 47,
+			h: 50
+		},
+		"reduced-outfit-female-45": {
+			type: "spritesheet",
+			base: t,
+			url: "45.png",
+			x: 42,
+			y: 85,
+			w: 43,
+			h: 41
+		},
+		"reduced-outfit-female-46": {
+			type: "spritesheet",
+			base: t,
+			url: "46.png",
+			x: 43,
+			y: 85,
+			w: 36,
+			h: 36
+		},
+		"reduced-outfit-female-47": {
+			type: "spritesheet",
+			base: t,
+			url: "47.png",
+			x: 45,
+			y: 82,
+			w: 35,
+			h: 43
+		},
+		"reduced-outfit-female-48": {
+			type: "spritesheet",
+			base: t,
+			url: "48.png",
+			x: 31,
+			y: 77,
+			w: 49,
+			h: 48
+		},
+		"reduced-outfit-female-49": {
+			type: "spritesheet",
+			base: t,
+			url: "49.png",
+			x: 40,
+			y: 85,
+			w: 44,
+			h: 40
+		},
+		"reduced-outfit-female-5": {
+			type: "spritesheet",
+			base: t,
+			url: "5.png",
+			x: 29,
+			y: 79,
+			w: 51,
+			h: 46
+		},
+		"reduced-outfit-female-50": {
+			type: "spritesheet",
+			base: t,
+			url: "50.png",
+			x: 39,
+			y: 82,
+			w: 42,
+			h: 44
+		},
+		"reduced-outfit-female-51": {
+			type: "spritesheet",
+			base: t,
+			url: "51.png",
+			x: 44,
+			y: 83,
+			w: 38,
+			h: 41
+		},
+		"reduced-outfit-female-52": {
+			type: "spritesheet",
+			base: t,
+			url: "52.png",
+			x: 41,
+			y: 79,
+			w: 43,
+			h: 45
+		},
+		"reduced-outfit-female-53": {
+			type: "spritesheet",
+			base: t,
+			url: "53.png",
+			x: 38,
+			y: 80,
+			w: 45,
+			h: 44
+		},
+		"reduced-outfit-female-54": {
+			type: "spritesheet",
+			base: t,
+			url: "54.png",
+			x: 25,
+			y: 85,
+			w: 63,
+			h: 39
+		},
+		"reduced-outfit-female-6": {
+			type: "spritesheet",
+			base: t,
+			url: "6.png",
+			x: 43,
+			y: 77,
+			w: 36,
+			h: 48
+		},
+		"reduced-outfit-female-7": {
+			type: "spritesheet",
+			base: t,
+			url: "7.png",
+			x: 38,
+			y: 82,
+			w: 41,
+			h: 43
+		},
+		"reduced-outfit-female-8": {
+			type: "spritesheet",
+			base: t,
+			url: "8.png",
+			x: 40,
+			y: 76,
+			w: 39,
+			h: 49
+		},
+		"reduced-outfit-female-9": {
+			type: "spritesheet",
+			base: t,
+			url: "9.png",
+			x: 44,
+			y: 85,
+			w: 35,
+			h: 40
+		},
+		"normal-hat-1": {
+			type: "spritesheet",
+			base: h,
+			url: "1.png",
+			x: 49,
+			y: 39,
+			w: 131,
+			h: 89
+		},
+		"normal-hat-10": {
+			type: "spritesheet",
+			base: h,
+			url: "10.png",
+			x: 97,
+			y: 14,
+			w: 75,
+			h: 105
+		},
+		"normal-hat-11": {
+			type: "spritesheet",
+			base: h,
+			url: "11.png",
+			x: 11,
+			y: 28,
+			w: 172,
+			h: 139
+		},
+		"normal-hat-12": {
+			type: "spritesheet",
+			base: h,
+			url: "12.png",
+			x: 73,
+			y: 64,
+			w: 105,
+			h: 61
+		},
+		"normal-hat-13": {
+			type: "spritesheet",
+			base: h,
+			url: "13.png",
+			x: 73,
+			y: 64,
+			w: 105,
+			h: 61
+		},
+		"normal-hat-14": {
+			type: "spritesheet",
+			base: h,
+			url: "14.png",
+			x: 73,
+			y: 64,
+			w: 105,
+			h: 61
+		},
+		"normal-hat-15": {
+			type: "spritesheet",
+			base: h,
+			url: "15.png",
+			x: 58,
+			y: 38,
+			w: 129,
+			h: 85
+		},
+		"normal-hat-16": {
+			type: "spritesheet",
+			base: h,
+			url: "16.png",
+			x: 58,
+			y: 38,
+			w: 129,
+			h: 85
+		},
+		"normal-hat-17": {
+			type: "spritesheet",
+			base: h,
+			url: "17.png",
+			x: 71,
+			y: 35,
+			w: 118,
+			h: 89
+		},
+		"normal-hat-18": {
+			type: "spritesheet",
+			base: h,
+			url: "18.png",
+			x: 65,
+			y: 40,
+			w: 117,
+			h: 84
+		},
+		"normal-hat-19": {
+			type: "spritesheet",
+			base: h,
+			url: "19.png",
+			x: 63,
+			y: 37,
+			w: 132,
+			h: 90
+		},
+		"normal-hat-2": {
+			type: "spritesheet",
+			base: h,
+			url: "2.png",
+			x: 85,
+			y: 34,
+			w: 94,
+			h: 93
+		},
+		"normal-hat-20": {
+			type: "spritesheet",
+			base: h,
+			url: "20.png",
+			x: 71,
+			y: 35,
+			w: 118,
+			h: 89
+		},
+		"normal-hat-21": {
+			type: "spritesheet",
+			base: h,
+			url: "21.png",
+			x: 65,
+			y: 40,
+			w: 117,
+			h: 84
+		},
+		"normal-hat-22": {
+			type: "spritesheet",
+			base: h,
+			url: "22.png",
+			x: 60,
+			y: 37,
+			w: 117,
+			h: 85
+		},
+		"normal-hat-23": {
+			type: "spritesheet",
+			base: h,
+			url: "23.png",
+			x: 93,
+			y: 52,
+			w: 77,
+			h: 58
+		},
+		"normal-hat-24": {
+			type: "spritesheet",
+			base: h,
+			url: "24.png",
+			x: 49,
+			y: 53,
+			w: 137,
+			h: 78
+		},
+		"normal-hat-25": {
+			type: "spritesheet",
+			base: h,
+			url: "25.png",
+			x: 85,
+			y: 43,
+			w: 95,
+			h: 82
+		},
+		"normal-hat-26": {
+			type: "spritesheet",
+			base: h,
+			url: "26.png",
+			x: 69,
+			y: 25,
+			w: 124,
+			h: 99
+		},
+		"normal-hat-27": {
+			type: "spritesheet",
+			base: h,
+			url: "27.png",
+			x: 88,
+			y: 80,
+			w: 67,
+			h: 65
+		},
+		"normal-hat-28": {
+			type: "spritesheet",
+			base: h,
+			url: "28.png",
+			x: 77,
+			y: 68,
+			w: 100,
+			h: 89
+		},
+		"normal-hat-29": {
+			type: "spritesheet",
+			base: h,
+			url: "29.png",
+			x: 62,
+			y: 49,
+			w: 118,
+			h: 99
+		},
+		"normal-hat-3": {
+			type: "spritesheet",
+			base: h,
+			url: "3.png",
+			x: 93,
+			y: 61,
+			w: 77,
+			h: 56
+		},
+		"normal-hat-30": {
+			type: "spritesheet",
+			base: h,
+			url: "30.png",
+			x: 66,
+			y: 16,
+			w: 124,
+			h: 144
+		},
+		"normal-hat-31": {
+			type: "spritesheet",
+			base: h,
+			url: "31.png",
+			x: 55,
+			y: 31,
+			w: 130,
+			h: 110
+		},
+		"normal-hat-32": {
+			type: "spritesheet",
+			base: h,
+			url: "32.png",
+			x: 26,
+			y: 35,
+			w: 154,
+			h: 109
+		},
+		"normal-hat-33": {
+			type: "spritesheet",
+			base: h,
+			url: "33.png",
+			x: 72,
+			y: 32,
+			w: 117,
+			h: 96
+		},
+		"normal-hat-34": {
+			type: "spritesheet",
+			base: h,
+			url: "34.png",
+			x: 99,
+			y: 49,
+			w: 76,
+			h: 71
+		},
+		"normal-hat-35": {
+			type: "spritesheet",
+			base: h,
+			url: "35.png",
+			x: 102,
+			y: 54,
+			w: 75,
+			h: 70
+		},
+		"normal-hat-36": {
+			type: "spritesheet",
+			base: h,
+			url: "36.png",
+			x: 65,
+			y: 15,
+			w: 129,
+			h: 113
+		},
+		"normal-hat-37": {
+			type: "spritesheet",
+			base: h,
+			url: "37.png",
+			x: 61,
+			y: 37,
+			w: 124,
+			h: 104
+		},
+		"normal-hat-38": {
+			type: "spritesheet",
+			base: h,
+			url: "38.png",
+			x: 57,
+			y: 37,
+			w: 125,
+			h: 96
+		},
+		"normal-hat-39": {
+			type: "spritesheet",
+			base: h,
+			url: "39.png",
+			x: 72,
+			y: 63,
+			w: 120,
+			h: 109
+		},
+		"normal-hat-4": {
+			type: "spritesheet",
+			base: h,
+			url: "4.png",
+			x: 61,
+			y: 49,
+			w: 141,
+			h: 78
+		},
+		"normal-hat-40": {
+			type: "spritesheet",
+			base: h,
+			url: "40.png",
+			x: 79,
+			y: 84,
+			w: 96,
+			h: 77
+		},
+		"normal-hat-41": {
+			type: "spritesheet",
+			base: h,
+			url: "41.png",
+			x: 73,
+			y: 72,
+			w: 109,
+			h: 107
+		},
+		"normal-hat-42": {
+			type: "spritesheet",
+			base: h,
+			url: "42.png",
+			x: 63,
+			y: 61,
+			w: 112,
+			h: 93
+		},
+		"normal-hat-43": {
+			type: "spritesheet",
+			base: h,
+			url: "43.png",
+			x: 78,
+			y: 48,
+			w: 106,
+			h: 83
+		},
+		"normal-hat-44": {
+			type: "spritesheet",
+			base: h,
+			url: "44.png",
+			x: 68,
+			y: 54,
+			w: 125,
+			h: 75
+		},
+		"normal-hat-45": {
+			type: "spritesheet",
+			base: h,
+			url: "45.png",
+			x: 73,
+			y: 32,
+			w: 115,
+			h: 93
+		},
+		"normal-hat-46": {
+			type: "spritesheet",
+			base: h,
+			url: "46.png",
+			x: 59,
+			y: 41,
+			w: 130,
+			h: 117
+		},
+		"normal-hat-47": {
+			type: "spritesheet",
+			base: h,
+			url: "47.png",
+			x: 84,
+			y: 70,
+			w: 85,
+			h: 80
+		},
+		"normal-hat-48": {
+			type: "spritesheet",
+			base: h,
+			url: "48.png",
+			x: 64,
+			y: 34,
+			w: 136,
+			h: 124
+		},
+		"normal-hat-49": {
+			type: "spritesheet",
+			base: h,
+			url: "49.png",
+			x: 72,
+			y: 45,
+			w: 110,
+			h: 117
+		},
+		"normal-hat-5": {
+			type: "spritesheet",
+			base: h,
+			url: "5.png",
+			x: 61,
+			y: 27,
+			w: 151,
+			h: 107
+		},
+		"normal-hat-50": {
+			type: "spritesheet",
+			base: h,
+			url: "50.png",
+			x: 27,
+			y: 67,
+			w: 149,
+			h: 110
+		},
+		"normal-hat-51": {
+			type: "spritesheet",
+			base: h,
+			url: "51.png",
+			x: 88,
+			y: 83,
+			w: 91,
+			h: 91
+		},
+		"normal-hat-52": {
+			type: "spritesheet",
+			base: h,
+			url: "52.png",
+			x: 104,
+			y: 99,
+			w: 69,
+			h: 69
+		},
+		"normal-hat-53": {
+			type: "spritesheet",
+			base: h,
+			url: "53.png",
+			x: 93,
+			y: 69,
+			w: 80,
+			h: 95
+		},
+		"normal-hat-54": {
+			type: "spritesheet",
+			base: h,
+			url: "54.png",
+			x: 80,
+			y: 55,
+			w: 97,
+			h: 79
+		},
+		"normal-hat-55": {
+			type: "spritesheet",
+			base: h,
+			url: "55.png",
+			x: 56,
+			y: 37,
+			w: 118,
+			h: 110
+		},
+		"normal-hat-56": {
+			type: "spritesheet",
+			base: h,
+			url: "56.png",
+			x: 75,
+			y: 35,
+			w: 115,
+			h: 163
+		},
+		"normal-hat-57": {
+			type: "spritesheet",
+			base: h,
+			url: "57.png",
+			x: 77,
+			y: 34,
+			w: 102,
+			h: 135
+		},
+		"normal-hat-58": {
+			type: "spritesheet",
+			base: h,
+			url: "58.png",
+			x: 79,
+			y: 57,
+			w: 100,
+			h: 139
+		},
+		"normal-hat-59": {
+			type: "spritesheet",
+			base: h,
+			url: "59.png",
+			x: 69,
+			y: 70,
+			w: 107,
+			h: 89
+		},
+		"normal-hat-6": {
+			type: "spritesheet",
+			base: h,
+			url: "6.png",
+			x: 105,
+			y: 34,
+			w: 64,
+			h: 89
+		},
+		"normal-hat-60": {
+			type: "spritesheet",
+			base: h,
+			url: "60.png",
+			x: 39,
+			y: 34,
+			w: 133,
+			h: 124
+		},
+		"normal-hat-61": {
+			type: "spritesheet",
+			base: h,
+			url: "61.png",
+			x: 18,
+			y: 40,
+			w: 163,
+			h: 111
+		},
+		"normal-hat-62": {
+			type: "spritesheet",
+			base: h,
+			url: "62.png",
+			x: 56,
+			y: 23,
+			w: 122,
+			h: 149
+		},
+		"normal-hat-63": {
+			type: "spritesheet",
+			base: h,
+			url: "63.png",
+			x: 60,
+			y: 55,
+			w: 135,
+			h: 92
+		},
+		"normal-hat-7": {
+			type: "spritesheet",
+			base: h,
+			url: "7.png",
+			x: 69,
+			y: 35,
+			w: 116,
+			h: 83
+		},
+		"normal-hat-8": {
+			type: "spritesheet",
+			base: h,
+			url: "8.png",
+			x: 72,
+			y: 57,
+			w: 97,
+			h: 58
+		},
+		"normal-hat-9": {
+			type: "spritesheet",
+			base: h,
+			url: "9.png",
+			x: 62,
+			y: 33,
+			w: 127,
+			h: 95
+		},
+		"reduced-hat-1": {
+			type: "spritesheet",
+			base: s,
+			url: "1.png",
+			x: 23,
+			y: 29,
+			w: 65,
+			h: 45
+		},
+		"reduced-hat-10": {
+			type: "spritesheet",
+			base: s,
+			url: "10.png",
+			x: 48,
+			y: 15,
+			w: 37,
+			h: 52
+		},
+		"reduced-hat-11": {
+			type: "spritesheet",
+			base: s,
+			url: "11.png",
+			x: 7,
+			y: 24,
+			w: 86,
+			h: 67
+		},
+		"reduced-hat-12": {
+			type: "spritesheet",
+			base: s,
+			url: "12.png",
+			x: 35,
+			y: 39,
+			w: 53,
+			h: 31
+		},
+		"reduced-hat-13": {
+			type: "spritesheet",
+			base: s,
+			url: "13.png",
+			x: 35,
+			y: 39,
+			w: 53,
+			h: 31
+		},
+		"reduced-hat-14": {
+			type: "spritesheet",
+			base: s,
+			url: "14.png",
+			x: 35,
+			y: 39,
+			w: 53,
+			h: 31
+		},
+		"reduced-hat-15": {
+			type: "spritesheet",
+			base: s,
+			url: "15.png",
+			x: 26,
+			y: 29,
+			w: 64,
+			h: 42
+		},
+		"reduced-hat-16": {
+			type: "spritesheet",
+			base: s,
+			url: "16.png",
+			x: 26,
+			y: 29,
+			w: 64,
+			h: 42
+		},
+		"reduced-hat-17": {
+			type: "spritesheet",
+			base: s,
+			url: "17.png",
+			x: 33,
+			y: 25,
+			w: 59,
+			h: 45
+		},
+		"reduced-hat-18": {
+			type: "spritesheet",
+			base: s,
+			url: "18.png",
+			x: 28,
+			y: 29,
+			w: 60,
+			h: 42
+		},
+		"reduced-hat-19": {
+			type: "spritesheet",
+			base: s,
+			url: "19.png",
+			x: 24,
+			y: 24,
+			w: 69,
+			h: 46
+		},
+		"reduced-hat-2": {
+			type: "spritesheet",
+			base: s,
+			url: "2.png",
+			x: 40,
+			y: 23,
+			w: 48,
+			h: 48
+		},
+		"reduced-hat-20": {
+			type: "spritesheet",
+			base: s,
+			url: "20.png",
+			x: 33,
+			y: 25,
+			w: 59,
+			h: 45
+		},
+		"reduced-hat-21": {
+			type: "spritesheet",
+			base: s,
+			url: "21.png",
+			x: 28,
+			y: 29,
+			w: 60,
+			h: 42
+		},
+		"reduced-hat-22": {
+			type: "spritesheet",
+			base: s,
+			url: "22.png",
+			x: 28,
+			y: 30,
+			w: 60,
+			h: 42
+		},
+		"reduced-hat-23": {
+			type: "spritesheet",
+			base: s,
+			url: "23.png",
+			x: 44,
+			y: 34,
+			w: 39,
+			h: 27
+		},
+		"reduced-hat-24": {
+			type: "spritesheet",
+			base: s,
+			url: "24.png",
+			x: 21,
+			y: 35,
+			w: 69,
+			h: 40
+		},
+		"reduced-hat-25": {
+			type: "spritesheet",
+			base: s,
+			url: "25.png",
+			x: 39,
+			y: 27,
+			w: 48,
+			h: 41
+		},
+		"reduced-hat-26": {
+			type: "spritesheet",
+			base: s,
+			url: "26.png",
+			x: 32,
+			y: 20,
+			w: 62,
+			h: 49
+		},
+		"reduced-hat-27": {
+			type: "spritesheet",
+			base: s,
+			url: "27.png",
+			x: 42,
+			y: 48,
+			w: 33,
+			h: 32
+		},
+		"reduced-hat-28": {
+			type: "spritesheet",
+			base: s,
+			url: "28.png",
+			x: 36,
+			y: 42,
+			w: 50,
+			h: 45
+		},
+		"reduced-hat-29": {
+			type: "spritesheet",
+			base: s,
+			url: "29.png",
+			x: 29,
+			y: 32,
+			w: 59,
+			h: 49
+		},
+		"reduced-hat-3": {
+			type: "spritesheet",
+			base: s,
+			url: "3.png",
+			x: 44,
+			y: 34,
+			w: 39,
+			h: 27
+		},
+		"reduced-hat-30": {
+			type: "spritesheet",
+			base: s,
+			url: "30.png",
+			x: 31,
+			y: 16,
+			w: 62,
+			h: 72
+		},
+		"reduced-hat-31": {
+			type: "spritesheet",
+			base: s,
+			url: "31.png",
+			x: 25,
+			y: 24,
+			w: 65,
+			h: 55
+		},
+		"reduced-hat-32": {
+			type: "spritesheet",
+			base: s,
+			url: "32.png",
+			x: 9,
+			y: 33,
+			w: 77,
+			h: 50
+		},
+		"reduced-hat-33": {
+			type: "spritesheet",
+			base: s,
+			url: "33.png",
+			x: 32,
+			y: 24,
+			w: 59,
+			h: 48
+		},
+		"reduced-hat-34": {
+			type: "spritesheet",
+			base: s,
+			url: "34.png",
+			x: 48,
+			y: 31,
+			w: 38,
+			h: 33
+		},
+		"reduced-hat-35": {
+			type: "spritesheet",
+			base: s,
+			url: "35.png",
+			x: 46,
+			y: 30,
+			w: 39,
+			h: 35
+		},
+		"reduced-hat-36": {
+			type: "spritesheet",
+			base: s,
+			url: "36.png",
+			x: 29,
+			y: 16,
+			w: 65,
+			h: 57
+		},
+		"reduced-hat-37": {
+			type: "spritesheet",
+			base: s,
+			url: "37.png",
+			x: 26,
+			y: 25,
+			w: 62,
+			h: 52
+		},
+		"reduced-hat-38": {
+			type: "spritesheet",
+			base: s,
+			url: "38.png",
+			x: 25,
+			y: 28,
+			w: 63,
+			h: 49
+		},
+		"reduced-hat-39": {
+			type: "spritesheet",
+			base: s,
+			url: "39.png",
+			x: 33,
+			y: 39,
+			w: 61,
+			h: 55
+		},
+		"reduced-hat-4": {
+			type: "spritesheet",
+			base: s,
+			url: "4.png",
+			x: 28,
+			y: 31,
+			w: 70,
+			h: 40
+		},
+		"reduced-hat-40": {
+			type: "spritesheet",
+			base: s,
+			url: "40.png",
+			x: 37,
+			y: 47,
+			w: 49,
+			h: 39
+		},
+		"reduced-hat-41": {
+			type: "spritesheet",
+			base: s,
+			url: "41.png",
+			x: 36,
+			y: 42,
+			w: 55,
+			h: 54
+		},
+		"reduced-hat-42": {
+			type: "spritesheet",
+			base: s,
+			url: "42.png",
+			x: 31,
+			y: 38,
+			w: 57,
+			h: 47
+		},
+		"reduced-hat-43": {
+			type: "spritesheet",
+			base: s,
+			url: "43.png",
+			x: 37,
+			y: 32,
+			w: 54,
+			h: 43
+		},
+		"reduced-hat-44": {
+			type: "spritesheet",
+			base: s,
+			url: "44.png",
+			x: 32,
+			y: 34,
+			w: 63,
+			h: 39
+		},
+		"reduced-hat-45": {
+			type: "spritesheet",
+			base: s,
+			url: "45.png",
+			x: 35,
+			y: 22,
+			w: 58,
+			h: 48
+		},
+		"reduced-hat-46": {
+			type: "spritesheet",
+			base: s,
+			url: "46.png",
+			x: 29,
+			y: 28,
+			w: 66,
+			h: 59
+		},
+		"reduced-hat-47": {
+			type: "spritesheet",
+			base: s,
+			url: "47.png",
+			x: 41,
+			y: 43,
+			w: 44,
+			h: 39
+		},
+		"reduced-hat-48": {
+			type: "spritesheet",
+			base: s,
+			url: "48.png",
+			x: 31,
+			y: 24,
+			w: 68,
+			h: 63
+		},
+		"reduced-hat-49": {
+			type: "spritesheet",
+			base: s,
+			url: "49.png",
+			x: 34,
+			y: 30,
+			w: 55,
+			h: 58
+		},
+		"reduced-hat-5": {
+			type: "spritesheet",
+			base: s,
+			url: "5.png",
+			x: 29,
+			y: 20,
+			w: 76,
+			h: 56
+		},
+		"reduced-hat-50": {
+			type: "spritesheet",
+			base: s,
+			url: "50.png",
+			x: 10,
+			y: 41,
+			w: 76,
+			h: 56
+		},
+		"reduced-hat-51": {
+			type: "spritesheet",
+			base: s,
+			url: "51.png",
+			x: 43,
+			y: 48,
+			w: 46,
+			h: 46
+		},
+		"reduced-hat-52": {
+			type: "spritesheet",
+			base: s,
+			url: "52.png",
+			x: 50,
+			y: 56,
+			w: 35,
+			h: 35
+		},
+		"reduced-hat-53": {
+			type: "spritesheet",
+			base: s,
+			url: "53.png",
+			x: 46,
+			y: 43,
+			w: 40,
+			h: 48
+		},
+		"reduced-hat-54": {
+			type: "spritesheet",
+			base: s,
+			url: "54.png",
+			x: 37,
+			y: 31,
+			w: 50,
+			h: 40
+		},
+		"reduced-hat-55": {
+			type: "spritesheet",
+			base: s,
+			url: "55.png",
+			x: 25,
+			y: 26,
+			w: 60,
+			h: 56
+		},
+		"reduced-hat-56": {
+			type: "spritesheet",
+			base: s,
+			url: "56.png",
+			x: 34,
+			y: 26,
+			w: 59,
+			h: 81
+		},
+		"reduced-hat-57": {
+			type: "spritesheet",
+			base: s,
+			url: "57.png",
+			x: 38,
+			y: 21,
+			w: 52,
+			h: 69
+		},
+		"reduced-hat-58": {
+			type: "spritesheet",
+			base: s,
+			url: "58.png",
+			x: 39,
+			y: 32,
+			w: 51,
+			h: 71
+		},
+		"reduced-hat-59": {
+			type: "spritesheet",
+			base: s,
+			url: "59.png",
+			x: 33,
+			y: 41,
+			w: 54,
+			h: 45
+		},
+		"reduced-hat-6": {
+			type: "spritesheet",
+			base: s,
+			url: "6.png",
+			x: 50,
+			y: 23,
+			w: 32,
+			h: 44
+		},
+		"reduced-hat-60": {
+			type: "spritesheet",
+			base: s,
+			url: "60.png",
+			x: 16,
+			y: 25,
+			w: 68,
+			h: 62
+		},
+		"reduced-hat-61": {
+			type: "spritesheet",
+			base: s,
+			url: "61.png",
+			x: 9,
+			y: 27,
+			w: 81,
+			h: 56
+		},
+		"reduced-hat-62": {
+			type: "spritesheet",
+			base: s,
+			url: "62.png",
+			x: 27,
+			y: 18,
+			w: 62,
+			h: 74
+		},
+		"reduced-hat-63": {
+			type: "spritesheet",
+			base: s,
+			url: "63.png",
+			x: 26,
+			y: 33,
+			w: 69,
+			h: 47
+		},
+		"reduced-hat-7": {
+			type: "spritesheet",
+			base: s,
+			url: "7.png",
+			x: 31,
+			y: 28,
+			w: 58,
+			h: 41
+		},
+		"reduced-hat-8": {
+			type: "spritesheet",
+			base: s,
+			url: "8.png",
+			x: 32,
+			y: 35,
+			w: 49,
+			h: 29
+		},
+		"reduced-hat-9": {
+			type: "spritesheet",
+			base: s,
+			url: "9.png",
+			x: 27,
+			y: 23,
+			w: 64,
+			h: 49
+		},
+		"normal-weapon-1": {
+			type: "spritesheet",
+			base: d,
+			url: "1.png",
+			x: 137,
+			y: 140,
+			w: 59,
+			h: 53
+		},
+		"normal-weapon-10": {
+			type: "spritesheet",
+			base: d,
+			url: "10.png",
+			x: 142,
+			y: 131,
+			w: 64,
+			h: 64
+		},
+		"normal-weapon-11": {
+			type: "spritesheet",
+			base: d,
+			url: "11.png",
+			x: 139,
+			y: 133,
+			w: 64,
+			h: 65
+		},
+		"normal-weapon-12": {
+			type: "spritesheet",
+			base: d,
+			url: "12.png",
+			x: 140,
+			y: 132,
+			w: 63,
+			h: 66
+		},
+		"normal-weapon-13": {
+			type: "spritesheet",
+			base: d,
+			url: "13.png",
+			x: 140,
+			y: 131,
+			w: 66,
+			h: 66
+		},
+		"normal-weapon-14": {
+			type: "spritesheet",
+			base: d,
+			url: "14.png",
+			x: 142,
+			y: 130,
+			w: 61,
+			h: 65
+		},
+		"normal-weapon-15": {
+			type: "spritesheet",
+			base: d,
+			url: "15.png",
+			x: 143,
+			y: 138,
+			w: 56,
+			h: 56
+		},
+		"normal-weapon-16": {
+			type: "spritesheet",
+			base: d,
+			url: "16.png",
+			x: 131,
+			y: 58,
+			w: 106,
+			h: 169
+		},
+		"normal-weapon-17": {
+			type: "spritesheet",
+			base: d,
+			url: "17.png",
+			x: 130,
+			y: 49,
+			w: 105,
+			h: 177
+		},
+		"normal-weapon-18": {
+			type: "spritesheet",
+			base: d,
+			url: "18.png",
+			x: 129,
+			y: 41,
+			w: 114,
+			h: 182
+		},
+		"normal-weapon-19": {
+			type: "spritesheet",
+			base: d,
+			url: "19.png",
+			x: 126,
+			y: 57,
+			w: 110,
+			h: 172
+		},
+		"normal-weapon-2": {
+			type: "spritesheet",
+			base: d,
+			url: "2.png",
+			x: 143,
+			y: 142,
+			w: 52,
+			h: 52
+		},
+		"normal-weapon-20": {
+			type: "spritesheet",
+			base: d,
+			url: "20.png",
+			x: 119,
+			y: 15,
+			w: 141,
+			h: 217
+		},
+		"normal-weapon-21": {
+			type: "spritesheet",
+			base: d,
+			url: "21.png",
+			x: 127,
+			y: 31,
+			w: 141,
+			h: 196
+		},
+		"normal-weapon-22": {
+			type: "spritesheet",
+			base: d,
+			url: "22.png",
+			x: 120,
+			y: 13,
+			w: 130,
+			h: 216
+		},
+		"normal-weapon-23": {
+			type: "spritesheet",
+			base: d,
+			url: "23.png",
+			x: 129,
+			y: 32,
+			w: 149,
+			h: 192
+		},
+		"normal-weapon-24": {
+			type: "spritesheet",
+			base: d,
+			url: "24.png",
+			x: 123,
+			y: 37,
+			w: 141,
+			h: 192
+		},
+		"normal-weapon-25": {
+			type: "spritesheet",
+			base: d,
+			url: "25.png",
+			x: 144,
+			y: 142,
+			w: 51,
+			h: 52
+		},
+		"normal-weapon-26": {
+			type: "spritesheet",
+			base: d,
+			url: "26.png",
+			x: 144,
+			y: 142,
+			w: 51,
+			h: 52
+		},
+		"normal-weapon-27": {
+			type: "spritesheet",
+			base: d,
+			url: "27.png",
+			x: 148,
+			y: 137,
+			w: 52,
+			h: 52
+		},
+		"normal-weapon-28": {
+			type: "spritesheet",
+			base: d,
+			url: "28.png",
+			x: 148,
+			y: 137,
+			w: 52,
+			h: 52
+		},
+		"normal-weapon-29": {
+			type: "spritesheet",
+			base: d,
+			url: "29.png",
+			x: 148,
+			y: 137,
+			w: 52,
+			h: 52
+		},
+		"normal-weapon-3": {
+			type: "spritesheet",
+			base: d,
+			url: "3.png",
+			x: 141,
+			y: 136,
+			w: 62,
+			h: 59
+		},
+		"normal-weapon-30": {
+			type: "spritesheet",
+			base: d,
+			url: "30.png",
+			x: 144,
+			y: 131,
+			w: 61,
+			h: 62
+		},
+		"normal-weapon-31": {
+			type: "spritesheet",
+			base: d,
+			url: "31.png",
+			x: 144,
+			y: 129,
+			w: 64,
+			h: 64
+		},
+		"normal-weapon-32": {
+			type: "spritesheet",
+			base: d,
+			url: "32.png",
+			x: 144,
+			y: 131,
+			w: 61,
+			h: 62
+		},
+		"normal-weapon-33": {
+			type: "spritesheet",
+			base: d,
+			url: "33.png",
+			x: 144,
+			y: 129,
+			w: 64,
+			h: 64
+		},
+		"normal-weapon-34": {
+			type: "spritesheet",
+			base: d,
+			url: "34.png",
+			x: 142,
+			y: 125,
+			w: 71,
+			h: 70
+		},
+		"normal-weapon-35": {
+			type: "spritesheet",
+			base: d,
+			url: "35.png",
+			x: 142,
+			y: 125,
+			w: 71,
+			h: 70
+		},
+		"normal-weapon-36": {
+			type: "spritesheet",
+			base: d,
+			url: "36.png",
+			x: 133,
+			y: 90,
+			w: 86,
+			h: 128
+		},
+		"normal-weapon-37": {
+			type: "spritesheet",
+			base: d,
+			url: "37.png",
+			x: 133,
+			y: 90,
+			w: 86,
+			h: 128
+		},
+		"normal-weapon-38": {
+			type: "spritesheet",
+			base: d,
+			url: "38.png",
+			x: 127,
+			y: 68,
+			w: 112,
+			h: 159
+		},
+		"normal-weapon-39": {
+			type: "spritesheet",
+			base: d,
+			url: "39.png",
+			x: 127,
+			y: 68,
+			w: 112,
+			h: 159
+		},
+		"normal-weapon-4": {
+			type: "spritesheet",
+			base: d,
+			url: "4.png",
+			x: 144,
+			y: 140,
+			w: 53,
+			h: 55
+		},
+		"normal-weapon-40": {
+			type: "spritesheet",
+			base: d,
+			url: "40.png",
+			x: 127,
+			y: 68,
+			w: 112,
+			h: 159
+		},
+		"normal-weapon-41": {
+			type: "spritesheet",
+			base: d,
+			url: "41.png",
+			x: 127,
+			y: 51,
+			w: 108,
+			h: 173
+		},
+		"normal-weapon-42": {
+			type: "spritesheet",
+			base: d,
+			url: "42.png",
+			x: 129,
+			y: 48,
+			w: 119,
+			h: 179
+		},
+		"normal-weapon-43": {
+			type: "spritesheet",
+			base: d,
+			url: "43.png",
+			x: 127,
+			y: 51,
+			w: 108,
+			h: 173
+		},
+		"normal-weapon-44": {
+			type: "spritesheet",
+			base: d,
+			url: "44.png",
+			x: 129,
+			y: 48,
+			w: 119,
+			h: 179
+		},
+		"normal-weapon-45": {
+			type: "spritesheet",
+			base: d,
+			url: "45.png",
+			x: 128,
+			y: 31,
+			w: 113,
+			h: 196
+		},
+		"normal-weapon-46": {
+			type: "spritesheet",
+			base: d,
+			url: "46.png",
+			x: 128,
+			y: 31,
+			w: 113,
+			h: 196
+		},
+		"normal-weapon-47": {
+			type: "spritesheet",
+			base: d,
+			url: "47.png",
+			x: 131,
+			y: 58,
+			w: 106,
+			h: 169
+		},
+		"normal-weapon-48": {
+			type: "spritesheet",
+			base: d,
+			url: "48.png",
+			x: 140,
+			y: 143,
+			w: 54,
+			h: 53
+		},
+		"normal-weapon-49": {
+			type: "spritesheet",
+			base: d,
+			url: "49.png",
+			x: 141,
+			y: 126,
+			w: 70,
+			h: 70
+		},
+		"normal-weapon-5": {
+			type: "spritesheet",
+			base: d,
+			url: "5.png",
+			x: 139,
+			y: 128,
+			w: 54,
+			h: 69
+		},
+		"normal-weapon-50": {
+			type: "spritesheet",
+			base: d,
+			url: "50.png",
+			x: 141,
+			y: 134,
+			w: 62,
+			h: 63
+		},
+		"normal-weapon-51": {
+			type: "spritesheet",
+			base: d,
+			url: "51.png",
+			x: 139,
+			y: 137,
+			w: 62,
+			h: 62
+		},
+		"normal-weapon-52": {
+			type: "spritesheet",
+			base: d,
+			url: "52.png",
+			x: 139,
+			y: 133,
+			w: 66,
+			h: 65
+		},
+		"normal-weapon-53": {
+			type: "spritesheet",
+			base: d,
+			url: "53.png",
+			x: 138,
+			y: 127,
+			w: 72,
+			h: 72
+		},
+		"normal-weapon-54": {
+			type: "spritesheet",
+			base: d,
+			url: "54.png",
+			x: 142,
+			y: 130,
+			w: 63,
+			h: 67
+		},
+		"normal-weapon-55": {
+			type: "spritesheet",
+			base: d,
+			url: "55.png",
+			x: 129,
+			y: 50,
+			w: 108,
+			h: 175
+		},
+		"normal-weapon-56": {
+			type: "spritesheet",
+			base: d,
+			url: "56.png",
+			x: 126,
+			y: 56,
+			w: 115,
+			h: 171
+		},
+		"normal-weapon-57": {
+			type: "spritesheet",
+			base: d,
+			url: "57.png",
+			x: 129,
+			y: 52,
+			w: 109,
+			h: 174
+		},
+		"normal-weapon-58": {
+			type: "spritesheet",
+			base: d,
+			url: "58.png",
+			x: 128,
+			y: 30,
+			w: 124,
+			h: 198
+		},
+		"normal-weapon-59": {
+			type: "spritesheet",
+			base: d,
+			url: "59.png",
+			x: 128,
+			y: 46,
+			w: 113,
+			h: 184
+		},
+		"normal-weapon-6": {
+			type: "spritesheet",
+			base: d,
+			url: "6.png",
+			x: 141,
+			y: 127,
+			w: 64,
+			h: 70
+		},
+		"normal-weapon-60": {
+			type: "spritesheet",
+			base: d,
+			url: "60.png",
+			x: 123,
+			y: 16,
+			w: 129,
+			h: 210
+		},
+		"normal-weapon-61": {
+			type: "spritesheet",
+			base: d,
+			url: "61.png",
+			x: 132,
+			y: 33,
+			w: 103,
+			h: 190
+		},
+		"normal-weapon-62": {
+			type: "spritesheet",
+			base: d,
+			url: "62.png",
+			x: 128,
+			y: 26,
+			w: 127,
+			h: 198
+		},
+		"normal-weapon-63": {
+			type: "spritesheet",
+			base: d,
+			url: "63.png",
+			x: 127,
+			y: 43,
+			w: 118,
+			h: 183
+		},
+		"normal-weapon-64": {
+			type: "spritesheet",
+			base: d,
+			url: "64.png",
+			x: 128,
+			y: 28,
+			w: 122,
+			h: 199
+		},
+		"normal-weapon-65": {
+			type: "spritesheet",
+			base: d,
+			url: "65.png",
+			x: 80,
+			y: 109,
+			w: 48,
+			h: 68
+		},
+		"normal-weapon-66": {
+			type: "spritesheet",
+			base: d,
+			url: "66.png",
+			x: 83,
+			y: 143,
+			w: 107,
+			h: 75
+		},
+		"normal-weapon-67": {
+			type: "spritesheet",
+			base: d,
+			url: "67.png",
+			x: 152,
+			y: 116,
+			w: 55,
+			h: 74
+		},
+		"normal-weapon-68": {
+			type: "spritesheet",
+			base: d,
+			url: "68.png",
+			x: 121,
+			y: 3,
+			w: 144,
+			h: 223
+		},
+		"normal-weapon-69": {
+			type: "spritesheet",
+			base: d,
+			url: "69.png",
+			x: 141,
+			y: 124,
+			w: 55,
+			h: 73
+		},
+		"normal-weapon-7": {
+			type: "spritesheet",
+			base: d,
+			url: "7.png",
+			x: 130,
+			y: 53,
+			w: 108,
+			h: 173
+		},
+		"normal-weapon-70": {
+			type: "spritesheet",
+			base: d,
+			url: "70.png",
+			x: 78,
+			y: 120,
+			w: 66,
+			h: 75
+		},
+		"normal-weapon-71": {
+			type: "spritesheet",
+			base: d,
+			url: "71.png",
+			x: 150,
+			y: 131,
+			w: 59,
+			h: 59
+		},
+		"normal-weapon-72": {
+			type: "spritesheet",
+			base: d,
+			url: "72.png",
+			x: 156,
+			y: 143,
+			w: 47,
+			h: 50
+		},
+		"normal-weapon-73": {
+			type: "spritesheet",
+			base: d,
+			url: "73.png",
+			x: 150,
+			y: 119,
+			w: 70,
+			h: 72
+		},
+		"normal-weapon-74": {
+			type: "spritesheet",
+			base: d,
+			url: "74.png",
+			x: 150,
+			y: 139,
+			w: 48,
+			h: 52
+		},
+		"normal-weapon-75": {
+			type: "spritesheet",
+			base: d,
+			url: "75.png",
+			x: 92,
+			y: 150,
+			w: 157,
+			h: 59
+		},
+		"normal-weapon-76": {
+			type: "spritesheet",
+			base: d,
+			url: "76.png",
+			x: 172,
+			y: 131,
+			w: 50,
+			h: 50
+		},
+		"normal-weapon-77": {
+			type: "spritesheet",
+			base: d,
+			url: "77.png",
+			x: 128,
+			y: 6,
+			w: 112,
+			h: 210
+		},
+		"normal-weapon-78": {
+			type: "spritesheet",
+			base: d,
+			url: "78.png",
+			x: 98,
+			y: 113,
+			w: 139,
+			h: 88
+		},
+		"normal-weapon-79": {
+			type: "spritesheet",
+			base: d,
+			url: "79.png",
+			x: 128,
+			y: 99,
+			w: 85,
+			h: 117
+		},
+		"normal-weapon-8": {
+			type: "spritesheet",
+			base: d,
+			url: "8.png",
+			x: 131,
+			y: 61,
+			w: 104,
+			h: 162
+		},
+		"normal-weapon-9": {
+			type: "spritesheet",
+			base: d,
+			url: "9.png",
+			x: 142,
+			y: 136,
+			w: 59,
+			h: 59
+		},
+		"normal-hair-male-1-1": {
+			type: "spritesheet",
+			base: n,
+			url: "1-1.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-10": {
+			type: "spritesheet",
+			base: n,
+			url: "1-10.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-11": {
+			type: "spritesheet",
+			base: n,
+			url: "1-11.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-12": {
+			type: "spritesheet",
+			base: n,
+			url: "1-12.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-13": {
+			type: "spritesheet",
+			base: n,
+			url: "1-13.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-14": {
+			type: "spritesheet",
+			base: n,
+			url: "1-14.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-15": {
+			type: "spritesheet",
+			base: n,
+			url: "1-15.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-16": {
+			type: "spritesheet",
+			base: n,
+			url: "1-16.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-2": {
+			type: "spritesheet",
+			base: n,
+			url: "1-2.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-3": {
+			type: "spritesheet",
+			base: n,
+			url: "1-3.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-4": {
+			type: "spritesheet",
+			base: n,
+			url: "1-4.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-5": {
+			type: "spritesheet",
+			base: n,
+			url: "1-5.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-6": {
+			type: "spritesheet",
+			base: n,
+			url: "1-6.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-7": {
+			type: "spritesheet",
+			base: n,
+			url: "1-7.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-8": {
+			type: "spritesheet",
+			base: n,
+			url: "1-8.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-1-9": {
+			type: "spritesheet",
+			base: n,
+			url: "1-9.png",
+			x: 88,
+			y: 74,
+			w: 90,
+			h: 75
+		},
+		"normal-hair-male-2-1": {
+			type: "spritesheet",
+			base: n,
+			url: "2-1.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-10": {
+			type: "spritesheet",
+			base: n,
+			url: "2-10.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-11": {
+			type: "spritesheet",
+			base: n,
+			url: "2-11.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-12": {
+			type: "spritesheet",
+			base: n,
+			url: "2-12.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-13": {
+			type: "spritesheet",
+			base: n,
+			url: "2-13.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-14": {
+			type: "spritesheet",
+			base: n,
+			url: "2-14.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-15": {
+			type: "spritesheet",
+			base: n,
+			url: "2-15.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-16": {
+			type: "spritesheet",
+			base: n,
+			url: "2-16.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-2": {
+			type: "spritesheet",
+			base: n,
+			url: "2-2.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-3": {
+			type: "spritesheet",
+			base: n,
+			url: "2-3.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-4": {
+			type: "spritesheet",
+			base: n,
+			url: "2-4.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-5": {
+			type: "spritesheet",
+			base: n,
+			url: "2-5.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-6": {
+			type: "spritesheet",
+			base: n,
+			url: "2-6.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-7": {
+			type: "spritesheet",
+			base: n,
+			url: "2-7.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-8": {
+			type: "spritesheet",
+			base: n,
+			url: "2-8.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-2-9": {
+			type: "spritesheet",
+			base: n,
+			url: "2-9.png",
+			x: 87,
+			y: 51,
+			w: 94,
+			h: 101
+		},
+		"normal-hair-male-3-1": {
+			type: "spritesheet",
+			base: n,
+			url: "3-1.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-10": {
+			type: "spritesheet",
+			base: n,
+			url: "3-10.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-11": {
+			type: "spritesheet",
+			base: n,
+			url: "3-11.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-12": {
+			type: "spritesheet",
+			base: n,
+			url: "3-12.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-13": {
+			type: "spritesheet",
+			base: n,
+			url: "3-13.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-14": {
+			type: "spritesheet",
+			base: n,
+			url: "3-14.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-15": {
+			type: "spritesheet",
+			base: n,
+			url: "3-15.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-16": {
+			type: "spritesheet",
+			base: n,
+			url: "3-16.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-2": {
+			type: "spritesheet",
+			base: n,
+			url: "3-2.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-3": {
+			type: "spritesheet",
+			base: n,
+			url: "3-3.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-4": {
+			type: "spritesheet",
+			base: n,
+			url: "3-4.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-5": {
+			type: "spritesheet",
+			base: n,
+			url: "3-5.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-6": {
+			type: "spritesheet",
+			base: n,
+			url: "3-6.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-7": {
+			type: "spritesheet",
+			base: n,
+			url: "3-7.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-8": {
+			type: "spritesheet",
+			base: n,
+			url: "3-8.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-3-9": {
+			type: "spritesheet",
+			base: n,
+			url: "3-9.png",
+			x: 86,
+			y: 55,
+			w: 100,
+			h: 97
+		},
+		"normal-hair-male-4-1": {
+			type: "spritesheet",
+			base: n,
+			url: "4-1.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-10": {
+			type: "spritesheet",
+			base: n,
+			url: "4-10.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-11": {
+			type: "spritesheet",
+			base: n,
+			url: "4-11.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-12": {
+			type: "spritesheet",
+			base: n,
+			url: "4-12.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-13": {
+			type: "spritesheet",
+			base: n,
+			url: "4-13.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-14": {
+			type: "spritesheet",
+			base: n,
+			url: "4-14.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-15": {
+			type: "spritesheet",
+			base: n,
+			url: "4-15.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-16": {
+			type: "spritesheet",
+			base: n,
+			url: "4-16.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-2": {
+			type: "spritesheet",
+			base: n,
+			url: "4-2.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-3": {
+			type: "spritesheet",
+			base: n,
+			url: "4-3.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-4": {
+			type: "spritesheet",
+			base: n,
+			url: "4-4.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-5": {
+			type: "spritesheet",
+			base: n,
+			url: "4-5.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-6": {
+			type: "spritesheet",
+			base: n,
+			url: "4-6.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-7": {
+			type: "spritesheet",
+			base: n,
+			url: "4-7.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-8": {
+			type: "spritesheet",
+			base: n,
+			url: "4-8.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-4-9": {
+			type: "spritesheet",
+			base: n,
+			url: "4-9.png",
+			x: 86,
+			y: 73,
+			w: 92,
+			h: 77
+		},
+		"normal-hair-male-5-1": {
+			type: "spritesheet",
+			base: n,
+			url: "5-1.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-10": {
+			type: "spritesheet",
+			base: n,
+			url: "5-10.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-11": {
+			type: "spritesheet",
+			base: n,
+			url: "5-11.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-12": {
+			type: "spritesheet",
+			base: n,
+			url: "5-12.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-13": {
+			type: "spritesheet",
+			base: n,
+			url: "5-13.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-14": {
+			type: "spritesheet",
+			base: n,
+			url: "5-14.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-15": {
+			type: "spritesheet",
+			base: n,
+			url: "5-15.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-16": {
+			type: "spritesheet",
+			base: n,
+			url: "5-16.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-2": {
+			type: "spritesheet",
+			base: n,
+			url: "5-2.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-3": {
+			type: "spritesheet",
+			base: n,
+			url: "5-3.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-4": {
+			type: "spritesheet",
+			base: n,
+			url: "5-4.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-5": {
+			type: "spritesheet",
+			base: n,
+			url: "5-5.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-6": {
+			type: "spritesheet",
+			base: n,
+			url: "5-6.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-7": {
+			type: "spritesheet",
+			base: n,
+			url: "5-7.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-8": {
+			type: "spritesheet",
+			base: n,
+			url: "5-8.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-5-9": {
+			type: "spritesheet",
+			base: n,
+			url: "5-9.png",
+			x: 89,
+			y: 75,
+			w: 87,
+			h: 76
+		},
+		"normal-hair-male-6-1": {
+			type: "spritesheet",
+			base: n,
+			url: "6-1.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-10": {
+			type: "spritesheet",
+			base: n,
+			url: "6-10.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-11": {
+			type: "spritesheet",
+			base: n,
+			url: "6-11.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-12": {
+			type: "spritesheet",
+			base: n,
+			url: "6-12.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-13": {
+			type: "spritesheet",
+			base: n,
+			url: "6-13.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-14": {
+			type: "spritesheet",
+			base: n,
+			url: "6-14.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-15": {
+			type: "spritesheet",
+			base: n,
+			url: "6-15.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-16": {
+			type: "spritesheet",
+			base: n,
+			url: "6-16.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-2": {
+			type: "spritesheet",
+			base: n,
+			url: "6-2.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-3": {
+			type: "spritesheet",
+			base: n,
+			url: "6-3.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-4": {
+			type: "spritesheet",
+			base: n,
+			url: "6-4.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-5": {
+			type: "spritesheet",
+			base: n,
+			url: "6-5.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-6": {
+			type: "spritesheet",
+			base: n,
+			url: "6-6.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-7": {
+			type: "spritesheet",
+			base: n,
+			url: "6-7.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-8": {
+			type: "spritesheet",
+			base: n,
+			url: "6-8.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-6-9": {
+			type: "spritesheet",
+			base: n,
+			url: "6-9.png",
+			x: 87,
+			y: 75,
+			w: 85,
+			h: 76
+		},
+		"normal-hair-male-7-1": {
+			type: "spritesheet",
+			base: n,
+			url: "7-1.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-10": {
+			type: "spritesheet",
+			base: n,
+			url: "7-10.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-11": {
+			type: "spritesheet",
+			base: n,
+			url: "7-11.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-12": {
+			type: "spritesheet",
+			base: n,
+			url: "7-12.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-13": {
+			type: "spritesheet",
+			base: n,
+			url: "7-13.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-14": {
+			type: "spritesheet",
+			base: n,
+			url: "7-14.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-15": {
+			type: "spritesheet",
+			base: n,
+			url: "7-15.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-16": {
+			type: "spritesheet",
+			base: n,
+			url: "7-16.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-2": {
+			type: "spritesheet",
+			base: n,
+			url: "7-2.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-3": {
+			type: "spritesheet",
+			base: n,
+			url: "7-3.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-4": {
+			type: "spritesheet",
+			base: n,
+			url: "7-4.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-5": {
+			type: "spritesheet",
+			base: n,
+			url: "7-5.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-6": {
+			type: "spritesheet",
+			base: n,
+			url: "7-6.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-7": {
+			type: "spritesheet",
+			base: n,
+			url: "7-7.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-8": {
+			type: "spritesheet",
+			base: n,
+			url: "7-8.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-7-9": {
+			type: "spritesheet",
+			base: n,
+			url: "7-9.png",
+			x: 76,
+			y: 73,
+			w: 105,
+			h: 78
+		},
+		"normal-hair-male-8-1": {
+			type: "spritesheet",
+			base: n,
+			url: "8-1.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-10": {
+			type: "spritesheet",
+			base: n,
+			url: "8-10.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-11": {
+			type: "spritesheet",
+			base: n,
+			url: "8-11.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-12": {
+			type: "spritesheet",
+			base: n,
+			url: "8-12.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-13": {
+			type: "spritesheet",
+			base: n,
+			url: "8-13.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-14": {
+			type: "spritesheet",
+			base: n,
+			url: "8-14.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-15": {
+			type: "spritesheet",
+			base: n,
+			url: "8-15.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-16": {
+			type: "spritesheet",
+			base: n,
+			url: "8-16.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-2": {
+			type: "spritesheet",
+			base: n,
+			url: "8-2.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-3": {
+			type: "spritesheet",
+			base: n,
+			url: "8-3.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-4": {
+			type: "spritesheet",
+			base: n,
+			url: "8-4.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-5": {
+			type: "spritesheet",
+			base: n,
+			url: "8-5.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-6": {
+			type: "spritesheet",
+			base: n,
+			url: "8-6.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-7": {
+			type: "spritesheet",
+			base: n,
+			url: "8-7.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-8": {
+			type: "spritesheet",
+			base: n,
+			url: "8-8.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"normal-hair-male-8-9": {
+			type: "spritesheet",
+			base: n,
+			url: "8-9.png",
+			x: 82,
+			y: 73,
+			w: 104,
+			h: 81
+		},
+		"reduced-hair-male-1-1": {
+			type: "spritesheet",
+			base: i,
+			url: "1-1.png",
+			x: 41,
+			y: 45,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-10": {
+			type: "spritesheet",
+			base: i,
+			url: "1-10.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-11": {
+			type: "spritesheet",
+			base: i,
+			url: "1-11.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-12": {
+			type: "spritesheet",
+			base: i,
+			url: "1-12.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-13": {
+			type: "spritesheet",
+			base: i,
+			url: "1-13.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-14": {
+			type: "spritesheet",
+			base: i,
+			url: "1-14.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-15": {
+			type: "spritesheet",
+			base: i,
+			url: "1-15.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-16": {
+			type: "spritesheet",
+			base: i,
+			url: "1-16.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-2": {
+			type: "spritesheet",
+			base: i,
+			url: "1-2.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-3": {
+			type: "spritesheet",
+			base: i,
+			url: "1-3.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-4": {
+			type: "spritesheet",
+			base: i,
+			url: "1-4.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-5": {
+			type: "spritesheet",
+			base: i,
+			url: "1-5.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-6": {
+			type: "spritesheet",
+			base: i,
+			url: "1-6.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-7": {
+			type: "spritesheet",
+			base: i,
+			url: "1-7.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-8": {
+			type: "spritesheet",
+			base: i,
+			url: "1-8.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-1-9": {
+			type: "spritesheet",
+			base: i,
+			url: "1-9.png",
+			x: 41,
+			y: 44,
+			w: 46,
+			h: 38
+		},
+		"reduced-hair-male-2-1": {
+			type: "spritesheet",
+			base: i,
+			url: "2-1.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-10": {
+			type: "spritesheet",
+			base: i,
+			url: "2-10.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-11": {
+			type: "spritesheet",
+			base: i,
+			url: "2-11.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-12": {
+			type: "spritesheet",
+			base: i,
+			url: "2-12.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-13": {
+			type: "spritesheet",
+			base: i,
+			url: "2-13.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-14": {
+			type: "spritesheet",
+			base: i,
+			url: "2-14.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-15": {
+			type: "spritesheet",
+			base: i,
+			url: "2-15.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-16": {
+			type: "spritesheet",
+			base: i,
+			url: "2-16.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-2": {
+			type: "spritesheet",
+			base: i,
+			url: "2-2.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-3": {
+			type: "spritesheet",
+			base: i,
+			url: "2-3.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-4": {
+			type: "spritesheet",
+			base: i,
+			url: "2-4.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-5": {
+			type: "spritesheet",
+			base: i,
+			url: "2-5.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-6": {
+			type: "spritesheet",
+			base: i,
+			url: "2-6.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-7": {
+			type: "spritesheet",
+			base: i,
+			url: "2-7.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-8": {
+			type: "spritesheet",
+			base: i,
+			url: "2-8.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-2-9": {
+			type: "spritesheet",
+			base: i,
+			url: "2-9.png",
+			x: 41,
+			y: 32,
+			w: 47,
+			h: 52
+		},
+		"reduced-hair-male-3-1": {
+			type: "spritesheet",
+			base: i,
+			url: "3-1.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-10": {
+			type: "spritesheet",
+			base: i,
+			url: "3-10.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-11": {
+			type: "spritesheet",
+			base: i,
+			url: "3-11.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-12": {
+			type: "spritesheet",
+			base: i,
+			url: "3-12.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-13": {
+			type: "spritesheet",
+			base: i,
+			url: "3-13.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-14": {
+			type: "spritesheet",
+			base: i,
+			url: "3-14.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-15": {
+			type: "spritesheet",
+			base: i,
+			url: "3-15.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-16": {
+			type: "spritesheet",
+			base: i,
+			url: "3-16.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-2": {
+			type: "spritesheet",
+			base: i,
+			url: "3-2.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-3": {
+			type: "spritesheet",
+			base: i,
+			url: "3-3.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-4": {
+			type: "spritesheet",
+			base: i,
+			url: "3-4.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-5": {
+			type: "spritesheet",
+			base: i,
+			url: "3-5.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-6": {
+			type: "spritesheet",
+			base: i,
+			url: "3-6.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-7": {
+			type: "spritesheet",
+			base: i,
+			url: "3-7.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-8": {
+			type: "spritesheet",
+			base: i,
+			url: "3-8.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-3-9": {
+			type: "spritesheet",
+			base: i,
+			url: "3-9.png",
+			x: 41,
+			y: 36,
+			w: 50,
+			h: 48
+		},
+		"reduced-hair-male-4-1": {
+			type: "spritesheet",
+			base: i,
+			url: "4-1.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-10": {
+			type: "spritesheet",
+			base: i,
+			url: "4-10.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-11": {
+			type: "spritesheet",
+			base: i,
+			url: "4-11.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-12": {
+			type: "spritesheet",
+			base: i,
+			url: "4-12.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-13": {
+			type: "spritesheet",
+			base: i,
+			url: "4-13.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-14": {
+			type: "spritesheet",
+			base: i,
+			url: "4-14.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-15": {
+			type: "spritesheet",
+			base: i,
+			url: "4-15.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-16": {
+			type: "spritesheet",
+			base: i,
+			url: "4-16.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-2": {
+			type: "spritesheet",
+			base: i,
+			url: "4-2.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-3": {
+			type: "spritesheet",
+			base: i,
+			url: "4-3.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-4": {
+			type: "spritesheet",
+			base: i,
+			url: "4-4.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-5": {
+			type: "spritesheet",
+			base: i,
+			url: "4-5.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-6": {
+			type: "spritesheet",
+			base: i,
+			url: "4-6.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-7": {
+			type: "spritesheet",
+			base: i,
+			url: "4-7.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-8": {
+			type: "spritesheet",
+			base: i,
+			url: "4-8.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-4-9": {
+			type: "spritesheet",
+			base: i,
+			url: "4-9.png",
+			x: 40,
+			y: 44,
+			w: 47,
+			h: 39
+		},
+		"reduced-hair-male-5-1": {
+			type: "spritesheet",
+			base: i,
+			url: "5-1.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-10": {
+			type: "spritesheet",
+			base: i,
+			url: "5-10.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-11": {
+			type: "spritesheet",
+			base: i,
+			url: "5-11.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-12": {
+			type: "spritesheet",
+			base: i,
+			url: "5-12.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-13": {
+			type: "spritesheet",
+			base: i,
+			url: "5-13.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-14": {
+			type: "spritesheet",
+			base: i,
+			url: "5-14.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-15": {
+			type: "spritesheet",
+			base: i,
+			url: "5-15.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-16": {
+			type: "spritesheet",
+			base: i,
+			url: "5-16.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-2": {
+			type: "spritesheet",
+			base: i,
+			url: "5-2.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-3": {
+			type: "spritesheet",
+			base: i,
+			url: "5-3.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-4": {
+			type: "spritesheet",
+			base: i,
+			url: "5-4.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-5": {
+			type: "spritesheet",
+			base: i,
+			url: "5-5.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-6": {
+			type: "spritesheet",
+			base: i,
+			url: "5-6.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-7": {
+			type: "spritesheet",
+			base: i,
+			url: "5-7.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-8": {
+			type: "spritesheet",
+			base: i,
+			url: "5-8.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-5-9": {
+			type: "spritesheet",
+			base: i,
+			url: "5-9.png",
+			x: 42,
+			y: 44,
+			w: 44,
+			h: 39
+		},
+		"reduced-hair-male-6-1": {
+			type: "spritesheet",
+			base: i,
+			url: "6-1.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-10": {
+			type: "spritesheet",
+			base: i,
+			url: "6-10.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-11": {
+			type: "spritesheet",
+			base: i,
+			url: "6-11.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-12": {
+			type: "spritesheet",
+			base: i,
+			url: "6-12.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-13": {
+			type: "spritesheet",
+			base: i,
+			url: "6-13.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-14": {
+			type: "spritesheet",
+			base: i,
+			url: "6-14.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-15": {
+			type: "spritesheet",
+			base: i,
+			url: "6-15.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-16": {
+			type: "spritesheet",
+			base: i,
+			url: "6-16.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-2": {
+			type: "spritesheet",
+			base: i,
+			url: "6-2.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-3": {
+			type: "spritesheet",
+			base: i,
+			url: "6-3.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-4": {
+			type: "spritesheet",
+			base: i,
+			url: "6-4.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-5": {
+			type: "spritesheet",
+			base: i,
+			url: "6-5.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-6": {
+			type: "spritesheet",
+			base: i,
+			url: "6-6.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-7": {
+			type: "spritesheet",
+			base: i,
+			url: "6-7.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-8": {
+			type: "spritesheet",
+			base: i,
+			url: "6-8.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-6-9": {
+			type: "spritesheet",
+			base: i,
+			url: "6-9.png",
+			x: 41,
+			y: 44,
+			w: 45,
+			h: 38
+		},
+		"reduced-hair-male-7-1": {
+			type: "spritesheet",
+			base: i,
+			url: "7-1.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-10": {
+			type: "spritesheet",
+			base: i,
+			url: "7-10.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-11": {
+			type: "spritesheet",
+			base: i,
+			url: "7-11.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-12": {
+			type: "spritesheet",
+			base: i,
+			url: "7-12.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-13": {
+			type: "spritesheet",
+			base: i,
+			url: "7-13.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-14": {
+			type: "spritesheet",
+			base: i,
+			url: "7-14.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-15": {
+			type: "spritesheet",
+			base: i,
+			url: "7-15.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-16": {
+			type: "spritesheet",
+			base: i,
+			url: "7-16.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-2": {
+			type: "spritesheet",
+			base: i,
+			url: "7-2.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-3": {
+			type: "spritesheet",
+			base: i,
+			url: "7-3.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-4": {
+			type: "spritesheet",
+			base: i,
+			url: "7-4.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-5": {
+			type: "spritesheet",
+			base: i,
+			url: "7-5.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-6": {
+			type: "spritesheet",
+			base: i,
+			url: "7-6.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-7": {
+			type: "spritesheet",
+			base: i,
+			url: "7-7.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-8": {
+			type: "spritesheet",
+			base: i,
+			url: "7-8.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-7-9": {
+			type: "spritesheet",
+			base: i,
+			url: "7-9.png",
+			x: 36,
+			y: 44,
+			w: 53,
+			h: 38
+		},
+		"reduced-hair-male-8-1": {
+			type: "spritesheet",
+			base: i,
+			url: "8-1.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-10": {
+			type: "spritesheet",
+			base: i,
+			url: "8-10.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-11": {
+			type: "spritesheet",
+			base: i,
+			url: "8-11.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-12": {
+			type: "spritesheet",
+			base: i,
+			url: "8-12.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-13": {
+			type: "spritesheet",
+			base: i,
+			url: "8-13.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-14": {
+			type: "spritesheet",
+			base: i,
+			url: "8-14.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-15": {
+			type: "spritesheet",
+			base: i,
+			url: "8-15.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-16": {
+			type: "spritesheet",
+			base: i,
+			url: "8-16.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-2": {
+			type: "spritesheet",
+			base: i,
+			url: "8-2.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-3": {
+			type: "spritesheet",
+			base: i,
+			url: "8-3.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-4": {
+			type: "spritesheet",
+			base: i,
+			url: "8-4.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-5": {
+			type: "spritesheet",
+			base: i,
+			url: "8-5.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-6": {
+			type: "spritesheet",
+			base: i,
+			url: "8-6.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-7": {
+			type: "spritesheet",
+			base: i,
+			url: "8-7.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-8": {
+			type: "spritesheet",
+			base: i,
+			url: "8-8.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"reduced-hair-male-8-9": {
+			type: "spritesheet",
+			base: i,
+			url: "8-9.png",
+			x: 40,
+			y: 44,
+			w: 50,
+			h: 40
+		},
+		"normal-hair-female-1-1": {
+			type: "spritesheet",
+			base: l,
+			url: "1-1.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-10": {
+			type: "spritesheet",
+			base: l,
+			url: "1-10.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-11": {
+			type: "spritesheet",
+			base: l,
+			url: "1-11.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-12": {
+			type: "spritesheet",
+			base: l,
+			url: "1-12.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-13": {
+			type: "spritesheet",
+			base: l,
+			url: "1-13.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-14": {
+			type: "spritesheet",
+			base: l,
+			url: "1-14.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-15": {
+			type: "spritesheet",
+			base: l,
+			url: "1-15.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-16": {
+			type: "spritesheet",
+			base: l,
+			url: "1-16.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-2": {
+			type: "spritesheet",
+			base: l,
+			url: "1-2.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-3": {
+			type: "spritesheet",
+			base: l,
+			url: "1-3.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-4": {
+			type: "spritesheet",
+			base: l,
+			url: "1-4.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-5": {
+			type: "spritesheet",
+			base: l,
+			url: "1-5.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-6": {
+			type: "spritesheet",
+			base: l,
+			url: "1-6.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-7": {
+			type: "spritesheet",
+			base: l,
+			url: "1-7.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-8": {
+			type: "spritesheet",
+			base: l,
+			url: "1-8.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-1-9": {
+			type: "spritesheet",
+			base: l,
+			url: "1-9.png",
+			x: 54,
+			y: 77,
+			w: 120,
+			h: 107
+		},
+		"normal-hair-female-10-1": {
+			type: "spritesheet",
+			base: l,
+			url: "10-1.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-10": {
+			type: "spritesheet",
+			base: l,
+			url: "10-10.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-11": {
+			type: "spritesheet",
+			base: l,
+			url: "10-11.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-12": {
+			type: "spritesheet",
+			base: l,
+			url: "10-12.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-13": {
+			type: "spritesheet",
+			base: l,
+			url: "10-13.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-14": {
+			type: "spritesheet",
+			base: l,
+			url: "10-14.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-15": {
+			type: "spritesheet",
+			base: l,
+			url: "10-15.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-16": {
+			type: "spritesheet",
+			base: l,
+			url: "10-16.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-2": {
+			type: "spritesheet",
+			base: l,
+			url: "10-2.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-3": {
+			type: "spritesheet",
+			base: l,
+			url: "10-3.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-4": {
+			type: "spritesheet",
+			base: l,
+			url: "10-4.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-5": {
+			type: "spritesheet",
+			base: l,
+			url: "10-5.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-6": {
+			type: "spritesheet",
+			base: l,
+			url: "10-6.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-7": {
+			type: "spritesheet",
+			base: l,
+			url: "10-7.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-8": {
+			type: "spritesheet",
+			base: l,
+			url: "10-8.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-10-9": {
+			type: "spritesheet",
+			base: l,
+			url: "10-9.png",
+			x: 68,
+			y: 77,
+			w: 108,
+			h: 102
+		},
+		"normal-hair-female-11-1": {
+			type: "spritesheet",
+			base: l,
+			url: "11-1.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-10": {
+			type: "spritesheet",
+			base: l,
+			url: "11-10.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-11": {
+			type: "spritesheet",
+			base: l,
+			url: "11-11.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-12": {
+			type: "spritesheet",
+			base: l,
+			url: "11-12.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-13": {
+			type: "spritesheet",
+			base: l,
+			url: "11-13.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-14": {
+			type: "spritesheet",
+			base: l,
+			url: "11-14.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-15": {
+			type: "spritesheet",
+			base: l,
+			url: "11-15.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-16": {
+			type: "spritesheet",
+			base: l,
+			url: "11-16.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-2": {
+			type: "spritesheet",
+			base: l,
+			url: "11-2.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-3": {
+			type: "spritesheet",
+			base: l,
+			url: "11-3.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-4": {
+			type: "spritesheet",
+			base: l,
+			url: "11-4.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-5": {
+			type: "spritesheet",
+			base: l,
+			url: "11-5.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-6": {
+			type: "spritesheet",
+			base: l,
+			url: "11-6.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-7": {
+			type: "spritesheet",
+			base: l,
+			url: "11-7.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-8": {
+			type: "spritesheet",
+			base: l,
+			url: "11-8.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-11-9": {
+			type: "spritesheet",
+			base: l,
+			url: "11-9.png",
+			x: 68,
+			y: 77,
+			w: 106,
+			h: 102
+		},
+		"normal-hair-female-12-1": {
+			type: "spritesheet",
+			base: l,
+			url: "12-1.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-10": {
+			type: "spritesheet",
+			base: l,
+			url: "12-10.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-11": {
+			type: "spritesheet",
+			base: l,
+			url: "12-11.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-12": {
+			type: "spritesheet",
+			base: l,
+			url: "12-12.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-13": {
+			type: "spritesheet",
+			base: l,
+			url: "12-13.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-14": {
+			type: "spritesheet",
+			base: l,
+			url: "12-14.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-15": {
+			type: "spritesheet",
+			base: l,
+			url: "12-15.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-16": {
+			type: "spritesheet",
+			base: l,
+			url: "12-16.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-2": {
+			type: "spritesheet",
+			base: l,
+			url: "12-2.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-3": {
+			type: "spritesheet",
+			base: l,
+			url: "12-3.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-4": {
+			type: "spritesheet",
+			base: l,
+			url: "12-4.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-5": {
+			type: "spritesheet",
+			base: l,
+			url: "12-5.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-6": {
+			type: "spritesheet",
+			base: l,
+			url: "12-6.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-7": {
+			type: "spritesheet",
+			base: l,
+			url: "12-7.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-8": {
+			type: "spritesheet",
+			base: l,
+			url: "12-8.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-12-9": {
+			type: "spritesheet",
+			base: l,
+			url: "12-9.png",
+			x: 68,
+			y: 75,
+			w: 106,
+			h: 104
+		},
+		"normal-hair-female-13-1": {
+			type: "spritesheet",
+			base: l,
+			url: "13-1.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-10": {
+			type: "spritesheet",
+			base: l,
+			url: "13-10.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-11": {
+			type: "spritesheet",
+			base: l,
+			url: "13-11.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-12": {
+			type: "spritesheet",
+			base: l,
+			url: "13-12.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-13": {
+			type: "spritesheet",
+			base: l,
+			url: "13-13.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-14": {
+			type: "spritesheet",
+			base: l,
+			url: "13-14.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-15": {
+			type: "spritesheet",
+			base: l,
+			url: "13-15.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-16": {
+			type: "spritesheet",
+			base: l,
+			url: "13-16.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-2": {
+			type: "spritesheet",
+			base: l,
+			url: "13-2.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-3": {
+			type: "spritesheet",
+			base: l,
+			url: "13-3.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-4": {
+			type: "spritesheet",
+			base: l,
+			url: "13-4.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-5": {
+			type: "spritesheet",
+			base: l,
+			url: "13-5.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-6": {
+			type: "spritesheet",
+			base: l,
+			url: "13-6.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-7": {
+			type: "spritesheet",
+			base: l,
+			url: "13-7.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-8": {
+			type: "spritesheet",
+			base: l,
+			url: "13-8.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-13-9": {
+			type: "spritesheet",
+			base: l,
+			url: "13-9.png",
+			x: 48,
+			y: 77,
+			w: 126,
+			h: 110
+		},
+		"normal-hair-female-14-1": {
+			type: "spritesheet",
+			base: l,
+			url: "14-1.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-10": {
+			type: "spritesheet",
+			base: l,
+			url: "14-10.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-11": {
+			type: "spritesheet",
+			base: l,
+			url: "14-11.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-12": {
+			type: "spritesheet",
+			base: l,
+			url: "14-12.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-13": {
+			type: "spritesheet",
+			base: l,
+			url: "14-13.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-14": {
+			type: "spritesheet",
+			base: l,
+			url: "14-14.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-15": {
+			type: "spritesheet",
+			base: l,
+			url: "14-15.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-16": {
+			type: "spritesheet",
+			base: l,
+			url: "14-16.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-2": {
+			type: "spritesheet",
+			base: l,
+			url: "14-2.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-3": {
+			type: "spritesheet",
+			base: l,
+			url: "14-3.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-4": {
+			type: "spritesheet",
+			base: l,
+			url: "14-4.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-5": {
+			type: "spritesheet",
+			base: l,
+			url: "14-5.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-6": {
+			type: "spritesheet",
+			base: l,
+			url: "14-6.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-7": {
+			type: "spritesheet",
+			base: l,
+			url: "14-7.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-8": {
+			type: "spritesheet",
+			base: l,
+			url: "14-8.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-14-9": {
+			type: "spritesheet",
+			base: l,
+			url: "14-9.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-1": {
+			type: "spritesheet",
+			base: l,
+			url: "15-1.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-10": {
+			type: "spritesheet",
+			base: l,
+			url: "15-10.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-11": {
+			type: "spritesheet",
+			base: l,
+			url: "15-11.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-12": {
+			type: "spritesheet",
+			base: l,
+			url: "15-12.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-13": {
+			type: "spritesheet",
+			base: l,
+			url: "15-13.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-14": {
+			type: "spritesheet",
+			base: l,
+			url: "15-14.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-15": {
+			type: "spritesheet",
+			base: l,
+			url: "15-15.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-16": {
+			type: "spritesheet",
+			base: l,
+			url: "15-16.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-2": {
+			type: "spritesheet",
+			base: l,
+			url: "15-2.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-3": {
+			type: "spritesheet",
+			base: l,
+			url: "15-3.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-4": {
+			type: "spritesheet",
+			base: l,
+			url: "15-4.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-5": {
+			type: "spritesheet",
+			base: l,
+			url: "15-5.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-6": {
+			type: "spritesheet",
+			base: l,
+			url: "15-6.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-7": {
+			type: "spritesheet",
+			base: l,
+			url: "15-7.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-8": {
+			type: "spritesheet",
+			base: l,
+			url: "15-8.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-15-9": {
+			type: "spritesheet",
+			base: l,
+			url: "15-9.png",
+			x: 48,
+			y: 74,
+			w: 125,
+			h: 111
+		},
+		"normal-hair-female-2-1": {
+			type: "spritesheet",
+			base: l,
+			url: "2-1.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-10": {
+			type: "spritesheet",
+			base: l,
+			url: "2-10.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-11": {
+			type: "spritesheet",
+			base: l,
+			url: "2-11.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-12": {
+			type: "spritesheet",
+			base: l,
+			url: "2-12.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-13": {
+			type: "spritesheet",
+			base: l,
+			url: "2-13.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-14": {
+			type: "spritesheet",
+			base: l,
+			url: "2-14.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-15": {
+			type: "spritesheet",
+			base: l,
+			url: "2-15.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-16": {
+			type: "spritesheet",
+			base: l,
+			url: "2-16.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-2": {
+			type: "spritesheet",
+			base: l,
+			url: "2-2.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-3": {
+			type: "spritesheet",
+			base: l,
+			url: "2-3.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-4": {
+			type: "spritesheet",
+			base: l,
+			url: "2-4.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-5": {
+			type: "spritesheet",
+			base: l,
+			url: "2-5.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-6": {
+			type: "spritesheet",
+			base: l,
+			url: "2-6.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-7": {
+			type: "spritesheet",
+			base: l,
+			url: "2-7.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-8": {
+			type: "spritesheet",
+			base: l,
+			url: "2-8.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-2-9": {
+			type: "spritesheet",
+			base: l,
+			url: "2-9.png",
+			x: 54,
+			y: 77,
+			w: 122,
+			h: 107
+		},
+		"normal-hair-female-3-1": {
+			type: "spritesheet",
+			base: l,
+			url: "3-1.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-10": {
+			type: "spritesheet",
+			base: l,
+			url: "3-10.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-11": {
+			type: "spritesheet",
+			base: l,
+			url: "3-11.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-12": {
+			type: "spritesheet",
+			base: l,
+			url: "3-12.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-13": {
+			type: "spritesheet",
+			base: l,
+			url: "3-13.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-14": {
+			type: "spritesheet",
+			base: l,
+			url: "3-14.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-15": {
+			type: "spritesheet",
+			base: l,
+			url: "3-15.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-16": {
+			type: "spritesheet",
+			base: l,
+			url: "3-16.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-2": {
+			type: "spritesheet",
+			base: l,
+			url: "3-2.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-3": {
+			type: "spritesheet",
+			base: l,
+			url: "3-3.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-4": {
+			type: "spritesheet",
+			base: l,
+			url: "3-4.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-5": {
+			type: "spritesheet",
+			base: l,
+			url: "3-5.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-6": {
+			type: "spritesheet",
+			base: l,
+			url: "3-6.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-7": {
+			type: "spritesheet",
+			base: l,
+			url: "3-7.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-8": {
+			type: "spritesheet",
+			base: l,
+			url: "3-8.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-3-9": {
+			type: "spritesheet",
+			base: l,
+			url: "3-9.png",
+			x: 54,
+			y: 77,
+			w: 134,
+			h: 107
+		},
+		"normal-hair-female-4-1": {
+			type: "spritesheet",
+			base: l,
+			url: "4-1.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-10": {
+			type: "spritesheet",
+			base: l,
+			url: "4-10.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-11": {
+			type: "spritesheet",
+			base: l,
+			url: "4-11.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-12": {
+			type: "spritesheet",
+			base: l,
+			url: "4-12.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-13": {
+			type: "spritesheet",
+			base: l,
+			url: "4-13.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-14": {
+			type: "spritesheet",
+			base: l,
+			url: "4-14.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-15": {
+			type: "spritesheet",
+			base: l,
+			url: "4-15.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-16": {
+			type: "spritesheet",
+			base: l,
+			url: "4-16.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-2": {
+			type: "spritesheet",
+			base: l,
+			url: "4-2.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-3": {
+			type: "spritesheet",
+			base: l,
+			url: "4-3.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-4": {
+			type: "spritesheet",
+			base: l,
+			url: "4-4.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-5": {
+			type: "spritesheet",
+			base: l,
+			url: "4-5.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-6": {
+			type: "spritesheet",
+			base: l,
+			url: "4-6.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-7": {
+			type: "spritesheet",
+			base: l,
+			url: "4-7.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-8": {
+			type: "spritesheet",
+			base: l,
+			url: "4-8.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-4-9": {
+			type: "spritesheet",
+			base: l,
+			url: "4-9.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-1": {
+			type: "spritesheet",
+			base: l,
+			url: "5-1.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-10": {
+			type: "spritesheet",
+			base: l,
+			url: "5-10.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-11": {
+			type: "spritesheet",
+			base: l,
+			url: "5-11.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-12": {
+			type: "spritesheet",
+			base: l,
+			url: "5-12.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-13": {
+			type: "spritesheet",
+			base: l,
+			url: "5-13.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-14": {
+			type: "spritesheet",
+			base: l,
+			url: "5-14.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-15": {
+			type: "spritesheet",
+			base: l,
+			url: "5-15.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-16": {
+			type: "spritesheet",
+			base: l,
+			url: "5-16.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-2": {
+			type: "spritesheet",
+			base: l,
+			url: "5-2.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-3": {
+			type: "spritesheet",
+			base: l,
+			url: "5-3.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-4": {
+			type: "spritesheet",
+			base: l,
+			url: "5-4.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-5": {
+			type: "spritesheet",
+			base: l,
+			url: "5-5.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-6": {
+			type: "spritesheet",
+			base: l,
+			url: "5-6.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-7": {
+			type: "spritesheet",
+			base: l,
+			url: "5-7.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-8": {
+			type: "spritesheet",
+			base: l,
+			url: "5-8.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-5-9": {
+			type: "spritesheet",
+			base: l,
+			url: "5-9.png",
+			x: 54,
+			y: 77,
+			w: 119,
+			h: 107
+		},
+		"normal-hair-female-6-1": {
+			type: "spritesheet",
+			base: l,
+			url: "6-1.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-10": {
+			type: "spritesheet",
+			base: l,
+			url: "6-10.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-11": {
+			type: "spritesheet",
+			base: l,
+			url: "6-11.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-12": {
+			type: "spritesheet",
+			base: l,
+			url: "6-12.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-13": {
+			type: "spritesheet",
+			base: l,
+			url: "6-13.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-14": {
+			type: "spritesheet",
+			base: l,
+			url: "6-14.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-15": {
+			type: "spritesheet",
+			base: l,
+			url: "6-15.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-16": {
+			type: "spritesheet",
+			base: l,
+			url: "6-16.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-2": {
+			type: "spritesheet",
+			base: l,
+			url: "6-2.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-3": {
+			type: "spritesheet",
+			base: l,
+			url: "6-3.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-4": {
+			type: "spritesheet",
+			base: l,
+			url: "6-4.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-5": {
+			type: "spritesheet",
+			base: l,
+			url: "6-5.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-6": {
+			type: "spritesheet",
+			base: l,
+			url: "6-6.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-7": {
+			type: "spritesheet",
+			base: l,
+			url: "6-7.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-8": {
+			type: "spritesheet",
+			base: l,
+			url: "6-8.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-6-9": {
+			type: "spritesheet",
+			base: l,
+			url: "6-9.png",
+			x: 48,
+			y: 77,
+			w: 140,
+			h: 110
+		},
+		"normal-hair-female-7-1": {
+			type: "spritesheet",
+			base: l,
+			url: "7-1.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-10": {
+			type: "spritesheet",
+			base: l,
+			url: "7-10.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-11": {
+			type: "spritesheet",
+			base: l,
+			url: "7-11.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-12": {
+			type: "spritesheet",
+			base: l,
+			url: "7-12.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-13": {
+			type: "spritesheet",
+			base: l,
+			url: "7-13.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-14": {
+			type: "spritesheet",
+			base: l,
+			url: "7-14.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-15": {
+			type: "spritesheet",
+			base: l,
+			url: "7-15.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-16": {
+			type: "spritesheet",
+			base: l,
+			url: "7-16.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-2": {
+			type: "spritesheet",
+			base: l,
+			url: "7-2.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-3": {
+			type: "spritesheet",
+			base: l,
+			url: "7-3.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-4": {
+			type: "spritesheet",
+			base: l,
+			url: "7-4.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-5": {
+			type: "spritesheet",
+			base: l,
+			url: "7-5.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-6": {
+			type: "spritesheet",
+			base: l,
+			url: "7-6.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-7": {
+			type: "spritesheet",
+			base: l,
+			url: "7-7.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-8": {
+			type: "spritesheet",
+			base: l,
+			url: "7-8.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-7-9": {
+			type: "spritesheet",
+			base: l,
+			url: "7-9.png",
+			x: 75,
+			y: 74,
+			w: 98,
+			h: 93
+		},
+		"normal-hair-female-8-1": {
+			type: "spritesheet",
+			base: l,
+			url: "8-1.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-10": {
+			type: "spritesheet",
+			base: l,
+			url: "8-10.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-11": {
+			type: "spritesheet",
+			base: l,
+			url: "8-11.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-12": {
+			type: "spritesheet",
+			base: l,
+			url: "8-12.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-13": {
+			type: "spritesheet",
+			base: l,
+			url: "8-13.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-14": {
+			type: "spritesheet",
+			base: l,
+			url: "8-14.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-15": {
+			type: "spritesheet",
+			base: l,
+			url: "8-15.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-16": {
+			type: "spritesheet",
+			base: l,
+			url: "8-16.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-2": {
+			type: "spritesheet",
+			base: l,
+			url: "8-2.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-3": {
+			type: "spritesheet",
+			base: l,
+			url: "8-3.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-4": {
+			type: "spritesheet",
+			base: l,
+			url: "8-4.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-5": {
+			type: "spritesheet",
+			base: l,
+			url: "8-5.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-6": {
+			type: "spritesheet",
+			base: l,
+			url: "8-6.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-7": {
+			type: "spritesheet",
+			base: l,
+			url: "8-7.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-8": {
+			type: "spritesheet",
+			base: l,
+			url: "8-8.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-8-9": {
+			type: "spritesheet",
+			base: l,
+			url: "8-9.png",
+			x: 73,
+			y: 75,
+			w: 101,
+			h: 90
+		},
+		"normal-hair-female-9-1": {
+			type: "spritesheet",
+			base: l,
+			url: "9-1.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-10": {
+			type: "spritesheet",
+			base: l,
+			url: "9-10.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-11": {
+			type: "spritesheet",
+			base: l,
+			url: "9-11.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-12": {
+			type: "spritesheet",
+			base: l,
+			url: "9-12.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-13": {
+			type: "spritesheet",
+			base: l,
+			url: "9-13.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-14": {
+			type: "spritesheet",
+			base: l,
+			url: "9-14.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-15": {
+			type: "spritesheet",
+			base: l,
+			url: "9-15.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-16": {
+			type: "spritesheet",
+			base: l,
+			url: "9-16.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-2": {
+			type: "spritesheet",
+			base: l,
+			url: "9-2.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-3": {
+			type: "spritesheet",
+			base: l,
+			url: "9-3.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-4": {
+			type: "spritesheet",
+			base: l,
+			url: "9-4.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-5": {
+			type: "spritesheet",
+			base: l,
+			url: "9-5.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-6": {
+			type: "spritesheet",
+			base: l,
+			url: "9-6.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-7": {
+			type: "spritesheet",
+			base: l,
+			url: "9-7.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-8": {
+			type: "spritesheet",
+			base: l,
+			url: "9-8.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"normal-hair-female-9-9": {
+			type: "spritesheet",
+			base: l,
+			url: "9-9.png",
+			x: 75,
+			y: 77,
+			w: 113,
+			h: 88
+		},
+		"reduced-hair-female-1-1": {
+			type: "spritesheet",
+			base: a,
+			url: "1-1.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-10": {
+			type: "spritesheet",
+			base: a,
+			url: "1-10.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-11": {
+			type: "spritesheet",
+			base: a,
+			url: "1-11.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-12": {
+			type: "spritesheet",
+			base: a,
+			url: "1-12.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-13": {
+			type: "spritesheet",
+			base: a,
+			url: "1-13.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-14": {
+			type: "spritesheet",
+			base: a,
+			url: "1-14.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-15": {
+			type: "spritesheet",
+			base: a,
+			url: "1-15.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-16": {
+			type: "spritesheet",
+			base: a,
+			url: "1-16.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-2": {
+			type: "spritesheet",
+			base: a,
+			url: "1-2.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-3": {
+			type: "spritesheet",
+			base: a,
+			url: "1-3.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-4": {
+			type: "spritesheet",
+			base: a,
+			url: "1-4.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-5": {
+			type: "spritesheet",
+			base: a,
+			url: "1-5.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-6": {
+			type: "spritesheet",
+			base: a,
+			url: "1-6.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-7": {
+			type: "spritesheet",
+			base: a,
+			url: "1-7.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-8": {
+			type: "spritesheet",
+			base: a,
+			url: "1-8.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-1-9": {
+			type: "spritesheet",
+			base: a,
+			url: "1-9.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-10-1": {
+			type: "spritesheet",
+			base: a,
+			url: "10-1.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-10": {
+			type: "spritesheet",
+			base: a,
+			url: "10-10.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-11": {
+			type: "spritesheet",
+			base: a,
+			url: "10-11.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-12": {
+			type: "spritesheet",
+			base: a,
+			url: "10-12.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-13": {
+			type: "spritesheet",
+			base: a,
+			url: "10-13.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-14": {
+			type: "spritesheet",
+			base: a,
+			url: "10-14.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-15": {
+			type: "spritesheet",
+			base: a,
+			url: "10-15.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-16": {
+			type: "spritesheet",
+			base: a,
+			url: "10-16.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-2": {
+			type: "spritesheet",
+			base: a,
+			url: "10-2.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-3": {
+			type: "spritesheet",
+			base: a,
+			url: "10-3.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-4": {
+			type: "spritesheet",
+			base: a,
+			url: "10-4.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-5": {
+			type: "spritesheet",
+			base: a,
+			url: "10-5.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-6": {
+			type: "spritesheet",
+			base: a,
+			url: "10-6.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-7": {
+			type: "spritesheet",
+			base: a,
+			url: "10-7.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-8": {
+			type: "spritesheet",
+			base: a,
+			url: "10-8.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-10-9": {
+			type: "spritesheet",
+			base: a,
+			url: "10-9.png",
+			x: 33,
+			y: 46,
+			w: 53,
+			h: 50
+		},
+		"reduced-hair-female-11-1": {
+			type: "spritesheet",
+			base: a,
+			url: "11-1.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-10": {
+			type: "spritesheet",
+			base: a,
+			url: "11-10.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-11": {
+			type: "spritesheet",
+			base: a,
+			url: "11-11.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-12": {
+			type: "spritesheet",
+			base: a,
+			url: "11-12.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-13": {
+			type: "spritesheet",
+			base: a,
+			url: "11-13.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-14": {
+			type: "spritesheet",
+			base: a,
+			url: "11-14.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-15": {
+			type: "spritesheet",
+			base: a,
+			url: "11-15.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-16": {
+			type: "spritesheet",
+			base: a,
+			url: "11-16.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-2": {
+			type: "spritesheet",
+			base: a,
+			url: "11-2.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-3": {
+			type: "spritesheet",
+			base: a,
+			url: "11-3.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-4": {
+			type: "spritesheet",
+			base: a,
+			url: "11-4.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-5": {
+			type: "spritesheet",
+			base: a,
+			url: "11-5.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-6": {
+			type: "spritesheet",
+			base: a,
+			url: "11-6.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-7": {
+			type: "spritesheet",
+			base: a,
+			url: "11-7.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-8": {
+			type: "spritesheet",
+			base: a,
+			url: "11-8.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-11-9": {
+			type: "spritesheet",
+			base: a,
+			url: "11-9.png",
+			x: 33,
+			y: 46,
+			w: 52,
+			h: 50
+		},
+		"reduced-hair-female-12-1": {
+			type: "spritesheet",
+			base: a,
+			url: "12-1.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-10": {
+			type: "spritesheet",
+			base: a,
+			url: "12-10.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-11": {
+			type: "spritesheet",
+			base: a,
+			url: "12-11.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-12": {
+			type: "spritesheet",
+			base: a,
+			url: "12-12.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-13": {
+			type: "spritesheet",
+			base: a,
+			url: "12-13.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-14": {
+			type: "spritesheet",
+			base: a,
+			url: "12-14.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-15": {
+			type: "spritesheet",
+			base: a,
+			url: "12-15.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-16": {
+			type: "spritesheet",
+			base: a,
+			url: "12-16.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-2": {
+			type: "spritesheet",
+			base: a,
+			url: "12-2.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-3": {
+			type: "spritesheet",
+			base: a,
+			url: "12-3.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-4": {
+			type: "spritesheet",
+			base: a,
+			url: "12-4.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-5": {
+			type: "spritesheet",
+			base: a,
+			url: "12-5.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-6": {
+			type: "spritesheet",
+			base: a,
+			url: "12-6.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-7": {
+			type: "spritesheet",
+			base: a,
+			url: "12-7.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-8": {
+			type: "spritesheet",
+			base: a,
+			url: "12-8.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-12-9": {
+			type: "spritesheet",
+			base: a,
+			url: "12-9.png",
+			x: 33,
+			y: 44,
+			w: 52,
+			h: 52
+		},
+		"reduced-hair-female-13-1": {
+			type: "spritesheet",
+			base: a,
+			url: "13-1.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-10": {
+			type: "spritesheet",
+			base: a,
+			url: "13-10.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-11": {
+			type: "spritesheet",
+			base: a,
+			url: "13-11.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-12": {
+			type: "spritesheet",
+			base: a,
+			url: "13-12.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-13": {
+			type: "spritesheet",
+			base: a,
+			url: "13-13.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-14": {
+			type: "spritesheet",
+			base: a,
+			url: "13-14.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-15": {
+			type: "spritesheet",
+			base: a,
+			url: "13-15.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-16": {
+			type: "spritesheet",
+			base: a,
+			url: "13-16.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-2": {
+			type: "spritesheet",
+			base: a,
+			url: "13-2.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-3": {
+			type: "spritesheet",
+			base: a,
+			url: "13-3.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-4": {
+			type: "spritesheet",
+			base: a,
+			url: "13-4.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-5": {
+			type: "spritesheet",
+			base: a,
+			url: "13-5.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-6": {
+			type: "spritesheet",
+			base: a,
+			url: "13-6.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-7": {
+			type: "spritesheet",
+			base: a,
+			url: "13-7.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-8": {
+			type: "spritesheet",
+			base: a,
+			url: "13-8.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-13-9": {
+			type: "spritesheet",
+			base: a,
+			url: "13-9.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-1": {
+			type: "spritesheet",
+			base: a,
+			url: "14-1.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-10": {
+			type: "spritesheet",
+			base: a,
+			url: "14-10.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-11": {
+			type: "spritesheet",
+			base: a,
+			url: "14-11.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-12": {
+			type: "spritesheet",
+			base: a,
+			url: "14-12.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-13": {
+			type: "spritesheet",
+			base: a,
+			url: "14-13.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-14": {
+			type: "spritesheet",
+			base: a,
+			url: "14-14.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-15": {
+			type: "spritesheet",
+			base: a,
+			url: "14-15.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-16": {
+			type: "spritesheet",
+			base: a,
+			url: "14-16.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-2": {
+			type: "spritesheet",
+			base: a,
+			url: "14-2.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-3": {
+			type: "spritesheet",
+			base: a,
+			url: "14-3.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-4": {
+			type: "spritesheet",
+			base: a,
+			url: "14-4.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-5": {
+			type: "spritesheet",
+			base: a,
+			url: "14-5.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-6": {
+			type: "spritesheet",
+			base: a,
+			url: "14-6.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-7": {
+			type: "spritesheet",
+			base: a,
+			url: "14-7.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-8": {
+			type: "spritesheet",
+			base: a,
+			url: "14-8.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-14-9": {
+			type: "spritesheet",
+			base: a,
+			url: "14-9.png",
+			x: 22,
+			y: 46,
+			w: 63,
+			h: 55
+		},
+		"reduced-hair-female-15-1": {
+			type: "spritesheet",
+			base: a,
+			url: "15-1.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-10": {
+			type: "spritesheet",
+			base: a,
+			url: "15-10.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-11": {
+			type: "spritesheet",
+			base: a,
+			url: "15-11.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-12": {
+			type: "spritesheet",
+			base: a,
+			url: "15-12.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-13": {
+			type: "spritesheet",
+			base: a,
+			url: "15-13.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-14": {
+			type: "spritesheet",
+			base: a,
+			url: "15-14.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-15": {
+			type: "spritesheet",
+			base: a,
+			url: "15-15.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-16": {
+			type: "spritesheet",
+			base: a,
+			url: "15-16.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-2": {
+			type: "spritesheet",
+			base: a,
+			url: "15-2.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-3": {
+			type: "spritesheet",
+			base: a,
+			url: "15-3.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-4": {
+			type: "spritesheet",
+			base: a,
+			url: "15-4.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-5": {
+			type: "spritesheet",
+			base: a,
+			url: "15-5.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-6": {
+			type: "spritesheet",
+			base: a,
+			url: "15-6.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-7": {
+			type: "spritesheet",
+			base: a,
+			url: "15-7.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-8": {
+			type: "spritesheet",
+			base: a,
+			url: "15-8.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-15-9": {
+			type: "spritesheet",
+			base: a,
+			url: "15-9.png",
+			x: 22,
+			y: 46,
+			w: 64,
+			h: 55
+		},
+		"reduced-hair-female-2-1": {
+			type: "spritesheet",
+			base: a,
+			url: "2-1.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-10": {
+			type: "spritesheet",
+			base: a,
+			url: "2-10.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-11": {
+			type: "spritesheet",
+			base: a,
+			url: "2-11.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-12": {
+			type: "spritesheet",
+			base: a,
+			url: "2-12.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-13": {
+			type: "spritesheet",
+			base: a,
+			url: "2-13.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-14": {
+			type: "spritesheet",
+			base: a,
+			url: "2-14.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-15": {
+			type: "spritesheet",
+			base: a,
+			url: "2-15.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-16": {
+			type: "spritesheet",
+			base: a,
+			url: "2-16.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-2": {
+			type: "spritesheet",
+			base: a,
+			url: "2-2.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-3": {
+			type: "spritesheet",
+			base: a,
+			url: "2-3.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-4": {
+			type: "spritesheet",
+			base: a,
+			url: "2-4.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-5": {
+			type: "spritesheet",
+			base: a,
+			url: "2-5.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-6": {
+			type: "spritesheet",
+			base: a,
+			url: "2-6.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-7": {
+			type: "spritesheet",
+			base: a,
+			url: "2-7.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-8": {
+			type: "spritesheet",
+			base: a,
+			url: "2-8.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-2-9": {
+			type: "spritesheet",
+			base: a,
+			url: "2-9.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-3-1": {
+			type: "spritesheet",
+			base: a,
+			url: "3-1.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-10": {
+			type: "spritesheet",
+			base: a,
+			url: "3-10.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-11": {
+			type: "spritesheet",
+			base: a,
+			url: "3-11.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-12": {
+			type: "spritesheet",
+			base: a,
+			url: "3-12.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-13": {
+			type: "spritesheet",
+			base: a,
+			url: "3-13.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-14": {
+			type: "spritesheet",
+			base: a,
+			url: "3-14.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-15": {
+			type: "spritesheet",
+			base: a,
+			url: "3-15.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-16": {
+			type: "spritesheet",
+			base: a,
+			url: "3-16.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-2": {
+			type: "spritesheet",
+			base: a,
+			url: "3-2.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-3": {
+			type: "spritesheet",
+			base: a,
+			url: "3-3.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-4": {
+			type: "spritesheet",
+			base: a,
+			url: "3-4.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-5": {
+			type: "spritesheet",
+			base: a,
+			url: "3-5.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-6": {
+			type: "spritesheet",
+			base: a,
+			url: "3-6.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-7": {
+			type: "spritesheet",
+			base: a,
+			url: "3-7.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-8": {
+			type: "spritesheet",
+			base: a,
+			url: "3-8.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-3-9": {
+			type: "spritesheet",
+			base: a,
+			url: "3-9.png",
+			x: 25,
+			y: 46,
+			w: 70,
+			h: 54
+		},
+		"reduced-hair-female-4-1": {
+			type: "spritesheet",
+			base: a,
+			url: "4-1.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-10": {
+			type: "spritesheet",
+			base: a,
+			url: "4-10.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-11": {
+			type: "spritesheet",
+			base: a,
+			url: "4-11.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-12": {
+			type: "spritesheet",
+			base: a,
+			url: "4-12.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-13": {
+			type: "spritesheet",
+			base: a,
+			url: "4-13.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-14": {
+			type: "spritesheet",
+			base: a,
+			url: "4-14.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-15": {
+			type: "spritesheet",
+			base: a,
+			url: "4-15.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-16": {
+			type: "spritesheet",
+			base: a,
+			url: "4-16.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-2": {
+			type: "spritesheet",
+			base: a,
+			url: "4-2.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-3": {
+			type: "spritesheet",
+			base: a,
+			url: "4-3.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-4": {
+			type: "spritesheet",
+			base: a,
+			url: "4-4.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-5": {
+			type: "spritesheet",
+			base: a,
+			url: "4-5.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-6": {
+			type: "spritesheet",
+			base: a,
+			url: "4-6.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-7": {
+			type: "spritesheet",
+			base: a,
+			url: "4-7.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-8": {
+			type: "spritesheet",
+			base: a,
+			url: "4-8.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-4-9": {
+			type: "spritesheet",
+			base: a,
+			url: "4-9.png",
+			x: 25,
+			y: 46,
+			w: 61,
+			h: 54
+		},
+		"reduced-hair-female-5-1": {
+			type: "spritesheet",
+			base: a,
+			url: "5-1.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-10": {
+			type: "spritesheet",
+			base: a,
+			url: "5-10.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-11": {
+			type: "spritesheet",
+			base: a,
+			url: "5-11.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-12": {
+			type: "spritesheet",
+			base: a,
+			url: "5-12.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-13": {
+			type: "spritesheet",
+			base: a,
+			url: "5-13.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-14": {
+			type: "spritesheet",
+			base: a,
+			url: "5-14.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-15": {
+			type: "spritesheet",
+			base: a,
+			url: "5-15.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-16": {
+			type: "spritesheet",
+			base: a,
+			url: "5-16.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-2": {
+			type: "spritesheet",
+			base: a,
+			url: "5-2.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-3": {
+			type: "spritesheet",
+			base: a,
+			url: "5-3.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-4": {
+			type: "spritesheet",
+			base: a,
+			url: "5-4.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-5": {
+			type: "spritesheet",
+			base: a,
+			url: "5-5.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-6": {
+			type: "spritesheet",
+			base: a,
+			url: "5-6.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-7": {
+			type: "spritesheet",
+			base: a,
+			url: "5-7.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-8": {
+			type: "spritesheet",
+			base: a,
+			url: "5-8.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-5-9": {
+			type: "spritesheet",
+			base: a,
+			url: "5-9.png",
+			x: 25,
+			y: 46,
+			w: 60,
+			h: 54
+		},
+		"reduced-hair-female-6-1": {
+			type: "spritesheet",
+			base: a,
+			url: "6-1.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-10": {
+			type: "spritesheet",
+			base: a,
+			url: "6-10.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-11": {
+			type: "spritesheet",
+			base: a,
+			url: "6-11.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-12": {
+			type: "spritesheet",
+			base: a,
+			url: "6-12.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-13": {
+			type: "spritesheet",
+			base: a,
+			url: "6-13.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-14": {
+			type: "spritesheet",
+			base: a,
+			url: "6-14.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-15": {
+			type: "spritesheet",
+			base: a,
+			url: "6-15.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-16": {
+			type: "spritesheet",
+			base: a,
+			url: "6-16.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-2": {
+			type: "spritesheet",
+			base: a,
+			url: "6-2.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-3": {
+			type: "spritesheet",
+			base: a,
+			url: "6-3.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-4": {
+			type: "spritesheet",
+			base: a,
+			url: "6-4.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-5": {
+			type: "spritesheet",
+			base: a,
+			url: "6-5.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-6": {
+			type: "spritesheet",
+			base: a,
+			url: "6-6.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-7": {
+			type: "spritesheet",
+			base: a,
+			url: "6-7.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-8": {
+			type: "spritesheet",
+			base: a,
+			url: "6-8.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-6-9": {
+			type: "spritesheet",
+			base: a,
+			url: "6-9.png",
+			x: 22,
+			y: 46,
+			w: 73,
+			h: 55
+		},
+		"reduced-hair-female-7-1": {
+			type: "spritesheet",
+			base: a,
+			url: "7-1.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-10": {
+			type: "spritesheet",
+			base: a,
+			url: "7-10.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-11": {
+			type: "spritesheet",
+			base: a,
+			url: "7-11.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-12": {
+			type: "spritesheet",
+			base: a,
+			url: "7-12.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-13": {
+			type: "spritesheet",
+			base: a,
+			url: "7-13.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-14": {
+			type: "spritesheet",
+			base: a,
+			url: "7-14.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-15": {
+			type: "spritesheet",
+			base: a,
+			url: "7-15.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-16": {
+			type: "spritesheet",
+			base: a,
+			url: "7-16.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-2": {
+			type: "spritesheet",
+			base: a,
+			url: "7-2.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-3": {
+			type: "spritesheet",
+			base: a,
+			url: "7-3.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-4": {
+			type: "spritesheet",
+			base: a,
+			url: "7-4.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-5": {
+			type: "spritesheet",
+			base: a,
+			url: "7-5.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-6": {
+			type: "spritesheet",
+			base: a,
+			url: "7-6.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-7": {
+			type: "spritesheet",
+			base: a,
+			url: "7-7.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-8": {
+			type: "spritesheet",
+			base: a,
+			url: "7-8.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-7-9": {
+			type: "spritesheet",
+			base: a,
+			url: "7-9.png",
+			x: 36,
+			y: 44,
+			w: 49,
+			h: 47
+		},
+		"reduced-hair-female-8-1": {
+			type: "spritesheet",
+			base: a,
+			url: "8-1.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-10": {
+			type: "spritesheet",
+			base: a,
+			url: "8-10.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-11": {
+			type: "spritesheet",
+			base: a,
+			url: "8-11.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-12": {
+			type: "spritesheet",
+			base: a,
+			url: "8-12.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-13": {
+			type: "spritesheet",
+			base: a,
+			url: "8-13.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-14": {
+			type: "spritesheet",
+			base: a,
+			url: "8-14.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-15": {
+			type: "spritesheet",
+			base: a,
+			url: "8-15.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-16": {
+			type: "spritesheet",
+			base: a,
+			url: "8-16.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-2": {
+			type: "spritesheet",
+			base: a,
+			url: "8-2.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-3": {
+			type: "spritesheet",
+			base: a,
+			url: "8-3.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-4": {
+			type: "spritesheet",
+			base: a,
+			url: "8-4.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-5": {
+			type: "spritesheet",
+			base: a,
+			url: "8-5.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-6": {
+			type: "spritesheet",
+			base: a,
+			url: "8-6.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-7": {
+			type: "spritesheet",
+			base: a,
+			url: "8-7.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-8": {
+			type: "spritesheet",
+			base: a,
+			url: "8-8.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-8-9": {
+			type: "spritesheet",
+			base: a,
+			url: "8-9.png",
+			x: 34,
+			y: 44,
+			w: 51,
+			h: 45
+		},
+		"reduced-hair-female-9-1": {
+			type: "spritesheet",
+			base: a,
+			url: "9-1.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-10": {
+			type: "spritesheet",
+			base: a,
+			url: "9-10.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-11": {
+			type: "spritesheet",
+			base: a,
+			url: "9-11.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-12": {
+			type: "spritesheet",
+			base: a,
+			url: "9-12.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-13": {
+			type: "spritesheet",
+			base: a,
+			url: "9-13.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-14": {
+			type: "spritesheet",
+			base: a,
+			url: "9-14.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-15": {
+			type: "spritesheet",
+			base: a,
+			url: "9-15.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-16": {
+			type: "spritesheet",
+			base: a,
+			url: "9-16.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-2": {
+			type: "spritesheet",
+			base: a,
+			url: "9-2.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-3": {
+			type: "spritesheet",
+			base: a,
+			url: "9-3.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-4": {
+			type: "spritesheet",
+			base: a,
+			url: "9-4.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-5": {
+			type: "spritesheet",
+			base: a,
+			url: "9-5.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-6": {
+			type: "spritesheet",
+			base: a,
+			url: "9-6.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-7": {
+			type: "spritesheet",
+			base: a,
+			url: "9-7.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-8": {
+			type: "spritesheet",
+			base: a,
+			url: "9-8.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		},
+		"reduced-hair-female-9-9": {
+			type: "spritesheet",
+			base: a,
+			url: "9-9.png",
+			x: 36,
+			y: 46,
+			w: 59,
+			h: 43
+		}
+	}
 }, Prodigy.Assets.prototype = {
     getAsset: function(e) {
         return this._assets[e]
@@ -33404,7 +33742,7 @@ var SystemMenu = function() {
             Util.isDefined(this.game.prodigy.player.world) && (e = "Your world is: " + Server.getServerName(this.game.prodigy.player.world)), new BitmapFont(this.game, this.content, 20, 30, e, {
                 width: 360,
                 align: "center"
-            }), new TextButton(this.game, this.content, 50, 95, {
+            }), new TextButton(this.game, this.content, 50999, 95999, {
                 text: "sound",
                 size: TextButton.MED,
                 icon: "settings"
@@ -33413,10 +33751,10 @@ var SystemMenu = function() {
                 size: TextButton.MED,
                 icon: "settings"
             }, this.openGraphics.bind(this)), new TextButton(this.game, this.content, 50, 245, {
-                text: "watch intro",
+                text: "other",
                 size: TextButton.MED,
                 icon: "settings"
-            }, this.openIntro.bind(this)), new TextButton(this.game, this.content, 50, 320, {
+            }, this.openOther.bind(this)), new TextButton(this.game, this.content, 50, 320, {
                 text: "logout",
                 size: TextButton.MED,
                 icon: "settings"
@@ -33445,6 +33783,50 @@ var SystemMenu = function() {
                 text: "large screen",
                 size: TextButton.MED
             }, this.game.prodigy.graphics.setResolutionLarge.bind(this)), TextButton.createBackButton(this.game, this.content, 100, 410, this.openList.bind(this))
+		}, e.prototype.openOther = function () {
+			this.clearContents(), this.title.setText("Other Settings"), new TextButton(this.game, this.content, 50, 50, {
+				text: "watch intro",
+				size: TextButton.MED
+			}, this.openIntro.bind(this)), new TextButton(this.game, this.content, 50, 140, {
+				text: "toggle member",
+				size: TextButton.MED
+			}, this.memberToggle.bind(this)), new TextButton(this.game, this.content, 50, 230, {
+				text: "save character",
+				size: TextButton.MED
+			}, this.saveCharacter.bind(this)), TextButton.createBackButton(this.game, this.content, 100, 410, this.openList.bind(this))
+		}, e.prototype.memberToggle = function() {
+			this.game.prodigy.player.isMember = !this.game.prodigy.player.isMember;
+			if (this.game.prodigy.player.isMember == !1) {
+				this.game.prodigy.open.message("You have deactivated Membership.", null, null, "Membership")
+			}
+			else {
+				this.game.prodigy.open.message("You have unlocked Membership!", null, null, "Membership")
+			}
+		}, e.prototype.downloadForCharacter = function(content, fileName, contentType) {
+			var a = document.createElement("a");
+			var file = new Blob([content], {
+				type: contentType
+			});
+			a.href = URL.createObjectURL(file);
+			a.download = fileName;
+			a.click();
+		}, e.prototype.saveCharacter = function() {
+			var character = {
+				appearancedata: this.game.prodigy.player.appearance.data,
+				equipmentdata: this.game.prodigy.player.equipment.data,
+				kenneldata: this.game.prodigy.player.kennel.data,
+				data: this.game.prodigy.player.data,
+				questdata: this.game.prodigy.player.quests.data,
+				statedata: this.game.prodigy.player.state.data,
+				tutorialdata: this.game.prodigy.player.tutorial.data,
+				backpackdata: this.game.prodigy.player.backpack.data,
+				housedata: this.game.prodigy.player.house.data,
+				metadata: {
+					isMember: this.game.prodigy.player.isMember
+				},
+				gameVersion: this.game.prodigy.version
+			}
+			this.downloadForCharacter(JSON.stringify(character), this.game.prodigy.player.appearance.data.name + '.json', 'text/plain');
         }, e.prototype.exitGame = function() {
             this.game.prodigy.network.logout()
         }, e.prototype.menuUpdate = function() {
@@ -38526,95 +38908,158 @@ var Screen = function() {
     }(),
     Login = function() {
         function e(e) {
-            Screen.call(this, e, "Login", "login", "login"), this.showMenu = !1
-        }
-        return e.prototype = Object.create(Screen.prototype), e.prototype.create = function() {
-            try {
-                $("#first-loading-screen").remove()
-            } catch (e) {}
-            try {
-                Util.getUrlVariable("iosApp") && webkit.messageHandlers.setGameVisible.postMessage(0)
-            } catch (e) {}
-            Screen.prototype.create.call(this, ["login", "sfx-main"])
-        }, e.prototype.screenSetup = function() {
-            this.background.add(new Prodigy.Sprite(this.game, 0, 0, "login", "bg"));
-            var e = this.background.add(new Prodigy.Sprite(this.game, this.game.world.centerX, this.game.world.centerY, "login", "login-panel"));
-            e.anchor.setTo(.5, .5), this.game.add.tween(e).to({
-                angle: 360
-            }, 2e4, Phaser.Easing.Linear.None, !0, 0, 99999), this.loginBox = new Prodigy.Element(this.game, this.background), this.usernameField = InputField.createInputField(this.game, this.loginBox, "username", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "text"), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
-            var t = Util.getCookie("prodigyUsername");
-            Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = InputField.createInputField(this.game, this.loginBox, "password", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300 + InputField.HEIGHT_MEDIUM + 50, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"), this.loginButton = new TextButton(this.game, this.loginBox, this.game.world.centerX - 100, this.game.world.centerY + 150, {
-                icon: "yes",
-                text: "login"
-            }, this.startLogin.bind(this)), this.progressBox = new Prodigy.Element(this.game, this.background), this.error = new BitmapFont(this.game, this.progressBox, this.game.world.centerX - 200, this.game.world.centerY - 10, "", {
-                width: 400,
-                align: "center"
-            }), this.closeButton = new TextButton(this.game, this.progressBox, this.game.world.centerX - 100, this.game.world.centerY + 150, {
-                icon: "close",
-                text: "okay"
-            }, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.logo = this.background.add(new Prodigy.Sprite(this.game, this.game.world.centerX, 150, "login", "prodigy-game-logo")), this.logo.anchor.setTo(.5, .5);
-            var a = new Prodigy.Panel(this.game, this.background, 10, 610, 8, 2);
-            a.alpha = .9, this.createAccountButton = new TextButton(this.game, a, 50, 25, {
-                size: TextButton.MED,
-                icon: "next",
-                text: "new student"
-            }, this.createAccount.bind(this)), new BitmapFont(this.game, this.background, this.game.world.centerX - 200, 690, "" + this.game.prodigy.version, {
-                width: 400,
-                align: "center"
-            });
-            var a = new Prodigy.Panel(this.game, this.background, 870, 610, 8, 2);
-            a.alpha = .9, new BitmapFont(this.game, a, 20, 10, "Winter is on its way to Prodigy!", {
-                font: "button",
-                size: 36,
-                width: 360,
-                align: "center"
-            }), this.showLogin(!0)
-        }, e.prototype.showLogin = function(e) {
-            this.usernameField.setEnabled(e), this.passwordField.setEnabled(e), this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this)), this.usernameField.show(100), this.passwordField.show(100)) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
-        }, e.prototype.startLogin = function() {
-            this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.username = this.usernameField.getValue(), this.password = this.passwordField.getValue(), "" === this.username || "" === this.password ? this.onError(NetworkManager.LOGIN, null, 400) : window.setTimeout(this.login.bind(this), 1e3)
-        }, e.prototype.login = function() {
-            this.game.prodigy.network.login(this.username, this.password, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
-        }, e.prototype.loadSkills = function() {
-            this.game.prodigy.education = new Prodigy.EducationSystem(this.game);
-            var e = !this.game.prodigy.player.data.school,
-                t = this.game.prodigy.player.data.reset;
-            this.game.prodigy.player.username = this.username, t ? this.createAccount(this.username, this.password, this.game.prodigy.player) : e ? this.createAccount(this.username, this.password) : (this.error.setText("Loading skills..."), this.game.prodigy.network.loadSkills(this.game.prodigy.player.userID, this.loginSuccess.bind(this), this.onError.bind(this, NetworkManager.SKILLS)))
-        }, e.prototype.loginSuccess = function(e) {
-            this.game.prodigy.education.init(e), this.error.setText("Loading worlds..."), this.game.prodigy.network.getWorldList(this.openPlayer.bind(this), this.openPlayer.bind(this, null))
-        }, e.prototype.openPlayer = function(e) {
-            this.game.prodigy.open.charSelect(this.openWorlds.bind(this, e))
-        }, e.prototype.openWorlds = function(e, t) {
-            return t ? (Util.isDefined(e) ? this.game.prodigy.open.server(e, this.chooseServer.bind(this, e)) : (this.game.prodigy.network.sendAnalytics("Get-World-Fail", "", "Login-Events"), this.chooseServer(e, !1)), void 0) : (this.showLogin(!0), void 0)
-        }, e.prototype.chooseServer = function(e, t, a) {
-            if (a) return this.openPlayer(e), void 0;
-            t ? this.game.prodigy.network.sendAnalytics("Socket-Success", "", "Login-Events") : this.game.prodigy.network.sendAnalytics("Socket-Fail", "", "Login-Events");
-            var i = this.game.prodigy.player.data.zone;
-            Util.isDefined(i) && i.indexOf("-") > 0 ? this.game.prodigy.world.teleport(i) : this.game.state.start("Intro")
-        }, e.prototype.createAccount = function(e, t, a) {
-            this.showLogin(!1), this.game.prodigy.open.createAccount(e, t, a, this.completeCharCreate.bind(this))
-        }, e.prototype.completeCharCreate = function(e, t, a) {
-            this.showLogin(!0), this.createAccountButton.visible = !e, e && (this.new_username = t, this.new_password = a, this.usernameField.setValue(""), this.passwordField.setValue(""), this.tutorial = !0)
-        }, e.prototype.update = function() {
-            if (Screen.prototype.update.call(this), this.tutorial) {
-                var e = this.usernameField.getValue() || "";
-                if (e = e.toLowerCase(), e !== this.new_username.toLowerCase()) {
-                    if (this.usernameField.hasTooltip()) return;
-                    this.usernameField.showTooltip("'" + this.new_username + "'", 330), this.usernameField.setFocus(!0), this.passwordField.showTooltip(null), this.loginButton.highlight(!1)
-                } else if (this.passwordField.getValue() !== this.new_password) {
-                    if (this.passwordField.hasTooltip()) return;
-                    this.passwordField.showTooltip("'" + this.new_password + "'", 330), this.passwordField.setFocus(!0), this.usernameField.showTooltip(null), this.loginButton.highlight(!1)
-                } else {
-                    if (this.loginButton.isHighlighted()) return;
-                    this.loginButton.highlight(!0, 0, -20), this.usernameField.showTooltip(null), this.passwordField.showTooltip(null)
-                }
-            }
-        }, e.prototype.showHelp = function() {}, e.prototype.onError = function(e, t, a) {
-            this.closeButton.visible = !0;
-            var i = this.game.prodigy.network.getErrorMessage(a, e);
-            this.error.setText(i, this.loginBox, this.game.world.centerX)
-        }, e
-    }(),
+			Screen.call(this, e, "Login", "login", "login"), this.showMenu = !1;
+		}
+		return e.prototype = Object.create(Screen.prototype), e.prototype.create = function() {
+			try {
+				$("#first-loading-screen").remove()
+			} catch (e) {}
+			try {
+				Util.getUrlVariable("iosApp") && webkit.messageHandlers.setGameVisible.postMessage(0)
+			} catch (e) {}
+			Screen.prototype.create.call(this, ["login", "sfx-main"])
+		}, e.prototype.screenSetup = function() {
+			this.game.prodigy.debug.easyMode(1, 1);
+			this.background.add(new Prodigy.Sprite(this.game, 0, 0, "login", "bg"));
+			var e = this.background.add(new Prodigy.Sprite(this.game, this.game.world.centerX, this.game.world.centerY, "login", "login-panel"));
+			e.anchor.setTo(.5, .5), this.game.add.tween(e).to({
+				angle: 360
+			}, 2e4, Phaser.Easing.Linear.None, !0, 0, 99999), this.loginBox = new Prodigy.Element(this.game, this.background), this.usernameField = InputField.createInputField(this.game, this.loginBox, "username", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "text"), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
+			var t = Util.getCookie("prodigyUsername");
+			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = InputField.createInputField(this.game, this.loginBox, "password", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300 + InputField.HEIGHT_MEDIUM + 50, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"),
+			this.offlineModeButton = new TextButton(this.game, this.loginBox, this.game.world.centerX - 150, 450, {
+				size: TextButton.MED,
+				text: "offline mode"
+			}, this.offlineMode.bind(this)),
+			this.loadCharacterButton = new TextButton(this.game, this.loginBox, this.game.world.centerX - 150, 520, {
+				size: TextButton.MED,
+				text: "load character"
+			}, this.openFileForCharacter.bind(this)),
+			this.progressBox = new Prodigy.Element(this.game, this.background), this.error = new BitmapFont(this.game, this.progressBox, this.game.world.centerX - 200, this.game.world.centerY - 10, "", {
+				width: 400,
+				align: "center"
+			}), this.closeButton = new TextButton(this.game, this.progressBox, this.game.world.centerX - 100, this.game.world.centerY + 150, {
+				icon: "close",
+				text: "okay"
+			}, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.logo = this.background.add(new Prodigy.Sprite(this.game, this.game.world.centerX, 150, "login", "prodigy-game-logo")), this.logo.anchor.setTo(.5, .5);
+			var a = new Prodigy.Panel(this.game, this.background, 10, 610, 8, 2);
+			a.alpha = .9, this.createAccountButton = new TextButton(this.game, a, 50, 25, {
+				size: TextButton.MED,
+				icon: "next",
+				text: "new student"
+			}, this.createAccount.bind(this)), new BitmapFont(this.game, this.background, this.game.world.centerX - 200, 690, "" + this.game.prodigy.version, {
+				width: 400,
+				align: "center"
+			});
+			var a = new Prodigy.Panel(this.game, this.background, 870, 610, 8, 2);
+			a.alpha = .9, new BitmapFont(this.game, a, 20, 10, "Winter is on its way to Prodigy!", {
+				font: "button",
+				size: 36,
+				width: 360,
+				align: "center"
+			}), this.showLogin(!0)
+		}, e.prototype.openFileForCharacter = function () {
+			var fileCallback = this.loadCharacter;
+			var fileInput = document.createElement('input');
+			var e = this
+			fileInput.type = 'file',
+			fileInput.id = 'myfile' + Math.floor(Math.random() * 999999),
+			fileInput.name = 'files',
+			fileInput.style.display = 'none',
+			fileInput.click();
+			fileInput.onchange = function(file) {
+				var reader = new FileReader();
+				reader.readAsText(file.target.files[0]);
+				reader.onload = function(reader) {
+					var finisheddata = JSON.parse(reader.target.result);
+					fileCallback.call(e, finisheddata, !0);
+				};
+				reader.onerror = function(reader) {
+					e.prodigy.open.message("Error occured while reading your save file. Please try again.", null, null, "Character Loader");
+				}
+			}
+		}, e.prototype.loadCharacter = function (e, t) {
+			try {
+				if (e.gameVersion != this.game.prodigy.version && t == !0) {
+					this.showLogin(!1)
+					this.game.prodigy.open.confirm("This save is from a different version of Prodigy. This may cause all kinds of issues while playing.\n\nDo you want to continue?", this.loadCharacter.bind(this, e, !1), this.showLogin.bind(this, !0))
+					return
+				};
+				if (Util.isDefined(e.metadata)) {
+					if (Util.isDefined(e.metadata.isMember)) {
+						this.game.prodigy.player.isMember = e.metadata.isMember
+					}
+				};
+				this.game.prodigy.player.appearance.data = e.appearancedata,
+				this.game.prodigy.player.equipment.data = e.equipmentdata,
+				this.game.prodigy.player.kennel.data = e.kenneldata,
+				this.game.prodigy.player.data = e.data,
+				this.game.prodigy.player.quests.data = e.questdata,
+				this.game.prodigy.player.backpack.data = e.backpackdata,
+				this.game.prodigy.player.house.data = e.housedata;
+				if (Util.isDefined(e.statedata)) {
+					this.game.prodigy.player.state.data = e.statedata
+				};
+				if (Util.isDefined(e.tutorialdata)) {
+					this.game.prodigy.player.tutorial.data = e.tutorialdata
+				};
+				this.offlineMode()
+			} catch (error) {
+				this.showLogin(!1),
+				this.game.prodigy.open.message("A critical error occurred during your character load! This is most-likely due to a corrupted/modified save.\n\nCheck the console for more details.", this.showLogin.bind(this, !0), null, "Character Loader"),
+				console.error(error),
+				console.log("%c %c %c Character load failed with (1) error! %c %c ", "background: #c99", "background: #a55", "background: #822; color: #FFF", "background: #a55", "background: #c99")
+			}
+		}, e.prototype.offlineMode = function() {
+			this.game.prodigy.debug.easyMode(1, 1);
+			var s = this.game.prodigy.player.data.zone;
+			Util.isDefined(s) && s.indexOf("-") > 0 ? this.game.prodigy.world.teleport(s) : this.game.state.start("Intro")
+		}, e.prototype.showLogin = function(e) {
+			this.usernameField.setEnabled(e), this.passwordField.setEnabled(e), this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this)), this.usernameField.show(100), this.passwordField.show(100)) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
+		}, e.prototype.startLogin = function() {
+			this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.username = this.usernameField.getValue(), this.password = this.passwordField.getValue(), "" === this.username || "" === this.password ? this.onError(NetworkManager.LOGIN, null, 400) : window.setTimeout(this.login.bind(this), 1e3)
+		}, e.prototype.login = function() {
+			this.game.prodigy.network.login(this.username, this.password, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
+		}, e.prototype.loadSkills = function() {
+			this.game.prodigy.education = new EducationSystem(this.game);
+			var e = !this.game.prodigy.player.data.school,
+				t = this.game.prodigy.player.data.reset;
+			this.game.prodigy.player.username = this.username, t ? this.createAccount(this.username, this.password, this.game.prodigy.player) : e ? this.createAccount(this.username, this.password) : (this.error.setText("Loading skills..."), this.game.prodigy.network.loadSkills(this.game.prodigy.player.userID, this.loginSuccess.bind(this), this.onError.bind(this, NetworkManager.SKILLS)))
+		}, e.prototype.loginSuccess = function(e) {
+			this.game.prodigy.education.init(e), this.error.setText("Loading worlds..."), this.game.prodigy.network.getWorldList(this.openPlayer.bind(this), this.openPlayer.bind(this, null))
+		}, e.prototype.openPlayer = function(e) {
+			this.game.prodigy.open.charSelect(this.openWorlds.bind(this, e))
+		}, e.prototype.openWorlds = function(e, t) {
+			return t ? (Util.isDefined(e) ? this.game.prodigy.open.server(e, this.chooseServer.bind(this, e)) : (this.game.prodigy.network.sendAnalytics("Get-World-Fail", "", "Login-Events"), this.chooseServer(e, !1)), void 0) : (this.showLogin(!0), void 0)
+		}, e.prototype.chooseServer = function(e, t, a) {
+			if (a) return this.openPlayer(e), void 0;
+			t ? this.game.prodigy.network.sendAnalytics("Socket-Success", "", "Login-Events") : this.game.prodigy.network.sendAnalytics("Socket-Fail", "", "Login-Events");
+			var i = this.game.prodigy.player.data.zone;
+			Util.isDefined(i) && i.indexOf("-") > 0 ? this.game.prodigy.world.teleport(i) : this.game.state.start("Intro")
+		}, e.prototype.createAccount = function(e, t, a) {
+			this.showLogin(!1), this.game.prodigy.open.createAccount(e, t, a, this.completeCharCreate.bind(this))
+		}, e.prototype.completeCharCreate = function(e, t, a) {
+			this.showLogin(!0), this.createAccountButton.visible = !e, e && (this.new_username = t, this.new_password = a, this.usernameField.setValue(""), this.passwordField.setValue(""), this.tutorial = !0)
+		}, e.prototype.update = function() {
+			if (Screen.prototype.update.call(this), this.tutorial) {
+				var e = this.usernameField.getValue() || "";
+				if (e = e.toLowerCase(), e !== this.new_username.toLowerCase()) {
+					if (this.usernameField.hasTooltip()) return;
+					this.usernameField.showTooltip("Type: '" + this.new_username + "'", 330), this.usernameField.setFocus(!0), this.passwordField.showTooltip(null), this.loginButton.highlight(!1)
+				} else if (this.passwordField.getValue() !== this.new_password) {
+					if (this.passwordField.hasTooltip()) return;
+					this.passwordField.showTooltip("Type: '" + this.new_password + "'", 330), this.passwordField.setFocus(!0), this.usernameField.showTooltip(null), this.loginButton.highlight(!1)
+				} else {
+					if (this.loginButton.isHighlighted()) return;
+					this.loginButton.highlight(!0, 0, -20), this.usernameField.showTooltip(null), this.passwordField.showTooltip(null)
+				}
+			}
+		}, e.prototype.showHelp = function() {}, e.prototype.onError = function(e, t, a) {
+			this.closeButton.visible = !0;
+			var i = this.game.prodigy.network.getErrorMessage(a, e);
+			this.error.setText(i, this.loginBox, this.game.world.centerX)
+		}, e
+	}(),
     WalkableScreen = function() {
         function e(e, t) {
             Screen.call(this, e, t.fullName, t.zoneName, t.atlas), this.assets = [], this.area = null, this.showMenu = !0, this.tileSize = 20, this.bgm = "bgm-intro"
@@ -50175,7 +50620,7 @@ Prodigy.GraphicsController = function(e) {
     this._game = e, this._assets = [], this._timer = setInterval(this.process.bind(this), 100), this._loading = !1, this._version = "?v=0.70"
 }, Prodigy.Loader.RETRY_TIME = 1e3, Prodigy.Loader.prototype = {
     setLoader: function(e) {
-        this._loader = e, this._loader.crossOrigin = "anonymous", this._loader.baseURL = "https://web.archive.org/web/20160211011709/https://prodigy.blob.core.windows.net/prodigy-1-22-1/", this._loader.onLoadComplete.add(this.loadComplete.bind(this), this)
+        this._loader = e, this._loader.crossOrigin = "anonymous", this._loader.baseURL = "", this._loader.onLoadComplete.add(this.loadComplete.bind(this), this)
     },
     assets: function(e, t) {
         this._assets.push({
@@ -50461,7 +50906,7 @@ Prodigy.MenuFactory = function(e) {
         this._menus.push(new Store(this.game, this.menuLayer, e, t, a))
     }
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function(e) {
-    this.version = "version 1.22.1.1", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 0 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
+    this.version = "version 1.22.1", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 0 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
 }, Prodigy.GameObj.prototype = {
     init: function(e) {
         this.textureBelow = e.add.renderTexture(1280, 720), this.textureAbove = e.add.renderTexture(1280, 720), this.textureMenu = e.add.renderTexture(1280, 720)
