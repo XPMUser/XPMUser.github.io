@@ -69865,7 +69865,7 @@ Prodigy.SkinFactory = function(e) {
 }, Prodigy.Loader.RETRY_TIME = 1e3, Prodigy.Loader.prototype = {
 	constructor: Prodigy.Loader,
 	setLoader: function(e) {
-		this._loader = e, this._loader.crossOrigin = "anonymous", this._loader.baseURL = "https://web.archive.org/web/20160507015058/https://prodigy.blob.core.windows.net/prodigy-1-25-2/", this._loader.onLoadComplete.add(this.loadComplete.bind(this), this)
+		this._loader = e, this._loader.crossOrigin = "anonymous", this._loader.baseURL = "https://xpmuser.github.io/oldprodigy/1-25-2/", this._loader.onLoadComplete.add(this.loadComplete.bind(this), this)
 	},
 	assets: function(e, t) {
 		this._assets.push({
