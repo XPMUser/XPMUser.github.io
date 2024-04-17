@@ -16,8 +16,8 @@ output+=stringFromCharCode(value>>>10&1023|55296);value=56320|value&1023}output+
 
 }
 /*
-     FILE ARCHIVED ON 16:35:07 Apr 15, 2016 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 11:43:24 May 07, 2021.
+     FILE ARCHIVED ON 23:58:38 Mar 10, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:16:13 Apr 17, 2024.
      JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
 
      ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
@@ -25,14 +25,13 @@ output+=stringFromCharCode(value>>>10&1023|55296);value=56320|value&1023}output+
 */
 /*
 playback timings (ms):
-  RedisCDXSource: 0.837
-  PetaboxLoader3.datanode: 94.938 (4)
-  LoadShardBlock: 78.205 (3)
-  esindex: 0.016
-  captures_list: 112.212
-  CDXLines.iter: 28.031 (3)
-  load_resource: 113.399
-  exclusion.robots.policy: 0.202
-  exclusion.robots: 0.219
-  PetaboxLoader3.resolve: 70.369
+  captures_list: 1.978
+  exclusion.robots: 0.115
+  exclusion.robots.policy: 0.104
+  cdx.remote: 0.066
+  esindex: 0.01
+  LoadShardBlock: 173.96 (3)
+  PetaboxLoader3.datanode: 127.835 (4)
+  PetaboxLoader3.resolve: 168.872 (2)
+  load_resource: 149.821
 */
