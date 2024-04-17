@@ -27,6 +27,33 @@
 	"sourceSize": {"w":160,"h":160},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"tileset-collisions":
+{
+	"frame": {"x":912,"y":258,"w":160,"h":160},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":160,"h":160},
+	"sourceSize": {"w":160,"h":160},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"tileset-generic-new":
+{
+	"frame": {"x":912,"y":258,"w":160,"h":160},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":160,"h":160},
+	"sourceSize": {"w":160,"h":160},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"tileset-forest-new":
+{
+	"frame": {"x":912,"y":258,"w":160,"h":160},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":160,"h":160},
+	"sourceSize": {"w":160,"h":160},
+	"pivot": {"x":0.5,"y":0.5}
+},
 "fan1":
 {
 	"frame": {"x":2,"y":404,"w":100,"h":100},
