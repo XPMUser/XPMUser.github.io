@@ -180,4 +180,13 @@
 	"scale": "1",
 	"smartupdate": "$TexturePacker:SmartUpdate:3b7525c2b8adbe26e9e6d7513280c721:d7d262b03a4e8f06606a2af52e179efe:ed97f6a873a4aac1b24e0f3094cdde75$"
 }
+"meta": {
+	"app": "https://web.archive.org/web/20200330050748/http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "zone-forest2.png",
+	"format": "RGBA8888",
+	"size": {"w":1884,"h":724},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3b7525c2b8adbe26e9e6d7513280c721:d7d262b03a4e8f06606a2af52e179efe:ed97f6a873a4aac1b24e0f3094cdde75$"
+}	
 }
