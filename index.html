@@ -84,6 +84,10 @@
 		
             <a onclick="Prodidows('')" class="button" style="top: 12px; left: 270px; position: absolute">
             	<img alt="Prodidows" src="/oldprodigy/images/1-30-0.png">
+            </a>
+		
+            <a onclick="Accessibility('')" class="button" style="top: 68px; left: 270px; position: absolute">
+            	<img alt="" src="/oldprodigy/images/1-11-0.png">
             </a>		
         </div>
         
@@ -152,6 +156,15 @@ Math = function() {
 	setTimeout(()=> {
 		window.location.href = "https://xpmuser.github.io/prodigy-classic/prodigy.html";
 	}, 200);
+},
+Accessibility = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://docs.google.com/document/d/1W2eu5mb4_JCfNPOUhxBe3qxfF4gwzZw1rtGybh__hIQ/edit";
+	}, 200);	
 },	
 XPMUser = function() {
 	if (currentMenu != Menu.Select) {
