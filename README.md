@@ -10,15 +10,15 @@ Click on the left arrow to go back.
 
 Credits: Sitemakers: Daboss7173 https://github.com/Daboss7173 
 
-Siteforkers: XPMUser/Ao28th28 and Slappygig/Toonigy https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
+Siteforkers: XPMUser/Ao28th28, Slappygig/Toonigy, etc https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
 
 Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more https://github.com/CookieTheDeveloper
 
-Reborn maker: Craftersshaft https://github.com/craftersshaft/
+Reborn Maker: Craftersshaft https://github.com/craftersshaft/
 
 Prodigy Maker: Prodigy Education
 
-Mod makers: Daboss7173, Slappygig/Toonigy, and XPMUser/Ao28th28
+Mod Makers: Daboss7173, Slappygig/Toonigy, XPMUser/Ao28th28, etc
 
 Yandere Ai Girlfriend (Eddie) maker: Anthropic
 
@@ -70,7 +70,7 @@ There are also forks of my mods. Check them out whenever you get the chance! The
 Playing this couldn't be more simple. First thing you have to do is open the site, which is automatically updated from this
 repository!
 
-To do so, you just click this link: https://xpmuser.github.io/oldprodigy/select
+To do so, you just click this link: https://xpmuser.github.io/oldprodigy/select or this link: https://ao28th28.github.io/oldprodigy/select
 
 Once you're there, you can select a version to play. There are lots of versions to choose from, so try not to be overwhelmed
 by the number of choices, and there are still more versions and updates to come!
@@ -90,7 +90,7 @@ you're playing in, click the 'other' tab instead.
 
 ## Modpacks
 
-This repository features dynamic modpacks, you will be able to toggle mods as you see fit, and be able to combine multiple mods together for dynamic modpacks.
+This repository features dynamic modpacks, you'll be able to toggle mods as you see fit, and be able to combine multiple mods together for dynamic modpacks.
 
 Currently, these are the versions that support modpacks:
  - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
@@ -146,9 +146,13 @@ List of versions:
 
   This might be the last version without the house.
 
+- 1.4.0 | TBA!
+
+  This is actually the first version with the house being back in business. The house ui was 2014-2015's version.  
+
 - 1.4.6 | TBA!
 
-  TBA!
+  Bug Fixes!
 
 - 1.5.0 | TBA!
 
@@ -222,7 +226,7 @@ List of versions:
   
 - 1.18.0 | All Hallow's Eve!
 
-  This version is really neat because it has the first Pumpkinfest! This means Halloween decorations are all around the map, and there's a Pumpkinfest shop, with all-kinds of exclusive, creepy items and gear you can buy with your gold! Other than that it's pretty much just like 1.17.0. This version became the first version to be released to the public. 2014-2015's Firefly Forest didn't make it to the public release.
+  This version is really neat because it has the first Pumpkinfest! This means Halloween decorations are all around the map, and there's a Pumpkinfest shop, with all-kinds of exclusive, creepy items and gear you can buy with your gold! Other than that it's pretty much just like 1.17.0. This version became the first version to be released to the public. 2014-2015's Firefly Forest sadly didn't make it to the public release.
 
 - 1.18.2 | 1.18.0!
 
@@ -244,18 +248,34 @@ List of versions:
 
   Shiverchill Mountains now has the walking quests.
 
-- 1.22.1 | New Lamplight Town! Coming Soon! Doesn't boot up?!
+- 1.22.1 | New Lamplight Town!
 
-  This version introduced a new tile-based Lamplight town, and a LOT of new menu designs added in.  
+  This version introduced a new tile-based Lamplight town, and a LOT of new menu designs added in.
+
+- 1.22.2 | New Lamplight Town!
+
+  This version introduced a new tile-based Lamplight town, and a LOT of new menu designs added in.
+
+- 1.22.4 | New Lamplight Town!
+
+  This version introduced a new tile-based Lamplight town, and a LOT of new menu designs added in.    
 
 - 1.24.0 | Bounty Hunting Time!
 
   There's a problem going from Barnacle Cove to Lamplight Town without actually using the map. Bounties are also available as well.
   Pretty safe to say a LOT happened between 1.22.1, and this version.
 
-- 1.25.0 | Sidequests! Coming Soon!
+- 1.25.0 | Sidequests! 
 
   This version introduced sidequests. You can collect Fireflies, Frozen Somethings and Ice Crystals.
+
+- 1.25.1 | Sidequests! 
+
+  This version introduced sidequests. You can collect Fireflies, Frozen Somethings and Ice Crystals.
+
+- 1.25.2 | Sidequests! 
+
+  This version introduced sidequests. You can collect Fireflies, Frozen Somethings and Ice Crystals.    
 
 - 1.25.3 | Big Hex now exists! Coming Soon!
 
@@ -386,7 +406,7 @@ List of versions:
 
 - 6.136.0 | Coming Soon! NEW AVATAR!? EW! 2
 
-  New wizard looks and other new stuff. Making faces for free is no longer possible. You can now battle the Puppet Master. New unknown outfit: seafoam tank top with fuchsia underwear.
+  New wizard looks and other new stuff. Making faces for free is no longer possible. You can now battle the Puppet Master.
 
 - 6.139.0 | Coming Soon! Merchant Art Update!
 
@@ -394,7 +414,7 @@ List of versions:
 
 - Prodigy Reborn 1.0 | Not Recommended (If using the one that isn't the fixed version)!
 
-  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. At least the going home error doesn't occur for any 1-30-0 saves. The successor to this is My Prodigy Ultimate Edition http://opxpmuser.byethost7.com. The fixed version: https://xpmuser.github.io/oldprodigy/1-30-R/
+  Too many bugs for the saves in later than April 2020. The saves don't even work in here without the bugs. The successor to this is My Prodigy Ultimate Edition http://opxpmuser.byethost7.com. The fixed version: https://xpmuser.github.io/oldprodigy/1-30-R/
 
 - 1.11.0 | April 2015
 
