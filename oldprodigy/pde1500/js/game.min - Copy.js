@@ -42,6 +42,7 @@ function ApiClient(e, t) {
 	this.generic_ajax_error = function() {}, this.uniqueKey = void 0, this.userID = void 0, this.socket = void 0, this.clientVersion = e.clientVersion;
 	var l = {
 			version: "v1",
+			version: "v4",
 			autoping: !0,
 			url: {
 				leaderboard: void 0,
@@ -53,26 +54,26 @@ function ApiClient(e, t) {
 			root: void 0
 		},
 		d = {
-			dev: "/",
+			dev: "https://xpmuser.github.io/",
 			staging: "https://www.prodigygame.org/",
 			production: "https://www.prodigygame.com/"
 		},
 		p = {
 			dev: "https://multiplayer-dev.prodigygame.org/",
-			staging: "https://multiplayer.prodigygame.org/",
+			staging: "https://api.prodigygame.com/",
 			production: "https://multiplayer.prodigygame.com/"
 		},
 		c = "game-api/",
 		g = "leaderboard-api/",
 		u = "account-api/",
 		y = "matchmaking-api/",
-		m = "friend-api/",
+		m = "friends-api/",
 		f = "game-mailer-api/",
 		b = "game-tools-api/",
 		v = "assignment-api/",
 		w = "education-api/",
 		x = "events-api/";
-	switch (window.location.host) {
+	switch ("xpmuser.github.io") {
 		case "dev.prodigygame.org":
 		default:
 			i("dev", l);
@@ -86,7 +87,7 @@ function ApiClient(e, t) {
 		case "prodigygame.com":
 			i("production", l)
 	}
-	var D = window.location.search;
+	var D = "prodigygame.com";
 	if (D.indexOf("env=dev") >= 0 ? i("dev", l) : D.indexOf("env=staging") >= 0 ? i("staging", l) : (D.indexOf("env=production") >= 0 || D.indexOf("env=prod") >= 0) && i("production", l), e)
 		for (var P = Object.keys(l), I = 0, k = P.length; k > I; ++I) void 0 !== e[P[I]] && (l[P[I]] = e[P[I]]);
 	if (n = l, h["500"] = function() {
@@ -176,9 +177,13 @@ function ApiClient(e, t) {
 		var o = r(s, ["200", "400", "426", "500"], "create");
 		return !!o && (a("post", l.root + "v1/users", i, o, "create"), !0)
 	}, this.createGoogle = function(e, t, i, s) {
-		i.first_name = e, i.last_name = t, void 0 !== this.clientVersion && null !== this.clientVersion && (i.clientVersion = this.clientVersion);
-		var o = r(s, ["200", "400", "426", "500"], "create");
-		return !!o && (a("post", l.root + "v1/users/google", i, o, "create"), !0)
+		i.first_name = e, i.last_name = t, "undefined" != typeof this.clientVersion && null !== this.clientVersion && (i.clientVersion = this.clientVersion);
+		var r = n(s, ["200", "400", "426", "500"], "create");
+		if (r) {
+			var o = c.root + "v1";
+			return a("post", o + "/users/google", i, r, "create"), !0
+		}
+		return !1
 	}, this.createCharacter = function(e, t, i) {
 		var s = r(i, ["200"], "createCharacter");
 		return !!s && (a("post", l.root + "v1/characters/" + e, t, s, "createCharacter"), !0)
@@ -452,7 +457,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "1-50-0 Definitive Edition", e["GameConstants.Beta.VERSION"] = "1.6.0b Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "1-50-0 Mode Definitive Edition", e["GameConstants.Beta.VERSION"] = "1.8.0b Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -763,7 +768,8 @@ Util.capitalize = function(e) {
 		y = "images/monsters/small/",
 		m = "images/boss/",
 		f = "images/boss/small/",
-		b = "images/prompts/";
+		b = "images/prompts/",
+		U = "data/maps/pumpkinfest/";
 	this._assets = {
 		"boss-12": {
 			type: "atlas",
@@ -841,7 +847,8 @@ Util.capitalize = function(e) {
 			v: "16"
 		},
 		core: {
-			type: "atlas",
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
 			v: "3"
 		},
@@ -1272,6 +1279,11 @@ Util.capitalize = function(e) {
 			key: "store-volcano",
 			v: "1"
 		},
+		"store-stylist": {
+			type: "atlas",
+			key: "store-stylist",
+			v: "3"
+		},
 		"tileset-core": {
 			type: "atlas",
 			key: "tileset-core",
@@ -1304,9 +1316,9 @@ Util.capitalize = function(e) {
 		},
 		"zone-forest2": {
 			type: "localAtlas",
-			base: "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/zones/",
-			key: "zone-forest2",
-			v: "1"
+			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/images/zones/",
+			url: "zone-forest.png",
+			json: "zone-forest.json"
 		},
 		"zone-house": {
 			type: "atlas",
@@ -1663,7 +1675,7 @@ Util.capitalize = function(e) {
 		},
 		"tileset-minecarts": {
 			type: "spritesheet",
-			base: p,
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/tilesets/",
 			url: "tileset-minecarts/2/tileset-minecarts.png",
 			w: 40,
 			h: 40
@@ -1902,7 +1914,7 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c4": {
 			type: "json",
-			base: c,
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/data/",
 			url: "map-lamplight-c4/1/map-lamplight-c4.json"
 		},
 		"map-lamplight-a2-pumpkinfest": {
@@ -2505,6 +2517,24 @@ Util.capitalize = function(e) {
 			type: "singleImage",
 			v: 1
 		},
+		"bg-dorm-house": {
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			key: "bg-dorm-house",
+			v: "4"
+		},
+		"bg-dorm-cave": {
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			key: "bg-dorm-cave",
+			v: "4"
+		},
+		"bg-dorm-tree": {
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pde2015/assets/images/zones/",
+			key: "bg-dorm-tree",
+			v: "4"
+		},
 		"scene-intro-bg1": {
 			type: "singleImage",
 			v: 1
@@ -2566,8 +2596,10 @@ Util.capitalize = function(e) {
 			v: 2
 		},
 		"login-bg-1": {
-			type: "singleImage",
-			v: 5
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
+			key: "login-bg-1",
+			v: "4"
 		},
 		"login-bg-2": {
 			type: "singleImage",
@@ -2646,7 +2678,7 @@ Util.capitalize = function(e) {
 			v: 3
 		},
 		"voice-1": {
-			type: "sfx",
+			type: "local",
 			v: 3
 		},
 		"voice-2": {
@@ -3261,6 +3293,31 @@ Util.capitalize = function(e) {
 			type: "bgm",
 			base: "https://cdn.prodigygame.com/game/assets/audio/bgm/",
 			url: "bgm-intro-1.mp3"
+		},
+		"bgm-firefly-forest": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/v1/audio/bgm-firefly-forest/1/",
+			url: "bgm-firefly-forest.mp3"
+		},
+		"bgm-shiverchill-mountain": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/v1/audio/bgm-shiverchill-mountain/1/",
+			url: "bgm-shiverchill-mountain.mp3"
+		},
+		"bgm-skywatch": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/v1/audio/bgm-skywatch/1/",
+			url: "bgm-skywatch.mp3"
+		},
+		"bgm-bonfire-spire": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/v1/audio/bgm-bonfire-spire/1/",
+			url: "bgm-bonfire-spire.mp3"
+		},
+		"bgm-shipwreck-shore": {
+			type: "bgm",
+			base: "https://cdn.prodigygame.com/game/assets/v1/audio/bgm-shipwrech-shore/1/",
+			url: "bgm-shipwreck-shore.mp3"
 		},
 		"bgm-space": {
 			type: "bgm",
@@ -5859,6 +5916,28 @@ Util.capitalize = function(e) {
 			x: 47,
 			w: 93,
 			h: 108
+		},
+		"monster-small-77": {
+			type: "sprite",
+			base: y,
+			url: "98.png",
+			x: 70
+		},
+		"monster-normal-77": {
+			type: "spritesheet",
+			base: g,
+			url: "98.png",
+			x: 70,
+			w: 183,
+			h: 178
+		},
+		"monster-reduced-77": {
+			type: "spritesheet",
+			base: u,
+			url: "98.png",
+			x: 35,
+			w: 74,
+			h: 69
 		},
 		"monster-small-78": {
 			type: "sprite",
@@ -9081,6 +9160,15 @@ Util.capitalize = function(e) {
 			w: 115,
 			h: 113
 		},
+		"normal-hat-76": {
+			type: "spritesheet",
+			base: l,
+			url: "46.png",
+			x: 68,
+			y: 13,
+			w: 115,
+			h: 113
+		},
 		"reduced-hat-1": {
 			type: "spritesheet",
 			base: s,
@@ -9751,6 +9839,15 @@ Util.capitalize = function(e) {
 			type: "spritesheet",
 			base: s,
 			url: "75.png",
+			x: 32,
+			y: 13,
+			w: 59,
+			h: 57
+		},
+		"reduced-hat-76": {
+			type: "spritesheet",
+			base: s,
+			url: "46.png",
 			x: 32,
 			y: 13,
 			w: 59,
@@ -17276,96 +17373,112 @@ Util.capitalize = function(e) {
 	name: "Fireball",
 	element: "fire",
 	animation: "Fireball",
+	drop: 1,
 	damage: 4
 }, {
 	ID: 2,
 	name: "Embers",
 	element: "fire",
 	animation: "Embers",
+	drop: 1,
 	damage: 5
 }, {
 	ID: 3,
 	name: "Charclone",
 	element: "fire",
 	animation: "Charclone",
+	drop: 1,
 	damage: 6
 }, {
 	ID: 4,
 	name: "Razorfire",
 	element: "fire",
 	animation: "Razorfire",
+	drop: 1,
 	damage: 7
 }, {
 	ID: 5,
 	name: "Fire Rain",
 	element: "fire",
 	animation: "FireRain",
+	drop: 1,
 	damage: 8
 }, {
 	ID: 6,
 	name: "Dragos",
 	element: "fire",
 	animation: "Dragos",
+	drop: 1,
 	damage: 9
 }, {
 	ID: 7,
 	name: "Water Blast",
 	element: "water",
 	animation: "WaterBlast",
+	drop: 1,
 	damage: 4
 }, {
 	ID: 8,
 	name: "Water Bomb",
 	element: "water",
 	animation: "WaterBomb",
+	drop: 1,
 	damage: 5
 }, {
 	ID: 9,
 	name: "Rainy Day",
 	element: "water",
 	animation: "RainyDay",
+	drop: 1,
 	damage: 6
 }, {
 	ID: 10,
 	name: "Water Bubble",
 	element: "water",
 	animation: "WaterBubble",
+	drop: 1,
 	damage: 7
 }, {
 	ID: 11,
 	name: "Geyser",
 	element: "water",
 	animation: "Geyser",
+	drop: 1,
 	damage: 8
 }, {
 	ID: 12,
 	name: "Angel's Fountain",
 	element: "water",
 	animation: "Fountain",
+	drop: 1,
 	damage: 9
 }, {
 	ID: 13,
 	name: "Mudball",
 	element: "earth",
 	animation: "Mudball",
+	drop: 1,
 	damage: 4
 }, {
 	ID: 14,
 	name: "Whirlwind",
 	element: "earth",
 	animation: "Whirlwind",
+	drop: 1,
 	damage: 5
 }, {
 	ID: 15,
 	name: "Leaf Wind",
 	element: "earth",
 	animation: "LeafWind",
+	drop: 1,
 	damage: 6
 }, {
 	ID: 16,
 	name: "Absorb",
 	element: "earth",
 	animation: "Absorb",
+	drop: 1,
 	damage: 7,
 	heal: !0,
 	priority: 1
@@ -17374,36 +17487,42 @@ Util.capitalize = function(e) {
 	name: "Earthsprite",
 	element: "earth",
 	animation: "EarthSprite",
+	drop: 1,
 	damage: 8
 }, {
 	ID: 18,
 	name: "Blitz",
 	element: "earth",
 	animation: "Blitz",
+	drop: 1,
 	damage: 9
 }, {
 	ID: 19,
 	name: "Ice Cannon",
 	element: "ice",
 	animation: "IceCannon",
+	drop: 1,
 	damage: 4
 }, {
 	ID: 20,
 	name: "Ice Prison",
 	element: "ice",
 	animation: "IcePrison",
+	drop: 1,
 	damage: 5
 }, {
 	ID: 21,
 	name: "Blizzard",
 	element: "ice",
 	animation: "Blizzard",
+	drop: 1,
 	damage: 6
 }, {
 	ID: 22,
 	name: "Glacial Shield",
 	element: "ice",
 	animation: "GlacialShield",
+	drop: 1,
 	damage: 16,
 	heal: !0,
 	priority: 2
@@ -17412,90 +17531,105 @@ Util.capitalize = function(e) {
 	name: "Snowman",
 	element: "ice",
 	animation: "Snowman",
+	drop: 1,
 	damage: 8
 }, {
 	ID: 24,
 	name: "Ice to Meet You",
 	element: "ice",
 	animation: "IceToMeetYou",
+	drop: 1,
 	damage: 9
 }, {
 	ID: 25,
 	name: "Cloudshot",
 	element: "storm",
 	animation: "Cloudshot",
+	drop: 1,
 	damage: 4
 }, {
 	ID: 26,
 	name: "Bolt",
 	element: "storm",
 	animation: "Bolt",
+	drop: 1,
 	damage: 5
 }, {
 	ID: 27,
 	name: "Trinity",
 	element: "storm",
 	animation: "Trinity",
+	drop: 1,
 	damage: 6
 }, {
 	ID: 28,
 	name: "Thunderdome",
 	element: "storm",
 	animation: "Thunderdome",
+	drop: 1,
 	damage: 7
 }, {
 	ID: 29,
 	name: "Shocksphere",
 	element: "storm",
 	animation: "Shocksphere",
+	drop: 1,
 	damage: 8
 }, {
 	ID: 30,
 	name: "Storm's Coming",
 	element: "storm",
 	animation: "StormComing",
+	drop: 1,
 	damage: 9
 }, {
 	ID: 31,
 	name: "Magi-shot",
 	element: "wizard",
 	animation: "MagiShot",
+	drop: 1,
 	damage: 4
 }, {
 	ID: 32,
 	name: "Batter Up!",
 	element: "wizard",
 	animation: "BatterUp",
+	drop: 1,
 	damage: 5
 }, {
 	ID: 33,
 	name: "Conjure",
 	element: "wizard",
 	animation: "Conjure",
+	drop: 1,
 	damage: 6
 }, {
 	ID: 34,
 	name: "Pummel",
 	element: "wizard",
 	animation: "Pummel",
+	drop: 1,
 	damage: 7
 }, {
 	ID: 35,
 	name: "Powerbeam",
 	element: "wizard",
 	animation: "Powerbeam",
+	drop: 1,
 	damage: 8
 }, {
 	ID: 36,
 	name: "Zero",
 	element: "wizard",
 	animation: "Zero",
+	drop: 1,
 	damage: 9
 }, {
 	ID: 37,
 	name: "Frigid Blast",
 	element: "ice",
 	animation: "FrigidBlast",
+	drop: 1,
 	damage: 8,
 	type: "epic-attack",
 	epicId: 127,
@@ -17505,6 +17639,7 @@ Util.capitalize = function(e) {
 	name: "Storm's Wrath",
 	element: "storm",
 	animation: "StormWrath",
+	drop: 1,
 	damage: 8,
 	type: "epic-attack",
 	epicId: 125,
@@ -17514,6 +17649,7 @@ Util.capitalize = function(e) {
 	name: "Forest's Fury",
 	element: "earth",
 	animation: "ForestFury",
+	drop: 1,
 	damage: 8,
 	type: "epic-attack",
 	epicId: 126,
@@ -17523,6 +17659,7 @@ Util.capitalize = function(e) {
 	name: "Tidal Twister",
 	element: "water",
 	animation: "TidalTwister",
+	drop: 1,
 	damage: 8,
 	type: "epic-attack",
 	epicId: 128,
@@ -17532,6 +17669,7 @@ Util.capitalize = function(e) {
 	name: "Hot Snow",
 	element: "fire",
 	animation: "HotSnow",
+	drop: 1,
 	damage: 8,
 	type: "epic-attack",
 	epicId: 129,
@@ -19710,7 +19848,8 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Are you ready to take part in the ARENA? Face the toughest wizards around the world and work your way to the top!"
 	}, {
-		text: "After a battle from the removed zones, you can use the map once you go home."
+		text: "This is the Academy...or it WAS a long time ago. We're all waiting for the Wardens to return, but until then the Academy is closed...",
+		face: 1
 	}, {
 		text: "Do you want to open the Bounty Rewards shop?"
 	}, {
@@ -19799,6 +19938,8 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Best of luck. I'm counting on you.",
 		face: 0
+	}, {
+		text: "Welcome to the Academy!"
 	}],
 	winterfest: [{
 		text: "Open the present to get your daily gift!",
@@ -19806,6 +19947,10 @@ Util.capitalize = function(e) {
 	}, {
 		text: "You've already gotten your gift for today. Come back tomorrow.",
 		audio: {}
+	}],
+	guard: [{
+		text: "This is the Academy...or it WAS a long time ago. We're all waiting for the Wardens to return, but until then the Academy is closed...",
+		face: 1
 	}],
 	benni: [{
 		text: "You helped me out... Thanks, I guess.",
@@ -21630,7 +21775,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Explore each zone thoroughly...there are secrets hidden everywhere!"
 	}, {
-		text: "Can't beat a boss or another wizard? Level up your team and try again!"
+		text: "Can't win against a boss or another wizard? Level up your team and then try again!"
 	}, {
 		text: "Practice makes perfect! If you get a question wrong, try using a hint for the next one!"
 	}, {
@@ -21642,7 +21787,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Want to dance? Go to the area in Clockwork Town where it takes you to Airship Landing."
 	}, {
-		text: "Google Sign-in, Education, Multiplayer Mode, etc are all coming soon."
+		text: "Google Sign-in, Multiplayer Mode, etc are all coming soon."
 	}, {
 		text: "We have trouble installing bots for this version."
 	}, {
@@ -21650,11 +21795,15 @@ Util.capitalize = function(e) {
 	}, {
 		text: "To go to the Dyno Dig minigame, you must go upstairs in 2015-2016's Dyno Dig Oasis."
 	}, {
-		text: "Go to the circle in Clockwork Town to go to Barnacle Cove. Don't worry, you're fine."
+		text: "Go to the circle in Clockwork Town to go to the Lower Intersection. Don't worry, you're fine."
 	}, {
-		text: "Click on the flag in Barnacle Cove to go to Clockwork Town."
+		text: "The Google Sign-In button is back, but it still doesn't work yet."
 	}, {
-		text: "If you automatically go home after a battle and you're tired of it, you can use the map to go anywhere else because we were unable to fix this problem."
+		text: "If you don't like math, you can click or tap on the math off button on the login screen."
+	}, {
+		text: "If you're an iPad user and you still want to continue using your saved save, use a different device."
+	}, {
+		text: "If your saved save file is on your iPad, you can put it in any drive feature that keeps your files safe and available for another device."
 	}]
 }, Prodigy.Hints.prototype = {
 	getRandomHint: function(e) {
@@ -22078,6 +22227,7 @@ Items.getItemData = function(e, t) {
 		name: "Trialmaster's Garb",
 		member: 1,
 		rarity: 4,
+		drop: 1,
 		flavorText: "Only the trial masters of past and present were given these robes and are forbidden to take them off. How did you get them?",
 		effects: [83]
 	}, {
@@ -22085,13 +22235,15 @@ Items.getItemData = function(e, t) {
 		name: "Anorak Suit",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Need to keep warm in those winter days? It may not be a robe, but it sure is warm!",
 		effects: [35]
 	}, {
 		ID: 26,
-		name: "Winterfest Outfit",
+		name: "Wintertide Outfit",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The official outfit worn by helpers at Winterfest!",
 		effects: [35]
 	}, {
@@ -22099,6 +22251,7 @@ Items.getItemData = function(e, t) {
 		name: "Dragon Spike Robes",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "In close combat these spikes are dangerous indeed. Be careful when you're around your friends!",
 		effects: [35]
 	}, {
@@ -22106,6 +22259,7 @@ Items.getItemData = function(e, t) {
 		name: "Warm Robes",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Commonly worn in very cold places, these robes are made from many layers of fur and pelts.",
 		effects: [34]
 	}, {
@@ -22113,6 +22267,7 @@ Items.getItemData = function(e, t) {
 		name: "Firefly Robes",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A magical robe made from the leaves and materials found in Firefly Forest.",
 		effects: [35]
 	}, {
@@ -22120,6 +22275,7 @@ Items.getItemData = function(e, t) {
 		name: "Magic Robes",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "These robes were custom made for a wizard...but they seem to fit you just right!",
 		effects: [34]
 	}, {
@@ -22127,6 +22283,7 @@ Items.getItemData = function(e, t) {
 		name: "Frost Saber Robes",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "These wooly robes will keep you warm in cold weather...but don't wear them in the sun!",
 		effects: [35]
 	}, {
@@ -22134,6 +22291,7 @@ Items.getItemData = function(e, t) {
 		name: "Duelist Robes",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The robes of one of the greatest wizards in the Academy.",
 		effects: [35]
 	}, {
@@ -22141,6 +22299,7 @@ Items.getItemData = function(e, t) {
 		name: "Shiverchill Robes",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The ceremonial robes of the Shiverchill Tribes.",
 		effects: [35]
 	}, {
@@ -22148,6 +22307,7 @@ Items.getItemData = function(e, t) {
 		name: "Bonfire Robes",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: 'These can only be worn by those who have seen the "Bonfire of the Spire", a volcanic eruption, up close.',
 		effects: [34]
 	}, {
@@ -22155,6 +22315,7 @@ Items.getItemData = function(e, t) {
 		name: "Captain's Digs",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: 'Don\'t these just scream "Arggg"? They even come with the optional hook attachment!',
 		effects: [35]
 	}, {
@@ -22162,6 +22323,7 @@ Items.getItemData = function(e, t) {
 		name: "Buccaneer's Digs",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The choice clothes of deckhands and mates everywhere. Watch out, captains will be sure to shout orders at you.",
 		effects: [34]
 	}, {
@@ -22169,6 +22331,7 @@ Items.getItemData = function(e, t) {
 		name: "Skywatch Gear",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Since the Skyfolk don't wear clothing, the humans that come up to the clouds wear this outfit to stay warm and dry.",
 		effects: [34]
 	}, {
@@ -22176,6 +22339,7 @@ Items.getItemData = function(e, t) {
 		name: "Mira's Robes",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		flavorText: "These robes give off immense power, and almost seem to repel the ground below you.",
 		effects: [82]
 	}, {
@@ -22183,6 +22347,7 @@ Items.getItemData = function(e, t) {
 		name: "Diggin' Outfit",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This is the outfit of the Oasis Institute of Natural Creatures (OINC).",
 		effects: [35]
 	}, {
@@ -22190,6 +22355,7 @@ Items.getItemData = function(e, t) {
 		name: "Desert Robes",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "These robes protect the wearer from the brutal weather in the desert.",
 		effects: [34]
 	}, {
@@ -22197,6 +22363,7 @@ Items.getItemData = function(e, t) {
 		name: "Tinkerer Outfit",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This outfit is very stylish, but also pretty heavy-duty! The people back then sure were tough!",
 		effects: [34]
 	}, {
@@ -22204,6 +22371,7 @@ Items.getItemData = function(e, t) {
 		name: "TEK-Y4 Jumpsuit",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The jumpsuit worn by the official TEK-Y4 dance instructors. Kind of sweaty...",
 		effects: [34]
 	}, {
@@ -22211,6 +22379,7 @@ Items.getItemData = function(e, t) {
 		name: "Robot Outfit",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Whoever said that a wizard couldn't be a robot never had a chance to try these on...",
 		effects: [35]
 	}, {
@@ -22218,6 +22387,7 @@ Items.getItemData = function(e, t) {
 		name: "Pumpkin Outfit",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The Pumpkin Lord is said to return every year on Pumpkinfest to rule over all pumpkins.",
 		effects: [35]
 	}, {
@@ -22225,6 +22395,7 @@ Items.getItemData = function(e, t) {
 		name: "Luminite Costume",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A cute Luminite costume! It's so lifelike!",
 		effects: [33]
 	}, {
@@ -22232,6 +22403,7 @@ Items.getItemData = function(e, t) {
 		name: "Specter Robes",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The tattered robes of the legendary specter - a ghost that only shows up around Pumpkinfest.",
 		effects: [33]
 	}, {
@@ -22239,6 +22411,7 @@ Items.getItemData = function(e, t) {
 		name: "Mountaineer's Gear",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This warm, rugged coat is equipped with a standard set of climbing equipment, a must have for exploring the mountains.",
 		effects: [33]
 	}, {
@@ -22246,6 +22419,7 @@ Items.getItemData = function(e, t) {
 		name: "Frost Beard's Clasp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The magic armor of the great Viking Frost Beard - a mystic wind constantly billows its cape.",
 		effects: [35]
 	}, {
@@ -22253,6 +22427,7 @@ Items.getItemData = function(e, t) {
 		name: "Yeti Coat",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Who knew that Yetis shed?! Whether the coat directly came from a Yeti or was crafted from loose hairs is unclear.",
 		effects: [34]
 	}, {
@@ -22260,6 +22435,7 @@ Items.getItemData = function(e, t) {
 		name: "Red Armor",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This armor is lighter than it looks, but it seems to be all for show...the metal actually seems to be plastic...",
 		effects: [34]
 	}, {
@@ -22267,6 +22443,7 @@ Items.getItemData = function(e, t) {
 		name: "Phantom Cloak",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A magic barrier seems to emanate from the cloak...protecting you from all sorts of nasty spells.",
 		effects: [35]
 	}, {
@@ -22274,6 +22451,7 @@ Items.getItemData = function(e, t) {
 		name: "Draconyx Gear",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "Worn by ancient battle wizards, this gear seems to fit you perfectly, almost as if you were meant to wear it.",
 		effects: [82]
 	}, {
@@ -22281,6 +22459,7 @@ Items.getItemData = function(e, t) {
 		name: "Black Fang Coat",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "This outfit is worn only by the greatest of Bounty Hunters. It is a testament to the skill of its wearer.",
 		effects: [82]
 	}, {
@@ -22288,6 +22467,7 @@ Items.getItemData = function(e, t) {
 		name: "Hunter Coat",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The standard-issue garb of a Bounty Hunter. It holds up in the toughest of situations.",
 		effects: [35]
 	}, {
@@ -22295,6 +22475,7 @@ Items.getItemData = function(e, t) {
 		name: "Bee Suit",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "'Fly like a bee and sting like a bee'. Wait, that's not right...",
 		effects: [35]
 	}, {
@@ -22302,6 +22483,7 @@ Items.getItemData = function(e, t) {
 		name: "Candle Knight Armor",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This armor was used by Candle Knights for protection.",
 		effects: [35]
 	}],
@@ -22677,6 +22859,7 @@ Items.getItemData = function(e, t) {
 		name: "The Master of Trials",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "To be held only by the Trial Masters, its powers are the stuff of legends. How did you get it?",
 		effects: [81]
 	}, {
@@ -22684,6 +22867,7 @@ Items.getItemData = function(e, t) {
 		name: "Winter Bell",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Its sound is beautiful, but don't be lulled by its enchanting tones.",
 		effects: [30]
 	}, {
@@ -22691,6 +22875,7 @@ Items.getItemData = function(e, t) {
 		name: "Minotaur's Head",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A prize given to those who have successfully navigated the Labyrinth, it prevents them from ever being lost again.",
 		effects: [32]
 	}, {
@@ -22698,6 +22883,7 @@ Items.getItemData = function(e, t) {
 		name: "Sunburst Wand",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A ball of energy from the sun itself.",
 		effects: [31]
 	}, {
@@ -22705,6 +22891,7 @@ Items.getItemData = function(e, t) {
 		name: "Flamerose Wand",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Designed to appear like the mythical Flamerose, a rare flower that grows only on the side of the Bonfire Spire.",
 		effects: [32]
 	}, {
@@ -22712,6 +22899,7 @@ Items.getItemData = function(e, t) {
 		name: "Crystal Wand",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Transparent, it's easy to admire the beauty of the energy being charged inside this wand just before a spell is cast.",
 		effects: [31]
 	}, {
@@ -22719,6 +22907,7 @@ Items.getItemData = function(e, t) {
 		name: "Batwing Wand",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Those who hold this wand can sense what is around them even in the darkest of caves - much like the bat, which gives the wand its name.",
 		effects: [32]
 	}, {
@@ -22726,6 +22915,7 @@ Items.getItemData = function(e, t) {
 		name: "Fungoid",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Many wizards refuse to make their wands from living trees, instead they grow this wand from the forest's soils.",
 		effects: [32]
 	}, {
@@ -22733,6 +22923,7 @@ Items.getItemData = function(e, t) {
 		name: "Sacred Flame",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "For those who hail from the Spire, this wand that carries a flame from Bonfire is respected and admired.",
 		effects: [31]
 	}, {
@@ -22740,6 +22931,7 @@ Items.getItemData = function(e, t) {
 		name: "Sun Orb Staff",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		flavorText: "Its heat is so immense that its owner must possess great knowledge of fire magic simply to be in its presence.",
 		effects: [81]
 	}, {
@@ -22747,6 +22939,7 @@ Items.getItemData = function(e, t) {
 		name: "Staff of Winter",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "In the hands of the ice king of old, this staff was used to turn those who insulted his beard into frozen statues.",
 		effects: [32]
 	}, {
@@ -22754,6 +22947,7 @@ Items.getItemData = function(e, t) {
 		name: "Crystal Staff",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "As beautiful as it is elegant, it can be used to break light into parts that can be weaved into powerful spells.",
 		effects: [32]
 	}, {
@@ -22761,6 +22955,7 @@ Items.getItemData = function(e, t) {
 		name: "TuskTooth",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "An ancient staff from the realms of the Shiverchill tribes, it is thought to possess an animal spirit.",
 		effects: [32]
 	}, {
@@ -22768,6 +22963,7 @@ Items.getItemData = function(e, t) {
 		name: "Dragos",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		flavorText: 'Also known as the "Heart of the Dragon", the limits of this staff\'s power have never been reached.',
 		effects: [81]
 	}, {
@@ -22775,6 +22971,7 @@ Items.getItemData = function(e, t) {
 		name: "Twisted Staff",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This staff was grown by tree whisperers from the roots of the elder trees deep in the heart of the Firefly Forest.",
 		effects: [31]
 	}, {
@@ -22782,6 +22979,7 @@ Items.getItemData = function(e, t) {
 		name: "Staff of the Duelist",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Crios once swore that if anyone could beat him in a duel, he'd give them this staff. Looks like you did it!",
 		effects: [32]
 	}, {
@@ -22789,6 +22987,7 @@ Items.getItemData = function(e, t) {
 		name: "Hailstone",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The central stone for this staff can only be gathered during storms on the coldest winter nights by the Shiverchill Tribes.",
 		effects: [31]
 	}, {
@@ -22796,6 +22995,7 @@ Items.getItemData = function(e, t) {
 		name: "Bonfire",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Forged in the heat of the Bonfire Spire, it inspires both fear and awe in anyone who opposes it.",
 		effects: [32]
 	}, {
@@ -22803,6 +23003,7 @@ Items.getItemData = function(e, t) {
 		name: "Parrot",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: 'A magical parrot that sits on your shoulder. It might be too friendly because it keeps saying "hello" and asking for crackers...urgh.',
 		effects: [31]
 	}, {
@@ -22810,6 +23011,7 @@ Items.getItemData = function(e, t) {
 		name: "Shell-shocked",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: 'A daring turtle has made this its home. It gets a little nervous whenever someone says the word "fire".',
 		effects: [32]
 	}, {
@@ -22817,6 +23019,7 @@ Items.getItemData = function(e, t) {
 		name: "Remote Ship",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little remote may look normal, but something is awful strange about it. Maybe because it doesn't need batteries...",
 		effects: [32]
 	}, {
@@ -22824,6 +23027,7 @@ Items.getItemData = function(e, t) {
 		name: "Mira's Staff",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "A gift from the great wizard Mira. Just holding this staff makes you feel stronger than ever before.",
 		effects: [81]
 	}, {
@@ -22831,6 +23035,7 @@ Items.getItemData = function(e, t) {
 		name: "Wrench",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Not a very powerful weapon, but certainly useful for tightening bolts!",
 		effects: [31]
 	}, {
@@ -22838,6 +23043,7 @@ Items.getItemData = function(e, t) {
 		name: "Gizmotron",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A modified machine, the gizmotron stores magic inside and releases it at the user's will.",
 		effects: [32]
 	}, {
@@ -22845,6 +23051,7 @@ Items.getItemData = function(e, t) {
 		name: "Pumpkin Wand",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A plastic wand replica of the original Pumpkin Lord's weapon of choice...",
 		effects: [31]
 	}, {
@@ -22852,6 +23059,7 @@ Items.getItemData = function(e, t) {
 		name: "Spooky Candle",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "There's nothing really wrong with this candle, but it does kind of give you the creeps.",
 		effects: [31]
 	}, {
@@ -22859,6 +23067,7 @@ Items.getItemData = function(e, t) {
 		name: "Mjoln-Ice",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A mystic hammer wielded by the great Frost Beard - some say the hammer grants its wielder the powers of a Norse god.",
 		effects: [32]
 	}, {
@@ -22866,6 +23075,7 @@ Items.getItemData = function(e, t) {
 		name: "Pickaxe",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A standard-issue pickaxe, popular among the miners who used to inhabit the Shiverchill mines.",
 		effects: [30]
 	}, {
@@ -22873,6 +23083,7 @@ Items.getItemData = function(e, t) {
 		name: "Energy Staff",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This staff likely used to be much more powerful...when it worked. Now, it just seems to be used to intimidate.",
 		effects: [31]
 	}, {
@@ -22880,6 +23091,7 @@ Items.getItemData = function(e, t) {
 		name: "Glassfire",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This strange orb seems to have a small elemental stuck inside, though it seems happy enough in there.",
 		effects: [32]
 	}, {
@@ -22887,6 +23099,7 @@ Items.getItemData = function(e, t) {
 		name: "Draconyx",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "There's something about this staff that you don't like - as if strange whispers beckon you to hold it and never let go.",
 		effects: [81]
 	}, {
@@ -22894,6 +23107,7 @@ Items.getItemData = function(e, t) {
 		name: "Power Orb",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "This weapon is wielded only by the greatest of Bounty Hunters. Nearby monsters are drawn to its crystalline orb with a hypnotic pull.",
 		effects: [81]
 	}, {
@@ -22901,6 +23115,7 @@ Items.getItemData = function(e, t) {
 		name: "Clawed Staff",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The standard-issue weapon of a Bounty Hunter. Its claw is perfect for catching rogue monsters.",
 		effects: [32]
 	}, {
@@ -22908,6 +23123,7 @@ Items.getItemData = function(e, t) {
 		name: "Swarm of Bees",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "",
 		effects: [32]
 	}, {
@@ -22915,6 +23131,7 @@ Items.getItemData = function(e, t) {
 		name: "Casting Candle",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This is the primary tool used by the Candle Knights. Like the helmet, the light on this candle can never be extinguished.",
 		effects: [32]
 	}, {
@@ -22922,6 +23139,7 @@ Items.getItemData = function(e, t) {
 		name: "Big Hex Conductor",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This was made by Big Hex himself!",
 		effects: [81]
 	}, {
@@ -22929,6 +23147,7 @@ Items.getItemData = function(e, t) {
 		name: "Arctursus Power Rod",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This rod was forged by the Warden that gave Arctursus his frost gauntlets.",
 		effects: [81]
 	}, {
@@ -22936,6 +23155,7 @@ Items.getItemData = function(e, t) {
 		name: "Florafox Wand",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This wand was grown in the same garden as Florafox. It is said to hold the same plant-healing magic that Florafox can create.",
 		effects: [81]
 	}, {
@@ -22943,6 +23163,7 @@ Items.getItemData = function(e, t) {
 		name: "Diveodile Sea Staff",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This staff was crafted by townsfolk that lived on the eastern shore of the island, in the hopes that it would help them protect their waters as Diveodile did.",
 		effects: [81]
 	}, {
@@ -22950,6 +23171,7 @@ Items.getItemData = function(e, t) {
 		name: "Magmischief Fire Rod",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The rod was fashioned out of a stalagmite made of magma in a deep, hidden cave in Bonfire Spire.",
 		effects: [81]
 	}, {
@@ -22957,6 +23179,7 @@ Items.getItemData = function(e, t) {
 		name: "Crystal staff",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A staff made of crystal!",
 		effects: [81],
 		memberAd: 0
@@ -22965,6 +23188,7 @@ Items.getItemData = function(e, t) {
 		name: "Fairy Sword",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This magical blade was created by fairies for other creatures who defend their forest.",
 		effects: [32]
 	}, {
@@ -22972,6 +23196,7 @@ Items.getItemData = function(e, t) {
 		name: "Veggie Rod",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A wacky old wizard thought that vegetables had some hidden magical power, and so they created this staff. Maybe they were right?",
 		effects: [32],
 		memberAd: 0
@@ -22980,6 +23205,7 @@ Items.getItemData = function(e, t) {
 		name: "Umbrella",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Whack enemies and protect yourself from rain!",
 		effects: [81],
 		memberAd: 0
@@ -22988,6 +23214,7 @@ Items.getItemData = function(e, t) {
 		name: "Wingblade",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Legend says these swords belonged to the Sky Knights who fought on the backs of Pegasi a long time ago.",
 		effects: [32],
 		memberAd: 0
@@ -23197,6 +23424,7 @@ Items.getItemData = function(e, t) {
 		name: "Duelist Boots",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: 'Official boots of the Annual Wizard Dueling Contest, they say "The Choice of Champions" in big letters on their sides.',
 		effects: [82]
 	}, {
@@ -23212,6 +23440,7 @@ Items.getItemData = function(e, t) {
 		name: "Embers",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Made for wizards whose feet get cold. It feels like your toes are warming up in front of the fire.",
 		effects: [34]
 	}],
@@ -23220,6 +23449,7 @@ Items.getItemData = function(e, t) {
 		name: "Brown Hamster",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A friendly hamster whose best qualities include being pocket-sized, puffy, and being able to stuff lots of food in his cheeks. \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "rodent-0"
 	}, {
@@ -23227,6 +23457,7 @@ Items.getItemData = function(e, t) {
 		name: "White Cat",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little kitty will follow you anywhere you go, especially if you have some string! Soft and fluffy, the perfect combination of cute! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "cat-0"
 	}, {
@@ -23234,6 +23465,7 @@ Items.getItemData = function(e, t) {
 		name: "Tuxedo Cat",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little kitty will follow you anywhere you go, especially if you have some string! Soft and fluffy, the perfect combination of cute! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "cat-1"
 	}, {
@@ -23241,6 +23473,7 @@ Items.getItemData = function(e, t) {
 		name: "Shepherd",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Adorable, loving, loyal and even housebroken! Man's best friend indeed! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "dog-0"
 	}, {
@@ -23248,6 +23481,7 @@ Items.getItemData = function(e, t) {
 		name: "Husky",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Adorable, loving, loyal and even housebroken! Man's best friend indeed! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "dog-1"
 	}, {
@@ -23255,6 +23489,7 @@ Items.getItemData = function(e, t) {
 		name: "Calico Cat",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little kitty will follow you anywhere you go, especially if you have some string! Soft and fluffy, the perfect combination of cute! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "cat-2"
 	}, {
@@ -23262,6 +23497,7 @@ Items.getItemData = function(e, t) {
 		name: "Grey Cat",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little kitty will follow you anywhere you go, especially if you have some string! Soft and fluffy, the perfect combination of cute! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "cat-3"
 	}, {
@@ -23269,6 +23505,7 @@ Items.getItemData = function(e, t) {
 		name: "Tabby Cat",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little kitty will follow you anywhere you go, especially if you have some string! Soft and fluffy, the perfect combination of cute! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "cat-4"
 	}, {
@@ -23276,6 +23513,7 @@ Items.getItemData = function(e, t) {
 		name: "Siamese Cat",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little kitty will follow you anywhere you go, especially if you have some string! Soft and fluffy, the perfect combination of cute! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "cat-5"
 	}, {
@@ -23283,6 +23521,7 @@ Items.getItemData = function(e, t) {
 		name: "Beagle",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Adorable, loving, loyal and even housebroken! Man's best friend indeed! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "dog-2"
 	}, {
@@ -23290,6 +23529,7 @@ Items.getItemData = function(e, t) {
 		name: "Shiba Inu",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Adorable, loving, loyal and even housebroken! Man's best friend indeed! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "dog-3"
 	}, {
@@ -23297,6 +23537,7 @@ Items.getItemData = function(e, t) {
 		name: "Spotted Hamster",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A friendly hamster whose best qualities include being pocket-sized, puffy, and being able to stuff lots of food in his cheeks. \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "rodent-1"
 	}, {
@@ -23304,6 +23545,7 @@ Items.getItemData = function(e, t) {
 		name: "Barn Owl",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "During the night, this owl is alert and on the prowl. In the day, however, it's super sleepy. \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "bird-0"
 	}, {
@@ -23311,6 +23553,7 @@ Items.getItemData = function(e, t) {
 		name: "Blue Parrot",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This parrot can mimic your voice, but it only really uses certain words...Polly want a cracker? \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "bird-1"
 	}, {
@@ -23318,6 +23561,7 @@ Items.getItemData = function(e, t) {
 		name: "Cockatiel",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A very smart bird, cockatiels are known to be able to count and even use math! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "bird-2"
 	}, {
@@ -23325,6 +23569,7 @@ Items.getItemData = function(e, t) {
 		name: "Grey Parrot",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This parrot can mimic your voice, but it only really uses certain words...Polly want a cracker? \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "bird-3"
 	}, {
@@ -23332,6 +23577,7 @@ Items.getItemData = function(e, t) {
 		name: "Horned Owl",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "During the night, this owl is alert and on the prowl. In the day, however, it's super sleepy. \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "bird-4"
 	}, {
@@ -23339,6 +23585,7 @@ Items.getItemData = function(e, t) {
 		name: "Red Parrot",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This parrot can mimic your voice, but it only really uses certain words...Polly want a cracker? \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "bird-5"
 	}, {
@@ -23346,6 +23593,7 @@ Items.getItemData = function(e, t) {
 		name: "Chameleon",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This little lizard can change its colors to blend in with its surroundings, but sometimes just chooses not to. \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "lizard-0"
 	}, {
@@ -23353,6 +23601,7 @@ Items.getItemData = function(e, t) {
 		name: "Gecko",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A gecko can climb almost any surface and even upside down! This gecko seems to be afraid of heights, though. \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "lizard-1"
 	}, {
@@ -23360,6 +23609,7 @@ Items.getItemData = function(e, t) {
 		name: "Leopard Gecko",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A gecko can climb almost any surface and even upside down! This gecko seems to be afraid of heights, though. \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "lizard-2"
 	}, {
@@ -23367,6 +23617,7 @@ Items.getItemData = function(e, t) {
 		name: "Turtle",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Turtles are normally pretty slow, but this one has no issue keeping up with you! \n\nCan be bought at the Pet Shop in Lamplight Town.",
 		tag: "turtle-0"
 	}, {
@@ -23374,6 +23625,7 @@ Items.getItemData = function(e, t) {
 		name: "Baby Reindeer",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "These happy little creatures couldn't possibly be more excited to join you on your quest! They are well-known for being great pals on adventures. \n\nSold during Winterfest.",
 		tag: "reindeer-0"
 	}, {
@@ -23381,6 +23633,7 @@ Items.getItemData = function(e, t) {
 		name: "Penguin",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "What's black and white and chilly all over? Why a penguin of course! This polar pal is ready to explore beyond the cold lands it calls home with you! \n\nSold during Winterfest.",
 		tag: "penguin-0"
 	}, {
@@ -23388,6 +23641,7 @@ Items.getItemData = function(e, t) {
 		name: "Baby Snowman",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "With just a little bit of magic, this snowman came to life, and now, he's looking for a buddy to explore with! Don't worry, he can't melt! \n\nSold during Winterfest.",
 		tag: "snowman-0"
 	}, {
@@ -23395,6 +23649,7 @@ Items.getItemData = function(e, t) {
 		name: "Saber-Tooth Cat",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This furry friend loves to frolic in the snow and play hide and seek in the caverns deep within Shiverchill Mountains.",
 		tag: "cat-6",
 		spriteOffsets: {
@@ -23414,6 +23669,7 @@ Items.getItemData = function(e, t) {
 		name: "Purple Owl",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Shiverchill is home to many interesting creatures. The rare Purple Owl is one of them! Some say that these owls have magical powers.",
 		tag: "bird-6",
 		previewIcon: "follow/13",
@@ -23423,6 +23679,7 @@ Items.getItemData = function(e, t) {
 		name: "Steam-Powered Robot Bird 9001",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Steam-powered robot birds were created to help workers in Skywatch repair the weather machines.",
 		tag: "bird-7",
 		previewIcon: "follow/13",
@@ -23433,6 +23690,7 @@ Items.getItemData = function(e, t) {
 		name: "Flower Turtle",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Some turtles that live in Firefly Forest fall asleep in soil for long periods of time. When this happens, flowers begin to grow on their shell!",
 		tag: "turtle-1",
 		spriteOffsets: {
@@ -23448,6 +23706,7 @@ Items.getItemData = function(e, t) {
 		name: "Rainbow Panda",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The rainbow panda is so hard to find in the forest, because it can blend in so well with its environment.",
 		tag: "panda-0",
 		previewIcon: "follow/1",
@@ -23457,6 +23716,7 @@ Items.getItemData = function(e, t) {
 		name: "Cloud Sheep",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "These sheep like to get around by riding on gusts of wind that sweep them up. If you ever see a group of them gathered together, watch out! Their fur can rub together and create lightning storms!",
 		tag: "sheep-0",
 		previewIcon: "follow/1",
@@ -23466,6 +23726,7 @@ Items.getItemData = function(e, t) {
 		name: "Cuddly Cactus",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This cactus is surprisingly cuddly! The needles on it fall off at a very young age, leaving its soft skin free to cuddle!",
 		tag: "cactus-0",
 		previewIcon: "follow/1",
@@ -23475,6 +23736,7 @@ Items.getItemData = function(e, t) {
 		name: "Flame Salamander",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "These little fiery friends scamper, scurry, and swim through the lava of Bonfire Spire. Because of this, very few people have ever seen one!",
 		tag: "lizard-3",
 		previewIcon: "follow/19",
@@ -23485,6 +23747,7 @@ Items.getItemData = function(e, t) {
 		name: "Fox",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A sly fox would usually keep their distance, but this one is happy to follow you anywhere! \n\nReward for linking your account with your parent's account.",
 		tag: "fox-0",
 		previewIcon: "follow/1"
@@ -23493,6 +23756,7 @@ Items.getItemData = function(e, t) {
 		name: "Sparkle Hamster",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A sparkly pocket-sized friend who loves to stuff lots of food in their cheeks! \n\nCan be won on the Twilight Wheel.",
 		tag: "sparkle-rodent-0",
 		previewIcon: "follow/35"
@@ -23501,6 +23765,7 @@ Items.getItemData = function(e, t) {
 		name: "Sparkle Kitty",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A sparkly kitty whose glittering fur will be the talk of the town! \n\nCan be won on the Twilight Wheel.",
 		tag: "sparkle-cat-0",
 		previewIcon: "follow/35"
@@ -23509,6 +23774,7 @@ Items.getItemData = function(e, t) {
 		name: "Sparkle Puppy",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This sparkly best friend is loyal to the end and is happy to follow you anywhere! \n\nCan be won on the Twilight Wheel.",
 		tag: "sparkle-dog-0",
 		previewIcon: "follow/35"
@@ -23516,26 +23782,31 @@ Items.getItemData = function(e, t) {
 		ID: 125,
 		name: "Big Hex",
 		rarity: 3,
+		drop: 1,
 		flavorText: "He comes from an unknown place with an unknown name. You've decided to call him Big Hex for the large bolts that seem to hold him together."
 	}, {
 		ID: 126,
 		name: "Florafox",
 		rarity: 3,
+		drop: 1,
 		flavorText: "Florafox can speak with nearby plants and trees by planting itself in the soil. The bulb on Florafox’s tail produces a pollen that can heal any plant, no matter how injured or withered."
 	}, {
 		ID: 127,
 		name: "Arctursus",
 		rarity: 3,
+		drop: 1,
 		flavorText: "The air around Arctursus is always cold. This is because the tips of his fur are made from an ice that can never melt, and so no matter where he goes he is always at a comfortable temperature."
 	}, {
 		ID: 128,
 		name: "Diveodile",
 		rarity: 3,
+		drop: 1,
 		flavorText: "Diveodile's natural magic ability is boosted by the Warden pendant it wears, allowing it to cast strong water spells to generate water, or even control the water around itself!"
 	}, {
 		ID: 129,
 		name: "Magmischief",
 		rarity: 3,
+		drop: 1,
 		flavorText: "While traveling underground, Magmischief can sense movement on the surface, so he knows exactly where to appear and get the biggest scare out of those who have entered Bonfire Spire."
 	}],
 	relic: [{
@@ -23543,6 +23814,7 @@ Items.getItemData = function(e, t) {
 		name: "Aircorn",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [31]
 	}, {
@@ -23550,6 +23822,7 @@ Items.getItemData = function(e, t) {
 		name: "Earthnutt",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [31]
 	}, {
@@ -23557,6 +23830,7 @@ Items.getItemData = function(e, t) {
 		name: "Fireseed",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [31]
 	}, {
@@ -23564,6 +23838,7 @@ Items.getItemData = function(e, t) {
 		name: "Icycorn",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [31]
 	}, {
@@ -23571,6 +23846,7 @@ Items.getItemData = function(e, t) {
 		name: "Waterseed",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [31]
 	}, {
@@ -23578,6 +23854,7 @@ Items.getItemData = function(e, t) {
 		name: "Candy Bone",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [34]
 	}, {
@@ -23585,6 +23862,7 @@ Items.getItemData = function(e, t) {
 		name: "Lover's Band",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [35]
 	}, {
@@ -23592,6 +23870,7 @@ Items.getItemData = function(e, t) {
 		name: "Lucky Clover",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "",
 		effects: [33]
 	}, {
@@ -23599,6 +23878,7 @@ Items.getItemData = function(e, t) {
 		name: "Luminex Paw",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "",
 		effects: [32]
 	}, {
@@ -23606,6 +23886,7 @@ Items.getItemData = function(e, t) {
 		name: "Magic Bandage",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "",
 		effects: [35]
 	}],
@@ -23919,11 +24200,12 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 4,
+		drop: 1,
 		flavorText: "This ceremonial circlet is exceedingly rare and grants wisdom to those who wear it. Who would give it up?",
 		effects: [83]
 	}, {
 		ID: 24,
-		name: "Winterfest Hat",
+		name: "Wintertide Hat",
 		type: "",
 		member: 1,
 		rarity: 0,
@@ -24008,6 +24290,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A magical hat crafted by the magical creatures in Firefly Forest.",
 		effects: [35]
 	}, {
@@ -24016,6 +24299,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Some say that if the correct words are spoken, this tiara will spit flames. Be careful what you say while wearing it!",
 		effects: [35]
 	}, {
@@ -24024,6 +24308,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: 'Formerly worn by Eustace Redhale "The King of Dragons" and the last ruler to ride one. It has the power of dragon\'s fire.',
 		effects: [35]
 	}, {
@@ -24032,6 +24317,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The hat of one of the greatest wizards in the Academy.",
 		effects: [35]
 	}, {
@@ -24040,6 +24326,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: 'The Shiverchill Tribes wear this hat during important ceremonies like the "Welcome to Winter" and "Tobogganing Tuesdays".',
 		effects: [34]
 	}, {
@@ -24048,6 +24335,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A celebratory hat worn by the people of Spire on feast days. You can store a lot of food in it if you're sneaky.",
 		effects: [34]
 	}, {
@@ -24056,6 +24344,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The choice of pirate captains everywhere! It smells like the sea and comes with a cool-looking eye patch!",
 		effects: [34]
 	}, {
@@ -24064,6 +24353,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The favorite head gear of scurvy dogs because it's very absorbent and pirates love polka dots.",
 		effects: [34]
 	}, {
@@ -24072,6 +24362,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This is the hat worn by the Skyfolk - the small creatures who live in the clouds above the Academy.",
 		effects: [34]
 	}, {
@@ -24080,6 +24371,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "Mira's hood radiates a powerful energy...",
 		effects: [82]
 	}, {
@@ -24088,6 +24380,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A fashionable hat worn by initiates in the Oasis Institute of Natural Creatures (OINC).",
 		effects: [34]
 	}, {
@@ -24096,6 +24389,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This hat is rumored to have been worn by Looter Dan, the Academy's greatest explorer.",
 		effects: [35]
 	}, {
@@ -24104,6 +24398,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "An old hat, probably worn by the people who built the ancient city.",
 		effects: [34]
 	}, {
@@ -24112,6 +24407,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "You aren't a robot, but this hat sure makes you look like one!",
 		effects: [35]
 	}, {
@@ -24120,6 +24416,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "These headphones are used to enhance the dancing skills of the TEK-Y4 dancing robots!",
 		effects: [34]
 	}, {
@@ -24128,6 +24425,7 @@ Items.getItemData = function(e, t) {
 		type: "wrap",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This actually smells like a pumpkin! Kind of sweaty, though.",
 		effects: [35]
 	}, {
@@ -24136,6 +24434,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A plastic Luminite mask...pretty well-made, I think!",
 		effects: [34]
 	}, {
@@ -24144,6 +24443,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "The hood of a creepy specter - a bit dingy, but that just makes it even creepier.",
 		effects: [34]
 	}, {
@@ -24152,6 +24452,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A plastic mask of Franky the Stein, the popular TV monster.",
 		effects: [34]
 	}, {
@@ -24160,6 +24461,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A plastic mask of a skelly.",
 		effects: [34]
 	}, {
@@ -24168,6 +24470,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A plastic wolf mask... ooooo scary!",
 		effects: [34]
 	}, {
@@ -24176,6 +24479,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A thick, durable knitted toque, perfect for braving the harsh mountain conditions.",
 		effects: [34]
 	}, {
@@ -24184,6 +24488,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A standard viking helmet, but with wings! Who cares if they don't make you fly, they're wings!",
 		effects: [34]
 	}, {
@@ -24192,6 +24497,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The helm of the great Frost Beard. Causes the wearer to grow a beard of ice.",
 		effects: [35]
 	}, {
@@ -24200,6 +24506,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A Yeti mask covered in makeup...",
 		effects: [34]
 	}, {
@@ -24208,6 +24515,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "A Yeti mask...so scary!",
 		effects: [34]
 	}, {
@@ -24216,6 +24524,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This relic from a more technical age seems to be restored perfectly...it even has that new car smell!",
 		effects: [34]
 	}, {
@@ -24224,6 +24533,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A strange feeling overwhelms you when you put on this hood; it makes you feel...mysterious.",
 		effects: [35]
 	}, {
@@ -24232,6 +24542,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "This helm was worn by the warrior wizards of legend - meant only for those who passed the toughest of tests.",
 		effects: [82]
 	}, {
@@ -24240,6 +24551,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		flavorText: "This helm is worn only by the greatest of Bounty Hunters. Its staring gaze strikes fear into the hearts of all who see it!",
 		effects: [82]
 	}, {
@@ -24248,6 +24560,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The standard-issue hat of a Bounty Hunter. It is durable enough to wear in a storm and provides excellent visibility.",
 		effects: [35]
 	}, {
@@ -24256,6 +24569,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The hat from a bee costume. It smells faintly of flowers.",
 		effects: [35]
 	}, {
@@ -24264,6 +24578,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "The magical flame on this helmet can never be extinguished.",
 		effects: [35]
 	}, {
@@ -24272,6 +24587,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "A helmet crafted by Big Hex's creator, the Warden who studied in Skywatch.",
 		effects: [34]
 	}, {
@@ -24280,6 +24596,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "If Arctursus ever found someone lost in the mountains, he would shed some ice fur and create this hood out of it to keep them warm.",
 		effects: [34]
 	}, {
@@ -24288,6 +24605,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This bonnet was grown in a Warden's garden in Firefly Forest.",
 		effects: [34]
 	}, {
@@ -24296,6 +24614,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "Townsfolk that live on the shore crafted this diving toque in honor of the sea guardian Diveodile.",
 		effects: [34]
 	}, {
@@ -24304,6 +24623,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 2,
+		drop: 1,
 		flavorText: "This helmet was crafted out of cooled lava from Bonfire Spire.",
 		effects: [34]
 	}, {
@@ -24312,6 +24632,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This hat is prickly!",
 		effects: [34],
 		memberAd: 0
@@ -24321,6 +24642,7 @@ Items.getItemData = function(e, t) {
 		type: "mask",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "It is said that this hood was once worn by the bravest of warriors!",
 		effects: [34]
 	}, {
@@ -24329,6 +24651,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "It's a special springtime hat!",
 		effects: [34]
 	}, {
@@ -24337,6 +24660,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		flavorText: "This hat is shiny!",
 		effects: [34],
 		memberAd: 0
@@ -24346,6 +24670,7 @@ Items.getItemData = function(e, t) {
 		type: "",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		flavorText: "Whatever the weather, this hat's got you covered!",
 		effects: [34]
 	}],
@@ -24358,6 +24683,7 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		ID: 2,
@@ -24375,6 +24701,7 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		ID: 4,
@@ -24385,6 +24712,7 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		ID: 5,
@@ -24405,24 +24733,28 @@ Items.getItemData = function(e, t) {
 		name: "White Feather",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The feather of a white bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		ID: 8,
 		name: "Fish Bone",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Fish bones? Gross! Why am I even carrying this around?!"
 	}, {
 		ID: 9,
 		name: "Red Feather",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The feather of a red bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		ID: 10,
 		name: "Green Feather",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The feather of a green bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		ID: 11,
@@ -24433,24 +24765,28 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A cake? I guess monsters celebrate birthday's too..."
 	}, {
 		ID: 12,
 		name: "Blue Feather",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The feather of a blue bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		ID: 13,
 		name: "Gold Ring",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A gold ring! I wonder how much it's worth?"
 	}, {
 		ID: 14,
 		name: "Silver Ring",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A silver ring! I wonder how much it's worth?"
 	}, {
 		ID: 15,
@@ -24464,36 +24800,42 @@ Items.getItemData = function(e, t) {
 		name: "Purple Feather",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The feather of a purple bird. I've heard that some people at the Academy collect feathers..."
 	}, {
 		ID: 17,
 		name: "Carmine Floret",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "These flowers tend to spread quickly and are a common sight in Firefly Forest."
 	}, {
 		ID: 18,
 		name: "Helio Floret",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "These flowers are only found growing in trees, making them hard to reach."
 	}, {
 		ID: 19,
 		name: "Slate Floret",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The Slate Floret can only be found growing underneath the largest rocks, far away from the sunlight."
 	}, {
 		ID: 20,
 		name: "Ring of the Forest",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This ring is made from Forest Emeralds, which are hard to find in Firefly Forest."
 	}, {
 		ID: 21,
 		name: "Forest Emerald",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The forest emerald is a bright, glowing stone found only in Firefly Forest."
 	}, {
 		ID: 22,
@@ -24504,18 +24846,21 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		ID: 23,
 		name: "Seedling",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The Firefly Forest is full of roots, which can grow into all sorts of neat things!"
 	}, {
 		ID: 24,
 		name: "Mandrake",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "In the Firefly Forest, sometimes roots sprout life! The result - the magical Mandrake!"
 	}, {
 		ID: 25,
@@ -24526,306 +24871,357 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks delicious!"
 	}, {
 		ID: 26,
 		name: "Lucky Coin",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "I wonder whose coin this is...? It looks like it's rare..."
 	}, {
 		ID: 27,
 		name: "Icy Floret",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Also called the Snow Flower, this plant thrives in the harsh cold of the mountains."
 	}, {
 		ID: 28,
 		name: "Glacier Diamond",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This gem looks so much like ice that students often pass it by without notice."
 	}, {
 		ID: 29,
 		name: "Ring of the Glacier",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This ring is made from Glacier Diamonds, which are hard to find in Shiverchill Mountains."
 	}, {
 		ID: 30,
 		name: "Chillymoth",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "When frightened, a Chillymoth turns into ice and people often keep them as trinkets."
 	}, {
 		ID: 31,
 		name: "Mountain Star",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "These mysterious gems are formed in the ice on moonlit nights, but never melt."
 	}, {
 		ID: 32,
 		name: "Frozen Object",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It looks like there's something frozen inside! I wonder what it is?"
 	}, {
 		ID: 33,
 		name: "Fire Flower",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This flower's petals look like a dancing flame, but the flower is cool to the touch."
 	}, {
 		ID: 34,
 		name: "Volcanic Ruby",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A glowing gem that can be found only in the hottest of places."
 	}, {
 		ID: 35,
 		name: "Sunfire Pod",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Nobody really knows how a sunfire pod is created, or where it comes from."
 	}, {
 		ID: 36,
 		name: "Embershard",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Not actually a gem, but instead a piece of glass or metal that has been formed in a volcano."
 	}, {
 		ID: 37,
 		name: "Ring of the Volcano",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This ring is made with Volcanic Rubies, which are hard to find in Bonfire Spire."
 	}, {
 		ID: 38,
 		name: "Message in a Bottle",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks like someone left a message in a bottle...I wonder what it says...?"
 	}, {
 		ID: 39,
 		name: "Shark Tooth",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This tooth is huge and sharp...it must have come from a shark."
 	}, {
 		ID: 40,
 		name: "Red Shell",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A red clam shell, found in clusters on sunny beaches."
 	}, {
 		ID: 41,
 		name: "Blue Shell",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A blue clam shell, found in clusters on sunny beaches."
 	}, {
 		ID: 42,
 		name: "White Shell",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A white clam shell, found in clusters on sunny beaches."
 	}, {
 		ID: 43,
 		name: "Confused Shark",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This little shark looks confused...better keep it in water for now."
 	}, {
 		ID: 44,
 		name: "Bag of Flour",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Flour used for baking."
 	}, {
 		ID: 45,
 		name: "Bag of Spices",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Spices used in cooking."
 	}, {
 		ID: 46,
 		name: "Bottled Cloud",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: ""
 	}, {
 		ID: 47,
 		name: "Gears",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "These look like they were part of a machine. I wonder what it did?"
 	}, {
 		ID: 48,
 		name: "Medallion",
 		member: 0,
 		rarity: 0,
+ 		drop: 1,
 		flavorText: "Strange markings are found on this medallion."
 	}, {
 		ID: 49,
 		name: "Spare Parts",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Various metal pieces...maybe they're part of a puzzle?"
 	}, {
 		ID: 50,
 		name: "Cloth Scrap",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It looks like this cloth was torn from some larger fabric."
 	}, {
 		ID: 51,
 		name: "Scrap Wood",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A piece of scrap wood, probably useful for building."
 	}, {
 		ID: 52,
 		name: "Scepter",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This metal rod looks a little shabby..."
 	}, {
 		ID: 53,
 		name: "Wrench",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A little worn, but probably still works great."
 	}, {
 		ID: 54,
 		name: "Lightning Stone",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This stone is supposed to hold electricity...my hair is standing on end!"
 	}, {
 		ID: 55,
 		name: "Doubloon",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It's a pirate coin! I wonder if it's worth anything..."
 	}, {
 		ID: 56,
 		name: "Scroll of Paper",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A roll of paper, looks pretty important."
 	}, {
 		ID: 57,
 		name: "Spyglass",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This spyglass is in pretty good condition...someone took good care of it!"
 	}, {
 		ID: 58,
 		name: "Seeds",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A bunch of little seeds...who knows what they will grow into."
 	}, {
 		ID: 59,
 		name: "Green Key",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A strange-looking key adorned with a green jewel."
 	}, {
 		ID: 60,
 		name: "Animal Tag",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It looks like a tag for animal tracking..."
 	}, {
 		ID: 61,
 		name: "Scoog's Hat",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This must be Professor Scoog's hat...smells like dog food..."
 	}, {
 		ID: 62,
 		name: "Moog's Evil Scheme",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This appears to be a novel outlining all of Moog's plan to capture the Dynos. It's very well-written."
 	}, {
 		ID: 63,
 		name: "Digging Equipment",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It looks like a machine for digging...but the batteries seem to have fallen out."
 	}, {
 		ID: 64,
 		name: "Dyno Egg",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It's a dyno egg! It looks like it's safe and intact."
 	}, {
 		ID: 65,
 		name: "Prize Ribbon",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks like a cheap prize ribbon for winning the Robolympics...I wonder what I can use it for?"
 	}, {
 		ID: 66,
 		name: "Scrap of Paper",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Contains a lot of scribbles and doodles."
 	}, {
 		ID: 67,
 		name: "Monster Note",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It says - 'Huffy mop derp biggy book Flora'. Okay..."
 	}, {
 		ID: 68,
 		name: "Broken Stone",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Looks like a piece of a bridge, covered in claw marks."
 	}, {
 		ID: 69,
 		name: "Broken Flute",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A wooden flute...looks like it was broken in half."
 	}, {
 		ID: 70,
 		name: "Magic Flute",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A wooden flute containing the magical powers of the forest."
 	}, {
 		ID: 71,
 		name: "Power Crystal",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Crystal used to power the old furnaces in the ice caves."
 	}, {
 		ID: 72,
 		name: "Miner Shovel",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A shovel...looks sturdy enough to dig through anything!"
 	}, {
 		ID: 73,
 		name: "Spoon",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A very large, Yeti-sized spoon. Definitely not a shovel."
 	}, {
 		ID: 74,
 		name: "Crystal",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A dim, worn-out Power Crystal. It no longer possesses enough energy to be of any use."
 	}, {
 		ID: 75,
 		name: "Bok's Key",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A key to a chest containing Bok's shovel."
 	}, {
 		ID: 76,
@@ -24836,6 +25232,7 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Classic fireworks, great to use during a celebration."
 	}, {
 		ID: 77,
@@ -24846,113 +25243,132 @@ Items.getItemData = function(e, t) {
 		},
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "What's a party without confetti?"
 	}, {
 		ID: 78,
 		name: "Firefly",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A firefly from the Firefly Forest. Bring these to the merchant in the Firefly Clearing for rewards."
 	}, {
 		ID: 79,
 		name: "Frozen Something",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This ice block has something inside it. Maybe there's a way to get it out?"
 	}, {
 		ID: 80,
 		name: "Ice Crystal",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A valuable ice crystal from the Shiverchill Mountains. Bring these to the miner in the Ruined Entrance for rewards."
 	}, {
 		ID: 81,
 		name: "Factory Key",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A key to the factory in Skywatch."
 	}, {
 		ID: 82,
 		name: "Master Key Fragment",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Half of the Master Key. Find the other half and bring it to Benni to fix."
 	}, {
 		ID: 83,
 		name: "Master Key",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "The key to the Cumulus Room in the Skywatch Factory."
 	}, {
 		ID: 84,
 		name: "Bounty Note",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This bounty note means you have accepted the 1st bounty for today. Check the bounty section of the Awards Menu for details."
 	}, {
 		ID: 85,
 		name: "Bounty Note",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This bounty note means you have accepted the 2nd bounty for today. Check the bounty section of the Awards Menu for details."
 	}, {
 		ID: 86,
 		name: "Bounty Note",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This bounty note means you have accepted the 3rd bounty for today. Check the bounty section of the Awards Menu for details."
 	}, {
 		ID: 87,
 		name: "Weather O Meter",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Benni uses this device to take weather readings around Skywatch."
 	}, {
 		ID: 88,
 		name: "Raisin",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Slurpy's special ingredient."
 	}, {
 		ID: 89,
 		name: "Cooking Tools",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A ragtag assortment of cooking tools."
 	}, {
 		ID: 90,
 		name: "Turnip",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This huge turnip is the Queen's favorite ingredient."
 	}, {
 		ID: 91,
 		name: "Slurpy's Dish",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A stew made from turnips by Slurpy the slime. It is surprisingly well made."
 	}, {
 		ID: 92,
 		name: "Crimson Ruby Key",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A key used to open a very special chest in Bonfire Spire."
 	}, {
 		ID: 93,
 		name: "Weather O Meter",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Benni uses this device to take weather readings around Skywatch, but it looks like it's been chewed up."
 	}, {
 		ID: 94,
 		name: "Scroll of Paper",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A roll of paper, looks pretty important."
 	}, {
 		ID: 95,
 		name: "Resist All",
 		member: 0,
+		drop: 1,
 		flavorText: "This battle potion gives you resistance to ALL attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -24965,6 +25381,7 @@ Items.getItemData = function(e, t) {
 		ID: 96,
 		name: "Fire Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you resistance to Fire attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -24978,6 +25395,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		flavorText: "This battle potion gives you strong resistance to Fire attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
+		drop: 1,
 		subType: "elemental",
 		element: "fire",
 		potency: 2,
@@ -24987,6 +25405,7 @@ Items.getItemData = function(e, t) {
 		ID: 98,
 		name: "Water Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you resistance to Water attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -24998,6 +25417,7 @@ Items.getItemData = function(e, t) {
 		ID: 99,
 		name: "Strong Water Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you strong resistance to Water attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25009,6 +25429,7 @@ Items.getItemData = function(e, t) {
 		ID: 100,
 		name: "Earth Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you resistance to Earth attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25020,6 +25441,7 @@ Items.getItemData = function(e, t) {
 		ID: 101,
 		name: "Strong Earth Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you strong resistance to Earth attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25031,6 +25453,7 @@ Items.getItemData = function(e, t) {
 		ID: 102,
 		name: "Ice Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you resistance to Ice attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25042,6 +25465,7 @@ Items.getItemData = function(e, t) {
 		ID: 103,
 		name: "Strong Ice Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you strong resistance to Ice attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25053,6 +25477,7 @@ Items.getItemData = function(e, t) {
 		ID: 104,
 		name: "Storm Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you resistance to Storm attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25064,6 +25489,7 @@ Items.getItemData = function(e, t) {
 		ID: 105,
 		name: "Strong Storm Resist",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you strong resistance to Storm attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25075,6 +25501,7 @@ Items.getItemData = function(e, t) {
 		ID: 106,
 		name: "Damage Bonus",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives a boost to your attack damage in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		element: "damage",
@@ -25085,6 +25512,7 @@ Items.getItemData = function(e, t) {
 		ID: 107,
 		name: "Strong Damage Bonus",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives a strong boost to your attack damage in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		element: "damage",
@@ -25095,6 +25523,7 @@ Items.getItemData = function(e, t) {
 		ID: 108,
 		name: "Critical Chance Up",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion increases the chance your attack will be a critical hit in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		element: "critical",
@@ -25105,6 +25534,7 @@ Items.getItemData = function(e, t) {
 		ID: 109,
 		name: "Always Critical",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion makes every attack you use a critical hit in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		element: "critical",
@@ -25115,6 +25545,7 @@ Items.getItemData = function(e, t) {
 		ID: 110,
 		name: "Resist All",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you resistance to ALL attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25126,6 +25557,7 @@ Items.getItemData = function(e, t) {
 		ID: 111,
 		name: "Strong Resist All",
 		member: 1,
+		drop: 1,
 		flavorText: "This battle potion gives you strong resistance to ALL attacks in monster battles. Lasts for 1 battle.",
 		type: "potion",
 		subType: "elemental",
@@ -25138,67 +25570,80 @@ Items.getItemData = function(e, t) {
 		ID: 1,
 		name: "Shovel",
 		levels: 3,
+		drop: 1,
 		flavorText: "A shovel used for digging up fossils."
 	}, {
 		ID: 2,
 		name: "TEK-Y4",
 		levels: 5,
+		drop: 1,
 		flavorText: "A dancing robot with a neural network processor for dance move acceleration and increased groove accuracy."
 	}, {
 		ID: 3,
 		name: "Firefly Gem",
 		levels: 1,
+		drop: 1,
 		flavorText: "An emerald representing your mastery of Flora's trials in Firefly Forest."
 	}, {
 		ID: 4,
 		name: "Shiverchill Gem",
 		levels: 1,
+		drop: 1,
 		flavorText: "A diamond representing your aid in Bok's woes in the Shiverchill Mountains."
 	}, {
 		ID: 5,
 		name: "Bounty Note",
 		levels: 1,
+		drop: 1,
 		flavorText: "This bounty note means you have accepted the 1st bounty for today. Check the bounty section of the Awards Menu for details."
 	}, {
 		ID: 6,
 		name: "Bounty Note",
 		levels: 1,
+		drop: 1,
 		flavorText: "This bounty note means you have accepted the 2nd bounty for today. Check the bounty section of the Awards Menu for details."
 	}, {
 		ID: 7,
 		name: "Bounty Note",
 		levels: 1,
+		drop: 1,
 		flavorText: "This bounty note means you have accepted the 3rd bounty for today. Check the bounty section of the Awards Menu for details."
 	}, {
 		ID: 8,
 		name: "Vine Pruner",
 		levels: 1,
+		drop: 1,
 		flavorText: "A fiery wand that burns away those pesky vines."
 	}, {
 		ID: 9,
 		name: "Vinecinerator 2000",
 		levels: 1,
+		drop: 1,
 		flavorText: "Having trouble with vines that are too thick to burn with your Vine Pruner? Not to worry, here's the Vinecinerator 2000!"
 	}, {
 		ID: 10,
 		name: "Skywatch Gem",
 		levels: 1,
+		drop: 1,
 		flavorText: "An amethyst representing your adventures during Eugene's pranks in Skywatch."
 	}, {
 		ID: 11,
 		name: "Bonfire Gem",
 		levels: 1,
+		drop: 1,
 		flavorText: "A ruby given to you by Slurpy after helping him in his quest to become a chef. This is the Warden Keystone of Bonfire Spire."
 	}, {
 		ID: 12,
 		name: "Boots of Hotwalk",
 		quest: 1,
 		levels: 1,
+		drop: 1,
 		flavorText: "These boots allow the wearer to walk on lava."
 	}, {
 		ID: 13,
 		name: "Island Map",
 		levels: 1,
+		drop: 1,
 		flavorText: "A map of the entire island!"
 	}],
 	fossil: [{
@@ -25206,77 +25651,90 @@ Items.getItemData = function(e, t) {
 		name: "Terrosaur Bone",
 		count: 20,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 2,
 		name: "Stampeed Bone",
 		count: 20,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 3,
 		name: "Claustro Bone",
 		count: 10,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 4,
 		name: "Pterrocks Bone",
 		count: 10,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This bone looks like a piece from a much larger skeleton. I better find them all!"
 	}, {
 		ID: 5,
 		name: "Beetle in Amber",
 		count: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "It appears to be a large beetle, preserved in a piece of amber. Neat!"
 	}, {
 		ID: 6,
 		name: "Trellobyte",
 		count: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "Trellobytes once scavenged the ocean floors, looking for scraps and collectible cards."
 	}, {
 		ID: 7,
 		name: "Sharp Claw",
 		count: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A large claw to some carnivore...or perhaps an ill-tempered herbivore."
 	}, {
 		ID: 8,
 		name: "Dragonfly in Amber",
 		count: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This dragonfly must have landed on a tree, and got caught in some tree sap."
 	}, {
 		ID: 9,
 		name: "Shell",
 		count: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "This shell was likely once home to a large crustacean, or perhaps just a fancy-looking thermos."
 	}, {
 		ID: 10,
 		name: "Mosquito in Amber",
 		count: 1,
 		rarity: 0,
+		drop: 1,
 		flavorText: "These are often treasured as jewelry, and some old men like to place them atop their canes."
 	}, {
 		ID: 11,
 		name: "Piece of Fossilized Fish",
 		count: 5,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A fragment of a fossilized fish...it looks like there are more out there!"
 	}, {
 		ID: 12,
 		name: "Piece of Fossilized Plant",
 		count: 5,
 		rarity: 0,
+		drop: 1,
 		flavorText: "A fragment of a fossilized plant...it looks like there are more out there!"
 	}, {
 		ID: 13,
 		name: "Terrosaur Skeleton",
 		rarity: 3,
+		drop: 1,
 		flavorText: "A skeleton of the awesome terrosaur, the meanest dyno in history!",
 		recipe: [{
 			ID: 1,
@@ -25287,6 +25745,7 @@ Items.getItemData = function(e, t) {
 		ID: 14,
 		name: "Stampeed Skeleton",
 		rarity: 3,
+		drop: 1,
 		flavorText: "A skeleton of a Stampeed. It looks pretty cool, and boy is it heavy!",
 		recipe: [{
 			ID: 2,
@@ -25297,6 +25756,7 @@ Items.getItemData = function(e, t) {
 		ID: 15,
 		name: "Claustro Skeleton",
 		rarity: 2,
+		drop: 1,
 		flavorText: "This skeleton of a claustro is actually a combination of bone and cartilage.",
 		recipe: [{
 			ID: 3,
@@ -25307,6 +25767,7 @@ Items.getItemData = function(e, t) {
 		ID: 16,
 		name: "Pterrocks Skeleton",
 		rarity: 2,
+		drop: 1,
 		flavorText: "This pterrocks skeleton is incredibly fragile, and is held together with strong glue and wire.",
 		recipe: [{
 			ID: 4,
@@ -25317,6 +25778,7 @@ Items.getItemData = function(e, t) {
 		ID: 17,
 		name: "Beetle in Amber",
 		rarity: 1,
+		drop: 1,
 		flavorText: "It appears to be a large beetle, preserved in a piece of amber. Neat!",
 		recipe: [{
 			ID: 5,
@@ -25327,6 +25789,7 @@ Items.getItemData = function(e, t) {
 		ID: 18,
 		name: "Trellobyte",
 		rarity: 1,
+		drop: 1,
 		flavorText: "Trellobytes once scavenged the ocean floors, looking for scraps and collectible cards.",
 		recipe: [{
 			ID: 6,
@@ -25337,6 +25800,7 @@ Items.getItemData = function(e, t) {
 		ID: 19,
 		name: "Sharp Claw",
 		rarity: 1,
+		drop: 1,
 		flavorText: "A large claw to some carnivore...or perhaps an ill-tempered herbivore.",
 		recipe: [{
 			ID: 7,
@@ -25347,6 +25811,7 @@ Items.getItemData = function(e, t) {
 		ID: 20,
 		name: "Dragonfly in Amber",
 		rarity: 1,
+		drop: 1,
 		flavorText: "This dragonfly must have landed on a tree, and got caught in some tree sap.",
 		recipe: [{
 			ID: 8,
@@ -25357,6 +25822,7 @@ Items.getItemData = function(e, t) {
 		ID: 21,
 		name: "Shell",
 		rarity: 1,
+		drop: 1,
 		flavorText: "This shell was likely once a home to a large crustacean, or perhaps just a fancy-looking thermos.",
 		recipe: [{
 			ID: 9,
@@ -25367,6 +25833,7 @@ Items.getItemData = function(e, t) {
 		ID: 22,
 		name: "Mosquito in Amber",
 		rarity: 1,
+		drop: 1,
 		flavorText: "These are often treasured as jewellry, and some old men like to place them atop their canes.",
 		recipe: [{
 			ID: 10,
@@ -25377,6 +25844,7 @@ Items.getItemData = function(e, t) {
 		ID: 23,
 		name: "Fossilized Fish",
 		rarity: 2,
+		drop: 1,
 		flavorText: "This fish was likely a deep ocean dweller; perhaps a Darkfish, Crazyfish, or maybe the rare Stinkyfish.",
 		recipe: [{
 			ID: 11,
@@ -25387,6 +25855,7 @@ Items.getItemData = function(e, t) {
 		ID: 24,
 		name: "Fossilized Plant",
 		rarity: 2,
+		drop: 1,
 		flavorText: "A small fern, fossilized over millions of years. This plant still exists on the island today.",
 		recipe: [{
 			ID: 12,
@@ -25397,6 +25866,7 @@ Items.getItemData = function(e, t) {
 	fish: [{
 		ID: 1,
 		name: "Fish",
+		drop: 1,
 		weightMin: 1,
 		weightMax: 10,
 		str: 10,
@@ -25409,12 +25879,12 @@ Items.getItemData = function(e, t) {
 	currency: [{
 		ID: 1,
 		name: "Gold",
-		drop: 0,
+		drop: 1,
 		flavorText: ""
 	}, {
 		ID: 2,
 		name: "Candy Corn",
-		drop: 0,
+		drop: 1,
 		flavorText: "The primary currency of Pumpkinfest. Used to buy costumes and cool items in the town square during the event!",
 		icon: "mail-cc"
 	}, {
@@ -25426,34 +25896,34 @@ Items.getItemData = function(e, t) {
 	}, {
 		ID: 4,
 		name: "Star Shards",
-		drop: 0,
+		drop: 1,
 		flavorText: "The primary currency of the Starlight Festival. These are used to buy costumes and cool items in the town square during the event!",
 		icon: "mail-ss"
 	}, {
 		ID: 5,
 		name: "Magic Snowflakes",
-		drop: 0,
+		drop: 1,
 		flavorText: "The primary currency of Winterfest. These are used to buy costumes and cool items in the town square during the event!",
 		icon: "mail-sf"
 	}, {
 		ID: 6,
 		name: "Small Coin Bundle",
-		drop: 0,
+		drop: 1,
 		flavorText: ""
 	}, {
 		ID: 7,
 		name: "Medium Coin Bundle",
-		drop: 0,
+		drop: 1,
 		flavorText: ""
 	}, {
 		ID: 8,
 		name: "Large Coin Bundle",
-		drop: 0,
+		drop: 1,
 		flavorText: ""
 	}, {
 		ID: 9,
 		name: "Wood",
-		drop: 0,
+		drop: 1,
 		flavorText: "This special wood was used by Floatlings to construct makeshift houses as they traveled around the island in search of knowledge."
 	}],
 	dorm: [{
@@ -25462,6 +25932,7 @@ Items.getItemData = function(e, t) {
 		name: "Comfy Chair",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		category: "Comfy",
 		price: 300,
 		r: 4,
@@ -25472,6 +25943,7 @@ Items.getItemData = function(e, t) {
 		name: "Steel Chair",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		category: "Comfy",
 		price: 350,
 		r: 4,
@@ -25482,6 +25954,7 @@ Items.getItemData = function(e, t) {
 		name: "Wooden Nightstand",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		category: "Surface",
 		price: 500,
 		r: 4,
@@ -25492,6 +25965,7 @@ Items.getItemData = function(e, t) {
 		name: "Steel Table",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		category: "Surface",
 		price: 400,
 		r: 0,
@@ -25502,6 +25976,7 @@ Items.getItemData = function(e, t) {
 		name: "Glass Table",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Surface",
 		price: 600,
 		r: 0,
@@ -25512,6 +25987,7 @@ Items.getItemData = function(e, t) {
 		name: "Pink Flowerpot",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		category: "Plants",
 		price: 200,
 		r: 0,
@@ -25522,6 +25998,7 @@ Items.getItemData = function(e, t) {
 		name: "Bushy Plant",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Plants",
 		price: 200,
 		mprice: 100,
@@ -25533,6 +26010,7 @@ Items.getItemData = function(e, t) {
 		name: "Tall Fern",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Plants",
 		price: 200,
 		mprice: 100,
@@ -25544,6 +26022,7 @@ Items.getItemData = function(e, t) {
 		name: "Forest Flower",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Plants",
 		price: 150,
 		mprice: 100,
@@ -25555,6 +26034,7 @@ Items.getItemData = function(e, t) {
 		name: "Purple Couch",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Comfy",
 		price: 600,
 		mprice: 300,
@@ -25566,6 +26046,7 @@ Items.getItemData = function(e, t) {
 		name: "Green Couch",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Comfy",
 		price: 600,
 		mprice: 400,
@@ -25577,6 +26058,7 @@ Items.getItemData = function(e, t) {
 		name: "Purple Chair",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Comfy",
 		price: 400,
 		mprice: 250,
@@ -25588,6 +26070,7 @@ Items.getItemData = function(e, t) {
 		name: "Bookshelf",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Storage",
 		price: 800,
 		mprice: 450,
@@ -25599,6 +26082,7 @@ Items.getItemData = function(e, t) {
 		name: "Wooden Table",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Surface",
 		price: 300,
 		mprice: 150,
@@ -25610,6 +26094,7 @@ Items.getItemData = function(e, t) {
 		name: "Small Chair",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Comfy",
 		price: 300,
 		mprice: 150,
@@ -25621,6 +26106,7 @@ Items.getItemData = function(e, t) {
 		name: "Wardrobe",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Storage",
 		price: 1200,
 		mprice: 750,
@@ -25632,6 +26118,7 @@ Items.getItemData = function(e, t) {
 		name: "Starry Bed",
 		member: 0,
 		rarity: 1,
+		drop: 1,
 		category: "Comfy",
 		price: 1500,
 		mprice: 800,
@@ -25643,6 +26130,7 @@ Items.getItemData = function(e, t) {
 		name: "Square Window",
 		member: 0,
 		rarity: 0,
+		drop: 1,
 		category: "Wall",
 		price: 250,
 		mprice: 100,
@@ -25654,6 +26142,7 @@ Items.getItemData = function(e, t) {
 		name: "Fancy Window",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		price: 350,
 		mprice: 150,
@@ -25665,6 +26154,7 @@ Items.getItemData = function(e, t) {
 		name: "Dining Table",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Surface",
 		price: 850,
 		mprice: 550,
@@ -25676,6 +26166,7 @@ Items.getItemData = function(e, t) {
 		name: "Treasure Chest",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Storage",
 		price: 1500,
 		mprice: 600,
@@ -25687,6 +26178,7 @@ Items.getItemData = function(e, t) {
 		name: "Frosty Bear",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Items",
 		mprice: 350,
 		r: 0,
@@ -25697,6 +26189,7 @@ Items.getItemData = function(e, t) {
 		name: "Bawk-bawk Clock",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Wall",
 		mprice: 350,
 		r: 4,
@@ -25707,6 +26200,7 @@ Items.getItemData = function(e, t) {
 		name: "Dragon Mirror",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Wall",
 		price: 650,
 		mprice: 350,
@@ -25718,6 +26212,7 @@ Items.getItemData = function(e, t) {
 		name: "Frozen Mirror",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		price: 750,
 		mprice: 400,
@@ -25729,6 +26224,7 @@ Items.getItemData = function(e, t) {
 		name: "Round Mirror",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Wall",
 		price: 400,
 		mprice: 250,
@@ -25740,6 +26236,7 @@ Items.getItemData = function(e, t) {
 		name: "Frozen Throne",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Comfy",
 		price: 3500,
 		mprice: 500,
@@ -25751,6 +26248,7 @@ Items.getItemData = function(e, t) {
 		name: "Forest Wardrobe",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Storage",
 		price: 3e3,
 		mprice: 600,
@@ -25762,6 +26260,7 @@ Items.getItemData = function(e, t) {
 		name: "Purple Potted Plant",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Plants",
 		price: 200,
 		mprice: 0,
@@ -25773,6 +26272,7 @@ Items.getItemData = function(e, t) {
 		name: "Red Potted Plant",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Plants",
 		price: 200,
 		mprice: 0,
@@ -25784,6 +26284,7 @@ Items.getItemData = function(e, t) {
 		name: "Mushroom Lamp",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Lamps",
 		price: 350,
 		mprice: 150,
@@ -25795,6 +26296,7 @@ Items.getItemData = function(e, t) {
 		name: "Table Lamp",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Lamps",
 		price: 250,
 		mprice: 150,
@@ -25806,6 +26308,7 @@ Items.getItemData = function(e, t) {
 		name: "Flower Lamp",
 		member: 1,
 		rarity: 0,
+		drop: 1,
 		category: "Lamps",
 		price: 350,
 		mprice: 150,
@@ -25817,6 +26320,7 @@ Items.getItemData = function(e, t) {
 		name: "Aquarium",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Items",
 		price: 600,
 		mprice: 250,
@@ -25828,6 +26332,7 @@ Items.getItemData = function(e, t) {
 		name: "Icy Table",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Surface",
 		price: 600,
 		mprice: 200,
@@ -25839,6 +26344,7 @@ Items.getItemData = function(e, t) {
 		name: "Flame Banner",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		price: 1e3,
 		mprice: 250,
@@ -25850,6 +26356,7 @@ Items.getItemData = function(e, t) {
 		name: "Snow Banner",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		price: 1e3,
 		mprice: 250,
@@ -25861,6 +26368,7 @@ Items.getItemData = function(e, t) {
 		name: "Forest Banner",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		price: 1e3,
 		mprice: 250,
@@ -25872,6 +26380,7 @@ Items.getItemData = function(e, t) {
 		name: "Stuffed Dragon",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		mprice: 200,
 		r: 0,
@@ -25882,6 +26391,7 @@ Items.getItemData = function(e, t) {
 		name: "Fire Throne",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Comfy",
 		price: 3500,
 		mprice: 500,
@@ -25893,6 +26403,7 @@ Items.getItemData = function(e, t) {
 		name: "Tall Lamp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Lamps",
 		price: 600,
 		mprice: 200,
@@ -25904,6 +26415,7 @@ Items.getItemData = function(e, t) {
 		name: "Sunfire Lamp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Lamps",
 		price: 2500,
 		mprice: 400,
@@ -25915,6 +26427,7 @@ Items.getItemData = function(e, t) {
 		name: "Ice Shard Lamp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Lamps",
 		price: 2500,
 		mprice: 400,
@@ -25926,6 +26439,7 @@ Items.getItemData = function(e, t) {
 		name: "Canopy Lamp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Lamps",
 		price: 2500,
 		mprice: 400,
@@ -25937,6 +26451,7 @@ Items.getItemData = function(e, t) {
 		name: "Forest Throne",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Comfy",
 		price: 3500,
 		mprice: 500,
@@ -25948,6 +26463,7 @@ Items.getItemData = function(e, t) {
 		name: "Phoenix Lamp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Lamps",
 		price: 2500,
 		mprice: 400,
@@ -25959,6 +26475,7 @@ Items.getItemData = function(e, t) {
 		name: "Ice Phoenix Lamp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Lamps",
 		price: 2500,
 		mprice: 400,
@@ -25970,6 +26487,7 @@ Items.getItemData = function(e, t) {
 		name: "Amber",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "This piece of amber has an ancient bug pet preserved inside of it. It makes for quite the conversation piece."
@@ -25979,6 +26497,7 @@ Items.getItemData = function(e, t) {
 		name: "Anchor Chair",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "The perfect chair for a seafarer or, ironically, someone who cannot swim."
@@ -25988,6 +26507,7 @@ Items.getItemData = function(e, t) {
 		name: "Dingy Bed",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "This tiny bed is convenient to have for guests. It can compress for easy storage."
@@ -25997,6 +26517,7 @@ Items.getItemData = function(e, t) {
 		name: "Boombox",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "No party is complete with some great music to dance to. Get your groove on!"
@@ -26006,6 +26527,7 @@ Items.getItemData = function(e, t) {
 		name: "Ship in a Bottle",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "A perfect scale model of a ship. One wonders how they got it into the bottle."
@@ -26015,6 +26537,7 @@ Items.getItemData = function(e, t) {
 		name: "Carnoplant",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Plants",
 		r: 0,
 		flavorText: "This carnivorous plant is useful for keeping bug infestations under control."
@@ -26024,6 +26547,7 @@ Items.getItemData = function(e, t) {
 		name: "Rugged Bed",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "For those who like to reminisce about the cave-man days. Enjoy the worst night of sleep in your life."
@@ -26033,6 +26557,7 @@ Items.getItemData = function(e, t) {
 		name: "Dyno Skull",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "A large decorative dyno skull. It is made from foam, for ease of transportation."
@@ -26042,6 +26567,7 @@ Items.getItemData = function(e, t) {
 		name: "Floaty Bed",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "This bed is filled with helium, making it float slightly off the ground. Its light rocking will put you to sleep instantly!"
@@ -26051,6 +26577,7 @@ Items.getItemData = function(e, t) {
 		name: "Stuffed Dyno",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "This cute little stuffed Dyno used to be a common prize at the Dyno dig site."
@@ -26060,6 +26587,7 @@ Items.getItemData = function(e, t) {
 		name: "Gramophone",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "A boombox for the old school. Perfect for it you like your music to sound old."
@@ -26069,6 +26597,7 @@ Items.getItemData = function(e, t) {
 		name: "Shipwheel",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		r: 0,
 		flavorText: "The steering wheel from a sunken ship. The remnants of the ship have never been found."
@@ -26078,6 +26607,7 @@ Items.getItemData = function(e, t) {
 		name: "Phaser Lamp",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Lamps",
 		r: 0,
 		flavorText: "A lamp designed for those with interests in the sci-fi."
@@ -26087,6 +26617,7 @@ Items.getItemData = function(e, t) {
 		name: "Lifesaver",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Wall",
 		r: 4,
 		flavorText: "A perfect edition to any home in a location that is prone to flooding, or if you just can't swim."
@@ -26096,6 +26627,7 @@ Items.getItemData = function(e, t) {
 		name: "Excavation Table",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 4,
 		flavorText: "This table comes equipped with everything you could need to investigate a dig site."
@@ -26105,6 +26637,7 @@ Items.getItemData = function(e, t) {
 		name: "Porthole",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		r: 0,
 		flavorText: "Intended for peering out at the sea. One wonders about its purpose in a house."
@@ -26114,6 +26647,7 @@ Items.getItemData = function(e, t) {
 		name: "Fossil Chair",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "A chair carved from ancient bones. It is surprisingly sturdy for something so old."
@@ -26123,6 +26657,7 @@ Items.getItemData = function(e, t) {
 		name: "Modified Organ",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "An organ with a unique sound. It is steam powered and lets out plumes of smoke upon use."
@@ -26132,6 +26667,7 @@ Items.getItemData = function(e, t) {
 		name: "Time-o-tron",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		r: 4,
 		flavorText: "A coocoo clock, without the coocoo. It sends the alarm directly to its owners brain telepathically."
@@ -26141,6 +26677,7 @@ Items.getItemData = function(e, t) {
 		name: "Cloud Throne",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "It is miraculous that one can even sit on this throne, as the seat is made of clouds."
@@ -26150,6 +26687,7 @@ Items.getItemData = function(e, t) {
 		name: "Timekeeper",
 		member: 1,
 		rarity: 2,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "Honestly, its just a clock."
@@ -26159,6 +26697,7 @@ Items.getItemData = function(e, t) {
 		name: "Rainbow Decal",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Wall",
 		r: 4,
 		flavorText: "A rainbow that doesn't need any rain! Use it to spice up your living space."
@@ -26168,6 +26707,7 @@ Items.getItemData = function(e, t) {
 		name: "Time Box",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Storage",
 		r: 4,
 		flavorText: "This mysterious machine is constantly whirring and whizzing with no obvious effect."
@@ -26177,6 +26717,7 @@ Items.getItemData = function(e, t) {
 		name: "Zapper Lamp",
 		member: 1,
 		rarity: 1,
+		drop: 1,
 		category: "Lamps",
 		r: 4,
 		flavorText: "A lamp light by lightning to look like lightning."
@@ -26186,6 +26727,7 @@ Items.getItemData = function(e, t) {
 		name: "Pumpkin Dreams",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "Pleasant dreams are had by all who sleep on this bed."
@@ -26195,6 +26737,7 @@ Items.getItemData = function(e, t) {
 		name: "Melted Candles",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "A great way to make your home feel extra comfy on cool autumn nights!"
@@ -26204,6 +26747,7 @@ Items.getItemData = function(e, t) {
 		name: "Creepy House Chair",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "They say this chair is from a very old house filled with spooks!"
@@ -26213,6 +26757,7 @@ Items.getItemData = function(e, t) {
 		name: "Pumpkinfest Harvest Table",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 4,
 		flavorText: "The table of choice for those who like hosting Pumpkinfest activities in their own home."
@@ -26222,6 +26767,7 @@ Items.getItemData = function(e, t) {
 		name: "Pianoy",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "Pianoy the piano was made to look like it could come to life any minute!"
@@ -26231,6 +26777,7 @@ Items.getItemData = function(e, t) {
 		name: "Pumpcube",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "They say these cubed pumpkins come from a far off land in the east!"
@@ -26240,6 +26787,7 @@ Items.getItemData = function(e, t) {
 		name: "Plumpkin Chair",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "A plump chair in the shape of a pumpkin."
@@ -26249,6 +26797,7 @@ Items.getItemData = function(e, t) {
 		name: "Pumpkinfest Side Table",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 0,
 		flavorText: "A traditional table displayed to commemorate the annual Pumpkinfest event."
@@ -26258,6 +26807,7 @@ Items.getItemData = function(e, t) {
 		name: "Spooky Bedspread",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "A bed for the bravest of wizards!"
@@ -26267,6 +26817,7 @@ Items.getItemData = function(e, t) {
 		name: "Spooky Side Table",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 4,
 		flavorText: "If you want to add a touch of spookiness to your home to celebrate Pumpkinfest, this side table will do the job."
@@ -26276,6 +26827,7 @@ Items.getItemData = function(e, t) {
 		name: "Spidery Side Table",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 4,
 		flavorText: "The white pattern on this table was inspired by a spider's web."
@@ -26285,6 +26837,7 @@ Items.getItemData = function(e, t) {
 		name: "Footstooly",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "This fun stool looks like it could come to life at any moment! It would definitely make a great addition to anyone's playhouse!"
@@ -26294,6 +26847,7 @@ Items.getItemData = function(e, t) {
 		name: "Sweet Stash",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "If you're a fan of sweet treats, this decoration is for you!"
@@ -26303,6 +26857,7 @@ Items.getItemData = function(e, t) {
 		name: "Milky Way Plush",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "While you're counting down the days to the next Starlight Festival, this cute Milky Way the Space Cow plush can keep you company."
@@ -26312,6 +26867,7 @@ Items.getItemData = function(e, t) {
 		name: "Starlight Side Table",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 0,
 		flavorText: "A great way to add a bit of Starlight Festival flair to any room."
@@ -26321,6 +26877,7 @@ Items.getItemData = function(e, t) {
 		name: "Star Suite Bed",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "A deluxe bed for super fans of Starlight Festival, they say those who fall asleep in it have dreams filled with shooting stars."
@@ -26330,6 +26887,7 @@ Items.getItemData = function(e, t) {
 		name: "Starlight Rug",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "Adds a splash of star to any room."
@@ -26339,6 +26897,7 @@ Items.getItemData = function(e, t) {
 		name: "Star Seat",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "A perfectly cushy place to sit down after an evening of hunting for shooting stars."
@@ -26348,6 +26907,7 @@ Items.getItemData = function(e, t) {
 		name: "Star Jar",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Lamps",
 		r: 0,
 		flavorText: "A cute little night light. Great for any room."
@@ -26357,6 +26917,7 @@ Items.getItemData = function(e, t) {
 		name: "Starlight Lamp",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Lamps",
 		r: 0,
 		flavorText: "A great lamp to light up your nights at home!"
@@ -26366,6 +26927,7 @@ Items.getItemData = function(e, t) {
 		name: "Standing Lantern",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Lamps",
 		r: 4,
 		flavorText: "A traditional lantern used in the old days of the Starlight Festival."
@@ -26375,6 +26937,7 @@ Items.getItemData = function(e, t) {
 		name: "Star Topiary",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Plants",
 		r: 0,
 		flavorText: "A fun little plant that grows in the shape of a star. It can only be found growing during the nights of the Starlight Festival."
@@ -26384,6 +26947,7 @@ Items.getItemData = function(e, t) {
 		name: "Starlight Stool",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 0,
 		flavorText: "A casual seating option for Starlight Festival fans."
@@ -26393,6 +26957,7 @@ Items.getItemData = function(e, t) {
 		name: "Night Bed",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "A Starlight Festival-themed bed."
@@ -26402,6 +26967,7 @@ Items.getItemData = function(e, t) {
 		name: "Moon Plushie",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "This isn't made of cheese, so don't try to eat it."
@@ -26411,6 +26977,7 @@ Items.getItemData = function(e, t) {
 		name: "Starlight Dining Table",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 4,
 		flavorText: "Want to have guests over to celebrate the Starlight Festival? This table's for you!"
@@ -26420,6 +26987,7 @@ Items.getItemData = function(e, t) {
 		name: "Cheery Chair",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "Memories of Winterfest's past come flooding back for many who sit in this old  chair."
@@ -26429,6 +26997,7 @@ Items.getItemData = function(e, t) {
 		name: "Evergreen Comfy Chair",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "This chair is actually a magical tree that stays green all year round! Howard has decorated it with traditional Winterfest ornaments."
@@ -26438,6 +27007,7 @@ Items.getItemData = function(e, t) {
 		name: "Decked Out Festive Bed",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "For those who are really into the Winterfest spirit, this bed will keep you in the party mood from the moment you wake up, to the second you fall asleep!"
@@ -26447,6 +27017,7 @@ Items.getItemData = function(e, t) {
 		name: "Snowman Slumber Bed",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "Cool blankets make sure you're at the perfect temperature to get a good night's sleep."
@@ -26456,6 +27027,7 @@ Items.getItemData = function(e, t) {
 		name: "Classical Winterfest Bed",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "This Winterfest bed has a much more classical and clean look to it, prominently featuring the famous Winterfest Wreath."
@@ -26465,6 +27037,7 @@ Items.getItemData = function(e, t) {
 		name: "Seasonal Stocking",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "This will really add some festive cheer to your walls. Try putting it next to a fireplace for a very seasonal look!"
@@ -26474,6 +27047,7 @@ Items.getItemData = function(e, t) {
 		name: "Red Display Gift",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "You can't open this gift up, unfortunately, but display it in your living room to add some festival cheer!"
@@ -26483,6 +27057,7 @@ Items.getItemData = function(e, t) {
 		name: "Yellow Display Gift",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "A very classy decoration for your home during the Winterfest celebration."
@@ -26492,6 +27067,7 @@ Items.getItemData = function(e, t) {
 		name: "Evergreen Garland",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Plants",
 		r: 0,
 		flavorText: "A nice touch to any home during the festival season. If you buy a bunch, you can line them up on your back wall to create one long chain!"
@@ -26501,6 +27077,7 @@ Items.getItemData = function(e, t) {
 		name: "Festival Tree",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Plants",
 		r: 0,
 		flavorText: "The traditional evergreen tree of Winterfest is a great centerpiece for anyone's home during the holidays."
@@ -26510,6 +27087,7 @@ Items.getItemData = function(e, t) {
 		name: "Jolly Fireplace",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "This red fireplace will be sure to keep you warm through all the cold Winterfest months!"
@@ -26519,6 +27097,7 @@ Items.getItemData = function(e, t) {
 		name: "Festive Feast Table",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 4,
 		flavorText: "The perfect table for serving traditional rotisserie-style turkey on! If you have lots of guests over for the winter holidays, this is the table for you."
@@ -26528,6 +27107,7 @@ Items.getItemData = function(e, t) {
 		name: "Festival Side Table",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 0,
 		flavorText: "The perfect addition to a Winterfest-themed living room!"
@@ -26537,6 +27117,7 @@ Items.getItemData = function(e, t) {
 		name: "Cozy Winterfest Rug",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "A warm and cozy rug that feels great to walk on in your bare feet - even in the middle of winter!"
@@ -26546,6 +27127,7 @@ Items.getItemData = function(e, t) {
 		name: "Winterfest Den Lamp",
 		member: 1,
 		rarity: 3,
+		drop: 1,
 		category: "Lamps",
 		r: 0,
 		flavorText: "A lamp inspired by the traditional Winterfest tree. A very festive and classic look!"
@@ -26555,6 +27137,7 @@ Items.getItemData = function(e, t) {
 		name: "Cozy Couch",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "The absolute perfect couch to curl up on during those cold Winterfest nights."
@@ -26564,6 +27147,7 @@ Items.getItemData = function(e, t) {
 		name: "Evergreen Dining Chair",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "If you're pining for a new dining room set, this chair's just for you! If you get a set of four of these, they will really spruce up your dining room!"
@@ -26573,6 +27157,7 @@ Items.getItemData = function(e, t) {
 		name: "Arctursus Chair",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26582,6 +27167,7 @@ Items.getItemData = function(e, t) {
 		name: "Arctursus Drum",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 0,
 		flavorText: "toyzone reward"
@@ -26591,6 +27177,7 @@ Items.getItemData = function(e, t) {
 		name: "Arctursus Trophy",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26600,6 +27187,7 @@ Items.getItemData = function(e, t) {
 		name: "Diveodile Board",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26609,6 +27197,7 @@ Items.getItemData = function(e, t) {
 		name: "Diveodile Plant",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Plants",
 		r: 0,
 		flavorText: "toyzone reward"
@@ -26618,6 +27207,7 @@ Items.getItemData = function(e, t) {
 		name: "Diveodile Trophy",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26627,6 +27217,7 @@ Items.getItemData = function(e, t) {
 		name: "Florafox Light",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Lamps",
 		r: 0,
 		flavorText: "toyzone reward"
@@ -26636,6 +27227,7 @@ Items.getItemData = function(e, t) {
 		name: "Florafox Table",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 0,
 		flavorText: "toyzone reward"
@@ -26645,6 +27237,7 @@ Items.getItemData = function(e, t) {
 		name: "Florafox Trophy",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26654,6 +27247,7 @@ Items.getItemData = function(e, t) {
 		name: "Big Hex Clock",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Wall",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26663,6 +27257,7 @@ Items.getItemData = function(e, t) {
 		name: "Big Hex Table",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Surface",
 		r: 0,
 		flavorText: "toyzone reward "
@@ -26672,6 +27267,7 @@ Items.getItemData = function(e, t) {
 		name: "Big Hex Trophy",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26681,6 +27277,7 @@ Items.getItemData = function(e, t) {
 		name: "Magmischief Bag",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26690,6 +27287,7 @@ Items.getItemData = function(e, t) {
 		name: "Magmischief Clock",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Wall",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26699,6 +27297,7 @@ Items.getItemData = function(e, t) {
 		name: "Magmischief Trophy",
 		member: 0,
 		rarity: 3,
+		drop: 1,
 		category: "Items",
 		r: 4,
 		flavorText: "toyzone reward"
@@ -26708,6 +27307,7 @@ Items.getItemData = function(e, t) {
 		name: "Nest Chair",
 		member: 1,
 		rarity: 7,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "After a long day of battling, cozy up in this chair and take it easy!"
@@ -26717,6 +27317,7 @@ Items.getItemData = function(e, t) {
 		name: "Gardening Shelf",
 		member: 1,
 		rarity: 9,
+		drop: 1,
 		category: "Storage",
 		r: 4,
 		flavorText: "The tools are just for show, but they could show off someone with a real talent for gardening!"
@@ -26726,6 +27327,7 @@ Items.getItemData = function(e, t) {
 		name: "Bluebell Lamp",
 		member: 1,
 		rarity: 5,
+		drop: 1,
 		category: "Lamps",
 		r: 0,
 		flavorText: "These lamps add a really fun vibe to any room!"
@@ -26735,6 +27337,7 @@ Items.getItemData = function(e, t) {
 		name: "Flower Bed",
 		member: 1,
 		rarity: 13,
+		drop: 1,
 		category: "Comfy",
 		r: 4,
 		flavorText: "This isn't just ANY flower bed! This bed's MADE of FLOWERS!"
@@ -26744,6 +27347,7 @@ Items.getItemData = function(e, t) {
 		name: "Flowerbox Window",
 		member: 1,
 		rarity: 7,
+		drop: 1,
 		category: "Wall",
 		r: 0,
 		flavorText: "Bring some fresh air into your home with this wonderful window!"
@@ -26753,13 +27357,14 @@ Items.getItemData = function(e, t) {
 		name: "Mushroom Side Table",
 		member: 1,
 		rarity: 7,
+		drop: 1,
 		category: "Surface",
 		r: 0,
 		flavorText: "This table is said to be a favorite decoration among plumbers in a kingdom far away from here."
 	}],
 	dormbg: [{
 		ID: 1,
-		name: "Lamplight House",
+		name: "Starter Home",
 		tag: "suburbs",
 		member: 0,
 		rarity: 0,
@@ -26777,7 +27382,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Comfy",
-		price: 1500,
+		price: 0,
 		flavorText: "YOU'RE AS COLD AS ICE!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "2",
@@ -26790,12 +27395,13 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 2500,
+		price: 0,
 		flavorText: "This would make for a cool clubhouse!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "1",
 		x: 1e3,
 		y: 480
+
 	}, {
 		ID: 4,
 		name: "The Cool Cave",
@@ -26803,7 +27409,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 3e3,
+		price: 0,
 		flavorText: "You could really chill out in here.",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "2",
@@ -26816,7 +27422,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 3e3,
+		price: 0,
 		flavorText: "I bet you'd feel warm in here even in the middle of Winterfest!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "3",
@@ -26829,7 +27435,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 500,
+		price: 0,
 		flavorText: "This place feels cozy.",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "6",
@@ -26842,7 +27448,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 500,
+		price: 0,
 		flavorText: "This place feels cozy.",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "6",
@@ -26855,7 +27461,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1e3,
+		price: 0,
 		flavorText: "This house is not too big, or too small. It's just right!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "5",
@@ -26868,7 +27474,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1e3,
+		price: 0,
 		flavorText: "This house is not too big, or too small. It's just right!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "5",
@@ -26881,7 +27487,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1800,
+		price: 0,
 		flavorText: "You won't run out of room in here any time soon!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "4",
@@ -26894,7 +27500,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1800,
+		price: 0,
 		flavorText: "This house is not too big, or too small. It's just right!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "4",
@@ -26907,7 +27513,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 3e3,
+		price: 0,
 		flavorText: "The large space on the right side of the house can be used for a lot of different things!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "3",
@@ -26920,7 +27526,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1600,
+		price: 0,
 		flavorText: "",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "3",
@@ -26933,7 +27539,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1800,
+		price: 0,
 		flavorText: "If you like a big room on the left AND right side of your house, this place is perfect!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "4",
@@ -26946,7 +27552,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1800,
+		price: 0,
 		flavorText: "A long hallway opens to a large room. There's a ton of neat ways you could decorate this kind of home!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "4",
@@ -26959,7 +27565,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 3e3,
+		price: 0,
 		flavorText: "Three large spaces give owners lots of rooms to create their own layouts!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "2",
@@ -26972,7 +27578,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 1600,
+		price: 0,
 		flavorText: "",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "2",
@@ -26985,7 +27591,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 2500,
+		price: 0,
 		flavorText: "The two central log pillars add a lot of unique style to this tree house.",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "1",
@@ -26998,7 +27604,7 @@ Items.getItemData = function(e, t) {
 		member: 1,
 		rarity: 0,
 		category: "Surface",
-		price: 2500,
+		price: 0,
 		flavorText: "Super spacious space for studying wizards!",
 		iconAtlas: "icons-house-buying",
 		previewIcon: "1",
@@ -27071,6 +27677,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -27104,6 +27711,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -27137,6 +27745,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "D",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -27166,6 +27775,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27199,6 +27809,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27232,6 +27843,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "D",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27261,6 +27873,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -27294,6 +27907,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -27327,6 +27941,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "D",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -27356,6 +27971,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -27389,6 +28005,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -27422,6 +28039,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "D",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -27452,6 +28070,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C",
 		power: "C",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27485,6 +28104,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C",
 		power: "C",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27514,6 +28134,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C",
 		power: "C",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27543,6 +28164,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -27576,6 +28198,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -27605,6 +28228,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27638,6 +28262,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27667,6 +28292,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27700,6 +28326,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27733,6 +28360,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -27762,6 +28390,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "C",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -27795,6 +28424,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "C",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -27824,6 +28454,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C-",
 		power: "C",
 		growth: "C+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -27857,6 +28488,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "C",
 		growth: "C-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -27886,6 +28518,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "C",
 		growth: "C+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -27919,6 +28552,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "C",
 		growth: "C-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -27948,6 +28582,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "C",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -27981,6 +28616,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "C",
 		growth: "C-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28011,6 +28647,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28041,6 +28678,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "D",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28071,6 +28709,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -28101,6 +28740,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "A",
 		growth: "F-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 2
@@ -28131,6 +28771,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -28161,6 +28802,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28191,6 +28833,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -28220,6 +28863,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -28253,6 +28897,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -28282,6 +28927,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "A",
 		growth: "D+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 26
@@ -28315,6 +28961,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "A",
 		growth: "D",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 26
@@ -28347,6 +28994,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "A",
 		growth: "D-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -28376,6 +29024,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C-",
 		power: "B",
 		growth: "A+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -28409,6 +29058,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -28438,6 +29088,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "C",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -28467,6 +29118,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -28500,6 +29152,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "C-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -28529,6 +29182,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "A",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 2
@@ -28562,6 +29216,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "A",
 		growth: "C-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 2
@@ -28591,6 +29246,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "A",
 		growth: "C-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 20
@@ -28624,6 +29280,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "A",
 		growth: "C-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 20
@@ -28653,6 +29310,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "C",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28686,6 +29344,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28719,6 +29378,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28748,6 +29408,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28777,6 +29438,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -28810,6 +29472,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "B",
 		growth: "A+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -28840,6 +29503,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28869,6 +29533,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28902,6 +29567,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28932,6 +29598,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "C+",
+		drop: 1, 
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -28962,6 +29629,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -28991,6 +29659,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -29024,6 +29693,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -29057,6 +29727,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -29086,6 +29757,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -29119,6 +29791,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -29152,6 +29825,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -29181,6 +29855,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29214,6 +29889,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29247,6 +29923,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29276,6 +29953,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29309,6 +29987,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29342,6 +30021,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29371,6 +30051,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -29404,6 +30085,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -29452,7 +30134,7 @@ Monsters.areEqual = function(e, t) {
 			lvl: 48,
 			a: 30
 		}],
-		flavorText: "There's no such thing as Tech Gobbler."
+		flavorText: "There's no such thing as Tech Gobblers."
 	},
 	78: {
 		ID: 78,
@@ -29462,6 +30144,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -29495,6 +30178,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -29528,6 +30212,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -29557,6 +30242,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29590,6 +30276,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29623,6 +30310,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A+",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29652,6 +30340,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29685,6 +30374,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29718,6 +30408,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29747,6 +30438,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -29780,6 +30472,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -29813,6 +30506,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "B",
 		growth: "D",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -29842,6 +30536,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29875,6 +30570,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -29905,6 +30601,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "C",
 		growth: "B",
+ 		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29938,6 +30635,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -29967,6 +30665,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C-",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -30000,6 +30699,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -30033,6 +30733,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "B",
 		growth: "C+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -30066,6 +30767,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "A",
 		growth: "F-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 2
@@ -30096,6 +30798,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30125,6 +30828,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30158,6 +30862,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30191,6 +30896,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "B",
 		growth: "C+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30220,6 +30926,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30253,6 +30960,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30286,6 +30994,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30317,6 +31026,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30351,6 +31061,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30382,6 +31093,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "C",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -30416,6 +31128,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A+",
 		power: "C-",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -30447,6 +31160,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "A",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -30481,6 +31195,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 31
@@ -30512,6 +31227,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "A",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -30546,6 +31262,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "A+",
 		growth: "B-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -30575,6 +31292,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -30609,6 +31327,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -30638,6 +31357,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C+",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -30671,6 +31391,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A-",
 		power: "C",
 		growth: "B",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -30705,6 +31426,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A+",
 		power: "B",
 		growth: "C",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -30736,6 +31458,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30770,6 +31493,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -30800,6 +31524,7 @@ Monsters.areEqual = function(e, t) {
 		life: "C-",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -30834,6 +31559,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "A",
 		growth: "F-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 2
@@ -30863,6 +31589,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B-",
 		power: "B",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -30896,6 +31623,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "B",
 		growth: "A-",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -30929,6 +31657,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B+",
 		power: "B",
 		growth: "B+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -30960,6 +31689,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "A+",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 25
@@ -30992,6 +31722,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A+",
 		power: "B",
 		growth: "A+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 13
@@ -31024,6 +31755,7 @@ Monsters.areEqual = function(e, t) {
 		life: "B",
 		power: "A+",
 		growth: "A+",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 19
@@ -31056,6 +31788,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A+",
 		power: "A",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 7
@@ -31088,6 +31821,7 @@ Monsters.areEqual = function(e, t) {
 		life: "A",
 		power: "A+",
 		growth: "A",
+		drop: 1,
 		curve: [{
 			lvl: 1,
 			a: 1
@@ -34766,6 +35500,83 @@ var State = function() {
 			return s
 		}, e
 	}(),
+	House = function () {
+		function e() {
+			this.data = {
+				bg: {
+					active: 1,
+					own: [1]
+				},
+				items: {}
+			}
+		}
+		return e.prototype = Object.create(e.prototype), e.prototype.getDataAndClear = function () {
+			return this.updated = !1, this.data
+		}, e.prototype.setItems = function (e) {
+			Util.isDefined(e) && (this.data = e)
+		}, e.prototype.getItems = function () {
+			return this.data.items
+		}, e.prototype.getSortedActive = function () {
+			var e = [];
+			for (var t in this.data.items)
+				for (var i = this.data.items[t].A, a = 0; a < i.length; a++) {
+					var s = i[a];
+					s.ID = t, e.push(s)
+				}
+			return e.sort(function (e, t) {
+				return e.z - t.z
+			}), e
+		}, e.prototype.setAllInactive = function () {
+			for (var e in this.data.items) this.data.items[e].A = [];
+			this.updated = !0
+		}, e.prototype.add = function (e) {
+			var t = this.data.items[e];
+			Util.isDefined(t) || (t = this.data.items[e] = {
+				N: 0,
+				A: []
+			}), t.N < 9 && t.N++, this.updated = !0
+		}, e.prototype.setActive = function (e, t, i, a, s) {
+			var r = this.data.items[e];
+			if (Util.isDefined(r) && r.N > r.A.length) {
+				var o = {
+					x: t,
+					y: i,
+					z: a,
+					a: s
+				};
+				return r.A.push(o), this.updated = !0, o
+			}
+			return null
+		}, e.prototype.setInactive = function (e, t) {
+			Util.removeFromArray(t, this.data.items[e].A), this.updated = !0
+		}, e.prototype.getBackground = function () {
+			return Util.isDefined(this.data.bg.active) ? this.data.bg.active : 1
+		}, e.prototype.addBackground = function (e) {
+			this.hasBackground(e) || this.data.bg.own.push(e), this.updated = !0
+		}, e.prototype.setBackground = function (e) {
+			this.data.bg.active = e, this.setAllInactive()
+		}, e.prototype.hasBackground = function (e) {
+			return Util.inArray(this.data.bg.own, e)
+		}, e.prototype.getData = function (e) {
+			return this.data.items[e]
+		}, e.prototype.getOwned = function (e) {
+			var t = this.getData(e);
+			return Util.isDefined(t) && Util.isDefined(t.N) ? t.N : 0
+		}, e.prototype.hasMax = function (e) {
+			return this.getOwned(e) >= 9
+		}, e.prototype.getActive = function (e) {
+			var t = this.getData(e);
+			return Util.isDefined(t) && Util.isDefined(t.A) ? t.A.length : 0
+		}, e.prototype.getItemCount = function () {
+			var e = 0;
+			for (var t in this.data.items) e++;
+			return e
+		}, e.prototype.getActiveCount = function () {
+			var e = 0;
+			for (var t in this.data.items) e += this.data.items[t].A.length;
+			return e
+		}, e
+	}(),
 	Backpack = function() {
 		function e() {
 			this.data = {
@@ -34777,6 +35588,7 @@ var State = function() {
 				fossil: [],
 				key: [],
 				relic: [],
+				ring: [],
 				currency: [],
 				follow: []
 			}
@@ -35653,6 +36465,9 @@ Prodigy.ForestBoss = function(e, t) {
 			icon: "boots/7",
 			bot: "Boots"
 		}, {
+			icon: "relic/1",
+			bot: "Relics"
+		}, {
 			icon: "buddy",
 			bot: "Buddies"
 		}, {
@@ -35685,6 +36500,12 @@ Prodigy.ForestBoss = function(e, t) {
 			case 6:
 				this.itemType = "currency";
 				break;
+			case 7:
+				this.itemType = "relic";
+				break;
+			case 8:
+				this.itemType = "ring";
+				break;
 			default:
 				this.itemType = "hat"
 		}
@@ -35702,7 +36523,7 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	reload: function(e) {
 		this.equip.removeAll(!0);
-		for (var t = ["hat", "weapon", "outfit", "boots", "follow", "ring"], i = 0; i < t.length; i++) {
+		for (var t = ["hat", "weapon", "outfit", "boots", "follow", "ring", "relic"], i = 0; i < t.length; i++) {
 			var a = {
 					ID: this.player.equipment.getEquipment(t[i]),
 					type: t[i]
@@ -36453,7 +37274,10 @@ Prodigy.ForestBoss = function(e, t) {
 		}), this.game.prodigy.create.textButton(this.content, 150, 200, {
 			text: "Save Character",
 			size: Prodigy.Control.TextButton.MED
-		}, this.saveCharacter.bind(this))
+		}, this.saveCharacter.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 125, {
+			text: "Watch Intro",
+			size: Prodigy.Control.TextButton.MED
+		}, this.openIntro.bind(this))
 	},
 	openOther: function() {
 		this.game.prodigy.create.textButton(this.content, 150, 50, {
@@ -36706,7 +37530,7 @@ Prodigy.ForestBoss = function(e, t) {
 	y: 102,
 	map: "btn-pirate",
 	icon: "zone-water",
-	target: "Pirate",
+	target: "pirate-0",
 	msg: "Captain Eve is in need of a wizard just like you! Learn water spells and defeat a powerful boss!",
 	iconX: 1004,
 	iconY: 289,
@@ -36723,7 +37547,7 @@ Prodigy.ForestBoss = function(e, t) {
 	y: 242,
 	map: "btn-tower",
 	icon: "wizard",
-	target: "TowerBase",
+	target: "tower-0",
 	msg: "The Dark Tower is home to Mira, who has a challenge for wizards like you! Climb to the top and earn a powerful prize!",
 	iconX: 886,
 	iconY: 483,
@@ -36749,9 +37573,9 @@ Prodigy.ForestBoss = function(e, t) {
 }, {
 	name: "Bonfire Spire",
 	x: 350,
-	y: 240,
+	y: -100,
 	map: "btn-bonfire",
-	target: "Volcano",
+	target: "volcano-0",
 	msg: "Chef Mugs is in need of a wizard just like you! Learn fire spells and defeat a powerful boss!",
 	iconX: 1004,
 	iconY: 289,
@@ -36767,7 +37591,7 @@ Prodigy.ForestBoss = function(e, t) {
 	x: 490,
 	y: -200,
 	map: "btn-shiverchill",
-	target: "Mountain",
+	target: "mountain-0",
 	msg: "Bok & Slip are in need of a wizard just like you! Learn ice spells and defeat a powerful boss!",
 	iconX: 1004,
 	iconY: 289,
@@ -36783,7 +37607,7 @@ Prodigy.ForestBoss = function(e, t) {
 	x: 636,
 	y: -200,
 	map: "btn-skywatch",
-	target: "Cloud",
+	target: "cloud-0",
 	msg: "Cumulo is in need of a wizard just like you! Learn storm spells and defeat a powerful boss!",
 	iconX: 1004,
 	iconY: 289,
@@ -36795,25 +37619,25 @@ Prodigy.ForestBoss = function(e, t) {
 		}
 	}
 }, {
-	name: "Tech Arena Academy",
-	x: 750,
-	y: 340,
-	map: "btn-tech",
-	target: "Arena",
+	name: "Lamplight Arena Academy",
+	x: 343,
+	y: 134,
+	map: "btn-academy",
+	target: "arena-0",
 	msg: "You can battle wizards there. It might remind you of Prodigy Academy from earlier than August 2014."
 }, {
 	name: "Clockwork Town",
-	x: 493,
-	y: 210,
+	x: 750,
+	y: 340,
 	map: "btn-tech",
-	target: "Tech",
-	msg: "Get your techno-groove on in this ancient machine city!"
+	target: "tech-0",
+	msg: "Boombox has a tournament each day, and is looking for wizards to compete! Adopt a robot and teach it to dance, too!"
 }, {
 	name: "Firefly Forest",
-	x: 343,
-	y: 150,
+	x: 200,
+	y: -100,
 	map: "btn-firefly",
-	target: "Forest",
+	target: "forest-0",
 	msg: "Flora is in need of a wizard just like you! Learn earth spells and defeat a powerful boss!",
 	iconX: 1004,
 	iconY: 289,
@@ -36875,7 +37699,8 @@ Prodigy.ForestBoss = function(e, t) {
 				[1, 1],
 				[2, 1],
 				[3, 1],
-				[3, 0]
+				[3, 0],
+				[4, 1]
 			], i = 0; 6 > i; i++) i >= e.length ? this.game.prodigy.create.panel(this.content, 180 * t[i][0], 220 * t[i][1], 4, 5, "empty") : this.game.prodigy.create.item(this.content, 180 * t[i][0], 220 * t[i][1], {
 			ID: e[i],
 			type: "spell"
@@ -37456,7 +38281,7 @@ Prodigy.ForestBoss = function(e, t) {
 			tag: "attack",
 			x: -10,
 			y: -10
-		}], this.openAttacks.bind(this)));
+		}], this.openElements.bind(this)));
 		var t = 0;
 		!0 === this.potionMode && (e.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
 			tag: "icon-base"
@@ -37610,8 +38435,9 @@ Prodigy.ForestBoss = function(e, t) {
 				3: [0, 0, 1],
 				4: [0, 0, 1, 1],
 				5: [0, 0, 0, 1, 1],
-				6: [0, 0, 1, 1, 1, 0]
-			}, i = [], a = Math.min(6, e.length), s = 0; a > s; s++) {
+				6: [0, 0, 1, 1, 1, 0],
+				7: [0, 0, 1, 1, 1, 0, 0],
+			}, i = [], a = Math.min(7, e.length), s = 0; a > s; s++) {
 			var r = s < e.length ? this.game.prodigy.attacks.getAttack(e[s]) : null,
 				o = this.close.bind(this, this.spellCallback, r);
 			i.push(this.game.prodigy.create.stackButton(this.content, 0, 0, [{
@@ -37911,14 +38737,9 @@ Prodigy.ForestBoss = function(e, t) {
 			})
 		}
 	},
-	toHouse: function() {
-		Util.isDefined(this.exclamationSprite) && (this.exclamationSprite.destroy(), this.game.prodigy.world.getZone("house").setState("hasClickedPlayerCardVisit", !0)), this.game.prodigy.loading(!0);
-		var e = (function(e) {
-			var t = Util.isDefined(e) ? e[this.player.userID] : null;
-			Util.isDefined(t) && Util.isDefined(t.house) && (this.game.prodigy.loading(!1), this.player.house.setItems(Util.getObject(t.house)), this.game.prodigy.world.teleport("house", null, null, this.player))
-		}).bind(this);
-		this.game.prodigy.network.getCharData(this.player.userID, ["house"], e, e)
-	},
+	toHouse: function () {
+        this.game.prodigy.world.teleport("house", null, null, this.game.prodigy.player)
+        },
 	challenge: function() {
 		var e = this.game.broadcaster.broadcast(Prodigy.Events.PlayerLocomotion.GET_TARGET, this.game, [!0]),
 			t = function(e, t) {
@@ -39706,7 +40527,151 @@ Prodigy.ForestBoss = function(e, t) {
 			}
 		}), this.close()
 	}
-}), Prodigy.Menu.NameChange = function(e, t, i, a) {
+}), Prodigy.Menu.DormEditor = function (e, t, i) {
+	Prodigy.Control.Menu.call(this, e, t, -1, {
+		hideMenu: !0,
+		hideContent: !0,
+		tile: "bg-tile-brown",
+		close: i
+	}), this.setup()
+}, Prodigy.extends(Prodigy.Menu.DormEditor, Prodigy.Control.Menu, {
+	menuSetup: function () {
+		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.myItems = this.game.prodigy.create.element(this, 190, 620);
+		var e = [{
+			icon: "dorm/1",
+			callback: this.setItems.bind(this, "Comfy")
+		}, {
+			icon: "dorm/3",
+			callback: this.setItems.bind(this, "Surface")
+		}, {
+			icon: "dorm/6",
+			callback: this.setItems.bind(this, "Plants")
+		}, {
+			icon: "dorm/13",
+			callback: this.setItems.bind(this, "Storage")
+		}, {
+			icon: "dorm/18",
+			callback: this.setItems.bind(this, "Wall")
+		}, {
+			icon: "dorm/31",
+			callback: this.setItems.bind(this, "Lamps")
+		}, {
+			icon: "dorm/22",
+			callback: this.setItems.bind(this, "Items")
+		}];
+		this.showFrame("map", "DESIGN-A-HOUSE", e, 0);
+		var t = this.game.prodigy.create.textButton(this, 0, 0, {
+			icon: "close",
+			text: "close"
+		}, this.close.bind(this));
+		this.showBtns([], [t]);
+		var i = Items.getItemData("dormbg", this.game.prodigy.player.house.getBackground()),
+			a = i.bg;
+		this.game.prodigy.load.assets([a], this.setBackground.bind(this, a)), this.setupComplete = !0
+	},
+	setBackground: function (e) {
+		this.house = this.bg.add(this.game.prodigy.create.sprite(0, 0, e)), this.house.inputEnabled = !0, this.house.input.enableDrag(!1, !1);
+		var t = function () {
+			this.rot.visible = !1
+		};
+		this.house.events.onDragStart.add(t, this);
+		var i = this.game.prodigy.player.house.getBackground(),
+			a = Items.getItemData("dormbg", i);
+		this.area = a.area, this.path = new Pathfinder(this.area);
+		var s = this.game.prodigy.player.house.getSortedActive();
+		this.game.prodigy.player.house.setAllInactive();
+		var r = function () {
+			this.game.prodigy.open.confirm("Do you want to remove all your items? All of your items will be returned to you!", this.removeAllItems.bind(this))
+		};
+		this.trash = this.game.prodigy.create.button(this.bg, 10, 505, "zone-house", "trash-icon", r.bind(this)), this.items = this.game.prodigy.create.element(this.bg, 0, 0);
+		for (var o = 0; o < s.length; o++) this.addItem(s[o].ID, s[o].x, s[o].y, s[o].a, !0);
+		this.rot = this.game.prodigy.create.sprite(0, 0, "zone-house", "rotate"), this.rot.anchor.setTo(.5, 1), this.add(this.rot), this.rot.visible = !1, this.rot.inputEnabled = !0, this.rot.events.onInputDown.add(this.rotateItem.bind(this, this.rot), this);
+		var n = function () {
+			this.game.prodigy.open.store(Dorm.STORE, this.setItems.bind(this, this.type, this.page))
+		};
+		this.add(this.game.prodigy.create.sprite(50, 635, "icons", "icon-base")), this.game.prodigy.create.button(this, 50, 625, "icons", "catalogue", n.bind(this))
+	},
+	update: function () {
+		Util.isDefined(this.house) && Util.isDefined(this.items) && (this.house.y > 100 && (this.house.y = 100), this.house.y < -100 && (this.house.y = -100), this.house.x = 0, this.items.y = this.house.y), Prodigy.Control.Menu.prototype.update.call(this)
+	},
+	addItem: function (e, t, i, a, s) {
+		var r = this.items.add(this.game.prodigy.create.sprite(t, i, "zone-house", "1-0"));
+		Prodigy.Menu.DormEditor.setupItem(e, r, a), r.data = this.game.prodigy.player.house.setActive(e, t, i, 0, a), r.anchor.setTo(.5, .5), r.inputEnabled = !0, r.input.enableDrag(!0, !0), r.events.onDragStart.add(this.startDrag.bind(this, r), this), r.events.onDragStop.add(this.placeItem.bind(this, r), this), s || (this.linkRotate(r), this.setItems(this.type, this.page))
+	},
+	startDrag: function () {
+		this.rot.visible = !1
+	},
+	placeItem: function (e) {
+		e.x = Math.floor(e.x), e.y = Math.floor(e.y), e.x >= this.trash.x && e.y >= this.trash.y && e.x <= this.trash.x + this.trash.width && e.y <= this.trash.y + this.trash.height ? (this.game.prodigy.player.house.setInactive(e.ID, e.data), this.setItems(this.type, this.page), e.destroy()) : this.canPlace(e.x, e.y) ? this.linkRotate(e) : (e.x = e.data.x, e.y = e.data.y, e.z = e.data.z, this.linkRotate(e))
+	},
+	removeAllItems: function () {
+		this.items.removeAll(!0), this.game.prodigy.player.house.setAllInactive(), this.setItems(this.type, this.page), this.rot.visible = !1
+	},
+	setItems: function (e, t) {
+		this.myItems.removeAll(!0);
+		for (var i = Items.getDormItems(e), a = i.length - 1; a >= 0; a--) {
+			var s = i[a];
+			this.game.prodigy.player.house.getOwned(s.ID) - this.game.prodigy.player.house.getActive(s.ID) <= 0 && i.splice(a, 1)
+		}
+		var r = Math.floor(1 + (i.length - 1) / 6);
+		if (t = t || 0, 0 > t && (t = 0), t >= r && (t = r - 1), this.type = e, this.page = t, i.length <= 0) {
+			var o = this.game.prodigy.create.element(this.myItems, 0, 30);
+			o.showTooltip("Buy new items!", 0)
+		} else {
+			var n = this.myItems.add(this.game.prodigy.create.sprite(25, 30, "core", "overlay"));
+			n.alpha = .2, n.width = 700, n.height = 50;
+			for (var a = 6 * t, h = 0; 6 * t + 6 > a && a < i.length; a++, h++) Util.isDefined(i[a]) && new DormIcon(this.game, this.myItems, 75 + 100 * h, 0, i[a], this);
+			var o = this.game.prodigy.create.button(this.myItems, 0, 30, "icons", "back", this.setItems.bind(this, e, t - 1)),
+				l = this.game.prodigy.create.button(this.myItems, 700, 30, "icons", "next", this.setItems.bind(this, e, t + 1));
+			0 === t && o.setInactive(), t === r - 1 && l.setInactive()
+		}
+	},
+	canPlace: function (e, t) {
+		if (0 > t || t > 720) return !1;
+		var i = this.path.getNodeValue(Math.floor(e / 20), Math.floor(t / 20));
+		return -1 === i || 1 === i
+	},
+	linkRotate: function (e) {
+		Items.data.dorm[e.ID - 1].r > 0 ? (this.rot.visible = !0, this.rot.x = e.x, this.rot.y = e.y - e.height / 2 + this.house.y, this.rot.data = e, this.rot.bringToTop()) : this.rot.visible = !1
+	},
+	rotateItem: function (e) {
+		if (Util.isDefined(e.data)) {
+			var t = e.data.ID,
+				i = e.data.data.a + 1,
+				a = Items.data.dorm[t - 1],
+				s = a.r;
+			i >= s && (i = 0), e.data.data.a = i, Prodigy.Menu.DormEditor.setupItem(t, e.data, i)
+		}
+	},
+	close: function () {
+		for (var e = 0; e < this.items.children.length; e++) {
+			var t = this.items.children[e];
+			t.data.x = t.x, t.data.y = t.y, t.data.z = t.z
+		}
+		this.game.prodigy.player.house.updated = !0, Prodigy.Control.Menu.prototype.close.call(this)
+	}
+}), Prodigy.Menu.DormEditor.setupItem = function (e, t, i) {
+	var a = Items.data.dorm[e - 1],
+		s = Math.floor(i / 2),
+		r = e + (a.r > 0 ? "-" + s : "");
+	t.ID = e, t.frameName = r, t.scale.x = i % 2 === 1 ? -1 : 1
+};
+var DormIcon = function () {
+	function e(e, t, i, a, s, r) {
+		Prodigy.Control.Element.call(this, e, t, i, a), this.menu = r, this.item = s, this.icon = this.add(this.game.prodigy.create.sprite(0, 0, "icons", "dorm/" + s.ID)), this.overlay = this.add(this.game.prodigy.create.sprite(40, 40, "zone-house", "14")), this.overlay.anchor.setTo(.5, .5), this.overlay.inputEnabled = !0, this.overlay.alpha = 0, this.overlay.input.enableDrag(!0, !0), this.overlay.events.onDragStart.add(this.startDrag, this), this.overlay.events.onDragStop.add(this.stopDrag, this), this.ownedCount = this.game.prodigy.create.font(this, 0, 65, "" + (this.game.prodigy.player.house.getOwned(s.ID) - this.game.prodigy.player.house.getActive(s.ID)), {
+			width: 80,
+			align: "right"
+		})
+	}
+	return e.prototype = Object.create(Prodigy.Control.Element.prototype), e.prototype.startDrag = function () {
+		this.overlay.alpha = 1, Prodigy.Menu.DormEditor.setupItem(this.item.ID, this.overlay, 0)
+	}, e.prototype.stopDrag = function () {
+		var e = this.game.input.x,
+			t = this.game.input.y;
+		this.overlay.frameName = "14", this.overlay.anchor.setTo(.5, .5), this.overlay.x = 40, this.overlay.y = 40, this.overlay.alpha = 0, this.menu.canPlace(e, t - this.menu.house.y) ? this.menu.addItem(this.item.ID, Math.floor(e), Math.floor(t - this.menu.house.y), 0) : this.game.prodigy.open.message("You need to place this item in the house!", null, null, "Uh oh!")
+	}, e
+}();
+Prodigy.Menu.NameChange = function(e, t, i, a) {
 	Prodigy.RenderMenu.call(this, e, t, 0, 0, e.prodigy.textureMenu), this.content = this.game.prodigy.create.element(this), this.onClose = a;
 	var s = this.game.prodigy.player.appearance.getGender();
 	this.names = "male" === s ? Names.BOY_NAMES : Names.GIRL_NAMES, i ? this.create() : this.createAdvanced()
@@ -39949,7 +40914,7 @@ Prodigy.ForestBoss = function(e, t) {
 		}, {
 			icon: "item/62",
 			callback: this.allPets.bind(this),
-			title: "PRODIGY BESTIARY"
+			title: "SELECT A PET TO VIEW"
 		}];
 		this.showFrame("pet", "", e, 0), e = [this.game.prodigy.create.textButton(this, 0, 0, {
 			icon: "close",
@@ -41162,10 +42127,10 @@ Prodigy.ForestBoss = function(e, t) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
 	addDefaultConfig: function() {
-		this.addPage(0), this.addMenu(0, 0), this.addMemberIcon(0, 0), this.addBackpack(0, 0), this.addSpellbook(0, 0), this.addPet(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSocial(0, 0), this.addSettings(0, 0), this.addChat(0, 0), this.addFriendsList(0, 0)
+		this.addPage(0), this.addMenu(0, 0), this.addMemberIcon(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0)
 	},
 	addHouseConfig: function(e) {
-		this.addMenu(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
+		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
 	},
 	addMoveHouse: function(e, t) {
 		this.pages[e][t].push({
@@ -41181,6 +42146,12 @@ Prodigy.ForestBoss = function(e, t) {
 		this.pages[e][t].push({
 			type: "LockHouseButton"
 		})
+	},
+	addStore: function () {
+		this.addMenu(1, [{
+			icon: "catalogue",
+			callback: this.game.prodigy.open.store.bind(this.game.prodigy.open, Prodigy.Menu.Store.DATA)
+		}])
 	},
 	addMailer: function(e, t) {
 		this.pages[e][t].push({
@@ -44333,7 +45304,7 @@ Prodigy.ForestBoss = function(e, t) {
 			size: 36,
 			width: 560,
 			align: "center"
-		}), this.list.error = this.game.prodigy.create.font(this.list, 20, 100, "You must be in a class to view the leaderboard", {
+		}), this.list.error = this.game.prodigy.create.font(this.list, 20, 100, "You must be in a class to view the leaderboards", {
 			size: 20,
 			width: 520,
 			align: "center"
@@ -44384,7 +45355,7 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	loadWizardsComplete: function(e, t, i) {
 		if (Util.isDefined(this.game)) {
-			if (this.type = e, !t || !Util.isDefined(i) || i.length <= 0) return this.list.error.visible = !0, Util.isDefined(this.list.chars) && Util.isDefined(this.list.bar) && (this.list.chars.visible = this.list.bar.visible = !1), void(this.inClass ? this.list.error.setText("There was an error loading your class...try again later") : this.list.error.setText("You must be in a class to view the leaderboard"));
+			if (this.type = e, !t || !Util.isDefined(i) || i.length <= 0) return this.list.error.visible = !0, Util.isDefined(this.list.chars) && Util.isDefined(this.list.bar) && (this.list.chars.visible = this.list.bar.visible = !1), void(this.inClass ? this.list.error.setText("There was an error loading your class...try again later") : this.list.error.setText("You must be in a class to view the leaderboards"));
 			this.list.error.visible = !1, this.list.chars.visible = !0, this.list.bar.visible = !0, this.leaders = i, this.leaders.length > 0 && this.loadPlayerListData(this.leaders)
 		}
 	},
@@ -44561,7 +45532,7 @@ Prodigy.ForestBoss = function(e, t) {
 	createLeaderboard: function() {
 		this.challenge = this.game.prodigy.create.element(this, 560, 0), this.challenge.chars = this.game.prodigy.create.element(this.challenge), this.challenge.icons = [];
 		for (var e = 0; 8 > e; e++) this.challenge.icons.push(this.createIcon(this.challenge.chars, 20, 60 + 45 * e));
-		return this.challenge.bar = this.game.prodigy.create.slider(this.challenge, 490, 60, 360, !0, !0), this.challenge.error = this.game.prodigy.create.font(this.challenge, 20, 100, "You must be in a class to view the leaderboard", {
+		return this.challenge.bar = this.game.prodigy.create.slider(this.challenge, 490, 60, 360, !0, !0), this.challenge.error = this.game.prodigy.create.font(this.challenge, 20, 100, "You must be in a class to view the leaderboards", {
 			size: 20,
 			width: 520,
 			align: "center"
@@ -45610,24 +46581,28 @@ var CollectEvent = function() {
 			this.animate("walk"), this.mode = 0
 		}, e
 	}();
-Prodigy.Event.HealStone = function(e, t, i, a, s, r) {
+Prodigy.Event.HealStone = function (e, t, i, a, s, r) {
 	Prodigy.Control.Element.call(this, e, t, s, r), this.user = i, this.path = a, this.sprite = this.add(this.game.prodigy.create.sprite(0, 0, "tileset-core")), this.sprite.animations.add("stand", ["heal_0", "heal_1", "heal_2", "heal_3", "heal_4", "heal_5", "heal_6", "heal_7"], 10, !0, !1);
 	var o = this.sprite.animations.add("heal", ["heal_8", "heal_9", "heal_10", "heal_11", "heal_12", "heal_13", "heal_14", "heal_15"], 10);
 	this.sprite.animations.play("stand"), this.sprite.inputEnabled = !0, this.sprite.events.onInputDown.add(this.interact.bind(this)), this.sprite.anchor.setTo(.5, 1), o.onComplete.add(this.sprite.animations.play.bind(this.sprite.animations, "stand"))
 }, Prodigy.extends(Prodigy.Event.HealStone, Prodigy.Control.Element, {
-	interact: function() {
+	interact: function () {
 		var e = this.game.prodigy.event.create();
-		e.validPath(this.user, this.path, this.x, this.y), e.yesNoText(38, "noot"), e.function(this.heal.bind(this)), e.start()
+		e.validPath(this.user, this.path, this.x, this.y), e.yesNoText(38, "noot"), e.function(this.startHeal.bind(this)), e.start()
 	},
-	heal: function(e) {
-		var t, t = this.game.prodigy.event.create();
-		t.text(40, "noot"), t.function(this.sprite.animations.play.bind(this.sprite.animations, "heal")), t.function(this.game.prodigy.player.heal.bind(this.game.prodigy.player)), t.sound(Prodigy.Controller.AudioController.SFX_PACKS.UI, "heart"), t.delay(200), t.sound(Prodigy.Controller.AudioController.SFX_PACKS.UI, "heart"), t.delay(200), t.sound(Prodigy.Controller.AudioController.SFX_PACKS.UI, "heart"), t.start()
+	startHeal: function () {
+		this.bmgVolume = this.game.prodigy.audio.getBGMVolume(), this.bmgVolume > .1 && this.game.prodigy.audio.setBGMVolume(.1, !0), this.game.prodigy.education.question(this.heal.bind(this), this.game.prodigy.education.isNew)
+	},
+	heal: function (e) {
+		Util.isDefined(this.bmgVolume) && this.game.prodigy.audio.setBGMVolume(this.bmgVolume, !0);
+		var t = this.game.prodigy.event.create();
+		e ? (t.text(40, "noot"), t.function(this.sprite.animations.play.bind(this.sprite.animations, "heal")), t.function(this.game.prodigy.player.heal.bind(this.game.prodigy.player)), t.sound(Prodigy.Controller.AudioController.SFX_PACKS.UI, "heart"), t.delay(200), t.sound(Prodigy.Controller.AudioController.SFX_PACKS.UI, "heart"), t.delay(200), t.sound(Prodigy.Controller.AudioController.SFX_PACKS.UI, "heart")) : t.text(39, "noot"), t.start(), this.game.prodigy.network.updateUserAbility(this.game.prodigy.education.getUpdatedData())
 	}
-}), Prodigy.QuestEvent = function(e, t, i, a, s, r, o, n, h, l) {
+}), Prodigy.QuestEvent = function (e, t, i, a, s, r, o, n, h, l) {
 	this.npcTag = o, Prodigy.Control.Element.call(this, e, t, s, r), this.screen = i, this.onComplete = l, this.updateCallback = h
 }, Prodigy.extends(Prodigy.QuestEvent, Prodigy.Control.Element, {
 	constructor: Prodigy.QuestEvent,
-	setup: function(e, t, i) {
+	setup: function (e, t, i) {
 		this.npc = this.add(this.game.prodigy.create.sprite(0, 0, "npc-sprite-" + t, 0)), this.npc.animations.add("stand", ["npc_0", "npc_1", "npc_2", "npc_3", "npc_4", "npc_5", "npc_6", "npc_7"], 10, !0, !1), this.npc.animations.play("stand"), this.npc.inputEnabled = !0, this.npc.anchor.setTo(.5, 1), this.npc.events.onInputDown.add(this.process.bind(this, e, null, !0), this), i && (this.npc.scale.x = -1), this.game.prodigy.create.font(this, -200, 0 - this.npc.height - 20, t.charAt(0).toUpperCase() + t.slice(1), {
 			width: 400,
 			align: "center",
@@ -45921,7 +46896,7 @@ var Boot = function() {
 }();
 Boot.init = function() {
 	var e = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
-	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("Tech", Tech), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot")
+	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Academy", Academy), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Plains", Plains), e.state.add("Tree", Tree), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("Tech", Tech), e.state.add("TechZone", TechZone), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot")
 }, Prodigy.Loading = function(e) {
 	Phaser.State.call(this), this.game = e
 }, Prodigy.extends(Prodigy.Loading, Phaser.State, {
@@ -46109,6 +47084,12 @@ var Screen = function() {
 			}).bind(this), Phaser.State.prototype.preload.call(this), this.initListeners()
 		}, e.prototype.create = function() {
 			Phaser.State.prototype.create.call(this), this.screenSetup(), this.complete = !0
+		}, e.prototype.addSoundButton = function () {
+			var e = function (e) {
+					"sound-on" === e.frameName ? (e.frameName = "sound-off", this.game.prodigy.audio.setMute(!0)) : "sound-off" === e.frameName && (e.frameName = "sound-on", this.game.prodigy.audio.setMute(!1))
+				},
+				t = new Sprite(this.game, 10, 630, "core", "sound-on");
+			this.game.prodigy.audio.getBGMVolume() <= 0 && this.game.prodigy.audio.getSFXVolume() <= 0 && (t.frameName = "sound-off"), this.menus.add(t), t.inputEnabled = !0, t.events.onInputDown.add(e.bind(this, t), this)
 		}, e.prototype.fadeIn = function() {
 			this.fadeInSet ? this.game.add.tween(this.opaque).to({
 				alpha: 0
@@ -46156,58 +47137,136 @@ var Screen = function() {
 			this.timer = this.game.time.events.add(t, i.bind(this, this.ID), this)
 		}, e
 	}(),
-	Login = function() {
+	Login = function () {
 		function e(e) {
 			Screen.call(this, e, "Login", "login", "login", ["login", "sfx-ui", "icons", "icons-menu", "icons-hud", "npc-sprite-toy"]), this.showMenu = !1, this.skipUrlParams = !1
 		}
-		return e.prototype = Object.create(Screen.prototype), e.prototype.create = function() {
+		return e.onGoogleAuthLoadedCallback = null, e.isGoogleAuthLoaded = !1, e.onGoogleAuthLoaded = function (t, i) {
+			e.isGoogleAuthLoaded = t, i = Util.isDefined(i) ? i : {
+				error: "no error specified",
+				details: "no details specified"
+			}, t ? (Util.log("Login.onGoogleAuthLoaded - google auth lib loaded successfully"), Util.isDefined(e.onGoogleAuthLoadedCallback) && (e.onGoogleAuthLoadedCallback(), e.onGoogleAuthLoadedCallback = null)) : Util.log("Login.onGoogleAuthLoaded - error loading google auth lib. The error is: " + i.error + " \n details: " + i.details, Util.ERROR)
+		}, window.onGooglePlatformLoad = function () {
+			Util.log("google platform loaded"), window.gapi.load("auth2", function () {
+				var t = window.gapi.auth2.init({
+					client_id: "220442635630-9tjlg48pualfqmef01i1bsq0453ecucv.apps.googleusercontent.com",
+					cookiepolicy: "single_host_origin"
+				});
+				t.then(function () {
+					e.onGoogleAuthLoaded(!0)
+				}, function (t) {
+					e.onGoogleAuthLoaded(!1, t)
+				})
+			})
+		}, e.prototype = Object.create(Screen.prototype), e.GOOGLE_AUTH_FAIL_DEFAULT = "Signing in with Google was unsuccessful", e.GOOGLE_AUTH_POPUP_BLOCKED = "Your browser is blocking popups. To sign in with Google, please allow popups and try again.", e.GOOGLE_AUTH_USE_BROWSER_INSTEAD = "Google sign-in only works in the browser version of Prodigy. Would you like to open Prodigy in the browser?", e.prototype.create = function () {
 			this.game.prodigy.network.logout(!0), this.game.prodigy.debug.setup(this.game);
 			try {
 				$("#first-loading-screen").remove()
 			} catch (e) {}
 			try {
 				Util.getUrlVariable("iosApp") && webkit.messageHandlers.setGameVisible.postMessage(0)
-			} catch (t) {}
+			} catch (e) {}
 			Screen.prototype.create.call(this)
 		}, e.prototype.screenSetup = function() {
-			this.version2 = "Prodigy version 1.10.0", this.version = "Definitive Edition version 1.3.5b", this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
+			this.eduToggle = function(){
+			if (PIXI.game.prodigy.debug.disableEdu == !1 || PIXI.game.prodigy.debug.disableEdu == undefined){
+			PIXI.game.prodigy.debug.disableEdu = true
+			return
+			}
+			if (PIXI.game.prodigy.debug.disableEdu == !0){
+			PIXI.game.prodigy.debug.disableEdu = false
+			return
+			}
+			}
+			this.game.prodigy.create.textButton(this.loginBox, 500, 8, {
+                text: "Math Off",
+                size: Prodigy.Control.TextButton.MED
+            }, this.eduToggle.bind(this))
+			
+			this.game.prodigy.create.textButton(this.loginBox, 500, 72, {
+                text: "Math On",
+                size: Prodigy.Control.TextButton.MED
+            }, this.eduToggle.bind(this)), this.game.prodigy.debug.easyMode(0, 0), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"),
+			this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)),
+			this.googleLoginButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this));
+			this.progressBox = this.game.prodigy.create.element(this.background, 100, 250),
+			this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
 				icon: "close",
 				text: "okay",
 				size: Prodigy.Control.TextButton.MED
-			}, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
+			}, this.showLogin.bind(this, !0)),
+			this.progressBox.visible = !1,
+			this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
 			var t = this.game.prodigy.create.panel(this.background, 100, 660, 4, 1, "lb");
 			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Privacy Policy", {
 				size: 16,
 				width: 160,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com/privacy-policy/")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Home", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com/privacy-policy/")), t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb"), t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Home", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.openFileForCharacter = function() {
-			var e = document.createElement("input"),
+			var fileInput = document.createElement('input'),
 				t = this;
-			e.type = "file", e.id = "myfile" + Math.floor(999999 * Math.random()), e.name = "files", e.style.display = "none", e.click(), e.onchange = function(e) {
-				var i = new FileReader;
-				i.readAsText(e.target.files[0]), i.onload = function(e) {
-					t.loadCharacter.call(t, JSON.parse(e.target.result), !0)
-				}, i.onerror = function(e) {
-					t.game.prodigy.open.okaymessage("Failed to open save file, please retry.", null, null, "Character Loader")
+			fileInput.type = 'file',
+			fileInput.id = 'myfile' + Math.floor(Math.random() * 999999),
+			fileInput.name = 'files',
+			fileInput.style.display = 'none',
+			fileInput.click();
+			fileInput.onchange = function(file) {
+				var reader = new FileReader();
+				reader.readAsText(file.target.files[0]);
+				reader.onload = function(reader) {
+					t.loadCharacter.call(t, JSON.parse(reader.target.result), !0);
+				};
+				reader.onerror = function(reader) {
+					t.game.prodigy.open.okaymessage("Failed to open save file, please retry.",null,null,"Character Loader");
 				}
 			}
 		}, e.prototype.loadCharacter = function(e, t) {
 			try {
-				e.gameVersion != this.game.prodigy.version && !0 == t ? (this.game.prodigy.open.confirm("Your character is from a different Prodigy version! This may cause multiple problems while playing!\n\nDo you want to continue?", this.loadCharacter.bind(this, e, !1), this.showLogin.bind(this, !0), null, "Character Loader"), this.showLogin(!1)) : (this.game.prodigy.player.appearance.data = e.appearancedata, this.game.prodigy.player.equipment.data = e.equipmentdata, this.game.prodigy.player.kennel.data = e.kenneldata, this.game.prodigy.player.data = e.data, this.game.prodigy.player.quests.data = e.questdata, this.game.prodigy.player.backpack.data = e.backpackdata, Util.isDefined(e.housedata) && (this.game.prodigy.player.house.data = e.housedata), Util.isDefined(e.tutorialdata) && (this.game.prodigy.player.tutorial.data = e.tutorialdata), Util.isDefined(e.statedata) && (this.game.prodigy.player.state.data = e.statedata), Util.isDefined(e.achievementsdata) && (this.game.prodigy.player.achievements.data = e.achievementsdata), Util.isDefined(e.metadata) ? this.game.prodigy.player.isMember = e.metadata.isMember : this.game.prodigy.player.isMember = !1, this.offlineMode())
-			} catch (i) {
-				console.error(i), this.game.prodigy.open.okaymessage("A critical error occurred during your character load! This is most-likely from a corrupted/modified save.\n\n\nCheck the console for more details.", null, null, "Character Loader"), console.log("Character load failed!")
+				if (e.gameVersion != this.game.prodigy.version && t == !0) {
+					this.game.prodigy.open.confirm("Your character is from a different Prodigy version! This may cause multiple problems while playing!\n\nDo you want to continue?", this.loadCharacter.bind(this, e, !1), this.showLogin.bind(this, !0), null, "Character Loader")
+					this.showLogin(!1);
+				} else {
+					this.game.prodigy.player.appearance.data = e.appearancedata,
+					this.game.prodigy.player.equipment.data = e.equipmentdata,
+					this.game.prodigy.player.kennel.data = e.kenneldata,
+					this.game.prodigy.player.data = e.data,
+					this.game.prodigy.player.quests.data = e.questdata,
+					this.game.prodigy.player.backpack.data = e.backpackdata;
+					if (Util.isDefined(e.housedata)) {
+						this.game.prodigy.player.house.data = e.housedata
+					};
+					if (Util.isDefined(e.tutorialdata)) {
+						this.game.prodigy.player.tutorial.data = e.tutorialdata
+					};
+					if (Util.isDefined(e.statedata)) {
+						this.game.prodigy.player.state.data = e.statedata
+					};
+					if (Util.isDefined(e.achievementsdata)) {
+						this.game.prodigy.player.achievements.data = e.achievementsdata
+					};
+					if (Util.isDefined(e.metadata)) {
+						this.game.prodigy.player.isMember = e.metadata.isMember
+					} else {
+						this.game.prodigy.player.isMember = !1 // No membership by default
+					};
+					this.offlineMode()
+				}
+			} catch (error) {
+				console.error(error);
+				this.game.prodigy.open.okaymessage("A critical error occurred during your character load! This is most-likely from a corrupted/modified save.\n\n\nCheck the console for more details.", null, null, "Character Loader");
+				console.log("Character load failed!");
 			}
 		}, e.prototype.checkForAdmin = function() {
 			if ("admin" === Util.getUrlVariable("accessType")) {
@@ -46222,10 +47281,52 @@ var Screen = function() {
 			this.showLogin(e), this.loginBox.visible = e
 		}, e.prototype.startLogin = function() {
 			this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.username = this.usernameField.getValue(), this.password = this.passwordField.getValue(), "" === this.username || "" === this.password ? this.onError(NetworkManager.LOGIN, null, 400) : window.setTimeout(this.login.bind(this), 1e3)
+      }, e.prototype.onGoogleLoginButtonClick = function () {
+			if ("1" !== Util.getUrlVariable("iosApp")) this.authorizeWithGoogle();
+			else {
+				this.gotoLoginMode("Prompting for browser version...");
+				var t = this.game.prodigy.open.messageBox(e.GOOGLE_AUTH_USE_BROWSER_INSTEAD, function () {
+					try {
+						webkit.messageHandlers.openWebsiteInBrowser.postMessage(window.location.href.replace("iosApp=1", "action=auth-with-google"))
+					} catch (e) {
+						Util.log("Login.onGoogleLoginButtonClick - exception: " + e.message, Util.ERROR)
+					}
+				});
+				t.onClose = function () {
+					this.showLogin(!0)
+				}.bind(this)
+			}
+		}, e.prototype.authorizeWithGoogle = function () {
+			if (e.isGoogleAuthLoaded) {
+				this.gotoLoginMode("Logging in with Google...");
+				var t = window.gapi.auth2.getAuthInstance().signIn({
+					scope: "profile email"
+				});
+				t.then(this.onGoogleAuthorizeSuccess.bind(this), this.onGoogleAuthorizeFail.bind(this))
+			} else Util.log("Login.authorizeWithGoogle - the Google auth2 lib is not loaded so we can't prompt for google credentials", Util.ERROR)
+		}, e.prototype.onGoogleAuthorizeFail = function (t) {
+			Util.log("onGoogleAuthorizeFail: " + t.error, Util.ERROR), "popup_closed_by_user" === t.error ? this.showLogin(!0) : "popup_blocked_by_browser" === t.error ? this.game.prodigy.open.messageBoxOkay(e.GOOGLE_AUTH_POPUP_BLOCKED, "OKAY", function () {
+				this.showLogin(!0)
+			}.bind(this)) : this.showErrorText(e.GOOGLE_AUTH_FAIL_DEFAULT)
+		}, e.prototype.onGoogleAuthorizeSuccess = function (e) {
+			Util.log("onGoogleLoginSuccess: " + e);
+			var t = {
+				idToken: e.getAuthResponse().id_token,
+				name: e.getBasicProfile().getName(),
+				email: e.getBasicProfile().getEmail()
+			};
+			this.username = t.email, this.loginWithGoogle(t)
+		}, e.prototype.loginWithGoogle = function (e) {
+			this.game.prodigy.network.loginWithGoogle(e.idToken, this.game.prodigy.player, this.onLoginWithGoogleError.bind(this, e, NetworkManager.LOGIN), this.loadSkills.bind(this))
+		}, e.prototype.onLoginWithGoogleError = function (e, t, i, a) {
+			if (404 === a) {
+				var s = location.host + "/Registration/?token=" + e.idToken + "&name=" + e.name + "&email=" + e.email + "&origin=" + window.location.href;
+				this.game.prodigy.network.openWebsite(s, !1)
+			} else this.onError(t, i, a)
 		}, e.prototype.login = function() {
 			this.game.prodigy.network.login(this.username, this.password, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
 		}, e.prototype.loadSkills = function(e) {
-			this.game.prodigy.player.username = this.username, (e = e || {}).username = this.username, e.password = this.password, this.error.setText("Loading skills..."), this.game.prodigy.network.loadSkills(this.game.prodigy.player.userID, this.game.prodigy.player.classIDs, this.loginSuccess.bind(this), this.onError.bind(this, NetworkManager.SKILLS))
+			this.game.prodigy.player.username = this.username, e = e || {}, e.username = this.username, e.password = this.password, this.error.setText("Loading skills..."), this.game.prodigy.network.loadSkills(this.game.prodigy.player.userID, this.game.prodigy.player.classIDs, this.loginSuccess.bind(this), this.onError.bind(this, NetworkManager.SKILLS))
 		}, e.prototype.loginSuccess = function(e) {
 			this.game.prodigy.education.init(e), this.error.setText("Loading worlds..."), this.game.prodigy.network.getWorldList(this.openPlayer.bind(this), this.openPlayer.bind(this, null))
 		}, e.prototype.openPlayer = function(e) {
@@ -46236,14 +47337,16 @@ var Screen = function() {
 			}, e)) : (this.game.prodigy.network.sendEvent("login"), this.game.prodigy.start("CharSelect", {
 				time: 1001
 			}, e))
-		}, e.prototype.createAccount = function(e) {
+		}, e.prototype.createAccount = function (e) {
 			this.game.prodigy.start("CharCreate")
+		}, e.prototype.startLoginTutorial = function (e, t, i) {
+			this.showLogin(!0), this.createAccountButton.visible = !e, e && (this.new_username = t, this.new_password = i, this.usernameField.setValue(""), this.passwordField.setValue(""), this.tutorial = !0)
 		}, e.prototype.completeCharCreate = function(e, t, i) {
 			this.showLogin(!0), this.createAccountButton.visible = !e, e && (this.new_username = t, this.new_password = i, this.usernameField.setValue(""), this.passwordField.setValue(""), this.tutorial = !0)
 		}, e.prototype.update = function() {
 			if (Screen.prototype.update.call(this), this.tutorial) {
 				var e = this.usernameField.getValue() || "";
-				if ((e = e.toLowerCase()) !== this.new_username.toLowerCase()) {
+				if (e = e.toLowerCase(), e !== this.new_username.toLowerCase()) {
 					if (this.usernameField.hasTooltip()) return;
 					this.usernameField.showTooltip("'" + this.new_username + "'", 330), this.usernameField.setFocus(!0), this.passwordField.showTooltip(null), this.loginButton.highlight(!1)
 				} else if (this.passwordField.getValue() !== this.new_password) {
@@ -46261,7 +47364,7 @@ var Screen = function() {
 		}, e
 	}();
 WalkableScreen = function(e, t, i) {
-	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])), this.area = null, this.showMenu = !0, this.tileSize = 20, this.hideHex = !1, this.playersInfo = {}, this.playerList = {}, this.clickAreas = []
+	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])), this.area = null, this.showMenu = !0, this.tileSize = 20, this.hideHex = !1, this.playersInfo = {}, this.playerList = {}, this.noSoundButton = {}, this.addSoundButton = {}, this.playerList = new Array, this.playerList.push(this.user), this.playerHash = {}, this.disableBots || this.createBots(), this.clickAreas = []
 }, Prodigy.extends(WalkableScreen, Screen, {
 	constructor: WalkableScreen,
 	onDebugAutoClick: function(e) {
@@ -46289,7 +47392,7 @@ WalkableScreen = function(e, t, i) {
 		this.bg = this.game.prodigy.create.sprite(0, 0, this.screenName, "bg"), this.bg.inputEnabled = !0, this.bg.events.onInputDown.add(this.listener.bind(this), this), this.background.add(this.bg)
 	},
 	screenSetup: function(e, t) {
-		t || this.game.prodigy.skin.apply(this), Device.isTablet() || Device.iPadMini() || 1 == Util.getUrlVariable("iosApp") || !Util.isDefined(this.bgm) || (this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM()), Screen.prototype.screenSetup.call(this)
+		t || this.game.prodigy.skin.apply(this), Device.isTablet() || Device.iPadMini() || 1 == Util.getUrlVariable("iosApp") || !Util.isDefined(this.bgm) || (this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM()), this.noSoundButton || this.addSoundButton(), Screen.prototype.screenSetup.call(this)
 	},
 	start: function() {
 		this.user.evtProc = !1, Screen.prototype.start.call(this)
@@ -46415,6 +47518,23 @@ WalkableScreen = function(e, t, i) {
 			atlas: "merchant",
 			name: ""
 		}, this.game.prodigy.open.store.bind(this.game.prodigy.open, i), a)
+	},
+	createBots: function(e, t, a, s) {
+		var e = 1 + Math.floor(2 * Math.random());
+			this.playerList = {};
+			for (var t = 0; e > t; t++) {
+			}
+	},
+	processbot: function(e, t, a, s) {
+		if (Math.random() < .005) {
+			}
+	},
+	addSoundButton: function(e, t, a, s) {
+		var e = function (e) {
+					"sound-on" === e.frameName ? (e.frameName = "sound-off", this.game.prodigy.audio.setMute(!0)) : "sound-off" === e.frameName && (e.frameName = "sound-on", this.game.prodigy.audio.setMute(!1))
+				},
+				t = new Sprite(this.game, 10, 630, "core", "sound-on");
+			this.game.prodigy.audio.getBGMVolume() <= 0 && this.game.prodigy.audio.getSFXVolume() <= 0 && (t.frameName = "sound-off"), this.menus.add(t), t.inputEnabled = !0, t.events.onInputDown.add(e.bind(this, t), this)
 	},
 	addNicknamer: function(e, t, i) {
 		var a = this.game.prodigy.create.element(this.content, e, t),
@@ -46781,7 +47901,7 @@ Intro = function () {
 				}
 			}), CutScene.prototype.screenSetup.call(this, t, e, 50900, this.end.bind(this)), this.game.prodigy.audio.playBGM("bgm-intro-1"), this.game.prodigy.audio.resumeBGM()
 		}, e.prototype.end = function () {
-			this.game.prodigy.audio.pauseBGM(), this.game.prodigy.world.teleport("tutorial-B9")
+			this.game.prodigy.audio.pauseBGM(), this.game.prodigy.world.teleport("house-suburbs")
 		}, e
 	}();
 CutScene.getValue = function(e, t, i, a, s) {
@@ -46874,7 +47994,7 @@ CutScene.getValue = function(e, t, i, a, s) {
 	},
 	offlineMode: function() {
 		var e = this.game.prodigy.player.data.zone;
-		Util.isDefined(e) && e.indexOf("-") > 0 ? this.game.prodigy.world.teleport(e) : this.game.prodigy.world.teleport("Intro")
+		Util.isDefined(e) && e.indexOf("-") > 0 ? this.game.prodigy.world.teleport(e) : this.game.prodigy.world.teleport("intro-0")
 	},
 	openWorlds: function() {
 		var e = this._screenData;
@@ -46903,7 +48023,7 @@ CutScene.getValue = function(e, t, i, a, s) {
 		this.showWizards(), this.showDialogue(), Screen.prototype.start.call(this)
 	},
 	offlineMode: function() {
-		this.game.prodigy.world.teleport("Intro")
+		this.game.prodigy.world.teleport("intro-0")
 	},
 	showDialogue: function() {
 		this._dialogue = this.game.prodigy.dialogue.create(), this._dialogue.setText(49), this._dialogue.start("noot", !0, null, 0)
@@ -47018,7 +48138,7 @@ var TileScreen = function() {
 			return r.setup(this.zone, i, a), this.events.push(r), r
 		}, e.prototype.addConstructedQuestNPC = function(e, t, i, a, s) {
 			var r;
-			return "benni" === i && (r = new Prodigy.BenniEvent(this.game, this.content, this, this.zone, e, t, i, a, this.process.bind(this), s)).setup(this.zone, i, a), "flora" === i && (r = new Prodigy.FloraEvent(this.game, this.content, this, this.zone, e, t, i, a, this.process.bind(this), s)).setup(this.zone, i, a), this.events.push(r), r
+			return "benni" === i && (r = new Prodigy.BenniEvent(this.game, this.content, this, this.zone, e, t, i, a, this.process.bind(this), s)).setup(this.zone, i, a), "flora" === i && (r = new Prodigy.FloraEvent(this.game, this.content, this, this.zone, e, t, i, a, this.process.bind(this), s)).setup(this.zone, i, a), "guard" === i && (r = new Prodigy.GuardEvent(this.game, this.content, this, this.zone, e, t, i, a, this.process.bind(this), s)).setup(this.zone, i, a), this.events.push(r), r
 		}, e.prototype.addClickableEvent = function(e, t, i, a, s, r, o, n) {
 			var h = new Prodigy.ClickableEvent(this.game, n || this.content, e, t, i, a, s, r, o);
 			return this.events.push(h), h
@@ -47077,6 +48197,9 @@ var TileScreen = function() {
 				case "npc-sprite-worker-slime-red":
 					o = new Prodigy.WorkerSlimeEvent(this.game, this.content, e, t, i, a, s);
 					break;
+				case "npc-sprite-guard":
+					o = new Prodigy.GuardEvent(this.game, r || this.content, e, t, i, a, s);
+					break;
 				default:
 					Util.log("Add Constructed NPC failed: Tag not found", Util.ERROR)
 			}
@@ -47121,7 +48244,7 @@ var TileScreen = function() {
 				callback: this.toZone.bind(this)
 			}), e.start("noot"), Screen.prototype.start.call(this)
 		}, e.prototype.toZone = function() {
-			Util.isDefined(this.targetZone) && 0 != this.targetZone.length ? this.targetZone.indexOf("-") > -1 ? this.game.prodigy.world.teleport(this.targetZone) : (delete this.game.state.states[this.targetZone].startX, delete this.game.state.states[this.targetZone].startY, this.game.prodigy.start(this.targetZone)) : this.game.prodigy.world.teleport("house")
+			Util.isDefined(this.targetZone) && 0 != this.targetZone.length ? this.targetZone.indexOf("-") > -1 ? this.game.prodigy.world.teleport(this.targetZone) : (delete this.game.state.states[this.targetZone].startX, delete this.game.state.states[this.targetZone].startY, this.game.prodigy.start(this.targetZone)) : this.game.prodigy.world.teleport(this.targetZone)
 		}, e
 	}();
 Prodigy.Skin = function(e, t) {
@@ -48948,6 +50071,9 @@ Prodigy.Skin = function(e, t) {
 			case "tower-0":
 				this.game.prodigy.start("TowerBase", s);
 				break;
+			case "town-1":
+				this.game.prodigy.start("Academy", s);
+				break;
 			case "town-2":
 				this.game.prodigy.start("Arena", s);
 				break;
@@ -48969,6 +50095,9 @@ Prodigy.Skin = function(e, t) {
 			case "dino-0":
 				this.game.prodigy.start("Dino", s);
 				break;
+			case "tree-0":
+				this.game.prodigy.start("Tree", s);
+				break;
 			case "arena-0":
 				this.game.prodigy.start("Arena", s);
 				break;
@@ -48983,6 +50112,12 @@ Prodigy.Skin = function(e, t) {
 				break;
 			case "dorm-0":
 				this.game.prodigy.start("Dorm", s);
+				break;
+			case "techzone-0":
+				this.game.prodigy.start("TechZone", s);
+				break;
+			case "cloud-1":
+				this.game.prodigy.start("Plains", s);
 				break;
 			default:
 				this.zones.house.teleport("house", t, i, a, s)
@@ -49118,7 +50253,330 @@ Prodigy.Skin = function(e, t) {
 			frame: ""
 		}
 	}
-}, Prodigy.Forest = function(e) {
+}, Prodigy.Tutorial = function (e) {
+	Prodigy.Zone.call(this, e), this.name = "Tutorial", this.ID = "tutorial", this.battleBG = "bg-battle-forest", this.onFaint = "tutorial-B9", this.questHub = "tutorial-B9", this.states = ["chest1", "chest2", "bridgeBuilt"];
+	var t = ["tileset-forest", "tileset-generic", "tileset-outside", "npc-sprite-noot"];
+	this.maps = {
+		B9: new Tutorial_B9(this, t),
+		C9: new Tutorial_C9(this, t),
+		D8: new Tutorial_D8(this, t),
+		D9: new Tutorial_D9(this, t)
+	}, this.quests = {
+		1: new Prodigy.Tutorial_Q1(this, t),
+		2: new Prodigy.Tutorial_Q2(this, t),
+		3: new Prodigy.Tutorial_Q3(this, t),
+		4: new Prodigy.Tutorial_Q4(this, t),
+		5: new Prodigy.Tutorial_Q5(this, t)
+	}
+}, Prodigy.Tutorial.prototype = Object.create(Prodigy.Zone.prototype), Tutorial_B9 = function (e, t) {
+	Prodigy.Map.call(this, e, "B9", "Firefly Docks", 400, 400, ["tutorial-C9"], t)
+}, Prodigy.extends(Tutorial_B9, Prodigy.Map, {
+	constructor: Tutorial_B9,
+	setup: function (e, t) {
+		Prodigy.Map.prototype.setup.call(this, e, t), this.addAreaEvent(e, t, {
+			x: 1240,
+			y: 380,
+			w: 80,
+			h: 440
+		}, "tutorial-C9", 90, 400, null, null, !0), Util.isDefined(this._zone.getQuestState()) || this._zone.startQuest(1)
+	}
+}), Tutorial_C9 = function (e, t) {
+	Prodigy.Map.call(this, e, "C9", "Firefly Beach", 90, 400, ["tutorial-B9", "tutorial-D9"], t)
+}, Prodigy.extends(Tutorial_C9, Prodigy.Map, {
+	constructor: Tutorial_C9,
+	setup: function (e, t) {
+		Prodigy.Map.prototype.setup.call(this, e, t), this.addAreaEvent(e, t, {
+			x: 40,
+			y: 380,
+			w: 80,
+			h: 440
+		}, "tutorial-B9", 1190, 400, null, null, !0), this.addAreaEvent(e, t, {
+			x: 1240,
+			y: 340,
+			w: 80,
+			h: 280
+		}, "tutorial-D9", 90, 400, null, null, !0)
+	}
+}), Tutorial_D8 = function (e, t) {
+	Prodigy.Map.call(this, e, "D8", "Lakeside Crossing", 1040, 630, ["tutorial-D9", "forest-C8"], t)
+}, Prodigy.extends(Tutorial_D8, Prodigy.Map, {
+	constructor: Tutorial_D8,
+	setup: function (e, t) {
+		Prodigy.Map.prototype.setup.call(this, e, t), this.addAreaEvent(e, t, {
+			x: 1040,
+			y: 680,
+			w: 320,
+			h: 80
+		}, "tutorial-D9", 1040, 90, null, null, !0), this.addAreaEvent(e, t, {
+			x: 40,
+			y: 520,
+			w: 80,
+			h: 240
+		}, "forest-C8", 1190, 520, null, null, !0), this.addAreaEvent(e, t, {
+			x: 1240,
+			y: 260,
+			w: 80,
+			h: 200
+		}, "lamplight-B1", 100, 300, null, null, !0)
+	}
+}), Tutorial_D9 = function (e, t) {
+	Prodigy.Map.call(this, e, "D9", "The Beach", 90, 300, ["tutorial-C9", "tutorial-D8"], t)
+}, Prodigy.extends(Tutorial_D9, Prodigy.Map, {
+	constructor: Tutorial_D9,
+	setup: function (e, t, i) {
+		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
+			x: 40,
+			y: 340,
+			w: 80,
+			h: 280
+		}, "tutorial-C9", 1190, 400, null, null, !0), this.addAreaEvent(e, t, {
+			x: 1040,
+			y: 40,
+			w: 320,
+			h: 80
+		}, "tutorial-D8", 1040, 630, null, null, !0)
+	},
+	process: function (e, t, i) {
+		if (Prodigy.Map.prototype.process.call(this, e, t, i), Util.isDefined(this._zone.getState("bridgeBuilt")) || this._zone.getCurrentQuestID() > 3)
+			for (var a = 0; 2 > a; a++)
+				for (var s = 0; 3 > s; s++) t.floor.add(this.getTile(e, 342, 40 * (25 + a), 40 * (5 + s), t.path, t.area, null, !0))
+	}
+}), Prodigy.Tutorial_Q1 = function (e, t) {
+	Prodigy.Quest.call(this, e, t, 1, "Let's Battle!", {
+		type: "seq",
+		N: 1
+	}, ["tutorial-B9"], [], [], [], [], !0)
+}, Prodigy.extends(Prodigy.Tutorial_Q1, Prodigy.Quest, {
+	constructor: Prodigy.Tutorial_Q1,
+	setup: function (e, t, i) {
+		Prodigy.Quest.prototype.setup.call(this, e, t, i)
+	},
+	start: function (e, t, i) {
+		Prodigy.Quest.prototype.start.call(this, e, t, i), "B9" === i.getTag() && (t.memberIcon.visible = !1, this.zone.isOnSequence(1, 0) ? this.nootEnters(e, t, i) : this.zone.isOnSequence(1, 1) && this.followNoot(e, t, i))
+	},
+	nootEnters: function (e, t, i) {
+		var a = i.addNPC(e, t, 1080, 0, "npc-sprite-noot");
+		t.menuBar.visible = !1, t.user.x = 200, t.user.y = 380;
+		var s = e.prodigy.event.create();
+		s.enableInput(!1), s.path(t.user, [{
+			x: 550,
+			y: 380
+		}]), s.enableInput(!0), s.text(0, "noot"), s.enableInput(!1), s.sound("whoosh"), s.path(a, [{
+			x: 780,
+			y: 380
+		}], 3), s.sound("dig"), s.hop(a, 150, -50, 50), s.sound("dig"), s.delay(100), s.enableInput(!0), s.text(1, "noot"), s.function(a.float.bind(a, !0)), s.text(2, "noot"), s.text(28, "noot"), s.function(this.battle.bind(this, e)), s.start()
+	},
+	battle: function (e) {
+		var t = {
+			intro: "Wizard Battle!",
+			"catch": !1,
+			run: !1,
+			screen: "bg-battle-forest",
+			allowMember: !1,
+			switchDisabled: !0,
+			boss: {
+				ID: 9,
+				element: "storm",
+				attacks: [],
+				name: "Scarecrow",
+				maxHP: 12,
+				showHP: !0
+			},
+			events: [{
+				action: "turn",
+				value: 0,
+				callback: function (e, t) {
+					var i = e.prodigy.dialogue.create();
+					i.setText(3), i.start("noot", !1, t)
+				}
+			}, {
+				action: "miss",
+				repeat: 0,
+				callback: function (e, t) {
+					var i = e.prodigy.dialogue.create();
+					i.setText(4), i.start("noot", !1, t)
+				}
+			}, {
+				action: "hit",
+				repeat: 0,
+				callback: function (e, t) {
+					var i = e.prodigy.dialogue.create();
+					i.setText(5), i.start("noot", !1, t)
+				}
+			}]
+		};
+		e.prodigy.battle.start(t, this.endBattle.bind(this, e), this.endBattle.bind(this, e), this.endBattle.bind(this, e))
+	},
+	endBattle: function (e) {
+		this.zone.completeSequence(1, 0), e.prodigy.world.teleport("tutorial-B9", 550, 400)
+	},
+	followNoot: function (e, t, i) {
+		var a = i.addNPC(e, t, 1080, 0, "npc-sprite-noot");
+		a.x = 730, a.y = 380, a.flip(), a.float(!0), t.user.x = 550, t.user.y = 380;
+		var s = e.prodigy.event.create();
+		s.text(7, "noot"), s.enableInput(!1), s.path(a, [{
+			x: 1100,
+			y: 380
+		}], 2), s.delay(300), s.function(a.flip.bind(a)), s.function(a.chat.bind(a, 1, 80)), s.hop(a, 200), s.delay(100), s.enableInput(!0), s.text(6, "noot"), s.function(this.zone.completeQuest.bind(this.zone, 1)), s.function(this.zone.startQuest.bind(this.zone, 2)), s.function(t.process.bind(t)), s.path(a, [{
+			x: 1350,
+			y: 380
+		}], 2), s.start()
+	}
+}), Prodigy.Tutorial_Q2 = function (e, t) {
+	Prodigy.Quest.call(this, e, t, 2, "", {
+		type: "pet",
+		ID: 20,
+		N: 1,
+		U: !0
+	}, ["tutorial-C9"], [], [], [], [], !0)
+}, Prodigy.extends(Prodigy.Tutorial_Q2, Prodigy.Quest, {
+	constructor: Prodigy.Tutorial_Q2,
+	setup: function (e, t, i) {
+		if (Prodigy.Quest.prototype.setup.call(this, e, t, i), "C9" === i.getTag()) {
+			var a = {
+				encounter: [{
+					ID: 20
+				}],
+				level: 2,
+				"catch": !1,
+				run: !1,
+				allowMember: !1,
+				switchDisabled: !0,
+				events: [{
+					action: "turn",
+					value: 0,
+					callback: function (e, t) {
+						var i = e.prodigy.dialogue.create();
+						i.setText(34), i.start("noot", !1, t)
+					}
+				}]
+			};
+			i.addMonster(e, t, 1, 740, 280, !0, a)
+		}
+	},
+	start: function (e, t, i) {
+		if (Prodigy.Quest.prototype.start.call(this, e, t, i), "C9" === i.getTag())
+			if (t.memberIcon.visible = !1, this.zone.isQuestComplete(2)) this.givePlayerPet(e, t, i);
+			else if (this.zone.isOnSequence(2, 0)) this.RunEncounterTutorial(e, t, i);
+		else if (this.zone.isOnSequence(2, 1)) {
+			var a = i.addNPC(e, t, 450, 250, "npc-sprite-noot");
+			a.float(!0)
+		}
+	},
+	RunEncounterTutorial: function (e, t, i) {
+		var a = i.addNPC(e, t, 140, 400, "npc-sprite-noot");
+		a.float(!0);
+		var s = e.prodigy.event.create();
+		s.text(24, "noot"), s.enableInput(!1), s.path(a, [{
+			x: 450,
+			y: 250
+		}], 2), s.hop(a, 150, -50, 50), s.delay(100), s.enableInput(!0), s.text(25, "noot"), s.text(26, "noot"), s.function(this.zone.completeSequence.bind(this.zone, 2, 0)), s.start()
+	},
+	givePlayerPet: function (e, t, i) {
+		var a = i.addNPC(e, t, 450, 250, "npc-sprite-noot");
+		a.float(!0);
+		var s = function () {
+				this.zone.completeQuest(2), this.zone.startQuest(3);
+				var i = e.prodigy.dialogue.create();
+				i.setText(7), i.setText({
+					callback: a.setPath.bind(a, [{
+						x: 1350,
+						y: 340
+					}], null, 2)
+				}), i.start("noot"), t.process()
+			},
+			r = e.prodigy.event.create();
+		r.text(27, "noot"), e.prodigy.player.kennel.getPets().length <= 0 ? r.function(e.prodigy.open.choosePet.bind(e.prodigy.open, s.bind(this))) : r.function(s.bind(this)), r.start()
+	}
+}), Prodigy.Tutorial_Q3 = function (e, t) {
+	Prodigy.Quest.call(this, e, t, 3, "", {
+		type: "item",
+		ID: 68,
+		N: 2
+	}, ["tutorial-D9"], [], [], [], [], !0)
+}, Prodigy.extends(Prodigy.Tutorial_Q3, Prodigy.Quest, {
+	constructor: Prodigy.Tutorial_Q3,
+	setup: function (e, t, i) {
+		if (Prodigy.Quest.prototype.setup.call(this, e, t, i), "D9" === i.getTag()) {
+			this.noot = i.addNPC(e, t, 0, 400, "npc-sprite-noot"), this.noot.float(!0);
+			var a = {
+					type: "item",
+					ID: 68
+				},
+				s = {
+					encounter: [{
+						ID: 20
+					}],
+					"catch": !1,
+					allowMember: !1
+				};
+			i.addCollect(e, t, 1, 980, 520, a), i.addCollect(e, t, 2, 650, 320, a), i.addMonster(e, t, 1, 900, 450, !1, s)
+		}
+	},
+	start: function (e, t, i) {
+		Prodigy.Quest.prototype.start.call(this, e, t, i), t.memberIcon.visible = !1, "D9" === i.getTag() && (this.zone.isOnSequence(3, 0) ? this.RunItemTutorial(e, t) : this.zone.isOnSequence(3, 1) && (this.noot.x = 400, this.noot.y = 300))
+	},
+	process: function (e, t, i) {
+		Prodigy.Quest.prototype.process.call(this, e, t, i), "D9" === i.getTag() && this.zone.isQuestComplete(3) && (this.zone.getState("bridgeBuilt") ? this.FollowNoot(e, t, i) : this.zone.isOnSequence(3, 1) && this.NootRebuildsBridge(e, t))
+	},
+	RunItemTutorial: function (e) {
+		console.log("3-0"), this.noot.x = 400, this.noot.y = 300;
+		var t = e.prodigy.event.create();
+		t.enableInput(!1), t.path(this.noot, [{
+			x: 400,
+			y: 300
+		}], 2), t.enableInput(!0), t.text(29, "noot"), t.text(30, "noot"), t.text(31, "noot"), t.function(this.zone.completeSequence.bind(this.zone, 3, 0)), t.start()
+	},
+	NootRebuildsBridge: function (e, t) {
+		console.log("3-1");
+		var i = e.prodigy.event.create();
+		i.text(32, "noot"), i.enableInput(!1), i.path(this.noot, [{
+			x: 1040,
+			y: 250
+		}], 3), i.explode(960, 150, 160, 240, 4, !0), i.delay(1e3), i.function(this.setBridgeBuilt.bind(this)), i.delay(3e3), i.function(this.zone.completeSequence.bind(this.zone, 3, 0)), i.function(t.process.bind(t)), i.start()
+	},
+	FollowNoot: function (e, t) {
+		console.log("3-end, 4-start"), this.noot.x = 1040, this.noot.y = 250;
+		var i = e.prodigy.event.create();
+		i.function(this.zone.completeQuest.bind(this.zone, 3)), i.function(this.zone.startQuest.bind(this.zone, 4)), i.function(t.process.bind(t)), i.enableInput(!0), i.text(33, "noot"), i.path(this.noot, [{
+			x: 1040,
+			y: 0
+		}], 2), i.start()
+	},
+	setBridgeBuilt: function () {
+		this.zone.setState("bridgeBuilt", !0)
+	}
+}), Prodigy.Tutorial_Q4 = function (e, t) {
+	Prodigy.Quest.call(this, e, t, 4, "", {
+		type: "zone"
+	}, ["tutorial-D8"], [], [], [], [], !0)
+}, Prodigy.extends(Prodigy.Tutorial_Q4, Prodigy.Quest, {
+	constructor: Prodigy.Tutorial_Q4,
+	setup: function (e, t, i) {
+		Prodigy.Quest.prototype.setup.call(this, e, t, i)
+	},
+	start: function (e, t, i) {
+		Prodigy.Quest.prototype.start.call(this, e, t, i), "D8" === i.getTag() && (t.memberIcon.visible = !1, this.listenToNoot(e, t, i))
+	},
+	listenToNoot: function (e, t, i) {
+		var a = i.addNPC(e, t, 1040, 600, "npc-sprite-noot");
+		a.float(!0);
+		var s = e.prodigy.event.create();
+		s.enableInput(!1), s.path(a, [{
+			x: 550,
+			y: 300
+		}], 2), s.path(t.user, [{
+			x: 730,
+			y: 300
+		}]), s.function(a.flip.bind(a)), s.enableInput(!0), s.text(35, "noot"), s.text(42, "noot"), s.text(43, "noot"), s.text(36, "noot"), s.text(37, "noot"), s.enableInput(!1), s.hop(a, 300, 180, 100), s.set(a, "visible", !1), s.function(this.zone.completeQuest.bind(this.zone, 4)), s.function(this.zone.startQuest.bind(this.zone, 5)), s.function(t.process.bind(t)), s.enableInput(!0), s.start()
+	}
+}), Prodigy.Tutorial_Q5 = function (e, t) {
+	Prodigy.Quest.call(this, e, t, 5, "", {
+		type: "zone"
+	}, ["forest-C8"], [], [], [], null, !0)
+}, Prodigy.extends(Prodigy.Tutorial_Q5, Prodigy.Quest, {
+	constructor: Prodigy.Tutorial_Q5
+}), Prodigy.Forest = function(e) {
 	Prodigy.Zone.call(this, e), this.name = "Firefly Forest", this.ID = "forest", this.battleBG = "bg-battle-forest", this.onFaint = "forest-C8", this.questHub = "forest-C8", this.states = ["chest1", "chest2", "chest3", "chest4", "wizard1", "wizard2", "wizard3", "wizard4", "daily", "hasdaily"], this.util = new Prodigy.ZoneUtil(e, this), this.monsters = [25, 29, 32, 52, 55, 59, 69, 81];
 	var t = ["tileset-firefly-new", "npc-sprite-wizard", "zone-forest", "tileset-collisions"];
 	this.maps = {
@@ -49207,7 +50665,7 @@ Prodigy.Skin = function(e, t) {
 			y: 680,
 			w: 320,
 			h: 80
-		}, "forest-A4", 1080, 90), this.addHealStone(e, t, 270, 435)
+		}, "forest-A4", 1080, 90), this.addHealStone(e, t, 270, 435), e.prodigy.player.backpack.hasItem("key", 3) ? this.addClickableEvent(e, t, 440, 80, 400, 200, this._zone.util.enterGate.bind(this, e, t, 640, 340, e.prodigy.world.teleport.bind(e.prodigy.world, "shiverchill-A11"), 13)) : this.addClickableEvent(e, t, 440, 80, 400, 200, this._zone.util.doorLocked.bind(this, e, "The gate is locked. You require the Firefly Gem."))
 	}
 }), Forest_A4 = function(e, t) {
 	Prodigy.Map.call(this, e, "A4", "Mountain Pass", 1080, 520, ["forest-A3", "forest-A5", "forest-B5"], t), this.coord = [{
@@ -50513,7 +51971,7 @@ Prodigy.Skin = function(e, t) {
 				}, s = 0; s < e.daily_coords.length; s++) this.ice.push(e.addClickableEvent(t, i, e.daily_coords[s].x, e.daily_coords[s].y, 60, 60, a.bind(this, t, s), null)), this.ice[s].add(t.prodigy.create.sprite(-10, -10, "zone-shiverchill", "frozen-something"))
 	}
 }), Prodigy.Shiverchill_A11 = function(e, t) {
-	Prodigy.Map.call(this, e, "A11", "Borderland", 1100, 220, ["shiverchill-A10"], t.concat(["npc-sprite-wizard", "tileset-generic-snow"])), this.coord = [{
+	Prodigy.Map.call(this, e, "A11", "Borderland", 1100, 220, ["shiverchill-A10", "forest-A3"], t.concat(["npc-sprite-wizard", "tileset-generic-snow"])), this.coord = [{
 		x: 640,
 		y: 560
 	}, {
@@ -50526,7 +51984,7 @@ Prodigy.Skin = function(e, t) {
 }, Prodigy.extends(Prodigy.Shiverchill_A11, Prodigy.Map, {
 	constructor: Prodigy.Shiverchill_A11,
 	setup: function(e, t, i) {
-		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
+		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addClickableEvent(e, t, 104, 80, 270, 200, this._zone.util.enterGate.bind(this, e, t, 240, 330, e.prodigy.world.teleport.bind(e.prodigy.world, "forest-A3", 677, 310))), this.addAreaEvent(e, t, {
 			x: 1100,
 			y: 130,
 			w: 160,
@@ -51132,7 +52590,7 @@ Prodigy.Skin = function(e, t) {
 		Prodigy.Map.prototype.start.call(this, e, t)
 	}
 }), Prodigy.Shiverchill_B10 = function(e, t) {
-	Prodigy.Map.call(this, e, "B10", "Furnace Room", 235, 575, ["shiverchill-A10"], t.concat(["tileset-minecarts"]))
+	Prodigy.Map.call(this, e, "B10", "Furnace Room", 235, 575, ["shiverchill-A10", "shiverchill-B9", "dino-0"], t.concat(["tileset-minecarts"]))
 }, Prodigy.extends(Prodigy.Shiverchill_B10, Prodigy.Map, {
 	constructor: Prodigy.Shiverchill_B10,
 	setup: function(e, t, i) {
@@ -51146,7 +52604,13 @@ Prodigy.Skin = function(e, t) {
 			w: 60,
 			h: 72,
 			rect: !0
-		}, "shiverchill-B9", 645, 500);
+		}, "shiverchill-B9", 645, 500), this.addAreaEvent(e, t, {
+			x: 100,
+			y: 200,
+			w: 60,
+			h: 102,
+			rect: !0
+		}, "dino-0", 645, 500);
 		for (var a = [
 				[200, 80],
 				[440, 240],
@@ -51404,7 +52868,7 @@ Prodigy.Skin = function(e, t) {
 				ID: 18,
 				level: 20
 			}]
-		}).flip()
+		}).flip(), e.prodigy.player.backpack.hasItem("key", 4) ? this.addClickableEvent(e, t, 545, 80, 265, 200, this._zone.util.enterGate.bind(this, e, t, 677, 360, e.prodigy.world.teleport.bind(e.prodigy.world, "skywatch-A0"), 16)) : this.addClickableEvent(e, t, 545, 80, 265, 200, this._zone.util.doorLocked.bind(this, e, "The door is locked. Your required the Shiverchill Gem"), null, 0)
 	}
 }), Prodigy.Shiverchill_B9 = function(e, t) {
 	Prodigy.Map.call(this, e, "B9", "Hidden Room", 645, 500, ["shiverchill-B10"], t.concat(["zone-shiverchill"])), this.daily_coords = [{
@@ -52006,7 +53470,7 @@ Prodigy.Skin = function(e, t) {
 }, Prodigy.extends(Prodigy.Skywatch_A0, Prodigy.Map, {
 	constructor: Prodigy.Skywatch_A0,
 	setup: function(e, t, i) {
-		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
+		Prodigy.Map.prototype.setup.call(this, e, t, i), this.addClickableEvent(e, t, 104, 80, 270, 200, this._zone.util.enterGate.bind(this, e, t, 240, 330, e.prodigy.world.teleport.bind(e.prodigy.world, "shiverchill-B1", 677, 310))), this.addAreaEvent(e, t, {
 			x: 1105,
 			y: 410,
 			w: 1,
@@ -52836,7 +54300,7 @@ Prodigy.Skin = function(e, t) {
 			x: 1010,
 			y: 720,
 			r: 120
-		}, "skywatch-E4", 360, 380, null, AreaEvent.DOWN, !1)
+		}, "skywatch-E4", 360, 380, null, AreaEvent.DOWN, !1), e.prodigy.player.backpack.hasItem("key", 10) ? this.addClickableEvent(e, t, 515, 60, 250, 300, this._zone.util.enterGate.bind(this, e, t, 640, 390, e.prodigy.world.teleport.bind(e.prodigy.world, "bonfire_spire-A1"), 14)) : this.addClickableEvent(e, t, 515, 60, 250, 300, this._zone.util.doorLocked.bind(this, e, "The door is locked. Your required the Skywatch Gem"))
 	}
 }), Prodigy.Skywatch_Q1 = function(e, t) {
 	Prodigy.Quest.call(this, e, t, 1, "", {
@@ -53687,7 +55151,7 @@ Prodigy.Skin = function(e, t) {
 		}, "bonfire_spire-B1", 160, 307.5, null, AreaEvent.DOWN_RIGHT, !1), this.addChest(e, t, "chest1", 755, 330, [{
 			type: "gold",
 			N: 200
-		}])
+		}]), this.addClickableEvent(e, t, 155, 20, 250, 280, this._zone.util.enterGate.bind(this, e, t, 280, 340, e.prodigy.world.teleport.bind(e.prodigy.world, "skywatch-E5", 640, 380), null))
 	}
 }), Prodigy.Bonfire_Spire_A4 = function(e, t) {
 	Prodigy.Map.call(this, e, "A4", "Pitfall Place", 1020, 617.5, ["bonfire_spire-B4"], t.concat("npc-sprite-worker-slime"))
@@ -54290,7 +55754,7 @@ Prodigy.Skin = function(e, t) {
 		i.anchor.setTo(.5, 1), i.animations.add("flicker", ["fire1", "fire2", "fire3", "fire4"], 10, !0, !1), i.animations.play("flicker")
 	}
 }), Prodigy.Bonfire_Spire_E5 = function(e, t) {
-	Prodigy.Map.call(this, e, "E5", "Volcano Escape", 115, 510, ["bonfire_spire-E6"], t.concat(["zone-lamplight"]))
+	Prodigy.Map.call(this, e, "E5", "Volcano Escape", 115, 510, ["bonfire_spire-E6", "pirate-0"], t.concat(["zone-lamplight"]))
 }, Prodigy.extends(Prodigy.Bonfire_Spire_E5, Prodigy.Map, {
 	constructor: Prodigy.Bonfire_Spire_E5,
 	setup: function(e, t, i) {
@@ -54300,7 +55764,7 @@ Prodigy.Skin = function(e, t) {
 			w: 160,
 			h: 170,
 			rect: !0
-		}, "bonfire_spire-E6", 1160, 162.5, null, AreaEvent.DOWN, !1), this.addChest(e, t, "chest6", 210, 345, [{
+		}, "bonfire_spire-E6", 1160, 162.5, null, AreaEvent.DOWN, !1), e.prodigy.player.backpack.hasItem("key", 11) ? this.addClickableEvent(e, t, 520, 50, 240, 240, this._zone.util.enterGate.bind(this, e, t, 640, 300, e.prodigy.world.teleport.bind(e.prodigy.world, "pirate-0", 280, 440), 15)) : this.addClickableEvent(e, t, 520, 50, 240, 240, this._zone.util.doorLocked.bind(this, e, "The gate is locked. You require the Bonfire Gem.")), this.addChest(e, t, "chest6", 210, 345, [{
 			type: "gold",
 			N: 200
 		}])
@@ -54971,7 +56435,7 @@ Prodigy.Skin = function(e, t) {
 		audio: Prodigy.Dyno.AUDIO[1],
 		anim: 2
 	}, {
-		text: "The shovel will allow you to help us dig for fossils! To do so, just click the spinning star nearby!",
+		text: "The shovel will allow you to help us dig for fossils! To do so, just click on the spinning star nearby!",
 		face: 0,
 		audio: Prodigy.Dyno.AUDIO[5]
 	}, {
@@ -55818,23 +57282,523 @@ Museum.DATA = {
 	fullName: "Museum",
 	icon: "fossil/1"
 };
+var MapDisplay = function () {
+	function e(t, a, i, s) {
+		Element.call(this, t, a);
+		var r = new Sprite(this.game, 0, 0, "map", "map");
+		r.inputEnabled = !0, this.add(r);
+		for (var o = [
+				[1150, 334],
+				[1163, 122],
+				[1025, 39],
+				[43, 20],
+				[-130, 382],
+				[876, -40],
+				[1073, -30],
+				[-120, 81],
+				[95, -30],
+				[-40, -20]
+			], n = 0; n < o.length; n++) {
+			var h = new Sprite(this.game, o[n][0], o[n][1], "map", "cloud");
+			h.alpha = .75, this.game.add.tween(h).to({
+				x: h.x + 40
+			}, 5e3, Phaser.Easing.Quadratic.InOut, !0, 100 * n, Number.MAX_VALUE, !0), this.add(h)
+		}
+		if (new Panel(this.game, this, 30, 605, 8, 2).alpha = .9, new Panel(this.game, this, 850, 605, 8, 2).alpha = .9, i === e.LOAD) return this.text = new BitmapFont(this.game, this, 45, 630, "Prodigy", {
+			size: 36,
+			align: "center",
+			width: 370,
+			font: "button"
+		}), Util.isDefined(s) || (s = "Prodigy Island"), this.text.setText(s), this.text.height > 44 && (this.text.y = 610), void 0;
+		TextButton.createCloseButton(this.game, this, 950, 630, this.parent.close.bind(this.parent)), new StackButton(this.game, this, 40, 615, [{
+			tag: "map-all"
+		}, {
+			tag: "item/62",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}, {
+			text: "all",
+			y: -10
+		}], this.sort.bind(this)), new StackButton(this.game, this, 140, 615, [{
+			tag: "map-quest"
+		}, {
+			tag: "item/56",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}, {
+			text: "quests",
+			y: -10
+		}], this.sort.bind(this, "quest")), new StackButton(this.game, this, 240, 615, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}, {
+			text: "stores",
+			y: -10
+		}], this.sort.bind(this, "store")), new StackButton(this.game, this, 340, 615, [{
+			tag: "map-game"
+		}, {
+			tag: "item/47",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}, {
+			text: "games",
+			y: -10
+		}], this.sort.bind(this, "game"));
+		var l = [];
+		l.push(new StackButton(this.game, this, 198, 242, [{
+			tag: "map-quest"
+		}, {
+			tag: "earth",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toForest.bind(this))), l.push(new StackButton(this.game, this, 257, 90, [{
+			tag: "map-quest"
+		}, {
+			tag: "ice",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toMountains.bind(this))), l.push(new StackButton(this.game, this, 907, 91, [{
+			tag: "map-quest"
+		}, {
+			tag: "fire",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toVolcano.bind(this))), l.push(new StackButton(this.game, this, 693, 575, [{
+			tag: "map-quest"
+		}, {
+			tag: "water",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toPirate.bind(this))), l.push(new StackButton(this.game, this, 650, 20, [{
+			tag: "map-quest"
+		}, {
+			tag: "fossil/24",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toDino.bind(this))), l.push(new StackButton(this.game, this, 1080, 160, [{
+			tag: "map-quest"
+		}, {
+			tag: "air",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toClouds.bind(this))), l.push(new StackButton(this.game, this, 1100, 400, [{
+			tag: "map-quest"
+		}, {
+			tag: "wizard",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toTower.bind(this))), l.push(new StackButton(this.game, this, 850, 490, [{
+			tag: "map-quest"
+		}, {
+			tag: "item/47",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toTech.bind(this))), l.push(new StackButton(this.game, this, 620, 400, [{
+			tag: "map-quest"
+		}, {
+			tag: "hat/5",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toDocks.bind(this)));
+		for (var n = 0; n < l.length; n++) l[n].btype = "quest";
+		var p = [];
+		p.push(new StackButton(this.game, this, 198, 242, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toForest.bind(this, !0))), p.push(new StackButton(this.game, this, 257, 90, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toMountains.bind(this, !0))), p.push(new StackButton(this.game, this, 907, 91, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toVolcano.bind(this, !0))), p.push(new StackButton(this.game, this, 693, 575, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toPirate.bind(this, !0))), p.push(new StackButton(this.game, this, 650, 20, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toDino.bind(this, !0))), p.push(new StackButton(this.game, this, 1080, 160, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toClouds.bind(this, !0))), p.push(new StackButton(this.game, this, 758, 270, [{
+			tag: "map-store"
+		}, {
+			tag: "hair",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toTownSquare.bind(this, !0))), p.push(new StackButton(this.game, this, 850, 490, [{
+			tag: "map-store"
+		}, {
+			tag: "catalogue",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toTech.bind(this, !0)));
+		for (var n = 0; n < p.length; n++) p[n].btype = "store";
+		var d = [];
+		d.push(new StackButton(this.game, this, 540, 50, [{
+			tag: "map-game"
+		}, {
+			tag: "key/1",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toDinoDig.bind(this))), d.push(new StackButton(this.game, this, 730, 410, [{
+			tag: "map-game"
+		}, {
+			tag: "key/2",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toDance.bind(this)));
+		for (var n = 0; n < d.length; n++) d[n].btype = "game";
+		this.btns = [].concat(l).concat(d).concat(p), this.btns.push(new StackButton(this.game, this, 590, 173, [{
+			tag: "map-all"
+		}, {
+			tag: "item/62",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toAcademy.bind(this))), this.btns.push(new StackButton(this.game, this, 758, 270, [{
+			tag: "map-all"
+		}, {
+			tag: "item/55",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toTownSquare.bind(this))), this.btns.push(new StackButton(this.game, this, 239, 383, [{
+			tag: "map-all"
+		}, {
+			tag: "leaderboard",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toArena.bind(this))), this.btns.push(new StackButton(this.game, this, 509, 301, [{
+			tag: "map-all"
+		}, {
+			tag: "player",
+			x: 20,
+			y: 18,
+			w: 40,
+			h: 40
+		}], this.toDorm.bind(this)));
+		for (var n = 0; n < this.btns.length; n++) this.game.add.tween(this.btns[n]).to({
+			y: this.btns[n].y + 10
+		}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0);
+		this.sort()
+	}
+	return e.prototype = Object.create(Element.prototype), e.prototype.sort = function(e) {
+		for (var t = 0; t < this.btns.length; t++) this.btns[t].visible = !Util.isDefined(e) && "store" !== this.btns[t].btype || this.btns[t].btype === e ? !0 : !1
+	}, e.prototype.toDinoDig = function() {
+		this.game.state.start("DinoDig")
+	}, e.prototype.toDance = function() {
+		this.game.state.start("DanceDance")
+	}, e.prototype.toForest = function() {
+		this.game.state.states.Forest.playerX = 646, this.game.state.states.Forest.playerY = 380, this.game.state.start("Forest")
+	}, e.prototype.toMountains = function() {
+		this.game.state.states.Mountain.playerX = 602, this.game.state.states.Mountain.playerY = 315, this.game.state.start("Mountain")
+	}, e.prototype.toVolcano = function() {
+		this.game.state.states.Volcano.playerX = 540, this.game.state.states.Volcano.playerY = 460, this.game.state.start("Volcano")
+	}, e.prototype.toTownSquare = function() {
+		this.game.state.states.TownSquare.playerX = 678, this.game.state.states.TownSquare.playerY = 402, this.game.state.start("TownSquare")
+	}, e.prototype.toArena = function() {
+		this.game.state.states.Arena.playerX = 640, this.game.state.states.Arena.playerY = 500, this.game.state.start("Arena")
+	}, e.prototype.toPirate = function() {
+		this.game.state.states.Pirate.playerX = 710, this.game.state.states.Pirate.playerY = 520, this.game.state.start("Pirate")
+	}, e.prototype.toAcademy = function() {
+		this.game.state.states.Academy.playerX = 966, this.game.state.states.Academy.playerY = 595, this.game.state.start("Academy")
+	}, e.prototype.toClouds = function() {
+		this.game.state.states.Cloud.playerX = 1065, this.game.state.states.Cloud.playerY = 277, this.game.state.start("Cloud")
+	}, e.prototype.toTower = function() {
+		this.game.state.states.TowerBase.playerX = 109, this.game.state.states.TowerBase.playerY = 645, this.game.state.start("TowerBase")
+	}, e.prototype.toTutorial = function() {
+		this.game.state.states.Tutorial.playerX = 799, this.game.state.states.Tutorial.playerY = 472, this.game.state.start("Tutorial")
+	}, e.prototype.toDino = function() {
+		this.game.state.states.Dino.playerX = 600, this.game.state.states.Dino.playerY = 520, this.game.state.start("Dino")
+	}, e.prototype.toTech = function() {
+		this.game.state.states.Tech.playerX = 890, this.game.state.states.Tech.playerY = 260, this.game.state.start("Tech")
+	}, e.prototype.toPlains = function() {
+		this.game.state.states.Plains.playerX = 150, this.game.state.states.Plains.playerY = 115, this.game.state.start("Plains")
+	}, e.prototype.toMuseum = function() {
+		this.game.state.states.Museum.playerX = 640, this.game.state.states.Museum.playerY = 545, this.game.state.start("Museum")
+	}, e.prototype.toTree = function() {
+		this.game.state.states.Tree.playerX = 640, this.game.state.states.Tree.playerY = 545, this.game.state.start("Tree")
+	}, e.prototype.toDorm = function(e) {
+		this.game.state.states.Dorm.playerX = 799, this.game.state.states.Dorm.playerY = 472, this.game.state.start("Dorm")
+	}, e.prototype.toDocks = function(e) {
+		this.game.state.states.Docks.playerX = 1167, this.game.state.states.Docks.playerY = 445, this.game.state.start("Docks")
+	}, e
+}();
+MapDisplay.getAssets = function () {
+	return ["map"]
+}, MapDisplay.LOAD = 1;
+var Tree = function () {
+		function e(t) {
+			TileScreen.call(this, t, e.DATA)
+		}
+		return e.prototype = Object.create(TileScreen.prototype), e.prototype.setupRoom = function (e) {
+			switch (e) {
+			case "entrance":
+				this.setupEntrance();
+				break;
+			case "foyer":
+				this.setupFoyer()
+			}
+		}, e.prototype.setupEntrance = function () {
+			var e = new SpriteEvent(this.game, this.floorEvents, 250, 150, "core", "bg-tile");
+			e.setInteract(this.setRoom.bind(this, "foyer", 180, 400)), this.addEvent(e)
+		}, e.prototype.setupFoyer = function () {
+			for (var e = 0; 5 > e; e++)
+				for (var t = 0; 3 > t; t++) {
+					var a = new SpriteEvent(this.game, this.floorEvents, 200 + 76 * e, 350 + 76 * t, "core", "bg-tile");
+					a.setInteract(function (e, t) {
+						e.prodigy.audio.playSFX("pop"), t.mode ? t.change("bg-tile") : t.change("bg-tile-green"), t.mode = !t.mode
+					}), this.addEvent(a)
+				}
+		}, e
+	}();
+Tree.DATA = {
+	tag: "Tree",
+	zoneName: "dungeon-tree",
+	fullName: "The Walking Room",
+	start: "entrance",
+	tilesets: {
+		tree: {
+			atlas: "tileset-tree",
+			tiles: {
+				WW1: 0,
+				FH2: 1,
+				FG1: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [0, 0, 1, 1, 1], [0, 0, 1, 1, 1]]
+			},
+			objects: {
+				OL: -2
+			}
+		}
+	},
+	rooms: {
+		entrance: {
+			name: "Entrance",
+			tileset: "tree",
+			objects: [],
+			tiles: [["FH2", "", "", "", "", "", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "", "", "", "", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "", "", "", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "", "", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "", "", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "", "", "", "", "", ""], ["", "", "", "FH2", "", "FH2", "", "", "", "", "", "", "", "", ""], ["", "", "", "FH2", "FH2", "FH2", "", "", "", "", "", "", "", "", ""], ["", "", "", "FH2", "FH2", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "FH2", "FH2", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]]
+		},
+		foyer: {
+			name: "Foyer",
+			tileset: "tree",
+			tiles: [["FH2", "FR8", "FR8", "FR8", "FR8", "FR8", "FR8", "FR8", "FR4", "FH2", "FH2", "FH2", "FT4", "FT7", "FE1"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FR4", "FH2", "FH2", "FH2", "FT4", "FT7", "FE1"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FR5", "FR8", "FR8", "FT2", "FT5", "FT8", "FE2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FT4", "FT7", "FT7", "FT7", "FE1", "FE4", "FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FR6", "FR6", "FR6", "FR6", "FR9", "FT3", "FT6", "FT9", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FH2", "FH2", "FH2", "FH2", "FT1", "FT4", "FT7", "FE1", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FH2", "FH2", "FH2", "FH2", "FT1", "FT4", "FT7", "FE1", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FH2", "FH2", "FH2", "FH2", "FT1", "FT4", "FT7", "FE1", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FH2", "FH2", "FH2", "FH2", "FT1", "FT4", "FT7", "FE1", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FH2", "FH2", "FH2", "FH2", "FT1", "FT4", "FT7", "FE1", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FH2", "FH2", "FH2", "FH2", "FT1", "FT4", "FT7", "FE1", "FH2", "FH2", "FH2", "FH2", "FR4", "FH2"], ["FH2", "FH2", "FH2", "FH2", "FH2", "FH2", "FR6", "FR6", "FR6", "FR6", "FR6", "FR6", "FR6", "FH2", "FH2"]]
+		}
+	}
+};
+var Academy = function() {
+	function e(t, i) {
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["zone-academy", "npc-sprite-guard", "npc-face-guard", "npc-sprite-gnome", "npc-face-gnome"], this.area = [
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 4, 4, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 4, 4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 4, 4, 4, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+		], this.startX = 966, this.startY = 595, this.bgm = "bgm-intro"
+	}
+	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
+		WalkableScreen.prototype.create.call(this, "town-1")
+	}, e.prototype.screenSetup = function() {
+		WalkableScreen.prototype.screenSetup.call(this), this.addGnome(e, t, 1124, 370, "Rolly", 4, 3, this.startMachine.bind(this, e, t)).flip(), new Prodigy.Container.QuestNPC(this.game, this.content, 722, 232, null, {
+			name: "Academy Guard",
+			atlas: "guard"
+		}, this.startText.bind(this)), this.path.addCallback(3, this.toTown.bind(this)), this.path.addCallback(4, this.toTown2.bind(this));
+		var e = this.game.prodigy.create.sprite(218, 558, this.screenName, "tower");
+		e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(446, 704, this.screenName, "tower"), e.anchor.setTo(.5, 1), this.content.add(e);
+		var t = this.game.prodigy.create.sprite(548, 444, this.screenName, "fountain-0");
+		t.anchor.setTo(.5, 1), t.animations.add("stand", ["fountain-0", "fountain-1", "fountain-2"], 8, !0, !1), t.animations.play("stand"), this.content.add(t);
+		var a = this.game.prodigy.create.sprite(441, 175, this.screenName, "banner-0");
+		a.anchor.setTo(.5, 1), a.animations.add("stand", ["banner-0", "banner-1", "banner-2"], 6, !0, !1), a.animations.play("stand"), this.content.add(a), a = this.game.prodigy.create.sprite(830, 100), a.width = 212, a.height = 312, a.inputEnabled = !0, a.events.onInputDown.add(this.toMachine.bind(this), this), this.content.add(a)
+		}, e.prototype.addGnome = function(e, t, i, a, s, r) {
+			var o = new GnomeEvent(this.game, this.content, this.user, this.path, e, t, i, a, s, r);
+			return this.events.push(o), o
+	}, e.prototype.startText = function() {
+		this.game.prodigy.dialogue.setText({
+			text: "This is the Academy...or it WAS a long time ago.",
+			face: 4
+		}), this.game.prodigy.dialogue.setText({
+			text: "We're all waiting for the Wardens to return, but until then the Academy is closed...",
+			face: 2
+		}), this.game.prodigy.dialogue.start("guard")
+	}, e.prototype.toMachine = function() {
+		this.user.setPath([{
+			x: 925,
+			y: 325
+		}], this.startMachine.bind(this))
+	}, e.prototype.startMachine = function() {
+		var i = e.prodigy.dialogue.create();
+		i.setText({
+			text: "This is the TRANSFORMOTRON! It will transform you into a monster! Want to try?",
+			yes: this.tryTransform.bind(this, e, t)
+		}), i.start("merchant")
+	}, e.prototype.tryTransform = function() {
+		var t = [2, 20, 34, 36, 46, 61, 90],
+			i = t[Math.floor(Math.random() * t.length)],
+			a = e.prodigy.dialogue.create();
+		e.prodigy.player.getGold() < 0 ? a.setText({
+			text: "Uh oh! You don't have enough gold!"
+		}) : e.prodigy.player.isMember ? (e.prodigy.network.sendAnalytics("Use-Transformatron"), e.prodigy.player.changeGold(-0), e.prodigy.player.transform(i, 6e5), a.setText({
+			text: "The transformation only lasts 10 minutes, so come back when you want to transform again!"
+		})) : (e.prodigy.network.sendAnalytics("Use-Transformatron"), e.prodigy.player.transform(i, 1e3), a.setText({
+			text: "Uh oh! Only members can transform!"
+		}), a.setText({
+			callback: e.prodigy.open.membership.bind(e.prodigy.open)
+		})), a.start("merchant")
+	}, e.prototype.toTown = function() {
+		this.game.prodigy.world.teleport("lamplight-B0")
+	}, e.prototype.toTown2 = function() {
+		this.game.prodigy.world.teleport("lamplight-B3")
+	}, e
+}();
+Academy.AUDIO = [{
+	tag: "voice-5",
+	s: 0,
+	d: 1
+}, {
+	tag: "voice-5",
+	s: 1,
+	d: 1
+}, {
+	tag: "voice-5",
+	s: 2,
+	d: 1
+}], Academy.DATA = {
+	tag: "town-1",
+	atlas: "zone-academy",
+	zoneName: "zone-academy",
+	fullName: "Lamplight Academy"
+};
 var Arena = function() {
 	function e(t) {
-		WalkableScreen.call(this, t, e.DATA, ["zone-arena", "zone-academy", "npc-sprite-clankboot", "tileset-core", "npc-sprite-gnome", "npc-sprite-morris", "npc-sprite-guard"]), this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 966, this.playerY = 595
+		WalkableScreen.call(this, t, e.DATA, ["zone-arena", "zone-academy", "npc-sprite-clankboot", "tileset-core", "npc-sprite-gnome", "npc-sprite-morris", "npc-sprite-guard", "npc-face-guard"]), this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 4, 4, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 4, 4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 4, 4, 4, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.startX = 966, this.startY = 595, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
 		this.startX = 640, this.startY = 500, WalkableScreen.prototype.create.call(this, "town-2")
 	}, e.prototype.screenSetup = function() {
-		this.noFade = !0, new Prodigy.Container.ToyMerchant(this.game, this.content, 159, 201).flip(), new Prodigy.Container.QuestNPC(this.game, this.content, 310, 400, null, {
+		this.noFade = !0, new Prodigy.Container.ToyMerchant(this.game, this.content, 959, 601).flip(), new Prodigy.Container.QuestNPC(this.game, this.content, 722, 232, "guard", {
+			name: "Academy Manager",
+			atlas: "guard"
+		}, this.startText.bind(this)), new Prodigy.Container.QuestNPC(this.game, this.content, 310, 400, null, {
 			name: "Clankboot",
 			atlas: "clankboot"
-		}, this.openArena.bind(this), !0), this.path.addCallback(3, this.toTown.bind(this));
-		var e = this.game.prodigy.create.sprite(216, 574, this.screenName, "vase");
-		e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(1064, 574, this.screenName, "vase"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = this.game.prodigy.create.sprite(311, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(969, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = this.game.prodigy.create.sprite(519, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(761, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 165, 390), new GnomeEvent(this.game, this.content, this.user, this.path, 944, 376, "Orion the Gnome", 1, 2, this.openArenaMenu.bind(this)).flip(), new GnomeEvent(this.game, this.content, this.user, this.path, 1135, 430, "Academy Guard", 2, 4, this.openMessage.bind(this)).flip(), WalkableScreen.prototype.screenSetup.call(this)
+		}, this.openArena.bind(this), !0), this.path.addCallback(3, this.toTown.bind(this)), this.path.addCallback(4, this.toForest.bind(this));
+		var e = this.game.prodigy.create.sprite(218, 558, this.screenName, "tower");
+		e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(446, 704, this.screenName, "tower"), e.anchor.setTo(.5, 1), this.content.add(e);
+		var t = this.game.prodigy.create.sprite(548, 444, this.screenName, "fountain-0");
+		t.anchor.setTo(.5, 1), t.animations.add("stand", ["fountain-0", "fountain-1", "fountain-2"], 8, !0, !1), t.animations.play("stand"), this.content.add(t);
+		var a = this.game.prodigy.create.sprite(441, 175, this.screenName, "banner-0");
+		a.anchor.setTo(.5, 1), a.animations.add("stand", ["banner-0", "banner-1", "banner-2"], 6, !0, !1), a.animations.play("stand"), this.content.add(a), a = this.game.prodigy.create.sprite(830, 100), a.width = 212, a.height = 312, a.inputEnabled = !0, this.content.add(e), this.addNicknamer(530, 240), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 165, 390), new GnomeEvent(this.game, this.content, this.user, this.path, 944, 376, "Orion the Gnome", 1, 2, this.openArenaMenu.bind(this)).flip(), new GnomeEvent(this.game, this.content, this.user, this.path, 1135, 430, "Academy Guard", 2, 4, this.openMessage.bind(this)).flip(), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.openStore = function() {
 		var t = this.game.prodigy.event.create(),
 			i = e.STORE;
 		i.callback = this.game.prodigy.player.getArenaRank.bind(this.game.prodigy.player), t.yesNoText(14, "merchant"), t.function(this.game.prodigy.open.rankStore.bind(this.game.prodigy.open, i, "arena")), t.start()
+	}, e.prototype.addNicknamer = function() {
+		var t = [{
+			pre: "Pilot ",
+			req: [{
+				rtype: "item",
+				type: "outfit",
+				ID: 37
+			}, {
+				rtype: "item",
+				type: "hat",
+				ID: 41
+			}, {
+				rtype: "item",
+				type: "weapon",
+				ID: 67
+			}],
+			fail: "You need to buy the Skywatch set to unlock!"
+		}, {
+			post: " the Skyfolk",
+			req: [{
+				rtype: "quest",
+				zone: 3,
+				Q: 15
+			}],
+			fail: "You need to complete the Skywatch quests to unlock!"
+		}, {
+			pre: "Cloudeater ",
+			req: [{
+				rtype: "pet",
+				ID: 57
+			}],
+			fail: "You need to catch a Cloud Gobbler to unlock!"
+		}, {
+			post: " Stormchaser",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}, {
+			post: ", Puyoy!",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}];
 	}, e.prototype.openArenaMenu = function() {
 		var e = this.game.prodigy.event.create();
 		Util.isDefined(this.game.prodigy.player.world) ? (e.yesNoText(15, "merchant"), e.function(this.game.prodigy.open.social.bind(this.game.prodigy.open, 1))) : e.text(16, "merchant"), e.start()
@@ -55846,6 +57810,9 @@ var Arena = function() {
 		t.yes = this.game.prodigy.open.arena.bind(this.game.prodigy.open);
 		var i = this.game.prodigy.dialogue.create();
 		i.setText(t), i.start("clankboot")
+	}, e.prototype.startText = function() {
+		var e = this.game.prodigy.event.create();
+		Util.isDefined(this.game.prodigy.player.world) ? (e.yesNoText(15, "merchant"), e.function(this.game.prodigy.open.social.bind(this.game.prodigy.open, 1))) : e.text(41, "merchant"), e.start()
 	}, e.prototype.toMachine = function () {
 		this.user.setPath([{
 			x: 925,
@@ -55874,6 +57841,8 @@ var Arena = function() {
 		})), this.game.prodigy.dialogue.start("npc-face-noot")
 	}, e.prototype.toTown = function() {
 		this.game.prodigy.world.teleport("lamplight-C3", 580, 360)
+	}, e.prototype.toForest = function() {
+		this.game.prodigy.world.teleport("forest-0", 580, 360)
 	}, e
 }();
 Arena.AUDIO = [{
@@ -55884,7 +57853,7 @@ Arena.AUDIO = [{
 	tag: "Arena",
 	zoneName: "zone-academy",
 	atlas: "zone-academy",
-	fullName: "Arena Academy",
+	fullName: "Lamplight Arena Academy",
 	battle: {
 		screen: "bg-battle-arena"
 	},
@@ -55904,13 +57873,193 @@ Arena.AUDIO = [{
 			bot: "Rank"
 		},
 		icon: "emblem-rank2",
-		rank: 2,
+		rank: 0,
 		top: "Silver Rank",
 		items: [{
 			ID: 76,
 			type: "item"
 		}, {
 			ID: 77,
+			type: "item"
+		}, {
+			ID: 1,
+			type: "relic"
+		}, {
+			ID: 2,
+			type: "relic"
+		}, {
+			ID: 3,
+			type: "relic"
+		}, {
+			ID: 4,
+			type: "relic"
+		}, {
+			ID: 5,
+			type: "relic"
+		}, {
+			ID: 6,
+			type: "relic"
+		}, {
+			ID: 7,
+			type: "relic"
+		}, {
+			ID: 8,
+			type: "relic"
+		}, {
+			ID: 9,
+			type: "relic"
+		}, {
+			ID: 10,
+			type: "relic"
+		}, {
+			ID: 1,
+			type: "item"
+		}, {
+			ID: 2,
+			type: "item"
+		}, {
+			ID: 3,
+			type: "item"
+		}, {
+			ID: 4,
+			type: "item"
+		}, {
+			ID: 5,
+			type: "item"
+		}, {
+			ID: 6,
+			type: "item"
+		}, {
+			ID: 7,
+			type: "item"
+		}, {
+			ID: 8,
+			type: "item"
+		}, {
+			ID: 9,
+			type: "item"
+		}, {
+			ID: 10,
+			type: "item"
+		}, {
+			ID: 11,
+			type: "item"
+		}, {
+			ID: 12,
+			type: "item"
+		}, {
+			ID: 13,
+			type: "item"
+		}, {
+			ID: 14,
+			type: "item"
+		}, {
+			ID: 15,
+			type: "item"
+		}, {
+			ID: 16,
+			type: "item"
+		}, {
+			ID: 17,
+			type: "item"
+		}, {
+			ID: 18,
+			type: "item"
+		}, {
+			ID: 19,
+			type: "item"
+		}, {
+			ID: 20,
+			type: "item"
+		}, {
+			ID: 21,
+			type: "item"
+		}, {
+			ID: 22,
+			type: "item"
+		}, {
+			ID: 23,
+			type: "item"
+		}, {
+			ID: 24,
+			type: "item"
+		}, {
+			ID: 25,
+			type: "item"
+		}, {
+			ID: 26,
+			type: "item"
+		}, {
+			ID: 27,
+			type: "item"
+		}, {
+			ID: 28,
+			type: "item"
+		}, {
+			ID: 29,
+			type: "item"
+		}, {
+			ID: 30,
+			type: "item"
+		}, {
+			ID: 31,
+			type: "item"
+		}, {
+			ID: 32,
+			type: "item"
+		}, {
+			ID: 33,
+			type: "item"
+		}, {
+			ID: 34,
+			type: "item"
+		}, {
+			ID: 35,
+			type: "item"
+		}, {
+			ID: 36,
+			type: "item"
+		}, {
+			ID: 37,
+			type: "item"
+		}, {
+			ID: 38,
+			type: "item"
+		}, {
+			ID: 39,
+			type: "item"
+		}, {
+			ID: 40,
+			type: "item"
+		}, {
+			ID: 41,
+			type: "item"
+		}, {
+			ID: 42,
+			type: "item"
+		}, {
+			ID: 43,
+			type: "item"
+		}, {
+			ID: 44,
+			type: "item"
+		}, {
+			ID: 45,
+			type: "item"
+		}, {
+			ID: 46,
+			type: "item"
+		}, {
+			ID: 47,
+			type: "item"
+		}, {
+			ID: 48,
+			type: "item"
+		}, {
+			ID: 49,
+			type: "item"
+		}, {
+			ID: 50,
 			type: "item"
 		}]
 	}, {
@@ -55920,7 +58069,7 @@ Arena.AUDIO = [{
 			bot: "Rank"
 		},
 		icon: "emblem-rank3",
-		rank: 3,
+		rank: 0,
 		top: "Gold Rank",
 		items: [{
 			ID: 59,
@@ -55939,7 +58088,7 @@ Arena.AUDIO = [{
 			bot: "Rank"
 		},
 		icon: "emblem-rank4",
-		rank: 4,
+		rank: 0,
 		top: "Platinum Rank",
 		items: [{
 			ID: 60,
@@ -55958,7 +58107,7 @@ Arena.AUDIO = [{
 			bot: "Rank"
 		},
 		icon: "emblem-rank5",
-		rank: 5,
+		rank: 0,
 		top: "Diamond Rank",
 		items: [{
 			ID: 61,
@@ -56136,7 +58285,19 @@ Arena.AUDIO = [{
 				bot: "Hats"
 			},
 			items: [{
+				ID: 11,
+				type: "hat"
+			}, {
+				ID: 12,
+				type: "hat"
+			}, {
+				ID: 13,
+				type: "hat"
+			}, {
 				ID: 14,
+				type: "hat"
+			}, {
+				ID: 15,
 				type: "hat"
 			}, {
 				ID: 16,
@@ -56169,15 +58330,60 @@ Arena.AUDIO = [{
 				ID: 5,
 				type: "hat"
 			}, {
+				ID: 6,
+				type: "hat"
+			}, {
+				ID: 7,
+				type: "hat"
+			}, {
+				ID: 8,
+				type: "hat"
+			}, {
 				ID: 9,
 				type: "hat"
 			}, {
-				ID: 23,
+				ID: 10,
 				type: "hat"
+			}, {
+				ID: 21,
+				type: "hat"
+			}, {
+				ID: 22,
+				type: "hat"
+		        }, {
+			        ID: 24,
+			        type: "hat"
+		        }, {
+			        ID: 25,
+			        type: "hat"
+		        }, {
+			        ID: 26,
+			        type: "hat"
+		        }, {
+			        ID: 27,
+			        type: "hat"
+		        }, {
+			        ID: 28,
+			        type: "hat"
+		        }, {
+			        ID: 29,
+			        type: "hat"
+		        }, {
+			        ID: 30,
+			        type: "hat"
 			}, {
 				ID: 31,
 				type: "hat"
 			}, {
+			        ID: 32,
+			        type: "hat"
+		        }, {
+			        ID: 33,
+			        type: "hat"
+		        }, {
+			        ID: 23,
+			        type: "hat"
+		        }, {
 				ID: 72,
 				type: "hat"
 			}, {
@@ -56222,6 +58428,9 @@ Arena.AUDIO = [{
 			}, {
 				ID: 17,
 				type: "outfit"
+		        }, {
+			        ID: 19,
+			        type: "outfit"
 			}, {
 				ID: 20,
 				type: "outfit"
@@ -56235,11 +58444,32 @@ Arena.AUDIO = [{
 				ID: 24,
 				type: "outfit"
 			}, {
+				ID: 25,
+				type: "outfit"
+			}, {
+				ID: 26,
+				type: "outfit"
+			}, {
 				ID: 28,
 				type: "outfit"
 			}, {
 				ID: 30,
 				type: "outfit"
+		        }, {
+			        ID: 23,
+			        type: "outfit"
+		        }, {
+			        ID: 24,
+			        type: "outfit"
+		        }, {
+			        ID: 27,
+			        type: "outfit"
+		        }, {
+			        ID: 29,
+			        type: "outfit"
+		        }, {
+			        ID: 31,
+			        type: "outfit"
 			}]
 		}, {
 			btn: {
@@ -56247,8 +58477,89 @@ Arena.AUDIO = [{
 				bot: "Boots"
 			},
 			items: [{
-				ID: 18,
-				type: "boots"
+			ID: 1,
+			type: "boots"
+		}, {
+			ID: 2,
+			type: "boots"
+		}, {
+			ID: 3,
+			type: "boots"
+		}, {
+			ID: 4,
+			type: "boots"
+		}, {
+			ID: 5,
+			type: "boots"
+		}, {
+			ID: 6,
+			type: "boots"
+		}, {
+			ID: 7,
+			type: "boots"
+		}, {
+			ID: 8,
+			type: "boots"
+		}, {
+			ID: 9,
+			type: "boots"
+		}, {
+			ID: 10,
+			type: "boots"
+		}, {
+			ID: 11,
+			type: "boots"
+		}, {
+			ID: 12,
+			type: "boots"
+		}, {
+			ID: 13,
+			type: "boots"
+		}, {
+			ID: 14,
+			type: "boots"
+		}, {
+			ID: 15,
+			type: "boots"
+		}, {
+			ID: 16,
+			type: "boots"
+		}, {
+			ID: 17,
+			type: "boots"
+		}, {
+			ID: 18,
+			type: "boots"
+		}, {
+			ID: 19,
+			type: "boots"
+		}, {
+			ID: 20,
+			type: "boots"
+		}, {
+			ID: 21,
+			type: "boots"
+		}, {
+			ID: 22,
+			type: "boots"
+		}, {
+			ID: 23,
+			type: "boots"
+		}, {
+			ID: 24,
+			type: "boots"
+		}, {
+			ID: 25,
+			type: "boots"
+		}, {
+			ID: 26,
+			type: "boots"
+		}, {
+			ID: 27,
+			type: "boots"
+		}, {
+			ID: 28,
+			type: "boots"
 			}]
 		}]
 	}
@@ -56376,6 +58687,96 @@ Arena.AUDIO = [{
 			}, {
 				ID: 12,
 				type: "follow"
+			}, {
+				ID: 23,
+				type: "follow"
+			}, {
+				ID: 24,
+				type: "follow"
+			}, {
+				ID: 25,
+				type: "follow"
+			}, {
+				ID: 34,
+				type: "follow"
+			}, {
+				ID: 35,
+				type: "follow"
+			}, {
+				ID: 36,
+				type: "follow"
+			}, {
+				ID: 37,
+				type: "follow"
+			}]
+		}, {
+			btn: {
+				icon: "pets/1",
+				bot: "Pets"
+			},
+			items: [{
+			ID: 1,
+			type: "pet"
+		}, {
+			ID: 2,
+			type: "pet"
+		}, {
+			ID: 3,
+			type: "pet"
+		}, {
+			ID: 4,
+			type: "pet"
+		}, {
+			ID: 5,
+			type: "pet"
+		}, {
+			ID: 6,
+			type: "pet"
+		}, {
+			ID: 7,
+			type: "pet"
+		}, {
+			ID: 8,
+			type: "pet"
+		}, {
+			ID: 9,
+			type: "pet"
+		}, {
+			ID: 10,
+			type: "pet"
+		}, {
+			ID: 11,
+			type: "pet"
+		}, {
+			ID: 12,
+			type: "pet"
+		}, {
+			ID: 13,
+			type: "pet"
+		}, {
+			ID: 14,
+			type: "pet"
+		}, {
+			ID: 15,
+			type: "pet"
+		}, {
+			ID: 16,
+			type: "pet"
+		}, {
+			ID: 17,
+			type: "pet"
+		}, {
+			ID: 18,
+			type: "pet"
+		}, {
+			ID: 19,
+			type: "pet"
+		}, {
+			ID: 20,
+			type: "pet"
+		}, {
+			ID: 114,
+			type: "pet"
 			}]
 		}]
 	}
@@ -56527,7 +58928,7 @@ Arena.AUDIO = [{
 			h: 80,
 			rect: !0
 		}, "lamplight-B5", 200, 120, null, AreaEvent.DOWN);
-		var a = e.prodigy.start.bind(e.prodigy, "Pirate");
+		var a = e.prodigy.start.bind(e.prodigy, "Tech");
 		this._zone.util.addDoor(e, t, 600, 240, 120, 160, 660, 400, a), this._zone.util.addLamp(e, t, 3, 27), this._zone.util.addLamp(e, t, 83, 27), this._zone.util.addLamp(e, t, 240, 23), this._zone.util.addLamp(e, t, 1080, 23), e.prodigy.network.sendAnalytics("potion-store-activity", "see-scientist", "Events");
 		var s = !Util.isDefined(this._zone.getState("firstPotion")) || !0 === this._zone.getState("firstPotion");
 		new Prodigy.Container.ScientistSlimerella(e, t.content, 340, 480, s, this._zone)
@@ -56594,7 +58995,7 @@ Arena.AUDIO = [{
 		}, "lamplight-C4", 200, 180, null, AreaEvent.DOWN), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena")), this.addHealStone(e, t, 1100, 200), new Prodigy.Component.BountyBoard(e, t, t.data)
 	}
 }), Prodigy.Lamplight_C4 = function(e, t) {
-	Prodigy.Map.call(this, e, "C4", "Market", 200, 180, ["lamplight-B4", "lamplight-C3"], t.concat(["npc-sprite-noot"])), this._store = {
+	Prodigy.Map.call(this, e, "C4", "Market", 200, 180, ["lamplight-B4", "lamplight-C3", "tower-0"], t.concat(["npc-sprite-noot"])), this._store = {
 		name: "ACADEMY WAND SHOP",
 		dod: !0,
 		pages: [{
@@ -56630,6 +59031,12 @@ Arena.AUDIO = [{
 				ID: 6,
 				type: "weapon"
 			}, {
+				ID: 7,
+				type: "weapon"
+			}, {
+				ID: 8,
+				type: "weapon"
+			}, {
 				ID: 9,
 				type: "weapon"
 			}, {
@@ -56642,6 +59049,9 @@ Arena.AUDIO = [{
 				ID: 12,
 				type: "weapon"
 			}, {
+				ID: 13,
+				type: "weapon"
+			}, {
 				ID: 14,
 				type: "weapon"
 			}, {
@@ -56650,6 +59060,12 @@ Arena.AUDIO = [{
 			}, {
 				ID: 31,
 				type: "weapon"
+		        }, {
+			        ID: 34,
+			        type: "weapon"
+		        }, {
+			        ID: 48,
+			        type: "weapon"
 			}, {
 				ID: 55,
 				type: "weapon"
@@ -56698,9 +59114,18 @@ Arena.AUDIO = [{
 			}, {
 				ID: 16,
 				type: "weapon"
+		        }, {
+			        ID: 55,
+			        type: "weapon"
+			}, {
+				ID: 56,
+				type: "weapon"
 			}, {
 				ID: 61,
 				type: "weapon"
+		        }, {
+			        ID: 60,
+			        type: "weapon"
 			}, {
 				ID: 88,
 				type: "weapon"
@@ -56733,7 +59158,13 @@ Arena.AUDIO = [{
 			w: 160,
 			h: 120,
 			rect: !0
-		}, "lamplight-C3", 160, 540, null, AreaEvent.UP), this._zone.util.addDoor(e, t, 840, 280, 120, 160, 900, 440, e.prodigy.open.store.bind(e.prodigy.open, this._store)), this._zone.util.addLamp(e, t, 562, 298), this._zone.util.addLamp(e, t, 1202, 298)
+		}, "lamplight-C3", 160, 540, null, AreaEvent.UP), this.addAreaEvent(e, t, {
+			x: 1300,
+			y: 550,
+			w: 400,
+			h: 200,
+			rect: !0
+		}, "tower-0", 160, 540, null, AreaEvent.DOWN), this._zone.util.addDoor(e, t, 840, 280, 120, 160, 900, 440, e.prodigy.open.store.bind(e.prodigy.open, this._store)), this._zone.util.addLamp(e, t, 562, 298), this._zone.util.addLamp(e, t, 1202, 298)
 	}
 }), Prodigy.Lamplight_Q1 = function(e, t) {
 	Prodigy.Quest.call(this, e, t, 1, "", {
@@ -58098,6 +60529,39 @@ Prodigy.Component.TwilightWheel = function(e, t, i) {
 		return !!this.screen.path.isNodeOpen(i.x, i.y) && (this.target.x = i.x, this.target.y = i.y, this.screen.path.findPath(this.creatureContainer.x, this.creatureContainer.y, e, t, this.onFindPath.bind(this)), !0)
 	}
 });
+var Plains = function () {
+	function e(t) {
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-cumulo"], this.area = [[0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0], [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0], [1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]], this.startX = 880, this.startY = 370
+	}
+	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
+		WalkableScreen.prototype.create.call(this, [], "cloud-1")
+	}, e.prototype.screenSetup = function () {
+		WalkableScreen.prototype.screenSetup.call(this), new Prodigy.Container.QuestNPC(this.game, this.content, 800, 530, null, {
+			name: "Stratus",
+			atlas: "cumulo"
+		}, this.startText.bind(this), !0), this.path.addCallback(3, this.toVolcano.bind(this)), this.path.addCallback(4, this.toTech.bind(this))
+	}, e.prototype.toVolcano = function () {
+		this.game.prodigy.world.teleport("volcano-0", 1190, 590)
+	}, e.prototype.toTech = function () {
+		this.game.prodigy.world.teleport("techzone-0", 890, 260)
+	}, e.prototype.toClouds = function () {
+		this.game.state.states.Cloud.playerX = 1065, this.game.state.states.Cloud.playerY = 277, this.game.state.start("Cloud")
+	}, e.prototype.startText = function () {
+		var e = {
+				text: "Hey there! Want to take a ride on my airship into the clouds?",
+				face: 0,
+				yes: this.toClouds.bind(this)
+			},
+			t = this.game.prodigy.dialogue.create();
+		t.setText(e), t.start("cumulo")
+	}, e
+}();
+Plains.DATA = {
+	tag: "cloud-1",
+	zoneName: "zone-plains",
+	atlas: "zone-plains",
+	fullName: "Airship Landing"
+};
 var Cloud = function() {
 	function e(t) {
 		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-cumulo", "npc-sprite-merchant", "tileset-core"], this.area = [
@@ -58117,32 +60581,32 @@ var Cloud = function() {
 			[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 			[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
 			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
 			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
 			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
 			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0]
-		], this.startX = 1065, this.startY = 277
+		], this.startX = 1065, this.startY = 277, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
 		WalkableScreen.prototype.create.call(this, [], "cloud-0")
 	}, e.prototype.screenSetup = function() {
-		WalkableScreen.prototype.screenSetup.call(this), this.startText.bind(this), !0, new Prodigy.Container.QuestNPC(this.game, this.content, 190, 215, e.DATA, {
+		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toCloud.bind(this)), this.startText.bind(this), !0, new Prodigy.Container.QuestNPC(this.game, this.content, 190, 215, e.DATA, {
 			atlas: "cumulo",
 			name: "Cumulo"
 		}), this.createStoreNPC(230, 450, e.STORE);
@@ -58206,6 +60670,13 @@ var Cloud = function() {
 			yes: this.toCloud.bind(this)
 		};
 		this.game.prodigy.dialogue.setText(e), this.game.prodigy.dialogue.start("cumulo")
+	}, e.prototype.startText2 = function() {
+		var e = {
+			text: "Hey there! Want to hitch a ride back down?",
+			face: 0,
+			yes: this.toCloud.bind(this)
+		};
+		this.game.prodigy.dialogue.setText(e), this.game.prodigy.dialogue.start("cumulo")
 	}, e
 }();
 Cloud.STORE = {
@@ -58260,7 +60731,7 @@ Cloud.STORE = {
 	d: 2
 }], Cloud.DATA = {
 	ID: 3,
-	tag: "Cloud",
+	tag: "cloud-0",
 	zoneName: "zone-cloud",
 	atlas: "zone-cloud",
 	fullName: "Skywatch",
@@ -58954,12 +61425,12 @@ Cloud.STORE = {
 var Volcano = function () {
 	function e(t) {
 		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-mugs", "npc-sprite-merchant", "tileset-core"], this.area = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0], [3, 3, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 4, 4, 0, 0], [3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 0, 0], [3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 0], [3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 0], [3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 0], [3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4]
-		], this.startX = 540, this.startY = 460
+		], this.startX = 540, this.startY = 460, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
 		WalkableScreen.prototype.create.call(this, [], "volcano-0")
 	}, e.prototype.screenSetup = function () {
-		WalkableScreen.prototype.screenSetup.call(this), new Prodigy.Container.QuestNPC(this.game, this.content, 800, 500, e.DATA, {
+		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toCloud.bind(this)), this.path.addCallback(4, this.toPlains.bind(this)), new Prodigy.Container.QuestNPC(this.game, this.content, 800, 500, e.DATA, {
 			name: "Chef Mugs",
 			atlas: "mugs"
 		}), this.createStoreNPC(630, 280, e.STORE);
@@ -59018,10 +61489,10 @@ var Volcano = function () {
 			fail: "You need to become a member to unlock!"
 			}];
 		this.addNicknamer(340, 540, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 1000, 300).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 253, 434);
-	}, e.prototype.toCloud = function () {}, e.prototype.toDino = function () {
-		this.game.state.states.Dino.playerX = 1195, this.game.state.states.Dino.playerY = 560, this.game.state.start("Dino")
+	}, e.prototype.toCloud = function () {
+		this.game.prodigy.world.teleport("mountain-0", 1000, 300)
 	}, e.prototype.toPlains = function () {
-		this.game.state.states.Plains.playerX = 150, this.game.state.states.Plains.playerY = 115, this.game.state.start("Plains")
+		this.game.prodigy.world.teleport("cloud-1", 150, 115)
 	}, e
 }();
 Volcano.STORE = {
@@ -59065,7 +61536,7 @@ Volcano.STORE = {
 	d: 2
 	}], Volcano.DATA = {
 	ID: 5,
-	tag: "Volcano",
+	tag: "volcano-0",
 	zoneName: "zone-volcano",
 	atlas: "zone-volcano",
 	fullName: "Bonfire Spire",
@@ -59808,12 +62279,12 @@ var Forest = function () {
 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0],
 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
 			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3]], this.startX = 890, this.startY = 260
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3]], this.startX = 890, this.startY = 260, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
-		WalkableScreen.prototype.create.call(this, [], "Forest");
+		WalkableScreen.prototype.create.call(this, "forest-0");
 	}, e.prototype.screenSetup = function () {
-		WalkableScreen.prototype.screenSetup.call(this), new Prodigy.Container.QuestNPC(this.game, this.content, 345, 530, e.DATA, {
+		this.noFade = !0, this.path.addCallback(3, this.toTown.bind(this)), this.path.addCallback(4, this.toCave.bind(this)), new Prodigy.Container.QuestNPC(this.game, this.content, 345, 530, e.DATA, {
 			name: "Flora",
 			atlas: "flora"
 		}); this.createStoreNPC(970, 270, e.STORE);
@@ -59825,7 +62296,7 @@ var Forest = function () {
 			}, 4e3, Phaser.Easing.Linear.None, !1, 0, 1e3, !1).delay(100 * t).start(), this.game.add.tween(i.scale).to({
 				x: .75,
 				y: .75
-			}, 4e3, Phaser.Easing.Linear.None, !1, 0, 1e3, !1).delay(100 * t).start()
+			}, 4e3, Phaser.Easing.Linear.None, !1, 0, 1e3, !1).delay(100 * t).start(), this.content.add(a)
 		}
 		var o = [{
 			post: " of the Forest",
@@ -59871,7 +62342,7 @@ var Forest = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(560, 280, o), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 509, 351);
+		this.addNicknamer(560, 280, o), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 509, 351), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.createHealerNPC = function (e, t, a) {
 		var s = new Prodigy.Container.QuestNPC(this.game, this.content, e, t, null, {
 			atlas: "noot",
@@ -59895,9 +62366,9 @@ var Forest = function () {
 			yes: e.bind(this, this.game)
 		}), this.game.prodigy.dialogue.start("noot")
 	}, e.prototype.toTown = function () {
-		this.game.state.states.TownSquare.playerX = 210, this.game.state.states.TownSquare.playerY = 220, this.game.state.start("TownSquare")
+		this.game.prodigy.world.teleport("arena-0", 509, 301)
 	}, e.prototype.toCave = function() {
-		this.game.state.start("Mountain", 160, 590)
+		this.game.prodigy.world.teleport("mountain-0", 160, 590)
 	}, e
 }();
 Forest.STORE = {
@@ -59946,8 +62417,8 @@ Forest.STORE = {
 	d: 2
 }], Forest.DATA = {
 	ID: 1,
-	tag: "Forest",
-	zoneName: "zone-forest2",
+	tag: "forest-0",
+	zoneName: "zone-forest",
 	atlas: "zone-forest2",
 	fullName: "Firefly Forest",
 	icon: "zone-earth",
@@ -60699,12 +63170,12 @@ var Mountain = function() {
 			[0, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
 			[3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
 			[3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-			[3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.noSnow = !0, this.startX = 890, this.startY = 260
+			[3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.noSnow = !0, this.startX = 890, this.startY = 260, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
 		WalkableScreen.prototype.create.call(this, [], "mountain-0")
 	}, e.prototype.screenSetup = function() {
-		WalkableScreen.prototype.screenSetup.call(this), new Prodigy.Container.QuestNPC(this.game, this.content, 1120, 530, e.DATA, {
+		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toForest.bind(this)), this.path.addCallback(4, this.toDino.bind(this)), new Prodigy.Container.QuestNPC(this.game, this.content, 1120, 530, e.DATA, {
 			name: "Bok and Slip",
 			atlas: "bok"
 		}), this.createStoreNPC(140, 300, e.STORE);
@@ -60767,9 +63238,9 @@ var Mountain = function() {
 		}, 500, Phaser.Easing.Quadratic.InOut, !0, Math.floor(500 * Math.random()), 0, !0);
 		t.onComplete.add(this.blinkComplete.bind(this, e), this)
 	}, e.prototype.toForest = function() {
-		this.game.state.start("Forest", 640, 380)
+		this.game.prodigy.world.teleport("forest-0", 210, 220)
 	}, e.prototype.toDino = function() {
-		this.game.state.states.Dino.playerX = 210, this.game.state.states.Dino.playerY = 522, this.game.state.start("Dino")
+		this.game.prodigy.world.teleport("volcano-0", 210, 522)
 	}, e
 }();
 Mountain.STORE = {
@@ -60818,7 +63289,7 @@ Mountain.STORE = {
 	d: 4
 }], Mountain.DATA = {
 	ID: 2,
-	tag: "Mountain",
+	tag: "mountain-0",
 	zoneName: "zone-icecave",
 	atlas: "zone-icecave",
 	fullName: "Shiverchill Mountain",
@@ -61533,17 +64004,10 @@ this.game.add.tween(a).to({
 			post: "beard the Pirate",
 			member: !0,
 			fail: "You need to become a member to unlock!"
-		}, {
-			pre: "Techeater ",
-			req: [{
-				rtype: "pet",
-				ID: 77
-			}],
-			fail: "You need to catch or buy a Tech Gobbler to unlock!"
 		}];
 		this.addNicknamer(185, 615, s), new Prodigy.Container.ToyMerchant(this.game, this.content, 159, 201).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 702, 347), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.toTown = function() {
-		this.game.prodigy.world.teleport("tech-0", 887, 579)
+		this.game.prodigy.world.teleport("bonfire_spire-E5", 887, 579)
 	}, e
 }();
 Pirate.STORE = {
@@ -61571,9 +64035,6 @@ Pirate.STORE = {
 		type: "outfit"
 	}, {
 		ID: 102,
-		type: "pet"
-	}, {
-		ID: 77,
 		type: "pet"
 	}]
 }, Pirate.AUDIO = [{
@@ -63671,7 +66132,7 @@ var TowerBase = function() {
 		this.noFade = !0, new Prodigy.Container.QuestNPC(this.game, this.content, 1155, 340, null, {
 			name: "Mira Shade",
 			atlas: "mira"
-		}, this.openTower.bind(this)), new Prodigy.Container.ToyMerchant(this.game, this.content, 259, 301).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 538, 239), WalkableScreen.prototype.screenSetup.call(this)
+		}, this.openTower.bind(this)), this.path.addCallback(3, this.toTown.bind(this)), new Prodigy.Container.ToyMerchant(this.game, this.content, 259, 301).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 538, 239), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.openTower = function() {
 		var t = this.game.prodigy.player.getTowerProgress();
 		if ((t = t - t % 5 + 1) > 100 && (t = 100), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isBlockedByDarkTowerMemberGate()) this.game.prodigy.open.darkTowerMemberGate();
@@ -63709,6 +66170,8 @@ var TowerBase = function() {
 			}
 		}
 		a && this.toFloor(t, !0)
+	}, e.prototype.toTown = function () {
+		this.game.prodigy.world.teleport("lamplight-C4", 1000, 550)
 	}, e.prototype.toFloor = function(e, t) {
 		t && (this.game.state.states.Tower.startX = 602, this.game.state.states.Tower.startY = 150, this.game.state.states.Tower.floor = e, this.game.state.states.Tower.cleared = !1, this.game.prodigy.start("Tower"))
 	}, e
@@ -63791,16 +66254,713 @@ TowerBase.AUDIO = [{
 		audio: Tower.AUDIO[0]
 	}]
 };
+var TechZone = function () {
+	function e(t) {
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-cumulo", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 890, this.playerY = 260, this.bgm = "bgm-intro"
+	}
+	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
+		WalkableScreen.prototype.create.call(this, [], "techzone-0")
+	}, e.prototype.screenSetup = function () {
+		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toTech.bind(this)), this.path.addCallback(4, this.toTown.bind(this)), this.createStoreNPC(670, 250, e.STORE), this.digBtn = this.game.prodigy.create.element(this.content, 101099999, 2809999);
+		var t = this.digBtn.add(this.game.prodigy.create.sprite(40, 40, "icons", "star2"));
+		t.anchor.setTo(.5, .5), t.inputEnabled = !0, t.angle = -20, t.events.onInputDown.add(this.game.state.start.bind(this.game.state, "DanceDance"), this.game.state), this.digBtn.add(this.game.prodigy.create.sprite(0, 10, "icons", "item/47")), this.game.add.tween(t).to({
+			angle: 20
+		}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0);
+		var i = this.game.prodigy.create.sprite(437, 462, this.screenName, "m1");
+		i.anchor.setTo(.5, 1), this.content.add(i), new Prodigy.Container.QuestNPC(this.game, this.content, 210, 360, e.DATA, {
+			name: "Cumulo",
+			atlas: "cumulo"
+		});
+		var a = [{
+			pre: "Technician ",
+			req: [{
+				rtype: "item",
+				type: "outfit",
+				ID: 43
+			}, {
+				rtype: "item",
+				type: "hat",
+				ID: 46
+			}],
+			fail: "You need to buy the Robot set to unlock!"
+		}, {
+			post: " the Techfolk",
+			req: [{
+				rtype: "item",
+				type: "item",
+				ID: 65
+			}],
+			fail: "You need to win the Ribbon from the Robolympics to unlock!"
+		}, {
+			pre: "Techeater ",
+			req: [{
+				rtype: "pet",
+				ID: 77
+			}],
+			fail: "You need to catch or buy a Tech Gobbler to unlock!"
+		}, {
+			post: " Techchaser",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}, {
+			post: " the Technician",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}, {
+			post: " The Developer",
+			member: !0,
+			fail: "You need to become a member to unlock!"
+		}];
+		this.addNicknamer(336, 223, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 628, 460)
+	}, e.prototype.toPlains = function () {
+		this.game.prodigy.world.teleport("pirate-0")
+	}, e.prototype.toTech = function () {
+		this.game.prodigy.world.teleport("dancedance-0")
+	}, e.prototype.toTown = function () {
+		this.game.prodigy.world.teleport("cloud-1", 188, 560)
+	}, e
+}();
+TechZone.STORE = {
+	name: "The Tech Store",
+	items: [{
+		ID: 46,
+		type: "hat"
+	}, {
+		ID: 69,
+		type: "weapon"
+	}, {
+		ID: 43,
+		type: "outfit"
+	}, {
+		ID: 77,
+		type: "pet"
+	}]
+}, TechZone.AUDIO = [{
+	tag: "voice-6",
+	s: 0,
+	d: 1
+}, {
+	tag: "voice-6",
+	s: 1,
+	d: 1
+}, {
+	tag: "voice-6",
+	s: 2,
+	d: 1
+}, {
+	tag: "voice-6",
+	s: 3,
+	d: 1
+}, {
+	tag: "voice-6",
+	s: 4,
+	d: 1
+}, {
+	tag: "voice-6",
+	s: 5,
+	d: 2
+}, {
+	tag: "voice-6",
+	s: 7,
+	d: 2
+}, {
+	tag: "voice-6",
+	s: 9,
+	d: 2
+}], TechZone.DATA = {
+	ID: 3,
+	tag: "techzone-0",
+	zoneName: "zone-tech",
+	atlas: "zone-tech",
+	fullName: "Tech Zone",
+	npc: "Cumulo",
+	icon: "zone-air",
+	battle: {
+		screen: "bg-battle-cloud",
+		encounter: [{
+			ID: 4
+		}, {
+			ID: 5
+		}, {
+			ID: 6
+		}, {
+			ID: 13
+		}, {
+			ID: 14
+		}, {
+			ID: 15
+		}, {
+			ID: 18
+		}, {
+			ID: 19
+		}, {
+			ID: 20
+		}, {
+			ID: 21
+		}, {
+			ID: 22
+		}, {
+			ID: 41
+		}, {
+			ID: 42
+		}, {
+			ID: 43
+		}, {
+			ID: 44
+		}, {
+			ID: 56
+		}, {
+			ID: 57
+		}, {
+			ID: 72
+		}, {
+			ID: 73
+		}, {
+			ID: 74
+		}, {
+			ID: 77
+		}, {
+			ID: 84
+		}, {
+			ID: 85
+		}, {
+			ID: 86
+		}, {
+			ID: 90
+		}, {
+			ID: 91
+		}]
+	},
+	dialogue: [{
+		face: 2,
+		anim: 2,
+		text: "A good job. You are a model W12-4RD.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 0,
+		anim: 2,
+		text: "Set your automators to maximum accomplishment? (are you ready?)",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 4,
+		text: "Greetings, coggle. Are you here to enter the Robolympics?",
+		audio: TechZone.AUDIO[0]
+	}, {
+		face: 4,
+		anim: 4,
+		text: "If so, what kind of robot are you?",
+		audio: TechZone.AUDIO[0]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "...",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You're a wizard, you say? Interesting. I though they stopped making the W12-4RD model coggle. You're a relic!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "Whatever you are, welcome to TECH CITY, and welcome to the ROBOLYMPICS!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You look confused, W12-4RD. No matter. Defeat some coggles for me, and I will explain everything.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You are strong for a W12-4RD. Strong enough for the Robolympics.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "The entry fee is [gold] 250,000,000",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "Well, since you helped me out, I will only charge you one LAK.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You do not have even ONE LAK? Very well. Defeat some ???, they often carry them.",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You are now officially in the Robolympics, the greatest competition for robots on the island!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "The coggles (robots) live here in TECH CITY, and hold the tournament every year. And the strongest coggle wins the GRAND PRIZE!",
+		audio: TechZone.AUDIO[1]
+	}, {
+		face: 4,
+		anim: 0,
+		text: "You will have many challenges to face. The first starts now - defeat ???.",
+		audio: TechZone.AUDIO[1]
+	}],
+	quests: [{
+		coords: [110, 0],
+		name: "They Are Coming",
+		desc: "The Skywatch is under attack! Defeat the incoming hobs!",
+		start: [2, 3, 4],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 84
+		}],
+		req: [{
+			type: "pet",
+			ID: 84,
+			N: 2
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [0, 75],
+		name: "The Sky is Falling!",
+		desc: "Look for spare parts to repair the station. Luminites should carry them.",
+		start: [5],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 20,
+			drops: [{
+				ID: 49,
+				type: "item",
+				R: 1
+			}]
+		}],
+		req: [{
+			type: "item",
+			ID: 49,
+			N: 3
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [110, 110],
+		name: "Tech TRIALS",
+		desc: "Defeat cloud nibblers for Cumulo to pass the first trial.",
+		start: [6, 7, 8, 9, 10, 11, 12],
+		during: [],
+		complete: [13],
+		encounter: [{
+			ID: 56,
+			R: 1
+		}, {
+			ID: 13,
+			R: 1
+		}, {
+			ID: 84,
+			R: 1
+		}],
+		req: [{
+			type: "pet",
+			ID: 56,
+			N: 3
+		}],
+		reward: [{
+			type: "spell",
+			ID: 25
+		}]
+	}, {
+		coords: [225, 60],
+		name: "Vandals and Thieves",
+		desc: "Cumulo needs you to track down the hobs that stole the parts to the station.",
+		start: [14, 15, 16],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 84,
+			nickname: "Part-carrying hob",
+			R: 1,
+			drops: [{
+				ID: 47,
+				type: "item",
+				R: 1
+			}]
+		}, {
+			ID: 84
+		}, {
+			ID: 20
+		}],
+		req: [{
+			type: "item",
+			ID: 47,
+			N: 3
+		}],
+		reward: [{
+			type: "boots",
+			N: 1,
+			ID: 25
+		}]
+	}, {
+		coords: [335, 0],
+		name: "Wrench in the Gears",
+		desc: "You'll need a wrench to fix the station. Defeat cloud neeks and take their tools.",
+		start: [17],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 72,
+			R: .75,
+			drops: [{
+				ID: 53,
+				type: "item",
+				R: .25
+			}]
+		}, {
+			ID: 84,
+			R: .25
+		}],
+		req: [{
+			type: "item",
+			ID: 53,
+			N: 1
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [450, 75],
+		name: "Head Hob",
+		desc: "Defeat the leader of the hobs and take back the power source.",
+		start: [18, 19],
+		during: [],
+		complete: [13],
+		pets: [{
+			ID: 85,
+			nickname: "Hob Leader"
+		}, {
+			ID: 84,
+			nickname: "Grunt Hob"
+		}, {
+			ID: 84,
+			nickname: "Grunt Hob"
+		}],
+		req: [{
+			type: "boss",
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 26
+		}]
+	}, {
+		coords: [335, 110],
+		name: "The Birds",
+		desc: "Cumulo needs you to go defeat birds, 'cause they're messin' up the place!",
+		start: [14, 20, 21],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 13,
+			R: 5
+		}, {
+			ID: 4,
+			R: 1
+		}],
+		req: [{
+			type: "pet",
+			ID: 13,
+			N: 5
+		}, {
+			type: "pet",
+			ID: 4,
+			N: 2
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [335, 190],
+		name: "Bird is the Word",
+		desc: "According to Cumulo, squawks are the worst. Go defeat them!",
+		start: [22],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 18,
+			R: 4
+		}, {
+			ID: 72,
+			R: 2
+		}, {
+			ID: 85,
+			R: 1
+		}],
+		req: [{
+			type: "pet",
+			ID: 18,
+			N: 6
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [450, 225],
+		name: "Big Bird",
+		desc: "All your bird-challenging has caught the attention of the bird leader!",
+		start: [23],
+		during: [],
+		complete: [13],
+		encounter: [{
+			ID: 42,
+			R: 1,
+			nickname: "Big Bird"
+		}, {
+			ID: 41,
+			R: 9
+		}],
+		req: [{
+			type: "pet",
+			ID: 42,
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 27
+		}]
+	}, {
+		coords: [335, 300],
+		name: "I Have the Power!",
+		desc: "To build a lightning rod, first you need to collect a green feather from an evolotus.",
+		start: [24, 25],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 43,
+			R: 2,
+			drops: [{
+				ID: 10,
+				type: "item",
+				R: .15
+			}]
+		}, {
+			ID: 72,
+			R: 1
+		}, {
+			ID: 84,
+			R: 1
+		}],
+		req: [{
+			type: "item",
+			ID: 10,
+			N: 1
+		}],
+		reward: [{
+			type: "hat",
+			N: 1,
+			ID: 8
+		}]
+	}, {
+		coords: [225, 240],
+		name: "Rod! Rod! Rod!",
+		desc: "Defeat monsters that have hands in order to collect a steel rod.",
+		start: [26],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 84,
+			R: 1,
+			drops: [{
+				ID: 52,
+				type: "item",
+				R: .2
+			}]
+		}, {
+			ID: 85,
+			R: 1,
+			drops: [{
+				ID: 52,
+				type: "item",
+				R: .25
+			}]
+		}, {
+			ID: 72,
+			R: 1,
+			drops: [{
+				ID: 52,
+				type: "item",
+				R: .2
+			}]
+		}, {
+			ID: 14,
+			R: 1
+		}, {
+			ID: 41,
+			R: 1
+		}],
+		req: [{
+			type: "item",
+			ID: 52,
+			N: 1
+		}],
+		reward: [{
+			type: "gold",
+			N: 250
+		}]
+	}, {
+		coords: [110, 300],
+		name: "Popular Mechanic",
+		desc: "Look for Mechanic Lumiot and defeat him.",
+		start: [27, 28],
+		during: [],
+		complete: [13],
+		encounter: [{
+			ID: 21,
+			nickname: "Mechanic Lumiot",
+			R: 1
+		}, {
+			ID: 20,
+			R: 3
+		}, {
+			ID: 13,
+			R: 3
+		}, {
+			ID: 56,
+			R: 3
+		}, {
+			ID: 41,
+			R: 3
+		}],
+		req: [{
+			type: "pet",
+			ID: 21,
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 28
+		}]
+	}, {
+		coords: [0, 225],
+		name: "Who's in Charge?",
+		desc: "Find and defeat a cloaker, and collect its charge stone.",
+		start: [29, 30, 31],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 90,
+			R: 1,
+			drops: [{
+				ID: 54,
+				type: "item",
+				R: 1
+			}]
+		}, {
+			ID: 56,
+			R: 3
+		}, {
+			ID: 5,
+			R: 1
+		}, {
+			ID: 85,
+			R: 3
+		}, {
+			ID: 4,
+			R: 3
+		}],
+		req: [{
+			type: "item",
+			ID: 54,
+			N: 1
+		}],
+		reward: [{
+			type: "outfit",
+			N: 1,
+			ID: 5
+		}]
+	}, {
+		coords: [110, 190],
+		name: "Stormy Weather",
+		desc: "Defeat different storm monsters to charge the stone.",
+		start: [32],
+		during: [],
+		complete: [0],
+		encounter: [{
+			ID: 15,
+			R: 1
+		}, {
+			ID: 21,
+			R: 2
+		}, {
+			ID: 57,
+			R: 3
+		}, {
+			ID: 5,
+			R: 2
+		}, {
+			ID: 41,
+			R: 2
+		}],
+		req: [{
+			type: "pet",
+			ID: 15,
+			N: 1
+		}, {
+			type: "pet",
+			ID: 21,
+			N: 3
+		}, {
+			type: "pet",
+			ID: 57,
+			N: 5
+		}],
+		reward: [{
+			type: "weapon",
+			N: 1,
+			ID: 23
+		}]
+	}, {
+		coords: [225, 150],
+		name: "King of the Hill",
+		desc: "Defeat King Tortox and complete the last trial!",
+		start: [33, 34],
+		during: [35],
+		complete: [13, 36, 37, 38],
+		boss: {
+			ID: 5,
+			element: "storm",
+			attacks: [4, 10, 16, 25, 26, 27, 28, 29, 30],
+			name: "King Tortox"
+		},
+		req: [{
+			type: "boss",
+			N: 1
+		}],
+		reward: [{
+			type: "spell",
+			ID: 29
+		}]
+	}]
+};
 var Tech = function () {
 	function e(t) {
-		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-boombox", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 890, this.playerY = 260
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-boombox", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 890, this.playerY = 260, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
 		WalkableScreen.prototype.create.call(this, [], "tech-0")
 	}, e.prototype.screenSetup = function () {
-		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toTech.bind(this)), this.path.addCallback(4, this.toPlains.bind(this)), this.createStoreNPC(670, 250, e.STORE), this.digBtn = this.game.prodigy.create.element(this.content, 101099999, 2809999);
+		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toTech.bind(this)), this.path.addCallback(4, this.toTown.bind(this)), this.createStoreNPC(670, 250, e.STORE), this.digBtn = this.game.prodigy.create.element(this.content, 1010, 280);
 		var t = this.digBtn.add(this.game.prodigy.create.sprite(40, 40, "icons", "star2"));
-		t.anchor.setTo(.5, .5), t.inputEnabled = !0, t.angle = -20, t.events.onInputDown.add(this.game.state.start.bind(this.game.state, "DanceDance"), this.game.state), this.digBtn.add(this.game.prodigy.create.sprite(0, 10, "icons", "item/47")), this.game.add.tween(t).to({
+		t.anchor.setTo(.5, .5), t.inputEnabled = !0, t.angle = -20, t.events.onInputDown.add(this.game.state.start.bind(e.state, "DanceDance"), this.game.state), this.digBtn.add(this.game.prodigy.create.sprite(0, 10, "icons", "item/47")), this.game.add.tween(t).to({
 			angle: 20
 		}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0);
 		var i = this.game.prodigy.create.sprite(437, 462, this.screenName, "m1");
@@ -63839,7 +66999,7 @@ var Tech = function () {
 				type: "hat",
 				ID: 47
 			}],
-			fail: "You need to catch a Tech Gobbler to unlock!"
+			fail: "You need to get your Tek-Y4 to level 10 to unlock!"
 		}, {
 			post: "bot 3000",
 			member: !0,
@@ -63862,7 +67022,7 @@ var Tech = function () {
 	}, e.prototype.toTech = function () {
 		this.game.prodigy.world.teleport("dancedance-0")
 	}, e.prototype.toTown = function () {
-		this.game.prodigy.world.teleport("lamplight-b4")
+		this.game.prodigy.world.teleport("lamplight-B4", 660, 400)
 	}, e
 }();
 Tech.STORE = {
@@ -63958,7 +67118,7 @@ Tech.STORE = {
 	d: 4
 }], Tech.DATA = {
 	ID: 8,
-	tag: "Tech",
+	tag: "tech-0",
 	zoneName: "zone-tech",
 	atlas: "zone-tech",
 	fullName: "Clockwork Town",
@@ -64131,25 +67291,21 @@ var Dorm = function () {
 		this.player = this.player || this.game.prodigy.player, this.zoneName = "zone-house-" + this.player.userID;
 		var e = this.player.house.getBackground(),
 			t = Items.getItemData("dormbg", e);
-		this.playerX = t.x, this.playerY = t.y, WalkableScreen.prototype.create.call(this, [t.bg], "Dorm")
+		this.playerX = t.x, this.playerY = t.y, WalkableScreen.prototype.create.call(this, [t.bg], "house-0")
 	}, e.prototype.screenSetup = function () {
 		this.disableBots = !0, WalkableScreen.prototype.screenSetup.call(this), this.bgID = this.player.house.getBackground();
 		var t = Items.getItemData("dormbg", this.bgID);
-		this.bg.loadTexture(t.bg), this.area = t.area, this.path = new Pathfinder(this.area), this.items = new Element(this.game, this.background), this.player.userID === this.game.prodigy.player.userID && this.menuBar.addMenu(1, [{
-			icon: "move",
-			callback: this.game.prodigy.open.store.bind(this.game.prodigy.open, e.BG_STORE, !1, this.move.bind(this))
-		}, {
-			icon: "edit",
-			callback: this.game.prodigy.open.dormEditor.bind(this.game.prodigy.open, this.updateItems.bind(this))
-		}]), this.updateItems()
+		this.bg.loadTexture(t.bg), this.area = t.area, this.path = new Pathfinder(this.area), this.items = this.game.prodigy.create.element(this.background), this.player.userID === this.game.prodigy.player.userID && this.updateItems()
+	}, e.prototype.addHouseConfig = function(e) {
+		this.addMenu(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
 	}, e.prototype.move = function () {
 		this.bgID !== this.player.house.getBackground() && this.game.state.start("Dorm")
 	}, e.prototype.updateItems = function () {
 		this.items.removeAll(!0);
-		for (var e = this.game.prodigy.player.house.getSortedActive(), t = 0; t < e.length; t++) {
-			var a = e[t],
-				s = this.items.add(new Sprite(this.game, a.x, a.y, "zone-house", "1-0"));
-			DormEditor.setupItem(a.ID, s, a.a), s.anchor.setTo(.5, .5)
+		for (var e = this.player.house.getSortedActive(), t = 0; t < e.length; t++) {
+			var i = e[t],
+				a = this.items.add(this.game.prodigy.create.sprite(i.x, i.y, "zone-house", "1-0"));
+			Prodigy.Menu.DormEditor.setupItem(i.ID, a, i.a), a.anchor.setTo(.5, .5)
 		}
 	}, e.getItems = function (e) {
 		return Items.getDormItems(e)
@@ -64163,28 +67319,32 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 		tag: "bg-house",
 		tagtop: !0,
 		items: [{
-			ID: 1,
+			ID: 20,
 			type: "dormbg"
 		}]
 	}, {
 		tag: "bg-cave",
 		tagtop: !0,
 		items: [{
-			ID: 2,
+			ID: 21,
 			type: "dormbg"
 		}]
 	}, {
 		tag: "bg-tree",
 		tagtop: !0,
 		items: [{
-			ID: 3,
+			ID: 22,
 			type: "dormbg"
 		}]
 	}]
-}], Dorm.STORE = [{
+}], Dorm.STORE = {
 	name: "HOUSE - COMFY",
-	icon: "dorm/1",
+	dod: !0,
 	pages: [{
+		btn: {
+			icon: "dorm/1",
+			bot: "Seats"
+		},
 		items: [{
 			ID: 1,
 			type: "dorm"
@@ -64212,9 +67372,7 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 		}, {
 			ID: 40,
 			type: "dorm"
-		}]
-	}, {
-		items: [{
+		}, {
 			ID: 45,
 			type: "dorm"
 		}, {
@@ -64236,11 +67394,11 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 			ID: 67,
 			type: "dorm"
 		}]
-	}]
-}, {
-	name: "HOUSE - SURFACE",
-	icon: "dorm/3",
-	pages: [{
+	}, {
+		btn: {
+			icon: "dorm/3",
+			bot: "Tables"
+		},
 		items: [{
 			ID: 3,
 			type: "dorm"
@@ -64263,11 +67421,11 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 			ID: 62,
 			type: "dorm"
 		}]
-	}]
-}, {
-	name: "HOUSE - PLANTS",
-	icon: "dorm/6",
-	pages: [{
+	}, {
+		btn: {
+			icon: "dorm/6",
+			bot: "Plants"
+		},
 		items: [{
 			ID: 6,
 			type: "dorm"
@@ -64290,11 +67448,11 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 			ID: 53,
 			type: "dorm"
 		}]
-	}]
-}, {
-	name: "HOUSE - STORAGE",
-	icon: "dorm/13",
-	pages: [{
+	}, {
+		btn: {
+			icon: "dorm/13",
+			bot: "Storage"
+		},
 		items: [{
 			ID: 13,
 			type: "dorm"
@@ -64311,11 +67469,11 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 			ID: 70,
 			type: "dorm"
 		}]
-	}]
-}, {
-	name: "HOUSE - WALL",
-	icon: "dorm/18",
-	pages: [{
+	}, {
+		btn: {
+			icon: "dorm/18",
+			bot: "Wall"
+		},
 		items: [{
 			ID: 18,
 			type: "dorm"
@@ -64343,9 +67501,7 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 		}, {
 			ID: 38,
 			type: "dorm"
-		}]
-	}, {
-		items: [{
+		}, {
 			ID: 59,
 			type: "dorm"
 		}, {
@@ -64361,11 +67517,11 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 			ID: 69,
 			type: "dorm"
 		}]
-	}]
-}, {
-	name: "HOUSE - LAMPS",
-	icon: "dorm/31",
-	pages: [{
+	}, {
+		btn: {
+			icon: "dorm/31",
+			bot: "Lamps"
+		},
 		items: [{
 			ID: 31,
 			type: "dorm"
@@ -64393,20 +67549,18 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 		}, {
 			ID: 47,
 			type: "dorm"
-		}]
-	}, {
-		items: [{
+		}, {
 			ID: 60,
 			type: "dorm"
 		}, {
 			ID: 71,
 			type: "dorm"
 		}]
-	}]
-}, {
-	name: "HOUSE - ITEMS",
-	icon: "dorm/22",
-	pages: [{
+	}, {
+		btn: {
+			icon: "dorm/22",
+			bot: "Misc."
+		},
 		items: [{
 			ID: 22,
 			type: "dorm"
@@ -64434,9 +67588,7 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 		}, {
 			ID: 58,
 			type: "dorm"
-		}]
-	}, {
-		items: [{
+		}, {
 			ID: 65,
 			type: "dorm"
 		}, {
@@ -64444,16 +67596,16 @@ Dorm.ZONE_ID = 8, Dorm.BG_STORE = [{
 			type: "dorm"
 		}]
 	}]
-}];
+};
 var Dino = function () {
 	function e(t) {
-		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-scoog", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 4], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 4, 4, 4], [0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4], [0, 0, 0, 0, 0, 0, 0, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 600, this.playerY = 520
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-scoog", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4, 4], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 4, 4, 4], [0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4], [0, 0, 0, 0, 0, 0, 0, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 600, this.playerY = 520, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
 		WalkableScreen.prototype.create.call(this, "dino-0"), new Prodigy.Container.QuestNPC(this.game, this.content, 350, 450, e.DATA, {
 			name: "Professor Scoog",
 			atlas: "scoog"
-		}), this.createStoreNPC(800, 450, e.STORE), this.path.addCallback(4, this.toVolcano.bind(this)), this.path.addCallback(5, this.toMuseum.bind(this));
+		}), this.createStoreNPC(800, 450, e.STORE), this.path.addCallback(3, this.toMountain.bind(this)), this.path.addCallback(4, this.toVolcano.bind(this)), this.path.addCallback(5, this.toMuseum.bind(this));
 		var a = [{
 			post: " the Digger",
 			req: [{
@@ -64531,11 +67683,11 @@ var Dino = function () {
 			yes: e.bind(this, this.game)
 		}), this.game.prodigy.dialogue.start("noot")
 	}, e.prototype.toMountain = function () {
-		this.game.state.states.Mountain.playerX = 972, this.game.state.states.Mountain.playerY = 255, this.game.state.start("Mountain")
+		this.game.prodigy.world.teleport("shiverchill-B10", 100, 300)
 	}, e.prototype.toVolcano = function () {
 		this.game.prodigy.world.teleport("dinodig-0", 1190, 260)
 	}, e.prototype.toMuseum = function () {
-		this.game.state.states.Museum.playerX = 640, this.game.state.states.Museum.playerY = 545, this.game.state.start("Museum")
+		this.game.prodigy.world.teleport("dino-1", 640, 545)
 	}, e
 }();
 Dino.STORE = {
@@ -64579,6 +67731,78 @@ Dino.STORE = {
 		}, {
 		ID: 112,
 		type: "pet"
+		}, {
+			ID: 1,
+			type: "fossil"
+		}, {
+			ID: 2,
+			type: "fossil"
+		}, {
+			ID: 3,
+			type: "fossil"
+		}, {
+			ID: 4,
+			type: "fossil"
+		}, {
+			ID: 5,
+			type: "fossil"
+		}, {
+			ID: 6,
+			type: "fossil"
+		}, {
+			ID: 7,
+			type: "fossil"
+		}, {
+			ID: 8,
+			type: "fossil"
+		}, {
+			ID: 9,
+			type: "fossil"
+		}, { 
+			ID: 10,
+			type: "fossil"
+		}, {
+			ID: 11,
+			type: "fossil"
+		}, {
+			ID: 12,
+			type: "fossil"
+		}, {
+			ID: 13,
+			type: "fossil"
+		}, {
+			ID: 14,
+			type: "fossil"
+		}, {
+			ID: 15,
+			type: "fossil"
+		}, {
+			ID: 16,
+			type: "fossil"
+		}, {
+			ID: 17,
+			type: "fossil"
+		}, {
+			ID: 18,
+			type: "fossil"
+		}, {
+			ID: 19,
+			type: "fossil"
+		}, {
+			ID: 20,
+			type: "fossil"
+		}, {
+			ID: 21,
+			type: "fossil"
+		}, {
+			ID: 22,
+			type: "fossil"
+		}, {
+			ID: 23,
+			type: "fossil"
+		}, {
+			ID: 24,
+			type: "fossil"
 		}]
 }, Dino.AUDIO = [{
 	tag: "voice-9",
@@ -64606,7 +67830,7 @@ Dino.STORE = {
 	d: 3
 }], Dino.DATA = {
 	ID: 6,
-	tag: "Dino",
+	tag: "dino-0",
 	zoneName: "zone-dino",
 	atlas: "zone-dino",
 	fullName: "Dyno Dig Oasis",
@@ -64668,7 +67892,7 @@ Dino.STORE = {
 		audio: Dino.AUDIO[1],
 		anim: 2
 	}, {
-		text: "The shovel will allow you to help us dig for fossils! To do so, just click the spinning star nearby!",
+		text: "The shovel will allow you to help us dig for fossils! To do so, just go upstairs!",
 		face: 0,
 		audio: Dino.AUDIO[5]
 	}, {
@@ -65517,6 +68741,15 @@ Dino.STORE = {
 			}, {
 				ID: 19,
 				type: "dormbg"
+			}, {
+				ID: 20,
+				type: "dormbg"
+			}, {
+				ID: 21,
+				type: "dormbg"
+			}, {
+				ID: 22,
+				type: "dormbg"
 			}]
 		}, {
 			btn: {
@@ -65602,19 +68835,24 @@ Dino.STORE = {
 		})
 	},
 	teleport: function(e, t, i, a, s) {
-		if (e.indexOf("exit") > -1) return void Prodigy.Zone.prototype.teleport.call(this, e, t, i, a, s);
-		this.player = Util.isDefined(a) ? a : this.game.prodigy.player, this.bgID = this.player.house.getBackground() - 1, this.bgID = 0;
-		var r = Items.data.dormbg[this.bgID].tag;
-		if (s = s || {}, "editor" === e) {
-			var o = this.getMap("editor");
-			o._file = "map-house-" + r, o._tag = "mapTag";
-			var n = this.getMap(r);
-			if (!Util.isDefined(n)) return;
-			n._zoneName = "house-" + this.player.userID, this.game.state.states.TileScreen.initMap(o, this, t, i), s.assets = s.assets || [], s.assets = s.assets.concat(["map-pathing"]).concat(n.assets), s.title = s.title || n._name, this.game.prodigy.start("TileScreen", s)
-		} else {
-			var e = this.getMap(r);
-			Util.isDefined(e) && (e._zoneName = "house-" + this.player.userID), Prodigy.Zone.prototype.teleport.call(this, r, t, i, [], s)
+		if (e.indexOf("exit") > -1) return Prodigy.Zone.prototype.teleport.call(this, e, t, i, a, s), void 0;
+		this.player = Util.isDefined(a) ? a : this.game.prodigy.player;
+		var r = "suburbs",
+			n = "Starter Home";
+		s = s || {}, s.assets = Util.isDefined(s.assets) ? s.assets : [];
+		var o = Util.isDefined(s.mapTag) ? s.mapTag : this.player.house.getCurrentHouseTag();
+		if (Util.isDefined(o))
+			for (var h = 0; h < Items.data.dormbg.length; h++)
+				if (Items.data.dormbg[h].tag === o) {
+					r = o, n = Items.data.dormbg[h].name;
+					break
+				} var l = this.getMap(r);
+		if (!Util.isDefined(l)) return Util.log("House.teleport - teleport failed. Couldn't find map named: " + r, Util.ERROR), void 0;
+		if (l._zoneName = "house-" + this.player.userID, l._name = n, "editor" === e || "preview" === e) {
+			var d = this.getMap(e);
+			d._file = l._file, d._tag = r, d._zoneName = l._zoneName + "-" + e, d.areaEventConfigs = l.areaEventConfigs, r = e, s.assets = s.assets.concat([d._file]).concat(l.assets)
 		}
+		Prodigy.Zone.prototype.teleport.call(this, r, t, i, [], s)
 	},
 	setup: function(e, t, i) {
 		if (!Util.isDefined(this.getCurrentQuest()) && Util.isDefined(this.player) && this.player.userID === this.game.prodigy.player.userID && 0 > i.getTag().indexOf("exit")) {
@@ -66365,7 +69603,7 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 	battle: function(e) {
 		e.prodigy.battle.start({
 			invincible: !0,
-			intro: "Wizard Battle!",
+			intro: "CHALLENGE!",
 			catch: !1,
 			run: !1,
 			screen: "bg-battle-forest",
@@ -66461,8 +69699,9 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 			}
 		}
 	}
-}), Prodigy.Battle.Battle = function(e) {
-	Screen.call(this, e, "Wizard Battle!", "battle", "battle", ["battle", "spine-creature-levelup", "sfx-battle"]), this.area = "", this.teamA = [], this.teamB = [], this.runAwayCallback = null, this.victoryCallback = null, this.defeatCallback = null
+}), 
+Prodigy.Battle.Battle = function(e) {
+	Screen.call(this, e, "Challenge!", "battle", "battle", ["battle", "spine-creature-levelup", "sfx-battle"]), this.area = "", this.teamA = [], this.teamB = [], this.runAwayCallback = null, this.victoryCallback = null, this.defeatCallback = null
 }, Prodigy.extends(Prodigy.Battle.Battle, Screen, {
 	constructor: Prodigy.Battle.Battle,
 	initListeners: function() {
@@ -66650,7 +69889,7 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 });
 var PVP = function() {
 		function e(e) {
-			Screen.call(this, e, "Wizard Battle!", "battle", "battle", ["bg-battle-arena", "battle", "attacks", "bgm-battle", "bgm-victory", "sfx-battle", "sfx-pvp"]), this.area = "", this.teamA = [], this.teamB = [], this.worldData = {
+			Screen.call(this, e, "CHALLENGE!", "battle", "battle", ["bg-battle-arena", "battle", "attacks", "bgm-battle", "bgm-victory", "sfx-battle", "sfx-pvp"]), this.area = "", this.teamA = [], this.teamB = [], this.worldData = {
 				teamHealth: []
 			}, this.timerRunning = !1, this.timerStart = null, this.textChangeCheck = 0, this.screenName = "bg-battle-arena", this.runAwayCallback = null, this.victoryCallback = null, this.defeatCallback = null
 		}
@@ -66862,7 +70101,7 @@ Prodigy.Battle.CombatManager = function(e) {
 			} catch (t) {}
 		}
 		this.battleScreen.mods.potionMode = this.game.prodigy.player.tutorial.getMenuValue(3, 2) >= 1;
-		var i = "Wizard Battle!";
+		var i = "CHALLENGE!";
 		this.teams[1].isBoss() && (i = "Boss Time!"), this.battleScreen.mods.intro && (i = this.battleScreen.mods.intro), this.game.prodigy.effects.flashText(i, this.playerTurn.bind(this)), this.initListeners()
 	},
 	initListeners: function() {
@@ -68850,13 +72089,6 @@ Prodigy.Controller.BattleController = function(e) {
 					fct: t.getLevel.bind(t),
 					ranks: [5, 20, 50, 75, 100]
 				}, {
-					ID: 10,
-					name: "Spellmaster",
-					desc: "Learn [X] spells",
-					icon: "book",
-					fct: t.getNumAttacks.bind(t),
-					ranks: [3, 6, 10, 15, 31]
-				}, {
 					ID: 11,
 					name: "Monster Hunter",
 					desc: "Defeat [X] monsters",
@@ -68865,21 +72097,14 @@ Prodigy.Controller.BattleController = function(e) {
 					ranks: [10, 50, 250, 500, 1e3]
 				}]
 			}, {
-				tag: "PvP",
+				tag: "Spells",
 				data: [{
 					ID: 12,
-					name: "Supreme Challenger",
-					desc: "Win [X] Arena matches",
-					icon: "weapon/4",
-					fct: t.getWins.bind(t),
-					ranks: [5, 25, 50, 100, 250]
-				}, {
-					ID: 13,
-					name: "The Champ",
-					desc: "Reach rank [X] in the Arena",
-					icon: "weapon/6",
-					fct: t.getArenaRank.bind(t),
-					ranks: [1, 2, 3, 4]
+					name: "Spellcaster",
+					desc: "Learn all 36 spells",
+					icon: "book",
+					fct: t.getNumAttacks.bind(t),
+					ranks: [36]
 				}]
 			}, {
 				tag: "Firefly Forest",
@@ -69076,13 +72301,6 @@ Prodigy.Controller.BattleController = function(e) {
 					icon: "hat/4",
 					fct: t.getSpellStreak.bind(t),
 					ranks: [3, 5, 10]
-				}, {
-					ID: 30,
-					name: "Don't Stop Me Now",
-					desc: "Master [X] skills",
-					icon: "hat/6",
-					fct: o.getMasteredSkills.bind(o),
-					ranks: [5, 20, 50, 100]
 				}]
 			}, {
 				tag: "Exploration",
@@ -70013,10 +73231,21 @@ var ExternalFactory = function() {
 		this.game.stage.visible = !1
 	}, e.prototype.closeFull = function() {
 		this.game.stage.visible = !0
-	}, e.prototype.question = function(e) {
-		this.game.input.keyboard.clearCaptures()
+	}, e.prototype.question = function (e) {
+            this.game.input.keyboard.clearCaptures();
+            var t = QI.showQuestion({
+                selector: "#external-content",
+                userID: this.game.prodigy.player.userID,
+                callback: this.answerQuestion.bind(this, e),
+                classIDs: this.game.prodigy.player.classIDs,
+                isTeacher: !1,
+                hideCallback: this.openFull.bind(this)
+            });
+            this._init || (t.on("assignment-complete", this.finishAssignment.bind(this)), t.on("update-user", this.updateUser.bind(this)), t.on("grade-complete", this.finishGrade.bind(this)), t.on("placement-complete", this.finishPlacement.bind(this)), this._init = !0)
 	}, e.prototype.answerQuestion = function(e, t) {
-		Util.log("answerQuestion:"), Util.log(t), this.game.input.keyboard.addKeyCapture([Phaser.Keyboard.BACKSPACE]), this.game.prodigy.network.answerQuestion(t), this.closeFull(), Util.isDefined(e) && e(t.wasCorrect, t.respTime)
+	    console.log(t),
+            this.closeFull(),
+            Util.isDefined(e) && e(true, 0)
 	}, e.prototype.closeQuestion = function() {
 		QI.close(), this.closeFull()
 	}, e.prototype.init = function(e) {
@@ -70237,6 +73466,9 @@ Prodigy.Listener.MessageListener = function(e) {
 				case "atlas":
 					a = "v1/atlases/" + t.key + "/" + t.v + "/" + t.key, this.loader.atlasJSONHash(e, a + ".png", a + ".json");
 					break;
+				case "local":
+					s = o + "assets/audio/voice/" + i.key + "/" + i.v + "/" + i.key, this.loader.audio(e, s + ".ogg", s + ".mp3");
+					break;
 				case "localAtlas":
 					a = t.base + t.key + "/" + t.v + "/" + t.key, this.loader.atlasJSONHash(e, a + ".png", a + ".json");
 					break;
@@ -70264,6 +73496,9 @@ Prodigy.Listener.MessageListener = function(e) {
 				case "localAtlas":
 					if (!this.game.cache.checkImageKey(e)) return !1;
 					break;
+				case "local":
+					if (!this.game.cache.checkSoundKey(e)) return !1;
+					break;
 				case "sfx":
 				case "bgm":
 					if (!this.game.cache.checkSoundKey(e)) return !1
@@ -70274,7 +73509,7 @@ Prodigy.Listener.MessageListener = function(e) {
 };
 var Pathfinder = function() {
 	function e(e, t) {
-		this.init(e, t), this.callbacks = [], this.events = []
+		this.area = e, this.size = t || 20, this.init(e, t), this.callbacks = [], this.events = []
 	}
 	return e.prototype.addCallback = function(e, t) {
 		this.callbacks.push({
@@ -70385,9 +73620,18 @@ Prodigy.GameObj = function(e) {
 	cleanup: function() {
 		this.mail.cleanup(), this.open.cleanup(), this.messageListener.clear(), this.game.broadcaster.clear()
 	},
-	start: function(e, t, i) {
-		(t = t || {}).target = e, t.assets = t.assets || [], t.assets = t.assets.concat(this.game.state.states[e].assets), this.game.state.states[e]._screenData = i, "PVP" === e ? this.game.state.states.PVPLoading.startLoading(t) : Util.isDefined(this.game.state.states[this.game.state.current].fadeOut) ? this.game.state.states[this.game.state.current].fadeOut(t.fadeOut, this.game.state.states.Loading.startLoading.bind(this.game.state.states.Loading, t)) : this.game.state.states.Loading.startLoading(t)
-	},
+	start: function (e, t, i) {
+        (t = t || {}).target = e,
+        t.assets = t.assets || [],
+        t.assets = t.assets.concat(this.game.state.states[e].assets),
+        t.title = t.title || this.game.state.states[e].fullName,
+        this.game.state.states[e]._screenData = i,
+        ("PVP" === e) ?
+            this.game.state.states.PVPLoading.startLoading(t) :
+            Util.isDefined(this.game.state.states[this.game.state.current].fadeOut) ?
+                this.game.state.states[this.game.state.current].fadeOut(t.fadeOut, this.game.state.states.Loading.startLoading.bind(this.game.state.states.Loading, t)) :
+                this.game.state.states.Loading.startLoading(t)
+    },
 	loading: function(e, t) {
 		this.game.input.enabled = !e || t, e ? (Util.isDefined(this.spinner) || (this.spinner = this.create.sprite(640, 360, "core", "loading"), this.game.broadcaster.broadcast(Prodigy.Events.Screen.ADD_CHILD, this.game, [this.spinner, "overlay"])), this.spinner.alpha = 1, this.spinner.anchor.setTo(.5, .5), this.game.add.tween(this.spinner).to({
 			angle: 360
