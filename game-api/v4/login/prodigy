@@ -6,6 +6,7 @@
     "introspection_endpoint": "https://sso.prodigygame.com/oauth/introspect",
     "userinfo_endpoint": "https://sso.prodigygame.com/oauth/userinfo",
     "jwks_uri": "https://sso.prodigygame.com/oauth/discovery/keys",
+    "premises": "https://sso.prodigygame.com/premises"
     "scopes_supported": [
         "openid",
         "employee",
@@ -69,6 +70,7 @@
         "avatar_url",
         "avatar_colour",
         "password"
+        "premises"
     ],
     "code_challenge_methods_supported": [
         "plain",
