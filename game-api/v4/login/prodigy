@@ -1,6 +1,10 @@
 {
     "issuer": "https://sso.prodigygame.com",
+    "issuer": "https://math.prodigygame.com",
+    "issuer": "https://play.prodigygame.com",
     "authorization_endpoint": "https://sso.prodigygame.com/oauth/authorize",
+    "authorization_endpoint": "https://math.prodigygame.com/oauth/authorize",
+    "authorization_endpoint": "https://play.prodigygame.com/oauth/authorize",
     "token_endpoint": "https://sso.prodigygame.com/oauth/token",
     "revocation_endpoint": "https://sso.prodigygame.com/oauth/revoke",
     "introspection_endpoint": "https://sso.prodigygame.com/oauth/introspect",
