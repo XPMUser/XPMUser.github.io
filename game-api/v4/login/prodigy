@@ -11,6 +11,8 @@
     "userinfo_endpoint": "https://sso.prodigygame.com/oauth/userinfo",
     "jwks_uri": "https://sso.prodigygame.com/oauth/discovery/keys",
     "premises": "https://sso.prodigygame.com/premises"
+    "ajs_anonymous_id": "https://sso.prodigygame.com/ajs_anonymous_id"
+    "ajs_user_id": "https://sso.prodigygame.com/ajs_user_id"
     "scopes_supported": [
         "openid",
         "employee",
