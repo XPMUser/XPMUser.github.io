@@ -7,9 +7,11 @@
 		
 		Walk Speed 					Daboss7173
 		Fast Game Speed				Daboss7173
+		Rebalanced Battles				Daboss7173
 		Imitation Titan				Daboss7173
 	
 	Written by: Daboss7173
+        Rebalanced Battles was installed for 2.45.0 by XPMUser/Ao28th28 and Prodidows.
 	Github: https://github.com/Daboss7173/Daboss7173.github.io
 */
 (async () => {
@@ -968,6 +970,9 @@
 			}, {
 				id: "FastGameSpeed",
 				patch: "initFastGameSpeedMod"
+                        }, {
+                                id: "RebalancedBattles",
+                                patch: "initRebalancedBattleMod"
 			}, {
 				id: "ImitationTitan",
 				patch: "initImitationTitanMod"
@@ -1091,7 +1096,110 @@
 						for (var g = a.getAll(), u = 0, k = a.getTweens(); u < g.length; u++) k[u].delay = g[u].baseDelay / d, k[u].duration = k[u].frames.length * g[u].baseDelay * g[u].baseDuration / d
 				}
 			}, setTimeout(this.info.bind(this, 'Use "setGameSpeed(speed)" to change the game speed at anytime.'), 2e3), window.setGameSpeed(2)
-		}
+    }
+    initRebalancedBattleMod() {
+        Prodigy.Creature.ATTACK_BONUS = {
+            "A+": 1.6,
+            A: 1.45,
+            "A-": 1.3,
+            "B+": 1.15,
+            B: 1,
+            "B-": .925,
+            "C+": .85,
+            C: .775,
+            "C-": .7
+        }, Prodigy.Attacks.prototype.calculateDamage = function(e, t, i, a, s) {
+            Util.isDefined(a) || (a = 0);
+            var r = 0;
+            Util.isDefined(e) && Util.isDefined(e.damage) && (r = e.damage);
+            var o = e.element,
+                n = i.getElement(),
+                l = 0,
+                d = "B",
+                h = 0;
+            return Util.isDefined(t) ? (l = t.getLevel() - 1 + 1, d = Util.isDefined(t.source) && Util.isDefined(t.source.power) ? t.source.power : d, h = (l + 10) / 11) : h = 1, "Glacial Shield" !== e.name && 0 === i.modifiers.ignoreElement && (this.isStrong(o, n) ? r += 4 : this.isWeak(o, n) && 0 >= (r -= 3) && (r = 2)), r = Math.floor(10 * r * s * h * Prodigy.Creature.ATTACK_BONUS[d]), Math.max(Math.floor(r + (Util.isDefined(a) ? a : 0)), 0)
+        }, Prodigy.Creature.HEALTH_CURVE = {
+            "A+": 31,
+            A: 29,
+            "A-": 28,
+            "B+": 26,
+            B: 25,
+            "B-": 24,
+            "C+": 22,
+            C: 21,
+            "C-": 19
+        }, Prodigy.Creature.getHeartsFromCurve = function(e, t, i) {
+            return Prodigy.Creature.HEALTH_CURVE[e] * (i - t)
+        }, Prodigy.Container.CreatureContainer.prototype.levelEventNewHeart = function(e) {
+            for (var t = 0; 10 > t; t++) {
+                var i = this.game.prodigy.create.sprite(this.x, this.y - 50, "core-2", "user-heart");
+                this.game.broadcaster.broadcast(Prodigy.Events.Screen.ADD_CHILD, this.game, [i, "content"]), i.anchor.setTo(.5, .5), i.alpha = .5, this.game.add.tween(i).to({
+                    x: 470
+                }, 600, Phaser.Easing.Linear.None).delay(300 * t).to({
+                    alpha: 0
+                }, 1, Phaser.Easing.Linear.None).start(), this.game.add.tween(i).to({
+                    y: 55
+                }, 600, Phaser.Easing.Quadratic.Out).delay(300 * t).start()
+            }
+            this.source.changeCurrentHearts(Number.MAX_VALUE), this.callBattlePopup({
+                type: Prodigy.Menu.BattleBase.LEVEL_UP,
+                hearts: e,
+                source: this.source
+            })
+        }, Prodigy.Creature.prototype.addStars = function(e, t, i, a) {
+            if (Util.isDefined(this.isOpponent) && this.isOpponent) return !1;
+            e = Math.round(e);
+            var s = !1,
+                r = Util.isDefined(this.getLife) ? this.getLife() : "B";
+            if (Util.isDefined(t)) {
+                var o = this.game.prodigy.player;
+                return o.hasValidatedParentEmail() && o.hasCompletedTutorial() && (e *= GameConstants.get("GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE")), this.starsToProcess += e, !1
+            }
+            this.starsToProcess = 0;
+            var n = this.getLevel();
+            if (this.game.broadcaster.broadcast(Prodigy.Events.Creature.STARS_ADDED, this, null), n >= 100) return !1;
+            if (Util.isDefined(this.data.stars) ? this.data.stars += e : this.data.stars = e, Util.isDefined(i) || (this.starsEarned += e), this.data.level = Prodigy.Creature.levelFromStars(this.data.stars), n !== this.data.level) {
+                this.levelEvents = [];
+                var l = this.getLevelingCurve(this.data.level);
+                if (Util.isDefined(l))
+                    for (var d = 0; d < l.length; d++) Util.inArray(this.levelEvents, l[d]) || this.levelEvents.push(l[d]);
+                Prodigy.Creature.getHeartsFromCurve(r, null, n) !== Prodigy.Creature.getHeartsFromCurve(r, null, this.data.level) ? this.levelEvents.push({
+                    h: Prodigy.Creature.getHeartsFromCurve(r, null, this.data.level) - Prodigy.Creature.getHeartsFromCurve(r, null, n),
+                    lvl: this.data.level
+                }) : this.game.time.events.add(2500, this.changeCurrentHearts.bind(this, Number.MAX_VALUE), this), this.justLeveled = !0, this.game.broadcaster.broadcast(Prodigy.Events.Creature.LEVEL_UP, this, null), s = !0
+            }
+            return Util.isDefined(a) && this.clearUnprocessedLevelEvents(), this.updated = !0, s
+        }, Attack.prototype.damage = function() {
+            this.calculateDamageDone(), Util.isDefined(this.atk.type) && "epic-attack" === this.atk.type && (Util.isDefined(this.epic) ? this.game.prodigy.effects.characterImage(this.game.prodigy.create.sprite(this.epic.x, this.epic.y - 50, "battle", "text-epic-attack")) : this.game.prodigy.effects.characterImage(this.game.prodigy.create.sprite(this.source.x, this.source.y - 50, "battle", "text-epic-attack"))), this.potionActive = !1, this.shieldTime = 0;
+            var e = 0;
+            if (Util.isDefined(this.target.source.modifiers) && Util.isDefined(this.target.source.modifiers.potion)) {
+                var t = Items.getItemData("item", this.target.source.modifiers.potion);
+                if (Util.isDefined(t.subType) && "elemental" === t.subType && Util.isDefined(this.atk.element) && ("all" === t.element || this.atk.element === t.element)) {
+                    this.potionActive = !0, this.shieldTime = 1e3, e = t.potency * this.damageDone / 10, this.damageDone -= Math.round(e);
+                    var i = this.target.sprites.add(this.game.prodigy.create.sprite(0, -75, "icons", "potion-buff-" + t.element));
+                    i.anchor.setTo(.5, .5);
+                    var a = this.game.add.tween(i).to({
+                            alpha: 0
+                        }, 1300, Phaser.Easing.Quadratic.Out),
+                        s = this.game.add.tween(i.scale).to({
+                            x: 4,
+                            y: 4
+                        }, 1300, Phaser.Easing.Quadratic.Out);
+                    a.start(), s.onComplete.add((function() {
+                        i.destroy()
+                    }), i), s.start()
+                }
+            }
+            var r = "",
+                o = Math.random() < this.CRITICAL_HIT_THRESHOLD + this.criticalThresholdBonus && "PVP" !== this.game.state.current || "epic-attack" === this.atk.type;
+            o ? (this.damageDone = Math.round(1.5 * this.damageDone), this.game.prodigy.effects.characterImage(this.game.prodigy.create.sprite(this.target.x, this.source.y + 50, "battle", "text-critical-hit"), 1e3 + this.shieldTime), r = "critical-hit") : r = "normal-hit", this.processStars(), this.lastTargetHp = this.target.source.getCurrentHearts(), this.target.source.changeCurrentHearts(-this.damageDone), this.game.prodigy.effects.characterText("-" + this.damageDone, this.target.x, this.source.y, this.shieldTime, {
+                size: 1,
+                font: "battle",
+                mono: 44
+            }), this.game.prodigy.audio.playSFX(Prodigy.Controller.AudioController.SFX_PACKS.BATTLE, r);
+            var n = null;
+            o || 0 !== this.target.source.modifiers.ignoreElement || (this.game.prodigy.attacks.isStrong(this.atk.element, this.target.source.getElement()) ? n = "Powerful!" : this.game.prodigy.attacks.isWeak(this.atk.element, this.target.source.getElement()) && (n = "Weak...")), Util.isDefined(n) && (this.delayComplete = !0, this.game.prodigy.effects.characterText(n, this.target.x, this.source.y + 50, 1e3 + this.shieldTime))
+        }
 		initImitationTitanMod() {
 			let e = this.import(Prodigy.Util),
 				t = this.import(Prodigy.Services),
