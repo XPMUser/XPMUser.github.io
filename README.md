@@ -81,6 +81,10 @@ playing on them, as they all have a healthy mix of outdated versions, poor organ
 Playing this couldn't be more simple. First thing you have to do is open the site, which is automatically updated from this
 repository!
 
+This is the fork that I most highly recommend checking out, as it is the most stable and has the most features. 
+
+I also recommend Ao28th28's Fork.
+
 To do so, you just click this link: https://xpmuser.github.io/oldprodigy/select or this link: https://ao28th28.github.io/oldprodigy/select
 
 Once you're there, you can select a version to play. There are lots of versions to choose from, so try not to be overwhelmed
