@@ -65,6 +65,17 @@ For iPad users: Use a different device to load your save file.
 
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
+## But First Some Disclaimers
+
+Lets get some of the obvious stuff out of the way. This was done by craftersshaft first with Prodigy Reborn, and was the inspiration for this
+project.
+
+Check them out!
+https://github.com/craftersshaft/
+
+This should also go without saying, but I am not associated with any of the people that have made forks of my repository or Daboss7173 with daboss7173.github.io. I do not recommend
+playing on them, as they all have a healthy mix of outdated versions, poor organization, duplicate versions, broken house ui, and multiple bugs.
+
 ## How to play
 
 Playing this couldn't be more simple. First thing you have to do is open the site, which is automatically updated from this
