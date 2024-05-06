@@ -964,7 +964,7 @@
     "meta": {
         "app": "http://www.codeandweb.com/texturepacker",
         "version": "1.0",
-        "image": "general-head.png",
+        "image": "player-head.png",
         "format": "RGBA5555",
         "size": {
             "w": 250,
