@@ -74,7 +74,7 @@ Check them out!
 https://github.com/craftersshaft/
 
 This should also go without saying, but I am not associated with any of the people that have made forks of my repository or Daboss7173 with daboss7173.github.io. I do not recommend
-playing on them, as they all have a healthy mix of outdated versions, poor organization, duplicate versions, broken house ui, and multiple bugs.
+playing on them, as they all have a healthy mix of outdated versions, poor organization, duplicate versions, broken 2014-2015 house uis, and multiple bugs.
 
 ## How to play
 
