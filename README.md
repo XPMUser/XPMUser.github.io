@@ -1,4 +1,4 @@
-# XPMUser.github.io
+![image](https://github.com/XPMUser/XPMUser.github.io/assets/109283781/b0b26b33-805e-4c96-a6fb-ae7114ad27a3)# XPMUser.github.io
 
 Old Prodigy Wiki: https://old-prodigy.fandom.com/f
 Reddit Community: https://www.reddit.com/r/OldProdigy/
@@ -117,6 +117,10 @@ Currently, these are the versions that support modpacks:
  - 2-50-0
  - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
  - 2-50-0 Pro Edition http://op2019.byethost18.com/play/?mods=WalkSpeed,FastGameSpeed,ImitationTitan
+
+If you're looking to submit a modpack, you may add Daboss7173 on Discord and he might just feature it on this site!
+I'm somehow unable to install modpacks correctly.
+Discord Tag: daboss7173
 
 ## List of Versions
 
