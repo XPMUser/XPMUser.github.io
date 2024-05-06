@@ -1,4 +1,4 @@
-![image](https://github.com/XPMUser/XPMUser.github.io/assets/109283781/b0b26b33-805e-4c96-a6fb-ae7114ad27a3)# XPMUser.github.io
+# XPMUser.github.io
 
 Old Prodigy Wiki: https://old-prodigy.fandom.com/f
 Reddit Community: https://www.reddit.com/r/OldProdigy/
@@ -93,6 +93,7 @@ you're playing in, click the 'other' tab instead.
 This repository features dynamic modpacks, you'll be able to toggle mods as you see fit, and be able to combine multiple mods together for dynamic modpacks.
 
 Currently, these are the versions that support modpacks:
+ - 1-10-0 https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed,FastGameSpeed
  - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
  - 1-24-0 https://xpmuser.github.io/oldprodigy/1-24-0/?mods=WalkSpeed FastGameSpeed's a no go.
