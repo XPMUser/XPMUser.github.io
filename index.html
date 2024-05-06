@@ -88,6 +88,10 @@
 		
             <a onclick="Accessibility('')" class="button" style="top: 68px; left: 270px; position: absolute">
             	<img alt="" src="/oldprodigy/images/1-39-0.png">
+            </a>
+
+            <a onclick="ProdigyInsider('')" class="button" style="top: 180px; left: 270px; position: absolute">
+            	<img alt="" src="/oldprodigy/images/1-50-0.png">
             </a>		
         </div>
         
@@ -119,6 +123,15 @@ ExitSelection = function() {
 	PlayClick();
 	setTimeout(()=> {
 		window.location.href = "https://ao28th28.github.io/pickles/";
+	}, 200);
+},
+ProdigyInsider = function() {
+	if (currentMenu != Menu.Select) {
+		return
+	};
+	PlayClick();
+	setTimeout(()=> {
+		window.location.href = "https://xpmuser.github.io/Website-Tester/";
 	}, 200);
 },
 Prodidows = function() {
