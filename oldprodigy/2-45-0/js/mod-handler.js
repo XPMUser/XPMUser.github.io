@@ -50,6 +50,7 @@
 		Quest: 8,
 		Element: 9,
 		Map: 10,
+		RebalancedBattles: 11,
 		Menu: 12,
 		Breadcrumbs: 13,
 		Player: 14,
