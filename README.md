@@ -423,7 +423,7 @@ List of versions:
 
 - 1.30.R | Credits to Craftersshaft and more!
 
- This is now a fixed version of Prodigy Reborn 1.0. I made Plumber's Cap unobtainable and member only due to the reasons that are mentioned here: https://old-prodigy.fandom.com/wiki/Plumber%27s_Cap.
+ This is now a fixed version of Prodigy Reborn 1.0. I made Plumber's Cap unobtainable and member only due to the reasons that are mentioned here: https://old-prodigy.fandom.com/wiki/Plumber%27s_Cap. Credits to Craftersshaft for Prodigy Reborn 1.0.
 
 - 6.136.0 | Coming Soon! NEW AVATAR!? EW! 2
 
