@@ -73,8 +73,9 @@ project.
 Check them out!
 https://github.com/craftersshaft/
 
-This should also go without saying, but I'm not associated with any of the people that have made forks of my repository, Slappygig with https://slappygig.github.io (Slappygig's Fork), or Daboss7173 with https://daboss7173.github.io (The Old Prodigy restorer) except Ao28th28 with https://ao28th28.github.io. I don't recommend
-playing on them, as they all have a healthy mix of outdated versions, poor organization, duplicate versions, broken 2014-2015 house uis, unsavable house data for 1.10.0, and/or multiple bugs.
+This should also go without saying, but I'm not associated with any of the people that have made forks of my repository, Slappygig with https://slappygig.github.io (Slappygig's Fork), or Daboss7173 with https://daboss7173.github.io (The Old Prodigy restorer) except Ao28th28 with https://ao28th28.github.io. for a variety of reasons (mainly the ocd inducing level of duplicate versions and poor, inconsistant organization, broken 2014-2015's house uis, unsavable house data for 1.10.0, etc).
+
+So yeah. You can check them out if you want. I'm not gonna stop you or anything, but don't say I didn't warn you.
 
 ## How to play
 
