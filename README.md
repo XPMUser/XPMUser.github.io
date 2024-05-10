@@ -299,9 +299,9 @@ List of versions:
 
   This version introduced sidequests. You can collect Fireflies, Frozen Somethings and Ice Crystals.    
 
-- 1.25.3 | Big Hex now exists! Coming Soon!
+- 1.25.3 | Big Hex now exists!
 
-  You can now adopt Big Hex by using settings (the options menu) and another way to adopt Big Hex was in 2016 and it's no longer doable. The portal is now on the 2014-2016's map.
+  This version contains placeholders!
 
 - 1.28.1 | Just as many radical changes!
 
