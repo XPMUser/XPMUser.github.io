@@ -8,6 +8,8 @@
 	
 	<style>
 	body {
+		background-color: #627CDE;
+	}
 	
 	.bg-image {
 		height: 100%;
@@ -17,10 +19,7 @@
 		right: 0px;
 		bottom: 0px;
 		position: fixed;
-		background-size: cover;		
-                background-color: #627CDE;
-	}
-
+		background-size: cover;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		background-position: center center;
@@ -34,14 +33,14 @@
 		transform: translate(-8px, -8px);
 	}
 	
-        .definitive-banner {
+	.definitive-banner {
 		user-select: none;
 		position: fixed;
 		left: 0%;
 		bottom: 0%;
 		transform: translate(+8px, -8px);
 	}
-
+	
 	.select-panel {
 		user-select: none;
 		display: block;
@@ -73,7 +72,7 @@
 		display: block;
 		top: 140px;
 		width: 540px;
-		font: 14pt "BrianneTod";
+		font: 14pt "Arial";
 		text-align: center;
 		color: rgb(0, 0, 0);
 	}
@@ -83,12 +82,19 @@
 		position: absolute;
 		top: 10px;
 		width: 238px;
-		font: 12pt "BrianneTod";
+		font: 12pt "Tahoma";
 		text-align: center;
 		font-weight: bold;
 		-webkit-text-stroke: #000;
 		-webkit-text-stroke-width: medium;
 		color: rgb(255, 255, 255);
+	}
+	
+	.button-disabled {
+		filter: brightness(0.5);
+		user-select: none;
+		display: block;
+		position: fixed;
 	}
 	
 	.button {
@@ -122,9 +128,9 @@
 		top: 128px;
 		left: 24px;
 		width: 420px;
-		font: 16px "BrianneTod", Pipe Dream;
+		font: 16px "Pipe Dream", sans-serif;
 		font-weight: bold;
-		color: rgb(255, 255, 255);
+		color: rgb(0, 0, 0);
 	</style>
 	
 <body>
@@ -146,15 +152,22 @@
 
 	<div id="background-9" class="bg-image" style="background-image: url(&quot;./images/Background-9.png&quot;); display: none"></div>	
 
-	<div id="background-10" class="bg-image" style="background-image: url(&quot;./images/Background-9.png&quot;); display: none"></div>
+	<div id="background-10" class="bg-image" style="background-image: url(&quot;./images/Background-10.png&quot;); display: none"></div>
 	
 	<div class="warning-panel" id="beta-popup" draggable="false">
 		<img alt="Warning!" src="./images/WarningPanel.png" draggable="false">
 		
 		<div class="warning-body" draggable="false">
-			<div>This version is still in beta, and may not function as intended. Expect the unexpected every now and again, and be sure to save frequently.</div>
+			<div>
+				This version is still in beta. Things may not function as expected. If you encounter any bugs, be sure to make an issue on my
+				<a href="https://discord.gg/pXRuQWu9Cj" draggable="false">
+					Github
+				</a> so it can be fixed.
+			</div>
 			<br>
-			<div>Do you want to continue?</div>
+			<div>
+				Do you want to continue?
+			</div>
 		</div>
 		
 		<a onclick="EnterGame(betaConfirmCallback)" class="button" style="bottom: 24px; left: 24px;" draggable="false">
@@ -185,7 +198,7 @@
 			<img src="./images/MenuPanel-Overlay.png" draggable="false">
 			
 				<div id="versions-1" draggable="false">
-					
+				
 					<a onclick="ModSelector('1-28-1')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
 						<img src="./images/ModSelectButton.png" draggable="false">
 						
@@ -264,8 +277,8 @@
 						<div class="intext" draggable="false">
 							<img alt="1-30-R" src="./images/1-30-R.png" draggable="false">
 						</div>
-					</a>						
-					
+					</a>
+
 				</div>
 			
 				<div id="mods-1-28-1" style="display: none" draggable="false">
@@ -532,6 +545,11 @@
 				<img alt="Go back" src="./images/Back.png" draggable="false">
 			</a>
 		</div>
+			
+		<a id="mod-select-apply"  onclick="StartGameMod(currentModVersion)" class="button-disabled" style="bottom: 104px; right: 24px; position: absolute; display: block;" draggable="false">
+			<img alt="Start" src="./images/Apply.png" draggable="false">
+		</a>
+		
 	</div>
 	
 	<div class="select-panel" id="version-select" draggable="false">
@@ -583,7 +601,7 @@
 		</div>
 		
 	</div>
-
+	
 	<div id="definitive-edition" class="definitive-banner" draggable="false">
 		<img src="./images/FreeButton-Banner.png" draggable="false" style="width: 410px; text-align: center;">
 		<div style="left: 50%; top: 0px; transform: translate(-50%); position: fixed; width: 300px;">
@@ -592,7 +610,7 @@
 			</a>
 		</div>
 	</div>
-	
+		
 	<div id="ultimate-edition" class="ultimate-banner" draggable="false">
 		<img src="./images/FreeButton-Banner.png" draggable="false" style="width: 410px; text-align: center;">
 		<div style="left: 50%; top: 0px; transform: translate(-50%); position: fixed; width: 300px;">
@@ -601,7 +619,7 @@
 			</a>
 		</div>
 	</div>
-	
+
 </body>
 
 <script>
@@ -975,9 +993,9 @@ Versions = [
 		src: "./images/1-11-0.png",
 		alt: "Version 1.11.0",
 		ver: "1-11-0"
-	}	
+	}
 ],
-ModPages = {	
+ModPages = {
 	"1-28-1": {
 		id: "mods-1-28-1"
 	},	
@@ -1062,12 +1080,13 @@ Backgrounds = [
 		element: "background-10",
 		id: "10",
 		nid: 10
-	}	
+	}
 ],
 selectedMods = [],
 currentPage = 0,
 currentMenu = Menu.Select,
 currentModPage = ModPages.selection,
+currentModVersion = null,
 (new Audio("./audio/click.mp3")).load(),
 getCookie = function(cname) {
 	let name = cname + "=";
@@ -1191,17 +1210,23 @@ ModSelector = function(version) {
 		DeselectAllMods(version),
 		document.getElementById(currentModPage.id).style.display = "none",
 		currentModPage = ModPages[version],
+		currentModVersion = version,
 		document.getElementById(currentModPage.id).style.display = "block",
 		document.getElementById("mod-back").setAttribute("onclick", "ModSelector()"),
 		document.getElementById("select-mod-version").style.display = "none",
-		document.getElementById("select-mod-play").style.display = "block"
+		document.getElementById("select-mod-play").style.display = "block",
+		//document.getElementById("mod-select-apply").style.display = "block",
+		document.getElementById("mod-select-apply").className = "button-disabled"
 	} else {
 		document.getElementById(currentModPage.id).style.display = "none",
 		currentModPage = ModPages.selection,
+		currentModVersion = null,
 		document.getElementById(currentModPage.id).style.display = "block",
 		document.getElementById("mod-back").setAttribute("onclick", "closeBetaPopup()"),
 		document.getElementById("select-mod-version").style.display = "block",
-		document.getElementById("select-mod-play").style.display = "none"
+		document.getElementById("select-mod-play").style.display = "none",
+		//document.getElementById("mod-select-apply").style.display = "none",
+		document.getElementById("mod-select-apply").className = "button-disabled"
 	};
 	resizeMenuElements();
 },
@@ -1214,6 +1239,11 @@ AddMod = function(modid, version) {
 		document.getElementById("mod-" + modid + "-" + version).setAttribute('src', './images/ModSelectButton.png'),
 		selectedMods.splice(selectedMods.indexOf(modid), 1)
 	};
+	if (selectedMods.length < 1) {
+		document.getElementById("mod-select-apply").className = "button-disabled"
+	} else {
+		document.getElementById("mod-select-apply").className = "button"
+	}
 },
 DeselectAllMods = function(version) {
 	for(let i = 0; i < selectedMods.length; i += 1) {
@@ -1222,11 +1252,11 @@ DeselectAllMods = function(version) {
 	selectedMods = []
 },
 StartGameMod = function(version) {
+	if (selectedMods.length < 1 || version == null) {
+		return;
+	}
 	PlayClick();
 	let ModString = '?mods=' + selectedMods.toString();
-	if (selectedMods.length < 1) {
-		ModString = ""
-	};
 	setTimeout(()=> {
 		window.location.href = "../" + version + "/" + ModString;
 	}, 200);
@@ -1305,7 +1335,7 @@ playUltimateEdition = function() {
 	PlayClick();
 	setTimeout(()=> {
 		window.location.href = "https://xpmuser.github.io/oldprodigy/play/";
-	}, 200);	
+	}, 200);
 },
 resizeFromWindow = function(element) {
 	let verSelect = element;
