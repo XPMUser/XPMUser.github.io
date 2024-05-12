@@ -73,7 +73,7 @@ project.
 Check them out!
 https://github.com/craftersshaft/
 
-If there is a problem with a fork of this repository or Daboss7173.gihtub.io, contact the person responsible for the fork for more than help or Daboss7173 (for help). Not me. Thank you.
+If there is a problem with a fork of this repository, contact the person responsible for the fork for more than help or Daboss7173 (for help and/or hints only).
 
 ## How to play
 
