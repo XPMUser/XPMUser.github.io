@@ -73,7 +73,7 @@ project.
 Check them out!
 https://github.com/craftersshaft/
 
-If there is a problem with a fork of this repository, contact the person responsible for the fork for more than help or Daboss7173 (for help and/or hints only).
+If there's a problem with a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or 1.11.0 due to the loss of housedata.
 
 ## How to play
 
