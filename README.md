@@ -74,7 +74,7 @@ Check them out!
 https://github.com/craftersshaft/
 
 This should also go without saying, but I am not associated with any of the people that have made forks of my repository. If there is a
-problem with a fork of this repository, contact the person responsible for the fork. Not me. Thank you.
+problem with a fork of this repository, contact the person responsible for the fork or Daboss7173 (for help). Not me. Thank you.
 
 ## How to play
 
