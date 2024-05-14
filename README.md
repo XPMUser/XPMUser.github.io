@@ -4,7 +4,7 @@ Old Prodigy Wiki: https://old-prodigy.fandom.com/f
 Reddit Community: https://www.reddit.com/r/OldProdigy/
 Discord Server: https://discord.gg/9HMtcgFQRc
 
-Warning: Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom. Microsoft Edge doesn't support downloads on Xbox.
+Warning: Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom.
 
 Click on the left arrow to go back.
 
@@ -62,7 +62,8 @@ I am still actively working on bettering it, so if you have any problems with bu
 and I'll try to address it as soon as I can!
 
 For iPad users: Use a different device to load your save file.
-For Xbox users: Play Daboss7173's Definitive Edition if you want your character saved in Microsoft Edge or use a different device if you want your character saved from Microsoft Edge from open source versions of Old Prodigy.
+
+For Xbox users: Play Daboss7173's Definitive Edition if you want your character saved in Microsoft Edge or use a different device if you want your character saved from open source versions of Old Prodigy in Microsoft Edge.
 
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
