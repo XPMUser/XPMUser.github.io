@@ -550,7 +550,7 @@ List of versions:
 
    It got reupdated again. New Update: Parts of Clockwork Town covered some of the things that couldn't be installed. The Rebalanced Battles mod's a no-go for here as well. I'm still working on Sign in with Google, Clockwork Town, etc.
 
- - My Ultimate Edition in 1.50.0 Mode | Credits to Daboss7173 for the login thing! http://op1500.byethost22.com/play/
+ - My Ultimate Edition in 1.50.0 Mode | Credits to Daboss7173 for the login thing! https://xpmuser.github.io/oldprodigy/play/1-50-0%20Ultimate%20Edition/?mods=WalkSpeed,FastGameSpeed,RebalancedBattles/
 
    It somehow is like pdenot1.50.0. This is an open source version. I had to use the pretty print feature to easily make some changes in less time.
 
@@ -580,6 +580,6 @@ List of versions:
 
 - Prodigy Insider Preview (Canary Channel) | Coming Soon!
 
-  The lights have now removed the shadows. Too many art updates and more walkways! The house items are also interactable again.
+  Coming Soon!
 
 You can choose any version you want!
