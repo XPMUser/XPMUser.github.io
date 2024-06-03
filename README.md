@@ -75,7 +75,7 @@ project.
 Check them out!
 https://github.com/craftersshaft/
 
-If there's a problem with a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 due to the loss of your housedata.
+If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or Slappygig's (Slappygig.github.io) 1.10.0 due to the loss of your housedata.
 
 ## How to play
 
@@ -558,10 +558,6 @@ List of versions:
  - My Ultimate Edition in 1.80.0 Mode | 
 
    Tba. http://op2018.byethost4.com/play/
-
-- Prodigy House Simulator (oldprodigyde/undefined/) | Your character is at home.
-
-  The saves from March/Early June 2015 can't go home.
     
 - The Current Version | The Actual Multiplayer Mode!
   
