@@ -22,9 +22,105 @@
             "pivot": {
                 "x": 0.5,
                 "y": 0.5
-            }
+            },
         },
         "book": {
+            "frame": {
+                "x": 2,
+                "y": 935,
+                "w": 73,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 4,
+                "y": 0,
+                "w": 73,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+                    },
+        "1-NaN": {
+            "frame": {
+                "x": 2,
+                "y": 935,
+                "w": 73,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 4,
+                "y": 0,
+                "w": 73,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+                    },
+        "17-NaN": {
+            "frame": {
+                "x": 2,
+                "y": 935,
+                "w": 73,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 4,
+                "y": 0,
+                "w": 73,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+                    },
+        "62-NaN": {
+            "frame": {
+                "x": 2,
+                "y": 935,
+                "w": 73,
+                "h": 80
+            },
+            "rotated": false,
+            "trimmed": true,
+            "spriteSourceSize": {
+                "x": 4,
+                "y": 0,
+                "w": 73,
+                "h": 80
+            },
+            "sourceSize": {
+                "w": 80,
+                "h": 80
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+                    },
+        "70-NaN": {
             "frame": {
                 "x": 2,
                 "y": 935,
