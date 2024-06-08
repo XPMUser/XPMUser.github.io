@@ -497,10 +497,6 @@ List of versions:
    3. https://xpmuser.github.io/oldprodigy/pde2019/?mods=FastGameSpeed,ImitationTitan/
    4. https://xpmuser.github.io/oldprodigy/pde2019/?mods=WalkSpeed,FastGameSpeed,ImitationTitan/   
 
-- Daboss7173's Prodigy Definitive Edition | Closed Source! http://oldprodigy.byethost5.com/play/
-
-  This is in 1.50.0 mode. Multiplayer Mode is coming soon! You can't even break the 4th wall due to it being closed source instead of open source. You can only use the saves from this version.
-
 - My Pro Edition Versions:
 
   - 1.11.0 Mode | Fixed House UI! http://op1110.byethost7.com/play/
