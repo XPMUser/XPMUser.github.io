@@ -116,6 +116,7 @@ Currently, these are the versions that support modpacks:
  - 1-10-0 https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed,FastGameSpeed
  - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
+ - 1-22-4 (if it boots up)
  - 1-24-0 https://xpmuser.github.io/oldprodigy/1-24-0/?mods=WalkSpeed FastGameSpeed's a no go.
  - 1-28-1 Beta (Not marked as beta in the version selection screen!)
  - 1-29-0
