@@ -70,7 +70,7 @@ For Xbox users: Play Daboss7173's Definitive Edition if you want your character 
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
 # System Requirements
-OS: Windows XP or later for the version selection pages (with Prodigy themes) to work.
+Windows OS: Windows XP or later
 
 ## But First Some Disclaimers
 
