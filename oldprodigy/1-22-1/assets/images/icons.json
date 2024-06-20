@@ -5576,8 +5576,8 @@
 	"version": "1.0",
 	"image": "icons.png",
 	"format": "RGBA8888",
-	"size": {"w":2048,"h":1491},
+	"size": {"w":2049,"h":1492},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:93f18f98494be8397644651d558c715a:2bca9ed056a91587c10c7b2c1820388f:b5c5bd7252d2048fecbb1bda1760f9ef$"
+	"smartupdate": "$TexturePacker:SmartUpdate:93f18f98494be8397642651d558c715a:2bca9ed056a91587c10c7b2c1820388f:b5c5bd7252d2048fecbb1bda1760f9ef$"
 }
 }

@@ -1386,6 +1386,15 @@
 	"sourceSize": {"w":50,"h":50},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"red-rect":
+{
+	"frame": {"x":679,"y":798,"w":13,"h":19},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":13,"h":19},
+	"sourceSize": {"w":13,"h":19},
+	"pivot": {"x":0.5,"y":0.5}
+},
 "mail-corner":
 {
 	"frame": {"x":1166,"y":293,"w":40,"h":40},
@@ -2161,12 +2170,12 @@
 	"pivot": {"x":0.5,"y":0.5}
 }},
 "meta": {
-	"app": "https://web.archive.org/web/20160306002400/http://www.codeandweb.com/texturepacker",
+	"app": "http://www.codeandweb.com/texturepacker",
 	"version": "1.0",
 	"image": "core.png",
 	"format": "RGBA8888",
-	"size": {"w":1209,"h":1022},
+	"size": {"w":1208,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:abcd61e02f8257bc42816cc754f1f8e8:6df54ec6ebe0f0d9b34050c2cb074cea:55de436f7a9fe3598f9e950639dea687$"
+	"smartupdate": "$TexturePacker:SmartUpdate:7bcd61e02f8257bc42816cc754f1f8e8:6df54ec6ebe0f0d9b34050c2cb074cea:55de436f7a9fe3598f9e950639dea687$"
 }
 }
