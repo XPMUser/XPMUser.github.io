@@ -26,13 +26,9 @@ Song Makers: Jamie Christopherson and Matthew Pablo
 Song Editors: Prodigy Education a.k.a Prodigy Game
 Font Makers: Prodigy Education and more
 Playtesters: Daboss7173, XPMUser/Ao28th28, Mr. Inquiry, and more
-Pictures: Prodigy Education, the mustache creator, and more.
-
+Pictures: Prodigy Education, the mustache creator, and more
 Introducers: Ao28th28 a.k.a XPMUser, Mr. Inquiry, and more
-
 Original Prodigy Makers: Rohan Mahimker/Alexander Peters
-
-I gave credits above.
 
 XPMUser is the default username of an account to use in Windows XP Mode in Windows 7.
 I'm Ao28th28 (The PVZ Unknown Edition Maker).
