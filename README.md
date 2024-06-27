@@ -443,7 +443,7 @@ List of versions:
 
 - 1.11.0 | April 2015
 
-  ...
+  Toontown music
 
 - My Prodigy Definitive Editions List | More!
 
