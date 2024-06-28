@@ -35,8 +35,6 @@ I'm Ao28th28 (The PVZ Unknown Edition Maker).
 
 Old Prodigy English is coming soon!
 
-Make a schedule to find good times to play Daboss7173's Prodigy Definitive Edition so that we don't have problems with the arena. https://oldprodigy.onrender.com/play/
-
 # Table of Contents 
 1. XPMUser.github.io https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#xpmusergithubio
 2. Table of Contents https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#table-of-contents
