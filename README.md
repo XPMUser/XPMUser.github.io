@@ -130,6 +130,7 @@ Currently, these are the versions that support modpacks:
  - pde1500 Beta (Prodigy Definitive Edition/Modified 1-50-0)
  - 1-50-0 Ultimate Edition: https://xpmuser.github.io/oldprodigy/play/1-50-0%20Ultimate%20Edition/?mods=WalkSpeed,FastGameSpeed,RebalancedBattles/&i=2
  - 1-51-0
+ - pde1.51.0 Beta (Prodigy Definitive Edition/Modified 1-51-0)
  - 1-51-1
  - 1-52-0
  - 1-70-0: https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-70-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed,RebalancedBattles https://xpmuser.github.io/oldprodigy/1-70-0/?mods=FastGameSpeed,RebalancedBattles https://xpmuser.github.io/oldprodigy/1-70-0/?mods=RebalancedBattles https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed,FastGameSpeed https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed,FastGameSpeed,RebalancedBattles
