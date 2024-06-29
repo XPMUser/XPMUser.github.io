@@ -46299,6 +46299,225 @@
 				},
 				"v": 1
 			}
+		},
+		{
+			"ID": 97,
+			"assetID": 97,
+			"type": "outfit",
+			"gender": 1,
+			"data": {
+				"drop": 1,
+				"name": "Training Garb",
+				"price": 200,
+				"member": 1,
+				"rarity": 0,
+				"effects": [
+					33
+				],
+				"flavorText": "Worn for practice dueling, it is not uncommon to see this garb singed and torn."
+			},
+			"metadata": {
+				"v": 2,
+				"legs": {
+					"x": -4,
+					"y": -14,
+					"pivot": {
+						"x": 20,
+						"y": 6
+					}
+				},
+				"type": "localatlas",
+				"shirt": {
+					"x": -5,
+					"y": -14,
+					"pivot": {
+						"x": 62,
+						"y": 32
+					}
+				},
+				"vIcon": 2,
+				"leftArm": {
+					"x": -1,
+					"y": -24,
+					"pivot": {
+						"x": 10,
+						"y": 14
+					},
+					"handIK": {
+						"x": 9,
+						"y": 13
+					}
+				},
+				"rightArm": {
+					"x": -13,
+					"y": -26,
+					"pivot": {
+						"x": 20,
+						"y": 14
+					}
+				}
+			}
+		},
+		{
+			"ID": 97,
+			"assetID": 97,
+			"type": "outfit",
+			"gender": 2,
+			"data": {
+				"drop": 1,
+				"name": "Training Garb",
+				"price": 200,
+				"member": 1,
+				"rarity": 0,
+				"effects": [
+					33
+				],
+				"flavorText": "Worn for practice dueling, it is not uncommon to see this garb singed and torn."
+			},
+			"metadata": {
+				"v": 2,
+				"legs": {
+					"x": -6,
+					"y": -14,
+					"pivot": {
+						"x": 20,
+						"y": 6
+					}
+				},
+				"type": "localatlas",
+				"shirt": {
+					"x": -5,
+					"y": -15,
+					"pivot": {
+						"x": 62,
+						"y": 32
+					}
+				},
+				"vIcon": 2,
+				"leftArm": {
+					"x": 1,
+					"y": -23,
+					"pivot": {
+						"x": 10,
+						"y": 14
+					},
+					"handIK": {
+						"x": 12,
+						"y": 13
+					}
+				},
+				"rightArm": {
+					"x": -13,
+					"y": -27,
+					"pivot": {
+						"x": 20,
+						"y": 14
+					}
+				}
+			}
+		},
+		{
+			"ID": 97,
+			"assetID": 1420,
+			"type": "outfit",
+			"gender": 0,
+			"data": {
+				"drop": 1,
+				"name": "Training Garb",
+				"price": 200,
+				"member": 1,
+				"rarity": 0,
+				"effects": [
+					33
+				],
+				"flavorText": "Worn for practice dueling, it is not uncommon to see this garb singed and torn."
+			},
+			"metadata": {
+				"type": "multiple",
+				"vIcon": 1,
+				"assets": {
+					"male": {
+						"v": 2,
+						"legs": {
+							"x": -6,
+							"y": -14,
+							"pivot": {
+								"x": 20,
+								"y": 6
+							}
+						},
+						"type": "localatlas",
+						"shirt": {
+							"x": -5,
+							"y": -15,
+							"pivot": {
+								"x": 62,
+								"y": 32
+							}
+						},
+						"leftArm": {
+							"x": 1,
+							"y": -23,
+							"pivot": {
+								"x": 10,
+								"y": 14
+							},
+							"handIK": {
+								"x": 12,
+								"y": 13
+							}
+						},
+						"rightArm": {
+							"x": -13,
+							"y": -27,
+							"pivot": {
+								"x": 20,
+								"y": 14
+							}
+						}
+					},
+					"female": {
+						"v": 2,
+						"legs": {
+							"x": -4,
+							"y": -14,
+							"pivot": {
+								"x": 20,
+								"y": 6
+							}
+						},
+						"type": "atlas",
+						"shirt": {
+							"x": -5,
+							"y": -14,
+							"pivot": {
+								"x": 62,
+								"y": 32
+							}
+						},
+						"leftArm": {
+							"x": -1,
+							"y": -24,
+							"pivot": {
+								"x": 10,
+								"y": 14
+							},
+							"handIK": {
+								"x": 9,
+								"y": 13
+							}
+						},
+						"rightArm": {
+							"x": -13,
+							"y": -26,
+							"pivot": {
+								"x": 20,
+								"y": 14
+							}
+						}
+					}
+				}
+			}
 		}
 	],
 	"pet": [
