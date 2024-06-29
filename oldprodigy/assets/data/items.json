@@ -46486,7 +46486,7 @@
 								"y": 6
 							}
 						},
-						"type": "atlas",
+						"type": "localatlas",
 						"shirt": {
 							"x": -5,
 							"y": -14,
