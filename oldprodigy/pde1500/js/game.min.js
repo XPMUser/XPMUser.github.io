@@ -29114,7 +29114,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Want to change your equipment? Open up the Backpack from the Main Menu!"
 	}, {
-		text: "Save your game using the save character button in the Character tab on the Settings Menu!"
+		text: "Save your game using the save character button in the Other tab on the Settings Menu!"
 	}, {
 		text: "Google Sign-in, Multiplayer Mode, etc are all coming soon."
 	}, {
