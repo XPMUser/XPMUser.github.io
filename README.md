@@ -481,11 +481,11 @@ List of versions:
 
  - Pde1500 (1.50.0) | Open Source!
 
-   Credits to Daboss7173 for the login thing.
+   Credits to Daboss7173 for the login thing, the Peddler's Corner zone and the Market's right path to Peddler's Corner, bringing back the fixed versions of math problems to Old Prodigy, bug fixes, making a few things doable without the api, etc. Firefly Garden looks like Peddler's Corner. Credits to Prodigy Education and Toonigy for Math.
 
  - Pde1.51.0 (1.51.0) | 2017-2022's Avatar!
 
-   Some people didn't like the 2017-2022 avatar, but I had trouble replacing the character back to 2013-2017. 
+   Some people didn't like the 2017-2022 avatar, but I had trouble replacing the character back to 2013-2017. Credits to Daboss7173 for the Peddler's Corner zonebug fixes, making a few things doable without the api, and the Market's right path to Peddler's Corner. Firefly Garden looks like Peddler's Corner. There's also a problem making extra clothes and/or wands without using Prodigy Education's file directory called "cdn.prodigygame.com" just for extra things.
 
  - Pde2017 (1.60.0) | TBA
 
