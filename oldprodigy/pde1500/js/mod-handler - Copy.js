@@ -8,6 +8,9 @@ var GameMods = {
         }, {
                 id: "RebalancedBattles",
                 patch: "initRebalancedBattleMod"
+	    }, {
+	            id: "Mathless",
+                patch: "initMathlessMod"
         }]
 };
 class ModHandler {
@@ -62,7 +65,7 @@ class ModHandler {
                 Util.isDefined(e) && console.log("%c %c %c " + e + " %c %c ", "background: #14b4", "background: #14ba", "background: #14bf; color: #FFF", "background: #14ba", "background: #14b4")
         }
         error(e) {
-                Util.isDefined(e) && console.log("%c %c %c " + e + " %c %c ", "background: #a114", "background: #a11a", "background: #a11f; color: #FFF", "background: #a11a", "background: #a114")
+                Util.isDefined(e) && console.log("%c %c %c " + e + " %c %c ", "background: #a114", "background: #a11a", "background: #a11f; color: #FFF", "background: #a11a", "background: #a114")			
         }
         initWalkSpeedMod() {
                 this.game.prodigy.player.walkSpeed = 1, Prodigy.Container.CreatureContainer.prototype.setPath = function(e, t, i) {
@@ -82,15 +85,16 @@ class ModHandler {
                                 Util.isDefined(a) ? (a.onComplete.addOnce(this.stand, this), Util.isDefined(t) && a.onComplete.addOnce(t), this.walk(), this.mode = 0, Util.isDefined(a) && a.start(), Util.isDefined(s) && s.start()) : (Util.isDefined(t) && t(), this.stand())
                         }
                 }, Prodigy.Menu.SystemMenu.prototype.openOther = function() {
-                        this.game.prodigy.create.textButton(this.content, 150, 50, {
-			text: "Watch Intro",
+			var e = Util.isDefined(this.game.prodigy.player.world) ? "Your world is: " + Prodigy.Menu.Server.getServerName(this.game.prodigy.player.world) : "Click on the save character button and choose where you want your save to be in to save your character. Drag the range slider to the left to make your wizard walk slow and to the right to make your wizard walk faster.";
+		this.game.prodigy.create.font(this.content, 5, 10, e, {
+			width: 600,
+			align: "center"
+		}), this.game.prodigy.create.textButton(this.content, 150, 150, {
+			text: "Save Character",
 			size: Prodigy.Control.TextButton.MED
-		}, this.openIntro.bind(this)), this.game.prodigy.create.textButton(this.content, 150, 125, {
-                                text: "Toggle Member",
-                                size: Prodigy.Control.TextButton.MED
-                        }, this.toggleMember.bind(this)), this.walkSpeedBar = this.game.prodigy.create.slider(this.content, 37, 215, 525, !1, !1), this.walkSpeedBar.reset(200, 0, Math.floor(10 * (this.game.prodigy.player.walkSpeed - .1)), this.setWalkSpeed.bind(this))
+		}, this.saveCharacter.bind(this)), this.walkSpeedBar = this.game.prodigy.create.slider(this.content, 37, 255, 525, !1, !1), this.walkSpeedBar.reset(200, 0, Math.floor(10 * (this.game.prodigy.player.walkSpeed - .1)), this.setWalkSpeed.bind(this))
                 }, Prodigy.Menu.SystemMenu.prototype.setWalkSpeed = function() {
-                        this.game.prodigy.player.walkSpeed = (this.walkSpeedBar.page + 1) / 10, this.game.prodigy.create.font(this.content, 37, 185, "Walk Speed", {
+                        this.game.prodigy.player.walkSpeed = (this.walkSpeedBar.page + 1) / 10, this.game.prodigy.create.font(this.content, 37, 225, "Walk Speed", {
                                 width: 525,
                                 align: "center"
                         })
@@ -252,6 +256,8 @@ class ModHandler {
                         o || 0 !== this.target.source.modifiers.ignoreElement || (this.game.prodigy.attacks.isStrong(this.atk.element, this.target.source.getElement()) ? n = "Powerful!" : this.game.prodigy.attacks.isWeak(this.atk.element, this.target.source.getElement()) && (n = "Weak...")), Util.isDefined(n) && (this.delayComplete = !0, this.game.prodigy.effects.characterText(n, this.target.x, this.source.y + 50, 1e3 + this.shieldTime))
                 }
         }
+        initMathlessMod() { this.game.prodigy.debug.disableEdu=1
+                }
 }
 
 function checkForMods(e, t) {
