@@ -31,7 +31,7 @@ Introducers: Ao28th28 a.k.a XPMUser, Mr. Inquiry, and more
 Original Prodigy Makers: Rohan Mahimker/Alexander Peters
 
 XPMUser is the default username of an account to use in Windows XP Mode in Windows 7.
-I'm Ao28th28 (The PVZ Unknown Edition Maker).
+I'm Ao28th28 (The PVZ Proditany Edition (Formerly PVZ Unknown Edition and CWL) Maker).
 
 Old Prodigy English is coming soon!
 
