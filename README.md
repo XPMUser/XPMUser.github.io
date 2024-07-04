@@ -4,7 +4,7 @@ Old Prodigy Wiki: https://old-prodigy.fandom.com/f
 Reddit Community: https://www.reddit.com/r/OldProdigy/
 Discord Server: https://discord.gg/9HMtcgFQRc
 
-Warning: Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom.
+Warning: Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom. You can't use my account to do bad things.
 
 Click on the left arrow to go back.
 
