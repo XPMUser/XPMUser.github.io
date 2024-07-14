@@ -99,7 +99,7 @@ If you want to load a character that you've already saved, you click load charac
 
 To save your character, you can just go into the settings menu, go under 'network' and click the button called "save character". It'll automatically download
 to your computer, For this I recommend manually choosing a folder to save it in so you can organize it as you need. If there is no network tab in the version
-you're playing in, click the 'other' tab instead. 
+you're playing in, click the 'other' tab instead. You can also find the Save Character button in the "Other" options menu.
 
 ## Modpacks
 
