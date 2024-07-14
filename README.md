@@ -105,6 +105,18 @@ you're playing in, click the 'other' tab instead.
 
 This repository features dynamic modpacks, you'll be able to toggle mods as you see fit, and be able to combine multiple mods together for dynamic modpacks.
 
+Address bar: ?mods=-insert mod here- or ?mods=-insert mod here-,-insert mod here-
+
+Here's a list of available mods:
+1. WalkSpeed
+2. FastGameSpeed
+3. RebalancedBattles
+4. ImitationTitan
+5. Mathless
+6. Classic Faces
+
+Some mods might work or not work in some versions.
+
 Currently, these are the versions that support modpacks:
  - 0-0-0 https://xpmuser.github.io/oldprodigy/0-0-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/0-0-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/0-0-0/?mods=WalkSpeed,FastGameSpeed
  - 1-9-0 https://xpmuser.github.io/oldprodigy/1-9-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-9-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-9-0/?mods=WalkSpeed,FastGameSpeed
@@ -136,10 +148,7 @@ Currently, these are the versions that support modpacks:
  - 2-50-0
  - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
  - 2-50-0 Pro Edition http://op2019.byethost18.com/play/?mods=WalkSpeed,FastGameSpeed,ImitationTitan
-
-If you're looking to submit a modpack, you may add Daboss7173 on Discord and he might just feature it on his site!
-I'm somehow unable to install modpacks correctly.
-Discord Tag: daboss7173
+ - Some Prodidows versions
 
 ## List of Versions
 
