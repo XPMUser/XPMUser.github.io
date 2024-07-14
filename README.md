@@ -167,7 +167,7 @@ Currently, these are the versions that support modpacks:
 - 1.8.1 (Bugfixes)
 - 1.9.0 (Earliest Usable Pet Menu + Female wizards now have male faces. + Merchants are here + 4 Map search filters + Updated colors of pop-ups)
 - 1.10.0 (Archived + Bugfixes)
-- 1.11.0 (Clockwork Town update + Archived + Updated map icons + UI Updates + Pet Team Setup in the pet menu instead of the removed PFB feature + Updated colors of pop-ups again + Intro + The merchant's name in Lamplight Square has been changed to "Peddler" + New Tutorial in the Lamplight Docks without getting any of the Starter Pets like Peeko, Soral, Dragic, and Creela + So Sleepy... has been added and is only teleportable when you lose the battle.)
+- 1.11.0 (Clockwork Town update + Archived + Updated map icons + UI Updates + Pet Team Setup in the pet menu instead of the removed PFB feature + Updated colors of pop-ups again + Intro + The merchant's name in Lamplight Square has been changed to "Peddler" + New Tutorial in the Lamplight Docks without getting any of the Starter Pets like Peeko, Soral, Dragic, and Creela + So Sleepy... has been added and is only teleportable when you lose the battle. + The PFB feature has been bypassed.)
 - 1.12.0 (Bugfixes)
 - 1.12.2 (Reduced map search filters and the leaderboards are back)
 - 1.13.0 (UI Updates)
