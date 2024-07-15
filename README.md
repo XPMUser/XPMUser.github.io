@@ -160,7 +160,7 @@ Currently, these are the versions that support modpacks:
 - 1.4.0 (House Update)
 - 1.4.6 (Bugfixes)
 - 1.5.0 (Bugfixes)
-- 1.6.0 (Quests)
+- 1.6.0 (Quests + Pirate Isle has been renamed to Barnacle Cove)
 - 1.7.0 (Transformation)
 - 1.7.1.3 (Bugfixes)
 - 1.8.0 (Dyno Dig Oasis)
@@ -214,7 +214,7 @@ Currently, these are the versions that support modpacks:
 - 2.6.0 (Massive battle revision)
 - 2.20.0 (Academy and a bunch of fonts updated)
 - 2.30.0 (Winterfest update)
-- 2.45.0 (All Out Attack update)
+- 2.45.0 (All Out Attack update + The Earth Tower)
 - 2.50.0 (Removed The Lost Island)
 - 1.30.0 (Prodigy Reborn 1.0) There's no math. Use the Walkspeed mod instead of the 2 removed buttons from the settings menu. ?mods=WalkSpeed Credits: The 1.30.0 Mod: Craftersshaft
 - 1.11.0 (Back to April 2015 for Toontown music)
