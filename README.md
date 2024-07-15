@@ -217,6 +217,7 @@ Currently, these are the versions that support modpacks:
 - 2.45.0 (All Out Attack update + The Earth Tower)
 - 2.50.0 (Removed The Lost Island)
 - 1.30.0 (Prodigy Reborn 1.0) There's no math. Use the Walkspeed mod instead of the 2 removed buttons from the settings menu. ?mods=WalkSpeed Credits: The 1.30.0 Mod: Craftersshaft
+- 3-15-3 (Tower Town and Harmony Island have been added + New Map + Updated Tutorial + Coming Soon)
 - 1.11.0 (Back to April 2015 for Toontown music)
   
 You can choose any version you want!
