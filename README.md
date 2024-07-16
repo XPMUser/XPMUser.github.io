@@ -160,7 +160,7 @@ Currently, these are the versions that support modpacks:
 - 1.4.0 (House Update)
 - 1.4.6 (Bugfixes)
 - 1.5.0 (Bugfixes)
-- 1.6.0 (Quests + Pirate Isle has been renamed to Barnacle Cove)
+- 1.6.0 (Quests + Pirate Isle has been renamed to Barnacle Cove + Leaderboards have been temporarily disabled)
 - 1.7.0 (Transformation)
 - 1.7.1.3 (Bugfixes)
 - 1.8.0 (Dyno Dig Oasis)
