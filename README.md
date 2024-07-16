@@ -163,7 +163,7 @@ Currently, these are the versions that support modpacks:
 - 1.6.0 (Quests + Pirate Isle has been renamed to Barnacle Cove + Leaderboards have been temporarily disabled)
 - 1.7.0 (Transformation)
 - 1.7.1.3 (Bugfixes)
-- 1.8.0 (Dyno Dig Oasis)
+- 1.8.0 (Dyno Dig Oasis + Nicknames)
 - 1.8.1 (Bugfixes)
 - 1.9.0 (Earliest Usable Pet Menu + Female wizards now have male faces. + Merchants are here + 4 Map search filters + Updated colors of pop-ups)
 - 1.10.0 (Archived + Bugfixes)
