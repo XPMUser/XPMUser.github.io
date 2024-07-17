@@ -74,6 +74,20 @@ https://github.com/craftersshaft/
 
 If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or Slappygig's (Slappygig.github.io) 1.10.0 due to the loss of your housedata.
 
+This game was made by Prodigy Education, which is a team of people co-founded by Alex Peters & Rohan Mahimker, and those two are still
+head of Prodigy Education to this day!
+
+For more information about them, [click this link!](https://www.prodigygame.com/main-en/about-prodigy/)
+
+I am not associated with Prodigy Education or any associates/subsidiaries.
+
+If there's a bug in this repository, click on the Send Feedbacks button in the Main Menu, go to the bug-reports channel and report any bugs. I'll try to fix it as soon as I can.
+
+There are also various forks of this repository, you can check them out if you get the chance. I can not guarentee the quality of play
+as much as I can here, but I can say they have some cool stuff you might like.
+
+https://github.com/XPMUser/XPMUser.github.io/network/members
+
 ## How to play
 
 Playing this couldn't be more simple. First thing you have to do is open the site, which is automatically updated from this
