@@ -2,7 +2,9 @@
 
 Discord Server: https://discord.gg/9HMtcgFQRc
 
-Warning: Please be careful when visiting/using the sites from Byethost. Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom. You can't use my account to do bad things.
+Old Prodigy Wiki: https://old-prodigy.fandom.com/wiki/Old_Prodigy_Wiki
+
+Warning: Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom. You can't use my account to do bad things.
 
 Click on the left arrow to go back.
 
@@ -61,9 +63,6 @@ For Xbox users: Play Daboss7173's Definitive Edition if you want your character 
 
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
-# System Requirements
-Windows OS: Windows XP or later
-
 ## But First Some Disclaimers
 
 Lets get some of the obvious stuff out of the way. This was done by craftersshaft first with Prodigy Reborn, and was the inspiration for this
@@ -114,6 +113,8 @@ This repository features dynamic modpacks, you'll be able to toggle mods as you 
 
 Address bar: ?mods=-insert mod here- or ?mods=-insert mod here-,-insert mod here-
 
+"-insert mod here-" means the names of the mods from the modpacks.
+
 Here's a list of available mods:
 1. WalkSpeed
 2. FastGameSpeed
@@ -138,9 +139,6 @@ Currently, these are the versions that support modpacks:
  - 1-30-1 https://xpmuser.github.io/oldprodigy/1-30-1/?mods=WalkSpeed,FastGameSpeed/
  - 1-30-2 https://xpmuser.github.io/oldprodigy/1-30-2/?mods=WalkSpeed,FastGameSpeed/
  - 1-30-3-1 https://xpmuser.github.io/oldprodigy/1-30-3-1/?mods=WalkSpeed,FastGameSpeed/
- - My Ultimate Edition 1-30-0: http://opxpmuser.byethost7.com/, http://opxpmuser.byethost7.com/?mods=WalkSpeed/, http://opxpmuser.byethost7.com/?mods=FastGameSpeed/, http://opxpmuser.byethost7.com/?mods=WalkSpeed,FastGameSpeed/
- - My Ultimate Edition (I'm at the Robolymics doing 2014-2015's quests!) 1-46-2: http://op2017.byethost32.com/, http://op2017.byethost32.com/?mods=WalkSpeed/, http://op2017.byethost32.com/?mods=FastGameSpeed/, http://op2017.byethost32.com/?mods=WalkSpeed,FastGameSpeed/, 1-46-2: http://op2017.byethost32.com/play/, http://op2017.byethost32.com/play/?mods=WalkSpeed/, http://op2017.byethost32.com/play/?mods=FastGameSpeed/, http://op2017.byethost32.com/play/?mods=WalkSpeed,FastGameSpeed/
- - My Ultimate Edition (I can't walk that fast.) 1-80-0: http://op2018.byethost4.com/play/?i=1/?mods=FastGameSpeed
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
  - 1-46-2 https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed,FastGameSpeed/ 
  - 1-50-0
@@ -154,13 +152,10 @@ Currently, these are the versions that support modpacks:
  - 2-45-0
  - 2-50-0
  - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
- - 2-50-0 Pro Edition http://op2019.byethost18.com/play/?mods=WalkSpeed,FastGameSpeed,ImitationTitan
  - Some Prodidows versions
 
 ## List of Versions:
-- 0.0.0 (2014's Beta Testing version)
 - 1.0.0 (Map Update)
-- 1.1.0 (Bugfixes)
 - 1.2.0 (Skywatch)
 - 1.3.0 (Dark Tower)
 - 1.3.1 (Bugfixes)
@@ -193,7 +188,6 @@ Currently, these are the versions that support modpacks:
 - 1.22.1 (Updated Lamplight Town, but Winterfest doesn't have its assets anymore, so it's removed. + New NPCs + Archived)
 - 1.22.2 (Archived + Bugfixes)
 - 1.22.4 (Archived + Bugfixes)
-- 1.23.0 (Bugfixes)
 - 1.23.7 (Bounty Board added)
 - 1.24.0 (Massive UI changes)
 - 1.25.0 (Added Sidequests + Archived)
@@ -218,13 +212,13 @@ Currently, these are the versions that support modpacks:
 - 1.70.0 (Dark Tower and Winterfest update)
 - 1.80.0 (Battle team update)
 - 1.90.0 (Springfest update)
-- 2.6.0 (Massive battle revision)
-- 2.20.0 (Academy and a bunch of fonts updated)
-- 2.30.0 (Winterfest update)
-- 2.45.0 (All Out Attack update + The Earth Tower)
-- 2.50.0 (Removed The Lost Island)
-- 1.30.0 (Prodigy Reborn 1.0) There's no math. Use the Walkspeed mod instead of the 2 removed buttons from the settings menu. ?mods=WalkSpeed Credits: The 1.30.0 Mod: Craftersshaft
-- 3-15-3 (Tower Town and Harmony Island have been added + New Map + Updated Tutorial + Coming Soon)
-- 1.11.0 (Back to April 2015 for Toontown music)
+- 2.6.0 (Massive battle revision) Problems: Your questdata resets when you load your save from earlier than this version.
+- 2.20.0 (Academy and a bunch of fonts updated) 
+- 2.30.0 (Winterfest update) 
+- 2.45.0 (All Out Attack update + The Earth Tower) 
+- 2.50.0 (Removed The Lost Island) 
+- 1.30.0 (Prodigy Reborn 1.0) There's no math. Use the Walkspeed mod instead of the 2 removed buttons from the settings menu. ?mods=WalkSpeed Credits: The 1.30.0 Mod: Craftersshaft Problems: Plumber's Cap isn't fully functioning correctly.
+- 3-15-3 (Tower Town and Harmony Island have been added + New Map + Updated Tutorial) Problems: 1. Your wizard doesn't load correctly when you load your 3.15.3 save in this version. 2. Rune Run and Tower Town won't work.
+- 1.11.0 (Back to April 2015 for Toontown music!)
   
 You can choose any version you want!
