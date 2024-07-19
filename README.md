@@ -126,7 +126,6 @@ Here's a list of available mods:
 Some mods might work or not work in some versions.
 
 Currently, these are the versions that support modpacks:
- - 0-0-0 https://xpmuser.github.io/oldprodigy/0-0-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/0-0-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/0-0-0/?mods=WalkSpeed,FastGameSpeed
  - 1-9-0 https://xpmuser.github.io/oldprodigy/1-9-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-9-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-9-0/?mods=WalkSpeed,FastGameSpeed
  - 1-10-0 https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed,FastGameSpeed
  - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
@@ -219,7 +218,7 @@ Currently, these are the versions that support modpacks:
 - 2.45.0 (All Out Attack update + The Earth Tower) 
 - 2.50.0 (Removed The Lost Island) 
 - 1.30.0 (Prodigy Reborn 1.0) There's no math. Use the Walkspeed mod instead of the 2 removed buttons from the settings menu. ?mods=WalkSpeed Credits: The 1.30.0 Mod: Craftersshaft Problems: Plumber's Cap isn't fully functioning correctly.
-- 3-15-3 (Tower Town and Harmony Island have been added + New Map + Updated Tutorial) Problems: 1. Rune Run and Tower Town won't work. 2. Running out of hearts can keep you stuck with nothing to do during battles.
+- 3-15-3 (Tower Town and Harmony Island have been added + New Map + Updated Tutorial) Problems: Rune Run and Tower Town won't work. 
 - 1.11.0 (Back to April 2015 for Toontown music!)
   
 You can choose any version you want!
