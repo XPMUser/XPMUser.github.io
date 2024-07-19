@@ -178,6 +178,7 @@ Currently, these are the versions that support modpacks:
 - 1.16.3 (Coming Soon + Bugfixes)
 - 1.16.5 (Archived + Bugfixes)
 - 1.17.0 (Updated Tutorial and Firefly Forest)
+- 1.17.1 (Bugfixes)
 - 1.17.5 (More names)
 - 1.18.0 (Prodigy RTM + Pumpkinfest Update)
 - 1.18.2 (Archived + Bugfixes)
