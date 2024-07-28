@@ -1069,7 +1069,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		core: {
 			type: "atlas",
-			base: "https://xpmuser.github.io/oldprodigy/1-24-0/assets/images/",
+			base: "https://daboss7173.github.io/oldprodigy/1-22-1/assets/images/",
 			url: "core.png",
 			json: "core.json"
 		},
