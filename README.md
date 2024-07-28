@@ -20,8 +20,6 @@ Reborn Maker: Craftersshaft https://github.com/craftersshaft/
 
 Prodigy Game Makers: Prodigy Education a.k.a Prodigy Game (co-founded by Alex/Alexander Peters and Rohan Mahimker)
 
-Pokemon function makers: https://www.google.com/search?q=pokemon+creator&sca_esv=be16b17cae58a747&sca_upv=1&ei=HZqlZpSbFYflwN4PlPr06AY&ved=0ahUKEwjUnemWxsiHAxWHMtAFHRQ9HW0Q4dUDCBE&uact=5&oq=pokemon+creator&gs_lp=Egxnd3Mtd2l6LXNlcnAiD3Bva2Vtb24gY3JlYXRvcjIKEAAYgAQYRhj7ATIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIWEAAYgAQYRhj7ARiXBRiMBRjdBNgBBEiTDFCEAVj3CnABeAGQAQCYAYoBoAHJBaoBAzUuMrgBA8gBAPgBAZgCCKAChAbCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICDhAAGLADGOQCGNYE2AEBwgITEC4YgAQYsAMYQxjIAxiKBdgBAsICGRAuGIAEGLADGNEDGEMYxwEYyAMYigXYAQLCAgoQABiABBhDGIoFwgIFEC4YgATCAhAQLhiABBjRAxhDGMcBGIoFwgIUEC4YgAQYlwUY3AQY3gQY4ATYAQOYAwCIBgGQBhO6BgYIARABGAm6BgYIAhABGAi6BgYIAxABGBS6BgYIBBABGBOSBwMyLjagB6kw&sclient=gws-wiz-serp
-
 Mod Makers: Daboss7173, Slappygig/Toonigy, XPMUser/Ao28th28, etc
 
 Yandere Ai Girlfriend (Eddie) maker: Anthropic
