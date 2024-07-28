@@ -40,11 +40,12 @@ Old Prodigy English is coming soon!
 
 # Table of Contents 
 1. XPMUser.github.io https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#xpmusergithubio
-2. Table of Contents https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#table-of-contents
-3. Old Prodigy https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#old-prodigy
-4. How to play https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#how-to-play
-5. Modpacks https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks
-6. List of Versions https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#list-of-versions
+2. XPMUser.github.io https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#credits
+3. Table of Contents https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#table-of-contents
+4. Old Prodigy https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#old-prodigy
+5. How to play https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#how-to-play
+6. Modpacks https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks
+7. List of Versions https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#list-of-versions
    
 # Old Prodigy
 
