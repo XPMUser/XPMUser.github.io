@@ -3,7 +3,11 @@
 <html>
 	<head>
 	<title>Old Prodigy (Version Selection)</title>
-	<link rel="icon" type="image/x-icon" href="../assets/favicon.png">
+	<meta name="description" content="Old Prodigy is back and better than ever! Relive the original experience with a plethora of versions you can choose from!">
+
+	<link rel="icon" type="image/x-icon" href="https://web.archive.org/web/20150910093225im_/https://www.prodigygame.com/Includes/Images/favicon.gif">
+
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&amp;subset=Latin">
 	</head>
 	
 	<style>
@@ -41,6 +45,14 @@
 		transform: translate(+8px, -8px);
 	}
 	
+	.ultimate-banner {
+		user-select: none;
+		position: fixed;
+		left: 0%;
+		bottom: 0%;
+		transform: translate(+100%, -830%);
+	}
+	
 	.select-panel {
 		user-select: none;
 		display: block;
@@ -62,17 +74,17 @@
 		user-select: none;
 		position: fixed;
 		display: block;
-		top: 185px;
-		left: 11px;
+		top: 195px;
+		left: 0px;
 	}
 	
 	.select-panel .textbox {
 		user-select: none;
 		position: fixed;
 		display: block;
-		top: 140px;
+		top: 104px;
 		width: 540px;
-		font: 14pt "Arial";
+		font: 14pt "BrianneTod";
 		text-align: center;
 		color: rgb(0, 0, 0);
 	}
@@ -82,7 +94,7 @@
 		position: absolute;
 		top: 10px;
 		width: 238px;
-		font: 12pt "Tahoma";
+		font: 18px "Ubuntu";
 		text-align: center;
 		font-weight: bold;
 		-webkit-text-stroke: #000;
@@ -125,14 +137,14 @@
 		user-select: none;
 		position: fixed;
 		display: block;
-		top: 128px;
+		top: 125px;
 		left: 24px;
 		width: 420px;
-		font: 16px "Pipe Dream", sans-serif;
+		font: 16px "Ubuntu", sans-serif;
 		font-weight: bold;
 		color: rgb(0, 0, 0);
 	}
-
+	
 	.theme-config {
 		user-select: none;
 		display: none;
@@ -141,7 +153,7 @@
 		top: 50%;
 		transform: translate(-50%, -50%);
 	}
-
+	
 	.slider {
 	    -webkit-appearance: none;
 		height: 50px;
@@ -150,7 +162,7 @@
 		background: url("./images/slider-bar.png");
 		cursor: pointer;
 	}
-
+	
 	.slider::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
@@ -176,45 +188,39 @@
 	<div id="background-6" class="bg-image" style="background-image: url(&quot;./images/Background-6.png&quot;); display: none"></div>
 	
 	<div id="background-7" class="bg-image" style="background-image: url(&quot;./images/Background-7.png&quot;); display: none"></div>
-
-	<div id="background-8" class="bg-image" style="background-image: url(&quot;./images/Background-8.png&quot;); display: none"></div>
-
-	<div id="background-9" class="bg-image" style="background-image: url(&quot;./images/Background-9.png&quot;); display: none"></div>	
-
-	<div id="background-10" class="bg-image" style="background-image: url(&quot;./images/Background-10.png&quot;); display: none"></div>
 	
-        <div class="theme-config" id="theme-popup" draggable="false">
+	<div class="theme-config" id="theme-popup" draggable="false">
 		<img src="./images/ThemeConfigPanel.png" draggable="false"/>
-
+		
 		<a class="button" style="top: -12px; right: -12px;" onclick="closeBetaPopup()" draggable="false">
 			<img alt="Close" src="./images/Icon-Close.png" draggable="false"/>
 		</a>
-
+		
 		<a class="button" style="top: 130px; left: 50px;" onclick="toggleTheme()" draggable="false">
 			<img id="theme-switch" alt="Switch Theme" src="./images/FreeButton-Theme-Classic.png" draggable="false"/>
 		</a>
-
+		
 		<a class="button" style="top: 210px; left: 50px;" onclick="toggleBackground()" draggable="false">
 			<img alt="Switch Background" src="./images/FreeButton-Switch.png" draggable="false"/>
 		</a>
-
+		
 		<img alt="Background Brightness" src="./images/BackgroundBrightnessText.png" style="position: fixed; top: 285px; left: 50%; transform: translate(-50%, 0px);" draggable="false"/>
-
-		<input id="bg-slider" class="slider" type="range" min="0" max="2" value="1" step="0.01" style="top: 310px; left: 50%; transform: translate(-50%, 0px)"/>
-		<img id="bg-slider-left" class="button" onclick="decrementBrightness()" style="top: 304px; left: 52px;" src="./images/slider-left.png"/>
-		<img id="bg-slider-right" class="button" onclick="incrementBrightness()" style="top: 304px; right: 48px;" src="./images/slider-right.png"/>
-
-		<img class="button" onclick="resetOptions()" style="bottom: 20px; left: 100px;" src="./images/Reset.png"/>
+		
+		<input id="bg-slider" class="slider" type="range" min="0" max="2" value="1" step="0.01" style="top: 310px; left: 98px;" draggable="false"/>
+		<img id="bg-slider-left" class="button" onclick="decrementBrightness()" style="top: 312px; left: 50px;" src="./images/slider-left.png" draggable="false"/>
+		<img id="bg-slider-right" class="button" onclick="incrementBrightness()" style="top: 312px; right: 50px;" src="./images/slider-right.png" draggable="false"/>
+		
+		<img class="button" onclick="resetOptions()" style="bottom: 20px; left: 100px;" src="./images/Reset.png" draggable="false"/>
 	</div>
-
+	
 	<div class="warning-panel" id="beta-popup" draggable="false">
 		<img alt="Warning!" src="./images/WarningPanel.png" draggable="false">
 		
 		<div class="warning-body" draggable="false">
 			<div>
-				This version is still in beta. Things may not function as expected. If you encounter any bugs, be sure to make an issue on The Old Prodigy
-				<a href="https://discord.gg/pXRuQWu9Cj" draggable="false">
-					Discord Server
+				This version is still in beta. Things may not function as expected. If you encounter any bugs, be sure to make an issue on my
+				<a target="_blank" href="https://github.com/Daboss7173/Daboss7173.github.io/issues" draggable="false">
+					Github
 				</a> so it can be fixed.
 			</div>
 			<br>
@@ -247,350 +253,11 @@
 			<img src="./images/ModSelectText.png" alt="Select the mods you want to play with." draggable="false">
 		</div>
 		
-		<div class="overlay" draggable="false">
+		<div id="mod-select-overlay" class="overlay" draggable="false">
 			<img src="./images/MenuPanel-Overlay.png" draggable="false">
 			
-				<div id="versions-1" draggable="false">
+			<!-- Mod Select pages are auto-generated here -->
 				
-					<a onclick="ModSelector('1-28-1')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-28-1" src="./images/1-28-1.png" draggable="false">
-						</div>
-					</a>					
-
-					<a onclick="ModSelector('1-29-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-29-0" src="./images/1-29-0.png" draggable="false">
-						</div>
-					</a>					
-				
-					<a onclick="ModSelector('1-30-0')" class="button" style="top: 110px; left: 12px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-30-0" src="./images/1-30-0.png" draggable="false">
-						</div>
-					</a>
-					
-					<a onclick="ModSelector('1-50-0')" class="button" style="top: 160px; left: 12px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-50-0" src="./images/1-50-0.png" draggable="false">
-						</div>
-					</a>
-
-					<a onclick="ModSelector('1-51-0')" class="button" style="top: 210px; left: 12px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-51-0" src="./images/1-51-0.png" draggable="false">
-						</div>
-					</a>
-
-					<a onclick="ModSelector('1-51-1')" class="button" style="top: 10px; left: 270px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-51-1" src="./images/1-51-1.png" draggable="false">
-						</div>
-					</a>
-
-					<a onclick="ModSelector('1-52-0')" class="button" style="top: 60px; left: 270px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-52-0" src="./images/1-52-0.png" draggable="false">
-						</div>
-					</a>
-
-					<a onclick="ModSelector('2-45-0')" class="button" style="top: 110px; left: 270px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="2-45-0" src="./images/2-45-0.png" draggable="false">
-						</div>
-					</a>	
-
-					<a onclick="ModSelector('2-50-0')" class="button" style="top: 160px; left: 270px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="2-50-0" src="./images/2-50-0.png" draggable="false">
-						</div>
-					</a>	
-
-					<a onclick="ModSelector('1-30-R')" class="button" style="top: 210px; left: 270px; position: absolute" draggable="false">
-						<img src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" draggable="false">
-							<img alt="1-30-R" src="./images/1-30-R.png" draggable="false">
-						</div>
-					</a>
-
-				</div>
-			
-				<div id="mods-1-28-1" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-28-1')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-28-1" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-28-1')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-28-1" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>
-					
-					<a onclick="StartGameMod('1-28-1')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>			
-				
-				<div id="mods-1-29-0" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-29-0')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-29-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-29-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-29-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>
-					
-					<a onclick="StartGameMod('1-29-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>
-			
-				<div id="mods-1-30-0" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-30-0')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-30-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-30-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-30-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>
-					
-					<a onclick="StartGameMod('1-30-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-
-				</div>
-			
-				<div id="mods-1-30-R" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-30-R')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-30-R" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-30-R')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-30-R" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>
-					
-					<a onclick="StartGameMod('1-30-R')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>					
-				
-				</div>
-				<div id="mods-1-50-0" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-50-0')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-50-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-50-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-50-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('RebalancedBattles', '1-50-0')" class="button" style="top: 110px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-RebalancedBattles-1-50-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Rebalanced Battles" src="./images/RebalancedBattles.png" draggable="false">
-						</div>
-					</a>					
-					
-					<a onclick="StartGameMod('1-50-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>
-				<div id="mods-1-51-0" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-51-0')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-51-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-51-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-51-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>					
-					
-					<a onclick="StartGameMod('1-51-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>
-				<div id="mods-1-51-1" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-51-1')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-51-1" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-51-1')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-51-1" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>				
-					
-					<a onclick="StartGameMod('1-51-1')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>
-				<div id="mods-1-52-0" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '1-52-0')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-1-52-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '1-52-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-1-52-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>					
-					
-					<a onclick="StartGameMod('1-52-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>
-			        <div id="mods-2-45-0" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '2-45-0')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-2-45-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '2-45-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-2-45-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>
-					
-					<a onclick="AddMod('ImitationTitan', '2-45-0')" class="button" style="top: 110px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-ImitationTitan-2-45-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Imitation Titan" src="./images/ImitationTitan.png" draggable="false">
-						</div>
-					</a>			
-					
-					<a onclick="StartGameMod('2-45-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>
-			        <div id="mods-2-50-0" style="display: none" draggable="false">
-				
-					<a onclick="AddMod('WalkSpeed', '2-50-0')" class="button" style="top: 10px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-WalkSpeed-2-50-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Walk Speed" src="./images/WalkSpeed.png" draggable="false">
-						</div>
-					</a>
-				
-					<a onclick="AddMod('FastGameSpeed', '2-50-0')" class="button" style="top: 60px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-FastGameSpeed-2-50-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Fast Game Speed" src="./images/FastGameSpeed.png" draggable="false">
-						</div>
-					</a>
-					
-					<a onclick="AddMod('ImitationTitan', '2-50-0')" class="button" style="top: 110px; left: 12px; position: absolute" draggable="false">
-						<img id="mod-ImitationTitan-2-50-0" src="./images/ModSelectButton.png" draggable="false">
-						
-						<div class="intext" id="select-mod-version" draggable="false">
-							<img alt="Imitation Titan" src="./images/ImitationTitan.png" draggable="false">
-						</div>
-					</a>			
-					
-					<a onclick="StartGameMod('2-50-0')" class="button" style="top: 280px; right: 12px; position: absolute" draggable="false">
-						<img alt="Start" src="./images/Start.png" draggable="false">
-					</a>
-				
-				</div>
 		</div>
 		
 		<div class="button" style="bottom: 104px; left: 24px;" draggable="false">
@@ -600,7 +267,15 @@
 		</div>
 			
 		<a id="mod-select-apply"  onclick="StartGameMod(currentModVersion)" class="button-disabled" style="bottom: 104px; right: 24px; position: absolute; display: block;" draggable="false">
-			<img alt="Start" src="./images/Apply.png" draggable="false">
+			<img alt="Apply" src="./images/Apply.png" draggable="false">
+		</a>
+		
+		<!-- These buttons will enable automatically whenever multiple pages are detected -->
+		<a class="button-disabled" id="mod-previous" onclick="PreviousModPage()" style="top: 134px; left: 24px;" draggable="false">
+			<img alt="Previous page" src="./images/Previous.png" draggable="false">
+		</a>
+		<a class="button-disabled" id="mod-next" onclick="NextModPage()" style="top: 134px; right: 24px;" draggable="false">
+			<img alt="Next page" src="./images/Next.png" draggable="false">
 		</a>
 		
 	</div>
@@ -612,6 +287,10 @@
 			<img alt="Version Select" src="./images/MenuPanel-Banner.png" draggable="false">
 		</div>
 		
+		<div class="textbox" id="select-mod-version" draggable="false">
+			<img src="./images/VersionSelectText.png" alt="Choose a version to play!" draggable="false">
+		</div>
+		
 		<div id="select-panel-overlay" class="overlay" draggable="false">
 			<img src="./images/MenuPanel-Overlay.png" draggable="false">
 			
@@ -619,13 +298,13 @@
 			
 		</div>
 		
-		<div class="button" style="top: 112px; left: 24px;" draggable="false">
+		<div class="button" style="top: 134px; left: 24px;" draggable="false">
 			<a onclick="ExitSelection()" draggable="false">
-				<img alt="Go back" src="./images/Close.png" draggable="false">
+				<img alt="Close" src="./images/Close.png" draggable="false">
 			</a>
 		</div>
 		
-		<div class="button" style="top: 112px; right: 24px;" draggable="false" draggable="false">
+		<div class="button" style="top: 134px; right: 24px;" draggable="false" draggable="false">
 			<a onclick="openMods()" draggable="false" draggable="false">
 				<img alt="Mods" src="./images/Mods.png" draggable="false">
 			</a>
@@ -633,7 +312,7 @@
 		
 		<div class="button" style="bottom: 104px; left: 24px;" draggable="false">
 			<a onclick="BackPage()" draggable="false">
-				<img alt="Go back" src="./images/Back.png" draggable="false">
+				<img alt="Previous page" src="./images/Previous.png" draggable="false">
 			</a>
 		</div>
 		
@@ -671,8 +350,8 @@
 				<img src="./images/FreeButton-Ultimate.png" draggable="false">
 			</a>
 		</div>
-	</div>
-
+	</div>	
+		
 </body>
 
 <script>
@@ -691,11 +370,21 @@ Menu = {
 	}
 },
 Pages = [],
-Versions = [		
+ModPages = {
+	select: [],
+	mod: {}
+},
+Versions = [
 	{
 		src: "./images/1-0-0.png",
 		alt: "Version 1.0.0",
 		ver: "1-0-0",
+		beta: true		
+	},	
+	{
+		src: "./images/1-1-0.png",
+		alt: "Version 1.1.0",
+		ver: "1-1-0",
 		beta: true		
 	},	
 	{
@@ -792,8 +481,7 @@ Versions = [
 	{
 		src: "./images/1-13-0.png",
 		alt: "Version 1.13.0",
-		ver: "1-13-0",
-		beta: true
+		ver: "1-13-0"
 	},	
 	{
 		src: "./images/1-16-0.png",
@@ -1013,14 +701,12 @@ Versions = [
 	{
 		src: "./images/2-45-0.png",
 		alt: "Version 2.45.0",
-		ver: "2-45-0",
-		beta: true
+		ver: "2-45-0"
 	},
 	{
 		src: "./images/2-50-0.png",
 		alt: "Version 2.50.0",
-		ver: "2-50-0",
-		beta: true
+		ver: "2-50-0"
 	},
 	{
 		src: "./images/1-30-R.png",
@@ -1029,7 +715,7 @@ Versions = [
 		beta: true
 	},
 	{
-		src: "https://daboss7173.github.io/oldprodigy/select/images/3-15-3.png",
+		src: "./images/3-15-3.png",
 		alt: "Version 3.15.3",
 		ver: "3-15-3",
 		beta: true
@@ -1040,41 +726,294 @@ Versions = [
 		ver: "1-11-0"
 	}
 ],
-ModPages = {
-	"1-28-1": {
-		id: "mods-1-28-1"
-	},	
-	"1-29-0": {
-		id: "mods-1-29-0"
+ModList = [{
+	baseVersion: 13,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/ClassicFaces.png",
+		alt: "Classic Faces",
+		url: "ClassicFaces"
+	}]
+}, {
+	baseVersion: 14,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/ClassicFaces.png",
+		alt: "Classic Faces",
+		url: "ClassicFaces"		
+	}]
+}, {
+	baseVersion: 36,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}]	
+}, {
+	baseVersion: 40,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]		
+}, {
+	baseVersion: 41,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]	
+}, {
+	baseVersion: 42,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]	
+}, {
+	baseVersion: 43,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]	
+}, {
+	baseVersion: 44,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]	
+}, {
+	baseVersion: 45,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]	
+}, {
+	baseVersion: 50,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]	
+}, {
+	baseVersion: 51,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/RebalancedBattles.png",
+		alt: "Rebalanced Battles",
+		url: "RebalancedBattles"
+	}]
+}, {
+	baseVersion: 52,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/RebalancedBattles.png",
+		alt: "Rebalanced Battles",
+		url: "RebalancedBattles"
+	}]
+}, {
+	baseVersion: 53,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/RebalancedBattles.png",
+		alt: "Rebalanced Battles",
+		url: "RebalancedBattles"
+	}]	
+}, {
+	baseVersion: 54,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/RebalancedBattles.png",
+		alt: "Rebalanced Battles",
+		url: "RebalancedBattles"
+	}]	
+}, {
+	baseVersion: 56,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/RebalancedBattles.png",
+		alt: "Rebalanced Battles",
+		url: "RebalancedBattles"
+	}]
+}, {
+	baseVersion: 62,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/ImitationTitan.png",
+		alt: "Imitation Titan",
+		url: "ImitationTitan"
+	}]	
+}, {
+	baseVersion: 63,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}, {
+		src: "./images/ImitationTitan.png",
+		alt: "Imitation Titan",
+		url: "ImitationTitan"
+	}]		
+}, {
+	baseVersion: 64,
+	mods: [{
+		src: "./images/WalkSpeed.png",
+		alt: "Walk Speed",
+		url: "WalkSpeed"
+	}, {
+		src: "./images/FastGameSpeed.png",
+		alt: "Fast Game Speed",
+		url: "FastGameSpeed"
+	}]		
+}/* USED TO TEST MULTIPAGE FUNCTIONALITY | DO NOT USE IN PRODUCTION
+, {
+	custom: true,
+	button: {
+		src: "./images/TESTING.png",
+		alt: "Testing",
+		ver: "TEST1"
 	},
-	"1-30-0": {
-		id: "mods-1-30-0"
-	},	
-	"1-50-0": {
-		id: "mods-1-50-0"
-	},	
-	"1-51-0": {
-		id: "mods-1-51-0"
-	},	
-	"1-51-1": {
-		id: "mods-1-51-1"
-	},	
-	"1-52-0": {
-		id: "mods-1-52-0"
-	},	
-	"2-45-0": {
-		id: "mods-2-45-0"
-	},	
-	"2-50-0": {
-		id: "mods-2-50-0"
+	mods: []
+}, {
+	custom: true,
+	button: {
+		src: "./images/TESTING.png",
+		alt: "Testing",
+		ver: "TEST2"
 	},
-	"1-30-R": {
-		id: "mods-1-30-R"	
+	mods: []
+}, {
+	custom: true,
+	button: {
+		src: "./images/TESTING.png",
+		alt: "Testing",
+		ver: "TEST3"
 	},
-	selection: {
-		id: "versions-1"
-	}
-},
+	mods: []
+}, {
+	custom: true,
+	button: {
+		src: "./images/TESTING.png",
+		alt: "Testing",
+		ver: "TEST4"
+	},
+	mods: []
+}, {
+	custom: true,
+	button: {
+		src: "./images/TESTING.png",
+		alt: "Testing",
+		ver: "TEST5"
+	},
+	mods: []
+}, {
+	custom: true,
+	button: {
+		src: "./images/TESTING.png",
+		alt: "Testing",
+		ver: "TEST6"
+	},
+	mods: []
+}, {
+	custom: true,
+	button: {
+		src: "./images/TESTING.png",
+		alt: "Testing",
+		ver: "TEST7"
+	},
+	mods: []
+}*/];
 Backgrounds = [
 	{
 		element: "background-1",
@@ -1110,29 +1049,16 @@ Backgrounds = [
 		element: "background-7",
 		id: "7",
 		nid: 7
-	},
-	{
-		element: "background-8",
-		id: "8",
-		nid: 8
-	},
-	{
-		element: "background-9",
-		id: "9",
-		nid: 9
-	},
-	{
-		element: "background-10",
-		id: "10",
-		nid: 10
 	}
 ],
 selectedMods = [],
 currentPage = 0,
 currentMenu = Menu.Select,
-currentModPage = ModPages.selection,
+selectedModPage = 0,
+currentModPage = null,
 currentModVersion = null,
-(new Audio("./audio/click.mp3")).load(),
+clickSound = "./audio/click.mp3";
+(new Audio(clickSound)).load();
 getCookie = function(cname) {
 	let name = cname + "=";
 	let decodedCookie = decodeURIComponent(document.cookie);
@@ -1204,7 +1130,7 @@ toggleTheme = function() {
 		cleanTheme();
 		setCookie("theme", "clean", 4096)
 	}
-
+	
 },
 openThemeChange = function() {
 	if (currentMenu != Menu.Select)
@@ -1351,7 +1277,7 @@ resetOptions = function() {
 	}, 200);
 },
 PlayClick = function() {
-	(new Audio("./audio/click.mp3")).play()
+	(new Audio(clickSound)).play()
 },
 ExitSelection = function() {
 	PlayClick();
@@ -1366,13 +1292,14 @@ EnterGame = function(version) {
 		return
 	};
 	setTimeout(()=> {
-		window.location.href = "../" + version + "/";
+		//window.location.href = "../" + version + "/";
+		window.open("../" + version + "/");
 	}, 200);
 },
 BackPage = function() {
 	PlayClick(),
 	document.getElementById(Pages[currentPage].id).style.display = "none";
-	if (currentPage == 0) {
+	if (currentPage === 0) {
 		currentPage = Pages.length - 1
 	} else {
 		currentPage -= 1
@@ -1383,13 +1310,35 @@ BackPage = function() {
 NextPage = function() {
 	PlayClick(),
 	document.getElementById(Pages[currentPage].id).style.display = "none";
-	if (currentPage == Pages.length - 1) {
+	if (currentPage === Pages.length - 1) {
 		currentPage = 0
 	} else {
 		currentPage += 1
 	};
 	document.getElementById(Pages[currentPage].id).style.display = "block"
 	resizeMenuElements();
+},
+PreviousModPage = function() {
+	if (currentModPage !== ModPages.select[selectedModPage] || ModPages.select.length < 2)
+		return;
+		
+	if (selectedModPage === 0) {
+		selectedModPage = ModPages.select.length - 1
+	} else {
+		selectedModPage--
+	};
+	ModSelector();
+},
+NextModPage = function() {
+	if (currentModPage !== ModPages.select[selectedModPage] || ModPages.select.length < 2)
+		return;
+		
+	if (selectedModPage === ModPages.select.length - 1) {
+		selectedModPage = 0
+	} else {
+		selectedModPage++
+	};
+	ModSelector();
 },
 betaConfirmCallback = null,
 openBetaPopup = function(version) {
@@ -1415,33 +1364,40 @@ openMods = function() {
 	document.getElementById(currentMenu.id).style.display = "none",
 	currentMenu = Menu.ModSelect,
 	document.getElementById(currentMenu.id).style.display = "block",
-	currentModPage = ModPages.selection,
+	currentModPage = ModPages.select[selectedModPage],
+	document.getElementById("mod-previous").className = ModPages.select.length > 1 ? "button" : "button-disabled",
+	document.getElementById("mod-next").className =  ModPages.select.length > 1 ? "button" : "button-disabled",
 	resizeMenuElements();
 	disableThemeButton();
 },
 ModSelector = function(version) {
 	PlayClick();
-	if (currentModPage == ModPages.selection) {
-		DeselectAllMods(version),
+	if (currentModPage == ModPages.select[selectedModPage]) {
 		document.getElementById(currentModPage.id).style.display = "none",
-		currentModPage = ModPages[version],
+		currentModPage = ModPages.mod[version],
 		currentModVersion = version,
 		document.getElementById(currentModPage.id).style.display = "block",
 		document.getElementById("mod-back").setAttribute("onclick", "ModSelector()"),
 		document.getElementById("select-mod-version").style.display = "none",
 		document.getElementById("select-mod-play").style.display = "block",
 		//document.getElementById("mod-select-apply").style.display = "block",
-		document.getElementById("mod-select-apply").className = "button-disabled"
+		document.getElementById("mod-select-apply").className = "button-disabled",
+		document.getElementById("mod-previous").className = "button-disabled",
+		document.getElementById("mod-next").className = "button-disabled",
+		DeselectAllMods(version)
 	} else {
+		DeselectAllMods(currentModVersion),
 		document.getElementById(currentModPage.id).style.display = "none",
-		currentModPage = ModPages.selection,
+		currentModPage = ModPages.select[selectedModPage],
 		currentModVersion = null,
 		document.getElementById(currentModPage.id).style.display = "block",
 		document.getElementById("mod-back").setAttribute("onclick", "closeBetaPopup()"),
 		document.getElementById("select-mod-version").style.display = "block",
 		document.getElementById("select-mod-play").style.display = "none",
 		//document.getElementById("mod-select-apply").style.display = "none",
-		document.getElementById("mod-select-apply").className = "button-disabled"
+		document.getElementById("mod-select-apply").className = "button-disabled",
+		document.getElementById("mod-previous").className = ModPages.select.length > 1 ? "button" : "button-disabled",
+		document.getElementById("mod-next").className =  ModPages.select.length > 1 ? "button" : "button-disabled"
 	};
 	resizeMenuElements();
 },
@@ -1462,7 +1418,9 @@ AddMod = function(modid, version) {
 },
 DeselectAllMods = function(version) {
 	for(let i = 0; i < selectedMods.length; i += 1) {
-		document.getElementById("mod-" + selectedMods[i] + "-" + version).setAttribute('src', './images/ModSelectButton.png')
+		try {
+			document.getElementById("mod-" + selectedMods[i] + "-" + version).setAttribute('src', './images/ModSelectButton.png')
+		} catch(error) {}
 	};
 	selectedMods = []
 },
@@ -1473,10 +1431,137 @@ StartGameMod = function(version) {
 	PlayClick();
 	let ModString = '?mods=' + selectedMods.toString();
 	setTimeout(()=> {
-		window.location.href = "../" + version + "/" + ModString;
+		//window.location.href = "../" + version + "/" + ModString;
+		window.open("../" + version + "/" + ModString)
 	}, 200);
 },
+generateModPages = function() {
+	function logProgress(msg) {
+		console.log("[MOD PAGE GENERATOR] " + msg)
+	}
+	function addVersionPage() {
+		let page = document.createElement("div");
+		let pageID = "mod-version-select-" + (ModPages.select.length + 1);
+		page.draggable = false;
+		page.id = pageID;
+		ModPages.select.push({
+			id: pageID
+		});
+		document.getElementById("mod-select-overlay").appendChild(page);
+		if (ModPages.select.length > 1)
+			page.style.display = "none";
+		logProgress("New page: " + pageID);
+		return page;
+	}
+	function addModPage(version) {
+		let page = document.createElement("div");
+		let pageID = "mods-" + version;
+		page.draggable = false;
+		page.id = pageID;
+		ModPages.mod[version] = {
+			id: pageID
+		};
+		logProgress("New modded version: " + version);
+		document.getElementById("mod-select-overlay").appendChild(page);
+		return page;
+	}
+	function addVersionButton(ver, curPage, column, columnLength, useCustom) {
+		let currentButton = document.createElement("a"),
+			panelImage = document.createElement("img"),
+			textImage = document.createElement("img"),
+			textElement = document.createElement("div");
+			
+		currentButton.setAttribute("onclick", "ModSelector(\"" + (useCustom ? (ver.button.ver) : (Versions[ver.baseVersion].ver)) + "\")");
+		currentButton.setAttribute("class", "button");
+		currentButton.setAttribute("draggable", false);
+		currentButton.style.position = "absolute";
+		currentButton.style.top = (10 + (columnLength * 50)) + "px";
+		if (column == 1) {
+			currentButton.style.left = "23px"
+		} else {
+			currentButton.style.right = "23px"
+		};
+		panelImage.setAttribute("src", "./images/ModSelectButton.png");
+		panelImage.setAttribute("draggable", false)
+		textImage.setAttribute("src", (useCustom ? (ver.button.src) : (Versions[ver.baseVersion].src)));
+		textImage.setAttribute("alt", (useCustom ? (ver.button.alt) : (Versions[ver.baseVersion].alt)));
+		textImage.setAttribute("draggable", false);
+		textElement.setAttribute("class", "intext");
+		textElement.setAttribute("draggable", false);
+		textElement.appendChild(textImage);
+		currentButton.appendChild(panelImage);
+		currentButton.appendChild(textElement);
+		curPage.appendChild(currentButton);
+	}
+	function addModButton(ver, mod, curPage, column, columnLength, useCustom) {
+		let currentButton = document.createElement("a"),
+			panelImage = document.createElement("img"),
+			textImage = document.createElement("img"),
+			textElement = document.createElement("div");
+			
+		currentButton.setAttribute("onclick", "AddMod(\"" + ver.mods[mod].url + "\", \"" + (useCustom ? (ver.button.ver) : (Versions[ver.baseVersion].ver)) + "\")");
+		currentButton.setAttribute("class", "button");
+		currentButton.setAttribute("draggable", false);
+		currentButton.style.position = "absolute";
+		currentButton.style.top = (10 + (columnLength * 50)) + "px";
+		if (column == 1) {
+			currentButton.style.left = "23px"
+		} else {
+			currentButton.style.right = "23px"
+		};
+		panelImage.setAttribute("src", "./images/ModSelectButton.png");
+		panelImage.setAttribute("draggable", false);
+		panelImage.setAttribute("id", "mod-" + ver.mods[mod].url + "-" + (useCustom ? (ver.button.ver) : (Versions[ver.baseVersion].ver)));
+		textImage.setAttribute("src", ver.mods[mod].src);
+		textImage.setAttribute("alt", ver.mods[mod].alt);
+		textImage.setAttribute("draggable", false);
+		textElement.setAttribute("class", "intext");
+		textElement.setAttribute("draggable", false);
+		textElement.appendChild(textImage);
+		currentButton.appendChild(panelImage);
+		currentButton.appendChild(textElement);
+		curPage.appendChild(currentButton);
+		logProgress("New " + (useCustom ? (ver.button.ver) : (Versions[ver.baseVersion].ver)) + " mod: " + ver.mods[mod].url);
+	}
+	logProgress("Start generating...");
+	let column = 3;
+	let columnLength = 0;
+	let curPage = null;
+	for (var i = 0; i < ModList.length; i++) {
+		let ver = ModList[i];
+		if (columnLength > 4) {
+			columnLength = 0;
+			column++;
+			logProgress("New column: " + column);
+		};
+		if (column > 2) {
+			curPage = addVersionPage();
+			column = 1;
+		};
+		let useCustom = !!ver.custom;
+		addVersionButton(ver, curPage, column, columnLength, useCustom);
+		let verPage = addModPage((useCustom ? (ver.button.ver) : (Versions[ver.baseVersion].ver)));
+		let verCol = 1;
+		let verColLength = 0;
+		verPage.style.display = "none";
+		for (var mod = 0; mod < ver.mods.length; mod++) {
+			if (verColLength > 4) {
+				verColLength = 0;
+				verCol++;
+				logProgress("New " + (useCustom ? (ver.button.ver) : (Versions[ver.baseVersion].ver)) + " column: " + column);
+			};
+			addModButton(ver, mod, verPage, verCol, verColLength, useCustom);
+			verColLength++;
+		}
+		columnLength++;
+	}
+	logProgress("Done!")
+},
+logGenProgress = function(msg) {
+	console.log("[SELECT PAGE GENERATOR] " + msg);
+},
 generatePages = function() {
+	logGenProgress("Start generating...");
 	let pageId = 0,
 		column = 3,
 		columnLength = 0;
@@ -1484,15 +1569,19 @@ generatePages = function() {
 		if (columnLength > 4) {
 			columnLength = 0,
 			column++
+			logGenProgress("New column: " + column);
 		};
 		if (column > 2) {
 			pageId++;
 			newPage(pageId);
-			column = 1
+			column = 1;
+			logGenProgress("New page: " + pageId);
 		};
 		newVersionButton(i, pageId, columnLength, column);
+		logGenProgress("New version: " + Versions[i].ver)
 		columnLength++
 	}
+	logGenProgress("Done!");
 },
 newVersionButton = function(i, pageId, columnLength, column) {
 	let pageElement = document.getElementById(Pages[pageId - 1].id),
@@ -1509,9 +1598,9 @@ newVersionButton = function(i, pageId, columnLength, column) {
 	currentButton.style.position = "absolute";
 	currentButton.style.top = (10 + (columnLength * 50)) + "px";
 	if (column == 1) {
-		currentButton.style.left = "12px"
+		currentButton.style.left = "23px"
 	} else {
-		currentButton.style.right = "12px"
+		currentButton.style.right = "23px"
 	};
 	panelImage.setAttribute("src", "./images/ModSelectButton.png");
 	panelImage.setAttribute("draggable", false)
@@ -1543,14 +1632,14 @@ newPage = function(id) {
 playDefinitiveEdition = function() {
 	PlayClick();
 	setTimeout(()=> {
-		window.location.href = "https://xpmuser.github.io/oldprodigy/choose/";
+		window.open("https://xpmuser.github.io/oldprodigy/choose/");
 	}, 200);
 },
 playUltimateEdition = function() {
 	PlayClick();
 	setTimeout(()=> {
 		window.location.href = "https://xpmuser.github.io/oldprodigy/play/";
-	}, 200);
+	}, 200);	
 },
 resizeFromWindow = function(element) {
 	let verSelect = element;
@@ -1572,6 +1661,8 @@ resizeMenuElements = function() {
 },
 window.onresize = function() {
 	resizeMenuElements()
+},
+window.onload = function() {
 	document.addEventListener("contextmenu", function(e) {
 		e.preventDefault();
 	}, false);
@@ -1584,6 +1675,7 @@ getSavedBackground(),
 getSavedTheme(),
 getSavedBrightness(),
 generatePages();
+generateModPages();
 
 (() => {
 	let slider = document.getElementById("bg-slider");
@@ -1591,11 +1683,6 @@ generatePages();
 		setBackgroundBrightness(parseFloat(this.value));
 	};
 })();
-window.onload = function() {
-	resizeMenuElements(),
-	getSavedBackground();
-},
-generatePages()
 </script>
 
 </html>
