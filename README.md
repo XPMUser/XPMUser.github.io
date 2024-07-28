@@ -63,13 +63,20 @@ For Xbox users: Play Daboss7173's Definitive Edition if you want your character 
 
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
-## But First Some Disclaimers
+## Disclaimers
 
 Lets get some of the obvious stuff out of the way. This was done by craftersshaft first with Prodigy Reborn, and was the inspiration for this
 project.
 
 Check them out!
 https://github.com/craftersshaft/
+
+This game was made by Prodigy Education, which is a team of people co-founded by Alex Peters & Rohan Mahimker, and those two are still
+head of Prodigy Education to this day!
+
+For more information about them, [click this link!](https://www.prodigygame.com/main-en/about-prodigy/)
+
+I'm associated with Prodigy Education and any associates/subsidiaries.
 
 If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or Slappygig's (Slappygig.github.io) 1.10.0 due to the loss of your housedata.
 
