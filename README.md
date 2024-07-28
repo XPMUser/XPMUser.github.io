@@ -40,7 +40,7 @@ Old Prodigy English is coming soon!
 
 # Table of Contents 
 1. XPMUser.github.io https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#xpmusergithubio
-2. XPMUser.github.io https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#credits
+2. Credits https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#credits
 3. Table of Contents https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#table-of-contents
 4. Old Prodigy https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#old-prodigy
 5. How to play https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#how-to-play
