@@ -8,7 +8,9 @@ Warning: Swearing isn't recommended. You need to be at least 13 years old to use
 
 Click on the left arrow to go back.
 
-Credits: Sitemakers: Daboss7173 https://github.com/Daboss7173 
+# Credits
+
+Game restorers: Daboss7173 https://github.com/Daboss7173 and Craftersshaft https://github.com/craftersshaft/
 
 Siteforkers: XPMUser/Ao28th28, Slappygig/Toonigy, etc https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
 
@@ -16,7 +18,9 @@ Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more
 
 Reborn Maker: Craftersshaft https://github.com/craftersshaft/
 
-Prodigy Maker: Prodigy Education
+Prodigy Game Makers: Prodigy Education a.k.a Prodigy Game (co-founded by Alex/Alexander Peters and Rohan Mahimker)
+
+Pokemon function makers: https://www.google.com/search?q=pokemon+creator&sca_esv=be16b17cae58a747&sca_upv=1&ei=HZqlZpSbFYflwN4PlPr06AY&ved=0ahUKEwjUnemWxsiHAxWHMtAFHRQ9HW0Q4dUDCBE&uact=5&oq=pokemon+creator&gs_lp=Egxnd3Mtd2l6LXNlcnAiD3Bva2Vtb24gY3JlYXRvcjIKEAAYgAQYRhj7ATIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIWEAAYgAQYRhj7ARiXBRiMBRjdBNgBBEiTDFCEAVj3CnABeAGQAQCYAYoBoAHJBaoBAzUuMrgBA8gBAPgBAZgCCKAChAbCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICDhAAGLADGOQCGNYE2AEBwgITEC4YgAQYsAMYQxjIAxiKBdgBAsICGRAuGIAEGLADGNEDGEMYxwEYyAMYigXYAQLCAgoQABiABBhDGIoFwgIFEC4YgATCAhAQLhiABBjRAxhDGMcBGIoFwgIUEC4YgAQYlwUY3AQY3gQY4ATYAQOYAwCIBgGQBhO6BgYIARABGAm6BgYIAhABGAi6BgYIAxABGBS6BgYIBBABGBOSBwMyLjagB6kw&sclient=gws-wiz-serp
 
 Mod Makers: Daboss7173, Slappygig/Toonigy, XPMUser/Ao28th28, etc
 
@@ -71,12 +75,9 @@ project.
 Check them out!
 https://github.com/craftersshaft/
 
-This game was made by Prodigy Education, which is a team of people co-founded by Alex Peters & Rohan Mahimker, and those two are still
-head of Prodigy Education to this day!
+Credits have been given in the credits list.
 
-For more information about them, [click this link!](https://www.prodigygame.com/main-en/about-prodigy/)
-
-I'm associated with Prodigy Education and any associates/subsidiaries.
+For more information about Prodigy, [click this link!](https://www.prodigygame.com/main-en/about-prodigy/)
 
 If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or Slappygig's (Slappygig.github.io) 1.10.0 due to the loss of your housedata.
 
