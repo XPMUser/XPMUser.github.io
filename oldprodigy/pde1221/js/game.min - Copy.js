@@ -1069,7 +1069,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		core: {
 			type: "atlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1224/assets/images/",
+			base: "https://xpmuser.github.io/oldprodigy/1-24-0/assets/images/",
 			url: "core.png",
 			json: "core.json"
 		},
@@ -1580,17 +1580,17 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"bgm-victory": {
 			type: "bgm",
-			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/audio/voice/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/voice/",
 			url: "bgm-victory.mp3"
 		},
 		"bgm-battle": {
 			type: "bgm",
-			base: "https://xpmuser.github.io/oldprodigy/1-11-0/assets/audio/voice/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/voice/",
 			url: "bgm-battle.mp3"
 		},
 		"bgm-intro": {
 			type: "bgm",
-			base: u,
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/voice/",
 			url: "bgm-intro.mp3"
 		},
 		"bgm-space": {
@@ -48983,6 +48983,7 @@ this.game.prodigy.education.init(e), this.error.setText("Click or tap on the oka
 			}
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.debug.easyMode(0, 0);
+			this.game.prodigy.player.isMember = true;
 			var s = this.game.prodigy.player.data.zone;
 			Util.isDefined(s) && s.indexOf("-") > 0 ? this.game.prodigy.world.teleport(s) : this.game.state.start("Intro")
 		}, e.prototype.showLogin = function(e) {
