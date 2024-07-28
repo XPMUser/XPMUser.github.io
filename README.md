@@ -165,6 +165,7 @@ Currently, these are the versions that support modpacks:
 
 ## List of Versions:
 - 1.0.0 (Map Update)
+- 1.1.0 (Bugfixes)
 - 1.2.0 (Skywatch)
 - 1.3.0 (Dark Tower)
 - 1.3.1 (Bugfixes)
