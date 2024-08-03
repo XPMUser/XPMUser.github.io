@@ -153,7 +153,7 @@ class ModHandler {
 	
 	initClassicFaceMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/";
+		assets.heads.base = "https://xpmuser.github.io/oldprodigy/prodigyde/assets/images/general-";
 		
 		PlayerContainer.getAssets = function(e, t, a, s, i) {
 			var i = new Array;
