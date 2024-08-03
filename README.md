@@ -123,7 +123,7 @@ Address bar: ?mods=-insert mod here- or ?mods=-insert mod here-,-insert mod here
 
 "-insert mod here-" means the names of the mods from the modpacks.
 
-Here's a list of available mods:
+Here's a list of available useful mods:
 1. WalkSpeed
 2. FastGameSpeed
 3. RebalancedBattles
