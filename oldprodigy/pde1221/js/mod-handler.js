@@ -147,7 +147,7 @@ class ModHandler {
 	}
 	
 	initClassicFaceMod() {
-		var assets = this.game.assets.getAssetMap();
+		var assets = this.game.prodigy.assets._assets();
 		assets.heads.base = "assets/images/";
 		
 		PlayerContainer.getAssets = function(e, t, a) {
