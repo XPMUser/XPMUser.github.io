@@ -67,7 +67,7 @@ For Xbox users: Play Daboss7173's Definitive Edition if you want your character 
 
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
-If you want to add a house item to your house in 2014-2015's versions, Definitive, Ultimate, or Prodidows versions in 2014-2015 Mode, drag the gold, the price, or the bottom from the gold or the price to drag a house item, & then put the house item wherever you want to put it.
+If you want to add a house item to your house in 2014-2015's versions, Definitive, Ultimate, or Prodidows versions in 2014-2015 Mode, drag the gold or the price of the house item to drag a house item, & then put the house item wherever you want to put it.
 
 ## Disclaimers
 
