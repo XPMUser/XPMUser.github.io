@@ -67,6 +67,8 @@ For Xbox users: Play Daboss7173's Definitive Edition if you want your character 
 
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
+If you want to add a house item to your house in 2014-2015's versions, Definitive, Ultimate, or Prodidows versions in 2014-2015 Mode, drag the gold, the price, or the bottom from the gold or the price to drag a house item, & then put the house item wherever you want to put it.
+
 ## Disclaimers
 
 Lets get some of the obvious stuff out of the way. This was done by craftersshaft first with Prodigy Reborn, and was the inspiration for this
@@ -79,7 +81,7 @@ Credits have been given in the credits list.
 
 For more information about Prodigy, [click this link!](https://www.prodigygame.com/main-en/about-prodigy/)
 
-If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or Slappygig's (Slappygig.github.io) 1.10.0 due to the loss of your housedata.
+If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or 1.11.0 or Slappygig's (Slappygig.github.io) 1.10.0 or 1.11.0 due to the loss of your housedata.
 
 If there's a bug in this repository, click on the Send Feedback button in the Main Menu, go to the bug-reports channel and report any bugs. I'll try to fix it as soon as I can.
 
