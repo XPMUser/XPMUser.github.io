@@ -15053,6 +15053,8 @@ Pirate.STORE = {
 		}, {
 			ID: 33
 		}, {
+			ID: 46
+		}, {
 			ID: 66
 		}, {
 			ID: 98
@@ -43258,7 +43260,7 @@ var AudioController = function () {
 	}(),
 	Prodigy = function () {
 		function e(e) {
-			this.version2 = "Prodigy Version 1.11.0", this.version = "Definitive Edition Version 2.0.3b", this.player = new Player, this.graphics = new GraphicsController(e), this.audio = new AudioController(e), this.open = new MenuFactory(e), this.effects = new EffectFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.chat = new ChatManager(e), this.network = new NetworkManager(e), this.education = new EducationSystem(e), this.canvas = null
+			this.version2 = "Prodigy Version 1.11.0", this.version = "Definitive Edition Version 2.0.4b", this.player = new Player, this.graphics = new GraphicsController(e), this.audio = new AudioController(e), this.open = new MenuFactory(e), this.effects = new EffectFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.chat = new ChatManager(e), this.network = new NetworkManager(e), this.education = new EducationSystem(e), this.canvas = null
 		}
 		return e.prototype.cleanup = function () {
 			this.dialogue.cleanup()
