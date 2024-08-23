@@ -457,7 +457,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "Prodigy 1-50-0 Definitive Edition", e["GameConstants.Beta.VERSION"] = "Version 2.0.4 Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "Prodigy 1-50-0 Definitive Edition", e["GameConstants.Beta.VERSION"] = "Version 2.0.5 Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -1009,7 +1009,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-face-noot": {
 			type: "atlas",
-			key: "npc-face-noot",
+			key: "npc-face-guard",
 			v: "1"
 		},
 		"npc-face-pippit": {
@@ -1108,7 +1108,8 @@ Util.capitalize = function(e) {
 			v: "1"
 		},
 		"npc-sprite-flora": {
-			type: "atlas",
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pdenot1.50.0/assets/images/",
 			key: "npc-sprite-flora",
 			v: "3"
 		},
@@ -1164,7 +1165,7 @@ Util.capitalize = function(e) {
 		},
 		"npc-sprite-noot": {
 			type: "atlas",
-			key: "npc-sprite-noot",
+			key: "npc-sprite-guard",
 			v: "1"
 		},
 		"npc-sprite-pippit": {
@@ -6963,8 +6964,8 @@ Util.capitalize = function(e) {
 		},
 		"normal-outfit-male-58": {
 			type: "spritesheet",
-			base: r,
-			url: "42.png",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/normal/male/outfit/",
+			url: "58.png",
 			x: 92,
 			y: 154,
 			w: 74,
@@ -7485,8 +7486,8 @@ Util.capitalize = function(e) {
 		},
 		"reduced-outfit-male-58": {
 			type: "spritesheet",
-			base: e,
-			url: "42.png",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
+			url: "58.png",
 			x: 45,
 			y: 84,
 			w: 37,
@@ -15334,7 +15335,7 @@ Util.capitalize = function(e) {
 		},
 		"reduced-hair-male-5-16": {
 			type: "spritesheet",
-			base: i,
+			base: "https://raw.githubusercontent.com/XPMUser/XPMUser.github.io/main/oldprodigy/pde1221/assets/images/player/reduced/male/hair/",
 			url: "5-16.png",
 			x: 42,
 			y: 44,
@@ -29116,8 +29117,6 @@ Util.capitalize = function(e) {
 	}, {
 		text: "We have trouble installing bots for this version."
 	}, {
-		text: "Modpacks except for Imitation Titan are supported for this version as well."
-	}, {
 		text: "Click on the ground/floor to make your wizard walk."
 	}, {
   		text: "If you're an Xbox One user or an iPad user and you still want to continue using your saved save, use a different device."
@@ -29126,14 +29125,14 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Do you miss Michael Jackson? You can see him in floor 105."
 	}, {
-		text: "Wanna change your skin color, gender, and/or your name (not your nickname)? You can edit your save manually with text editors like Notepad."
+		text: "Want to change your first name? You can edit your save manually with text editors like Notepad, Notepad++, etc."
 	}]
 }, Prodigy.Hints.prototype = {
 	getRandomHint: function(e) {
 		return Prodigy.Hints.data[e][Math.floor(Math.random() * Prodigy.Hints.data[e].length)]
 	}
 }, Prodigy.Hints.prototype.constructor = Prodigy.Hints, Prodigy.EmailDomains = function() {}, Prodigy.EmailDomains.data = {
-	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca"]
+	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca", "xpmuser.github.io"]
 }, Prodigy.EmailDomains.prototype = {
 	hasCommonDomain: function(e) {
 		var t = e.substring(e.indexOf("@") + 1, e.length);
@@ -44554,6 +44553,10 @@ Prodigy.ForestBoss = function(e, t) {
 		}, {
 			icon: "settings",
 			bot: "Other"
+		}, {
+			icon: "player",
+			top: "Name &",
+			bot: "Gender"
 		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 900, 280, {
 			icon: "settings",
 			bot: "Intro"
@@ -44572,6 +44575,9 @@ Prodigy.ForestBoss = function(e, t) {
 		switch (Prodigy.RenderMenu.prototype.setMode.call(this, e), this.clearContents(), e) {
 			case 1:
 				this.openOther();
+				break;
+			case 2:
+				this.openGender();
 				break;
 			default:
 				this.openSound()
@@ -44617,6 +44623,24 @@ Prodigy.ForestBoss = function(e, t) {
 			size: Prodigy.Control.TextButton.MED
 		}, this.saveCharacter.bind(this))
 	},
+	openGender: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "" + "Choose your gender or change your name." : "Choose your gender or change your name.";
+		this.game.prodigy.create.font(this.content, 0, 50, e, {
+			width: 600,
+			align: "center"
+		}), this.game.prodigy.create.textButton(this.content, 150, 100, {
+			text: "Girl",
+			size: Prodigy.Control.TextButton.MED
+		}, this.Girl.bind(this)),
+		this.game.prodigy.create.textButton(this.content, 150, 150, {
+			text: "Boy",
+			size: Prodigy.Control.TextButton.MED
+		}, this.Boy.bind(this)),
+		this.game.prodigy.create.textButton(this.content, 150, 200, {
+			text: "MN & LN",
+			size: Prodigy.Control.TextButton.MED
+		}, this.MiddleandLastName.bind(this))
+	},
 	toggleMember: function() {
 		!0 == this.game.prodigy.player.isMember ? (this.game.prodigy.player.isMember = !1, this.game.prodigy.open.okaymessage("You have deactivated Membership.", null, null, "No longer member!", "membership")) : (this.game.prodigy.player.isMember = !0, this.game.prodigy.open.okaymessage("You have unlocked Membership!", null, null, "You are member!", "membership"))
 	},
@@ -44646,6 +44670,15 @@ Prodigy.ForestBoss = function(e, t) {
 			gameVersion: this.game.prodigy.version
 		};
 		this.downloadForCharacter(JSON.stringify(e), this.game.prodigy.player.appearance.data.name + ".json", "text/plain")
+	},
+	Girl: function() {
+		this.game.prodigy.player.appearance.data.gender="female"
+	},
+	Boy: function() {
+		this.game.prodigy.player.appearance.data.gender="male"
+	},
+	MiddleandLastName: function() {
+		this.game.prodigy.open.nameChange()
 	},
 	exitGame: function() {
 		this.game.prodigy.network.logout()
@@ -46764,37 +46797,37 @@ Prodigy.ForestBoss = function(e, t) {
 		if (this.clearItems(), "pet" === e.type) this.dialogue.setText({
 			text: "You got a new pet!",
 			element: this.getItems(1, t),
-			face: 2,
+			face: 3,
 			anim: 1
 		});
 		else if ("dorm" === e.type) this.dialogue.setText({
 			text: "You got furniture for your house!",
 			element: this.getItems(1, t),
-			face: 2,
+			face: 3,
 			anim: 1
 		});
 		else if ("dormbg" === e.type) this.dialogue.setText({
 			text: "You've moved to a new house! I'll clean up all your furniture for you.",
 			element: this.getItems(1, t),
-			face: 2,
+			face: 3,
 			anim: 1
 		});
 		else if ("bounty" === e.type) this.dialogue.setText({
 			text: "You earned bounty points!",
 			element: this.getItems(1, t),
-			face: 2,
+			face: 3,
 			anim: 1
 		});
 		else if ("gold" === e.type) this.dialogue.setText({
 			text: "You got gold!",
 			element: this.getItems(1, t),
-			face: 2,
+			face: 3,
 			anim: 1
 		});
 		else if ("spell" === e.type) this.dialogue.setText({
 			text: "You learned a new spell!",
 			element: this.getItems(1, t),
-			face: 2,
+			face: 3,
 			anim: 1
 		}), this.items.length > 1 && this.dialogue.setText({
 			callback: this.close.bind(this)
@@ -46812,7 +46845,7 @@ Prodigy.ForestBoss = function(e, t) {
 		} else this.dialogue.setText({
 			text: "You got an item!",
 			element: this.getItems(1, t),
-			face: 2,
+			face: 3,
 			anim: 1
 		})
 	},
@@ -46870,7 +46903,7 @@ Prodigy.ForestBoss = function(e, t) {
 		hideContent: !0,
 		tile: "bg-tile-white"
 	}), this.setup()
-}, Prodigy.Menu.Stylist.EYES = [11303522, 7426628, 14844965, 14860069, 14017835, 7660843, 4837077, 1657838, 8530901, 14695800, 16733628, 4025779, 10547199, 16772244, 236287], Prodigy.Menu.Stylist.M_EYES = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], Prodigy.Menu.Stylist.HAIR = [16777166, 16768906, 14466221, 11901838, 7103584, 16754058, 13762442, 10157962, 9106431, 9087743, 14650111, 16747180, 16568319, 13631487, 15925199, 15791866], Prodigy.Menu.Stylist.M_HAIR = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], Prodigy.Menu.Stylist.M_STYLE = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], Prodigy.extends(Prodigy.Menu.Stylist, Prodigy.Control.Menu, {
+}, Prodigy.Menu.Stylist.EYES = [11303522, 7426628, 14844965, 14860069, 14017835, 7660843, 4837077, 1657838, 8530901, 14695800, 16733628, 4025779, 10547199, 16772244, 236287], Prodigy.Menu.Stylist.M_EYES = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], Prodigy.Menu.Stylist.HAIR = [16777166, 16768906, 14466221, 11901838, 7103584, 16754058, 13762442, 10157962, 9106431, 9087743, 14650111, 16747180, 16568319, 13631487, 15925199, 15791866], Prodigy.Menu.Stylist.M_HAIR = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], Prodigy.Menu.Stylist.M_STYLE = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], Prodigy.Menu.Stylist.SKIN = [16774616, 16772286, 15322276, 13020822, 9402982], Prodigy.Menu.Stylist.M_SKIN = [16774616, 16772286, 15322276, 13020822, 9402982], Prodigy.extends(Prodigy.Menu.Stylist, Prodigy.Control.Menu, {
 	menuSetup: function() {
 		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.scroll = this.game.prodigy.create.scrollBar(this, 60, 180, 345, this.setPage.bind(this)), this.playerCopy = new Player(this.game), this.data = new Prodigy.Container.UserEquipment(this.game, this, 872, 200, this.playerCopy, !0), this.content = this.game.prodigy.create.element(this, 0, 0), this.game.prodigy.create.font(this.data, 0, 250, "Click to buy this look!", {
 			size: 20,
@@ -46896,6 +46929,10 @@ Prodigy.ForestBoss = function(e, t) {
 			icon: "eyes-2",
 			callback: this.setEyes.bind(this),
 			title: "CHOOSE EYE COLOR"
+		}, {
+			icon: "player",
+			callback: this.setSkin.bind(this),
+			title: "CHOOSE SKIN COLOR"
 		}];
 		this.showFrame("player", "STYLIST", e, 0);
 		var t = this.game.prodigy.create.textButton(this, 0, 0, {
@@ -46977,8 +47014,39 @@ Prodigy.ForestBoss = function(e, t) {
 		}
 		this.scroll.setPages(1 + Math.floor((this.current.length - 1) / 6))
 	},
+	setSkin: function() {
+		this.resetPlayer(), this.content.removeAll(!0), this.locked = !1, this.current = [];
+		for (var e = Prodigy.Menu.Stylist.SKIN, t = 0; t < e.length; t++) {
+			var i = {
+				type: "skin",
+				ID: t + 1,
+				icon: "empty",
+				price: 0,
+				member: Prodigy.Menu.Stylist.M_SKIN[t],
+				name: "Skin Color",
+				tint: e[t]
+			};
+			this.current.push(i)
+		}
+		this.scroll.setPages(1 + Math.floor((this.current.length - 1) / 6))
+	},
+	setGender: function() {
+		this.resetPlayer(), this.content.removeAll(!0), this.locked = !1, this.current = [];
+		for (var e = Appearance.setGender[this.playerCopy.appearance.getGender()], t = 0; t < e.length; t++) {
+			var i = {
+				type: "gender",
+				ID: t + 1,
+				icon: "player",
+				price: 0,
+				member: Prodigy.Menu.Stylist.M_Gender[t],
+				name: e[t]
+			};
+			this.current.push(i)
+		}
+		this.scroll.setPages(1 + Math.floor((this.current.length - 1) / 6))
+	},
 	changeAppearance: function(e) {
-		this.locked = e.member && !this.game.prodigy.player.isMember, "eyes" === e.type ? this.playerCopy.appearance.setEyeColor(e.ID) : "hair" === e.type ? this.playerCopy.appearance.setHairColor(e.ID) : "style" === e.type && this.playerCopy.appearance.setHairStyle(e.ID), this.locked ? this.buyBtn.setIcon("membership") : this.buyBtn.setIcon("item/26"), this.data.user.reload()
+		this.locked = e.member && !this.game.prodigy.player.isMember, "gender" === e.type ? this.playerCopy.appearance.setGender(e.ID) : "skin" === e.type ? this.playerCopy.appearance.setSkinColor(e.ID) : "eyes" === e.type ? this.playerCopy.appearance.setEyeColor(e.ID) : "hair" === e.type ? this.playerCopy.appearance.setHairColor(e.ID) : "style" === e.type && this.playerCopy.appearance.setHairStyle(e.ID), this.locked ? this.buyBtn.setIcon("membership") : this.buyBtn.setIcon("item/26"), this.data.user.reload()
 	},
 	buy: function() {
 		this.locked && this.game.prodigy.network.sendAnalytics("Buy-Member-Style"), !this.player.isMember && this.locked ? this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.STYLE) : 250 > this.player.getGold() ? this.player.isMember ? this.game.prodigy.open.message("You need [gold]250 to style your wizard. You only have [gold]" + this.player.getGold(!0) + ".", null, "gold", "Uh oh!") : this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.MORE_GOLD) : this.game.prodigy.open.confirm("Are you sure you want to style your wizard for 250 gold? \nThis will change your wizard's appearance.", this.completePurchase.bind(this))
@@ -47789,7 +47857,7 @@ Prodigy.ForestBoss = function(e, t) {
 	constructor: Prodigy.Menu.Nicknamer,
 	menuSetup: function() {
 		Prodigy.Control.Menu.prototype.menuSetup.call(this);
-		var e = this.game.prodigy.create.panel(this, 390, 80, 10, 10);
+		var e = this.game.prodigy.create.panel(this, 390, 60, 10, 12);
 		e.add(this.game.prodigy.create.sprite(-15, -15, "icons", "item/12")), this.game.prodigy.create.font(e, 80, 15, "Change my name to...", {
 			align: "left",
 			size: 30
@@ -47809,10 +47877,10 @@ Prodigy.ForestBoss = function(e, t) {
 				size: 20
 			}), r && h.add(l), o && h.add(this.game.prodigy.create.sprite(-5, -5, "icons", "membership"))
 		}
-		this.selected = e.add(this.game.prodigy.create.sprite(25, -5, "icons", "yes")), this.selected.visible = !1, this.quit = this.game.prodigy.create.textButton(e, 40, 470, {
+		this.selected = e.add(this.game.prodigy.create.sprite(25, -5, "icons", "yes")), this.selected.visible = !1, this.quit = this.game.prodigy.create.textButton(e, 40, 520, {
 			icon: "close",
 			text: "cancel"
-		}, this.close.bind(this)), this.apply = this.game.prodigy.create.textButton(e, 260, 470, {
+		}, this.close.bind(this)), this.apply = this.game.prodigy.create.textButton(e, 260, 520, {
 			icon: "next",
 			text: "apply"
 		}, this.apply.bind(this)), this.apply.setInactive()
@@ -49435,10 +49503,10 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
 	addDefaultConfig: function() {
-		this.addPage(0), this.addMenu(0, 0), this.addMemberIcon(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0)
+		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0)
 	},
 	addHouseConfig: function(e) {
-		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
+		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1), this.addGirl(e, 1)
 	},
 	addMoveHouse: function(e, t) {
 		this.pages[e][t].push({
@@ -49450,20 +49518,12 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			type: "EditHouseButton"
 		})
 	},
+	addEditName: function(e, t) {
+		this.game.prodigy.open.nameChange()
+	},
 	addLockHouse: function(e, t) {
 		this.pages[e][t].push({
 			type: "LockHouseButton"
-		})
-	},
-	addStore: function () {
-		this.addMenu(1, [{
-			icon: "catalogue",
-			callback: this.game.prodigy.open.store.bind(this.game.prodigy.open, Prodigy.Menu.Store.DATA)
-		}])
-	},
-	addMailer: function(e, t) {
-		this.pages[e][t].push({
-			type: "MailerButton"
 		})
 	},
 	addSpellbook: function(e, t) {
@@ -49509,9 +49569,14 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			type: "SettingsButton"
 		})
 	},
-	addMemberIcon: function(e, t) {
-		this.game.prodigy.player.isMember || this.pages[e][t].push({
-			type: "MemberIconButton"
+	addGirl: function(e, t) {
+		this.game.prodigy.player.appearance.data.gender='female' || this.pages[e][t].push({
+			type: "GirlButton"
+		})
+	},
+	addBoy: function(e, t) {
+		this.game.prodigy.player.appearance.data.gender='male' || this.pages[e][t].push({
+			type: "BoyButton"
 		})
 	}
 
@@ -75033,7 +75098,7 @@ var Dino = function () {
 	}, e
 }();
 Dino.STORE = {
-	name: "Dyno Dig Shop",
+	name: "The Dyno Dig Shop",
 	items: [{
 		ID: 43,
 		type: "hat"
