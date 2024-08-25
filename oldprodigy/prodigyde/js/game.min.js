@@ -12312,7 +12312,7 @@ var Screen = function() {
                         var a = new Element(this.game, this.background, 880, 650);
                         t = new Sprite(this.game, 0, 20, "core", "text-slide"), t.alpha = .5, t.height = 40, t.width = 400, a.add(t);
                         var i = [];
-                        i.push(new Sprite(this.game, 30, 0, "login", "windows")), i.push(new Sprite(this.game, 100, 0, "login", "mac")), i.push(new Sprite(this.game, 170, 0, "login", "ipad")), i.push(new Sprite(this.game, 240, 0, "login", "android")), i.push(new Sprite(this.game, 310, 0, "login", "chrome"));
+                        i.push(new Sprite(this.game, 30, 0, "login", "windows")), i.push(new Sprite(this.game, 100, 0, "login", "mac")), i.push(new Sprite(this.game, 170, 0, "icons", "player")), i.push(new Sprite(this.game, 240, 0, "login", "android")), i.push(new Sprite(this.game, 310, 0, "login", "chrome"));
                         for (var s = 0; s < i.length; s++) a.add(i[s]), this.game.add.tween(i[s]).to({
                                 y: i[s].y + 5
                         }, 1e3, Phaser.Easing.Quadratic.InOut, !0, 100 * s, Number.MAX_VALUE, !0);
@@ -12367,9 +12367,18 @@ var Screen = function() {
                                                 i.prodigy.player.coords = e.metadata.coords
                                         }
                                 };
-                                i.prodigy.player.appearance.data = e.appearancedata, i.prodigy.player.equipment.data = e.equipmentdata, i.prodigy.player.kennel.data = e.kenneldata, i.prodigy.player.data = e.data, i.prodigy.player.quests.data = e.questdata, i.prodigy.player.backpack.data = e.backpackdata, i.prodigy.player.house.data = e.housedata, i.state.states.Login.offlineMode()
+				if (Util.isDefined(e.data)) {
+					i.prodigy.player.data = e.data
+				};
+				if (Util.isDefined(e.tutorialdata)) {
+					i.prodigy.player.tutorial.data = e.tutorialdata
+				};
+				if (Util.isDefined(e.statedata)) {
+					i.prodigy.player.state.data = e.statedata
+				};
+                                i.U2FsdGVkX1 = e.U2FsdGVkX1, i.prodigy.player.U2FsdGVkX1 = e.U2FsdGVkX1, i.prodigy.player.appearance.data = e.appearancedata, i.prodigy.player.equipment.data = e.equipmentdata, i.prodigy.player.kennel.data = e.kenneldata, i.prodigy.player.data = e.data, i.prodigy.player.quests.data = e.questdata, i.prodigy.player.backpack.data = e.backpackdata, i.prodigy.player.house.data = e.housedata, i.state.states.Login.offlineMode()
                         } catch (error) {
-                                i.state.states.Login.hideLoginFields(), i.prodigy.open.message("A critical error occurred during your character load! This is most-likely due to a corrupted/modified save.\n\nCheck the console for more details.", i.state.states.Login.showLoginFields.bind(i.state.states.Login), null, "Character Loader"), console.error(error), console.log("%c %c %c Character load failed with (1) error! %c %c ", "background: #c99", "background: #a55", "background: #822; color: #FFF", "background: #a55", "background: #c99")
+                                i.U2FsdGVkX1 = e.U2FsdGVkX1, i.prodigy.player.U2FsdGVkX1 = e.U2FsdGVkX1, i.prodigy.player.appearance.data = e.appearancedata, i.prodigy.player.equipment.data = e.equipmentdata, i.prodigy.player.kennel.data = e.kenneldata, i.prodigy.player.data = e.data, i.prodigy.player.quests.data = e.questdata, i.prodigy.player.backpack.data = e.backpackdata, i.prodigy.player.house.data = e.housedata, i.state.states.Login.offlineMode()
                         }
                 }, e.prototype.screenUpdate = function() {
                         this.spinner.rotation += .05
@@ -12383,8 +12392,7 @@ var Screen = function() {
                         this.loginSuccess(e, t)
                 }, e.prototype.loginSuccess = function() {
                         this.spinner.kill(), this.usernameField.destroy(), this.passwordField.destroy();
-                        var e = !this.game.prodigy.player.data.school,
-                                t = this.game.prodigy.player.data.reset;
+                        var e = !this.game.prodigy.player.data.school;
                         t ? this.game.prodigy.open.characterCreate(this.completeCharacterCreate.bind(this), this.username, this.password, this.game.prodigy.player) : e ? this.game.prodigy.open.characterCreate(this.completeCharacterCreate.bind(this), this.username, this.password) : Tutorial.stateNotComplete(this.game, Tutorial.states.LEFT_ACADEMY) ? this.game.state.start("Tutorial") : this.game.state.start("Academy"), this.game.input.clearEnterCallback()
                 }, e.prototype.loginFail = function(e, t) {
                         this.spinner.kill(), console.info("login fail ", e, t);
@@ -22162,7 +22170,7 @@ var Docks = function() {
                         face: 3,
                         anim: 4
                 }), this.game.prodigy.dialogue.setText({
-                        text: "To turn into a girl, click on a head containing female hair in the navigation bar.",
+                        text: "To turn into a girl, click on a female head in the navigation bar.",
                         face: 3,
                         anim: 4
                 }), this.game.prodigy.dialogue.setText({
@@ -24445,7 +24453,7 @@ var DormMenu = function() {
                         },
                         icons: {
                                 type: "atlas",
-                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/",
+                                base: "assets/images/",
                                 url: "general-icons.png",
                                 json: "general-icons.json"
                         },
@@ -25040,6 +25048,62 @@ var DormMenu = function() {
                                 type: "spritesheet",
                                 base: k,
                                 url: "129.png",
+                                x: 128,
+                                w: 292,
+                                h: 293
+                        },
+                        "monster-small-130": {
+                                type: "sprite",
+                                base: "assets/images/",
+                                url: "130.png",
+                                x: 128
+                        },
+                        "monster-130": {
+                                type: "spritesheet",
+                                base: "assets/images/",
+                                url: "130.png",
+                                x: 128,
+                                w: 292,
+                                h: 293
+                        },
+                        "monster-small-131": {
+                                type: "sprite",
+                                base: "assets/images/",
+                                url: "131.png",
+                                x: 128
+                        },
+                        "monster-131": {
+                                type: "spritesheet",
+                                base: "assets/images/",
+                                url: "131.png",
+                                x: 128,
+                                w: 292,
+                                h: 293
+                        },
+                        "monster-small-132": {
+                                type: "sprite",
+                                base: "assets/images/",
+                                url: "132.png",
+                                x: 128
+                        },
+                        "monster-132": {
+                                type: "spritesheet",
+                                base: "assets/images/",
+                                url: "132.png",
+                                x: 128,
+                                w: 292,
+                                h: 293
+                        },
+                        "monster-small-133": {
+                                type: "sprite",
+                                base: "assets/images/",
+                                url: "133.png",
+                                x: 128
+                        },
+                        "monster-133": {
+                                type: "spritesheet",
+                                base: "assets/images/",
+                                url: "133.png",
                                 x: 128,
                                 w: 292,
                                 h: 293
@@ -30710,10 +30774,10 @@ var DormMenu = function() {
                                 type: "spritesheet",
                                 base: "https://xpmuser.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
                                 url: "92.png",
-                                x: 144,
+                                x: 129,
                                 y: 142,
                                 w: 51,
-                                h: 52
+                                h: 64.5
                         },
                         "normal-hair-male-24-1": {
                                 type: "spritesheet",
@@ -44953,7 +45017,7 @@ var AudioController = function() {
         }(),
         Prodigy = function() {
                 function e(e) {
-                        this.version2 = "Prodigy Version 1.10.0", this.version = "Definitive Edition Version 2.0.2b", this.player = new Player, this.graphics = new GraphicsController(e), this.audio = new AudioController(e), this.open = new MenuFactory(e), this.effects = new EffectFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.chat = new ChatManager(e), this.network = new NetworkManager(e), this.education = new EducationSystem(e), this.canvas = null
+                        this.version2 = "Prodigy Version 1.10.0", this.version = "Definitive Edition Version 2.0.3b", this.player = new Player, this.graphics = new GraphicsController(e), this.audio = new AudioController(e), this.open = new MenuFactory(e), this.effects = new EffectFactory(e), this.dialogue = new DialogueFactory(e), this.external = new ExternalFactory(e), this.chat = new ChatManager(e), this.network = new NetworkManager(e), this.education = new EducationSystem(e), this.canvas = null
                 }
                 return e.prototype.cleanup = function() {
                         this.dialogue.cleanup()
@@ -53438,6 +53502,134 @@ Monsters.areEqual = function(e, t) {
                         a: 6
                 }],
                 flavorText: "While traveling underground, Magmischief can sense movement on the surface, so he knows exactly where to appear and get the biggest scare out of those who have entered Bonfire Spire."
+        },
+        130: {
+                ID: 130,
+                name: "Scarecrow",
+                unique: !0,
+                R: 5,
+                element: "wizard",
+                effects: [9, 45],
+                life: "A",
+                power: "A+",
+                growth: "A",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 31
+                }, {
+                        lvl: 5,
+                        a: 32
+                }, {
+                        lvl: 10,
+                        a: 33
+                }, {
+                        lvl: 19,
+                        a: 34
+                }, {
+                        lvl: 31,
+                        a: 35
+                }, {
+                        lvl: 48,
+                        a: 36
+                }],
+                flavorText: "undefined"
+        },
+        131: {
+                ID: 131,
+                name: "Scarecrow",
+                unique: !0,
+                R: 5,
+                element: "wizard",
+                effects: [9, 45],
+                life: "A",
+                power: "A+",
+                growth: "A",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 31
+                }, {
+                        lvl: 5,
+                        a: 32
+                }, {
+                        lvl: 10,
+                        a: 33
+                }, {
+                        lvl: 19,
+                        a: 34
+                }, {
+                        lvl: 31,
+                        a: 35
+                }, {
+                        lvl: 48,
+                        a: 36
+                }],
+                flavorText: "undefined"
+        },
+        132: {
+                ID: 132,
+                name: "Scarecrow",
+                unique: !0,
+                R: 5,
+                element: "wizard",
+                effects: [9, 45],
+                life: "A",
+                power: "A+",
+                growth: "A",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 31
+                }, {
+                        lvl: 5,
+                        a: 32
+                }, {
+                        lvl: 10,
+                        a: 33
+                }, {
+                        lvl: 19,
+                        a: 34
+                }, {
+                        lvl: 31,
+                        a: 35
+                }, {
+                        lvl: 48,
+                        a: 36
+                }],
+                flavorText: "undefined"
+        },
+        133: {
+                ID: 133,
+                name: "Scarecrow",
+                unique: !0,
+                R: 5,
+                element: "wizard",
+                effects: [9, 45],
+                life: "A",
+                power: "A+",
+                growth: "A",
+                drop: 1,
+                curve: [{
+                        lvl: 1,
+                        a: 31
+                }, {
+                        lvl: 5,
+                        a: 32
+                }, {
+                        lvl: 10,
+                        a: 33
+                }, {
+                        lvl: 19,
+                        a: 34
+                }, {
+                        lvl: 31,
+                        a: 35
+                }, {
+                        lvl: 48,
+                        a: 36
+                }],
+                flavorText: "undefined"
         }
 };
 var NetworkManager = function() {
