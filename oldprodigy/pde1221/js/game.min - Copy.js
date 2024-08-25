@@ -61,7 +61,7 @@ function ApiClient(e, t) {
         root: void 0
     };
     switch ("https://xpmuser-github-io-prodidows.onrender.com/") {
-        case "oldprodigy.byethost5.com":
+        case "oldprodigy.onrender.com":
         case "definitive-edition-backend.onrender.com":
         case "prodigywebdev.cloudapp.net":
         case "arodrigues.dev.prodigygame.org":
@@ -13427,7 +13427,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"reduced-hair-male-5-16": {
 			type: "spritesheet",
-			base: "assets/images/player/reduced/male/hair/",
+			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/hair/",
 			url: "5-16.png",
 			x: 42,
 			y: 44,
@@ -43146,7 +43146,7 @@ var SystemMenu = function() {
             }, this.close.bind(this));
             this.showBtns([], [a]), this.setupComplete = !0
         }, e.prototype.loadWizards = function(e) {
-            return Util.isDefined(this.lastUpdate) && this.lastUpdate > (new Date).getTime() ? (this.game.prodigy.open.message("Do you know javascript?"), void 0) : (this.lastUpdate = (new Date).getTime() + 5e3, this.error.visible = !0, Util.isDefined(this.classIDs) && this.classIDs.length > 0 ? (this.error.setText("Loading..."), this.content.visible = !1, this.game.prodigy.network.getLeaderboard(e, this.classIDs, this.loadWizardsComplete.bind(this, e, !0), this.loadWizardsComplete.bind(this, e, !1))) : this.error.setText("To change your name (not your nickname), you can edit your save using text editors like Notepad."), void 0)
+            return Util.isDefined(this.lastUpdate) && this.lastUpdate > (new Date).getTime() ? (this.game.prodigy.open.message("Do you know javascript?"), void 0) : (this.lastUpdate = (new Date).getTime() + 5e3, this.error.visible = !0, Util.isDefined(this.classIDs) && this.classIDs.length > 0 ? (this.error.setText("Loading..."), this.content.visible = !1, this.game.prodigy.network.getLeaderboard(e, this.classIDs, this.loadWizardsComplete.bind(this, e, !0), this.loadWizardsComplete.bind(this, e, !1))) : this.error.setText("To change your name (not your nickname), you can edit your save by using text editors like Notepad."), void 0)
         }, e.prototype.loadWizardsComplete = function(t, a, i) {
             if (Util.isDefined(this.game)) {
                 if (console.log(i), this.type = t, this.leaders = i, !a || !Util.isDefined(i) || i.length <= 0) return this.error.setText("There was an error loading your class...try again later"), this.error.visible = !0, void 0;
@@ -45873,7 +45873,7 @@ var GotItem = function() {
                 tile: "bg-tile-white"
             }), this.setup()
         }
-        return e.prototype = Object.create(Menu.prototype), e.EYES = [11303522, 7426628, 14844965, 14860069, 14017835, 7660843, 4837077, 1657838, 8530901, 14695800, 16733628, 4025779, 10547199, 16772244, 236287], e.M_EYES = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], e.HAIR = [16777166, 16768906, 14466221, 11901838, 7103584, 16754058, 13762442, 10157962, 9106431, 9087743, 14650111, 16747180, 16568319, 13631487, 15925199, 15791866], e.M_HAIR = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], e.M_STYLE = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], e.SKIN = [!0, !0, !0, !0, !0], e.M_SKIN = [!0, !0, !0, !0, !0], e.GENDER = [!0, !1], e.M_GENDER = [!0, !1], e.prototype.menuSetup = function() {
+        return e.prototype = Object.create(Menu.prototype), e.EYES = [11303522, 7426628, 14844965, 14860069, 14017835, 7660843, 4837077, 1657838, 8530901, 14695800, 16733628, 4025779, 10547199, 16772244, 236287], e.M_EYES = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], e.HAIR = [16777166, 16768906, 14466221, 11901838, 7103584, 16754058, 13762442, 10157962, 9106431, 9087743, 14650111, 16747180, 16568319, 13631487, 15925199, 15791866], e.M_HAIR = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], e.M_STYLE = [!0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0, !0], e.SKIN = [16774616, 16772286, 15322276, 13020822, 9402982], e.M_SKIN = [16774616, 16772286, 15322276, 13020822, 9402982], e.GENDER = [!0, !1], e.M_GENDER = [!0, !1], e.prototype.menuSetup = function() {
             Menu.prototype.menuSetup.call(this), this.scroll = new ScrollBar(this.game, this, 60, 180, 345, this.setPage.bind(this)), this.playerCopy = new Player, this.data = new UserEquipment(this.game, this, 872, 200, this.playerCopy, !0), this.content = new Prodigy.Element(this.game, this, 0, 0), new BitmapFont(this.game, this.data, 0, 250, "Click to buy this look!", {
                 size: 20,
                 width: 348,
@@ -49034,7 +49034,7 @@ var Screen = function() {
 				align: "center"
 			});
 			var a = new Prodigy.Panel(this.game, this.background, 900, 60, 7, 12);
-			a.alpha = .9, new BitmapFont(this.game, a, 0, 10, "Black circles are placeholders for the skin color options in the Stylist Shop!", {
+			a.alpha = .9, new BitmapFont(this.game, a, 0, 10, "The name changing feature is coming soon!", {
 				font: "button",
 				size: 36,
 				width: 360,
@@ -63551,7 +63551,7 @@ Prodigy.MenuFactory = function(e) {
         this._menus.push(new Store(this.game, this.menuLayer, e, t, a))
     }
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function(e) {
-    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition version 2.1.0b", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
+    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition version 2.1.1b", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
 }, Prodigy.GameObj.prototype = {
     init: function(e) {
         this.textureBelow = e.add.renderTexture(1280, 720), this.textureAbove = e.add.renderTexture(1280, 720), this.textureMenu = e.add.renderTexture(1280, 720)

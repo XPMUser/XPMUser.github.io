@@ -179,7 +179,7 @@ class ModHandler {
 	
 	initClassicFacesforboysMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "assets/images/general-2";
+		assets.heads.base = "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/general-2";
 		
 		PlayerContainer.getAssets = function(e, t, a, s, i) {
 			var i = new Array;
@@ -195,7 +195,7 @@ class ModHandler {
 	}
 	initCoyBlushMod() {
 		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "assets/images/general-";
+		assets.heads.base = "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/general-";
 		
 		PlayerContainer.getAssets = function(e, t, a, s, i) {
 			var i = new Array;
