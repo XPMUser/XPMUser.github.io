@@ -8,6 +8,8 @@ Warning: Swearing isn't recommended. You need to be at least 13 years old to use
 
 Click on the left arrow to go back.
 
+FPS Extension: https://chromewebstore.google.com/detail/fps-extension/gdkkmimldhefhmmmlalioafomdlahcog
+
 # Credits
 
 Game restorers: Daboss7173 https://github.com/Daboss7173 and Craftersshaft https://github.com/craftersshaft/
