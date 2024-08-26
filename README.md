@@ -222,7 +222,7 @@ Currently, these are the versions that support modpacks:
 - 1.51.1 (Bugfixes)
 - 1.52.0 (Bugfixes)
 - 1.60.0 (Changed the Login Background + Shipwreck Shore and Starlight Festival update)
-- 1.70.0 (Changed the Login Background + Dark Tower and Winterfest update)
+- 1.70.0 (Changed the Login Background + Dark Tower, Titan, and Winterfest update)
 - 1.80.0 (Changed the Login Background + Battle team update)
 - 1.90.0 Changed the Login Background + (Springfest update)
 - 2.6.0 (Changed the Login Background + Massive battle revision) Problems: Your questdata resets when you load your save from earlier than this version.
