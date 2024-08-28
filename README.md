@@ -125,7 +125,7 @@ This repository features dynamic modpacks, you'll be able to toggle mods as you 
 
 Address bar: ?mods=-insert mod here- or ?mods=-insert mod here-,-insert mod here-
 
-"-insert mod here-" means the names of the mods from the modpacks.
+"-insert mod here-" means the names of the mods from the mod list below.
 
 Here's a list of available useful mods:
 1. WalkSpeed
@@ -133,62 +133,65 @@ Here's a list of available useful mods:
 3. RebalancedBattles
 4. ImitationTitan
 5. Mathless
-6. Classic Faces
+6. ClassicFaces
+7. ClassicFacesforBoys
+8. Coyblush
 
 Some mods might work or not work in some versions.
 
 Currently, these are the versions that support modpacks:
- - 1-9-0 https://xpmuser.github.io/oldprodigy/1-9-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-9-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-9-0/?mods=WalkSpeed,FastGameSpeed
- - 1-10-0 https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-10-0/?mods=WalkSpeed,FastGameSpeed
+ - 1-9-0 
+ - 1-10-0 
  - prodigyde
  - pde2015
  - pde1221
  - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
- - 1-24-0 https://xpmuser.github.io/oldprodigy/1-24-0/?mods=WalkSpeed FastGameSpeed's a no go.
+ - 1-24-0 
  - 1-28-1 Beta (Not marked as beta in the version selection screen!)
  - 1-29-0
  - 1-30-0
- - 1-30-1 https://xpmuser.github.io/oldprodigy/1-30-1/?mods=WalkSpeed,FastGameSpeed/
- - 1-30-2 https://xpmuser.github.io/oldprodigy/1-30-2/?mods=WalkSpeed,FastGameSpeed/
- - 1-30-3-1 https://xpmuser.github.io/oldprodigy/1-30-3-1/?mods=WalkSpeed,FastGameSpeed/
+ - 1-30-1 
+ - 1-30-2 
+ - 1-30-3-1 
  - pdenot1.50.0 (Prodigy Definitive Edition/Modified 1-46-2)
- - 1-46-2 https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-46-2/?mods=WalkSpeed,FastGameSpeed/ 
+ - 1-46-2 
  - 1-50-0
- - pde1500 Beta (Prodigy Definitive Edition/Modified 1-50-0)
- - 1-50-0 Ultimate Edition: https://xpmuser.github.io/oldprodigy/play/1-50-0%20Ultimate%20Edition/?mods=WalkSpeed,FastGameSpeed,RebalancedBattles/&i=2
- - pde1.51.0 Beta (Prodigy Definitive Edition/Modified 1-51-0)
+ - pde1500 (Prodigy Definitive Edition/Modified 1-50-0 in open-source mode)
+ - 1-50-0 Ultimate Edition
+ - pde1.51.0 (In Beta) (Prodigy Definitive Edition/Modified 1-51-0)
  - 1-51-1
  - 1-52-0
- - 1-70-0: https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed https://xpmuser.github.io/oldprodigy/1-70-0/?mods=FastGameSpeed https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed,RebalancedBattles https://xpmuser.github.io/oldprodigy/1-70-0/?mods=FastGameSpeed,RebalancedBattles https://xpmuser.github.io/oldprodigy/1-70-0/?mods=RebalancedBattles https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed,FastGameSpeed https://xpmuser.github.io/oldprodigy/1-70-0/?mods=WalkSpeed,FastGameSpeed,RebalancedBattles
+ - 1-70-0
  - 2-45-0
  - 2-50-0
  - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
  - Some Prodidows versions
 
 ## List of Versions:
-- 1.0.0 (Map Update)
+- 1.0.0 (Map Update + Grew the game to make it take up the entire page + Hearts show up during battles instead of the bar + Problem: Removed the ability to take care of your pets + Bypassed opening Treasure Chests after winning battles + Updated the ui, menus, etc + Instead of going to a zone to just do battles, you can click on the NPC and then click on the yes button to do battles. + Another issue: Removed Multiplayer stuff + Updated the Character Creation Zone) You can apply whatever was missing on this version as modpacks for it.
 - 1.1.0 (Bugfixes)
 - 1.2.0 (Skywatch + Font changes)
 - 1.3.0 (Dark Tower)
 - 1.3.1 (Changed the Login Background + Bugfixes)
-- 1.4.0 (House Update)
+- 1.4.0 (House Update (None of the furnitures are interactable anymore))
 - 1.4.6 (Bugfixes)
 - 1.5.0 (Changed the Login Background)
 - 1.6.0 (Quests + Pirate Isle has been renamed to Barnacle Cove + Leaderboards have been temporarily disabled)
-- 1.7.0 (Added the Transformotron)
+- 1.7.0 (Added the Transformotron in the Academy + Treasure Chests appear during victory time.)
 - 1.7.1.3 (Bugfixes)
 - 1.8.0 (Changed the Login Background + Dyno Dig Oasis + Nicknames)
 - 1.8.1 (Bugfixes)
-- 1.9.0 (Changed the Login Background + Earliest Usable Pet Menu + Female wizards now have male faces. + Merchants are here + Replaced the words "Prodigy Island" with the 4 Map search filters + Updated colors of menu panels)
+- 1.9.0 (Changed the Login Background + Updated the Pet Menu + Female wizards now have male faces. + Merchants are here + Replaced the words "Prodigy Island" with the 4 Map search filters + Updated colors of menu panels + Added Peddler with a nickname called "Merchant" in Lamplight Square + Settings Update)
 - 1.10.0 (Archived + Bugfixes)
-- 1.11.0 (Changed the Login Background + Clockwork Town update + Archived + Updated map icons + UI Updates + Pet Team Setup in the pet menu instead of the removed PFB feature + Updated colors of the menu panel again + Intro + The merchant's name in Lamplight Square has been changed to "Peddler" + New Tutorial in the Lamplight Docks without getting any of the Starter Pets like Peeko, Soral, Dragic, and Creela + So Sleepy... has been added and is only teleportable when you lose the battle. + The PFB feature has been bypassed.)
+- 1.11.0 (Updated the Login Background + Clockwork Town update + Archived + Updated map icons + UI Updates + Pet Team Setup in the pet menu instead of the removed PFB feature + Updated colors of the menu panel again + Intro + The merchant's name in Lamplight Square has been changed to "Peddler" + New Tutorial in the Lamplight Docks without getting any of the Starter Pets like Peeko, Soral, Dragic, and Creela + So Sleepy... has been added and is only teleportable when you lose the battle. + The PFB feature has been bypassed.)
 - 1.12.0 (Bugfixes)
 - 1.12.2 (Reduced the map search filters and the leaderboards are back)
 - 1.13.0 (Changed the Login Background + UI Updates + Map filters have been replaced with the house button and the "go to your house!" text.)
 - 1.16.0 (Bugfixes)
 - 1.16.2 (Bugfixes)
 - 1.16.5 (Archived + Bugfixes)
+- 1.16.6 (Bugfixes)
 - 1.17.0 (Updated Tutorial and Firefly Forest)
 - 1.17.1 (Bugfixes)
 - 1.17.5 (More names)
@@ -198,7 +201,7 @@ Currently, these are the versions that support modpacks:
 - 1.19.0 (Bugfixes)
 - 1.20.0 (Bugfixes)
 - 1.20.1 (Changed the Login Background + Updated Shiverchill Mountain and Bok & Slip (Still the same as this one from older versions))
-- 1.22.1 (Changed the Login Background + Updated Lamplight Town, but Winterfest doesn't have its assets anymore, so it's removed. + New NPCs + Archived)
+- 1.22.1 (Changed the Login Background + Updated Lamplight Town, but Winterfest doesn't have its older assets anymore, so it's removed. + New NPCs + Archived)
 - 1.22.2 (Archived + Bugfixes)
 - 1.22.4 (Archived + Bugfixes)
 - 1.23.7 (Bounty Board added)
@@ -231,7 +234,7 @@ Currently, these are the versions that support modpacks:
 - 2.45.0 (Changed the Login Background + All Out Attack update + The Earth Tower) 
 - 2.50.0 (Removed The Lost Island) 
 - 1.30.0 (Prodigy Reborn 1.0) There's no math. Use the Walkspeed mod instead of the 2 removed buttons from the settings menu. ?mods=WalkSpeed Credits: The 1.30.0 Mod: Craftersshaft Problems: Plumber's Cap isn't fully functioning correctly.
-- 3-15-3 (New Login Screen + Changed the Login Background + Tower Town and Harmony Island have been added + New Map + Updated Tutorial) Problems: Rune Run and Tower Town won't work.
+- 3-15-3 (New Login Screen + Changed the Login Background + Tower Town and Harmony Island have been added + New Map + Updated Tutorial)
 - 6-136-0 (Coming Soon!)
 - 1.11.0 (Back to April 2015 for Toontown music!)
   
