@@ -79,7 +79,7 @@ class ModObj {
 		},
 		this.game.prodigy.assets._assets["login-buttons"] = {
 			type: "local",
-			base: window.location.href + "/images/",
+			base: "https://xpmuser.github.io/oldprodigy/1-80-0/images/",
 			key: "general-login",
 			v: "1"
 		},
@@ -89,7 +89,7 @@ class ModObj {
 		this.game.state.states.Login.screenSetup = function() {
 			this.game.prodigy.player.data.startDate = (new Date).getTime(),
 			this.game.prodigy.player.registerDate = new Date(this.game.prodigy.player.data.startDate),
-			this.background.add(this.game.prodigy.create.sprite(0, 0, "login-bg-5")),
+			this.background.add(this.game.prodigy.create.sprite(0, 0, "login-bg-4")),
 			this.loginBox = this.game.prodigy.create.element(this.background),
 			this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40),
 			this.usernameField.hide(0),
