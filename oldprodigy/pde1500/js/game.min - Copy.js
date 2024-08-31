@@ -1,4 +1,4 @@
-﻿function Util() {}
+function Util() {}
 
 function Device() {}
 
@@ -72,7 +72,7 @@ function ApiClient(e, t) {
 		b = "game-tools-api/",
 		v = "assignment-api/",
 		w = "education-api/",
-		x = "events-api/";
+		x = "worlds-api/";
 	switch ("") {
 		case "dev.prodigygame.org":
 		default:
@@ -457,7 +457,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "Prodigy 1-50-0 Definitive Edition", e["GameConstants.Beta.VERSION"] = "Version 2.0.5 Modified by XPMUser", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "Prodigy Version 1-50-0 (Open-Source)", e["GameConstants.Beta.VERSION"] = "Definitive Edition Version 2.0.6", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -851,6 +851,12 @@ Util.capitalize = function(e) {
 			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
 			key: "general-core",
 			v: "3"
+		},
+		630: {
+			type: "localAtlas",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/v1/atlases/",
+			key: "general-core",
+			v: "1"
 		},
 		"core-2": {
 			type: "atlas",
@@ -6971,6 +6977,15 @@ Util.capitalize = function(e) {
 			w: 74,
 			h: 81
 		},
+		"normal-outfit-male-59": {
+			type: "spritesheet",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+			url: "0-1.png",
+			x: 92,
+			y: 154,
+			w: 74,
+			h: 81
+		},
 		"normal-outfit-male-6": {
 			type: "spritesheet",
 			base: r,
@@ -7474,20 +7489,29 @@ Util.capitalize = function(e) {
 			y: 76,
 			w: 54,
 			h: 49
-                        },
-                        "reduced-outfit-male-57": {
-                                type: "spritesheet",
-                                base: e,
-                                url: "24.png",
-                                x: 25,
-                                y: 78,
-                                w: 56,
-                                h: 47
+        },
+        "reduced-outfit-male-57": {
+            type: "spritesheet",
+            base: e,
+            url: "24.png",
+            x: 25,
+            y: 78,
+            w: 56,
+            h: 47                                                                        
 		},
 		"reduced-outfit-male-58": {
 			type: "spritesheet",
 			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
 			url: "58.png",
+			x: 45,
+			y: 84,
+			w: 37,
+			h: 42
+		},
+		"reduced-outfit-male-59": {
+			type: "spritesheet",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+            url: "0-1.png",
 			x: 45,
 			y: 84,
 			w: 37,
@@ -8001,19 +8025,28 @@ Util.capitalize = function(e) {
 			type: "spritesheet",
 			base: "https://xpmuser.github.io/prodidows/1-10-0/images/outfits/female/normal/",
 			url: "57.png",
-                        x: 94,
-                        y: 156,
-                        w: 68,
-                        h: 78
-                        },
-                        "normal-outfit-female-58": {
-                                type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
-                                url: "58.png",
-                                x: 94,
-                                y: 156,
-                                w: 68,
-                                h: 78
+            x: 94,
+            y: 156,
+            w: 68,
+            h: 78
+        },
+        "normal-outfit-female-58": {
+            type: "spritesheet",
+            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/normal/female/",
+            url: "58.png",
+            x: 94,
+            y: 156,
+            w: 68,
+            h: 78
+		},
+		"normal-outfit-female-59": {
+			type: "spritesheet",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+            url: "0-1.png",
+			x: 91,
+			y: 140,
+			w: 71,
+			h: 94
 		},
 		"normal-outfit-female-6": {
 			type: "spritesheet",
@@ -8527,11 +8560,20 @@ Util.capitalize = function(e) {
 			y: 86,
 			w: 35,
 			h: 39
-                        },
-                        "reduced-outfit-female-58": {
-                                type: "spritesheet",
-                                base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
-                                url: "58.png",
+        },
+        "reduced-outfit-female-58": {
+            type: "spritesheet",
+            base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
+            url: "58.png",
+			x: 45,
+			y: 86,
+			w: 35,
+			h: 39
+        },
+        "reduced-outfit-female-59": {
+            type: "spritesheet",
+            base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+            url: "0-1.png",
 			x: 45,
 			y: 86,
 			w: 35,
@@ -10801,10 +10843,10 @@ Util.capitalize = function(e) {
                                 type: "spritesheet",
                                 base: "https://xpmuser.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
                                 url: "92.png",
-                                x: 144,
+                                x: 129,
                                 y: 142,
-                                w: 51,
-                                h: 52
+                                w: 60,
+                                h: 60
 		},
 		"normal-hair-male-1-1": {
 			type: "spritesheet",
@@ -29075,6 +29117,10 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Your hearts are fully restored when you level up!"
 	}, {
+		text: "Our Firebase Project's unrecognizable, so Google OAuth's a no go too for now."
+	}, {
+		text: "Render emailed us failed jobs, so Multiplayer Mode's a no go for now."
+	}, {
 		text: "Want a new look? Head to the Stylist in Lamplight Town or you can also edit your save."
 	}, {
 		text: "The latest and greatest equipment can be bought at the Item Shop in Lamplight Town."
@@ -29091,7 +29137,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Rumor has it that there is a powerful wizard at the top of the Dark Tower..."
 	}, {
-		text: "Need more gold? Head out and battle monsters, get it from the daily login bonus, or spin the wheel!"
+		text: "Need more gold? Head out and battle monsters, get it from the daily login bonus, pass 10 floors, edit your save, or spin the wheel!"
 	}, {
 		text: "Keep your team at its best! Level up your pets alongside your wizard."
 	}, {
@@ -29105,13 +29151,13 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Can't win against a boss or another wizard? Level up your team and then try again!"
 	}, {
-		text: "Practice makes perfect! If you get a question wrong, try using a hint for the next one!"
+		text: "To apply modpacks for this version, put /?mods=<mod name> or ?mods=<mod name> in the address bar."
 	}, {
 		text: "Merchants are found all over the island. Some offer new items, others offer quests!"
 	}, {
 		text: "Want to change your equipment? Open up the Backpack from the Main Menu!"
 	}, {
-		text: "Save your game using the save character button in the Other tab on the Settings Menu!"
+		text: "Save your game by using the save character button in the Other tab on the Settings Menu!"
 	}, {
 		text: "Google Sign-in, Multiplayer Mode, etc are all coming soon."
 	}, {
@@ -29132,7 +29178,7 @@ Util.capitalize = function(e) {
 		return Prodigy.Hints.data[e][Math.floor(Math.random() * Prodigy.Hints.data[e].length)]
 	}
 }, Prodigy.Hints.prototype.constructor = Prodigy.Hints, Prodigy.EmailDomains = function() {}, Prodigy.EmailDomains.data = {
-	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca", "xpmuser.github.io"]
+	domains: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk", "email.com", "games.com", "gmx.net", "hush.com", "hushmail.com", "icloud.com", "inbox.com", "lavabit.com", "love.com", "outlook.com", "pobox.com", "rocketmail.com", "safe-mail.net", "wow.com", "ygm.com", "ymail.com", "zoho.com", "fastmail.fm", "yandex.com", "bellsouth.net", "charter.net", "comcast.net", "cox.net", "earthlink.net", "juno.com", "btinternet.com", "virginmedia.com", "blueyonder.co.uk", "freeserve.co.uk", "live.co.uk", "ntlworld.com", "o2.co.uk", "orange.net", "sky.com", "talktalk.co.uk", "tiscali.co.uk", "virgin.net", "wanadoo.co.uk", "bt.com", "sina.com", "qq.com", "naver.com", "hanmail.net", "daum.net", "nate.com", "yahoo.co.jp", "yahoo.co.kr", "yahoo.co.id", "yahoo.co.in", "yahoo.com.sg", "yahoo.com.ph", "hotmail.fr", "live.fr", "laposte.net", "yahoo.fr", "wanadoo.fr", "orange.fr", "gmx.fr", "sfr.fr", "neuf.fr", "free.fr", "gmx.de", "hotmail.de", "live.de", "online.de", "t-online.de", "web.de", "yahoo.de", "mail.ru", "rambler.ru", "yandex.ru", "ya.ru", "list.ru", "hotmail.be", "live.be", "skynet.be", "voo.be", "tvcablenet.be", "telenet.be", "hotmail.com.ar", "live.com.ar", "yahoo.com.ar", "fibertel.com.ar", "speedy.com.ar", "arnet.com.ar", "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com", "bell.ca", "bell.com", "rogers.ca", "rogers.com", "cogeco.ca", "cogeco.com", "hotmail.ca", "live.ca", "yahoo.ca", "xpmuser.github.io", "oldprodigy.onrender.com"]
 }, Prodigy.EmailDomains.prototype = {
 	hasCommonDomain: function(e) {
 		var t = e.substring(e.indexOf("@") + 1, e.length);
@@ -29819,11 +29865,19 @@ Items.getItemData = function(e, t) {
 	}, {
 		ID: 58,
 		name: "Tek-Y4 Gym Outfit",
-		member: 0,
+		member: 1,
 		rarity: 4,
 		drop: 1,
 		flavorText: "undefined",
-		effects: [83]
+		effects: [88]
+	}, {
+		ID: 59,
+		name: "Ghost Outfit",
+		member: 1,
+		rarity: 4,
+		drop: 1,
+		flavorText: "Where's my body? Oh, hi, icons.png.",
+		effects: [88]
 	}],
 	weapon: [{
 		ID: 1,
@@ -30196,10 +30250,10 @@ Items.getItemData = function(e, t) {
 		ID: 47,
 		name: "The Master of Trials",
 		member: 0,
-		rarity: 3,
+		rarity: 4,
 		drop: 1,
 		flavorText: "To be held only by the Trial Masters, its powers are the stuff of legends. How did you get it?",
-		effects: [81]
+		effects: [84]
 	}, {
 		ID: 48,
 		name: "Winter Bell",
@@ -30560,10 +30614,10 @@ Items.getItemData = function(e, t) {
 		ID: 92,
 		name: "Trialmaster's Training Stick",
 		member: 1,
-		rarity: 3,
-		drop: 10,
+		rarity: 4,
+		drop: 1,
 		flavorText: "Credits to Daboss7173 for this wand. Problem: This wand can't be stronger than other wands.",
-		effects: [81],
+		effects: [87],
 		memberAd: 0
 	}],
 	boots: [{
@@ -30770,10 +30824,10 @@ Items.getItemData = function(e, t) {
 		ID: 26,
 		name: "Duelist Boots",
 		member: 0,
-		rarity: 3,
+		rarity: 4,
 		drop: 1,
 		flavorText: 'Official boots of the Annual Wizard Dueling Contest, they say "The Choice of Champions" in big letters on their sides.',
-		effects: [82]
+		effects: [83]
 	}, {
 		ID: 27,
 		name: "Shiverchill Boots",
@@ -30786,10 +30840,10 @@ Items.getItemData = function(e, t) {
 		ID: 28,
 		name: "Embers",
 		member: 0,
-		rarity: 1,
+		rarity: 3,
 		drop: 1,
 		flavorText: "Made for wizards whose feet get cold. It feels like your toes are warming up in front of the fire.",
-		effects: [34]
+		effects: [82]
 	}],
 	follow: [{
 		ID: 1,
@@ -35002,7 +35056,7 @@ Items.getItemData = function(e, t) {
 		var h = 'style="color: rgb(109, 111, 121);" data-mce-style="color: #6d6f79;"';
 		1 === o.rarity ? h = 'style="color: rgb(51, 153, 102);" data-mce-style="color: #339966;"' : 2 === o.rarity ? h = 'style="color: rgb(69, 94, 201);" data-mce-style="color: #455ec9;"' : 3 === o.rarity ? h = 'style="color: rgb(174, 92, 212);" data-mce-style="color: #ae5cd4;"' : 4 === o.rarity && (h = 'style="color: rgb(222, 135, 58);" data-mce-style="color: #de873a;"');
 		var l = "";
-		"weapon" === t ? Util.isDefined(o.effects[0]) && (l = "Damage Bonus: " + e.prodigy.affixes.getAffixData(o.effects[0]).value / 4) : "outfit" === t || "boots" === t || "hat" === t ? Util.isDefined(o.effects[0]) && (l = "Heart Bonus: " + e.prodigy.affixes.getAffixData(o.effects[0]).value / 4) : t && Util.isDefined(o.effect) && Util.isDefined(o.effect.hp) && (l = "Heals " + o.effect.hp / 4 + (o.effect.hp / 4 > 1 ? " hearts" : " heart")), s += '<tr><td colspan="1" width="" style="text-align: center;" ' + n + "><strong>" + o.ID + '</strong></td><td colspan="1" width=""  ' + n + '><div class="content-wrapper"><p><img class="confluence-embedded-image confluence-thumbnail confluence-external-resource" width="40" src="https://prodigygame.atlassian.net/wiki/download/thumbnails/' + i + "/" + o.ID + '.png?version=1&amp;modificationDate=1465482321787&amp;api=v2" data-image-src="https://prodigygame.atlassian.net/wiki/download/attachments/' + i + "/" + o.ID + '.png?version=1&amp;modificationDate=1465482321787&amp;api=v2" data-mce-src="https://prodigygame.atlassian.net/wiki/download/attachments/' + i + "/" + o.ID + '.png?version=1&amp;modificationDate=1465482321787&amp;api=v2" border="0"><br data-mce-bogus="1"></p></div></td><td colspan="1" width="" ' + n + ' style="text-align: center;">' + (o.member ? "yes" : "no") + '</td><td colspan="1" width="" ' + n + ' style="text-align: center;">' + (o.drop ? "yes" : "no") + '</td><td colspan="1" width="" ' + n + "><strong><span " + h + ">" + o.name + '</span></strong></td><td colspan="1" width="" ' + n + "><em>" + o.flavorText + '</em></td><td colspan="1" width="" ' + n + '><br data-mce-bogus="1"><em>' + l + "</em></td></tr>"
+		"weapon" === t || "hat" === t ? Util.isDefined(o.effects[0]) && (l = "Damage Bonus: " + e.prodigy.affixes.getAffixData(o.effects[0]).value / 4) : "outfit" === t || "boots" === t || "hat" === t ? Util.isDefined(o.effects[0]) && (l = "Heart Bonus: " + e.prodigy.affixes.getAffixData(o.effects[0]).value / 4) : t && Util.isDefined(o.effect) && Util.isDefined(o.effect.hp) && (l = "Heals " + o.effect.hp / 4 + (o.effect.hp / 4 > 1 ? " hearts" : " heart")), s += '<tr><td colspan="1" width="" style="text-align: center;" ' + n + "><strong>" + o.ID + '</strong></td><td colspan="1" width=""  ' + n + '><div class="content-wrapper"><p><img class="confluence-embedded-image confluence-thumbnail confluence-external-resource" width="40" src="https://prodigygame.atlassian.net/wiki/download/thumbnails/' + i + "/" + o.ID + '.png?version=1&amp;modificationDate=1465482321787&amp;api=v2" data-image-src="https://prodigygame.atlassian.net/wiki/download/attachments/' + i + "/" + o.ID + '.png?version=1&amp;modificationDate=1465482321787&amp;api=v2" data-mce-src="https://prodigygame.atlassian.net/wiki/download/attachments/' + i + "/" + o.ID + '.png?version=1&amp;modificationDate=1465482321787&amp;api=v2" border="0"><br data-mce-bogus="1"></p></div></td><td colspan="1" width="" ' + n + ' style="text-align: center;">' + (o.member ? "yes" : "no") + '</td><td colspan="1" width="" ' + n + ' style="text-align: center;">' + (o.drop ? "yes" : "no") + '</td><td colspan="1" width="" ' + n + "><strong><span " + h + ">" + o.name + '</span></strong></td><td colspan="1" width="" ' + n + "><em>" + o.flavorText + '</em></td><td colspan="1" width="" ' + n + '><br data-mce-bogus="1"><em>' + l + "</em></td></tr>"
 	}
 	s += "</tbody></table>", Util.log(s)
 };
@@ -42743,7 +42797,7 @@ var Appearance = function() {
 	}, e
 }();
 Appearance.hairNames = {
-	male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Hair Style 1", "Hair Style 2", "Hair Style 3", "Hair Style 4", "Hair Style 5", "Hair Style 6", "Hair Style 7", "Hair Style 8", "Hair Style 9", "Hair Style 10", "Hair Style 11", "Hair Style 12", "Hair Style 13", "Hair Style 14", "Hair Style 15", "Baldy"],
+	male: ["Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Grace", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Baldy"],
 	female: ["Grace", "Spring", "Fall", "Side Swept", "Winter", "Uplift", "Blossom", "Sunshine", "Excite", "Pizzazz", "Dashing", "Summer", "Lilly", "Sweetheart", "Island Breeze", "Prince", "Spikes", "Rock Star", "Fever", "Neat", "Slick", "Shaggy", "Bed Head", "Baldy"]
 };
 var Quests = function() {
@@ -43093,7 +43147,7 @@ var State = function() {
 				if (this.data.hasOwnProperty(t)) {
 					var i = Items.getItemData(t, this.data[t]);
 					if (Util.isDefined(i) && Util.isDefined(i.effects))
-						for (var a = 0; a < i.effects.length; a++)(33 === i.effects[a] || 34 === i.effects[a] || 35 === i.effects[a] || 82 === i.effects[a] || 83 === i.effects[a]) && (e += Prodigy.AffixManager.data[i.effects[a]].value)
+						for (var a = 0; a < i.effects.length; a++)(33 === i.effects[a] || 34 === i.effects[a] || 35 === i.effects[a] || 82 === i.effects[a] || 83 === i.effects[a] || 88 === i.effects[a]) && (e += Prodigy.AffixManager.data[i.effects[a]].value)
 				} return e
 		}, e.prototype.getDamageBonuses = function() {
 			var e = 0;
@@ -43101,7 +43155,7 @@ var State = function() {
 				if (this.data.hasOwnProperty(t)) {
 					var i = Items.getItemData(t, this.data[t]);
 					if (Util.isDefined(i) && Util.isDefined(i.effects))
-						for (var a = 0; a < i.effects.length; a++)(30 === i.effects[a] || 31 === i.effects[a] || 32 === i.effects[a] || 81 === i.effects[a]) && (e = Prodigy.AffixManager.data[i.effects[a]].value)
+						for (var a = 0; a < i.effects.length; a++)(30 === i.effects[a] || 31 === i.effects[a] || 32 === i.effects[a] || 81 === i.effects[a] || 84 === i.effects[a] || 85 === i.effects[a] || 86 === i.effects[a] || 87 === i.effects[a]) && (e = Prodigy.AffixManager.data[i.effects[a]].value)
 				} return e
 		}, e.prototype.getEquipment = function(e) {
 			return !Util.isDefined(this.data[e]) || this.data[e] <= 0 ? null : this.data[e]
@@ -44413,7 +44467,7 @@ Prodigy.ForestBoss = function(e, t) {
 	setup: function() {
 		Prodigy.Control.Menu.prototype.menuSetup.call(this), this.form = this.game.prodigy.create.element(this, 80, 100);
 		var e = this.game.prodigy.create.element(this.form, 0, 0);
-		this.game.prodigy.create.panel(e, 0, 0, 28, 12, "shine"), e.add(new Phaser.TileSprite(this.game, 11, 189, 1098, 40, "core", "blue-top")), e.add(new Phaser.TileSprite(this.game, 11, 229, 1098, 160, "core", "blue-mid")), e.add(new Phaser.TileSprite(this.game, 11, 389, 1098, 40, "core", "blue-top2")), this.form.add(this.game.prodigy.create.sprite(40, 30, "core-2", "menu-noot"));
+		this.game.prodigy.create.panel(e, 0, 0, 22, 10, ""), e.add(new Phaser.TileSprite(this.game, 9999999999911, 9999999189, 1098, 40, "core", "blue-top")), e.add(new Phaser.TileSprite(this.game, 99999911, 99999229, 1098, 160, "core", "blue-mid")), e.add(new Phaser.TileSprite(this.game, 9999999911, 999999389, 1098, 40, "core", "blue-top2")), this.form.add(this.game.prodigy.create.sprite(40, 30, "core-2", "menu-noot"));
 		var t = this.game.prodigy.dailyLoginBonusRewards.getABTest(this.game.prodigy.player.userID),
 			i = null;
 		Util.isDefined(this.game.prodigy.player.userID) || (this.game.prodigy.player.userID = [0]), "currency" === (i = this.game.prodigy.dailyLoginBonusRewards.getReward(this.game.prodigy.player.userID[0], 0)).type && this.game.prodigy.dailyLoginBonusRewards.getCurrencyRewardAmount(i);
@@ -44547,7 +44601,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, Prodigy.extends(Prodigy.Menu.SystemMenu, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.SystemMenu,
 	create: function() {
-		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(20, 13, "shine", "OPTIONS", [{
+		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(24, 13, "shine", "O, A, C, E", [{
 			icon: "settings",
 			bot: "Sound"
 		}, {
@@ -44557,19 +44611,27 @@ Prodigy.ForestBoss = function(e, t) {
 			icon: "player",
 			top: "Name &",
 			bot: "Gender"
-		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 900, 280, {
+		}, {
+			icon: "player",
+			top: "Game",
+			bot: "Credits"
+		}, {
+			icon: "player",
+			top: "Game",
+			bot: "Version"
+		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 280, {
 			icon: "settings",
 			bot: "Intro"
-		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 900, 380, {
+		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 930, 380, {
 			icon: "settings",
 			bot: "Member"
-		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 900, 480, {
+		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 930, 480, {
 			icon: "settings",
 			bot: "Log Out"
 		}, this.exitGame.bind(this))
 	},
 	clearContents: function() {
-		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.panel = this.game.prodigy.create.panel(this, 280, 260, 15, 8, "white"), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
+		Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.panel) && this.panel.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.panel = this.game.prodigy.create.panel(this, 260, 260, 16, 8, "white"), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8)
 	},
 	setMode: function(e) {
 		switch (Prodigy.RenderMenu.prototype.setMode.call(this, e), this.clearContents(), e) {
@@ -44578,6 +44640,12 @@ Prodigy.ForestBoss = function(e, t) {
 				break;
 			case 2:
 				this.openGender();
+				break;
+			case 3:
+				this.openCredits();
+				break;
+			case 4:
+				this.openVersion();
 				break;
 			default:
 				this.openSound()
@@ -44640,6 +44708,20 @@ Prodigy.ForestBoss = function(e, t) {
 			text: "MN & LN",
 			size: Prodigy.Control.TextButton.MED
 		}, this.MiddleandLastName.bind(this))
+	},
+	openCredits: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
+		this.game.prodigy.create.font(this.content, 0, 50, e, {
+			width: 600,
+			align: "center"
+		})
+	},
+	openVersion: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.6" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.6";
+		this.game.prodigy.create.font(this.content, 10, 50, e, {
+			width: 590,
+			align: "center"
+		})
 	},
 	toggleMember: function() {
 		!0 == this.game.prodigy.player.isMember ? (this.game.prodigy.player.isMember = !1, this.game.prodigy.open.okaymessage("You have deactivated Membership.", null, null, "No longer member!", "membership")) : (this.game.prodigy.player.isMember = !0, this.game.prodigy.open.okaymessage("You have unlocked Membership!", null, null, "You are member!", "membership"))
@@ -46772,21 +46854,21 @@ Prodigy.ForestBoss = function(e, t) {
 			("hat" === e.type || "outfit" === e.type || "weapon" === e.type || "boots" === e.type || "follow" === e.type) && (t = !0), "spell" === this.items[0].type && (i = !0), t ? (this.items.length > 2 ? this.dialogue.setText({
 				text: "You got something!",
 				element: this.getItems(this.items.length - 1, 0),
-				face: 2,
+				face: 3,
 				anim: 1
 			}) : this.getSingleDialogue(this.items[0], 0), this.dialogue.setText({
 				callback: this.getSingleDialogue.bind(this, e, this.items.length - 1)
 			})) : i ? (this.items.length > 2 ? this.dialogue.setText({
 				text: "You got something!",
 				element: this.getItems(this.items.length - 1, 1),
-				face: 2,
+				face: 3,
 				anim: 1
 			}) : this.getSingleDialogue(e, this.items.length - 1), this.dialogue.setText({
 				callback: this.getSingleDialogue.bind(this, this.items[0], 0)
 			})) : (this.dialogue.setText({
 				text: "You got something!",
 				element: this.getItems(this.items.length, 0),
-				face: 2,
+				face: 3,
 				anim: 1
 			}), this.dialogue.setText({
 				callback: this.close.bind(this)
@@ -49506,7 +49588,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0)
 	},
 	addHouseConfig: function(e) {
-		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1), this.addGirl(e, 1)
+		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
 	},
 	addMoveHouse: function(e, t) {
 		this.pages[e][t].push({
@@ -49567,16 +49649,6 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	addSettings: function(e, t) {
 		this.pages[e][t].push({
 			type: "SettingsButton"
-		})
-	},
-	addGirl: function(e, t) {
-		this.game.prodigy.player.appearance.data.gender='female' || this.pages[e][t].push({
-			type: "GirlButton"
-		})
-	},
-	addBoy: function(e, t) {
-		this.game.prodigy.player.appearance.data.gender='male' || this.pages[e][t].push({
-			type: "BoyButton"
 		})
 	}
 
@@ -54174,15 +54246,15 @@ Boot.init = function() {
 		Util.isDefined(e) || (e = {}), e.title = e.title || "Loading", e.time = e.time || 3e3, e.fadeIn = e.fadeIn || !1, e.fadeOut = e.fadeOut || !1, e.callback = e.callback || null, e.assets = e.assets || [], e.target = e.target || "Login", e.save = !Util.isDefined(e.save) || e.save, e.loadingWorker = Util.isDefined(e.loadingWorker) ? e.loadingWorker : null, this._data = e, this.game.state.start("Loading")
 	},
 	create: function() {
-		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "core", "load")), this._data.time > 1e3) {
-			this.game.prodigy.create.panel(this._element, 160, 340, 24, 5, "shine"), this._element.add(new Phaser.TileSprite(this.game, 171, 380, 938, 40, "core", "blue-top")), this._element.add(new Phaser.TileSprite(this.game, 171, 420, 938, 40, "core", "blue-mid")), this._element.add(new Phaser.TileSprite(this.game, 171, 460, 938, 40, "core", "blue-top2")), this._element.add(this.game.prodigy.create.sprite(590, 310, "core", "award-frame"));
+		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "login", "")), this._data.time > 1e3) {
+			this.game.prodigy.create.panel(this._element, 160, 340, 19, 5, ""), this._element.add(new Phaser.TileSprite(this.game, 99999999999171, 380, 938, 40, "core", "blue-top")), this._element.add(new Phaser.TileSprite(this.game, 999999999999999171, 420, 938, 40, "core", "blue-mid")), this._element.add(new Phaser.TileSprite(this.game, 999999999999171, 460, 938, 40, "core", "blue-top2")), this._element.add(this.game.prodigy.create.sprite(590, 310, "core", "award-frame"));
 			var e = this.game.prodigy.create.font(this._element, 200, 400, this.game.prodigy.hints.getRandomHint("none").text, {
 				font: "button",
 				width: 880,
 				align: "center",
 				size: 36
 			});
-			e.y = 400 + Math.floor((80 - e.height) / 2), this.game.prodigy.create.panel(this._element, 440, 560, 10, 2, "shine");
+			e.y = 400 + Math.floor((80 - e.height) / 2), this.game.prodigy.create.panel(this._element, 440, 550, 8, 2, "");
 			var t = this.game.prodigy.create.font(this._element, 440, 560, this._data.title, {
 				font: "general",
 				width: 400,
@@ -54353,12 +54425,6 @@ var Screen = function() {
 			}).bind(this), Phaser.State.prototype.preload.call(this), this.initListeners()
 		}, e.prototype.create = function() {
 			Phaser.State.prototype.create.call(this), this.screenSetup(), this.complete = !0
-		}, e.prototype.addSoundButton = function () {
-			var e = function (e) {
-					"sound-on" === e.frameName ? (e.frameName = "sound-off", this.game.prodigy.audio.setMute(!0)) : "sound-off" === e.frameName && (e.frameName = "sound-on", this.game.prodigy.audio.setMute(!1))
-				},
-				t = new Sprite(this.game, 10, 630, "core", "sound-on");
-			this.game.prodigy.audio.getBGMVolume() <= 0 && this.game.prodigy.audio.getSFXVolume() <= 0 && (t.frameName = "sound-off"), this.menus.add(t), t.inputEnabled = !0, t.events.onInputDown.add(e.bind(this, t), this)
 		}, e.prototype.fadeIn = function() {
 			this.fadeInSet ? this.game.add.tween(this.opaque).to({
 				alpha: 0
@@ -54420,6 +54486,7 @@ var Screen = function() {
 			} catch (t) {}
 			Screen.prototype.create.call(this)
 		}, e.prototype.screenSetup = function() {
+			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user. Press the Enter key to see the entire message so that it's easier to read it.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
 			var e = Util.getCookie("prodigyUsername");
 			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
@@ -54439,7 +54506,7 @@ var Screen = function() {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "https://xpmuser.github.io/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.openFileForCharacter = function() {
@@ -54511,7 +54578,7 @@ var Screen = function() {
 		}, e
 	}();
 WalkableScreen = function(e, t, i) {
-	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])), this.area = null, this.showMenu = !0, this.tileSize = 20, this.hideHex = !1, this.playersInfo = {}, this.playerList = {}, this.noSoundButton = {}, this.addSoundButton = {}, this.playerList = new Array, this.playerList.push(this.user), this.playerHash = {}, this.disableBots || this.createBots(), this.clickAreas = []
+	i = i || [], Screen.call(this, e, t.fullName, t.zoneName, t.atlas, i.concat(["bgm-intro"])), this.area = null, this.showMenu = !0, this.tileSize = 20, this.hideHex = !1, this.playersInfo = {}, this.playerList = {}, this.playerList = new Array, this.playerList.push(this.user), this.playerHash = {}, this.disableBots || this.createBots(), this.clickAreas = []
 }, Prodigy.extends(WalkableScreen, Screen, {
 	constructor: WalkableScreen,
 	onDebugAutoClick: function(e) {
@@ -54539,7 +54606,7 @@ WalkableScreen = function(e, t, i) {
 		this.bg = this.game.prodigy.create.sprite(0, 0, this.screenName, "bg"), this.bg.inputEnabled = !0, this.bg.events.onInputDown.add(this.listener.bind(this), this), this.background.add(this.bg)
 	},
 	screenSetup: function(e, t) {
-		t || this.game.prodigy.skin.apply(this), Device.isTablet() || Device.iPadMini() || 1 == Util.getUrlVariable("iosApp") || !Util.isDefined(this.bgm) || (this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM()), this.noSoundButton || this.addSoundButton(), Screen.prototype.screenSetup.call(this)
+		t || this.game.prodigy.skin.apply(this), Device.isTablet() || Device.iPadMini() || 1 == Util.getUrlVariable("iosApp") || !Util.isDefined(this.bgm) || (this.game.prodigy.audio.playBGM(this.bgm, !0, !0), this.game.prodigy.audio.resumeBGM()), Screen.prototype.screenSetup.call(this)
 	},
 	start: function() {
 		this.user.evtProc = !1, Screen.prototype.start.call(this)
@@ -54675,13 +54742,6 @@ WalkableScreen = function(e, t, i) {
 	processbot: function(e, t, a, s) {
 		if (Math.random() < .005) {
 			}
-	},
-	addSoundButton: function(e, t, a, s) {
-		var e = function (e) {
-					"sound-on" === e.frameName ? (e.frameName = "sound-off", this.game.prodigy.audio.setMute(!0)) : "sound-off" === e.frameName && (e.frameName = "sound-on", this.game.prodigy.audio.setMute(!1))
-				},
-				t = new Sprite(this.game, 10, 630, "core", "sound-on");
-			this.game.prodigy.audio.getBGMVolume() <= 0 && this.game.prodigy.audio.getSFXVolume() <= 0 && (t.frameName = "sound-off"), this.menus.add(t), t.inputEnabled = !0, t.events.onInputDown.add(e.bind(this, t), this)
 	},
 	addNicknamer: function(e, t, i) {
 		var a = this.game.prodigy.create.element(this.content, e, t),
@@ -55062,7 +55122,7 @@ CutScene.getValue = function(e, t, i, a, s) {
 		this.game.prodigy.network.sendToyEvent("char-select", 4), Screen.prototype.create.call(this)
 	},
 	screenSetup: function() {
-		this.background.add(this.game.prodigy.create.sprite(0, 0, "bg-battle-forest")), this.game.prodigy.create.panel(this.background, 240, 640, 20, 3, "shine2"), this.off = this.game.prodigy.create.textButton(this.background, 820, 660, {
+		this.background.add(this.game.prodigy.create.sprite(0, 0, "bg-battle-forest")), this.game.prodigy.create.panel(this.background, 240, 640, 16, 3, ""), this.off = this.game.prodigy.create.textButton(this.background, 820, 660, {
 			icon: "next",
 			text: "next"
 		}, this.openWorlds.bind(this)), this.game.prodigy.create.textButton(this.background, 260, 660, {
@@ -66492,7 +66552,7 @@ Arena.AUDIO = [{
 			h: 180,
 			rect: !0
 		}, "lamplight-C3", 1000, 540, null, AreaEvent.LEFT);
-		var a = e.prodigy.open.message.bind(e.prodigy.open, "Do not disturb Crazy Dave.", null, "star", "Locked!");
+		var a = e.prodigy.start.bind(e.prodigy, "TechZone");
 		this._zone.util.addDoor(e, t, 400, 40, 120, 200, 460, 240, a); this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223)
 	}
 }), Prodigy.Lamplight_D5 = function(e, t) {
@@ -73629,7 +73689,7 @@ TowerBase.AUDIO = [{
 };
 var TechZone = function () {
 	function e(t) {
-		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-cumulo", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 890, this.playerY = 260, this.bgm = "bgm-intro"
+		WalkableScreen.call(this, t, e.DATA), this.assets = ["npc-sprite-stache", "npc-sprite-merchant", "tileset-core"], this.area = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]], this.playerX = 890, this.playerY = 260, this.bgm = "bgm-intro"
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
 		WalkableScreen.prototype.create.call(this, [], "techzone-0")
@@ -73641,8 +73701,8 @@ var TechZone = function () {
 		}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0);
 		var i = this.game.prodigy.create.sprite(437, 462, this.screenName, "m1");
 		i.anchor.setTo(.5, 1), this.content.add(i), new Prodigy.Container.QuestNPC(this.game, this.content, 210, 360, e.DATA, {
-			name: "Cumulo",
-			atlas: "cumulo"
+			name: "M. Stache",
+			atlas: "stache"
 		});
 		var a = [{
 			pre: "Technician ",
@@ -73663,7 +73723,7 @@ var TechZone = function () {
 				type: "item",
 				ID: 65
 			}],
-			fail: "You need to win the Ribbon from the Robolympics to unlock!"
+			fail: "You need to win the Ribbon from the real Robolympics to unlock!"
 		}, {
 			pre: "Techeater ",
 			req: [{
@@ -73688,7 +73748,7 @@ var TechZone = function () {
 	}, e.prototype.toPlains = function () {
 		this.game.prodigy.world.teleport("pirate-0")
 	}, e.prototype.toTech = function () {
-		this.game.prodigy.world.teleport("dancedance-0")
+		this.game.prodigy.world.teleport("lamplight-D4")
 	}, e.prototype.toTown = function () {
 		this.game.prodigy.world.teleport("cloud-1", 188, 560)
 	}, e
@@ -73718,39 +73778,27 @@ TechZone.STORE = {
 		type: "pet"
 	}]
 }, TechZone.AUDIO = [{
-	tag: "voice-6",
+	tag: "voice-4",
 	s: 0,
-	d: 1
+	d: 2
 }, {
-	tag: "voice-6",
-	s: 1,
-	d: 1
-}, {
-	tag: "voice-6",
+	tag: "voice-4",
 	s: 2,
 	d: 1
 }, {
-	tag: "voice-6",
+	tag: "voice-4",
 	s: 3,
 	d: 1
 }, {
-	tag: "voice-6",
+	tag: "voice-4",
 	s: 4,
+	d: 2
+}, {
+	tag: "voice-4",
+	s: 6,
 	d: 1
-}, {
-	tag: "voice-6",
-	s: 5,
-	d: 2
-}, {
-	tag: "voice-6",
-	s: 7,
-	d: 2
-}, {
-	tag: "voice-6",
-	s: 9,
-	d: 2
 }], TechZone.DATA = {
-	ID: 3,
+	ID: 10,
 	tag: "techzone-0",
 	zoneName: "zone-tech",
 	atlas: "zone-tech",
@@ -73758,7 +73806,7 @@ TechZone.STORE = {
 	npc: "Cumulo",
 	icon: "zone-air",
 	battle: {
-		screen: "bg-battle-cloud",
+		screen: "bg-battle-tech",
 		encounter: [{
 			ID: 4
 		}, {
@@ -73846,7 +73894,7 @@ TechZone.STORE = {
 	}, {
 		face: 4,
 		anim: 0,
-		text: "Whatever you are, welcome to TECH CITY, and welcome to the ROBOLYMPICS!",
+		text: "Whatever you are, welcome to the TECH CITY!",
 		audio: TechZone.AUDIO[1]
 	}, {
 		face: 4,
@@ -73861,7 +73909,7 @@ TechZone.STORE = {
 	}, {
 		face: 4,
 		anim: 0,
-		text: "The entry fee is [gold] 250,000,000",
+		text: "I used to run the Wheel of Wonder service, but not anymore. Wheeler took over for me.",
 		audio: TechZone.AUDIO[1]
 	}, {
 		face: 4,
@@ -73876,17 +73924,17 @@ TechZone.STORE = {
 	}, {
 		face: 4,
 		anim: 0,
-		text: "You are now officially in the Robolympics, the greatest competition for robots on the island!",
+		text: "You are now officially in the Tech Zone, the greatest competition for robots on the island!",
 		audio: TechZone.AUDIO[1]
 	}, {
 		face: 4,
 		anim: 0,
-		text: "The coggles (robots) live here in TECH CITY, and hold the tournament every year. And the strongest coggle wins the GRAND PRIZE!",
+		text: "The coggles (robots) live here in the TECH CITY, and hold the tournament every year. And the strongest coggle wins the GRAND PRIZE!",
 		audio: TechZone.AUDIO[1]
 	}, {
 		face: 4,
 		anim: 0,
-		text: "You will have many challenges to face. The first starts now - defeat ???.",
+		text: "You will have many challenges to face. The first starts now - defeat whatever you face.",
 		audio: TechZone.AUDIO[1]
 	}],
 	quests: [{
@@ -73942,12 +73990,6 @@ TechZone.STORE = {
 		encounter: [{
 			ID: 56,
 			R: 1
-		}, {
-			ID: 13,
-			R: 1
-		}, {
-			ID: 84,
-			R: 1
 		}],
 		req: [{
 			type: "pet",
@@ -73956,7 +73998,7 @@ TechZone.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 25
+			ID: 37
 		}]
 	}, {
 		coords: [225, 60],
@@ -74040,7 +74082,7 @@ TechZone.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 26
+			ID: 38
 		}]
 	}, {
 		coords: [335, 110],
@@ -74117,7 +74159,7 @@ TechZone.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 27
+			ID: 39
 		}]
 	}, {
 		coords: [335, 300],
@@ -74229,7 +74271,7 @@ TechZone.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 28
+			ID: 40
 		}]
 	}, {
 		coords: [0, 225],
@@ -74278,32 +74320,22 @@ TechZone.STORE = {
 		complete: [0],
 		encounter: [{
 			ID: 15,
-			R: 1
+			R: 3
 		}, {
 			ID: 21,
-			R: 2
+			R: 3
 		}, {
 			ID: 57,
 			R: 3
-		}, {
-			ID: 5,
-			R: 2
-		}, {
-			ID: 41,
-			R: 2
 		}],
 		req: [{
 			type: "pet",
-			ID: 15,
-			N: 1
-		}, {
-			type: "pet",
 			ID: 21,
-			N: 3
+			N: 2
 		}, {
 			type: "pet",
 			ID: 57,
-			N: 5
+			N: 3
 		}],
 		reward: [{
 			type: "weapon",
@@ -74313,15 +74345,15 @@ TechZone.STORE = {
 	}, {
 		coords: [225, 150],
 		name: "King of the Hill",
-		desc: "Defeat King Tortox and complete the last trial!",
+		desc: "Defeat The Forest Guardian and complete the last trial!",
 		start: [33, 34],
 		during: [35],
 		complete: [13, 36, 37, 38],
 		boss: {
-			ID: 5,
-			element: "storm",
-			attacks: [4, 10, 16, 25, 26, 27, 28, 29, 30],
-			name: "King Tortox"
+			ID: 6,
+			element: "wizard",
+			attacks: [31, 32, 33, 34, 35, 36],
+			name: "Forest Guardian"
 		},
 		req: [{
 			type: "boss",
@@ -74329,7 +74361,7 @@ TechZone.STORE = {
 		}],
 		reward: [{
 			type: "spell",
-			ID: 29
+			ID: 41
 		}]
 	}]
 };
@@ -81015,7 +81047,7 @@ var Pathfinder = function() {
 	}, e
 }();
 Prodigy.GameObj = function(e) {
-	this.version = "version " + GameConstants.get("GameConstants.Build.VERSION"), this.version2 = "version " + GameConstants.get("GameConstants.Beta.VERSION"), this.game = e, this.game.versioned = window.location.href.indexOf("feature") > -1 || window.location.href.indexOf("release") > -1, this.game.clientVersion = this.game.versioned ? null : Util.validateVersion(GameConstants.get("GameConstants.Build.VERSION")), this.player = new Player(this.game), this.updateCount = 0, this.game.broadcaster = new Prodigy.Broadcaster(e), this.game.random = new Prodigy.Random(e), this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.Controller.GraphicsController(e), this.audio = new Prodigy.Controller.AudioController(e), this.mail = new Prodigy.MailController(e), this.battle = new Prodigy.Controller.BattleController(e), this.pvp = new Prodigy.Controller.PVPController(e), this.achievements = new Prodigy.Controller.AchievementController(e), this.surveyController = new Prodigy.Controller.SurveyController(e), this.open = new Prodigy.MenuFactory(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new Prodigy.DialogueFactory(e), this.education = new ExternalFactory(e), this.skin = new Prodigy.SkinFactory(e), this.create = new Prodigy.Factory.AdvGameObjectFactory(e), this.animation = new Prodigy.GenAnimation(e), this.chat = new Prodigy.ChatManager, this.network = new NetworkManager(e), this.bounty = new Prodigy.BountyManager(e), this.affixes = new Prodigy.AffixManager(e), this.attacks = new Prodigy.Attacks(e), this.mailNetworkHandler = new Prodigy.NetworkHandlers.MailerNetworkHandler(e), this.friendsListNetworkHandler = new Prodigy.NetworkHandlers.FriendsListNetworkHandler(e), this.messageListener = new Prodigy.Listener.MessageListener(e), this.world = new Prodigy.World(e), this.canvas = null, this.dialogues = new Prodigy.Dialogues, this.hints = new Prodigy.Hints, this.emailDomains = new Prodigy.EmailDomains, this.dailyLoginBonusRewards = new Prodigy.DailyLoginBonusRewards, this.twilightWheelPrizes = new Prodigy.TwilightWheelPrizes(e), this.updateCount = 0, this.debug = new Prodigy.Debug(e), Util.log(this.version, Util.INFO), Util.log(this.version2, Util.INFO), Prodigy.Lodash.VERSION !== GameConstants.get("GameConstants.Build.LODASH_VERSION") && Util.log("LODASH VERSION CHANGED", Util.ERROR)
+	this.version = "" + GameConstants.get("GameConstants.Build.VERSION"), this.version2 = "" + GameConstants.get("GameConstants.Beta.VERSION"), this.game = e, this.game.versioned = window.location.href.indexOf("feature") > -1 || window.location.href.indexOf("release") > -1, this.game.clientVersion = this.game.versioned ? null : Util.validateVersion(GameConstants.get("GameConstants.Build.VERSION")), this.player = new Player(this.game), this.updateCount = 0, this.game.broadcaster = new Prodigy.Broadcaster(e), this.game.random = new Prodigy.Random(e), this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.Controller.GraphicsController(e), this.audio = new Prodigy.Controller.AudioController(e), this.mail = new Prodigy.MailController(e), this.battle = new Prodigy.Controller.BattleController(e), this.pvp = new Prodigy.Controller.PVPController(e), this.achievements = new Prodigy.Controller.AchievementController(e), this.surveyController = new Prodigy.Controller.SurveyController(e), this.open = new Prodigy.MenuFactory(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new Prodigy.DialogueFactory(e), this.education = new ExternalFactory(e), this.skin = new Prodigy.SkinFactory(e), this.create = new Prodigy.Factory.AdvGameObjectFactory(e), this.animation = new Prodigy.GenAnimation(e), this.chat = new Prodigy.ChatManager, this.network = new NetworkManager(e), this.bounty = new Prodigy.BountyManager(e), this.affixes = new Prodigy.AffixManager(e), this.attacks = new Prodigy.Attacks(e), this.mailNetworkHandler = new Prodigy.NetworkHandlers.MailerNetworkHandler(e), this.friendsListNetworkHandler = new Prodigy.NetworkHandlers.FriendsListNetworkHandler(e), this.messageListener = new Prodigy.Listener.MessageListener(e), this.world = new Prodigy.World(e), this.canvas = null, this.dialogues = new Prodigy.Dialogues, this.hints = new Prodigy.Hints, this.emailDomains = new Prodigy.EmailDomains, this.dailyLoginBonusRewards = new Prodigy.DailyLoginBonusRewards, this.twilightWheelPrizes = new Prodigy.TwilightWheelPrizes(e), this.updateCount = 0, this.debug = new Prodigy.Debug(e), Util.log(this.version, Util.INFO), Util.log(this.version2, Util.INFO), Prodigy.Lodash.VERSION !== GameConstants.get("GameConstants.Build.LODASH_VERSION") && Util.log("LODASH VERSION CHANGED", Util.ERROR)
 }, Prodigy.GameObj.prototype = {
 	constructor: Prodigy.GameObj,
 	init: function(e) {
@@ -82157,6 +82189,21 @@ Prodigy.GameObj = function(e) {
 }, {
 	type: "hearts",
 	value: 100
+}, {
+	type: "damage",
+	value: 60
+}, {
+	type: "damage",
+	value: 100
+}, {
+	type: "damage",
+	value: 200
+}, {
+	type: "damage",
+	value: 300
+}, {
+	type: "hearts",
+	value: 50000
 }], Prodigy.SeededRandomGenerator = function(e) {
 	this.seed = e, this.cur_seed = e
 }, Prodigy.SeededRandomGenerator.prototype = {
@@ -82547,12 +82594,12 @@ var NetworkManager = function() {
 	}
 	return e.LOGIN = {
 		200: "All Good!",
-		400: "Enter A Username And Password",
+		400: "The login api's coming soon.",
 		401: "Incorrect Username Or Password",
 		403: "Access is Forbidden!",
-		503: "Prodigy Is Temporarily Offline.",
-		500: "Prodigy Is Temporarily Offline.",
-		0: "Prodigy Is Temporarily Offline."
+		503: "The login api's coming soon.",
+		500: "The login api's coming soon.",
+		0: "The login api's coming soon."
 	}, e.SKILLS = {
 		0: "There was an error loading your skills. Please try again."
 	}, e.VERBOSE_ANALYTICS = !1, e.emitMessageCount = 0, e.prototype.getKey = function() {
