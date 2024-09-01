@@ -4,11 +4,11 @@ Discord Server: https://discord.gg/9HMtcgFQRc
 
 Old Prodigy Wiki: https://old-prodigy.fandom.com/wiki/Old_Prodigy_Wiki
 
+Old Prodigy Reddit Community: https://www.reddit.com/r/OldProdigy/
+
 Warning: Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom. You can't use my account to do bad things.
 
 Click on the left arrow to go back.
-
-FPS Extension: https://chromewebstore.google.com/detail/fps-extension/gdkkmimldhefhmmmlalioafomdlahcog
 
 # Credits
 
