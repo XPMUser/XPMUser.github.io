@@ -253,7 +253,7 @@ Lets scratch the surface shall we?
 - 2015-2016's Intro - pde2015 - pde2016 & pde1500 - pde1.51.0
 - 2014-2015's Academy - prodigyde - pde1221 & pde1500 - pde1.51.0
 - Modpacks - prodigyde - pde2015, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, & pde2018 - pde2019 Warning: Imitation Titan isn't work correctly for pde2018 yet, so it's in beta.
-- Full possiblity of disguising for everything without starting over - prodigyde - pde1221 & pde1500
+- Full possiblity of disguising for everything without starting over - prodigyde - pde2015, pde1221, & pde1500
 - First Name changing possibility - pde2015
 - Middle Name & Last Name changing possiblity - pde2015 & pde1500
   
