@@ -41,16 +41,16 @@ I'm Ao28th28 (The PVZ Proditany Edition (Formerly PVZ Unknown Edition and CWL) M
 Old Prodigy English is coming soon!
 
 # Table of Contents 
-1. XPMUser.github.io: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#xpmusergithubio
-2. Credits: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#credits
-3. Table of Contents: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#table-of-contents
-4. Old Prodigy: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#old-prodigy
-5. How to play: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#how-to-play
+1. XPMUser.github.io: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#xpmusergithubio
+2. Credits: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#credits
+3. Table of Contents: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#table-of-contents
+4. Old Prodigy: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#old-prodigy
+5. How to play: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#how-to-play
 6. Modpacks: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks
-7. List of Versions: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#list-of-versions
-8. Prodigy Definitive Edition: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#prodigy-definitive-edition
-9. Prodigy Ultimate Edition: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#prodigy-ultimate-edition
-10. The other version: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#the-other-version
+7. List of Versions: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#list-of-versions
+8. Prodigy Definitive Edition: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#prodigy-definitive-edition
+9. Prodigy Ultimate Edition: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#prodigy-ultimate-edition
+10. The other version: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#the-other-version
    
 # Old Prodigy
 
