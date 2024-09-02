@@ -41,13 +41,16 @@ I'm Ao28th28 (The PVZ Proditany Edition (Formerly PVZ Unknown Edition and CWL) M
 Old Prodigy English is coming soon!
 
 # Table of Contents 
-1. XPMUser.github.io https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#xpmusergithubio
-2. Credits https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#credits
-3. Table of Contents https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#table-of-contents
-4. Old Prodigy https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#old-prodigy
-5. How to play https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#how-to-play
-6. Modpacks https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks
-7. List of Versions https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#list-of-versions
+1. XPMUser.github.io: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#xpmusergithubio
+2. Credits: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#credits
+3. Table of Contents: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#table-of-contents
+4. Old Prodigy: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#old-prodigy
+5. How to play: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#how-to-play
+6. Modpacks: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks
+7. List of Versions: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#list-of-versions
+8. Prodigy Definitive Edition: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#prodigy-definitive-edition
+9. Prodigy Ultimate Edition: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#prodigy-ultimate-edition
+10. The other version: https://github.com/XPMUser/XPMUser.github.io/edit/main/README.md#the-other-version
    
 # Old Prodigy
 
@@ -239,3 +242,40 @@ Currently, these are the versions that support modpacks:
 - 1.11.0 (Back to April 2015 for Toontown music!)
   
 You can choose any version you want!
+
+## Prodigy Definitive Edition
+
+Prodigy Definitive Edition is somehow different. All versions are open-source instead of closed-source. Unlike the rest of the versions, this has lots of features which are added in with no extra configuration required!
+
+Lets scratch the surface shall we?
+
+- Clockwork Town - prodigyde - pde2016 & pde1500
+- 2015-2016's Intro - pde2015 - pde2016 & pde1500 - pde1.51.0
+- 2014-2015's Academy - prodigyde - pde1221 & pde1500 - pde1.51.0
+- Modpacks - prodigyde - pde2015, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, & pde2018 - pde2019 Warning: Imitation Titan isn't work correctly for pde2018 yet, so it's in beta.
+- Full possiblity of disguising for everything without starting over - prodigyde - pde1221 & pde1500
+- First Name changing possibility - pde2015
+- Middle Name & Last Name changing possiblity - pde2015 & pde1500
+  
+Yep, you heard that right, that's just scratching the surface. There are lots of versions to choose from and modpacks are supported for some of them, so you can probably imagine what months of hard work can do to something like that. 
+
+https://xpmuser.github.io/oldprodigy/choose/ You can choose any version you want.
+
+## Prodigy Ultimate Edition
+
+There's only 1.50.0 Ultimate Edition for now, more versions are coming soon. https://xpmuser.github.io/oldprodigy/play/ 1.50.0 Ultimate Edition is somehow trying to use pde1500's updates.
+
+## The other version
+
+There's one version I haven't mentioned yet, it is the least buggy out of all of these versions.
+
+The current version | The most functional build!
+
+Huh? The current version? This isn't Old Prodigy! Well - maybe not, but it is New Prodigy, it is more Prodigy than any of these versions.
+The full-game experience is to be experienced there. There is no other version with the intricately designed education system, and there
+is no other version that consistently gets updated by a dedicated team of truly wonderful people. For that, you need to play Prodigy as
+it is now. This is the only open-source Prodigy version that supports apis and OAuths like Google.
+
+In case you don't know how to get there somehow, here's the link: https://sso.prodigygame.com/game/login/
+
+https://play.prodigygame.com/ If you want to play as a student during free time and you're an adult.
