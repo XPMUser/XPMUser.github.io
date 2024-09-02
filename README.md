@@ -245,7 +245,7 @@ You can choose any version you want!
 
 ## Prodigy Definitive Edition
 
-Prodigy Definitive Edition is somehow different. All versions are open-source instead of closed-source. Unlike the rest of the versions, these versions has more features which have been added in with no extra configuration required!
+Prodigy Definitive Edition is somehow different. All versions are open-source instead of closed-source. Unlike the rest of the versions, these versions have more features which have been added in with no extra configuration required!
 
 Lets scratch the surface shall we?
 
