@@ -54,7 +54,7 @@ function ApiClient(e, t) {
 			root: void 0
 		},
 		d = {
-			dev: "",
+			dev: "https://xpmuser.github.io/prodidows/",
 			staging: "https://www.prodigygame.org/",
 			production: "https://www.prodigygame.com/"
 		},
@@ -134,7 +134,7 @@ function ApiClient(e, t) {
 		return !!r(t, ["200"], "emit message") && !!o.socket && (o.socket.emit("message", e), !0)
 	}, this.getWorldList = function(e) {
 		var t = r(e, ["200", "400", "500", "503"], "get world list");
-		return !!t && (a("get", l.root + "v2/worlds", {}, t, "getWorldList", {
+		return !!t && (a("get", "game-api/" + "v2/worlds", {}, t, "getWorldList", {
 			ignoreHeaders: !0
 		}), !0)
 	}, this.login = function(e, t, i) {
@@ -421,7 +421,7 @@ function ApiClient(e, t) {
 				token: o.uniqueKey,
 				event: e
 			};
-			return a("post", l.url.events + "v1/game-event", s, i, "trackEvent"), !0
+			return a("post", l.url.events + "v1/status", s, i, "trackEvent"), !0
 		}
 		return !1
 	}, this.completeAssignment = function(e, t) {
@@ -457,7 +457,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "Prodigy Version 1-50-0 (Open-Source)", e["GameConstants.Beta.VERSION"] = "Definitive Edition Version 2.0.6", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "Prodigy Version 1-50-0 (Open-Source)", e["GameConstants.Beta.VERSION"] = "Definitive Edition Version 2.0.7b", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -44692,32 +44692,37 @@ Prodigy.ForestBoss = function(e, t) {
 		}, this.saveCharacter.bind(this))
 	},
 	openGender: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "" + "Choose your gender or change your name." : "Choose your gender or change your name.";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "" + "Switch your gender or change your name." : "Switch your gender or change your name.";
 		this.game.prodigy.create.font(this.content, 0, 50, e, {
 			width: 600,
 			align: "center"
 		}), this.game.prodigy.create.textButton(this.content, 150, 100, {
-			text: "Girl",
+			text: "Switch Gender",
 			size: Prodigy.Control.TextButton.MED
-		}, this.Girl.bind(this)),
-		this.game.prodigy.create.textButton(this.content, 150, 150, {
-			text: "Boy",
-			size: Prodigy.Control.TextButton.MED
-		}, this.Boy.bind(this)),
+		}, this.toggleGender.bind(this)),
 		this.game.prodigy.create.textButton(this.content, 150, 200, {
-			text: "MN & LN",
+			text: "Wizard Title",
 			size: Prodigy.Control.TextButton.MED
 		}, this.MiddleandLastName.bind(this))
-	},
+    },
+	toggleGender: function() {
+        let gender = this.game.prodigy.player.appearance.getGender();
+        if (gender === "male") {
+            this.game.prodigy.player.appearance.setGender("female");
+        } else {
+            this.game.prodigy.player.appearance.setGender("male");
+        }
+        this.game.prodigy.open.confirm("Your wizard's gender has been set to " + this.game.prodigy.player.appearance.getGender() + "!\n\n\nWould you like to change your first name, or leave it as is?\n(you can always change it again later)", this.game.prodigy.open.nameChange.bind(this.game.prodigy.open, true), null, null, "System Menu")
+    },
 	openCredits: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, & Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
 		this.game.prodigy.create.font(this.content, 0, 50, e, {
 			width: 600,
 			align: "center"
 		})
 	},
 	openVersion: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.6" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.6";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.7b" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.0.7b";
 		this.game.prodigy.create.font(this.content, 10, 50, e, {
 			width: 590,
 			align: "center"
@@ -44758,6 +44763,9 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	Boy: function() {
 		this.game.prodigy.player.appearance.data.gender="male"
+	},
+	FirstName: function() {
+		this.game.prodigy.open.nameChange()
 	},
 	MiddleandLastName: function() {
 		this.game.prodigy.open.nameChange()
@@ -45215,11 +45223,11 @@ Prodigy.ForestBoss = function(e, t) {
 		}, this.close.bind(this, !1, !0)), this.content = this.game.prodigy.create.element(this, 0, 0), this.showSuggestedServers(this.servers), this.setupComplete = !0
 	},
 	showSuggestedServers: function(e) {
-		if (this.content.removeAll(!0), !Util.isDefined(e)) return this.game.prodigy.create.font(this.content, 0, 320, "Loading world list...", {
+		if (this.content.removeAll(!0), !Util.isDefined(e)) return this.showSuggestedServers.bind(this), {
 			size: 30,
 			width: 1280,
 			align: "center"
-		}), void this.game.prodigy.network.getWorldList(this.showSuggestedServers.bind(this), this.showError.bind(this, "Could not load world list. Check your connection and try again.", this.showSuggestedServers.bind(this)));
+		}, void this.showSuggestedServers.bind(this);
 		for (var t = this.getSuggested(e), i = 0; i < t.length; i++) {
 			var a = t[i];
 			Util.isDefined(a) && this.createButton(a, this.content, 140 + i % 3 * 350, 210 + 140 * Math.floor(i / 3), this.showSuggestedServers.bind(this))
@@ -48171,9 +48179,15 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			12 * e + t >= this.names.length ? i.visible = !1 : (i._text.setText(this.names[12 * e + t]), i.visible = !0)
 		}
 	},
-	setName: function(e) {
-		Util.isDefined(e) ? (this.onNameDown(e), this.game.prodigy.player.appearance.setName(e._text.text), this.nameText.setText(e._text.text), this.closeBtn.setActive()) : (this.nameText.setText("Name Your Wizard"), this.closeBtn.setInactive())
-	},
+	setName: function (e) {
+        let OGName = this.game.prodigy.player.appearance.data.name
+        Util.isDefined(e) ? (this.onNameDown(e), ((Util.isString(OGName) && OGName.split(" ").length < 2) ? this.game.prodigy.player.appearance.setName(e._text.text) : this.game.prodigy.player.appearance.setName(e._text.text + " " + OGName.split(" ")[1])), this.nameText.setText(e._text.text), this.closeBtn.setActive()) : (this.nameText.setText("Name Your Wizard"), this.closeBtn.setInactive())
+        if (Util.isDefined(e) && Util.isString(this.game.prodigy.player.appearance.data.nick)) {
+            if (!Util.isString(OGName))
+                return;
+            this.game.prodigy.player.appearance.data.nick = this.game.prodigy.player.appearance.data.nick.replace(OGName.split(" ")[0], e._text.text)
+        }
+    },
 	createAdvanced: function() {
 		var e = this.game.prodigy.create.element(this.background, 320, 150),
 			t = this.game.prodigy.create.element(e, 0, 0);
