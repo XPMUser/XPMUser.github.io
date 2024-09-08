@@ -1,6 +1,6 @@
 {
   "frames": {
-    "bg.png": {
+    "bg": {
       "frame": {
         "x": 0,
         "y": 0,
@@ -24,7 +24,7 @@
         "y": 0.5
       }
     },
-    "google-signin-btn.png": {
+    "google-signin-btn": {
       "frame": {
         "x": 0,
         "y": 720,
@@ -48,7 +48,7 @@
         "y": 0.5
       }
     },
-    "loadcharacter.png": {
+    "loadcharacter": {
       "frame": {
         "x": 1282,
         "y": 0,
@@ -72,7 +72,7 @@
         "y": 0.5
       }
     },
-    "offline.png": {
+    "offline": {
       "frame": {
         "x": 0,
         "y": 787,
@@ -96,7 +96,7 @@
         "y": 0.5
       }
     },
-    "student.png": {
+    "student": {
       "frame": {
         "x": 1282,
         "y": 50,
