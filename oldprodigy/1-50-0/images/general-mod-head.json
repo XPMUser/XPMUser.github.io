@@ -845,7 +845,7 @@
         "x": 287,
         "y": 244,
         "w": 39,
-        "h": 39
+        "h": 42
       },
       "rotated": false,
       "trimmed": false,
@@ -869,7 +869,7 @@
         "x": 116,
         "y": 290,
         "w": 39,
-        "h": 39
+        "h": 42
       },
       "rotated": false,
       "trimmed": false,
@@ -893,7 +893,7 @@
         "x": 2,
         "y": 328,
         "w": 39,
-        "h": 39
+        "h": 42
       },
       "rotated": false,
       "trimmed": false,
@@ -917,7 +917,7 @@
         "x": 45,
         "y": 328,
         "w": 39,
-        "h": 39
+        "h": 42
       },
       "rotated": false,
       "trimmed": false,
@@ -941,7 +941,7 @@
         "x": 287,
         "y": 287,
         "w": 39,
-        "h": 39
+        "h": 42
       },
       "rotated": false,
       "trimmed": false,
@@ -1684,6 +1684,7 @@
   "meta": {
     "app": "http://free-tex-packer.com",
     "version": "0.6.7",
+    "credits": "Daboss7173, Prodigy Education",	
     "image": "general-head.png",
     "format": "RGBA8888",
     "size": {
