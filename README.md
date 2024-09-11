@@ -135,10 +135,9 @@ Here's a list of available useful mods:
 2. FastGameSpeed
 3. RebalancedBattles
 4. ImitationTitan
-5. Mathless
-6. ClassicFaces
-7. ClassicFacesforBoys
-8. Coyblush
+5. ClassicFaces
+6. ClassicFacesforBoys
+7. Coyblush
 
 Some mods might work or not work in some versions.
 
@@ -252,7 +251,7 @@ Lets scratch the surface shall we?
 - Clockwork Town - prodigyde - pde2016 & pde1500
 - 2015-2016's Intro - pde2015 - pde2016 & pde1500 - pde1.51.0
 - 2014-2015's Academy - prodigyde - pde1221 & pde1500 - pde1.51.0
-- Modpacks - prodigyde - pde2015, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, & pde2018 - pde2019 Warning: Imitation Titan isn't work correctly for pde2018 yet, so it's in beta.
+- Modpacks - prodigyde - pde2015, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, & pde2018 - pde2019 Warning: Imitation Titan isn't work correctly for pde2018 yet, so it's still in beta.
 - Full possiblity of disguising for everything without starting over - prodigyde - pde2015, pde1221, & pde1500
 - First Name changing possibility - pde2015 & pde1500
 - Middle Name & Last Name changing possiblity - pde2015 & pde1500
