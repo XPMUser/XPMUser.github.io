@@ -6,7 +6,7 @@ Old Prodigy Wiki: https://old-prodigy.fandom.com/wiki/Old_Prodigy_Wiki
 
 Old Prodigy Reddit Community: https://www.reddit.com/r/OldProdigy/
 
-Warning: Swearing isn't recommended. You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom. You can't use my account to do bad things.
+Warning: You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom.
 
 Click on the left arrow to go back.
 
@@ -269,12 +269,12 @@ There's only 1.50.0 Ultimate Edition for now, more versions are coming soon. htt
 
 There's one version I haven't mentioned yet, it is the least buggy out of all of these versions.
 
-The current version | The most functional build!
+The current version | The most functional build! + Friendship Mode
 
 Huh? The current version? This isn't Old Prodigy! Well - maybe not, but it is New Prodigy, it is more Prodigy than any of these versions.
 The full-game experience is to be experienced there. There is no other version with the intricately designed education system, and there
 is no other version that consistently gets updated by a dedicated team of truly wonderful people. For that, you need to play Prodigy as
-it is now. This is the only open-source Prodigy version that supports apis and OAuths like Google.
+it is now. This is the only open-source Prodigy version that supports apis and OAuths like Google. This version also has the possibility to make friends in the game.
 
 In case you don't know how to get there somehow, here's the link: https://sso.prodigygame.com/game/login/
 
