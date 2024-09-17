@@ -8,6 +8,8 @@ Old Prodigy Reddit Community: https://www.reddit.com/r/OldProdigy/
 
 Warning: You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom.
 
+If you're playing my Old Prodigy versions, Definitive Editions, Ultimate Editions, or Prodidows versions, and you experience bugs, or want a new feature added, but you're under 13, ask your parents or your teachers to ask for anything or report bugs on my Discord Server.
+
 Click on the left arrow to go back.
 
 # Credits
