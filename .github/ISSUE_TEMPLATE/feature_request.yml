@@ -1,5 +1,5 @@
 name: Feature request
-description: You have a cool new idea or an already fully baked mod you would like to be featured!
+description: This is another way to ask for something.
 title: "*Coolest title ever*"
 labels: Suggestion
 body:
@@ -34,6 +34,7 @@ body:
         - Something super awesome from a fork you play
         - Something you made by yourself
         - A new Prodigy version
+        - A new Definitive Edition or Ultimate Edition version
         - Other
     validations:
       required: true
