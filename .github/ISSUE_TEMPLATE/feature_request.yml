@@ -6,7 +6,7 @@ body:
   - type: textarea
     attributes:
       label: What would you like to add?
-      description: Here you can go into detail about what you want to add. Try to be specific enough so that I can tell what it is you want to change.
+      description: Here you can go into detail about what you want to add. Try to be as specific as you can so that I can tell what it is you want to change. (Stop asking me to add new versions that I can't fix, I'll do that in my own time.)
       placeholder: Make a wizard do the dab because it's so trendy and would never be outdated ever.
     validations:
       required: true
@@ -29,12 +29,12 @@ body:
       label: Type of suggestion
       description: Select which type of feature request you're submitting.
       options:
-        - New Prodigy Definitive Edition feature
+        - New Prodigy Definitive Edition or Ultimate Edition feature
         - New modpack
         - Something super awesome from a fork you play
         - Something you made by yourself
-        - A new Prodigy version
-        - A new Definitive Edition or Ultimate Edition version
+        - A new Prodigy version (2015-2017)
+        - A new Definitive Edition or Ultimate Edition version (Modified versions of 2015-2017)
         - Other
     validations:
       required: true
@@ -42,9 +42,13 @@ body:
     attributes:
       label: I agree to the following
       options:
-        - label: By checking this box, I confirm that this issue is NOT about adding a new Prodigy version.
+        - label: By checking this box, I confirm that this issue isn't about adding a new Prodigy version from 2018 or later or earlier than March 2015.
           required: true
         - label: By checking this box, I confirm that there are no open issues about this suggestion.
           required: true
-        - label: By checking this box, I confirm that this issue template is being used to suggest a feature, not report a bug, and that if I want to make a bug report, I should not be using this issue template.
+        - label: By checking this box, I confirm that this issue template is being used to suggest a feature, not report a bug, and that if I want to make a bug report, I should be using Discord to do that.
+          required: true
+        - label: By checking this box, I confirm that I won't ask for any apis or OAuths.
+          required: true
+        - label: By checking this box, I confirm that this issue isn't about adding modified versions of later than 2017 or earlier than March 2015's Prodigy versions.
           required: true
