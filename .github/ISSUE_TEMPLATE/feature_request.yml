@@ -32,6 +32,7 @@ body:
         - New Prodigy Definitive Edition or Ultimate Edition feature
         - New modpack
         - Something super awesome from a fork you play
+        - Something super awesome from daboss7173.github.io/oldprodigy.onrender.com
         - Something you made by yourself
         - A new Prodigy version (2015-2017)
         - A new Definitive Edition or Ultimate Edition version (Modified versions of 2015-2017)
@@ -42,7 +43,7 @@ body:
     attributes:
       label: I agree to the following
       options:
-        - label: By checking this box, I confirm that this issue isn't about adding a new Prodigy version from 2018 or later or earlier than March 2015.
+        - label: By checking this box, I confirm that this issue isn't about adding a new Prodigy version from August 17, 2017, later, or earlier than March 2015.
           required: true
         - label: By checking this box, I confirm that there are no open issues about this suggestion.
           required: true
@@ -51,4 +52,6 @@ body:
         - label: By checking this box, I confirm that I won't ask for any apis or OAuths.
           required: true
         - label: By checking this box, I confirm that this issue isn't about adding modified versions of later than 2017 or earlier than March 2015's Prodigy versions.
+          required: true
+        - label: By checking this box, I confirm that I'm asking for something for only my site (https://xpmuser.github.io/).
           required: true
