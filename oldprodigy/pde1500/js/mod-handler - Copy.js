@@ -100,7 +100,7 @@ class ModHandler {
                                 Util.isDefined(a) ? (a.onComplete.addOnce(this.stand, this), Util.isDefined(t) && a.onComplete.addOnce(t), this.walk(), this.mode = 0, Util.isDefined(a) && a.start(), Util.isDefined(s) && s.start()) : (Util.isDefined(t) && t(), this.stand())
                         }
                 }, Prodigy.Menu.SystemMenu.prototype.openOther = function() {
-			var e = Util.isDefined(this.game.prodigy.player.world) ? "Your world is: " + Prodigy.Menu.Server.getServerName(this.game.prodigy.player.world) : "Click on the save character button and choose where you want your save to be in to save your character. Drag the range slider to the left to make your wizard walk slow and to the right to make your wizard walk faster.";
+			var e = Util.isDefined(this.game.prodigy.player.world) ? "Your world is: " + Prodigy.Menu.Server.getServerName(this.game.prodigy.player.world) : "Click on the save character button and choose where you want your save to be in to save your character. Drag the range slider to the left to make your wizard walk slow or to the right to make your wizard walk faster.";
 		this.game.prodigy.create.font(this.content, 5, 10, e, {
 			width: 600,
 			align: "center"

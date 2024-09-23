@@ -75,16 +75,22 @@ function ApiClient(e, t) {
 		x = "worlds-api/";
 	switch ("") {
 		case "dev.prodigygame.org":
+		case "localhost":
+		case "xpmuser.github.io":
 		default:
 			i("dev", l);
 			break;
 		case "stagingpublic.prodigygame.org":
 		case "www.prodigygame.org":
 		case "prodigygame.org":
+		case "localhost":
+		case "xpmuser.github.io":
 			i("staging", l);
 			break;
 		case "www.prodigygame.com":
 		case "prodigygame.com":
+		case "localhost":
+		case "xpmuser.github.io":
 			i("production", l)
 	}
 	var D = "xpmuser.github.io";
@@ -457,7 +463,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "Prodigy Version 1-50-0 (Open-Source)", e["GameConstants.Beta.VERSION"] = "Definitive Edition Version 2.1.0", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !1, e["GameConstants.Build.SHOW_FPS"] = !1, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Mailer.TEST_MAIL"] = !1, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !1, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "1-50-0 mode (2.1.1)", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !0, e["GameConstants.Build.SHOW_FPS"] = !0, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Server.TEST_SERVER"] = !0, e["GameConstants.Mailer.TEST_MAIL"] = !0, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -626,18 +632,12 @@ Util.capitalize = function(e) {
 	e.forEach(function(e, t) {
 		e.x = s + Util.calculateItemCoordinate(t, e.width, o), e.y = h
 	})
-}, Util.DEV = 1, Util.DEBUG = 2, Util.INFO = 4, Util.INFO = 6, Util.ERROR = 8, Util.log = function(e, t) {
+}, Util.DEV = 1, Util.DEBUG = 2, Util.ERROR = 4, Util.log = function(e, t) {
 	if ((t = Util.isDefined(t) ? t : 1) & GameConstants.get("GameConstants.Build.LOG_LEVEL")) {
 		var i = "string" == typeof e;
 		switch (t) {
-			case 8:
-				console.log(i ? "%c[PRODIGY][ERROR] " + e : e, "background: #900; color: #FFF");
-				break;
-			case 6:
-				console.log(i ? "%c[PRODIGY][INFO] " + e : e, "background: #009; color: #FFF");
-				break;
 			case 4:
-				console.log(i ? "%c[PRODIGY][INFO] " + e : e, "background: #009; color: #FFF");
+				console.log(i ? "%c[PRODIGY][ERROR] " + e : e, "background: #900; color: #FFF");
 				break;
 			case 2:
 				console.log(i ? "[PRODIGY][DEBUG] " + e : e);
@@ -2511,6 +2511,121 @@ Util.capitalize = function(e) {
 			base: c,
 			url: "map-activity_zone-b3/6/map-activity_zone-b3.json"
 		},
+		"map-shipwreck_shore-a1": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-a1/5/map-shipwreck_shore-a1.json"
+		},
+		"map-shipwreck_shore-a2": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-a2/4/map-shipwreck_shore-a2.json"
+		},
+		"map-shipwreck_shore-a3": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-a3/5/map-shipwreck_shore-a3.json"
+		},
+		"map-shipwreck_shore-a4": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-a4/4/map-shipwreck_shore-a4.json"
+		},
+		"map-shipwreck_shore-a5": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-a5/9/map-shipwreck_shore-a5.json"
+		},
+		"map-shipwreck_shore-a7": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-a7/5/map-shipwreck_shore-a7.json"
+		},
+		"map-shipwreck_shore-b10": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b10/5/map-shipwreck_shore-b10.json"
+		},
+		"map-shipwreck_shore-b11": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b11/6/map-shipwreck_shore-b11.json"
+		},
+		"map-shipwreck_shore-b12": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b12/7/map-shipwreck_shore-b12.json"
+		},
+		"map-shipwreck_shore-b13": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b13/6/map-shipwreck_shore-b13.json"
+		},
+		"map-shipwreck_shore-b2": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b2/4/map-shipwreck_shore-b2.json"
+		},
+		"map-shipwreck_shore-b4": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b4/3/map-shipwreck_shore-b4.json"
+		},
+		"map-shipwreck_shore-b5": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b5/5/map-shipwreck_shore-b5.json"
+		},
+		"map-shipwreck_shore-b6": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b6/7/map-shipwreck_shore-b6.json"
+		},
+		"map-shipwreck_shore-b7": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b7/7/map-shipwreck_shore-b7.json"
+		},
+		"map-shipwreck_shore-b8": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-b8/4/map-shipwreck_shore-b8.json"
+		},
+		"map-shipwreck_shore-c10": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-c10/5/map-shipwreck_shore-c10.json"
+		},
+		"map-shipwreck_shore-c11": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-c11/6/map-shipwreck_shore-c11.json"
+		},
+		"map-shipwreck_shore-c12": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-c12/5/map-shipwreck_shore-c12.json"
+		},
+		"map-shipwreck_shore-c6": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-c6/4/map-shipwreck_shore-c6.json"
+		},
+		"map-shipwreck_shore-c7": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-c7/4/map-shipwreck_shore-c7.json"
+		},
+		"map-shipwreck_shore-c8": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-c8/6/map-shipwreck_shore-c8.json"
+		},
+		"map-shipwreck_shore-c9": {
+			type: "json",
+			base: c,
+			url: "map-shipwreck_shore-c9/8/map-shipwreck_shore-c9.json"
+		},
 		"bg-battle-academy": {
 			type: "singleImage",
 			v: 1
@@ -2644,6 +2759,14 @@ Util.capitalize = function(e) {
 			v: 2
 		},
 		"letter-lost-island-mailer-2": {
+			type: "singleImage",
+			v: 2
+		},
+		"bg-battle-shipwreck-beach": {
+			type: "singleImage",
+			v: 1
+		},
+		"bg-battle-shipwreck-underwater": {
 			type: "singleImage",
 			v: 2
 		},
@@ -14328,6 +14451,15 @@ Util.capitalize = function(e) {
                                 w: 90,
                                 h: 75
                         },
+                        "normal-hair-male-undefined-undefined": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
                         "normal-hair-female-24-1": {
                                 type: "spritesheet",
                                 base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
@@ -14752,6 +14884,15 @@ Util.capitalize = function(e) {
                                 h: 75
                         },
                         "reduced-hair-male-24-16": {
+                                type: "spritesheet",
+                                base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
+                                url: "0-1.png",
+                                x: 88,
+                                y: 74,
+                                w: 90,
+                                h: 75
+                        },
+                        "reduced-hair-male-undefined-undefined": {
                                 type: "spritesheet",
                                 base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
                                 url: "0-1.png",
@@ -32063,7 +32204,7 @@ Items.getItemData = function(e, t) {
 		rarity: 1,
 		drop: 1,
 		flavorText: "This hat is prickly!",
-		effects: [34],
+		effects: [33],
 		memberAd: 0
 	}, {
 		ID: 72,
@@ -44643,10 +44784,10 @@ Prodigy.ForestBoss = function(e, t) {
 			top: "Game",
 			bot: "Version"
 		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 280, {
-			icon: "settings",
+			icon: "map",
 			bot: "Intro"
 		}, this.openIntro.bind(this)), this.game.prodigy.create.advButton(this, 930, 380, {
-			icon: "settings",
+			icon: "member",
 			bot: "Member"
 		}, this.toggleMember.bind(this)), this.game.prodigy.create.advButton(this, 930, 480, {
 			icon: "settings",
@@ -44745,7 +44886,7 @@ Prodigy.ForestBoss = function(e, t) {
 		})
 	},
 	openVersion: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.0" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.0";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.1" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.1";
 		this.game.prodigy.create.font(this.content, 10, 50, e, {
 			width: 590,
 			align: "center"
@@ -45783,7 +45924,7 @@ Prodigy.ForestBoss = function(e, t) {
 		if (Util.isDefined(this.mods.catchOverrideMessage)) return void this.game.prodigy.open.epicErrorMessage.call(this.game.prodigy.open, this.mods.catchOverrideMessage, {
 			showClose: !1
 		});
-		if (this.openContent("capture?"), e) {
+		if (this.openContent("friends?"), e) {
 			var t = this.source.source.kennel.getPets().length,
 				i = this.target.source.getID(),
 				a = Monsters.getItemData(i);
@@ -45793,7 +45934,7 @@ Prodigy.ForestBoss = function(e, t) {
 			else if (this.target.source.catchAttempt > 0 && !this.game.prodigy.player.isMember) this.game.prodigy.network.sendAnalytics("Catch-Pet-Second-Try"), this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.CATCH);
 			else {
 				if (!(0 > this.game.prodigy.player.getGold())) return this.game.prodigy.player.changeGold(-0), this.game.prodigy.player.isMember && (t >= 10 && this.game.prodigy.network.sendAnalytics("Catch-More-Pets"), this.target.source.catchAttempt > 0 && this.game.prodigy.network.sendAnalytics("Catch-Pet-Second-Try")), void this.close(this.catchCallback);
-				this.game.prodigy.open.message("You need [gold]500 to catch this pet. You only have [gold]" + this.game.prodigy.player.getGold() + ".", null, "gold", "Uh oh!")
+				this.game.prodigy.open.message("" + this.game.prodigy.player.getGold() + ".", null, "gold", "Uh oh!")
 			}
 			this.openMain()
 		} else {
@@ -46359,7 +46500,7 @@ Prodigy.ForestBoss = function(e, t) {
 			if (!(Util.isDefined(this.data) && Util.isDefined(this.data.pages) && Util.isDefined(this.data.pages[0]) && Util.isDefined(this.data.pages[0].items) && Util.isDefined(this.data.pages[0].items[0]) && Util.isDefined(this.data.pages[0].items[0].cost))) {
 				if (.5 > Math.random()) {
 					var t = this.game.prodigy.create.panel(this, 80, 380, 8, 5, "member");
-					t.setClickable(e.bind(this, this.game, Prodigy.Menu.MemberAd.GET_GOLD, "getGoldBtn")), this.game.prodigy.create.font(t, 10, 10, "Need gold? Become a member and get", {
+					t.setClickable(e.bind(this, this.game, Prodigy.Menu.MemberAd.GET_GOLD, "getGoldBtn")), this.game.prodigy.create.font(t, 10, 10, "Wanna talk about gold?", {
 						align: "center",
 						width: 300
 					}), this.game.prodigy.create.font(t, 10, 140, "Click Here!", {
@@ -46369,7 +46510,7 @@ Prodigy.ForestBoss = function(e, t) {
 						size: 36
 					});
 					var i = t.add(this.game.prodigy.create.sprite(7, 70, "core", "overlay-small"));
-					i.width = 306, i.height = 60, i.alpha = .2, this.game.prodigy.create.font(t, 0, 80, "[gold] 2000! [gold]", {
+					i.width = 306, i.height = 60, i.alpha = .2, this.game.prodigy.create.font(t, 0, 80, "[gold] Topic: [gold]", {
 						align: "center",
 						width: 320,
 						font: "button",
@@ -48343,7 +48484,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			width: 200,
 			size: 30,
 			iconOffsetY: 6
-		}), t.member && !this.game.prodigy.player.isMember && (s = "[membership] " + s), this.game.prodigy.create.textButton(this, 320, 435, {
+		}), t.member && !this.game.prodigy.player.isMember && (s = "Discuss"), this.game.prodigy.create.textButton(this, 320, 435, {
 			text: s,
 			size: Prodigy.Control.TextButton.SMALL
 		}, this.buy.bind(this))
@@ -48429,8 +48570,8 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		this.box = this.game.prodigy.create.element(this.content, 120, 170), this.game.prodigy.create.panel(this.box, 0, 0, 10, 8), this.icons = [];
 		for (var e = 0; 20 > e; e++) this.icons.push(this.box.add(this.game.prodigy.create.sprite(30 + e % 5 * 90, 25 + 90 * Math.floor(e / 5), "icons", "icon-base"))), this.icons[e].inputEnabled = !0, this.icons[e].events.onInputDown.add(this.selectIcon.bind(this, this.icons[e], null));
 		this.btns = [];
-		for (var e = 0; 7 > e; e++) {
-			var t = 7 - e;
+		for (var e = 0; 8 > e; e++) {
+			var t = 8 - e;
 			this.btns.unshift(this.game.prodigy.create.stackButton(this.box, 440 - 55 * e, -40, [{
 				tag: "empty"
 			}, {
@@ -48939,74 +49080,55 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	}
 }), Prodigy.Menu.Mailer.MAIL = [{
 	id: 0,
-	subject: "Hello World 0",
+	subject: "The friend feature's back in business.",
 	isOpened: !1,
-	image: null,
-	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
-	attachments: [{
-		type: "item",
-		ID: 1
-	}, {
-		type: "item",
-		ID: 2
-	}, {
-		type: "item",
-		ID: 3
-	}, {
-		type: "item",
-		ID: 4
-	}, {
-		type: "item",
-		ID: 5
-	}]
+	image: "friends-list",
+	message: "Wanna make friends, you can chat and make friends in botify.ai. Open the friend menu (looks like a member menu) and then click on the make ai friends now button."
 }, {
 	id: 1,
-	subject: "Hello World 1",
+	subject: "Epic Spells can now be used multiple times.",
 	isOpened: !1,
-	image: null,
-	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
-	attachments: [{
-		type: "item",
-		ID: 1
-	}, {
-		type: "item",
-		ID: 2
-	}, {
-		type: "item",
-		ID: 3
-	}, {
-		type: "item",
-		ID: 4
-	}]
+	image: "epic-attacks",
+	message: "You can learn Epic Spells from Tech Zone and/or buy Epics (pets) from the pet park to cast epic spells during battles."
 }, {
 	id: 2,
-	subject: "Hello World 2",
+	subject: "Tech Zone's now available!",
 	isOpened: !1,
-	image: null,
-	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
-	attachments: [{
-		type: "item",
-		ID: 1
-	}, {
-		type: "item",
-		ID: 2
-	}]
+	image: "after-hours",
+	message: "You can go there from Airship Landing or Firefly Garden!"
 }, {
 	id: 3,
-	subject: "Hello World 3",
+	subject: "You can now catch pets in The Lost Island.",
 	isOpened: !1,
-	image: null,
-	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
-	attachments: [{
-		type: "item",
-		ID: 1
-	}]
+	image: "lost-island-mailer-1",
+	message: "We've lifted the ban on catching pets in The Lost Island."
 }, {
 	id: 4,
-	subject: "Hello World 4",
+	subject: "Peddler and Rolly are back in town!",
 	isOpened: !1,
 	image: null,
-	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	message: "Go to the Northwest Court to see them!",
+	attachments: []
+}, {
+	id: 5,
+	subject: "The Robolympics have returned!",
+	isOpened: !1,
+	image: "after-hours",
+	message: "You can now go to Clockwork Town either from the map or from the lower intersection!",
+	attachments: []
+}, {
+	id: 6,
+	subject: "Some of the old things are back in business!",
+	isOpened: !1,
+	image: "after-hours",
+	message: "Do you miss some old things? Well, here they are!",
+	attachments: []
+}, {
+	id: 7,
+	subject: "Welcome to your new mail service!",
+	isOpened: !1,
+	image: null,
+	message: "Hello! Welcome to our magical world! Please come back and check your mail often! This is where you can learn about all the new features!",
 	attachments: []
 }], Prodigy.Menu.Mailer.TOTAL_MAIL = {
 	totalUnread: Prodigy.Menu.Mailer.MAIL.length
@@ -49620,7 +49742,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
 	addDefaultConfig: function() {
-		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0)
+		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0)
 	},
 	addHouseConfig: function(e) {
 		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
@@ -49684,6 +49806,11 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	addSettings: function(e, t) {
 		this.pages[e][t].push({
 			type: "SettingsButton"
+		})
+	},
+	addMailer: function (e, t) {
+		this.pages[e][t].push({
+			type: "MailerButton"
 		})
 	}
 
@@ -53093,13 +53220,6 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	createMemberBtn: function(e, t, i) {
 		var a = null;
 		if (!this.game.prodigy.player.isMember) {
-			var a = this.game.prodigy.create.panelButton(e, t, i, 6, 3, "member", this.game.prodigy.open.membership.bind(this.game.prodigy.open, Prodigy.Menu.MemberAd.MORE_EXP));
-			this.game.prodigy.create.font(a.content, 899999999999, 20, "Rank Up  Faster!", {
-				font: "button",
-				size: 0,
-				width: 0,
-				align: "center"
-			})
 		}
 		return a
 	},
@@ -54566,7 +54686,7 @@ var Screen = function() {
 				var e = Util.getUrlVariable("userID"),
 					t = Util.getUrlVariable("token"),
 					i = Util.getUrlVariable("key");
-				this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.game.prodigy.network.adminLogin(e, t, i, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
+				this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.game.prodigy.network.adminLogin(e, t, i, this.game.prodigy.player, this.loadSkills.bind(this))
 			}
 		}, e.prototype.showLogin = function(e) {
 			this.usernameField.setEnabled(e), this.passwordField.setEnabled(e), this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this)), this.usernameField.show(100), this.passwordField.show(100)) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
@@ -58381,7 +58501,7 @@ Prodigy.Skin = function(e, t) {
 	Prodigy.Map.call(this, e, "C8", "The Big Tree", 1190, 520, ["forest-C7", "forest-B8", "tutorial-D8"], t.concat("npc-sprite-flora", "npc-sprite-merchant"))
 }, Prodigy.extends(Forest_C8, Prodigy.Map, {
 	constructor: Forest_C8,
-	setup: function(e, t, i) {
+	setup: function(e, t, i, s) {
 		e.prodigy.world.getZone("lamplight").completeQuest(2), Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
 			x: 200,
 			y: 40,
@@ -59005,7 +59125,7 @@ Prodigy.Skin = function(e, t) {
 			y: 400,
 			w: 100,
 			h: 80
-		}, "toyzone-A1", 1080, 280, this.playPortalEffectExit.bind(this, 360, 400, "toyzone-A1", 1080, 280));
+		}, "toyzone-A1", 1080, 280, this.addHealStone(e, t, 800, 200), this.playPortalEffectExit.bind(this, 360, 400, "toyzone-A1", 1080, 280));
 		var a = this._zone.getState("a1Visited");
 		Util.isDefined(a) && !1 !== a || (this._sprite1 = t.foreground.add(this._zone.game.prodigy.create.sprite(360, 400, "core", "area-pointer")), this._sprite1.anchor.setTo(.5, 0), this._sprite1.angle = 180, this._zone.game.add.tween(this._sprite1).to({
 			y: this._sprite1.y + 30
@@ -65353,9 +65473,9 @@ Arena.AUDIO = [{
 			top: "The Academy Item Shop",
 			bot: ""
 		},
-		icon: "emblem-rank2",
+		icon: "emblem-rank1",
 		rank: 0,
-		top: "Silver Rank",
+		top: "Bronze Rank",
 		items: [{
 			ID: 76,
 			type: "item"
@@ -65549,9 +65669,9 @@ Arena.AUDIO = [{
 			top: "The Red",
 			bot: "Set"
 		},
-		icon: "emblem-rank3",
+		icon: "emblem-rank2",
 		rank: 0,
-		top: "Gold Rank",
+		top: "Silver Rank",
 		items: [{
 			ID: 59,
 			type: "hat"
@@ -65568,9 +65688,9 @@ Arena.AUDIO = [{
 			top: "The Breath of the Wild Set",
 			bot: ""
 		},
-		icon: "emblem-rank4",
+		icon: "emblem-rank3",
 		rank: 0,
-		top: "Platinum Rank",
+		top: "Gold Rank",
 		items: [{
 			ID: 60,
 			type: "hat"
@@ -65587,9 +65707,9 @@ Arena.AUDIO = [{
 			top: "The Draconyx",
 			bot: "Set"
 		},
-		icon: "emblem-rank5",
+		icon: "emblem-rank4",
 		rank: 0,
-		top: "Diamond Rank",
+		top: "Platinum Rank",
 		items: [{
 			ID: 61,
 			type: "hat"
@@ -65599,6 +65719,34 @@ Arena.AUDIO = [{
 		}, {
 			ID: 52,
 			type: "outfit"
+		}]
+	}, {
+		btn: {
+			icon: "star",
+			top: "TM's",
+			bot: "Set"
+		},
+		icon: "emblem-rank5",
+		rank: 0,
+		top: "Diamond Rank",
+		items: [{
+			ID: 23,
+			type: "hat"
+		}, {
+			ID: 47,
+			type: "weapon"
+		}, {
+			ID: 24,
+			type: "outfit"
+		}, {
+			ID: 18,
+			type: "boots"
+		}, {
+			ID: 57,
+			type: "outfit"
+		}, {
+			ID: 92,
+			type: "weapon"
 		}]
 	}]
 }, Prodigy.Lamplight = function(e) {
@@ -65863,9 +66011,6 @@ Arena.AUDIO = [{
 			        ID: 33,
 			        type: "hat"
 		        }, {
-			        ID: 23,
-			        type: "hat"
-		        }, {
 				ID: 72,
 				type: "hat"
 			}, {
@@ -65941,9 +66086,6 @@ Arena.AUDIO = [{
 			        ID: 23,
 			        type: "outfit"
 		        }, {
-			        ID: 24,
-			        type: "outfit"
-		        }, {
 			        ID: 27,
 			        type: "outfit"
 		        }, {
@@ -66008,9 +66150,6 @@ Arena.AUDIO = [{
 			type: "boots"
 		}, {
 			ID: 17,
-			type: "boots"
-		}, {
-			ID: 18,
 			type: "boots"
 		}, {
 			ID: 19,
@@ -66666,9 +66805,6 @@ Arena.AUDIO = [{
 				type: "weapon"
 			}, {
 				ID: 91,
-				type: "weapon"
-			}, {
-				ID: 47,
 				type: "weapon"
 			}]
 		}]
@@ -72000,6 +72136,8 @@ Pirate.STORE = {
 			ID: 99
 		}, {
 			ID: 102
+		}, {
+			ID: 128
 		}]
 	},
 	dialogue: [{
@@ -74272,17 +74410,14 @@ TechZone.STORE = {
 		ID: 78,
 		type: "hat"
 	}, {
-		ID: 57,
-		type: "outfit"
-	}, {
 		ID: 58,
 		type: "outfit"
 	}, {
-		ID: 92,
-		type: "weapon"
-	}, {
 		ID: 77,
 		type: "pet"
+	}, {
+		ID: 79,
+		type: "hat"
 	}]
 }, TechZone.AUDIO = [{
 	tag: "voice-4",
