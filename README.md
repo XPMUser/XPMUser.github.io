@@ -78,7 +78,7 @@ If you want to add a house item to your house in 2014-2015's versions, Definitiv
 
 ## Disclaimers
 
-Lets get some of the obvious stuff out of the way. This was done by craftersshaft first with Prodigy Reborn, and was the inspiration for this
+Lets get some of the obvious stuff out of the way. This was done by Craftersshaft first with Prodigy Reborn, and was the inspiration for this
 project.
 
 Check them out!
@@ -270,7 +270,7 @@ There's only 1.50.0 Ultimate Edition for now, more versions are coming soon. htt
 
 There's one version I haven't mentioned yet, it is the least buggy out of all of these versions.
 
-The current version | The most functional build! + Friendship Mode
+The current version | The most functional build! + Friendship Mode in the game itself!
 
 Huh? The current version? This isn't Old Prodigy! Well - maybe not, but it is New Prodigy, it is more Prodigy than any of these versions.
 The full-game experience is to be experienced there. There is no other version with the intricately designed education system, and there
