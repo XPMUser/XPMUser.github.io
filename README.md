@@ -286,4 +286,5 @@ https://play.prodigygame.com/ If you want to play as a student during free time 
 This version includes multiplayer mode, Google OAuth, Holiday Events, etc, is in 1.50.0 Mode like my pde1500, but it's somehow different than my pde1500, and it also has the completely fixed education system, but it's optional. This is the only Prodigy version where you can get arena points in the game.
 
 Older versions of Daboss7173's PDE: https://web.archive.org/web/20240000000000*/https://oldprodigy.onrender.com/play/ (Be careful when playing)
-Daboss7173's Prodigy Definitive Edition https://oldprodigy.onrender.com/play
+
+Daboss7173's Prodigy Definitive Edition (more recommended website than the Wayback Machine versions for the best experience): https://oldprodigy.onrender.com/play
