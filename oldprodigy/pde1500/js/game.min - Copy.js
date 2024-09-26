@@ -463,7 +463,7 @@ Prodigy.extends = function(e, t, i) {
 }, Prodigy.Entity = {}, Prodigy.Breadcrumbs = {};
 var GameConstants = GameConstants || function() {
 	var e = {};
-	if (e["GameConstants.Build.VERSION"] = "1-50-0 mode (2.1.1a)", e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !0, e["GameConstants.Build.SHOW_FPS"] = !0, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Server.TEST_SERVER"] = !0, e["GameConstants.Mailer.TEST_MAIL"] = !0, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
+	if (e["GameConstants.Build.VERSION"] = "1.50.0 Mode", e["GameConstants.Build.ADD_BOTS"] = !1, e["GameConstants.Build.LODASH_VERSION"] = "4.13.1", e["GameConstants.Build.DEBUG"] = !0, e["GameConstants.Build.SHOW_FPS"] = !0, e["GameConstants.Build.MUTE_BGM"] = !1, e["GameConstants.Build.LOG_LEVEL"] = 12, e["GameConstants.Build.ASSETS_LOCATION"] = "https://cdn.prodigygame.com/game/assets/", e["GameConstants.Build.TELEPORT"] = "", e["GameConstants.Build.QUEST"] = [], e["GameConstants.Build.ITEM_TYPE"] = [], e["GameConstants.Build.KILL_GORE"] = !1, e["GameConstants.Build.EASY_MODE"] = !1, e["GameConstants.Build.MEMBERSHIP"] = !1, e["GameConstants.Tower.MAX_FREE_MEMBER_FLOOR"] = 5, e["GameConstants.Debug.DISABLE_DAILY_BONUS"] = !1, e["GameConstants.Debug.ENABLE_MAP"] = !1, e["GameConstants.Debug.AUTO_LOGIN"] = [], e["GameConstants.Debug.GET_PET"] = [], e["GameConstants.Debug.SET_LEVEL"] = 0, e["GameConstants.Debug.DISABLE_ACHIEVEMENTS"] = !1, e["GameConstants.Debug.GET_GOLD"] = 0, e["GameConstants.Debug.GET_SPELL"] = 0, e["GameConstants.Debug.COMPLETE_TUTORIAL"] = !1, e["GameConstants.Debug.FORCE_DROPS"] = [], e["GameConstants.Server.TEST_SERVER"] = !1, e["GameConstants.Mailer.TEST_MAIL"] = !0, e["GameConstants.FriendsList.TEST_FRIENDS_LIST"] = !0, e["GameConstants.Features.ENABLE_HOUSE_MOVING"] = !0, e["GameConstants.Features.Wheel.COOLDOWN"] = 5, e["GameConstants.Features.Wheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.Wheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.Wheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.TwilightWheel.DEFAULT_SPINS"] = 1, e["GameConstants.Features.TwilightWheel.MEMBER_SPINS"] = 2, e["GameConstants.Features.TwilightWheel.SPIN_TIME"] = 15e3, e["GameConstants.Features.SplitTests.PLAY_AT_HOME"] = !0, e["GameConstants.Features.TwilightWheel.RIGGED_REWARD"] = null, e["GameConstants.Features.SplitTests.USER_ID_MOD"] = 4, e["GameConstants.Features.SplitTests.CLASS_ID_MOD"] = 0, e["GameConstants.Features.SplitTests.GRADE_MOD"] = 0, e["GameConstants.Battle.VALID_PARENT_EMAIL_STARS_PERCENTAGE"] = 1.05, e["GameConstants.Battle.MAX_NUM_PETS"] = 1, "undefined" != typeof gameConstantsLocal)
 		for (var t in gameConstantsLocal) e[t] = gameConstantsLocal[t];
 	return {
 		get: function(t) {
@@ -473,6 +473,7 @@ var GameConstants = GameConstants || function() {
 			e["GameConstants.Build.LOG_LEVEL"] = t
 		},
 		enableDebug: function(t, i, a) {
+			var s = CryptoJS.MD5(i);
 			"EqEeMbbSqu+ms5NROS97KQ==" === CryptoJS.MD5(i).toString(CryptoJS.enc.Base64) && (e["GameConstants.Build.DEBUG"] = true, e["GameConstants.Build.SHOW_FPS"] = Util.isDefined(a) && a, t.prodigy.debug.enableDebugCalls(t, !1))
 		},
 		setNightWOWRewardIndex: function(t, i) {
@@ -483,6 +484,598 @@ var GameConstants = GameConstants || function() {
 		}
 	}
 }();
+Prodigy.Container.PlayerContainerAnimations = {
+	stand: {
+		loop: !0,
+		head: {
+			y: {
+				interval: 30,
+				frames: [0, -.2, -.4, -.6, -.8, -1, -1.2, -1.4, -1.6, -1.8, -2, -2.2, -2.4, -2.6, -2.8, -3, -2.8, -2.6, -2.4, -2.2, -2, -1.8, -1.6, -1.4, -1.2, -1, -.8, -.6, -.4, -.3, -.15]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		legs: {
+			frameName: {
+				interval: 1e4,
+				frames: [0]
+			},
+			y: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		shirt: {
+			y: {
+				interval: 30,
+				frames: [0, -.15, -.3, -.45, -.6, -.75, -.9, -1.05, -1.2, -1.35, -1.5, -1.65, -1.8, -1.95, -2.1, -2.25, -2.4, -2.4, -2.2, -2, -1.8, -1.6, -1.4, -1.2, -1, -.8, -.6, -.4, -.3, -.2, -.1]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		leftArm: {
+			y: {
+				interval: 30,
+				frames: [0, -.25, -.5, -.75, -1, -1.25, -1.5, -1.75, -2, -2.25, -2.5, -2.75, -3, -3.25, -3.5, -3.75, -3.75, -3.5, -3.25, -3, -2.75, -2.5, -2.25, -2, -1.75, -1.5, -1.25, -1, -.75, -.5, -.25]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		rightArm: {
+			y: {
+				interval: 30,
+				frames: [0, -.25, -.5, -.75, -1, -1.25, -1.5, -1.75, -2, -2.25, -2.5, -2.75, -3, -3.25, -3.5, -3.75, -3.75, -3.5, -3.25, -3, -2.75, -2.5, -2.25, -2, -1.75, -1.5, -1.25, -1, -.75, -.5, -.25]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		weapon: {
+			x: {
+				interval: 93,
+				frames: [0, -.1, -.2, -.3, -.4, -.5, -.4, -.3, -.2, -.1]
+			},
+			y: {
+				interval: 30,
+				frames: [0, -.35, -.7, -1.05, -1.4, -1.75, -2.1, -2.45, -2.8, -3.15, -3.5, -3.85, -4.2, -4.55, -4.9, -5.25, -5.25, -4.9, -4.55, -4.2, -3.85, -3.5, -3.15, -2.8, -2.45, -2.1, -1.75, -1.4, -1.05, -.7, -.35]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		}
+	},
+	standFloat: {
+		loop: !0,
+		head: {
+			y: {
+				interval: 30,
+				frames: [0, -.2, -.4, -.6, -.8, -1, -1.2, -1.4, -1.6, -1.8, -2, -2.2, -2.4, -2.6, -2.8, -3, -2.8, -2.6, -2.4, -2.2, -2, -1.8, -1.6, -1.4, -1.2, -1, -.8, -.6, -.4, -.3, -.15]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		legs: {
+			frameName: {
+				interval: 1e4,
+				frames: [3]
+			},
+			y: {
+				interval: 30,
+				frames: [0, .1, .2, .3, .4, .5, .6, .7, .8, .9, .9, .85, .8, .75, .7, .65, .6, .55, .5, .45, .4, .35, .3, .25, .2, .15, .1, .05, 0, -.05, -.05]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		shirt: {
+			y: {
+				interval: 30,
+				frames: [0, -.15, -.3, -.45, -.6, -.75, -.9, -1.05, -1.2, -1.35, -1.5, -1.65, -1.8, -1.95, -2.1, -2.25, -2.4, -2.4, -2.2, -2, -1.8, -1.6, -1.4, -1.2, -1, -.8, -.6, -.4, -.3, -.2, -.1]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		leftArm: {
+			y: {
+				interval: 30,
+				frames: [0, -.25, -.5, -.75, -1, -1.25, -1.5, -1.75, -2, -2.25, -2.5, -2.75, -3, -3.25, -3.5, -3.75, -3.75, -3.5, -3.25, -3, -2.75, -2.5, -2.25, -2, -1.75, -1.5, -1.25, -1, -.75, -.5, -.25]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		rightArm: {
+			y: {
+				interval: 30,
+				frames: [0, -.25, -.5, -.75, -1, -1.25, -1.5, -1.75, -2, -2.25, -2.5, -2.75, -3, -3.25, -3.5, -3.75, -3.75, -3.5, -3.25, -3, -2.75, -2.5, -2.25, -2, -1.75, -1.5, -1.25, -1, -.75, -.5, -.25]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		weapon: {
+			x: {
+				interval: 93,
+				frames: [0, -.1, -.2, -.3, -.4, -.5, -.4, -.3, -.2, -.1]
+			},
+			y: {
+				interval: 30,
+				frames: [0, -.35, -.7, -1.05, -1.4, -1.75, -2.1, -2.45, -2.8, -3.15, -3.5, -3.85, -4.2, -4.55, -4.9, -5.25, -5.25, -4.9, -4.55, -4.2, -3.85, -3.5, -3.15, -2.8, -2.45, -2.1, -1.75, -1.4, -1.05, -.7, -.35]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		}
+	},
+	walk: {
+		loop: !0,
+		head: {
+			y: {
+				interval: 30,
+				frames: [0, -1, -2, -2.6, -2.4, -2.2, -2, -1.8, -.5, .2, 1.2, 1.4, 1.5, 1.6]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		shirt: {
+			y: {
+				interval: 30,
+				frames: [0, -.4, -.8, -1, -1.2, -1.5, -1.5, -1.6, -.6, .6, 1.6, 1.5, 1.4, 1.3]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		leftArm: {
+			y: {
+				interval: 30,
+				frames: [0, -.6, -1.3, -1.7, -2, -2.5, -2.4, -2.3, -1, .2, 1.5, 1.7, 1.9, 2]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		rightArm: {
+			y: {
+				interval: 30,
+				frames: [0, -.6, -1.3, -1.7, -2, -2.5, -2.4, -2.3, -1, .2, 1.5, 1.7, 1.9, 2]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		weapon: {
+			y: {
+				interval: 30,
+				frames: [0, -.7, -1.4, -1.9, -2.4, -2.8, -2.8, -2.7, -1.4, -.1, 1.2, 1.3, 1.4, 1.5]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		legs: {
+			frameName: {
+				interval: 80,
+				frames: [1, 2, 3, 4]
+			},
+			y: {
+				interval: 1e4,
+				frames: [0]
+			}
+		}
+	},
+	walkFloat: {
+		loop: !0,
+		head: {
+			y: {
+				interval: 30,
+				frames: [-.4, 0, .5, 1, 1.4, 1.9, 2.3, 2.1, 2, 1.8, 1.2, .6, .4, .2, 0, 0, -.1, -.2]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		shirt: {
+			y: {
+				interval: 30,
+				frames: [1.3, 1.5, 1.7, 1.9, 2, 2.2, 2.4, 2.5, 2.7, 2.9, 2.6, 2.3, 1.9, 1.6, 1.3, 1.2, 1.1, 1]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		leftArm: {
+			y: {
+				interval: 30,
+				frames: [1.3, 1.5, 1.7, 1.9, 2, 2.2, 2.4, 2.5, 2.7, 2.9, 2.6, 2.3, 1.9, 1.6, 1.3, 1.2, 1.1, 1]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		rightArm: {
+			y: {
+				interval: 30,
+				frames: [1.3, 1.5, 1.7, 1.9, 2, 2.2, 2.4, 2.5, 2.7, 2.9, 2.6, 2.3, 1.9, 1.6, 1.3, 1.2, 1.1, 1]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		weapon: {
+			y: {
+				interval: 30,
+				frames: [1.3, 1.5, 1.7, 1.9, 2, 2.2, 2.4, 2.5, 2.7, 2.9, 2.6, 2.3, 1.9, 1.6, 1.3, 1.2, 1.1, 1]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		legs: {
+			y: {
+				interval: 30,
+				frames: [-0, -.3, -.6, -.9, -1.2, -1.5, -1.8, -2.1, -1.9, -1.7, -1.5, -1.3, -1.1, -.9, -.7, -.5, -.3, -.1]
+			},
+			frameName: {
+				interval: 1e4,
+				frames: [3]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [15]
+			}
+		}
+	},
+	dig: {
+		loop: !1,
+		head: {
+			x: {
+				interval: 30,
+				frames: [-4.4, -1, 2.2, 5.6, 5.4, 5.2, 5, 4.9, 4.7, 4.5, 4.4, 4.2, 4, 3.9, 3.8, 3.6, 2.8, 1.4, .6, -.1, -.9, -1.6, -2.4, -3.1, 0]
+			},
+			y: {
+				interval: 30,
+				frames: [.4, .2, .9, 1.6, 1.5, 1.4, 1.3, 1.2, 1, 1, .9, .8, .8, .8, .8, .8, .6, .2, 0, -.2, -.4, -.6, -.8, -1, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [-4, 0, 2, 6, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 6, 5, 4, 3, 2, 1, 0, 0]
+			}
+		},
+		shirt: {
+			angle: {
+				interval: 30,
+				frames: [0, 5, 11, 17, 16, 16, 15, 15, 15, 14, 14, 14, 13, 13, 13, 12, 11, 10, 9, 8, 7, 6, 4, 2, 0]
+			},
+			x: {
+				interval: 30,
+				frames: [0, .9, 1.8, 2.7, 2.5, 2.5, 2.4, 2.2, 2.1, 2, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.2, 1.1, 1, .9, .8, .7, .6, .4, 0]
+			},
+			y: {
+				interval: 30,
+				frames: [0, .5, 1, 1.5, 1.5, 1.4, 1.3, 1.3, 1.2, 1.1, 1, 1, .9, .8, .8, .7, .6, .5, .5, .4, .3, .3, .2, .1, 0]
+			}
+		},
+		rightArm: {
+			angle: {
+				interval: 30,
+				frames: [0, 11, 22, 34, 40, 45, 42, 38, 35, 32, 29, 25, 22, 19, 15, 12, 8, 4, 0, -4, -8, -12, -16, -20, -24]
+			},
+			x: {
+				interval: 30,
+				frames: [0, 2.4, 4.9, 7.4, 7, 6.8, 6.5, 6.2, 5.9, 5.7, 5.4, 5.1, 4.8, 4.6, 4.3, 4, 3.5, 3.1, 2.7, 2.3, 1.8, 1.4, 1, .6, .2]
+			}
+		},
+		leftArm: {
+			angle: {
+				interval: 30,
+				frames: [0, 5, 10, 15, 15, 20, 18, 16, 16, 15, 13, 12, 10, 9, 6, 3, 0, -4, -7, -11, -14, -18, -22, -25, -29]
+			},
+			x: {
+				interval: 30,
+				frames: [0, 2.4, 4.6, 6.8, 6.6, 6.4, 6.2, 6, 5.8, 5.6, 5.4, 5.2, 5, 4.9, 4.7, 4.5, 4, 3.7, 3.3, 2.9, 2.6, 2.2, 1.7, 1.4, .9]
+			},
+			y: {
+				interval: 30,
+				frames: [0, 1.2, 2.4, 3.9, 3.7, 3.6, 3.5, 3.3, 3.2, 3, 2.9, 2.8, 2.6, 2.5, 2.4, 2.3, 2, 1.8, 1.5, 1.3, 1.1, .9, .7, .5, .2]
+			}
+		},
+		legs: {
+			frameName: {
+				interval: 1e4,
+				frames: [1]
+			},
+			y: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		weapon: {
+			x: {
+				interval: 30,
+				frames: [-25.2, -24.5, -23.8, -22.9, -23.5, -24.8, -24.6, -24.3, -24.2, -24, -23.8, -23.7, -23.5, -22.8, -22.1, -21.5, -20.9, -20.2, -19.6, -18.9, -18.3, -17.7, -17.1, -16.6, -16.2]
+			},
+			y: {
+				interval: 30,
+				frames: [.4, .1, -.6, -1.3, -1.4, -3.4, -3.1, -2.8, -2.6, -2.3, -2, -1.8, -1.6, -1.4, -1, -.6, -.2, 0, .3, .4, .4, .4, .2, 0, 0, -.5]
+			},
+			angle: {
+				interval: 30,
+				frames: [45, 46, 60, 67, 68, 75, 74, 73, 72, 70, 69, 68, 67, 66, 64, 61, 59, 55, 53, 50, 47, 43, 41, 38, 35, 33]
+			}
+		}
+	},
+	attack: {
+		loop: !1,
+		head: {
+			y: {
+				interval: 30,
+				frames: [0, -.1, -.1, -.2, -.2, -.3, .3, .8, 1.4, 2.6, 0, -2.7, -5.4, -8, -10.7, -13.5, -16.1, -18.8, -21.5, -24.2, -26, -28, -24.8, -21.5, -18.3, -15, -11.8, -8.6, -5.4, -2, 1.5, 2, 2, 1.8, 1, 0, -.4, -.8, -.6, -.4, -.2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		shirt: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		legs: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.2, -4.4, -6.6, -8.7, -10.9, -13.1, -15.3, -17.5, -19.7, -21.9, -24.1, -26.27, -23.3, -20.3, -17.4, -14.4, -11.5, -8.5, -5.5, -2.6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			},
+			frameName: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		rightArm: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 28, 36, 44, 52, 60, 68, 76, 84, 92, 100, 93, 86, 79, 72, 65, 58, 51, 44, 37, 30, 23, 16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		leftArm: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 0, -8, -16, -24, -32, -40, -48, -56, -64, -72, -80, -85, -90, -95, -100, -104, -107, -97, -87, -77, -67, -57, -47, -37, -27, -17, -7, -5, -3, -2, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		weapon: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .9, .2, -.7, -1, 8, -3, -7.7, -12.4, -17.13, -21.9, -26.6, -31.3, -35.8, -40.3, -44.5, -48.6, -48.3, -47.7, -41.6, -35.3, -28.9, -22.6, -16.5, -12.8, -9.1, -5.5, -1.8, 0, -.2, -.6, -1, -1.4, -1.8, -2.3, -2.6, -3, -2.9, -2.8, -2.4, -2, -1.5, -1, -.5, 0]
+			},
+			x: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 1.5, 3, 4.2, 5.2, 5.9, 6.4, 6.5, 6.4, 6, 5.4, 4.5, 3.3, 1.9, .4, 2.7, 4.5, 5.7, 6.4, 6.5, 5.8, 4.7, 4.5, 4.2, 3.9, 3.6, 3.6, 3.5, 3.5, 3.5, 3.4, 3.4, 3.3, 3.3, 3.3, 3.2, 3.2, 3.1, 2.9, 2.5, 2, 1.5, 1, .5, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, -8, -15, -23, -31, -37, -46, -54, -62, -69, -77, -84, -92, -100, -73, -58, -43, -28, -13, 2, 17, 32, 37, 43, 48, 53, 58, 55, 52, 49, 45, 42, 38, 35, 32, 29, 25, 22, 18, 15, 12, 9, 6, 3, 0]
+			}
+		}
+	},
+	attackFloat: {
+		loop: !1,
+		head: {
+			y: {
+				interval: 30,
+				frames: [0, -.1, -.1, -.2, -.2, -.3, .3, .8, 1.4, 2.6, 0, -2.7, -5.4, -8, -10.7, -13.5, -16.1, -18.8, -21.5, -24.2, -26, -28, -24.8, -21.5, -18.3, -15, -11.8, -8.6, -5.4, -2, 1.5, 2, 2, 1.8, 1, 0, -.4, -.8, -.6, -.4, -.2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		shirt: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		legs: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.2, -4.4, -6.6, -8.7, -10.9, -13.1, -15.3, -17.5, -19.7, -21.9, -24.1, -26.27, -23.3, -20.3, -17.4, -14.4, -11.5, -8.5, -5.5, -2.6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			},
+			frameName: {
+				interval: 1e4,
+				frames: [3]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 0, 0, 0, -1, -2, -3, -5, -8, -10, -12, -14, -16, -18, -20, -22, -24, -24, -24, -24, -24, -24, -24, -24, -24, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0]
+			}
+		},
+		rightArm: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 28, 36, 44, 52, 60, 68, 76, 84, 92, 100, 93, 86, 79, 72, 65, 58, 51, 44, 37, 30, 23, 16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		leftArm: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 0, -8, -16, -24, -32, -40, -48, -56, -64, -72, -80, -85, -90, -95, -100, -104, -107, -97, -87, -77, -67, -57, -47, -37, -27, -17, -7, -5, -3, -2, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		weapon: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .9, .2, -.7, -1, 8, -3, -7.7, -12.4, -17.13, -21.9, -26.6, -31.3, -35.8, -40.3, -44.5, -48.6, -48.3, -47.7, -41.6, -35.3, -28.9, -22.6, -16.5, -12.8, -9.1, -5.5, -1.8, 0, -.2, -.6, -1, -1.4, -1.8, -2.3, -2.6, -3, -2.9, -2.8, -2.4, -2, -1.5, -1, -.5, 0]
+			},
+			x: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 1.5, 3, 4.2, 5.2, 5.9, 6.4, 6.5, 6.4, 6, 5.4, 4.5, 3.3, 1.9, .4, 2.7, 4.5, 5.7, 6.4, 6.5, 5.8, 4.7, 4.5, 4.2, 3.9, 3.6, 3.6, 3.5, 3.5, 3.5, 3.4, 3.4, 3.3, 3.3, 3.3, 3.2, 3.2, 3.1, 2.9, 2.5, 2, 1.5, 1, .5, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, -8, -15, -23, -31, -37, -46, -54, -62, -69, -77, -84, -92, -100, -73, -58, -43, -28, -13, 2, 17, 32, 37, 43, 48, 53, 58, 55, 52, 49, 45, 42, 38, 35, 32, 29, 25, 22, 18, 15, 12, 9, 6, 3, 0]
+			}
+		}
+	},
+	attackBig: {
+		loop: !1,
+		head: {
+			y: {
+				interval: 30,
+				frames: [0, -.1, -.1, -.2, -.2, -.3, .3, .8, 1.4, 2.6, 0, -2.7, -5.4, -8, -10.7, -13.5, -16.1, -18.8, -21.5, -24.2, -26, -28, -24.8, -21.5, -18.3, -15, -11.8, -8.6, -5.4, -2, 1.5, 2, 2, 1.8, 1, 0, -.4, -.8, -.6, -.4, -.2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		shirt: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			x: {
+				interval: 1e4,
+				frames: [0]
+			},
+			angle: {
+				interval: 1e4,
+				frames: [0]
+			}
+		},
+		legs: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.2, -4.4, -6.6, -8.7, -10.9, -13.1, -15.3, -17.5, -19.7, -21.9, -24.1, -26.27, -23.3, -20.3, -17.4, -14.4, -11.5, -8.5, -5.5, -2.6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			},
+			frameName: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		rightArm: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 28, 36, 44, 52, 60, 68, 76, 84, 92, 100, 93, 86, 79, 72, 65, 58, 51, 44, 37, 30, 23, 16, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		leftArm: {
+			y: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, .6, 1.2, 1.8, 2.4, 3, .3, -2.3, -5, -7.7, -10.4, -13, -15.8, -18.4, -21.1, -23.8, -25.7, -27.6, -24.4, -21.1, -17.9, -14.7, -11.5, -8.2, -5, -1.5, 1.4, 1.7, 1.2, .8, .4, .3, .2, .1, 0, -.1, -.2, -.3, -.3, -.2, -.2, -.1, -.1, 0, 0]
+			},
+			angle: {
+				interval: 30,
+				frames: [0, 0, 0, 0, 0, 0, 0, -8, -16, -24, -32, -40, -48, -56, -64, -72, -80, -85, -90, -95, -100, -104, -107, -97, -87, -77, -67, -57, -47, -37, -27, -17, -7, -5, -3, -2, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+			}
+		},
+		weapon: {
+			angle: {
+				interval: 30,
+				frames: [23, 24, 26, 27, 29, 30, 32, 33, 25, 16, 8, 0, -8, -16, -25, -33, -29, -26, -20, -15, -9, -3, 3, 8.5, 14, 22, 26, 31, 36, 40, 43, 43, 44, 45, 45, 46, 47, 48, 49, 47, 45, 43, 42, 40, 41, 42, 42, 43, 44, 45]
+			},
+			x: {
+				interval: 30,
+				frames: [-26.1, -27.6, -29.2, -31, -32.7, -34.6, -36.6, -38.6, -35, -31.6, -28.7, -26.6, -25.1, -24, -23.5, -23.5, -23.5, -23.5, -23, -22.4, -22, -22, -21.4, -21.4, -21.7, -22.2, -24.1, -26, -28, -30.3, -32.7, -32, -33, -33, -33, -34, -34, -34.3, -34.6, -36.5, -38.5, -40.4, -42.3, -44.2, -38.2, -32.3, -27, -21, -16, -6]
+			},
+			y: {
+				interval: 30,
+				frames: [13.5, 14.6, 15.7, 16.6, 17.4, 18, 18.5, 18.8, 19.8, 19.8, 19.1, 17, 14.7, 5.2, -4.2, -13.4, -21.5, -29.6, -36, -42.2, -37, -31.6, -26, -19.9, -13.6, -7.1, -2, 3, 8, 12, 15.8, 15.2, 15, 15, 15, 15, 15, 14.7, 14.6, 14.5, 14.3, 14, 14, 13.4, 15.2, 16, 16, 15, 15, 12.4]
+			}
+		}
+	},
+	floatDig: {},
+	setup: {}
+},
 Util.capitalize = function(e) {
 	return e.charAt(0).toUpperCase() + e.slice(1)
 }, Util.setCookie = function(e, t, i) {
@@ -2835,7 +3428,7 @@ Util.capitalize = function(e) {
 			v: 3
 		},
 		"voice-1": {
-			type: "local",
+			type: "localAtlas",
 			v: 3
 		},
 		"voice-2": {
@@ -26684,23 +27277,13 @@ Util.capitalize = function(e) {
 			d: 2
 		}
 	}, {
-		text: "After a few battles, your hearts get low and you need to heal.",
-		face: 2,
-		audio: {
-			tag: "voice-8-3",
-			s: 0,
-			d: 4
-		}
+		text: "You'll be learning the first 5 earth spells soon!",
+		face: 2
 	}, {
-		text: "Follow the path and find a HEALSTONE - a magical gem that can heal your team!",
-		face: 5,
-		audio: {
-			tag: "voice-8-3",
-			s: 4,
-			d: 6
-		}
+		text: "Don't worry, you'll be healed automatically after each battle!",
+		face: 5
 	}, {
-		text: "And while you're there, challenge some Saplettes for your next trial!",
+		text: "Challenge some Saplettes for your next trial!",
 		face: 3,
 		audio: {
 			tag: "voice-8-3",
@@ -29276,8 +29859,6 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Lost on a quest? Follow the white hand to your next goal!"
 	}, {
-		text: "When you're low on hearts, find a healstone to heal you and your pets!"
-	}, {
 		text: "Want to change your team? Open the Pet Menu from the Main Menu."
 	}, {
 		text: "Your hearts are fully restored when you level up!"
@@ -29341,6 +29922,10 @@ Util.capitalize = function(e) {
 		text: "To watch the intro again, click on the gear icon and then click on the intro button."
 	}, {
 		text: "Want to make AI Friends and chat with them, click on the friend icon, and then click on the make AI friends now button."
+	}, {
+                text: "Mail Joke: Why did the 2 mails disappear? Answer: Because 7 8 9!"
+	}, {
+                text: "You'll be healed automatically after a battle!"
 	}]
 }, Prodigy.Hints.prototype = {
 	getRandomHint: function(e) {
@@ -40519,7 +41104,7 @@ Attack.BX = 2e3, Attack.BY = 1e3, Prodigy.Control.ScrollBar = function(e, t, i, 
 });
 var DebugOverlay = function() {
 	function e(e, t) {
-		Prodigy.Control.Element.call(this, e, t), this.game.numBots = 0, this.game.numCreatureBots = 0, this.font = this.game.prodigy.create.font(this, 15, 15), this.add(this.font), this.name = Math.random(), this.onDestroy.add(this.destroy), i = this, this.interval = setInterval(function() {
+		Prodigy.Control.Element.call(this, e, t), this.game.numBots = 100, this.game.numCreatureBots = 100, this.font = this.game.prodigy.create.font(this, 15, 15), this.add(this.font), this.name = Math.random(), this.onDestroy.add(this.destroy), i = this, this.interval = setInterval(function() {
 			if (Util.isDefined(i.font) && Util.isDefined(i.game)) {
 				var e = "FPS: " + (1e3 / a).toFixed(1);
 				e += "\nMouse X=" + i.game.input.x + ", Y=" + i.game.input.y, i.font.setText(e)
@@ -44886,7 +45471,7 @@ Prodigy.ForestBoss = function(e, t) {
 		})
 	},
 	openVersion: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.1a" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.1a";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2";
 		this.game.prodigy.create.font(this.content, 10, 50, e, {
 			width: 590,
 			align: "center"
@@ -49090,6 +49675,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	isOpened: !1,
 	image: "epic-attacks",
 	message: "You can learn Epic Spells from Tech Zone and/or buy Epics (pets) from the pet park to cast epic spells during battles."
+
 }, {
 	id: 2,
 	subject: "Tech Zone's now available!",
@@ -49114,7 +49700,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	subject: "The Robolympics have returned!",
 	isOpened: !1,
 	image: "after-hours",
-	message: "You can now go to Clockwork Town from the map or Lower Intersection or by click on the cancel button in The Stage",
+	message: "You can now go to Clockwork Town from the map or Lower Intersection or by clicking on the cancel button in The Stage",
 	attachments: []
 }, {
 	id: 6,
@@ -49745,7 +50331,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0)
 	},
 	addHouseConfig: function(e) {
-		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1), this.addLockHouse(e, 1)
+		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1)
 	},
 	addMoveHouse: function(e, t) {
 		this.pages[e][t].push({
@@ -50701,11 +51287,14 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			}
 		}
 	}
-}), Prodigy.Container.PlayerContainer = function(e, t, i, a, s, r, o) {
+}), Prodigy.Container.PlayerContainer = function(e, t, i, a, s, r, o, n) {
 	Prodigy.Container.CreatureContainer.call(this, e, t, i, a, s, r), this.offs = 1 === a ? [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 2, 2, 1, 1, 0, 4, 4, 4, 5, 5, 5, 4, 4] : [0, 0, 2, 1, 0, 0, 2, 1, 0, 0, 1, 2, 4, 5, 4, 3], this.assets = Prodigy.Container.PlayerContainer.getAssets(this.source, this.setScale), this.headOnly = o, this.isMainPlayer = i === e.prodigy.player, this._clickEnabled = !0
 }, Prodigy.extends(Prodigy.Container.PlayerContainer, Prodigy.Container.CreatureContainer, {
 	constructor: Prodigy.Container.PlayerContainer,
 	forceOutfit: function(e) {
+		this.assets = Prodigy.Container.PlayerContainer.getAssets(this.source, this.setScale, e)
+	},
+	forceSleeves: function(e) {
 		this.assets = Prodigy.Container.PlayerContainer.getAssets(this.source, this.setScale, e)
 	},
 	startLoad: function() {
@@ -54367,7 +54956,7 @@ var Boot = function() {
 		Phaser.State.call(this)
 	}
 	return e.prototype = Object.create(Phaser.State.prototype), e.prototype.preload = function() {
-		this.game.prodigy.load.assets(["font-general", "font-button", "font-black", "font-battle", "core", "heads"], this.loaded.bind(this))
+		this.game.prodigy.load.assets(["font-general", "font-button", "font-black", "font-battle", "map", "core", "heads"], this.loaded.bind(this))
 	}, e.prototype.loaded = function(e, t) {
 		this.isLoaded = t
 	}, e.prototype.create = function() {
@@ -54401,7 +54990,7 @@ Boot.init = function() {
 		Util.isDefined(e) || (e = {}), e.title = e.title || "Loading", e.time = e.time || 3e3, e.fadeIn = e.fadeIn || !1, e.fadeOut = e.fadeOut || !1, e.callback = e.callback || null, e.assets = e.assets || [], e.target = e.target || "Login", e.save = !Util.isDefined(e.save) || e.save, e.loadingWorker = Util.isDefined(e.loadingWorker) ? e.loadingWorker : null, this._data = e, this.game.state.start("Loading")
 	},
 	create: function() {
-		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "login", "")), this._data.time > 1e3) {
+		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "map", "map")), this._data.time > 1e3) {
 			this.game.prodigy.create.panel(this._element, 160, 340, 19, 5, ""), this._element.add(new Phaser.TileSprite(this.game, 99999999999171, 380, 938, 40, "core", "stat-top")), this._element.add(new Phaser.TileSprite(this.game, 999999999999999171, 420, 938, 40, "core", "stat-mid")), this._element.add(new Phaser.TileSprite(this.game, 999999999999171, 460, 938, 40, "core", "stat-top2")), this._element.add(this.game.prodigy.create.sprite(614, 310, "icons", "star"));
 			var e = this.game.prodigy.create.font(this._element, 200, 400, this.game.prodigy.hints.getRandomHint("none").text, {
 				font: "general",
@@ -54672,7 +55261,7 @@ var Screen = function() {
 				i.readAsText(e.target.files[0]), i.onload = function(e) {
 					t.loadCharacter.call(t, JSON.parse(e.target.result), !0)
 				}, i.onerror = function(e) {
-					t.game.prodigy.open.okaymessage("Failed to open save file, please retry.", null, null, "Character Loader")
+					t.game.prodigy.open.okaymessage("Why are you using disk drives as save files? Please load an actual save file.", null, null, "This is a game, not a VM!")
 				}
 			}
 		}, e.prototype.loadCharacter = function(e, t) {
@@ -56085,7 +56674,7 @@ Prodigy.Skin = function(e, t) {
 }), Prodigy.Starlight_Festival = function() {
 	this.eventName = "Starlight Festival", this.shopkeeperName = "Mama Star", this.shopkeeperTag = "mama_star", Prodigy.Skin.call(this, ["tileset-town-november", "event-starlight_festival", "npc-sprite-" + this.shopkeeperTag], ["lamplight-A2", "lamplight-A3", "lamplight-A4", "lamplight-B0", "lamplight-B1", "lamplight-B2", "lamplight-B3", "lamplight-B4", "lamplight-B5", "lamplight-C2", "lamplight-C3", "lamplight-C4"]), this._store = {
 		name: "STARLIGHT FESTIVAL SHOP",
-		ends: new Date("December 1, 2016 00:00:00").getTime(),
+		ends: new Date("December 1, 209999999999999999 00:00:00").getTime(),
 		isEvent: !0,
 		pages: [{
 			btn: {
@@ -58037,7 +58626,7 @@ Prodigy.Skin = function(e, t) {
 			y: 680,
 			w: 320,
 			h: 80
-		}, "forest-A4", 1080, 90), this.addHealStone(e, t, 270, 435), e.prodigy.player.backpack.hasItem("key", 3) ? this.addClickableEvent(e, t, 440, 80, 400, 200, this._zone.util.enterGate.bind(this, e, t, 640, 340, e.prodigy.world.teleport.bind(e.prodigy.world, "shiverchill-A11"), 13)) : this.addClickableEvent(e, t, 440, 80, 400, 200, this._zone.util.doorLocked.bind(this, e, "The gate is locked. You require the Firefly Gem."))
+		}, "forest-A4", 1080, 90), e.prodigy.player.backpack.hasItem("key", 3) ? this.addClickableEvent(e, t, 440, 80, 400, 200, this._zone.util.enterGate.bind(this, e, t, 640, 340, e.prodigy.world.teleport.bind(e.prodigy.world, "shiverchill-A11"), 13)) : this.addClickableEvent(e, t, 440, 80, 400, 200, this._zone.util.doorLocked.bind(this, e, "The gate is locked. You require the Firefly Gem."))
 	}
 }), Forest_A4 = function(e, t) {
 	Prodigy.Map.call(this, e, "A4", "Mountain Pass", 1080, 520, ["forest-A3", "forest-A5", "forest-B5"], t), this.coord = [{
@@ -58229,7 +58818,7 @@ Prodigy.Skin = function(e, t) {
 			y: 680,
 			w: 320,
 			h: 80
-		}, "forest-B7", 200, 90), this.heal = this.addHealStone(e, t, 980, 443), this.showMonsters(e, t)
+		}, "forest-B7", 200, 90), this.showMonsters(e, t)
 	},
 	showMonsters: function(e, t) {
 		var i = {
@@ -58501,7 +59090,7 @@ Prodigy.Skin = function(e, t) {
 	Prodigy.Map.call(this, e, "C8", "The Big Tree", 1190, 520, ["forest-C7", "forest-B8", "tutorial-D8"], t.concat("npc-sprite-flora", "npc-sprite-merchant"))
 }, Prodigy.extends(Forest_C8, Prodigy.Map, {
 	constructor: Forest_C8,
-	setup: function(e, t, i, s) {
+	setup: function(e, t, i, s, a) {
 		e.prodigy.world.getZone("lamplight").completeQuest(2), Prodigy.Map.prototype.setup.call(this, e, t, i), this.addAreaEvent(e, t, {
 			x: 200,
 			y: 40,
@@ -58517,11 +59106,11 @@ Prodigy.Skin = function(e, t) {
 			y: 520,
 			w: 80,
 			h: 240
-		}, "lamplight-B1", 120, 480), this.addHealStone(e, t, 148, 286);
+		}, "lamplight-B1", 120, 480);
 		var a = function(e) {
 			var t = e.prodigy.event.create();
 			t.text(39, "flora"), t.start()
-		};
+		}; 
 		this.addConstructedQuestNPC(e, t, 620, 300, "flora", !0, a.bind(this, e)), t.createStoreNPC(1130, 390, this._zone.store), new Prodigy.Container.ToyMerchant(e, t.content, 920, 390)
 	}
 }), Forest_D3 = function(e, t) {
@@ -59125,7 +59714,7 @@ Prodigy.Skin = function(e, t) {
 			y: 400,
 			w: 100,
 			h: 80
-		}, "toyzone-A1", 1080, 280, this.addHealStone(e, t, 800, 200), this.playPortalEffectExit.bind(this, 360, 400, "toyzone-A1", 1080, 280));
+		}, "toyzone-A1", 1080, 280, this.playPortalEffectExit.bind(this, 360, 400, "toyzone-A1", 1080, 280));
 		var a = this._zone.getState("a1Visited");
 		Util.isDefined(a) && !1 !== a || (this._sprite1 = t.foreground.add(this._zone.game.prodigy.create.sprite(360, 400, "core", "area-pointer")), this._sprite1.anchor.setTo(.5, 0), this._sprite1.angle = 180, this._zone.game.add.tween(this._sprite1).to({
 			y: this._sprite1.y + 30
@@ -59455,7 +60044,7 @@ Prodigy.Skin = function(e, t) {
 			var t = e.prodigy.event.create();
 			t.text(0, "bok"), t.start()
 		};
-		this.addQuestNPC(e, t, 680, 390, "bok", 0, a.bind(this, e)), t.createStoreNPC(400, 350, this._zone.store), this.addHealStone(e, t, 800, 596), new Prodigy.Container.ToyMerchant(e, t.content, 932, 365)
+		this.addQuestNPC(e, t, 680, 390, "bok", 0, a.bind(this, e)), t.createStoreNPC(400, 350, this._zone.store), new Prodigy.Container.ToyMerchant(e, t.content, 932, 365)
 	},
 	start: function(e, t) {
 		Prodigy.Map.prototype.start.call(this, e, t)
@@ -59563,7 +60152,7 @@ Prodigy.Skin = function(e, t) {
 			atlas: "zone-shiverchill",
 			tag: "ice-small",
 			content: !0
-		}), this.addCollisionZone(t, 340, 280, 100, 60)), this.addHealStone(e, t, 780, 550)
+		}), this.addCollisionZone(t, 340, 280, 100, 60))
 	},
 	start: function(e, t) {
 		Prodigy.Map.prototype.start.call(this, e, t)
@@ -60246,7 +60835,7 @@ Prodigy.Skin = function(e, t) {
 			x: 130,
 			y: 420,
 			r: 80
-		}, "shiverchill-B3", 1160, 230, null, AreaEvent.UP), this.addHealStone(e, t, 455, 480), this.addWizard(e, t, 960, 500, "wizard3", {
+		}, "shiverchill-B3", 1160, 230, null, AreaEvent.UP), this.addWizard(e, t, 960, 500, "wizard3", {
 			opponent: [{
 				data: {
 					level: 20
@@ -60967,7 +61556,7 @@ Prodigy.Skin = function(e, t) {
 			w: 220,
 			h: 100,
 			rect: !0
-		}, "skywatch-C1", 1120, 160, null, AreaEvent.LEFT, !1), this.addHealStone(e, t, 850, 370), this.questNPC = this.addConstructedQuestNPC(e, t, 760, 500, "benni", !1, this.zoneComplete.bind(this, e)), this.trolley = t.content.add(e.prodigy.create.sprite(1110, 348, "zone-skywatch", "cart-horizontal")), this.addAreaEvent(e, t, {
+		}, "skywatch-C1", 1120, 160, null, AreaEvent.LEFT, !1), this.questNPC = this.addConstructedQuestNPC(e, t, 760, 500, "benni", !1, this.zoneComplete.bind(this, e)), this.trolley = t.content.add(e.prodigy.create.sprite(1110, 348, "zone-skywatch", "cart-horizontal")), this.addAreaEvent(e, t, {
 			x: 1100,
 			y: 440,
 			w: 1,
@@ -61682,7 +62271,7 @@ Prodigy.Skin = function(e, t) {
 				x: 1060,
 				y: 720,
 				r: 120
-			}, "skywatch-E1", 80, 160, null, AreaEvent.DOWN, !1), this.addHealStone(e, t, 430, 550), e.prodigy.player.backpack.hasItem("item", 83)) this.addAreaEvent(e, t, {
+			}, "skywatch-E1", 80, 160, null, AreaEvent.DOWN, !1), e.prodigy.player.backpack.hasItem("item", 83)) this.addAreaEvent(e, t, {
 			x: 600,
 			y: 360,
 			w: 160,
@@ -62656,7 +63245,7 @@ Prodigy.Skin = function(e, t) {
 			w: 100,
 			h: 230,
 			rect: !0
-		}, "bonfire_spire-A1", 865, 482, null, AreaEvent.UP_LEFT, !1), this.questNPC = this.addQuestNPC(e, t, 930, 475, "slurpy", !1, this.onComplete.bind(this, e)), this.addHealStone(e, t, 410, 475), t.createStoreNPC(760, 300, this._zone.store, !0), new Prodigy.Container.ToyMerchant(e, t.content, 379, 288)
+		}, "bonfire_spire-A1", 865, 482, null, AreaEvent.UP_LEFT, !1), this.questNPC = this.addQuestNPC(e, t, 930, 475, "slurpy", !1, this.onComplete.bind(this, e)), t.createStoreNPC(760, 300, this._zone.store, !0), new Prodigy.Container.ToyMerchant(e, t.content, 379, 288)
 	},
 	start: function(e, t) {
 		Prodigy.Map.prototype.start.call(this, e, t)
@@ -63176,7 +63765,7 @@ Prodigy.Skin = function(e, t) {
 			x: 65,
 			y: 695,
 			r: 160
-		}, "bonfire_spire-C6", 900, 355, null, AreaEvent.DOWN_LEFT, !1), this.addNPC(e, t, 610, 530, "npc-sprite-slime_guard", this.talkToGuard.bind(this, e), "Guard Slime").animate(), this.addNPC(e, t, 660, 270, "npc-sprite-slime_queen", this.talkToQueen.bind(this, e), "Queen Goo-lia").animate(), this.addHealStone(e, t, 240, 495)
+		}, "bonfire_spire-C6", 900, 355, null, AreaEvent.DOWN_LEFT, !1), this.addNPC(e, t, 610, 530, "npc-sprite-slime_guard", this.talkToGuard.bind(this, e), "Guard Slime").animate(), this.addNPC(e, t, 660, 270, "npc-sprite-slime_queen", this.talkToQueen.bind(this, e), "Queen Goo-lia").animate()
 	},
 	talkToGuard: function(e) {
 		var t = e.prodigy.event.create();
@@ -63813,7 +64402,7 @@ Prodigy.Skin = function(e, t) {
 		Prodigy.Map.prototype.setup.call(this, e, t), new Prodigy.Container.QuestNPC(e, t.content, 800, 450, Prodigy.Dyno.DATA, {
 			name: "Professor Scoog",
 			atlas: "scoog"
-		}, null, !0), this.addClickableEvent(e, t, 295, 200, 50, 80, this.toMuseum.bind(this, e, t), null, 0), this.addHealStone(e, t, 509, 501), this.digBtn = e.prodigy.create.element(t.content, 975, 150);
+		}, null, !0), this.addClickableEvent(e, t, 295, 200, 50, 80, this.toMuseum.bind(this, e, t), null, 0), this.digBtn = e.prodigy.create.element(t.content, 975, 150);
 		var i = this.digBtn.add(e.prodigy.create.sprite(40, 40, "icons", "star2"));
 		i.anchor.setTo(.5, .5), i.inputEnabled = !0, i.angle = -20, i.events.onInputDown.add(e.prodigy.start.bind(e.prodigy, "DinoDig"), e.state), this.digBtn.add(e.prodigy.create.sprite(0, 10, "icons", "key/1")), e.prodigy.create.font(this.digBtn, -20, 0, "Dyno Dig", {
 			width: 120,
@@ -65354,7 +65943,7 @@ var Arena = function() {
 		var t = this.game.prodigy.create.sprite(548, 444, this.screenName, "fountain-0");
 		t.anchor.setTo(.5, 1), t.animations.add("stand", ["fountain-0", "fountain-1", "fountain-2"], 8, !0, !1), t.animations.play("stand"), this.content.add(t);
 		var a = this.game.prodigy.create.sprite(441, 175, this.screenName, "banner-0");
-		a.anchor.setTo(.5, 1), a.animations.add("stand", ["banner-0", "banner-1", "banner-2"], 6, !0, !1), a.animations.play("stand"), this.content.add(a), a = this.game.prodigy.create.sprite(830, 100), a.width = 212, a.height = 312, a.inputEnabled = !0, this.content.add(e), this.addNicknamer(530, 240), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 165, 390), new GnomeEvent(this.game, this.content, this.user, this.path, 944, 376, "Orion the Gnome", 1, 2, this.openArenaMenu.bind(this)).flip(), new GnomeEvent(this.game, this.content, this.user, this.path, 1135, 430, "Academy Guard", 2, 4, this.openMessage.bind(this)).flip(), WalkableScreen.prototype.screenSetup.call(this)
+		a.anchor.setTo(.5, 1), a.animations.add("stand", ["banner-0", "banner-1", "banner-2"], 6, !0, !1), a.animations.play("stand"), this.content.add(a), a = this.game.prodigy.create.sprite(830, 100), a.width = 212, a.height = 312, a.inputEnabled = !0, this.content.add(e), this.addNicknamer(530, 240), new GnomeEvent(this.game, this.content, this.user, this.path, 944, 376, "Orion the Gnome", 1, 2, this.openArenaMenu.bind(this)).flip(), new GnomeEvent(this.game, this.content, this.user, this.path, 1135, 430, "Academy Guard", 2, 4, this.openMessage.bind(this)).flip(), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.openStore = function() {
 		var t = this.game.prodigy.event.create(),
 			i = e.STORE;
@@ -66663,7 +67252,7 @@ Arena.AUDIO = [{
 			w: 400,
 			h: 200,
 			rect: !0
-		}, "lamplight-D4", 260, 540, null, AreaEvent.RIGHT), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena")), this.addHealStone(e, t, 1100, 200), new Prodigy.Component.BountyBoard(e, t, t.data)
+		}, "lamplight-D4", 260, 540, null, AreaEvent.RIGHT), this._zone.util.addDoor(e, t, 520, 200, 120, 160, 580, 360, e.prodigy.start.bind(e.prodigy, "Arena")), new Prodigy.Component.BountyBoard(e, t, t.data)
 	}
 }), Prodigy.Lamplight_C4 = function(e, t) {
 	Prodigy.Map.call(this, e, "C4", "Market", 200, 180, ["lamplight-B4", "lamplight-C3", "tower-0"], t.concat(["npc-sprite-noot"])), this._store = {
@@ -68072,7 +68661,7 @@ Prodigy.Component.TwilightWheel = function(e, t, i) {
 			w: 160,
 			h: 80,
 			rect: !0
-		}, "activity_zone-B2", 1080, 620, null, AreaEvent.UP, !1), new Prodigy.Container.ToyMerchant(e, t.content, 920, 390), this.addHealStone(e, t, 500, 400), new Prodigy.Container.Swoopy(e, t.content, 585, 300, this._zone.util.onNpcClicked.bind(this._zone.util)), Util.isDefined(this._zone.getState("firstVisit")) && !0 !== this._zone.getState("firstVisit") || this._zone.setState("firstVisit", !1), this._zone.util.screen = t
+		}, "activity_zone-B2", 1080, 620, null, AreaEvent.UP, !1), new Prodigy.Container.ToyMerchant(e, t.content, 920, 390), new Prodigy.Container.Swoopy(e, t.content, 585, 300, this._zone.util.onNpcClicked.bind(this._zone.util)), Util.isDefined(this._zone.getState("firstVisit")) && !0 !== this._zone.getState("firstVisit") || this._zone.setState("firstVisit", !1), this._zone.util.screen = t
 	}
 }), Prodigy.Activity_Zone_C1 = function(e, t) {
 	this.mapId = 4, this.monsterCoords = [{
@@ -68347,7 +68936,7 @@ var Cloud = function() {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(840, 250, t), new Prodigy.Container.ToyMerchant(this.game, this.content, 1000, 200).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 623, 406);
+		this.addNicknamer(840, 250, t), new Prodigy.Container.ToyMerchant(this.game, this.content, 1000, 200).flip();
 	}, e.prototype.toCloud = function() {
 		this.game.state.states.Plains.playerX = 880, this.game.state.states.Plains.playerY = 370, this.game.state.start("Plains")
 	}, e.prototype.startText = function() {
@@ -69175,7 +69764,7 @@ var Volcano = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 			}];
-		this.addNicknamer(340, 540, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 1000, 300).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 253, 434);
+		this.addNicknamer(340, 540, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 1000, 300).flip();
 	}, e.prototype.toCloud = function () {
 		this.game.prodigy.world.teleport("mountain-0", 1000, 300)
 	}, e.prototype.toPlains = function () {
@@ -69998,7 +70587,7 @@ var Docks = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(360, 380, o), new Prodigy.Container.ToyMerchant(this.game, this.content, 314, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 114, 450), WalkableScreen.prototype.screenSetup.call(this)
+		this.addNicknamer(360, 380, o), new Prodigy.Container.ToyMerchant(this.game, this.content, 314, 500).flip(), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.createHealerNPC = function (e, t, a) {
 		var s = new Prodigy.Container.QuestNPC(this.game, this.content, e, t, null, {
 			atlas: "noot",
@@ -70023,19 +70612,19 @@ var Docks = function () {
 		}), this.game.prodigy.dialogue.start("noot")
         }, e.prototype.onComplete = function() {
 		var t = function (e) {
-			var t = ["Mountain", "Forest", "Cloud", "Pirate", "Volcano"];
-			e.state.start(Util.randomArrayElement(t))
+			var t = ["mountain-0", "forest-0", "cloud-0", "pirate-0", "volcano-0"];
+			e.prodigy.world.teleport(Util.randomArrayElement(t))
 		};		
-        this.game.prodigy.dialogue.setText({
+        this.game.prodigy.dialogue.create({
 			text: "That's all I have to teach you, but there are others out there who can teach you new spells!",
 			face: 1,
 			audio: e.AUDIO[12]
-		}), this.game.prodigy.dialogue.setText({
+		}), this.game.prodigy.dialogue.create({
 			text: "Do you want me to take you to one of them?",
 			face: 0,
 			yes: t.bind(this, this.game),
 			audio: e.AUDIO[13]
-		}), this.game.prodigy.dialogue.start("npc-face-noot")
+		}), this.game.prodigy.dialogue.create("npc-face-noot")
 	}, e.prototype.toTown = function () {
 		this.game.prodigy.world.teleport("lamplight-B5", 230, 500)
 	}, e.prototype.toTLI = function() {
@@ -70382,7 +70971,7 @@ var Forest = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(560, 280, o), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 509, 351), WalkableScreen.prototype.screenSetup.call(this)
+		this.addNicknamer(560, 280, o), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip(), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.createHealerNPC = function (e, t, a) {
 		var s = new Prodigy.Container.QuestNPC(this.game, this.content, e, t, null, {
 			atlas: "noot",
@@ -71269,7 +71858,7 @@ var Mountain = function() {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(560, 170, s), new Prodigy.Container.ToyMerchant(this.game, this.content, 100, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 796, 388);
+		this.addNicknamer(560, 170, s), new Prodigy.Container.ToyMerchant(this.game, this.content, 100, 500).flip();
 	}, e.prototype.blinkComplete = function(e) {
 		e.x = Math.floor(1280 * Math.random()), e.y = Math.floor(720 * Math.random());
 		var t = this.game.add.tween(e.scale).to({
@@ -72045,7 +72634,7 @@ this.game.add.tween(a).to({
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(185, 615, s), new Prodigy.Container.ToyMerchant(this.game, this.content, 159, 201).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 702, 347), WalkableScreen.prototype.screenSetup.call(this)
+		this.addNicknamer(185, 615, s), new Prodigy.Container.ToyMerchant(this.game, this.content, 159, 201).flip(), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.toTown = function() {
 		this.game.prodigy.world.teleport("bonfire_spire-E5", 887, 579)
 	}, e
@@ -72895,7 +73484,7 @@ var Tower = function() {
 		return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
 			this.zoneName = "zone-tower-" + this.floor, WalkableScreen.prototype.create.call(this, [])
 		}, e.prototype.screenSetup = function() {
-			if (WalkableScreen.prototype.screenSetup.call(this), this.noFade = !0, new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 538, 239), this.game.prodigy.player.getTowerProgress(), this.cleared) {
+			if (WalkableScreen.prototype.screenSetup.call(this), this.noFade = !0, this.game.prodigy.player.getTowerProgress(), this.cleared) {
 				for (var t = !1, i = 0; i < e.REWARDS.length; i++) {
 					var a = e.REWARDS[i];
 					if (a.floor === this.floor) {
@@ -74210,7 +74799,7 @@ var TowerBase = function() {
 		this.noFade = !0, new Prodigy.Container.QuestNPC(this.game, this.content, 1155, 340, null, {
 			name: "Mira Shade",
 			atlas: "mira"
-		}, this.openTower.bind(this)), this.path.addCallback(3, this.toTown.bind(this)), new Prodigy.Container.ToyMerchant(this.game, this.content, 259, 301).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 538, 239), WalkableScreen.prototype.screenSetup.call(this)
+		}, this.openTower.bind(this)), this.path.addCallback(3, this.toTown.bind(this)), new Prodigy.Container.ToyMerchant(this.game, this.content, 259, 301).flip(), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.openTower = function() {
 		var t = this.game.prodigy.player.getTowerProgress();
 		if ((t = t - t % 5 + 1) > 105 && (t = 105), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isBlockedByDarkTowerMemberGate()) this.game.prodigy.open.darkTowerMemberGate();
@@ -74389,7 +74978,7 @@ var TechZone = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(336, 223, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 628, 460)
+		this.addNicknamer(336, 223, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip()
 	}, e.prototype.toPlains = function () {
 		this.game.prodigy.world.teleport("pirate-0")
 	}, e.prototype.toTech = function () {
@@ -75065,7 +75654,7 @@ var Tech = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(336, 223, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 628, 460)
+		this.addNicknamer(336, 223, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 800, 500).flip()
 	}, e.prototype.onComplete = function () {
 		var t = this.game.prodigy.dialogue.create();
 		t.setText({
@@ -75740,7 +76329,7 @@ var Dino = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(530, 240, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 360, 600).flip(), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 800, 240);
+		this.addNicknamer(530, 240, a), new Prodigy.Container.ToyMerchant(this.game, this.content, 360, 600).flip();
 	}, e.prototype.createHealerNPC = function (e, t, a) {
 		var s = new Prodigy.Container.QuestNPC(this.game, this.content, e, t, null, {
 			atlas: "noot",
@@ -77954,7 +78543,7 @@ Prodigy.Battle.Battle = function(e) {
 		this.resetPotions.call(this), this.isRunning = !1, 2 > this.game.prodigy.player.tutorial.getMenuValue(3, 2) && this.game.prodigy.player.tutorial.setMenuValue(3, 2, 2), this.game.prodigy.player.saveEnabled = !0, this.game.prodigy.player.battleCounter++, this.game.prodigy.network.processPlayer = !0;
 		var t = this.game.prodigy.education.getUpdatedData();
 		if (this.game.prodigy.network.updateUserAbility(t), 0 >= this.game.prodigy.player.getCurrentHearts(this.game) && this.game.prodigy.player.changeCurrentHearts(20), "run" === e) this.runAwayCallback();
-		else if ("win" === e) this.processEndBattleQuests(), Util.isDefined(this.mods.epicArena) ? (this.mods.epicArena++, this.newEpicBattle()) : this.victoryCallback(this.mods, this.teams[1].getDefeated());
+		else if ("win" === e) this.game.prodigy.player.changeCurrentHearts(999999999990), this.processEndBattleQuests(), Util.isDefined(this.mods.epicArena) ? (this.mods.epicArena++, this.newEpicBattle()) : this.victoryCallback(this.mods, this.teams[1].getDefeated());
 		else if ("lose" === e) {
 			if (Util.isDefined(this.defeatCallback) && this.defeatCallback(), Util.isDefined(this.mods.epicArena)) return;
 			this.game.state.states.Faint.targetZone = this.defeatZone, this.game.prodigy.start("Faint")
