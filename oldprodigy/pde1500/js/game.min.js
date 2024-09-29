@@ -1935,7 +1935,8 @@ Util.capitalize = function(e) {
 			v: "4"
 		},
 		"zone-lamplight": {
-			type: "atlas",
+			type: "localAtlas",
+			base: "https://ao28th28.github.io/oldprodigy/pde1500/assets/images/",
 			key: "zone-lamplight",
 			v: "5"
 		},
@@ -29855,17 +29856,9 @@ Util.capitalize = function(e) {
 	}]
 }, Prodigy.Hints = function() {}, Prodigy.Hints.data = {
 	none: [{
-		text: "Low on hearts? Try switching to one of your pets in battle."
-	}, {
 		text: "Lost on a quest? Follow the white hand to your next goal!"
 	}, {
 		text: "Want to change your team? Open the Pet Menu from the Main Menu."
-	}, {
-		text: "Your hearts are fully restored when you level up!"
-	}, {
-		text: "Our Firebase Project's unrecognizable, so Google OAuth's a no go too for now."
-	}, {
-		text: "Render emailed us failed jobs, so Multiplayer Mode's a no go for now."
 	}, {
 		text: "Want a new look? Head to the Stylist in Lamplight Town or you can also edit your save."
 	}, {
@@ -29887,11 +29880,9 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Keep your team at its best! Level up your pets alongside your wizard."
 	}, {
-		text: "Show off your latest rewards, outfits, etc in Lamplight Town!"
-	}, {
 		text: "Pets can be caught when their hearts are low, but make sure not to defeat them by accident!"
 	}, {
-		text: "You learn new spells by leveling up, but can also learn them from completing quests."
+		text: "You learn new spells by leveling up, but you can also learn them from completing quests."
 	}, {
 		text: "Explore each zone thoroughly...there are secrets hidden everywhere!"
 	}, {
@@ -29903,7 +29894,7 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Save your game by using the save character button in the Other tab on the Settings Menu!"
 	}, {
-		text: "Google Sign-in, Multiplayer Mode, etc are all coming soon."
+		text: "Google Sign-In, Multiplayer Mode, etc are all coming soon."
 	}, {
 		text: "We have trouble installing bots for this version."
 	}, {
@@ -29911,9 +29902,7 @@ Util.capitalize = function(e) {
 	}, {
   		text: "If you're an Xbox One user or an iPad user and you still want to continue using your saved save, use a different device."
 	}, {
-		text: "If your saved save file is on your iPad, you can put it in any drive feature that keeps your files safe and available for another device."
-	}, {
-		text: "Do you miss Michael Jackson? You can see him in floor 105."
+		text: "If your saved save file is on your iPad, you can put it in any drive app that keeps your files like your save files safe and available for another device."
 	}, {
 		text: "Never gonna give you up. Never gonna let your down. Never gonna run around and desert you."
 	}, {
@@ -29926,6 +29915,8 @@ Util.capitalize = function(e) {
                 text: "Mail Joke: Why did the 2 mails disappear? Answer: Because 7 8 9!"
 	}, {
                 text: "You'll be healed automatically after a battle!"
+	}, {
+                text: "Google Drive & OneDrive are recommended to store your working save files."
 	}]
 }, Prodigy.Hints.prototype = {
 	getRandomHint: function(e) {
@@ -32150,6 +32141,39 @@ Items.getItemData = function(e, t) {
 		type: ""
 	}, {
 		ID: 12,
+		type: ""
+	}, {
+		ID: 13,
+		type: ""
+	}, {
+		ID: 14,
+		type: ""
+	}, {
+		ID: 15,
+		type: ""
+	}, {
+		ID: 16,
+		type: ""
+	}, {
+		ID: 17,
+		type: ""
+	}, {
+		ID: 18,
+		type: ""
+	}, {
+		ID: 19,
+		type: ""
+	}, {
+		ID: 20,
+		type: ""
+	}, {
+		ID: 21,
+		type: ""
+	}, {
+		ID: 22,
+		type: ""
+	}, {
+		ID: 23,
 		type: ""
 	}],
 	hat: [{
@@ -40161,7 +40185,7 @@ Names.createNameFromIndex = function(e, t, i, a) {
 	if (t.length > 1)
 		for (var i = t[1].toLowerCase(), a = !1, s = 0; s < Names.LAST_NAMES.length; s++) - 1 != i.indexOf(Names.LAST_NAMES[s].toLowerCase()) && (a = !0);
 	return a
-}, Names.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Camden", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Purvi", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey"], Names.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Purvi", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Camden", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary"], Names.FIRST_NAMES = [], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Bronze", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Super", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "stat", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], Prodigy.Control.Sprite = function(e, t, i, a, s, r, o, n, h) {
+}, Names.BOY_NAMES = ["Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Buccaneer", "Caden", "Caleb", "Camden", "Cameron", "Captain", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary", "Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Caitlin", "Caitlyn", "Camila", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey"], Names.GIRL_NAMES = ["Aaliyah", "Abby", "Abigail", "Addison", "Adriana", "Adrianna", "Alana", "Alexa", "Alexandra", "Alexandria", "Alexia", "Alexis", "Alice", "Alicia", "Allison", "Alondra", "Alyssa", "Amanda", "Amber", "Amelia", "Amy", "Ana", "Andrea", "Angel", "Angela", "Angelica", "Angelina", "Ann", "Anna", "Ariana", "Arianna", "Ashley", "Ashlyn", "Aubrey", "Audrey", "Autumn", "Ava", "Avery", "Bailey", "Barbara", "Betty", "Beverly", "Bianca", "Breanna", "Brenda", "Briana", "Brianna", "Brittany", "Brooke", "Brooklyn", "Buccaneer", "Caitlin", "Caitlyn", "Camila", "Captain", "Carol", "Caroline", "Carolyn", "Cassandra", "Cassidy", "Catherine", "Charlotte", "Chelsea", "Cheryl", "Cheyenne", "Chloe", "Christina", "Christine", "Claire", "Courtney", "Crystal", "Cynthia", "Daisy", "Daniela", "Danielle", "Deborah", "Debra", "Delaney", "Denise", "Destiny", "Diana", "Diane", "Donna", "Doris", "Dorothy", "Elizabeth", "Ella", "Ellen", "Ellie", "Emily", "Emma", "Erica", "Erin", "Eva", "Evelyn", "Faith", "Fatima", "Felicia", "Frances", "Gabriela", "Gabriella", "Gabrielle", "Genesis", "Gianna", "Giselle", "Gloria", "Grace", "Gracie", "Hailey", "Haley", "Hannah", "Heather", "Helen", "Hope", "Isabel", "Isabella", "Isabelle", "Jacqueline", "Jada", "Jade", "Jana", "Jane", "Janet", "Janice", "Jasmin", "Jasmine", "Jayla", "Jazmin", "Jean", "Jenna", "Jennifer", "Jessica", "Jillian", "Joan", "Jocelyn", "Jordan", "Jordyn", "Joyce", "Judith", "Judy", "Julia", "Juliana", "Julie", "Kaitlyn", "Karen", "Kate", "Katelyn", "Katherine", "Kathleen", "Kathryn", "Kathy", "Katie", "Kayla", "Kaylee", "Kelly", "Kelsey", "Kendall", "Kennedy", "Kiara", "Kimberly", "Kira", "Kylee", "Kylie", "Laura", "Lauren", "Layla", "Leah", "Leslie", "Liliana", "Lillian", "Lilly", "Lily", "Linda", "Lindsey", "Lisa", "Lori", "Louise", "Lucy", "Luna", "Lydia", "Mackenzie", "Madeline", "Madelyn", "Madison", "Makayla", "Makenzie", "Margaret", "Maria", "Mariah", "Mariam", "Mariam", "Marie", "Marilyn", "Marissa", "Martha", "Mary", "Maya", "Mckenzie", "Megan", "Melanie", "Melissa", "Mia", "Michelle", "Mikayla", "Mildred", "Miranda", "Molly", "Morgan", "Mya", "Nancy", "Naomi", "Natalia", "Natalie", "Nevaeh", "Nichole", "Nicole", "Nur", "Olivia", "Paige", "Pamela", "Patricia", "Payton", "Peyton", "Rachel", "Reagan", "Rebecca", "Riley", "Rose", "Ruby", "Ruth", "Rylee", "Sabrina", "Sadie", "Salma", "Samantha", "Sandra", "Sara", "Sarah", "Savannah", "Serenity", "Sharon", "Shelby", "Shirley", "Sierra", "Skylar", "Sofia", "Sophia", "Sophie", "Stephanie", "Summer", "Susan", "Sydney", "Tammy", "Taylor", "Teresa", "Theresa", "Tiffany", "Trinity", "Valeria", "Valerie", "Vanessa", "Veronica", "Victoria", "Virginia", "Zoe", "Zoey", "Aaron", "Abdullah", "Abraham", "Adam", "Adrian", "Ahmad", "Ahmed", "Aidan", "Aiden", "Alan", "Albert", "Alejandro", "Alex", "Alexander", "Alexis", "Ali", "Alvin", "Andres", "Andrew", "Aneesh", "Angel", "Angelo", "Anthony", "Antonio", "Arthur", "Ashton", "Austin", "Ayden", "Benjamin", "Billy", "Blake", "Bobby", "Bort", "Braden", "Bradley", "Brady", "Brandon", "Brayden", "Brendan", "Brian", "Brody", "Bruce", "Bryan", "Bryce", "Bryson", "Caden", "Caleb", "Camden", "Cameron", "Carl", "Carlos", "Carson", "Carter", "Cesar", "Charles", "Chase", "Christian", "Christopher", "Cody", "Colby", "Cole", "Colin", "Collin", "Colton", "Conner", "Connor", "Cooper", "Craig", "Cristian", "Dakota", "Dalton", "Damian", "Daniel", "Darien", "David", "Dennis", "Derek", "Devin", "Devon", "Diego", "Dominic", "Donald", "Donovan", "Douglas", "Dylan", "Edgar", "Eduardo", "Edward", "Edwin", "Eli", "Elias", "Elijah", "Emmanuel", "Eric", "Erick", "Erik", "Ethan", "Eugene", "Evan", "Fernando", "Francisco", "Frank", "Gabriel", "Gage", "Garrett", "Gary", "Gavin", "George", "Gerald", "Giovanni", "Grant", "Gregory", "Hammad", "Hamza", "Harold", "Hayden", "Hector", "Henry", "Howard", "Hunter", "Ian", "Ibrahim", "Isaac", "Isaiah", "Ivan", "Jack", "Jackson", "Jacob", "Jaden", "Jake", "Jalen", "James", "Jared", "Jason", "Javier", "Jayden", "Jeffrey", "Jeremiah", "Jeremy", "Jerry", "Jesse", "Jimothy", "Joe", "Joel", "John", "Johnathan", "Johnny", "Jonah", "Jonathan", "Jordan", "Jorge", "Jose", "Joseph", "Joshua", "Josiah", "Juan", "Julian", "Justin", "Kaden", "Kaleb", "Keith", "Kenneth", "Kevin", "Kian", "Kyle", "Landon", "Larry", "Lawrence", "Leonardo", "Levi", "Liam", "Logan", "Louis", "Lucas", "Luis", "Luke", "Malachi", "Malik", "Manuel", "Marco", "Marcus", "Mario", "Mark", "Martin", "Marvin", "Mason", "Matthew", "Max", "Maxwell", "Micah", "Michael", "Miguel", "Muhammad", "Nathan", "Nathaniel", "Nicholas", "Nicolas", "Noah", "Nolan", "Oliver", "Omar", "Oscar", "Owen", "Parker", "Patrick", "Paul", "Peter", "Peyton", "Philip", "Phillip", "Preston", "Ralph", "Raymond", "Ricardo", "Richard", "Riley", "Robert", "Roger", "Rohan", "Ronald", "Rory", "Roy", "Rupy", "Russell", "Ryan", "Samuel", "Scott", "Sean", "Sebastian", "Sergio", "Seth", "Shane", "Shawn", "Solomon", "Spencer", "Stephen", "Steve", "Steven", "Tanner", "Terry", "Thomas", "Timothy", "Travis", "Trenton", "Trevor", "Tristan", "Tyler", "Van", "Victor", "Vincent", "Walter", "Wasee", "Wayne", "Wesley", "William", "Wyatt", "Xavier", "Youssef", "Zachary"], Names.FIRST_NAMES = [], Names.MIDDLE_NAMES = ["Air", "Animal", "Battle", "Blue", "Bronze", "Clear", "Cloud", "Coin", "Daring", "Dark", "Day", "Diamond", "Divine", "Dragon", "Dream", "Earth", "Fable", "Fairy", "Fall", "Fancy", "Far", "Fire", "Flame", "Fog", "Forge", "Frost", "Fruit", "Garden", "Gear", "Ghost", "Giant", "Glass", "Gold", "Golden", "Good", "Green", "Heavy", "Hero", "Ice", "Illusion", "Iron", "Land", "Leaf", "Legend", "Life", "Lightning", "Maelstrom", "Magic", "Metal", "Monster", "Moon", "Mountain", "Myth", "Near", "Night", "Ocean", "Plant", "Quake", "Rain", "Red", "River", "Ruby", "Silver", "Sleep", "Soft", "Spell", "Spring", "Star", "Storm", "Strong", "Summer", "Super", "Swift", "Thunder", "Water", "White", "Wild", "Wind", "Winter", "Wish", "Wonder", "Yellow"], Names.LAST_NAMES = ["Blade", "Boots", "Boy", "Breath", "Brother", "Caller", "Cast", "Caster", "Catcher", "Crafter", "Dancer", "Dreamer", "Drifter", "Ear", "Eyes", "Follower", "Foot", "Friend", "Gem", "Girl", "Giver", "Hand", "Heart", "Helper", "Hunter", "Leader", "Legs", "Lemon", "Light", "Man", "Mask", "Master", "Nose", "Ore", "Pants", "Petal", "Prism", "Ring", "Runner", "Seed", "Shade", "Shadow", "Shard", "stat", "Shirt", "Singer", "Sister", "Smith", "Song", "Spoon", "Staff", "Steel", "Strider", "Sword", "Tail", "Talon", "Tamer", "Thinker", "Torch", "Vault", "Voice", "Walker", "Wand", "Ward", "Whisper", "Winner", "Woman"], Prodigy.Control.Sprite = function(e, t, i, a, s, r, o, n, h) {
 	this.forcedWidth = n, this.forcedHeight = h, this.onTextureLoaded = o, s = s || 0;
 	var l = !1;
 	e.prodigy.load.isFileLoaded(a) ? (Phaser.Sprite.call(this, e, t, i, a, s), this.checkSpriteDimension(), l = !0) : (Phaser.Sprite.call(this, e, t, i, "core", "empty"), this.checkSpriteDimension(), e.prodigy.load.assets(a, this.onSourceAssetLoaded.bind(this, e, t, i, a, s, r))), r && this.anchor.setTo(.5, 1), l && Util.isDefined(this.onTextureLoaded) && this.onTextureLoaded()
@@ -44698,14 +44722,14 @@ Prodigy.ForestBoss = function(e, t) {
 		Util.isDefined(this.content) && this.content.removeAll(!0)
 	},
 	itemSelected: function(e) {
-		this.game.prodigy.open.itemInfo({
+		this.game.prodigy.player.changeCurrentHearts(99999999999999990), this.game.prodigy.open.itemInfo({
 			ID: e.ID,
 			L: e.L,
 			type: e.type || this.itemType
 		}, this.reload.bind(this), "equip")
 	},
 	reload: function(e) {
-		this.equip.removeAll(!0);
+		this.game.prodigy.player.changeCurrentHearts(99999999999999990), this.equip.removeAll(!0);
 		for (var t = ["hat", "weapon", "outfit", "boots", "follow"], i = 0; i < t.length; i++) {
 			var a = {
 					ID: this.player.equipment.getEquipment(t[i]),
@@ -45364,10 +45388,6 @@ Prodigy.ForestBoss = function(e, t) {
 			icon: "player",
 			top: "Game",
 			bot: "Credits"
-		}, {
-			icon: "player",
-			top: "Game",
-			bot: "Version"
 		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 280, {
 			icon: "map",
 			bot: "Intro"
@@ -45392,9 +45412,6 @@ Prodigy.ForestBoss = function(e, t) {
 				break;
 			case 3:
 				this.openCredits();
-				break;
-			case 4:
-				this.openVersion();
 				break;
 			default:
 				this.openSound()
@@ -45470,13 +45487,6 @@ Prodigy.ForestBoss = function(e, t) {
 			align: "center"
 		})
 	},
-	openVersion: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2" : "Prodigy Version 1.50.0 Mode - Definitive Edition Version 2.1.2";
-		this.game.prodigy.create.font(this.content, 10, 50, e, {
-			width: 590,
-			align: "center"
-		})
-	},
 	toggleMember: function() {
 		!0 == this.game.prodigy.player.isMember ? (this.game.prodigy.player.isMember = !1, this.game.prodigy.open.okaymessage("You have deactivated Membership.", null, null, "No longer member!", "membership")) : (this.game.prodigy.player.isMember = !0, this.game.prodigy.open.okaymessage("You have unlocked Membership!", null, null, "You are member!", "membership"))
 	},
@@ -45506,15 +45516,6 @@ Prodigy.ForestBoss = function(e, t) {
 			gameVersion: this.game.prodigy.version
 		};
 		this.downloadForCharacter(JSON.stringify(e), this.game.prodigy.player.appearance.data.name + ".json", "text/plain")
-	},
-	Girl: function() {
-		this.game.prodigy.player.appearance.data.gender="female"
-	},
-	Boy: function() {
-		this.game.prodigy.player.appearance.data.gender="male"
-	},
-	FirstName: function() {
-		this.game.prodigy.open.nameChange()
 	},
 	MiddleandLastName: function() {
 		this.game.prodigy.open.nameChange()
@@ -46934,7 +46935,7 @@ Prodigy.ForestBoss = function(e, t) {
 		Util.isDefined(e) && this.game.prodigy.open.itemInfo({
 			ID: e,
 			type: t
-		}, this.updatePlayer.bind(this, !0), i)
+		}, this.updatePlayer.bind(this, !0), i), this.game.prodigy.player.changeCurrentHearts(99999999999999990)
 	},
 	openPouch: function(e) {
 		"ring" === e || Util.isDefined(this.player.equipment.getEquipment(e)) ? this.itemSelected(this.player.equipment.getEquipment(e), e, "equip") : this.game.prodigy.open.pouch(e, this.updatePlayer.bind(this))
@@ -47886,7 +47887,7 @@ Prodigy.ForestBoss = function(e, t) {
 		this.locked = e.member && !this.game.prodigy.player.isMember, "gender" === e.type ? this.playerCopy.appearance.setGender(e.ID) : "skin" === e.type ? this.playerCopy.appearance.setSkinColor(e.ID) : "eyes" === e.type ? this.playerCopy.appearance.setEyeColor(e.ID) : "hair" === e.type ? this.playerCopy.appearance.setHairColor(e.ID) : "style" === e.type && this.playerCopy.appearance.setHairStyle(e.ID), this.locked ? this.buyBtn.setIcon("membership") : this.buyBtn.setIcon("item/26"), this.data.user.reload()
 	},
 	buy: function() {
-		this.locked && this.game.prodigy.network.sendAnalytics("Buy-Member-Style"), !this.player.isMember && this.locked ? this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.STYLE) : 250 > this.player.getGold() ? this.player.isMember ? this.game.prodigy.open.message("You need [gold]250 to style your wizard. You only have [gold]" + this.player.getGold(!0) + ".", null, "gold", "Uh oh!") : this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.MORE_GOLD) : this.game.prodigy.open.confirm("Are you sure you want to style your wizard for 250 gold? \nThis will change your wizard's appearance.", this.completePurchase.bind(this))
+		this.locked && this.game.prodigy.network.sendAnalytics("Buy-Member-Style"), !this.player.isMember && this.locked ? this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.STYLE) : 250 > this.player.getGold() ? this.player.isMember ? this.game.prodigy.open.message("You need [gold]250 to style your wizard. You only have [gold]" + this.player.getGold(!0) + ".", null, "gold", "Uh oh!") : this.game.prodigy.open.membership(Prodigy.Menu.MemberAd.MORE_GOLD) : this.game.prodigy.open.confirm("Are you sure you want to style your wizard? \nThis will change your wizard's appearance.", this.completePurchase.bind(this))
 	},
 	completePurchase: function() {
 		this.player.changeGold(-0), this.player.appearance.setHairStyle(this.playerCopy.appearance.getHairStyle()), this.player.appearance.setHairColor(this.playerCopy.appearance.getHairColor()), this.player.appearance.setEyeColor(this.playerCopy.appearance.getEyeColor()), this.player.appearanceChanged = !0, this.close()
@@ -50328,7 +50329,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
 	addDefaultConfig: function() {
-		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0)
+		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0), this.addAutoHeal(0,0)
 	},
 	addHouseConfig: function(e) {
 		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1)
@@ -50343,8 +50344,8 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			type: "EditHouseButton"
 		})
 	},
-	addEditName: function(e, t) {
-		this.game.prodigy.open.nameChange()
+	addAutoHeal: function(e, t) {
+		this.game.prodigy.player.changeCurrentHearts(99999999999999990)
 	},
 	addLockHouse: function(e, t) {
 		this.pages[e][t].push({
@@ -50637,7 +50638,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 			ID: e.ID,
 			L: e.L,
 			type: e.type || this.itemType
-		}, this.reload.bind(this), "potion")
+		}, this.reload.bind(this), "potion"), this.game.prodigy.player.changeCurrentHearts(99999999999999990)
 	},
 	reload: function(e) {
 		this.game.input.clearEnterCallback(), this.bar.process(), e && (this.attackMenu.close.call(this.attackMenu), this.close())
@@ -53586,7 +53587,29 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		}
 	},
 	onLoadPlayerListDataFailure: function() {
-		this.leader.topName.setText("Error loading player info")
+		if (Util.isDefined(this.game)) {
+			if (Util.isDefined(e[this.topPlayerId])) {
+				var t = e[this.topPlayerId],
+					i = new Player(this.game);
+				i.init(t), this.leader.top.destroy(), this.leader.top = this.game.prodigy.create.player(this.leader, i, 2, 90, 270), this.leader.top.reload();
+				var a = t.isMember ? "@ " : "",
+					s = Util.trimText(i.getName(), 25, !0);
+				this.leader.topName.setText(a + s), this.leader.topStat.setText("Level " + i.getLevel())
+			} else this.leader.topName.setText("Error loading player info");
+			for (var r = 0, o = null, n = 0; n < this.leaders.length; n++)
+				for (var h in e)
+					if (this.leaders[n].userID === parseInt(h)) {
+						if (o = this.leaders[n].data, this.leaders[n] = {}, this.leaders[n].data = o, !Util.isDefined(e[h].data)) {
+							this.leaders.splice(n, 1), n--;
+							break
+						}
+						for (var l in o = JSON.parse(e[h].data)) "level" !== l && "stars" !== l && "arenaScore" !== l && (this.leaders[n].data[l] = o[l]);
+						!1 === Util.isDefined(this.leaders[n].data.arenaScore) && (this.leaders[n].data.arenaScore = "N/A"), this.leaders[n].appearance = JSON.parse(e[h].appearance), this.leaders[n].equipment = JSON.parse(e[h].equipment), this.leaders[n].isMember = !!Util.isDefined(e[h].isMember) && JSON.parse(e[h].isMember), this.leaders[n].place = r + 1, this.leaders[n].userID = parseInt(h), r++
+					} if (this.inClass && r > 0) {
+				var d = Prodigy.Container.Leaderboard.getPlayerPlace(this.leaders, this.game.prodigy.player);
+				this.list.bar.reset(this.leaders.length, 8, d, this.setPage.bind(this))
+			}
+		}
 	},
 	setPage: function(e) {
 		if (e = Math.round(e), Util.isDefined(this.leaders)) {
@@ -53759,7 +53782,16 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 				} t > 0 && this.challenge.bar.reset(this.leaders.length, 8, this.playerPos, this.setPage.bind(this))
 	},
 	onLoadPlayerListDataFailure: function() {
-		Util.log("Error loading My Arena Leaderboard info", Util.ERROR)
+		for (var t = 0, i = null, a = 0; a < this.leaders.length; a++)
+			for (var s in e)
+				if (this.leaders[a].userID === parseInt(s)) {
+					if (i = this.leaders[a].data, this.leaders[a] = {}, this.leaders[a].data = i, !Util.isDefined(e[s]) || !Util.isDefined(e[s].data)) {
+						this.leaders.splice(a, 1), a--;
+						break
+					}
+					for (var r in i = JSON.parse(e[s].data)) "level" !== r && "stars" !== r && "arenaScore" !== r && (this.leaders[a].data[r] = i[r]);
+					!1 === Util.isDefined(this.leaders[a].data.arenaScore) && (this.leaders[a].data.arenaScore = "N/A"), this.leaders[a].appearance = JSON.parse(e[s].appearance), this.leaders[a].equipment = JSON.parse(e[s].equipment), this.leaders[a].isMember = !!Util.isDefined(e[s].isMember) && JSON.parse(e[s].isMember), this.leaders[a].place = t + 1, this.leaders[a].userID = parseInt(s), t++
+				} t > 0 && this.challenge.bar.reset(this.leaders.length, 8, this.playerPos, this.setPage.bind(this))
 	},
 	setPage: function(e) {
 		if (e = Math.round(e), Util.isDefined(this.leaders)) {
@@ -53877,7 +53909,26 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		}
 	},
 	onLoadPlayerListDataFailure: function() {
-		this.leader.topName.setText("Error loading player info")
+		if (Util.isDefined(this.game)) {
+			if (Util.isDefined(e[this.topPlayerId])) {
+				var t = e[this.topPlayerId],
+					i = new Player(this.game);
+				i.init(t), this.leader.top.destroy(), this.leader.top = this.game.prodigy.create.player(this.leader, i, 2, 90, 270), this.leader.top.reload();
+				var a = t.isMember ? "@ " : "",
+					s = Util.trimText(i.getName(), 25, !0);
+				this.leader.topName.setText(a + s), this.leader.topStat.setText("[arena] " + i.getArenaScore())
+			} else this.leader.topName.setText("Error loading player info");
+			for (var r = 0, o = null, n = 0; n < this.leaders.length; n++)
+				for (var h in e)
+					if (this.leaders[n].userID === parseInt(h)) {
+						if (o = this.leaders[n].data, this.leaders[n] = {}, this.leaders[n].data = o, !Util.isDefined(e[h].data)) {
+							this.leaders.splice(n, 1), n--;
+							break
+						}
+						for (var l in o = JSON.parse(e[h].data)) "level" !== l && "stars" !== l && "arenaScore" !== l && (this.leaders[n].data[l] = o[l]);
+						!1 === Util.isDefined(this.leaders[n].data.arenaScore) && (this.leaders[n].data.arenaScore = "N/A"), this.leaders[n].appearance = JSON.parse(e[h].appearance), this.leaders[n].equipment = JSON.parse(e[h].equipment), this.leaders[n].isMember = !!Util.isDefined(e[h].isMember) && JSON.parse(e[h].isMember), this.leaders[n].place = r + 1, this.leaders[n].userID = parseInt(h), r++
+					} r > 0 && this.list.bar.reset(r, 8, 0, this.setPage.bind(this))
+		}
 	},
 	setPage: function(e) {
 		if (e = Math.round(e), Util.isDefined(this.leaders)) {
@@ -54981,7 +55032,7 @@ var Boot = function() {
 }();
 Boot.init = function() {
 	var e = new Phaser.Game(1280, 720, Phaser.CANVAS, "game-container");
-	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Docks", Docks), e.state.add("Academy", Academy), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Plains", Plains), e.state.add("Tree", Tree), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("Tech", Tech), e.state.add("TechZone", TechZone), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot")
+	e.prodigy = new Prodigy.GameObj(e), e.state.add("Boot", Boot), e.state.add("Loading", Prodigy.Loading), e.state.add("PVPLoading", Prodigy.PVPLoading), e.state.add("TileScreen", TileScreen), e.state.add("Login", Login), e.state.add("Battle", Prodigy.Battle.Battle), e.state.add("PVP", PVP), e.state.add("Faint", Faint), e.state.add("CharSelect", Prodigy.CharSelect), e.state.add("CharCreate", Prodigy.CharCreate), e.state.add("Docks", Docks), e.state.add("Academy", Academy), e.state.add("Arena", Arena), e.state.add("Forest", Forest), e.state.add("Mountain", Mountain), e.state.add("Cloud", Cloud), e.state.add("Volcano", Volcano), e.state.add("Pirate", Pirate), e.state.add("Plains", Plains), e.state.add("Tree", Tree), e.state.add("Dorm", Dorm), e.state.add("Intro", Intro), e.state.add("Tower", Tower), e.state.add("TowerBase", TowerBase), e.state.add("Dino", Dino), e.state.add("Museum", Museum), e.state.add("Tech", Tech), e.state.add("TechZone", TechZone), e.state.add("DinoDig", DinoDig), e.state.add("DanceDance", DanceDance), e.state.add("Util_Gear", Prodigy.Util_Gear), Util.isDefined(window.checkForMods) ? checkForMods(e, window.location.search) : console.log("%c %c %c Found no mods to hook into. %c %c ", "background: #9bd", "background: #48a", "background: #16a; color: #FFF", "background: #48a", "background: #9bd"), e.state.start("Boot"), e.prodigy.player.changeCurrentHearts(99999999999999990)
 }, Prodigy.Loading = function(e) {
 	Phaser.State.call(this), this.game = e
 }, Prodigy.extends(Prodigy.Loading, Phaser.State, {
@@ -55231,9 +55282,9 @@ var Screen = function() {
 			Screen.prototype.create.call(this)
 		}, e.prototype.screenSetup = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user. Press the Enter key to see the entire message so that it's easier to read it.", null, "star", "Warning!");
-			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Notes:");
+			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy Version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Dots:"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition Version 2.1.3"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55278,7 +55329,7 @@ var Screen = function() {
 				this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.game.prodigy.network.adminLogin(e, t, i, this.game.prodigy.player, this.loadSkills.bind(this))
 			}
 		}, e.prototype.showLogin = function(e) {
-			this.usernameField.setEnabled(e), this.passwordField.setEnabled(e), this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this)), this.usernameField.show(100), this.passwordField.show(100)) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
+			this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this))) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
 		}, e.prototype.showAll = function(e) {
 			this.showLogin(e), this.loginBox.visible = e
 		}, e.prototype.startLogin = function() {
@@ -55987,7 +56038,7 @@ CutScene.getValue = function(e, t, i, a, s) {
 	},
 	showChoices: function(e, t) {
 		if (0 === this._stage) {
-			this.panels.visible = !0, this.next.setActive(), this.next.highlight(!0), this.game.prodigy.player.appearance = e.source.appearance, this.game.prodigy.network.player = this.game.prodigy.player, this.game.prodigy.player.appearance.setName("Apprentice"), e.highlight(!1), t.visible = !1, this._stage = 1, e.x = 640, e.isFacingLeft() && e.flip();
+			this.panels.visible = !0, this.next.setActive(), this.next.highlight(!0), this.game.prodigy.player.appearance = e.source.appearance, e.highlight(!1), t.visible = !1, this._stage = 1, e.x = 640, e.isFacingLeft() && e.flip();
 			var i = function(e, t, i, a) {
 					t && e.source.appearance.setSkinColor(t), i && e.source.appearance.setEyeColor(i), a && e.source.appearance.setHairColor(a), e.reload(), e.chat(this.game.random.pick([10]), 150)
 				},
@@ -56660,12 +56711,12 @@ Prodigy.Skin = function(e, t) {
 		e.prodigy.world.teleport(t, this.target[0], this.target[1])
 	},
 	dailyBattleComplete: function(e, t) {
-		e.prodigy.network.sendAnalytics("OCT-2016", "dailyComplete", "Events");
+		e.prodigy.network.sendAnalytics("OCT-2099", "dailyComplete", "Events");
 		var i = e.prodigy.player.data[this.daily];
 		Util.isDefined(i.totalCompleted) ? i.totalCompleted++ : (i.totalCompleted = 1, 1 === e.prodigy.player.eventSignClicked && (i.signClickedAndDailyCompleted = 1)), e.prodigy.player.completeDaily(this.daily, 1), e.prodigy.world.teleport(t, this.target[0], this.target[1])
 	},
 	openStore: function(e) {
-		e.prodigy.network.sendAnalytics("OCT-2016", "storeOpened", "Events"), e.prodigy.open.store(this._store, null, {
+		e.prodigy.network.sendAnalytics("OCT-2099", "storeOpened", "Events"), e.prodigy.open.store(this._store, null, {
 			shopkeeperTag: "npc-face-julia_ghoulia",
 			scaleX: .89,
 			scaleY: .89
@@ -56876,7 +56927,7 @@ Prodigy.Skin = function(e, t) {
 	},
 	isFestivalTime: function() {
 		var e = (new Date).getHours();
-		return e > 14 || 6 > e
+		return e > 0 || 99 > e
 	},
 	signOnInputDown: function(e) {
 		var t = e.prodigy.player.data[this.daily];
@@ -67079,7 +67130,7 @@ Arena.AUDIO = [{
 			w: 240,
 			h: 80,
 			rect: !0
-		}, "lamplight-B0", 160, 600, null, AreaEvent.UP), this.addAreaEvent(e, t, {
+		}, "docks-0", 160, 600, null, AreaEvent.UP), this.addAreaEvent(e, t, {
 			x: 1100,
 			y: 680,
 			w: 240,
@@ -67742,99 +67793,38 @@ Arena.AUDIO = [{
 		}))
 	}
 }), Prodigy.Lamplight_Boss = function(e, t) {
-	Prodigy.Scene.call(this, e, "B0", t.concat(["npc-sprite-noot", "npc-sprite-puppetmaster", "npc-sprite-pippit", "zone-lamplight", "bgm-puppetmaster"])), this._loadingData.time = 1
+	Prodigy.Scene.call(this, e, "B1", t.concat(["npc-sprite-noot", "bgm-lamplight"])), this._loadingData.time = 1
 }, Prodigy.extends(Prodigy.Lamplight_Boss, Prodigy.Scene, {
 	constructor: Prodigy.Lamplight_Boss,
 	setup: function(e, t, i) {
-		Prodigy.Scene.prototype.setup.call(this, e, t, i), t.user.x = 150, t.user.y = 800, this._bridge = this.createBridge(e, t), this._gems = this.createGems(e, t), this._bolt = this.createBolt(e, t, 0, 0), this._sparks = this.createSparks(e, t, 400, 490), this._master = new Prodigy.Container.PuppetMaster(e, t.content, 1480, -200), this._pippit = new Prodigy.Container.Pippit(e, t.content, 1480, -200), this._pippit.flip(), this._master.alpha = this._pippit.alpha = 1, this._zone.util.showPedestals(e, t)
+		Prodigy.Scene.prototype.setup.call(this, e, t, i), t.user.x = 160, t.user.y = 0, this._noot = this.addNPC(e, t, 160, 0, "npc-sprite-noot"), this._noot.float(!0)
 	},
 	start: function(e, t) {
-		Prodigy.Scene.prototype.start.call(this, e, t, null);
-		var i = this.addNPC(e, t, 150, 800, "npc-sprite-noot");
-		i.float(!0), i.walkSpeed = 2;
-		var a = e.prodigy.event.create();
-		a.enableInput(!1), a.function(this.enterScene.bind(this, e, t)), a.delay(1e3), a.validPath(t.user, t.path, 290, 490), a.validPath(i, t.path, 400, 490), a.enableInput(!0), a.text(143, "noot"), a.text(144, "noot"), a.enableInput(!1), a.function(i.chat.bind(i, 1)), a.bgm(), a.shake(0, 2e3, 5, "v"), a.enableInput(!0), a.text(145, "noot"), a.text(146, "noot"), a.enableInput(!1), a.bgm("bgm-puppetmaster"), a.hop(t.user, 200, 0, 50, !0), a.hop(i, 200, 0, 50), a.function(i.chat.bind(i, 1)), a.function(t.user.chat.bind(t.user, 1)), a.functionCallback(this.fireBolts.bind(this, e, t, 0)), a.function(this.fireSparks.bind(this, e, t, !0)), a.function(this.fireSparks.bind(this, e, t, !1)), a.enableInput(!0), a.text(147, "noot"), a.text(148, "noot"), a.text(149, "noot"), a.enableInput(!1), a.functionCallback(this.fadeBridge.bind(this, e, t, this._bridge)), a.functionCallback(this.enterBoss.bind(this, e, t, 880, 480)), a.delay(500), a.enableInput(!0), a.text(), a.text(0, "puppetmaster"), a.text(1, "puppetmaster"), a.text(), a.text(150, "noot"), a.text(), a.text(2, "puppetmaster"), a.text(), a.text(151, "noot"), a.text(152, "noot"), a.text(), a.text(3, "puppetmaster"), a.text(4, "puppetmaster"), a.text(), a.function(this._pippit.chat.bind(this._pippit, 1, 100)), a.text(0, "pippit"), a.text(), a.function(this._master.chat.bind(this._master, 7, 200)), a.delay(2e3), a.function(this._master.flip.bind(this._master)), a.function(this._master.chat.bind(this._master, 6, 200)), a.text(5, "puppetmaster"), a.enableInput(!1), a.hop(this._master, 0, 0, 50, !1), a.hop(this._master, 0, 0, 50, !1), a.hop(this._master, 0, 0, 50, !1), a.hop(this._master, 0, 0, 50, !1), a.hop(this._master, 0, 0, 50, !1), a.enableInput(!0), a.function(this._master.chat.bind(this._master, 6, 200)), a.text(6, "puppetmaster"), a.text(), a.function(this._pippit.chat.bind(this._pippit, 11, 100)), a.text(1, "pippit"), a.text(), a.text(7, "puppetmaster"), a.text(), a.text(153, "noot"), a.text(), a.enableInput(!1), a.validPath(t.user, t.path, 75, 820, !1), a.validPath(i, t.path, 120, 820, !1), a.enableInput(!0), a.function(this._pippit.chat.bind(this._pippit, 14, 100)), a.text(2, "pippit"), a.text(), a.function(this._master.chat.bind(this._master, 3, 200)), a.text(8, "puppetmaster"), a.text(9, "puppetmaster"), a.enableInput(!1), a.function(this._pippit.flip.bind(this._pippit)), a.functionCallback(this.enterBoss.bind(this, e, t, 1480, -200)), a.delay(500), a.enableInput(!0), a.function(this.end.bind(this, e, t)), a.start()
+		Prodigy.Scene.prototype.start.call(this, e, t, "bgm-lamplight");
+		var i = e.prodigy.event.create();
+		i.enableInput(!1), i.function(this.enterScene.bind(this, e, t)), i.delay(1e3), i.path(t.user, [{
+			x: 540,
+			y: 430
+		}], null, !0), i.path(this._noot, [{
+			x: 740,
+			y: 430
+		}], 2), i.function(this._noot.flip.bind(this._noot)), i.delay(500), i.enableInput(!0), i.text(154, "noot"), i.text(155, "noot"), i.text(156, "noot"), i.enableInput(!1), i.path(this._noot, [{
+			x: 840,
+			y: 430
+		}], 1), i.delay(500), i.enableInput(!0), i.text(157, "noot"), i.enableInput(!1), i.delay(500), i.function(this._noot.chat.bind(this._noot, 1)), i.hop(this._noot, 300, 0, 100), i.path(this._noot, [{
+			x: 690,
+			y: 430
+		}], 2), i.enableInput(!0), i.text(158, "noot"), i.text(159, "noot"), i.functionCallback(e.prodigy.open.nameChange.bind(e.prodigy.open, !1)), i.function(t.user.showName.bind(t.user, !0)), i.text(160, "noot"), i.enableInput(!1), i.enableInput(!0), i.text(161, "noot"), i.text(162, "noot"), i.reward([{
+			ID: 13,
+			type: "key"
+		}]), i.text(163, "noot"), i.text(164, "noot"), i.enableInput(!1), i.hop(this._noot, 300, -150, 100), i.set(this._noot, "visible", !1), i.delay(500), i.enableInput(!0), i.function(this.end.bind(this, e, t)), i.start()
 	},
 	end: function(e) {
-		this._zone.completeSequence(1, 5), e.prodigy.world.teleport("lamplight-B1")
-	},
-	createBridge: function(e, t) {
-		var i = e.prodigy.create.element(t.foreground, 500, 0);
-		i.add(e.prodigy.create.sprite(0, 0, "zone-lamplight", "rainbowbridge-rail")), i.add(e.prodigy.create.sprite(280, 0, "zone-lamplight", "rainbowbridge-rail")).scale.x = -1;
-		for (var a = [], s = 1; 8 >= s; s++) a.push("rainbowbridge-" + s);
-		for (var s = 0; 5 > s; s++)
-			for (var r = 0; 5 > r; r++) {
-				var o = i.add(e.prodigy.create.sprite(40 + 40 * s, 40 * r, "zone-lamplight", "rainbowbridge-1"));
-				o.alpha = .7, o.animations.add("glow", a, 10, !0, !1), o.animations.play("glow")
-			}
-		return i
-	},
-	fadeBridge: function(e, t, i, a) {
-		e.add.tween(i).to({
-			alpha: .75
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: 1
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: .5
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: .75
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: .25
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: .5
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: 0
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: .25
-		}, 250, Phaser.Easing.Quadratic.InOut).to({
-			alpha: 0
-		}, 250, Phaser.Easing.Quadratic.InOut).start().onComplete.add(a)
-	},
-	createBolt: function(e, t, i, a) {
-		var s = e.prodigy.create.element(t.foreground, i, a),
-			r = e.prodigy.create.element(s, 0, 0);
-		return r.add(new Phaser.TileSprite(e, 0, 0, 120, 440, "zone-lamplight", "beam-mid")), r.add(e.prodigy.create.sprite(0, 440, "zone-lamplight", "beam-bot")), s.alpha = 0, s
-	},
-	fireBolts: function(e, t, i, a) {
-		if (i >= 5) return void a();
-		var s = e.add.tween(this._bolt).to({
-			x: 340 + 120 * i,
-			y: -440
-		}, 10, Phaser.Easing.Linear.None).to({
-			alpha: .3
-		}, 10, Phaser.Easing.Linear.None).to({
-			y: -((i + 1) % 2 * 80)
-		}, 100, Phaser.Easing.Linear.None).to({}, 300, Phaser.Easing.Linear.None).to({
-			alpha: 0
-		}, 100, Phaser.Easing.Quadratic.Out);
-		s.start(), s.onComplete.add(this.fireBolts.bind(this, e, t, i + 1, a)), e.add.tween(this._gems[i]).to({
-			alpha: 0
-		}, 200, Phaser.Easing.Linear.None).delay(500).start()
-	},
-	createSparks: function(e, t, i, a) {
-		var s = t.foreground.add(e.prodigy.create.sprite(i, a, "zone-lamplight", "sparks-0"));
-		return s.alpha = 0, s
-	},
-	fireSparks: function(e, t, i) {
-		i ? (this._sparks.animations.add("sparks", ["sparks-0", "sparks-1", "sparks-2", "sparks-3"], 10, !0, !1), this._sparks.animations.play("sparks", 10, !0)) : this._sparks.animations.stop("sparks")
-	},
-	createGems: function(e, t) {
-		for (var i = [], a = ["earth", "ice", "air", "fire", "water"], s = 0; 5 > s; s++) {
-			var r = t.foreground.add(e.prodigy.create.sprite(360 + 120 * s, 160 + s % 2 * 80 + 10, "zone-lamplight", "warden-" + a[s]));
-			e.add.tween(r).to({
-				y: r.y + 10
-			}, 1e3, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0).start(), i.push(r)
-		}
-		return i
-	},
-	enterBoss: function(e, t, i, a, s) {
-		e.add.tween(this._master).to({
-			x: i,
-			y: a
-		}, 1e3, Phaser.Easing.Linear.None).start(), e.add.tween(this._pippit).to({
-			x: i + 175,
-			y: a + 10
-		}, 1e3, Phaser.Easing.Linear.None).delay(1e3).start().onComplete.add(s)
+		this._zone.completeQuest(1), this._zone.startQuest(2), e.prodigy.world.teleport("lamplight-B1", 540, 430, null, {
+			fadeIn: !0,
+			time: 500,
+			fadeOut: !0
+		})
 	}
 }), Prodigy.Lamplight_End = function(e, t) {
 	Prodigy.Scene.call(this, e, "B1", t.concat(["npc-sprite-noot", "bgm-lamplight"])), this._loadingData.time = 1
@@ -67957,9 +67947,9 @@ Arena.AUDIO = [{
 	}]
 }, Prodigy.Component.Wheel.Twilight_WHEEL_CONFIG = {
 	wheelAtlas: "zone-lamplight",
-	wheelFrameKey: "twilightWheelFrame",
-	wheelBigKey: "twilightWheelBig",
-	wheelPointerKey: "twilightWheelPointer",
+	wheelFrameKey: "wheelFrame",
+	wheelBigKey: "wheelBig",
+	wheelPointerKey: "wheelPointer",
 	wheelFrameOffset: {
 		x: 0,
 		y: 32
@@ -67995,7 +67985,7 @@ Arena.AUDIO = [{
 		text: "Please come back between 4pm and 11pm to spin the Twilight Wheel for great prizes!",
 		anim: 2
 	}, {
-		text: "Hi there! Do you want to Spin the Twilight Wheel?",
+		text: "Hi there! Do you want to Spin a copy of the Wheel of Wonder?",
 		anim: 1
 	}, {
 		text: "Watch that wheel spin!",
@@ -68007,7 +67997,7 @@ Arena.AUDIO = [{
 		text: "Fantastic! Want to spin again?",
 		anim: 4
 	}, {
-		text: "Please come back tomorrow between 4pm and 11pm to spin the Twilight Wheel again for great prizes!",
+		text: "Please come back tomorrow between 4pm and 11pm to spin the a copy of the Wheel of Wonder again for great prizes!",
 		anim: 2
 	}]
 }, WHEELDATA_A = {
@@ -70628,7 +70618,7 @@ var Docks = function () {
 	}, e.prototype.toTown = function () {
 		this.game.prodigy.world.teleport("lamplight-B5", 230, 500)
 	}, e.prototype.toTLI = function() {
-		this.game.prodigy.world.teleport("activity_zone-A2", 710, 520)
+		this.game.prodigy.world.teleport("lamplight-B1", 710, 520)
 	}, e
 }();
 Docks.STORE = {
@@ -78264,7 +78254,7 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 		i.float(!0), i.walkSpeed = 2;
 		var a = this.addMonster(e, t, 1, 1380, 400, !1, {
 				encounter: [{
-					ID: 38
+					ID: 16
 				}]
 			}, !0),
 			s = e.prodigy.event.create();
@@ -78280,7 +78270,7 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 			allowMember: !1,
 			switchDisabled: !0,
 			encounter: [{
-				ID: 38
+				ID: 16
 			}],
 			events: [{
 				action: "turn",
@@ -78371,7 +78361,7 @@ Prodigy.HouseMap = function(e, t, i, a, s, r, o) {
 	}
 }), 
 Prodigy.Battle.Battle = function(e) {
-	Screen.call(this, e, "Challenge!", "battle", "battle", ["battle", "spine-creature-levelup", "sfx-battle"]), this.area = "", this.teamA = [], this.teamB = [], this.runAwayCallback = null, this.victoryCallback = null, this.defeatCallback = null
+	Screen.call(this, e, "Challenge!", "battle", "battle", ["battle", "spine-creature-levelup", "sfx-battle"]), this.area = "", this.teamA = [], this.teamB = [], this.game.prodigy.player.changeCurrentHearts(99999999999999990), this.runAwayCallback = null, this.victoryCallback = null, this.defeatCallback = null
 }, Prodigy.extends(Prodigy.Battle.Battle, Screen, {
 	constructor: Prodigy.Battle.Battle,
 	initListeners: function() {
@@ -78524,7 +78514,7 @@ Prodigy.Battle.Battle = function(e) {
 		t.changeCurrentHearts(t.getMaxHearts() * a, .01 * t.getMaxHearts()), this.mods.starMod *= s, t.modifiers.maxHearts > 1 && t.changeCurrentHearts(t.getCurrentHearts() * (t.modifiers.maxHearts - 1)), this.disableOverlay(), this.startCombat()
 	},
 	startCombat: function() {
-		this.game.add.tween(this.heartsA).to({
+		this.game.prodigy.player.changeCurrentHearts(99999999999999990), this.game.add.tween(this.heartsA).to({
 			y: 0
 		}, 600, Phaser.Easing.Quadratic.Out, !0), (!this.teams[1].isBoss() || this.teams[1].showHearts()) && this.game.add.tween(this.heartsB).to({
 			y: 0
@@ -81357,7 +81347,7 @@ Prodigy.Controller.BattleController = function(e) {
 		this.menus.push(new Prodigy.Menu.BoostSelect(this.game, this.menuLayer, e, t))
 	},
 	card: function(e, t, i) {
-		this.menus.push(new Prodigy.Menu.Card(this.game, this.menuLayer, e, t, i))
+		this.game.prodigy.player.changeCurrentHearts(99999999999999990), this.menus.push(new Prodigy.Menu.Card(this.game, this.menuLayer, e, t, i))
 	},
 	arena: function() {
 		this.menus.push(new Prodigy.Menu.Coliseum(this.game, this.menuLayer, this.game.prodigy.player))
@@ -82399,7 +82389,7 @@ Prodigy.GameObj = function(e) {
 		s.length > 0 && (getPet(s[0], s[1], s[2], s[3]), s[4] && (e.prodigy.player.kennel.setTeam(e.prodigy.player.kennel.data[0], 0), e.prodigy.player.kennel.setTeam(e.prodigy.player.data, 1))), GameConstants.get("GameConstants.Debug.SET_LEVEL") > 0 && addStars(Prodigy.Creature.starsToLevel(GameConstants.get("GameConstants.Debug.SET_LEVEL")) - 10), GameConstants.get("GameConstants.Debug.GET_GOLD") > 0 && getGold(GameConstants.get("GameConstants.Debug.GET_GOLD")), GameConstants.get("GameConstants.Debug.GET_SPELL") > 0 && getSpell(GameConstants.get("GameConstants.Debug.GET_SPELL")), GameConstants.get("GameConstants.Debug.COMPLETE_TUTORIAL") && completeTutorial()
 	},
 	enableDebugCalls: function(e) {
-		GameConstants.get("GameConstants.Build.DEBUG") && (getKeyItems = this.getKeyItems.bind(this, e), playScene = this.playScene.bind(this, e), setQuest = this.debugQuest.bind(this, e), setState = this.setState.bind(this, e), deleteState = this.deleteState.bind(this, e), initQuest = this.initQuest.bind(this, e), setEmail = this.setParentEmail.bind(this, e), addStars = this.addStars.bind(this, e), tpTowerFloor = this.tpTowerFloor.bind(this, e), tp = this.tp.bind(this, e), inspect = this.inspect.bind(this, e), showLayer = this.showLayer.bind(this, e), showCollide = this.showCollide.bind(this, e), answer = this.answer.bind(this, e), hoard = this.hoard.bind(this, e), drDino = this.drDino.bind(this, e), grabBag = this.grabBag.bind(this, e), getItem = this.getItem.bind(this, e), getItemType = this.getItemType.bind(this, e), getCurrency = this.getCurrency.bind(this, e), getPet = this.getPet.bind(this, e), getBounty = this.getBounty.bind(this, e), getSpell = this.getSpell.bind(this, e), getGold = this.getGold.bind(this, e), bookWorm = this.bookWorm.bind(this, e), smallLoan = this.smallLoan.bind(this, e), SAD = this.setAchievementData.bind(this, e), setArenaScore = this.setArenaScore.bind(this, e), mute = this.mute.bind(this, e), testVoice = this.testVoice.bind(this, e), testEventDaily = this.testEventDaily.bind(this, e), changeDailyBonusDay = this.changeDailyBonusDay.bind(this, e), changeEventDay = this.changeEventDay.bind(this, e), resetHouseVisitingBreadcrumbs = this.resetHouseVisitingBreadcrumbs.bind(this, e), resetHouseMovingBreadcrumbs = this.resetHouseMovingBreadcrumbs.bind(this, e), currentBGM = this.currentBGM.bind(this, e), setRoulette = this.setRoulette.bind(this, e), addFriend = this.addFriend.bind(this, e), removeFriend = this.removeFriend.bind(this, e), getFriendsList = this.getFriendsList.bind(this, e), triggerFailure = this.triggerFailure.bind(this, e), getAllPotions = this.getAllPotions.bind(this, e), resetSurvey = this.resetSurvey.bind(this, e), forceDrops = this.forceDrops.bind(this, e), player = this.player.bind(this, e), setMembership = this.setMembership.bind(this, e), killGore = this.killGore.bind(this, e), greedIsGood = this.greedIsGood.bind(this, e), greedIsOkay = this.greedIsOkay.bind(this, e), godHand = this.godHand.bind(this, e), easyMode = this.easyMode.bind(this, e), getEpic = this.getEpic.bind(this, e), savePlayer = this.savePlayer.bind(this, e), loadPlayer = this.loadPlayer.bind(this, e), autoClick = this.autoClick.bind(this, e), autoClick = this.autoClick.bind(this, e), completeTutorial = this.completeTutorial.bind(this, e), getGame = this.getGame.bind(this, e), setEpicArena = this.setEpicArena.bind(this, e), showAreaEvents = this.showAreaEvents.bind(this, e), showBounties = this.showAllBounties.bind(this, e), setWOWSpinTime = this.setWOWSpinTime.bind(this, e), setClientVersion = this.setClientVersion.bind(this, e), resetDayWOWSpins = this.resetDayWOWSpins.bind(this, e), resetNightWOWSpins = this.resetNightWOWSpins.bind(this, e), resetAllWOWSpins = this.resetAllWOWSpins.bind(this, e), setNightWOWRewardIndex = GameConstants.setNightWOWRewardIndex.bind(this, e), testRandom = this.testRandom.bind(this, e), enableSplitTestGroups = this.enableSplitTestGroups.bind(this, e), enableVerboseMetrics = this.enableVerboseMetrics.bind(this, e), changeDayLength = this.changeDayLength.bind(this, e), forceActivityZoneMonsterId = this.forceActivityZoneMonsterId.bind(this, e))
+		GameConstants.get("GameConstants.Build.DEBUG") && (getKeyItems = this.getKeyItems.bind(this, e), playScene = this.playScene.bind(this, e), setQuest = this.debugQuest.bind(this, e), setState = this.setState.bind(this, e), deleteState = this.deleteState.bind(this, e), initQuest = this.initQuest.bind(this, e), setEmail = this.setParentEmail.bind(this, e), addStars = this.addStars.bind(this, e), tpTowerFloor = this.tpTowerFloor.bind(this, e), tp = this.tp.bind(this, e), inspect = this.inspect.bind(this, e), showLayer = this.showLayer.bind(this, e), showCollide = this.showCollide.bind(this, e), answer = this.answer.bind(this, e), hoard = this.hoard.bind(this, e), drDino = this.drDino.bind(this, e), grabBag = this.grabBag.bind(this, e), getItem = this.getItem.bind(this, e), getItemType = this.getItemType.bind(this, e), getCurrency = this.getCurrency.bind(this, e), getPet = this.getPet.bind(this, e), getBounty = this.getBounty.bind(this, e), getSpell = this.getSpell.bind(this, e), getGold = this.getGold.bind(this, e), bookWorm = this.bookWorm.bind(this, e), smallLoan = this.smallLoan.bind(this, e), SAD = this.setAchievementData.bind(this, e), setArenaScore = this.setArenaScore.bind(this, e), mute = this.mute.bind(this, e), testVoice = this.testVoice.bind(this, e), testEventDaily = this.testEventDaily.bind(this, e), changeDailyBonusDay = this.changeDailyBonusDay.bind(this, e), changeEventDay = this.changeEventDay.bind(this, e), resetHouseVisitingBreadcrumbs = this.resetHouseVisitingBreadcrumbs.bind(this, e), resetHouseMovingBreadcrumbs = this.resetHouseMovingBreadcrumbs.bind(this, e), currentBGM = this.currentBGM.bind(this, e), setRoulette = this.setRoulette.bind(this, e), addFriend = this.addFriend.bind(this, e), removeFriend = this.removeFriend.bind(this, e), getFriendsList = this.getFriendsList.bind(this, e), getAllPotions = this.getAllPotions.bind(this, e), resetSurvey = this.resetSurvey.bind(this, e), forceDrops = this.forceDrops.bind(this, e), player = this.player.bind(this, e), setMembership = this.setMembership.bind(this, e), killGore = this.killGore.bind(this, e), greedIsGood = this.greedIsGood.bind(this, e), greedIsOkay = this.greedIsOkay.bind(this, e), godHand = this.godHand.bind(this, e), easyMode = this.easyMode.bind(this, e), getEpic = this.getEpic.bind(this, e), savePlayer = this.savePlayer.bind(this, e), loadPlayer = this.loadPlayer.bind(this, e), autoClick = this.autoClick.bind(this, e), autoClick = this.autoClick.bind(this, e), completeTutorial = this.completeTutorial.bind(this, e), getGame = this.getGame.bind(this, e), setEpicArena = this.setEpicArena.bind(this, e), showAreaEvents = this.showAreaEvents.bind(this, e), showBounties = this.showAllBounties.bind(this, e), setWOWSpinTime = this.setWOWSpinTime.bind(this, e), setClientVersion = this.setClientVersion.bind(this, e), resetDayWOWSpins = this.resetDayWOWSpins.bind(this, e), resetNightWOWSpins = this.resetNightWOWSpins.bind(this, e), resetAllWOWSpins = this.resetAllWOWSpins.bind(this, e), setNightWOWRewardIndex = GameConstants.setNightWOWRewardIndex.bind(this, e), testRandom = this.testRandom.bind(this, e), enableSplitTestGroups = this.enableSplitTestGroups.bind(this, e), enableVerboseMetrics = this.enableVerboseMetrics.bind(this, e), changeDayLength = this.changeDayLength.bind(this, e), forceActivityZoneMonsterId = this.forceActivityZoneMonsterId.bind(this, e))
 	},
 	playScene: function(e, t, i) {
 		e.prodigy.world.playScene(t + "-" + i)
@@ -84390,19 +84380,19 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		Util.isDefined(this.initCallback) || (this.game.broadcaster.addAppListener(Prodigy.Events.FriendsList.SEND_REQUEST, this.sendFriendRequest.bind(this), this, "Card", !0), this.game.broadcaster.addAppListener(Prodigy.Events.FriendsList.CANCEL_REQUEST, this.cancelFriendRequest.bind(this), this, "Card", !0), this.game.broadcaster.addAppListener(Prodigy.Events.FriendsList.REMOVE_FRIEND, this.removeFriend.bind(this), this, "Card", !0), this.game.broadcaster.addAppListener(Prodigy.Events.FriendsList.GET_TOTAL_FRIEND_REQUESTS, this.getFriendsList.bind(this), this, "FriendsList", !0), this.game.broadcaster.addAppListener(Prodigy.Events.FriendsList.CLEAR_FRIEND_REQUESTS_CACHE, this.clearFriendRequestsCache.bind(this), this, "FriendsList", !0), this.initCallback = e, this.getTotalFriendRequests())
 	},
 	getTotalFriendRequests: function() {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.getTotalFriendRequests(this.getTotalFriendRequestsSuccess.bind(this), this.networkCallFailure.bind(this))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.getTotalFriendRequests(this.getTotalFriendRequestsSuccess.bind(this))
 	},
 	getTotalFriendRequestsSuccess: function(e) {
 		this.pendingRequests = e.data.pendingRequests, this.friendsCap = e.meta.friendsCap, this.totalFriends = e.meta.totalFriends, this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.GET_TOTAL_FRIEND_REQUESTS, "FriendsList", [this.pendingRequests])
 	},
 	getFriendsList: function() {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.getFriendsList(this.getFriendsListSuccess.bind(this), this.networkCallFailure.bind(this))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.getFriendsList(this.getFriendsListSuccess.bind(this))
 	},
 	getFriendsListSuccess: function(e) {
 		this.game.prodigy.loading(!1), this.friendsList = e.data, this.friendsCap = e.meta.friendsCap, this.totalFriends = e.meta.totalFriends, this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.GOT_FRIENDS_LIST, "FriendsList", [this.friendsList]), Util.isDefined(this.initCallback) && this.initCallback(this.pendingRequests)
 	},
 	getFriendRequestList: function(e, t) {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.getFriendRequestList(e || this.friendRequestList.length, t, this.getFriendRequestListSuccess.bind(this), this.networkCallFailure.bind(this))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.getFriendRequestList(e || this.friendRequestList.length, t, this.getFriendRequestListSuccess.bind(this))
 	},
 	getFriendRequestListSuccess: function(e) {
 		this.game.prodigy.loading(!1), this.friendsCap = e.meta.friendsCap, this.totalFriends = e.meta.totalFriends;
@@ -84432,7 +84422,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.friendRequestList = []
 	},
 	sendFriendRequest: function(e) {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.sendFriendRequest(e, this.sendFriendRequestSuccess.bind(this, e), this.networkCallFailure.bind(this))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.sendFriendRequest(e, this.sendFriendRequestSuccess.bind(this, e))
 	},
 	sendFriendRequestSuccess: function(e, t) {
 		if (this.game.prodigy.loading(!1), "ACCEPT" === t.data.action) this.acceptFriendRequestSuccess(e, 0, t);
@@ -84459,7 +84449,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.pendingRequests++, this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.REQUEST_RECEIVED, "HUD", [this.pendingRequests]), this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.REQUEST_RECEIVED, "FriendsList", [this.pendingRequests])
 	},
 	cancelFriendRequest: function(e) {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.cancelFriendRequest(e, this.cancelFriendRequestSuccess.bind(this, e), this.networkCallFailure.bind(this))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.cancelFriendRequest(e, this.cancelFriendRequestSuccess.bind(this, e))
 	},
 	cancelFriendRequestSuccess: function(e, t) {
 		this.game.prodigy.loading(!1), this.friendsCap = t.meta.friendsCap, this.totalFriends = t.meta.totalFriends, this.removeUserFromArray(this.friendsList, e);
@@ -84480,7 +84470,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.pendingRequests--, this.removeUserFromArray(this.friendRequestList, e.userID), this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.REQUEST_CANCELLED, "HUD", [this.pendingRequests]), this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.REQUEST_CANCELLED, "FriendsList", [this.pendingRequests]), this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.REQUEST_CANCELLED, "FriendRequests", [this.friendRequestList])
 	},
 	acceptFriendRequest: function(e, t) {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.acceptFriendRequest(e, this.acceptFriendRequestSuccess.bind(this, e, t), this.networkCallFailure.bind(this, e, t))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.acceptFriendRequest(e, this.acceptFriendRequestSuccess.bind(this, e, t))
 	},
 	acceptFriendRequestSuccess: function(e, t, i) {
 		this.game.prodigy.loading(!1), Util.isDefined(i) && (this.friendsCap = i.meta.friendsCap, this.totalFriends = i.meta.totalFriends), this.friendsList.push({
@@ -84502,14 +84492,14 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 	},
 	getUserAppearance: function(e) {
 		for (var t = "", i = "", a = 0; a < e.length; a++) i = e[a].userID + ",", t = t.concat(i);
-		(t = t.replace(/,$/, "")).length > 0 && this.game.prodigy.network.getCharData(t, ["appearance", "isMember", "equipment", "data"], this.onGetUserAppearance.bind(this), this.networkCallFailure.bind(this))
+		(t = t.replace(/,$/, "")).length > 0 && this.game.prodigy.network.getCharData(t, ["appearance", "isMember", "equipment", "data"], this.onGetUserAppearance.bind(this))
 	},
 	onGetUserAppearance: function(e) {
 		for (var t in e)
 			for (var i = 0; i < this.friendsList.length; i++) this.friendsList[i].userID === parseFloat(t) && (this.friendsList[i].appearance = JSON.parse(e[t].appearance), this.friendsList[i].isMember = JSON.parse(e[t].isMember), this.friendsList[i].data = JSON.parse(e[t].data), this.friendsList[i].equipment = JSON.parse(e[t].equipment), this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.FRIENDS_APPEARANCE_UPDATED, "" + this.friendsList[i].userID, [this.friendsList[i]]))
 	},
 	rejectFriendRequest: function(e, t) {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.rejectFriendRequest(e, this.rejectFriendRequestSuccess.bind(this, e, t), this.networkCallFailure.bind(this, e, t))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.rejectFriendRequest(e, this.rejectFriendRequestSuccess.bind(this, e, t))
 	},
 	rejectFriendRequestSuccess: function(e, t, i) {
 		this.game.prodigy.loading(!1), this.friendsCap = i.meta.friendsCap, this.totalFriends = i.meta.totalFriends, this.removeUserFromArray(this.friendRequestList, e), this.pendingRequests--;
@@ -84527,7 +84517,7 @@ Prodigy.NetworkHandlers.NetworkHandler = function(e) {
 		this.removeUserFromArray(this.friendsList, e.userID), this.totalFriends--, this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.REQUEST_REJECTED, "FriendsList", [e.userID, e.requestID]), this.game.broadcaster.broadcast(Prodigy.Events.FriendsList.REQUEST_REJECTED, "Card", [])
 	},
 	removeFriend: function(e) {
-		this.game.prodigy.loading(!0), this.game.prodigy.network.removeFriend(e, this.removeFriendSuccess.bind(this, e), this.networkCallFailure.bind(this))
+		this.game.prodigy.loading(!0), this.game.prodigy.network.removeFriend(e, this.removeFriendSuccess.bind(this, e))
 	},
 	removeFriendSuccess: function(e, t) {
 		this.game.prodigy.loading(!1), this.friendsCap = t.meta.friendsCap, this.totalFriends = t.meta.totalFriends, this.removeUserFromArray(this.friendsList, e);
