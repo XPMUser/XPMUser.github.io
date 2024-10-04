@@ -44270,7 +44270,7 @@ var CharSelect = function() {
             for (var s = 0; s < this.btns.length; s++) s > 0 && (this.btns[s].x = this.btns[s - 1].x + this.btns[s - 1].width + 5), this.btns[s].y = -this.btns[s].height
         }
         return e.prototype = Object.create(Prodigy.Element.prototype), e.prototype.checkNew = function(e, t, a) {
-            Util.isDefined(e) && this.game.prodigy.player.tutorial.getMenuValue(1, t) < a && (e.newText = new BitmapFont(this.game, e, 0, 0, "New!", {
+            Util.isDefined(e) && this.game.prodigy.player.tutorial.getMenuValue(1, t) < a && (e.newText = new BitmapFont(this.game, e, 0, 0, "", {
                 width: 80,
                 align: "center"
             }), this.game.add.tween(e.newText).to({
@@ -63729,7 +63729,7 @@ Prodigy.MenuFactory = function(e) {
         this._menus.push(new Store(this.game, this.menuLayer, e, t, a))
     }
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function(e) {
-    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition version 2.1.2", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
+    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition Version 2.1.2a", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
 }, Prodigy.GameObj.prototype = {
     init: function(e) {
         this.textureBelow = e.add.renderTexture(1280, 720), this.textureAbove = e.add.renderTexture(1280, 720), this.textureMenu = e.add.renderTexture(1280, 720)
