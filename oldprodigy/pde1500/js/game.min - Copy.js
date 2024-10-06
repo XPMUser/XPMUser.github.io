@@ -16,10 +16,7 @@ function ApiClient(e, t) {
 			timeout: 3e4,
 			type: e,
 			success: a["200"],
-			crossDomain: !0,
-			error: function(e) {
-				"Service Unavailable" === e.responseText && (e.status = 503), void 0 !== a[e.status] ? a[e.status](s, e.status) : o.generic_ajax_error(s, e.status)
-			}
+			crossDomain: !0
 		};
 		r.ignoreHeaders && (n.headers = null), $.ajax(n)
 	}
@@ -3429,7 +3426,7 @@ Util.capitalize = function(e) {
 			v: 3
 		},
 		"voice-1": {
-			type: "localAtlas",
+			type: "bgm",
 			v: 3
 		},
 		"voice-2": {
@@ -45481,7 +45478,7 @@ Prodigy.ForestBoss = function(e, t) {
         this.game.prodigy.open.confirm("Your wizard's gender has been set to " + this.game.prodigy.player.appearance.getGender() + "!\n\n\nWould you like to change your first name, or leave it as is?\n(you can always change it again later)", this.game.prodigy.open.nameChange.bind(this.game.prodigy.open, true), null, null, "System Menu")
     },
 	openCredits: function() {
-		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "Open-Source Mode Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Ideas By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc" : "Open-Source Definitive Edition Team: XPMUser & Toonigy, Original Game By Prodigy Education a.k.a SMARTeacher, Definitive Edition Idea By Daboss7173, Project Contributors: Prodigy Education, Daboss7173, XPMUser, Toonigy, NomadX2, Craftersshaft, Mr. Intend, Peridot/Starry Ciocirlan, Stefan25897 (Formerly King Raber), etc";
 		this.game.prodigy.create.font(this.content, 0, 50, e, {
 			width: 600,
 			align: "center"
@@ -47924,11 +47921,11 @@ Prodigy.ForestBoss = function(e, t) {
 	changeOpponent: function() {
 		this.data = Prodigy.Menu.Coliseum.data[this.index], this.opponent = new Player(this.game), this.opponent.init(this.data.opponent), Util.isDefined(this.petV) && this.petV.destroy(), this.data.pets.length > 0 && (this.petV = this.game.prodigy.create.monster(this, new Monster(this.data.pets[0], this.game), 2, 250, 390), this.petV.reload()), Util.isDefined(this.playerV) && this.playerV.destroy(), this.playerV = this.game.prodigy.create.player(this, this.opponent, 2, 350, 390), this.data.pets.length <= 0 && (this.playerV.x -= 55), this.playerV.reload();
 		var e = this.data.drops[0];
-		if ("gold" === e.type ? this.itemIcon.setValue("item/26", e.N) : this.itemIcon.setValue(e.type + "/" + e.ID, 1), this.index > Math.floor(this.player.getLevel() / 5) || this.index > this.game.prodigy.player.getColiseum()) {
+		if ("gold" === e.type ? this.itemIcon.setValue("item/26", e.N) : this.itemIcon.setValue(e.type + "/" + e.ID, 1), this.index > Math.floor(this.player.getLevel() / 0) || this.index > this.game.prodigy.player.getColiseum()) {
 			var t = "";
-			this.index < this.game.prodigy.player.getColiseum() ? (t = this.data.description, this.locked = !0, this.challengeButton.visible = !1, this.challengeButton.setInactive(), this.defeat.visible = !0) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
+			this.index < this.game.prodigy.player.getColiseum() ? (t = this.data.description, this.locked = !1, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
 		this.opponentName.setText(this.opponent.getName()), this.opponentTitle.setText("- " + this.data.title + " -"), this.description.setText(t)
-		} else this.index < this.game.prodigy.player.getColiseum() ? (t = this.data.description, this.locked = !0, this.challengeButton.visible = !1, this.challengeButton.setInactive(), this.defeat.visible = !0) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
+		} else this.index < this.game.prodigy.player.getColiseum() ? (t = this.data.description, this.locked = !1, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
 		this.opponentName.setText(this.opponent.getName()), this.opponentTitle.setText("- " + this.data.title + " -"), this.description.setText(t)
 	},
 	challenge: function() {
@@ -47952,7 +47949,7 @@ Prodigy.ForestBoss = function(e, t) {
 			if (Util.isDefined(a))
 				for (var s = 0; s < a.length; s++) delete a[s].hp;
 			var r = {
-				screen: "bg-battle-arena",
+				screen: "bg-battle-academy",
 				opponent: [Prodigy.Menu.Coliseum.data[e].opponent],
 				drops: Prodigy.Menu.Coliseum.data[e].drops,
 				catch: !1,
@@ -48684,6 +48681,56 @@ Prodigy.ForestBoss = function(e, t) {
 	drops: [{
 		type: "gold",
 		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Techeater Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+	},
+	title: "Prodidows",
+	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
+	pets: [{
+                ID: 1,
+                level: 1
+            }, {
+                ID: 4,
+                level: 1
+            }, {
+                ID: 7,
+                level: 1
+            }, {
+                ID: 10,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Techeater David", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+	},
+	title: "XPMUser",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 1,
+                level: 1
+            }, {
+                ID: 4,
+                level: 1
+            }, {
+                ID: 7,
+                level: 1
+            }, {
+                ID: 10,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
 	}]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
@@ -55284,7 +55331,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user. Press the Enter key to see the entire message so that it's easier to read it.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy Version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition Version 2.1.3"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition Version 2.1.4"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -56354,7 +56401,7 @@ Prodigy.Skin = function(e, t) {
 		Util.isDefined(e.purchasedEventItems) ? e.purchasedEventItems++ : e.purchasedEventItems = 1, e.boughtEventItem++
 	}
 }), Prodigy.Pumpkinfest = function() {
-	Prodigy.Skin.call(this, ["tileset-town-october", "event-pumpkinfest", "npc-sprite-julia_ghoulia"], ["lamplight-A2", "lamplight-A3", "lamplight-A4", "lamplight-B0", "lamplight-B1", "lamplight-B2", "lamplight-B3", "lamplight-B4", "lamplight-B5", "lamplight-C2", "lamplight-C3", "lamplight-C4"]), this._store = {
+	Prodigy.Skin.call(this, ["tileset-town-october", "event-pumpkinfest", "event-october", "npc-sprite-julia_ghoulia"], ["lamplight-A2", "lamplight-A3", "lamplight-A4", "lamplight-B0", "lamplight-B1", "lamplight-B2", "lamplight-B3", "lamplight-B4", "lamplight-B5", "lamplight-C2", "lamplight-C3", "lamplight-C4"]), this._store = {
 		name: "PUMPKINFEST SHOP",
 		ends: (new Date).getDate(),
 		pages: [{
@@ -56669,8 +56716,8 @@ Prodigy.Skin = function(e, t) {
 		var a = e.prodigy.player.canDoDaily(this.daily, this.resetDaily.bind(this, e.prodigy.player)),
 			s = e.prodigy.player.data[this.daily].pumpkinData;
 		if (Util.isDefined(s) && Util.isDefined(s[i])) {
-			var r = null,
-				o = null;
+			var r = "event-pumpkinfest",
+				o = "event-pumpkinfest";
 			if (a) {
 				var n = s[i][0],
 					h = s[i][1];
@@ -56711,12 +56758,12 @@ Prodigy.Skin = function(e, t) {
 		e.prodigy.world.teleport(t, this.target[0], this.target[1])
 	},
 	dailyBattleComplete: function(e, t) {
-		e.prodigy.network.sendAnalytics("OCT-2099", "dailyComplete", "Events");
+		e.prodigy.network.sendAnalytics("OCT-2024", "dailyComplete", "Events");
 		var i = e.prodigy.player.data[this.daily];
 		Util.isDefined(i.totalCompleted) ? i.totalCompleted++ : (i.totalCompleted = 1, 1 === e.prodigy.player.eventSignClicked && (i.signClickedAndDailyCompleted = 1)), e.prodigy.player.completeDaily(this.daily, 1), e.prodigy.world.teleport(t, this.target[0], this.target[1])
 	},
 	openStore: function(e) {
-		e.prodigy.network.sendAnalytics("OCT-2099", "storeOpened", "Events"), e.prodigy.open.store(this._store, null, {
+		e.prodigy.network.sendAnalytics("OCT-2024", "storeOpened", "Events"), e.prodigy.open.store(this._store, null, {
 			shopkeeperTag: "npc-face-julia_ghoulia",
 			scaleX: .89,
 			scaleY: .89
@@ -57562,6 +57609,7 @@ Prodigy.Skin = function(e, t) {
 	this.game = e, this.active = [new Prodigy.MagicParticle2]
 }, Prodigy.SkinFactory.prototype = {
 	constructor: Prodigy.SkinFactory,
+  active: [new Prodigy.Pumpkinfest],
 	activeStore: function() {
 		for (var e = 0; e < this.active.length; e++) {
 			var t = this.active[e].getStoreData();
@@ -66096,10 +66144,10 @@ Arena.AUDIO = [{
 	atlas: "zone-academy",
 	fullName: "Lamplight Arena Academy",
 	battle: {
-		screen: "bg-battle-arena"
+		screen: "bg-battle-academy"
 	},
 	dialogue: [{
-		text: "Do you want to train in the arena?",
+		text: "Do you want to train in the academy?",
 		face: 0,
 		anim: 4,
 		audio: Arena.AUDIO[0]
@@ -66115,7 +66163,7 @@ Arena.AUDIO = [{
 		},
 		icon: "emblem-rank1",
 		rank: 0,
-		top: "Bronze Rank",
+		top: "Get some items here!",
 		items: [{
 			ID: 76,
 			type: "item"
@@ -66311,7 +66359,7 @@ Arena.AUDIO = [{
 		},
 		icon: "emblem-rank2",
 		rank: 0,
-		top: "Silver Rank",
+		top: "Red Light",
 		items: [{
 			ID: 59,
 			type: "hat"
@@ -66330,7 +66378,7 @@ Arena.AUDIO = [{
 		},
 		icon: "emblem-rank3",
 		rank: 0,
-		top: "Gold Rank",
+		top: "Breath of the Wild",
 		items: [{
 			ID: 60,
 			type: "hat"
@@ -66349,7 +66397,7 @@ Arena.AUDIO = [{
 		},
 		icon: "emblem-rank4",
 		rank: 0,
-		top: "Platinum Rank",
+		top: "Draconyx",
 		items: [{
 			ID: 61,
 			type: "hat"
@@ -66368,7 +66416,7 @@ Arena.AUDIO = [{
 		},
 		icon: "emblem-rank5",
 		rank: 0,
-		top: "Diamond Rank",
+		top: "Trialmaster Legends",
 		items: [{
 			ID: 23,
 			type: "hat"
@@ -67985,7 +68033,7 @@ Arena.AUDIO = [{
 		text: "Please come back between 4pm and 11pm to spin the Twilight Wheel for great prizes!",
 		anim: 2
 	}, {
-		text: "Hi there! Do you want to Spin a copy of the Wheel of Wonder?",
+		text: "Hi there! Do you want to spin a copy of the Wheel of Wonder?",
 		anim: 1
 	}, {
 		text: "Watch that wheel spin!",
@@ -67997,7 +68045,7 @@ Arena.AUDIO = [{
 		text: "Fantastic! Want to spin again?",
 		anim: 4
 	}, {
-		text: "Please come back tomorrow between 4pm and 11pm to spin the a copy of the Wheel of Wonder again for great prizes!",
+		text: "Please come back tomorrow between 4pm and 11pm to spin a copy of the Wheel of Wonder again for great prizes!",
 		anim: 2
 	}]
 }, WHEELDATA_A = {
