@@ -148,6 +148,7 @@ Currently, these are the versions that support modpacks:
  - 1-10-0 
  - prodigyde
  - pde2015
+ - oldprodigyde
  - pde1221
  - pde2016 (Prodigy Definitive Edition/Modified 1-30-0)
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
@@ -253,10 +254,10 @@ Lets scratch the surface shall we?
 - Clockwork Town - prodigyde - pde2016 & pde1500
 - 2015-2016's Intro - pde2015 - pde2016 & pde1500 - pde1.51.0
 - 2014-2015's Academy - prodigyde - pde1221 & pde1500 - pde1.51.0
-- Modpacks - prodigyde - pde2015, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, & pde2018 - pde2019 Warning: Imitation Titan isn't work correctly for pde2018 yet, so it's still in beta.
-- Full possiblity of disguising without starting over - prodigyde - pde2015, pde1221, & pde1500
-- First Name changing possibility - pde2015 & pde1500
-- Middle Name & Last Name changing possiblity - pde2015 & pde1500
+- Modpacks - prodigyde - oldprodigyde, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, & pde2018 - pde2019 Warning: Imitation Titan isn't work correctly for pde2018 yet, so it's still in beta.
+- Full possiblity of disguising without starting over - prodigyde - oldprodigyde, pde1221, & pde1500
+- First Name changing possibility - pde2015 - oldprodigyde & pde1500
+- Middle Name & Last Name changing possiblity - pde2015 - oldprodigyde & pde1500
   
 Yep, you heard that right, that's just scratching the surface. There are lots of versions to choose from and modpacks are supported for some of them, so you can probably imagine what months of hard work can do to something like that. 
 
