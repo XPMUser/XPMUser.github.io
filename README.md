@@ -6,7 +6,7 @@ Old Prodigy Wiki: https://old-prodigy.fandom.com/wiki/Old_Prodigy_Wiki
 
 Old Prodigy Reddit Community: https://www.reddit.com/r/OldProdigy/
 
-Warning: You need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom.
+You'll need to be at least 13 years old to use Discord, Reddit, Github, YouTube (not YouTube Kids), and Fandom. If you're at least 16 years old in California, you can use Fandom.
 
 If you're playing my Old Prodigy versions, Definitive Editions, Ultimate Editions, or Prodidows versions, and you experience bugs, or want a new feature added, but you're under 13, ask your parents to ask for anything or report bugs on my Discord Server.
 
@@ -39,8 +39,6 @@ Original Prodigy Makers: Rohan Mahimker/Alexander Peters
 XPMUser is the default username of an account to use in Windows XP Mode in Windows 7. 
 I was named after the Windows XP Mode user.
 I'm Ao28th28 (The PVZ Proditany Edition (Formerly PVZ Unknown Edition and CWL) Maker).
-
-Old Prodigy English is coming soon!
 
 # Table of Contents 
 1. XPMUser.github.io: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#xpmusergithubio
@@ -284,6 +282,6 @@ https://play.prodigygame.com/ If you want to play as a student during free time 
 
 ## Another Prodigy Definitive Edition (Daboss7173's PDE)
 
-This version includes multiplayer mode, Google OAuth, Holiday Events, etc, is in 1.50.0 Mode like my pde1500, but it's somehow different than my pde1500, and it also has the completely fixed education system, but it's optional. This is the only Prodigy version where you can get arena points in the game.
+This version includes multiplayer mode, Google OAuth, Holiday Events, etc and is in 1.50.0 Mode like my pde1500, but it's somehow different than my pde1500, and it also has the completely fixed education system, but it's optional. This is the only Prodigy version where you can get arena points in the game.
 Older versions won't work anymore due to the Wayback Machine not booting up.
 Daboss7173's Prodigy Definitive Edition: https://oldprodigy.onrender.com/play
