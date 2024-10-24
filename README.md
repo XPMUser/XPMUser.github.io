@@ -279,9 +279,3 @@ it is now. This is the only open-source Prodigy version that supports apis and O
 In case you don't know how to get there somehow, here's the link: https://sso.prodigygame.com/game/login/
 
 https://play.prodigygame.com/ If you want to play as a student during free time and you're an adult.
-
-## Another Prodigy Definitive Edition (Daboss7173's PDE)
-
-This version includes multiplayer mode, Google OAuth, Holiday Events, etc and is in 1.50.0 Mode like my pde1500, but it's somehow different than my pde1500, and it also has the completely fixed education system, but it's optional. This is the only Prodigy version where you can get arena points in the game.
-Older versions won't work anymore due to the Wayback Machine not booting up.
-Daboss7173's Prodigy Definitive Edition: https://oldprodigy.onrender.com/play
