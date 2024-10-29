@@ -988,7 +988,7 @@ Prodigy.Assets = function () {
 		},
 		icons: {
 			type: "atlas",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/general-icons/42/general-",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/general-",
 			url: "icons.png",
 			json: "icons.json"
 		},
@@ -53494,7 +53494,7 @@ Prodigy.MenuFactory = function (e) {
 		new Store(this.game, this.menuLayer, e, t, a).setup()
 	}
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function (e) {
-	this.version = "Definitive Edition version 2.0.1",
+	this.version = "Definitive Edition version 2.0.1a",
 	this.version2 = "Prodigy version 1.16.5",
     this.player = new Player,
     this.assets = new Prodigy.Assets,
