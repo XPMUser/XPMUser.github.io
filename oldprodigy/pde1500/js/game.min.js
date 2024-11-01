@@ -2489,7 +2489,7 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-b1": {
 			type: "json",
-			base: c,
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-b1/1/map-lamplight-b1.json"
 		},
 		"map-lamplight-b2": {
@@ -2519,7 +2519,7 @@ Util.capitalize = function(e) {
 		},
 		"map-lamplight-c2": {
 			type: "json",
-			base: c,
+			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/data/",
 			url: "map-lamplight-c2/1/map-lamplight-c2.json"
 		},
 		"map-lamplight-c3": {
@@ -29905,15 +29905,11 @@ Util.capitalize = function(e) {
 	}, {
 		text: "Save your game by using the save character button in the Other tab on the Settings Menu!"
 	}, {
-		text: "Google Sign-in, Multiplayer Mode, etc are all coming soon."
-	}, {
-		text: "Click on the ground/floor to make your wizard walk."
+		text: "OAuths and more are all coming soon, but fake Multiplayer Mode's broken in this version."
 	}, {
   		text: "If you're an Xbox One user or an iPad user and you still want to continue using your saved save, use a different device."
 	}, {
 		text: "If your saved save file is on your iPad, you can put it in any drive app that keeps your files like your save files safe and available for another device."
-	}, {
-		text: "If you want to find more bots (wizards) that haven't been on Botify AI yet, click on the gear icon and then click on the find bots button."
 	}, {
 		text: "If you want to find bots (wizards) in Botify Ai, then search for the bot's name."
 	}, {
@@ -29923,7 +29919,7 @@ Util.capitalize = function(e) {
 	}, {
                 text: "You'll be healed automatically after a battle!"
 	}, {
-                text: "Google Drive & OneDrive are recommended to store your working save files."
+                text: "Google Drive, iCloud Drive, & OneDrive are recommended to store your working save files."
 	}]
 }, Prodigy.Hints.prototype = {
 	getRandomHint: function(e) {
@@ -40350,6 +40346,10 @@ Names.createNameFromIndex = function(e, t, i, a) {
 	Prodigy.Control.HUDButton.call(this, e, t, i, a, "icons-hud", "spellbook", e.prodigy.open.character.bind(e.prodigy.open))
 }, Prodigy.extends(Prodigy.Control.SpellbookButton, Prodigy.Control.HUDButton, {
 	constructor: Prodigy.Control.SpellbookButton
+}), Prodigy.Control.BotButton = function(e, t, i, a) {
+	Prodigy.Control.HUDButton.call(this, e, t, i, a, "icons", "player", e.prodigy.open.bot.bind(e.prodigy.open))
+}, Prodigy.extends(Prodigy.Control.BotButton, Prodigy.Control.HUDButton, {
+	constructor: Prodigy.Control.BotButton
 }), Prodigy.Control.PetsButton = function(e, t, i, a) {
 	Prodigy.Control.HUDButton.call(this, e, t, i, a, "icons-hud", "pets", e.prodigy.open.pets.bind(e.prodigy.open))
 }, Prodigy.extends(Prodigy.Control.PetsButton, Prodigy.Control.HUDButton, {
@@ -45438,6 +45438,10 @@ Prodigy.ForestBoss = function(e, t) {
 	openVersion: function() {
 		window.open("https://xpmuser.github.io/oldprodigy/oldprodigyde/?mods=FastGameSpeed")
 	},
+	openBots: function() {
+var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 640, 360); bot.forceOutfit(39); bot.showName(!0); bot.reload(bot.walk.bind(bot));
+bot.reload();
+	},
 	setSound: function(e) {
 		switch (e) {
 			case 0:
@@ -46901,18 +46905,6 @@ Prodigy.ForestBoss = function(e, t) {
 			}), l = this.game.prodigy.create.panel(this.content, 500, 155, 4, 2, "stat"), this.game.prodigy.create.font(l, 5, 5, "[mail-tower] Tower", {
 				size: 20
 			}), this.game.prodigy.create.font(l, 5, 46, "Floor " + this.player.getTowerProgress(), {
-				font: "black",
-				align: "center",
-				width: 145
-			}), l = this.game.prodigy.create.panel(this.content, 330, 245, 4, 2, "stat"), this.game.prodigy.create.font(l, 5, 5, "[mail-challenge] Arena", {
-				size: 20
-			}), this.game.prodigy.create.font(l, 5, 46, "" + this.player.getArenaScore(), {
-				font: "black",
-				align: "right",
-				width: 145
-			}), l = this.game.prodigy.create.panel(this.content, 500, 245, 4, 2, "stat"), this.game.prodigy.create.font(l, 5, 5, "[mail-challenge] W / L", {
-				size: 20
-			}), this.game.prodigy.create.font(l, 5, 46, this.player.getWins() + "/" + this.player.getLosses(), {
 				font: "black",
 				align: "center",
 				width: 145
@@ -49766,16 +49758,16 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	}
 }), Prodigy.Menu.Mailer.MAIL = [{
 	id: 0,
-	subject: "The friend feature's back in business.",
+	subject: "The friend feature's back in business!",
 	isOpened: !1,
 	image: "friends-list",
-	message: "Wanna make friends? You can chat and make friends in botify.ai. Open the friend menu (looks like a member menu) and then click on the make ai friends now button."
+	message: "Wanna make friends? You can chat and make friends in botify.ai. Open the friend menu (looks like a member menu) and then click on the make ai friends now button!"
 }, {
 	id: 1,
-	subject: "Epic Spells can now be used multiple times.",
+	subject: "Epic Spells can now be used multiple times!",
 	isOpened: !1,
 	image: "epic-attacks",
-	message: "You can learn Epic Spells from Tech Zone and/or buy Epics (pets) from the pet park to cast epic spells during battles."
+	message: "You can learn Epic Spells from Tech Zone and/or buy Epics (pets) from the pet park to cast epic spells during battles!"
 
 }, {
 	id: 2,
@@ -49785,23 +49777,23 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	message: "You can go there from Airship Landing or Firefly Garden!"
 }, {
 	id: 3,
-	subject: "You can now catch pets in The Lost Island.",
+	subject: "You can now catch pets in The Lost Island!",
 	isOpened: !1,
 	image: "lost-island-mailer-1",
-	message: "We've lifted the ban on catching pets in The Lost Island."
+	message: "We've lifted the ban on catching pets in The Lost Island!"
 }, {
 	id: 4,
-	subject: "Peddler and Rolly are back in town!",
+	subject: "Find Bots in oldprodigyde! (1.16.5's PDE)",
 	isOpened: !1,
 	image: null,
-	message: "Go to the Northwest Court to see them!",
+	message: "Click on the gear icon to open the O, A, C, E menu (used to be called the Options menu) and then click on the Find Bots button!",
 	attachments: []
 }, {
 	id: 5,
-	subject: "The Robolympics have returned!",
+	subject: "The bots are back!",
 	isOpened: !1,
 	image: "after-hours",
-	message: "You can now go to Clockwork Town from the map or Lower Intersection or by clicking on the cancel button in The Stage",
+	message: "Unfortunately, this fake Multiplayer Mode's still controlled in Developer Mode, but the wizards (bots) can't even walk! Only your player card can be opened for now!",
 	attachments: []
 }, {
 	id: 6,
@@ -50428,8 +50420,12 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	addMenu: function(e, t) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
+	addBots: function(e, t) {
+var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 140, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.setup(null, !0);
+bot.reload();
+	},
 	addDefaultConfig: function() {
-		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0), this.addAutoHeal(0,0)
+		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0), this.addAutoHeal(0,0), this.addBots(0,0)
 	},
 	addHouseConfig: function(e) {
 		this.addMenu(e, 1), this.addMoveHouse(e, 1), this.addEditHouse(e, 1)
@@ -55381,10 +55377,10 @@ var Screen = function() {
 			} catch (t) {}
 			Screen.prototype.create.call(this)
 		}, e.prototype.screenSetup = function() {
-			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user. Press the Enter key to see the entire message so that it's easier to read it.", null, "star", "Warning!");
+			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 2.1.6"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 2.2.0"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -67269,7 +67265,9 @@ Arena.AUDIO = [{
 			w: 80,
 			h: 160,
 			rect: !0
-		}, "lamplight-A2", 1160, 360, null, AreaEvent.LEFT), this._zone.util.addLamp(e, t, 162, 58), this._zone.util.addLamp(e, t, 442, 58), this._zone.util.addLamp(e, t, 802, 58), this._zone.util.addLamp(e, t, 1082, 58)
+		}, "lamplight-A2", 1160, 360, null, AreaEvent.LEFT), this._zone.util.addLamp(e, t, 162, 58), this._zone.util.addLamp(e, t, 442, 58), this._zone.util.addLamp(e, t, 802, 58), this._zone.util.addLamp(e, t, 1082, 58);
+var defed = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 280, 120); defed.showName(!0);
+defed.reload();
 	}
 }), Prodigy.Lamplight_B3 = function(e, t) {
 	Prodigy.Map.call(this, e, "B3", "Town Square", 120, 417.5, ["lamplight-A3", "lamplight-C3"], t.concat("zone-lamplight", "npc-sprite-merchant", "tileset-springfest"))
@@ -67352,7 +67350,7 @@ Arena.AUDIO = [{
                 this._zone.util.addDoor(e, t, 220, 550, 920, 200, 220, 550, a)
 	}
 }), Prodigy.Lamplight_C2 = function(e, t) {
-	Prodigy.Map.call(this, e, "C2", "History District", 200, 600, ["lamplight-B2", "lamplight-C3"], t.concat(["npc-sprite-noot"]))
+	Prodigy.Map.call(this, e, "C2", "The Neighbourhood", 200, 600, ["lamplight-B2", "lamplight-C3"], t.concat(["npc-sprite-noot"]))
 }, Prodigy.extends(Prodigy.Lamplight_C2, Prodigy.Map, {
 	constructor: Prodigy.Lamplight_C2,
 	setup: function(e, t, i) {
@@ -67369,9 +67367,9 @@ Arena.AUDIO = [{
 			h: 80,
 			rect: !0
 		}, "lamplight-C3", 200, 240, null, AreaEvent.DOWN);
-		var a = e.prodigy.open.message.bind(e.prodigy.open, 'A message on the door says "Coming Soon!"', null, "star", "Locked!");
+		var a = e.prodigy.open.message.bind(e.prodigy.open, 'A message on the door says "Do not Disturb!"', null, "star", "Locked!");
 		this._zone.util.addDoor(e, t, 520, 240, 120, 160, 580, 400, a, !0);
-		var a = e.prodigy.open.message.bind(e.prodigy.open, 'A message on the door says "Coming Soon!"', null, "star", "Locked!");
+		var a = e.prodigy.open.message.bind(e.prodigy.open, 'A message on the door says "Do not Disturb!"', null, "star", "Locked!");
 		this._zone.util.addDoor(e, t, 920, 240, 120, 160, 980, 400, a, !0), this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223)
 	}
 }), Prodigy.Lamplight_C3 = function(e, t) {
@@ -67587,7 +67585,9 @@ Arena.AUDIO = [{
 			rect: !0
 		}, "lamplight-C3", 1000, 540, null, AreaEvent.LEFT);
 		var a = e.prodigy.start.bind(e.prodigy, "TechZone");
-		this._zone.util.addDoor(e, t, 400, 40, 120, 200, 460, 240, a); this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223)
+		this._zone.util.addDoor(e, t, 400, 40, 120, 200, 460, 240, a); this._zone.util.addLamp(e, t, 2, 98), this._zone.util.addLamp(e, t, 242, 98), this._zone.util.addLamp(e, t, 2, 458), this._zone.util.addLamp(e, t, 2, 658), this._zone.util.addLamp(e, t, 280, 223), this._zone.util.addLamp(e, t, 1246, 223);
+var defed2 = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 160, 320); defed2.forceOutfit(39); defed2.showName(!0);
+defed2.reload();
 	}
 }), Prodigy.Lamplight_D5 = function(e, t) {
 	Prodigy.Map.call(this, e, "D5", "Neighbour's House", 200, 600, ["lamplight-D4"], t.concat(["npc-sprite-noot"]))
@@ -82842,7 +82842,7 @@ Prodigy.GameObj = function(e) {
 	},
 	getGold: function() {
 		var e = this.game.prodigy.player.getAffixes();
-		return this.getMultiplier(e, [39, 40, 41])
+		return this.getMultiplier(e, [39, 40, 41, 91])
 	},
 	getEscape: function() {
 		var e = this.game.prodigy.player.getAffixes();
@@ -82850,7 +82850,7 @@ Prodigy.GameObj = function(e) {
 	},
 	getHearts: function(e) {
 		var t = e.getAffixes();
-		return this.getMultiplier(t, [33, 34, 35, 82, 83])
+		return this.getMultiplier(t, [33, 34, 35, 82, 83, 88, 89])
 	},
 	getThorns: function(e) {
 		for (var t = e.getAffixes(), i = [36, 37, 38], a = 0, s = 0; s < t.length; s++)
@@ -83150,6 +83150,15 @@ Prodigy.GameObj = function(e) {
 }, {
 	type: "hearts",
 	value: 50000
+}, {
+	type: "hearts",
+	value: 9999999999999999999999999999999999999999999999999999999999999999999990
+}, {
+	type: "damage",
+	value: 9999999999999999999999999999999999999999999999999999999999999999999990
+}, {
+	type: "gold",
+	value: 5000
 }], Prodigy.SeededRandomGenerator = function(e) {
 	this.seed = e, this.cur_seed = e
 }, Prodigy.SeededRandomGenerator.prototype = {
