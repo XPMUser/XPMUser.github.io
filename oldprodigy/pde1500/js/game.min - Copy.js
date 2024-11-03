@@ -30139,12 +30139,12 @@ Items.getItemData = function(e, t) {
 	}
 	return s += 50 * a, s += 25 * (i.h || 0), s += 50 * (i.d || 0)
 }, Items.DROP_RATE_BY_TYPE = {
-	outfit: 1,
-	weapon: 1,
-	hat: 1,
-	boots: 1,
-	item: 1
-}, Items.DROP_RATE_BY_RARITY = [1, .75, .5, .25, .1], Items.RARITY_COLOR = ["#c7c7c7", "#6fc159", "#408cd9", "#b93ae2", "#f7942e"], Items.RARITY = ["common", "uncommon", "rare", "epic", "legendary"], Items.TYPES = ["outfit", "weapon", "boots", "hat", "item"], Items.createExtraAnimInfo = function(e, t, i, a, s) {
+	outfit: 4e-4,
+	weapon: 5e-4,
+	hat: .001,
+	boots: .001,
+	item: .025
+}, Items.DROP_RATE_BY_RARITY = [1, 1, 1, 1, 1], Items.RARITY_COLOR = ["#c7c7c7", "#6fc159", "#408cd9", "#b93ae2", "#f7942e"], Items.RARITY = ["common", "uncommon", "rare", "epic", "legendary"], Items.TYPES = ["outfit", "weapon", "boots", "hat", "item"], Items.createExtraAnimInfo = function(e, t, i, a, s) {
 	for (var r = [], o = 0; t > o; o++) r.push(e + "-" + o);
 	return {
 		animFrames: r,
@@ -45385,7 +45385,7 @@ Prodigy.ForestBoss = function(e, t) {
 }, Prodigy.extends(Prodigy.Menu.SystemMenu, Prodigy.RenderMenu, {
 	constructor: Prodigy.Menu.SystemMenu,
 	create: function() {
-		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(24, 13, "stat", "O, A, C, E", [{
+		this.addTransparent(), this.content = this.game.prodigy.create.element(this, 280, 260, 15, 8), this.createBaseSetup(25, 16, "stat", "O, A, C, E", [{
 			icon: "settings",
 			bot: "Sound"
 		}, {
@@ -45396,9 +45396,13 @@ Prodigy.ForestBoss = function(e, t) {
 			top: "Name &",
 			bot: "Gender"
 		}, {
-			icon: "player",
+			icon: "leaderboard",
 			top: "Game",
 			bot: "Credits"
+		}, {
+			icon: "player",
+			top: "Skin",
+			bot: "Tones"
 		}]), Prodigy.RenderMenu.prototype.create.call(this), this.setMode(0), this.game.prodigy.create.advButton(this, 930, 180, {
 			icon: "player",
                         top: "Find",
@@ -45427,6 +45431,9 @@ Prodigy.ForestBoss = function(e, t) {
 				break;
 			case 3:
 				this.openCredits();
+				break;
+			case 4:
+				this.openTones();
 				break;
 			default:
 				this.openSound()
@@ -45478,6 +45485,32 @@ bot.reload();
 			text: "Save Character",
 			size: Prodigy.Control.TextButton.MED
 		}, this.saveCharacter.bind(this))
+	},
+	openTones: function() {
+		var e = Util.isDefined(this.game.prodigy.player.world) ? "" + "Change your skin color." : "Change your skin color.";
+		this.game.prodigy.create.font(this.content, 0, 10, e, {
+			width: 600,
+			align: "center"
+		}), this.game.prodigy.create.textButton(this.content, 150, 50, {
+			text: "Skin Tone 1",
+			size: Prodigy.Control.TextButton.MED
+		}, this.SkinTone1.bind(this)),
+		this.game.prodigy.create.textButton(this.content, 150, 100, {
+			text: "Skin Tone 2",
+			size: Prodigy.Control.TextButton.MED
+		}, this.SkinTone2.bind(this)),
+		this.game.prodigy.create.textButton(this.content, 150, 150, {
+			text: "Skin Tone 3",
+			size: Prodigy.Control.TextButton.MED
+		}, this.SkinTone3.bind(this)),
+		this.game.prodigy.create.textButton(this.content, 150, 200, {
+			text: "Skin Tone 4",
+			size: Prodigy.Control.TextButton.MED
+		}, this.SkinTone4.bind(this)),
+		this.game.prodigy.create.textButton(this.content, 150, 250, {
+			text: "Skin Tone 5",
+			size: Prodigy.Control.TextButton.MED
+		}, this.SkinTone5.bind(this))
 	},
 	openGender: function() {
 		var e = Util.isDefined(this.game.prodigy.player.world) ? "" + "Switch your gender or change your name." : "Switch your gender or change your name.";
@@ -45541,6 +45574,21 @@ bot.reload();
 	},
 	MiddleandLastName: function() {
 		this.game.prodigy.open.nameChange()
+	},
+	SkinTone1: function() {
+		this.game.prodigy.player.appearance.data.skinColor=1, this.game.prodigy.open.okaymessage("Your skin tone has been changed. Teleport to any zone or change any part of your gear to make this change take effect on your reduced version of your wizard.")
+	},
+	SkinTone2: function() {
+		this.game.prodigy.player.appearance.data.skinColor=2, this.game.prodigy.open.okaymessage("Your skin tone has been changed. Teleport to any zone or change any part of your gear to make this change take effect on your reduced version of your wizard.")
+	},
+	SkinTone3: function() {
+		this.game.prodigy.player.appearance.data.skinColor=3, this.game.prodigy.open.okaymessage("Your skin tone has been changed. Teleport to any zone or change any part of your gear to make this change take effect on your reduced version of your wizard.")
+	},
+	SkinTone4: function() {
+		this.game.prodigy.player.appearance.data.skinColor=4, this.game.prodigy.open.okaymessage("Your skin tone has been changed. Teleport to any zone or change any part of your gear to make this change take effect on your reduced version of your wizard.")
+	},
+	SkinTone5: function() {
+		this.game.prodigy.player.appearance.data.skinColor=5, this.game.prodigy.open.okaymessage("Your skin tone has been changed. Teleport to any zone or change any part of your gear to make this change take effect on your reduced version of your wizard.")
 	},
 	exitGame: function() {
 		this.game.prodigy.network.logout()
@@ -47777,10 +47825,6 @@ bot.reload();
 			icon: "eyes-2",
 			callback: this.setEyes.bind(this),
 			title: "CHOOSE EYE COLOR"
-		}, {
-			icon: "player",
-			callback: this.setSkin.bind(this),
-			title: "CHOOSE SKIN COLOR"
 		}];
 		this.showFrame("player", "STYLIST", e, 0);
 		var t = this.game.prodigy.create.textButton(this, 0, 0, {
@@ -48776,6 +48820,19 @@ bot.reload();
 	drops: [{
 		type: "gold",
 		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Jeremy Monsterring", "gender":"male", "hairStyle":3, "hairColor":3, "skinColor":3, "eyeColor":11}',
+		equipment: '{}'
+	},
+	title: "Pde1500's screenshot character",
+	description: "This wizard was in a screenshot which was taken from pde1500.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
 	}]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
@@ -55380,7 +55437,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 2.2.0"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 2.3"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55998,7 +56055,7 @@ Intro = function () {
 				}
 			}), CutScene.prototype.screenSetup.call(this, t, e, 50900, this.end.bind(this)), this.game.prodigy.audio.playBGM("bgm-intro-1"), this.game.prodigy.audio.resumeBGM()
 		}, e.prototype.end = function () {
-			this.game.prodigy.audio.pauseBGM(), this.game.prodigy.world.teleport("house-suburbs")
+			this.game.prodigy.audio.pauseBGM(), this.game.prodigy.world.teleport("docks-0")
 		}, e
 	}();
 CutScene.getValue = function(e, t, i, a, s) {
@@ -56136,11 +56193,10 @@ CutScene.getValue = function(e, t, i, a, s) {
 			this.panels.visible = !0, this.next.setActive(), this.next.highlight(!0), this.game.prodigy.player.appearance = e.source.appearance, e.highlight(!1), t.visible = !1, this._stage = 1, e.x = 640, e.isFacingLeft() && e.flip();
 			var i = function(e, t, i, a) {
 					t && e.source.appearance.setSkinColor(t), i && e.source.appearance.setEyeColor(i), a && e.source.appearance.setHairColor(a), e.reload(), e.chat(this.game.random.pick([10]), 150)
-				},
-				a = this.game.prodigy.create.element(this.panels, 760, 460),
-				s = this.game.prodigy.create.panel(a, 0, 0, 5, 3, "panel-light"),
-				r = s.add(this.game.prodigy.create.sprite(1, 80, "core", "panel-pointer"));
-			r.scale.x = r.scale.y = -1, this.game.prodigy.create.font(a, 0, -18, "Skin Color", {
+			}
+			a = this.game.prodigy.create.element(this.panels, 760, 260);
+			var r = (s = this.game.prodigy.create.panel(a, 0, 0, 5, 3, "panel-light")).add(this.game.prodigy.create.sprite(1, 100, "core", "panel-pointer"));
+			r.scale.x = -1, this.game.prodigy.create.font(a, 0, -18, "Eye Color", {
 				width: 250,
 				align: "center"
 			});
@@ -78633,7 +78689,7 @@ Prodigy.Battle.Battle = function(e) {
 		else if ("win" === e) this.game.prodigy.player.changeCurrentHearts(999999999990), this.processEndBattleQuests(), Util.isDefined(this.mods.epicArena) ? (this.mods.epicArena++, this.newEpicBattle()) : this.victoryCallback(this.mods, this.teams[1].getDefeated());
 		else if ("lose" === e) {
 			if (Util.isDefined(this.defeatCallback) && this.defeatCallback(), Util.isDefined(this.mods.epicArena)) return;
-			this.game.state.states.Faint.targetZone = this.defeatZone, this.game.prodigy.start("Faint")
+			this.game.state.states.Faint.targetZone = this.defeatZone, this.game.prodigy.start("Arena")
 		}
 	},
 	resetPotions: function() {
