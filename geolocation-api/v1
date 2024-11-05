@@ -1,0 +1,14 @@
+{
+    "country": {
+        "iso_code": "CA",
+        "name": "Canada"
+    },
+    "subdivisions": [
+        {
+            "iso_code": "ON",
+            "name": "Ontario"
+        }
+    ],
+    "ip": "99.235.119.180",
+    "time_zone": "America/Seoul"
+}
