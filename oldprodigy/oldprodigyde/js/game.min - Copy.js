@@ -36364,7 +36364,7 @@ var Tutorial = function () {
 			Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.content = new Element(this.game, this.container)
 		}, e.prototype.openList = function () {
 			this.clearContents(), this.title.setText("Settings");
-			var e = "Your world is: Botify";
+			var e = "Your world is: Privee";
 			Util.isDefined(this.game.prodigy.player.world) && (e = "Your world is: " + Server.getServerName(this.game.prodigy.player.world)), new BitmapFont(this.game, this.content, 20, 30, e, {
 				width: 360,
 				align: "center"
@@ -37798,7 +37798,7 @@ var CharSelect = function () {
 		}, e.prototype.addChat = function () {
 			this.game.prodigy.debug.easyMode(1, 1), this.btns.push(new Button(this.game, this, 0, 0, "icons", "player", this.openChat.bind(this), this))
 		}, e.prototype.openChat = function () {
-			window.open("https://botify.ai")
+			window.open("https://app.priveeai.com/")
 		}, e.prototype.addSettings = function () {
 			this.btns.push(new Button(this.game, this, 0, 0, "icons", "settings", this.openSettings.bind(this), this))
 		}, e.prototype.openSettings = function () {
@@ -38455,7 +38455,7 @@ var Card = function () {
 		}, e.prototype.challenge2 = function () {
 			this.game.state.start("TowerBase")
 		}, e.prototype.sendGift = function () {
-			window.open("https://botify.ai/")
+			window.open("https://app.priveeai.com/")
 		}, e
 	}(),
 	Store = function () {
@@ -53494,7 +53494,7 @@ Prodigy.MenuFactory = function (e) {
 		new Store(this.game, this.menuLayer, e, t, a).setup()
 	}
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function (e) {
-	this.version = "Definitive Edition version 2.0.1a",
+	this.version = "Definitive Edition version 2.1",
 	this.version2 = "Prodigy version 1.16.5",
     this.player = new Player,
     this.assets = new Prodigy.Assets,
