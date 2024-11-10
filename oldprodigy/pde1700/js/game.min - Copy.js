@@ -2505,7 +2505,8 @@ Prodigy.Events.FriendsList = {
 			v: "1"
 		},
 		map: {
-			type: "atlas",
+			type: "local",
+			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/",
 			key: "general-map",
 			v: "6"
 		},
@@ -29112,7 +29113,7 @@ Prodigy.ForestBoss = function(e, t) {
 		this.game.broadcaster.removeAppListener(Prodigy.Events.Titan.GOT_TITANS, this, "Titan")
 	},
 	showContent: function() {
-		this.mapPanel.add(this.game.prodigy.create.sprite(20, 20, "map", "map")), this.process();
+		this.mapPanel.add(this.game.prodigy.create.sprite(-180, -60, "map", "map")), this.process();
 		for (var e = 0; e < Prodigy.Menu.WorldMap.BTNS.length; e++) {
 			var t = Prodigy.Menu.WorldMap.BTNS[e],
 				i = !1;
@@ -29146,7 +29147,7 @@ Prodigy.ForestBoss = function(e, t) {
 	gotTitanCallback: function(e) {
 		if (2 === e.assetID) {
 			var t = Prodigy.Menu.WorldMap.BTNS[6],
-				i = this.map.add(this.game.prodigy.create.sprite(t.iconX - this.map.x - 40, t.iconY - this.map.y, "ui-titan", "titan-notification"));
+				i = this.map.add(this.game.prodigy.create.sprite(-10, t.iconX - this.map.x - 90, t.iconY - this.map.y, "ui-titan", "titan-notification"));
 			i.inputEnabled = !0, i.events.onInputDown.add(this.openLocation.bind(this, t, !1)), i.anchor.setTo(.5, .5), this.game.add.tween(i).to({
 				y: i.y - 10
 			}, 400, Phaser.Easing.Quadratic.InOut, !0, 0, GameConstants.MAX_SAFE_INTEGER, !0)
@@ -29156,8 +29157,8 @@ Prodigy.ForestBoss = function(e, t) {
 	name: "Firefly Forest",
 	zone: "forest",
 	tag: "forest",
-	x: 170,
-	y: 285,
+	x: 20,
+	y: 200,
 	map: "btn-firefly",
 	target: "forest-C8",
 	summary: "Help Flora reclaim her forest from pesky monsters, thieves, and a sleeping giant. Learn earth spells and earn the Warden Keystone of Firefly Forest!",
@@ -29184,8 +29185,8 @@ Prodigy.ForestBoss = function(e, t) {
 	name: "Shiverchill Mountains",
 	zone: "shiverchill",
 	tag: "shiverchill",
-	x: 12,
-	y: 76,
+	x: 120,
+	y: 50,
 	map: "btn-shiverchill",
 	target: "shiverchill-A10",
 	summary: "Bok needs your help! His mountain is frozen over and only a wizard can help reclaim his throne! Learn ice spells and earn the Warden Keystone of Shiverchill Mountains!",
@@ -29215,8 +29216,8 @@ Prodigy.ForestBoss = function(e, t) {
 	name: "Skywatch",
 	zone: "skywatch",
 	tag: "skywatch",
-	x: 141,
-	y: 16,
+	x: 907,
+	y: 91,
 	map: "btn-skywatch",
 	target: "skywatch-A1",
 	summary: "Benni and Broccolina are in need of a wizard to help them get Skywatch back under control. Learn storm spells and earn the Warden Keystone of Skywatch!",
@@ -29242,8 +29243,8 @@ Prodigy.ForestBoss = function(e, t) {
 	}
 }, {
 	name: "Dyno Dig Oasis",
-	x: 43,
-	y: 347,
+	x: 450,
+	y: -50,
 	map: "btn-dyno",
 	target: "dyno-A0",
 	summary: "Professor Scoog is in need of a wizard just like you! Encounter extinct monsters and dig up fossils!",
@@ -29258,17 +29259,17 @@ Prodigy.ForestBoss = function(e, t) {
 	}
 }, {
 	name: "Epics Subspace",
-	x: 670,
-	y: 19,
-	map: "btn-portal",
+	x: -150,
+	y: -70,
+	map: "btn-portal-old",
 	target: "toyzone-B1",
 	summary: "A mysterious portal that leads to the realm of the fabled Epics, the most powerful pets in history!",
 	iconX: 940,
 	iconY: 150,
-	animatedSprites: ["tz-1", "tz-2", "tz-3", "tz-4"],
+	animatedSprites: [],
 	animatedSpritePos: {
-		x: 31,
-		y: -16
+		x: 319999999,
+		y: -1699999999
 	},
 	isNew: function(e) {
 		try {
@@ -29281,8 +29282,8 @@ Prodigy.ForestBoss = function(e, t) {
 	name: "Bonfire Spire",
 	zone: "bonfire_spire",
 	tag: "bonfire",
-	x: 546,
-	y: 86,
+	x: 660,
+	y: 20,
 	map: "btn-bonfire",
 	target: "bonfire_spire-B1",
 	summary: "Slurpy is in need of a wizard just like you! Help him to learn how to cook, learn fire spells, and earn the Warden Keystone of Bonfire Spire!",
@@ -29311,8 +29312,8 @@ Prodigy.ForestBoss = function(e, t) {
 	name: "Shipwreck Shore",
 	zone: "shipwreck_shore",
 	tag: "shipwreck",
-	x: 717,
-	y: 102,
+	x: 500,
+	y: 500,
 	map: "btn-pirate",
 	icon: "zone-water",
 	target: "shipwreck_shore-B12",
@@ -29337,8 +29338,8 @@ Prodigy.ForestBoss = function(e, t) {
 	}
 }, {
 	name: "Dark Tower",
-	x: 598,
-	y: 242,
+	x: 907,
+	y: 400,
 	map: "btn-tower",
 	target: "darktower-A1",
 	summary: "The Dark Tower is home to Mira, who has a challenge for wizards like you! Climb to the top and earn a powerful prize!",
@@ -29349,8 +29350,8 @@ Prodigy.ForestBoss = function(e, t) {
 	}
 }, {
 	name: "Lamplight Town",
-	x: 315,
-	y: 395,
+	x: 550,
+	y: 200,
 	map: "btn-town",
 	target: "lamplight-B3",
 	summary: "Home of the famous Academy, the town has all sorts of wonderful things for wizards to do!",
@@ -29360,16 +29361,23 @@ Prodigy.ForestBoss = function(e, t) {
 		return Util.isNullOrUndefined(e.prodigy.player.state.get("zone-lamplight"))
 	}
 }, {
-	name: "Clockwork Academy",
-	x: 343,
-	y: 134,
-	map: "btn-academy",
+	name: "Clockwork Town",
+	x: 650,
+	y: 390,
+	map: "btn-activity",
 	target: "tech-0",
 	summary: "Boombox has a tournament each day, and is looking for wizards to compete! Adopt a robot and teach it to dance, too!"
 }, {
+	name: "Coliseum",
+	x: 100,
+	y: 340,
+	map: "btn-portal",
+	target: "town-2",
+	summary: "Feel like challenging the best of the best? Defeat powerful wizards in duels and earn great rewards!"
+}, {
 	name: "Your House",
-	x: 200,
-	y: 498,
+	x: 300,
+	y: 200,
 	map: "btn-house",
 	target: "house-suburbs",
 	summary: "This is your house! Customize it any way you like, and show it off to your friends!",
@@ -29381,9 +29389,9 @@ Prodigy.ForestBoss = function(e, t) {
 	}
 }, {
 	name: "The Lost Island",
-	x: 740,
-	y: 275,
-	map: "btn-activity",
+	x: -100,
+	y: 500,
+	map: "btn-portal",
 	target: "activity_zone-B3",
 	summary: "A mysterious island has appeared, and adorable critters on it need your help! Who knows what adventures await you here?",
 	iconX: 1008,
@@ -40331,7 +40339,7 @@ var Screen = function() {
 			Util.isDefined(t) && this.usernameField.setValue(t),
 			this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"),
 			this.passwordField.hide(0),
-			this.passwordField.setLabel(this.loginBox, "Definitive Edition v1"),
+			this.passwordField.setLabel(this.loginBox, "Definitive Edition v2"),
 			this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this))
 			this.offlineButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login-buttons", "offline", this.offlineMode.bind(this))
 			this.progressBox = this.game.prodigy.create.element(this.background, 100, 250),
@@ -49261,7 +49269,7 @@ var Tech = function () {
 	}, e.prototype.onComplete = function () {
 		var t = this.game.prodigy.dialogue.create();
 		t.setText({
-			text: "The academy is closed!",
+			text: "Come back tomorrow for new opponents and prizes!",
 			face: 1,
 			audio: e.AUDIO[4]
 		}), t.start("boombox")
@@ -49317,14 +49325,14 @@ Tech.STORE = {
 		ID: 70,
 		type: "weapon"
 	}, {
-		N: 1e3,
-		type: "gold"
+		ID: 46,
+		type: "hat"
 	}, {
 		ID: 41,
 		type: "outfit"
 	}, {
-		N: 1500,
-		type: "gold"
+		ID: 69,
+		type: "weapon"
 	}, {
 		ID: 45,
 		type: "hat"
@@ -49332,8 +49340,8 @@ Tech.STORE = {
 		ID: 65,
 		type: "item"
 	}, {
-		N: 800,
-		type: "gold"
+		ID: 43,
+		type: "outfit"
 	}];
 	Tech.DATA.dialogue[4].text = "Today's prize is...[" + Util.convertItemToIcon(g[i]) + "]", Tech.DATA.dialogue[7].text = e.getName() + "!", Tech.DATA.quests[3].reward = [g[i]]
 }, Tech.AUDIO = [{
@@ -58313,19 +58321,6 @@ Prodigy.Controller.BattleController = function(e) {
 						icon: "item/26"
 					}
 				}, {
-					ID: 3,
-					type: "achievement",
-					data: {
-						name: "Shopaholic",
-						desc: "Spend [X] gold",
-						valueFunction: this.processValue.bind(this, "gS"),
-						ranks: [1e3, 1e5, 1e6]
-					},
-					metatype: "achievement",
-					metadata: {
-						icon: "catalogue"
-					}
-				}, {
 					ID: 4,
 					type: "achievement",
 					data: {
@@ -58379,58 +58374,10 @@ Prodigy.Controller.BattleController = function(e) {
 						icon: 5,
 						iconAtlas: "icons-house"
 					}
-				}, {
-					ID: 8,
-					type: "achievement",
-					data: {
-						name: "Catch'm",
-						desc: "Collect [X] pets",
-						valueFunction: a.getNumPets.bind(a),
-						ranks: [5, 20, 50, 100]
-					},
-					metadata: {
-						icon: "pet"
-					}
 				}]
 			}, {
 				tag: "Battle",
-				data: [{
-					ID: 9,
-					type: "achievement",
-					data: {
-						name: "Prodigy",
-						desc: "Reach level [X]",
-						valueFunction: t.getLevel.bind(t),
-						ranks: [5, 20, 50, 75, 100]
-					},
-					metadata: {
-						icon: "star2"
-					}
-				}, {
-					ID: 10,
-					type: "achievement",
-					data: {
-						name: "Spellmaster",
-						desc: "Learn [X] spells",
-						valueFunction: t.getNumAttacks.bind(t),
-						ranks: [3, 6, 10, 15]
-					},
-					metadata: {
-						icon: "book"
-					}
-				}, {
-					ID: 11,
-					type: "achievement",
-					data: {
-						name: "Monster Hunter",
-						desc: "Defeat [X] monsters",
-						valueFunction: this.processValue.bind(this, "kills"),
-						ranks: [10, 50, 250, 500, 1e3]
-					},
-					metadata: {
-						icon: "boss"
-					}
-				}]
+				data: []
 			}, {
 				tag: "Firefly Forest",
 				data: [{
@@ -58791,18 +58738,6 @@ Prodigy.Controller.BattleController = function(e) {
 					},
 					metadata: {
 						icon: "hat/4"
-					}
-				}, {
-					ID: 30,
-					type: "achievement",
-					data: {
-						name: "Don't Stop Me Now",
-						desc: "Master [X] skills",
-						valueFunction: n.getMasteredSkills.bind(n),
-						ranks: [5, 20, 50, 100]
-					},
-					metadata: {
-						icon: "hat/6"
 					}
 				}]
 			}, {
