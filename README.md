@@ -166,6 +166,8 @@ Currently, these are the versions that support modpacks:
  - 1-51-1
  - 1-52-0
  - 1-70-0
+ - pde1700
+ - pde2018
  - 2-45-0
  - 2-50-0
  - 1-30-R (Prodigy Reborn 1.0 without Plumber's Cap?!)
@@ -250,13 +252,14 @@ Prodigy Definitive Edition is somehow different. All of my PDE versions are open
 
 Lets scratch the surface shall we?
 
-- Clockwork Town - prodigyde - pde2016 & pde1500
+- Clockwork Town - prodigyde - pde2016, pde1500 & pde1700
 - 2015-2016's Intro - pde2015 - pde2016 & pde1500 - pde1.51.0
 - 2014-2015's Academy - prodigyde - pde1221 & pde1500 - pde1.51.0
-- Modpacks - prodigyde - oldprodigyde, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, & pde2018 - pde2019 Warning: Imitation Titan doesn't work correctly for pde2018 yet, so it's still in beta.
-- Full possiblity of disguising without starting over (genders, skin tones, hair styles, hair colors, and eye colors) - prodigyde - oldprodigyde, & pde1500
-- First Name changing possibility - pde2015 - oldprodigyde & pde1500
-- Middle Name & Last Name changing possiblity - pde2015 - oldprodigyde & pde1500
+- Modpacks - prodigyde - oldprodigyde, pde1221, pde2016, pdenot1.50.0 - pde1.51.0, pde1700, & pde2018 - pde2019 Warning: Imitation Titan doesn't work correctly for pde2018 yet, so it's still in beta.
+- Full possiblity of disguising without starting over (genders, skin tones, hair styles, hair colors, and eye colors) - prodigyde - oldprodigyde, pde1500, & pde1700
+- First Name changing possibility - pde2015 - oldprodigyde, pde1500, & pde1700
+- Middle Name & Last Name changing possiblity - pde2015 - oldprodigyde, pde1500, & pde1700
+- 2014-2016's Map - prodigyde - pdemar2016, pde1500 - pde1.51.0, & pde1700
   
 Yep, you heard that right, that's just scratching the surface. There are lots of versions to choose from and modpacks are supported for some of them, so you can probably imagine what months of hard work can do to something like that. 
 
