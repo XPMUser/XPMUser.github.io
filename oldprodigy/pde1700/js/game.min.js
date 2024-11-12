@@ -40339,7 +40339,7 @@ var Screen = function() {
 			Util.isDefined(t) && this.usernameField.setValue(t),
 			this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"),
 			this.passwordField.hide(0),
-			this.passwordField.setLabel(this.loginBox, "Definitive Edition v2"),
+			this.passwordField.setLabel(this.loginBox, "Definitive Edition v2.1"),
 			this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this))
 			this.offlineButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login-buttons", "offline", this.offlineMode.bind(this))
 			this.progressBox = this.game.prodigy.create.element(this.background, 100, 250),
@@ -49415,7 +49415,7 @@ Tech.STORE = {
 	}, {
 		face: 4,
 		anim: 4,
-		text: "Welcome to the Robo-Academy!",
+		text: "Welcome to the Robolympics!",
 		audio: Tech.AUDIO[6]
 	}, {
 		face: 1,
