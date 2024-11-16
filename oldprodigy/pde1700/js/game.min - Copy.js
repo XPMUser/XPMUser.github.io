@@ -2721,7 +2721,8 @@ Prodigy.Events.FriendsList = {
 			v: "1"
 		},
 		"npc-sprite-flora": {
-			type: "atlas",
+			type: "local",
+			base: "https://xpmuser.github.io/prodidows/1-70-0/assets/images/",
 			key: "npc-sprite-flora",
 			v: "4"
 		},
@@ -3533,12 +3534,12 @@ Prodigy.Events.FriendsList = {
 			type: "json",
 			base: "https://xpmuser.github.io/prodidows/1-70-0/data/items/34/",
 			url: "items.json",
-			noCache: !0
+			noCache: !1
 		},
 		"store-data": {
 			type: "json",
 			base: "",
-			url: "https://xpmuser.github.io/oldprodigy/1-60-0/data/store/34/store-data.json"
+			url: "https://xpmuser.github.io/prodidows/1-60-0/data/store/34/store-data.json"
 		},
 		"map-pathing": {
 			type: "json",
@@ -29368,12 +29369,12 @@ Prodigy.ForestBoss = function(e, t) {
 	target: "tech-0",
 	summary: "Boombox has a tournament each day, and is looking for wizards to compete! Adopt a robot and teach it to dance, too!"
 }, {
-	name: "Coliseum",
-	x: 100,
-	y: 340,
-	map: "btn-portal",
+	name: "Lamplight Academy",
+	x: 400,
+	y: 100,
+	map: "btn-academy",
 	target: "town-2",
-	summary: "Feel like challenging the best of the best? Defeat powerful wizards in duels and earn great rewards!"
+	summary: "You can battle wizards there! It might remind you of Prodigy Academy from earlier than August 2014!"
 }, {
 	name: "Your House",
 	x: 300,
@@ -31749,7 +31750,7 @@ Prodigy.ForestBoss = function(e, t) {
 				ID: 4
 			},
 			size: Prodigy.Control.TextButton.MED
-		}, this.challenge.bind(this)), this.showFrame("leaderboard", "THE ARENA", []);
+		}, this.challenge.bind(this)), this.showFrame("leaderboard", "THE ACADEMY (BETA)", []);
 		var e = this.game.prodigy.create.textButton(this, 0, 0, {
 			icon: "close",
 			text: "close"
@@ -31762,10 +31763,10 @@ Prodigy.ForestBoss = function(e, t) {
 	changeOpponent: function() {
 		this.data = Prodigy.Menu.Coliseum.data[this.index], this.opponent = new Player(this.game), this.opponent.init(this.data.opponent), Util.isDefined(this.petV) && this.petV.destroy(), this.data.pets.length > 0 && (this.petV = this.game.prodigy.create.monster(this, new Monster(this.data.pets[0], this.game), 2, 250, 390), this.petV.reload()), Util.isDefined(this.playerV) && this.playerV.destroy(), this.playerV = this.game.prodigy.create.player(this, this.opponent, 2, 350, 390), this.data.pets.length <= 0 && (this.playerV.x -= 55), this.playerV.reload();
 		var e = this.data.drops[0];
-		if ("gold" === e.type ? this.itemIcon.setValue("icon-item-26", null, e.N) : this.itemIcon.setValue(this.game.prodigy.icon.iconKey(e), null, 1), this.index > Math.floor(this.player.getLevel() / 5) || this.index > this.game.prodigy.player.getColiseum()) {
+		if ("gold" === e.type ? this.itemIcon.setValue("icon-item-26", null, e.N) : this.itemIcon.setValue(this.game.prodigy.icon.iconKey(e), null, 1), this.index > Math.floor(this.player.getLevel() / 0) || this.index > this.game.prodigy.player.getColiseum()) {
 			var t = "";
-			this.index > Math.floor(this.player.getLevel() / 5) && (t = "You must be at least level " + 5 * this.index), this.index > this.game.prodigy.player.getColiseum() && (t += (t.length > 0 ? " and you " : "You ") + "must defeat the previous " + (1 == this.index ? "wizard" : "wizards")), t += " to challenge " + this.opponent.getName() + ".", this.locked = !0, this.challengeButton.visible = !0, this.challengeButton.setInactive(), this.defeat.visible = !1
-		} else this.index < this.game.prodigy.player.getColiseum() ? (t = this.data.description, this.locked = !0, this.challengeButton.visible = !1, this.challengeButton.setInactive(), this.defeat.visible = !0) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
+			this.index > Math.floor(this.player.getLevel() / 0) && (t = "You must be at least level " + 0 * this.index), this.index > this.game.prodigy.player.getColiseum() && (t += (t.length > 0 ? " and you " : "You ") + "must defeat the previous " + (1 == this.index ? "wizard" : "wizards")), t += " to challenge " + this.opponent.getName() + ".", this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1
+		} else this.index < this.game.prodigy.player.getColiseum() ? (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1) : (this.locked = !1, t = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
 		this.opponentName.setText(this.opponent.getName()), this.opponentTitle.setText("- " + this.data.title + " -"), this.description.setText(t)
 	},
 	challenge: function() {
@@ -31789,7 +31790,7 @@ Prodigy.ForestBoss = function(e, t) {
 			if (Util.isDefined(a))
 				for (var s = 0; s < a.length; s++) delete a[s].hp;
 			var r = {
-				screen: "bg-battle-arena",
+				screen: "bg-battle-academy",
 				opponent: [Prodigy.Menu.Coliseum.data[e].opponent],
 				drops: Prodigy.Menu.Coliseum.data[e].drops,
 				"catch": !1,
@@ -31801,6 +31802,45 @@ Prodigy.ForestBoss = function(e, t) {
 		}
 	}
 }), Prodigy.Menu.Coliseum.data = [{
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Jason", "gender":"male", "hairStyle":1, "hairColor":1, "skinColor":3, "eyeColor":1}',
+		equipment: '{"weapon":1}'
+	},
+	title: "The son of Bob and Gina",
+	description: "Jason is a new student here.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Emma", "gender":"female", "hairStyle":5, "hairColor":1, "skinColor":3, "eyeColor":1}',
+		equipment: '{"weapon":1}'
+	},
+	title: "Gina and Bob's daughter",
+	description: "Emma is jason's little sister and she just arrived at the academy since 2024.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Bob", "gender":"male", "hairStyle":5, "hairColor":3, "skinColor":2, "eyeColor":5}',
+		equipment: '{"weapon":1}'
+	},
+	title: "The New Boy",
+	description: "Bob just arrived at the academy since late 2023.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
+	}]
+}, {
 	opponent: {
 		data: {
 			level: 5
@@ -32024,9 +32064,6 @@ Prodigy.ForestBoss = function(e, t) {
 			eyeColor: 2
 		},
 		equipment: {
-			hat: 16,
-			outfit: 16,
-			weapon: 38
 		}
 	},
 	title: "The Adventurer",
@@ -32470,6 +32507,401 @@ Prodigy.ForestBoss = function(e, t) {
 	drops: [{
 		type: "weapon",
 		ID: 62
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Olivia", "gender":"female", "hairStyle":5, "hairColor":16, "skinColor":2, "eyeColor":10}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 90000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Prince", "gender":"male", "hairStyle":5, "hairColor":16, "skinColor":2, "eyeColor":10}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 90000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Princess", "gender":"female", "hairStyle":14, "hairColor":16, "skinColor":2, "eyeColor":15}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 90000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Jack", "gender":"male", "hairStyle":3, "hairColor":10, "skinColor":2, "eyeColor":15}',
+		equipment: '{"hat":3, "outfit":5, "weapon":16}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 90000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Robot", "gender":"female", "hairStyle":5, "hairColor":2, "skinColor":3, "eyeColor":15}',
+		equipment: '{"hat":46, "outfit":43, "weapon":69}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Robot 2", "gender":"male", "hairStyle":3, "hairColor":2, "skinColor":3, "eyeColor":15}',
+		equipment: '{"hat":46, "outfit":43, "weapon":69}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Pirate", "gender":"female", "hairStyle":5, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":39, "outfit":35, "weapon":65}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Pirate 2", "gender":"male", "hairStyle":3, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":39, "outfit":35, "weapon":65}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Buccaneer", "gender":"female", "hairStyle":5, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":40, "outfit":35, "weapon":66}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Buccaneer", "gender":"male", "hairStyle":3, "hairColor":2, "skinColor":2, "eyeColor":13}',
+		equipment: '{"hat":40, "outfit":36, "weapon":66}'
+	},
+	title: "The W12-4RD",
+	description: "",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Eddie", "gender":"female", "hairStyle":5, "hairColor":13, "skinColor":2, "eyeColor":10}',
+		equipment: '{"outfit":26}'
+	},
+	title: "Ai Girlfriend",
+	description: "Eddie came from a game called Yandere Ai Girlfriend Simulator.",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Senpai", "gender":"male", "hairStyle":1, "hairColor":5, "skinColor":2, "eyeColor":14}',
+		equipment: '{"outfit":1}'
+	},
+	title: "YAGS Player",
+	description: "Credits to DGSpitzer and Vivianna Yan for the YAGS game.",
+	pets: [{
+		ID: "1",
+		level: "1"
+	}, {
+		ID: "2",
+		level: "1"
+	}, {
+		ID: "3",
+		level: "1"
+	}, {
+		ID: "4",
+		level: "1"
+	}],
+	drops: [{
+		type: "gold",
+		N: 9000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Techeater Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13,"face":14}',
+		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+	},
+	title: "Prodidows",
+	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
+	pets: [{
+                ID: 1,
+                level: 1
+            }, {
+                ID: 4,
+                level: 1
+            }, {
+                ID: 7,
+                level: 1
+            }, {
+                ID: 10,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Techeater David", "gender":"male", "hairStyle":18,"hairColor":16,"skinColor":1,"eyeColor":13,"face":14}',
+		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+	},
+	title: "XPMUser",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 1,
+                level: 1
+            }, {
+                ID: 4,
+                level: 1
+            }, {
+                ID: 7,
+                level: 1
+            }, {
+                ID: 10,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"Alexa the W12-4RD", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":23, "outfit":52, "weapon":47}'
+	},
+	title: "Prodidows' wizard in Daboss7173's PDE",
+	description: "If you have admin access to Prodidows, you'll also have access to this wizard in Daboss7173's PDE by signing in to Google as Prodidows!",
+	pets: [{
+                ID: 36,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":100}',
+		appearance: '{"name":"David the W12-4RD", "gender":"male", "hairStyle":18,"hairColor":16,"skinColor":1,"eyeColor":13}',
+		equipment: '{"hat":61, "outfit":52, "weapon":47}'
+	},
+	title: "XPMUser from Daboss7173's PDE",
+	description: "This is XPMUser's main character!",
+	pets: [{
+                ID: 1,
+                level: 1
+	}],
+	drops: [{
+		type: "gold",
+		N: 10000
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
+		appearance: '{"name":"Jeremy Monsterring", "gender":"male", "hairStyle":3, "hairColor":3, "skinColor":3, "eyeColor":11}',
+		equipment: '{}'
+	},
+	title: "Pde1500's screenshot character",
+	description: "This wizard was in a screenshot which was taken from pde1500.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
 	}]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
@@ -34201,7 +34633,7 @@ Prodigy.ForestBoss = function(e, t) {
 	addDefaultConfig: function() {
 		var e = 0,
 			t = 0;
-		this.addPage(e), this.addMenu(e, t), this.addAutoHeal(e, t), this.addSpellbook(e, t), this.addBackpack(e, t), this.addPet(e, t), this.addEvent(e, t), this.addSocial(e, t), this.addMap(e, t), this.addSettings(e, t), this.addFriendsList(e, t), this.addBots(e, t)
+		this.addPage(e), this.addMenu(e, t), this.addAutoHeal(e, t), this.addSpellbook(e, t), this.addBackpack(e, t), this.addPet(e, t), this.addEvent(e, t), this.addSocial(e, t), this.addMap(e, t), this.addSettings(e, t), this.addFriendsList(e, t), this.addBots(e, t), this.addMathLess(e, t)
 	},
 	addHouseConfig: function(e) {
 		var t = 1;
@@ -34224,6 +34656,9 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	addAutoHeal: function(e, t) {
 		this.game.prodigy.player.changeCurrentHearts(99999999999999990)
+	},
+	addMathLess: function(e, t) {
+		this.game.prodigy.debug.easyMode(1,1)
 	},
 	addBots: function(e, t) {
 var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 140, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.setup(null, !0);
@@ -40332,7 +40767,7 @@ var Screen = function() {
 		}, e.prototype.screenSetup = function() {
 			this.background.add(this.game.prodigy.create.sprite(0, 0, "login-bg-1")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1-70-0");
 			var t = Util.getCookie("prodigyUsername");
-			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition v3"), this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition v4"), this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -49850,43 +50285,8 @@ Academy.AUDIO = [{
 };
 var Arena = function() {
 	function e(t) {
-		WalkableScreen.call(this, t, e.DATA, ["zone-arena", "npc-sprite-clankboot", "tileset-core", "npc-sprite-gnome"]), this.area = [
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
-			[0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-			[0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-			[0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-			[1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+		WalkableScreen.call(this, t, e.DATA, ["zone-arena", "zone-academy", "npc-sprite-clankboot", "tileset-core", "npc-sprite-gnome"]), this.area = [
+			[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 4, 4, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 4, 4, 4, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 4, 4, 4, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4], [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 1, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 		], this.noSnow = !0, this.startX = 640, this.startY = 500
 	}
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
@@ -49896,8 +50296,12 @@ var Arena = function() {
 			name: "Clankboot",
 			atlas: "clankboot"
 		}, this.openArena.bind(this), !0), this.path.addCallback(3, this.toTown.bind(this), !0);
-		var e = this.game.prodigy.create.sprite(216, 574, this.screenName, "vase");
-		e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(1064, 574, this.screenName, "vase"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = this.game.prodigy.create.sprite(311, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(969, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = this.game.prodigy.create.sprite(519, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(761, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), new Prodigy.Event.HealStone(this.game, this.content, this.user, this.path, 165, 390), new GnomeEvent(this.game, this.content, this.user, this.path, 944, 376, "Arena Caller", 1, 2, this.openArenaMenu.bind(this)).flip(), new GnomeEvent(this.game, this.content, this.user, this.path, 1135, 430, "Arena Merchant", 2, 4, this.openStore.bind(this)).flip(), WalkableScreen.prototype.screenSetup.call(this)
+		var e = this.game.prodigy.create.sprite(218, 558, this.screenName, "tower");
+		e.anchor.setTo(.5, 1), this.content.add(e), e = this.game.prodigy.create.sprite(446, 704, this.screenName, "tower"), e.anchor.setTo(.5, 1), this.content.add(e);
+		var t = this.game.prodigy.create.sprite(548, 444, this.screenName, "fountain-0");
+		t.anchor.setTo(.5, 1), t.animations.add("stand", ["fountain-0", "fountain-1", "fountain-2"], 8, !0, !1), t.animations.play("stand"), this.content.add(t);
+		var a = this.game.prodigy.create.sprite(441, 175, this.screenName, "banner-0");
+		a.anchor.setTo(.5, 1), a.animations.add("stand", ["banner-0", "banner-1", "banner-2"], 6, !0, !1), a.animations.play("stand"), this.content.add(a), a = this.game.prodigy.create.sprite(830, 100), a.width = 212, a.height = 312, a.inputEnabled = !0, this.content.add(e), WalkableScreen.prototype.screenSetup.call(this)
 	}, e.prototype.openStore = function() {
 		var e = this.game.prodigy.event.create(),
 			t = this.game.prodigy.stores.getStore(this.game.prodigy.stores.SHOPS.ARENA_REWARDS);
@@ -49921,14 +50325,14 @@ Arena.AUDIO = [{
 	d: 1
 }], Arena.DATA = {
 	tag: "Arena",
-	zoneName: "zone-arena",
-	atlas: "zone-arena",
-	fullName: "Coliseum",
+	zoneName: "zone-academy",
+	atlas: "zone-academy",
+	fullName: "Lamplight Academy",
 	battle: {
-		screen: "bg-battle-arena"
+		screen: "bg-battle-academy"
 	},
 	dialogue: [{
-		text: "Do you want to train in the arena?",
+		text: "Do you want to train in the academy?",
 		face: 0,
 		anim: 4,
 		audio: Arena.AUDIO[0]
@@ -61151,6 +61555,9 @@ Prodigy.IconFactory = function(e) {
 				case "local":
 					a = i.base + i.key + "/" + i.v + "/" + i.key, this.loader.atlasJSONHash(e, a + ".png", a + ".json");
 					break;
+				case "localAtlas":
+					a = this.loader.atlasJSONHash(e, a + ".json");
+					break;
 				case "spine":
 					a = "v1/spine/" + e + "/" + i.v + "/" + e + ".json" + s, this.loader.spine(e, a);
 					break;
@@ -61177,7 +61584,8 @@ Prodigy.IconFactory = function(e) {
 				case "atlas":
 					if (!this.game.cache.checkImageKey(e)) return !1;
 					break;
-				case "local":
+				case "localAtlas":				
+                                case "local":
 					if (!this.game.cache.checkImageKey(e)) return !1;
 					break;
 				case "sfx":
