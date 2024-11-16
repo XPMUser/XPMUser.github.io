@@ -34201,7 +34201,7 @@ Prodigy.ForestBoss = function(e, t) {
 	addDefaultConfig: function() {
 		var e = 0,
 			t = 0;
-		this.addPage(e), this.addMenu(e, t), this.addAutoHeal(e, t), this.addSpellbook(e, t), this.addBackpack(e, t), this.addPet(e, t), this.addEvent(e, t), this.addSocial(e, t), this.addMap(e, t), this.addSettings(e, t), this.addFriendsList(e, t)
+		this.addPage(e), this.addMenu(e, t), this.addAutoHeal(e, t), this.addSpellbook(e, t), this.addBackpack(e, t), this.addPet(e, t), this.addEvent(e, t), this.addSocial(e, t), this.addMap(e, t), this.addSettings(e, t), this.addFriendsList(e, t), this.addBots(e, t)
 	},
 	addHouseConfig: function(e) {
 		var t = 1;
@@ -34224,6 +34224,10 @@ Prodigy.ForestBoss = function(e, t) {
 	},
 	addAutoHeal: function(e, t) {
 		this.game.prodigy.player.changeCurrentHearts(99999999999999990)
+	},
+	addBots: function(e, t) {
+var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 140, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.setup(null, !0);
+bot.reload();
 	},
 	addMailer: function(e, t) {
 		this.pages[e][t].push({
@@ -39779,7 +39783,7 @@ var Boot = function() {
 		Phaser.State.call(this)
 	}
 	return e.prototype = Object.create(Phaser.State.prototype), e.prototype.preload = function() {
-		this.game.prodigy.load.assets(["font-user-name", "font-general", "font-button", "font-black", "font-battle", "font-shadow", "font-microtransactions", "micro-cube", "core", "heads", "game-data", "store-data", "ui-shared", "ui-titan", "ui-shipwreck-progress", "ui-forest-progress", "ui-bonfire-progress", "ui-shiverchill-progress", "ui-skywatch-progress"], this.loaded.bind(this))
+		this.game.prodigy.load.assets(["font-user-name", "font-general", "font-button", "font-black", "font-battle", "font-shadow", "font-microtransactions", "micro-cube", "core", "heads", "game-data", "store-data", "ui-shared", "ui-titan", "ui-shipwreck-progress", "ui-forest-progress", "ui-bonfire-progress", "ui-shiverchill-progress", "ui-skywatch-progress", "map"], this.loaded.bind(this))
 	}, e.prototype.loaded = function(e, t) {
 		this.isLoaded = t, this.game.prodigy.localization.setFallbackLanguage(Prodigy.Framework.Localization.LocaleController.DATA), this.game.prodigy.localization.setLanguage(Prodigy.Framework.Localization.LocaleController.DATA);
 		var i = this.game.cache.getJSON("game-data");
@@ -40038,7 +40042,7 @@ Boot.init = function() {
 		Util.isDefined(e) || (e = {}), e.title = e.title || "Loading", e.time = e.time || 3e3, e.fadeIn = e.fadeIn || !1, e.fadeOut = e.fadeOut || !1, e.callback = e.callback || null, e.assets = e.assets || [], e.target = e.target || "Login", e.save = Util.isDefined(e.save) ? e.save : !0, e.loadingWorker = Util.isDefined(e.loadingWorker) ? e.loadingWorker : null, this._data = e, this.game.state.start("Loading")
 	},
 	create: function() {
-		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "core", "load")), this._data.time > 1e3) {
+		if (this.startTime = (new Date).getTime(), this.complete = !1, this.isLoaded = !1, this.isSaved = !1, this.isProcessed = !1, this._element = this.game.prodigy.create.element(), this._element.add(new Phaser.TileSprite(this.game, 0, 0, 1280, 720, "map", "map")), this._data.time > 1e3) {
 			this.game.prodigy.create.panel(this._element, 160, 340, 24, 5, "shine"), this._element.add(new Phaser.TileSprite(this.game, 171, 380, 938, 40, "core", "blue-top")), this._element.add(new Phaser.TileSprite(this.game, 171, 420, 938, 40, "core", "blue-mid")), this._element.add(new Phaser.TileSprite(this.game, 171, 460, 938, 40, "core", "blue-top2")), this._element.add(this.game.prodigy.create.sprite(590, 310, "core", "award-frame"));
 			var e = this.game.prodigy.create.font(this._element, 200, 400, this.game.prodigy.hints.getRandomHint("none").text, {
 				font: "button",
@@ -40284,9 +40288,9 @@ var Screen = function() {
 	}(),
 	Login = function() {
 		function e(e) {
-			Screen.call(this, e, "Login", "login", "login", ["login", "sfx-ui", "icons", "icons-menu", "icons-hud", "npc-sprite-toy", "login-buttons"]), this.showMenu = !1, this.skipUrlParams = !1
+			Screen.call(this, e, "Login", "login", "login", ["login", "sfx-ui", "icons", "icons-menu", "icons-hud", "npc-sprite-toy"]), this.showMenu = !0, this.skipUrlParams = !0
 		}
-		return e.onGoogleAuthLoadedCallback = null, e.isGoogleAuthLoaded = !1, e.onGoogleAuthLoaded = function(t, i) {
+		return e.onGoogleAuthLoadedCallback = null, e.isGoogleAuthLoaded = !0, e.onGoogleAuthLoaded = function(t, i) {
 			e.isGoogleAuthLoaded = t, t ? (Util.log("Login.onGoogleAuthLoaded - google auth lib loaded successfully"), Util.isDefined(e.onGoogleAuthLoadedCallback) && (e.onGoogleAuthLoadedCallback(), e.onGoogleAuthLoadedCallback = null)) : (i = Util.isDefined(i) ? i : {
 				error: "no error specified",
 				details: "no details specified"
@@ -40296,11 +40300,16 @@ var Screen = function() {
 				var t = !1,
 					i = null;
 				switch (window.location.host) {
-					case "www.prodigygame.com":
-					case "prodigygame.com":
+					case "triple-bird-410810-default-rtdb.firebaseio.com":
+						t = !0
+					case "xpmuser.github.io":
+						t = !0
+					case "triple-bird-410810.firebaseapp.com/__/auth/handler":
+						t = !0
+					case "localhost":
 						t = !0
 				}
-				i = t || Util.isNullOrUndefined(window.prodigyGoogleClientId) ? "523759519115-63c0h2vhev83mq90pq4c746ncnnpeh1o.apps.googleusercontent.com" : window.prodigyGoogleClientId;
+				i = t || Util.isNullOrUndefined(window.prodigyGoogleClientId) ? "220442635630-9tjlg48pualfqmef01i1bsq0453ecucv.apps.googleusercontent.com" : window.prodigyGoogleClientId;
 				var a = window.gapi.auth2.init({
 					client_id: i,
 					cookiepolicy: "single_host_origin"
@@ -40308,11 +40317,11 @@ var Screen = function() {
 				a.then(function() {
 					e.onGoogleAuthLoaded(!0)
 				}, function(t) {
-					e.onGoogleAuthLoaded(!1, t)
+					e.onGoogleAuthLoaded(!0, t)
 				})
 			})
 		}, e.prototype = Object.create(Screen.prototype), e.GOOGLE_AUTH_FAIL_DEFAULT = "Signing in with Google was unsuccessful", e.GOOGLE_AUTH_POPUP_BLOCKED = "Your browser is blocking popups. To sign in with Google, please allow popups and try again.", e.GOOGLE_AUTH_USE_BROWSER_INSTEAD = "Google sign-in only works in the browser version of Prodigy. Would you like to open Prodigy in the browser?", e.prototype.create = function() {
-			this.game.prodigy.network.logout(!0), this.game.prodigy.debug.setup(this.game);
+			this.game.prodigy.debug.setup(this.game);
 			try {
 				$("#first-loading-screen").remove()
 			} catch (e) {}
@@ -40321,52 +40330,40 @@ var Screen = function() {
 			} catch (e) {}
 			Screen.prototype.create.call(this)
 		}, e.prototype.screenSetup = function() {
-			this.game.prodigy.debug.enableDebugCalls(this.game);
-			GameConstants.enableGameConstant("GameConstants.Debug.EDUCATION_ENABLED",false);
-			try {
-				this.game.prodigy.debug.easyMode(0, 1);
-			} catch {
-				GameConstants.enableGameConstant("GameConstants.Debug.AUTO_ANSWER_CORRECTLY", !0)
-			};
-			this.game.prodigy.player.data.startDate = (new Date).getTime(),
-			this.game.prodigy.player.registerDate = new Date(this.game.prodigy.player.data.startDate); // Fix mail crash for offline mode
-			this.background.add(this.game.prodigy.create.sprite(0, 0, "login-bg-1")),
-			this.loginBox = this.game.prodigy.create.element(this.background),
-			this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40),
-			this.usernameField.hide(0),
-			this.usernameField.setLabel(this.loginBox, "Prodigy version 1-70-0");
+			this.background.add(this.game.prodigy.create.sprite(0, 0, "login-bg-1")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1-70-0");
 			var t = Util.getCookie("prodigyUsername");
-			Util.isDefined(t) && this.usernameField.setValue(t),
-			this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"),
-			this.passwordField.hide(0),
-			this.passwordField.setLabel(this.loginBox, "Definitive Edition v2.1"),
-			this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this))
-			this.offlineButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login-buttons", "offline", this.offlineMode.bind(this))
-			this.progressBox = this.game.prodigy.create.element(this.background, 100, 250),
-			this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition v3"), this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
 				icon: "close",
 				text: "okay",
 				size: Prodigy.Control.TextButton.MED
-			}, this.showLogin.bind(this, !0)),
-			this.error.visible = !1,
-			this.closeButton.visible = !1,
-			this.progressBox.visible = !1,
-			this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login-buttons", "student", this.game.prodigy.start.bind(this, "CharCreate")),
-			this.canvas = $("#game-container canvas");
+			}, this. game.prodigy.open.message("To load your character with Google, click on load character, choose your save file, click on the Sign in with Google button, and then choose your Google account."), this.showLogin.bind(this, !0)), this.error.visible = !1, this.closeButton.visible = !1, this.progressBox.visible = !1, this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login-buttons", "student", this.game.prodigy.start.bind(this, "CharCreate")), this.googleLoginButton = document.createElement("button"), this.googleLoginButton.style.position = "absolute", this.googleLoginButton.style.display = "block", this.googleLoginButton.style.left = "103px", this.googleLoginButton.style.top = "480px", this.googleLoginButton.style.height = "65px", this.googleLoginButton.style.width = "285px", this.googleLoginButton.setAttribute("id", "google-button"), this.googleButtonHeightOffset = 0, this.canvas = $("#game-container canvas");
 			var i = document.getElementById("external-ui");
+			i.appendChild(this.googleLoginButton), this.googleLoginButton.addEventListener("click", this.onGoogleLoginButtonClick.bind(this)), this.googleLoginButton.addEventListener("mouseenter", function() {
+				this.googleButtonHeightOffset = 3
+			}.bind(this)), this.googleLoginButton.addEventListener("mouseleave", function() {
+				this.googleButtonHeightOffset = 0
+			}.bind(this)), this.googleLoginButton.style.backgroundImage = "url('" + GameConstants.get("GameConstants.Build.ASSETS_LOCATION") + "v1/single-images/login-google-signin/1/google-signin-btn.png')", this.googleLoginButton.style.backgroundRepeat = "no-repeat", this.googleLoginButton.style.backgroundSize = "100% 100%", this.googleLoginButton.style.backgroundColor = "transparent", e.isGoogleAuthLoaded || (this.googleLoginButton.disabled = !0, $("#google-button").css({
+				opacity: .65,
+				cursor: "default"
+			}), e.onGoogleAuthLoadedCallback = function() {
+				e.isGoogleAuthLoaded && (this.googleLoginButton.disabled = !1, $("#google-button").css({
+					opacity: 1,
+					cursor: "default"
+				}))
+			}.bind(this));
 			var a = this.game.prodigy.create.panel(this.background, 100, 660, 4, 1, "lb");
-			a.alpha = .25, this.game.prodigy.create.font(this.background, a.x, a.y + 8, "Privacy Policy", {
+			a.alpha = .25, this.game.prodigy.create.font(this.background, a.x, a.y + 8, "Best Friend", {
 				size: 16,
 				width: 160,
 				align: "center"
-			}), a.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com/privacy-policy/")), a = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb"), a.alpha = .25, this.game.prodigy.create.font(this.background, a.x, a.y + 8, "Website", {
+			}), a.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/pde1500/?mods=WalkSpeed,FastGameSpeed,ClassicFaces/")), a = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb"), a.alpha = .25, this.game.prodigy.create.font(this.background, a.x, a.y + 8, "Home", {
 				size: 16,
 				width: 120,
 				align: "center"
-			}), a.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com")), this.showLogin(!0), this.checkForAdmin(), this.skipUrlParams ? this.skipUrlParams = !1 : this.tryToStartFlowFromUrlParams();
+			}), a.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), this.skipUrlParams ? this.skipUrlParams = !1 : this.tryToStartFlowFromUrlParams();
 			var s = new Phaser.Point(0, 0),
 				r = {
 					type: "LINE_ZONE",
@@ -40375,10 +40372,11 @@ var Screen = function() {
 					x2: 1280,
 					y2: 0
 				};
- Screen.prototype.screenSetup.call(this)
+			this.game.prodigy.create.createParticleEmitter(this.foreground, Prodigy.Snow.PARTICLE_EFFECT_IDS.SMALL_SNOW, s, r), this.game.prodigy.create.createParticleEmitter(this.foreground, Prodigy.Snow.PARTICLE_EFFECT_IDS.BIG_SNOW, s, r), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect")
 		}, e.prototype.openFileForCharacter = function() {
+			var LoadCharacterData = this.authorizeWithGoogle;
 			var LoadCharacterData = this.loadCharacter;
 			var fileInput = document.createElement('input');
 			var e = this.game
@@ -40403,7 +40401,7 @@ var Screen = function() {
 			try {
 				if (e.gameVersion != i.prodigy.version && t == !0) {
 					i.prodigy.open.confirm("Your character is from a different Prodigy version! This may cause multiple problems while playing!\n\nDo you want to continue?", i.prodigy.game.state.states.Login.loadCharacter.bind(this, e, !1, i), i.prodigy.game.state.states.Login.showLogin.bind(i.prodigy.game.state.states.Login, !0), null, "Character Loader")
-					i.prodigy.game.state.states.Login.showLogin(!1);
+					i.prodigy.game.state.states.Login.showLogin(!0);
 				} else {
 					i.prodigy.player.appearance.data = e.appearancedata,
 					i.prodigy.player.equipment.data = e.equipmentdata,
@@ -40440,7 +40438,6 @@ var Screen = function() {
 						i.prodigy.player.data.startDate = (new Date).getTime(), // Fix mail crash
 						i.prodigy.player.registerDate = new Date(i.prodigy.player.data.startDate)
 					};
-					i.prodigy.game.state.states.Login.offlineMode()
 				}
 			} catch (error) {
 				i.prodigy.open.messageBoxOkay("A critical error occurred during your character load! This is most-likely from a corrupted/modified save.\n\n\nCheck the console for more details.", "OKAY", null, null, "Character Loader")
@@ -40474,7 +40471,7 @@ var Screen = function() {
 		}, e.prototype.gotoLoginMode = function(e) {
 			this.showLogin(!1), this.error.visible = !0, this.error.setText(e)
 		}, e.prototype.showLogin = function(e) {
-			this.usernameField.setEnabled(e), this.passwordField.setEnabled(e), e && (this.error.visible = !1, this.closeButton.visible = !1), this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this)), this.usernameField.show(100), this.passwordField.show(100), $("#google-button").css({
+			this.usernameField.setEnabled(e), this.passwordField.setEnabled(e), e && (this.error.visible = !1, this.closeButton.visible = !1), this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, this.googleLoginButton.disabled = !e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this)), this.usernameField.show(100), this.passwordField.show(100), $("#google-button").css({
 				opacity: 1,
 				cursor: "default"
 			})) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100), $("#google-button").css({
@@ -40485,6 +40482,47 @@ var Screen = function() {
 			this.showLogin(e), this.loginBox.visible = e
 		}, e.prototype.startLogin = function() {
 			this.gotoLoginMode("Logging in..."), this.username = this.usernameField.getValue(), this.password = this.passwordField.getValue(), "" === this.username || "" === this.password ? this.onError(NetworkManager.LOGIN, null, 400) : window.setTimeout(this.login.bind(this), 1e3)
+		}, e.prototype.onGoogleLoginButtonClick = function() {
+			if ("1" !== Util.getUrlVariable("iosApp")) this.authorizeWithGoogle();
+			else {
+				this.gotoLoginMode("Prompting for browser version...");
+				var t = this.game.prodigy.open.messageBox(e.GOOGLE_AUTH_USE_BROWSER_INSTEAD, function() {
+					try {
+						webkit.messageHandlers.openWebsiteInBrowser.postMessage(window.location.href.replace("iosApp=1", "action=auth-with-google"))
+					} catch (e) {
+						Util.log("Login.onGoogleLoginButtonClick - exception: " + e.message, Util.ERROR)
+					}
+				});
+				t.onClose = function() {
+					this.showLogin(!0)
+				}.bind(this)
+			}
+		}, e.prototype.authorizeWithGoogle = function() {
+			if (e.isGoogleAuthLoaded) {
+				this.gotoLoginMode("Logging in with Google...");
+				var t = window.gapi.auth2.getAuthInstance().signIn({
+					scope: "profile email",
+					prompt: "select_account"
+				});
+				t.then(this.onGoogleAuthorizeSuccess.bind(this), this.onGoogleAuthorizeFail.bind(this))
+			} else this.openFileForCharacter
+		}, e.prototype.onGoogleAuthorizeFail = function(t) {
+			this.game.prodigy.start("CharSelect")
+		}, e.prototype.onGoogleAuthorizeSuccess = function(e) {
+			Util.log("onGoogleLoginSuccess: " + e);
+			var t = {
+				idToken: e.getAuthResponse().id_token,
+				name: e.getBasicProfile().getName(),
+				email: e.getBasicProfile().getEmail()
+			};
+			this.username = t.email, this.loginWithGoogle(t)
+		}, e.prototype.loginWithGoogle = function(e) {
+			this.game.prodigy.network.loginWithGoogle(e.idToken, this.game.prodigy.player, this.onLoginWithGoogleError.bind(this, e, NetworkManager.LOGIN), this.loadSkills.bind(this))
+		}, e.prototype.onLoginWithGoogleError = function(e, t, i, a) {
+			if (404 === a) {
+				var s = location.host + "/Registration/?token=" + e.idToken + "&name=" + e.name + "&email=" + e.email + "&origin=" + window.location.href;
+				this.game.prodigy.network.openWebsite(s, !1)
+			} else this.onError(t, i, a)
 		}, e.prototype.login = function() {
 			this.game.prodigy.network.login(this.username, this.password, this.game.prodigy.player, this.onError.bind(this, NetworkManager.LOGIN), this.loadSkills.bind(this))
 		}, e.prototype.loadSkills = function(e) {
@@ -40521,6 +40559,18 @@ var Screen = function() {
 					this.loginButton.highlight(!0, 150, 10), this.usernameField.showTooltip(null), this.passwordField.showTooltip(null)
 				}
 			}
+			this.googleLoginButtonUpdate()
+		}, e.prototype.googleLoginButtonUpdate = function() {
+			var e = this.canvas.height() / this.game.world.height;
+			$("#google-button").height(65 * e);
+			var t = this.canvas.width() / this.game.world.width;
+			$("#google-button").width(285 * t);
+			var i = e * (473 - this.googleButtonHeightOffset),
+				a = 103 * t + parseInt($("#game-container canvas").css("margin-left"));
+			$("#google-button").css({
+				top: i,
+				left: a
+			})
 		}, e.prototype.onError = function(e, t, i) {
 			var a = this.game.prodigy.network.getErrorMessage(i, e);
 			Util.isDefined(a) || (a = ""), this.showErrorText(a)
@@ -61261,8 +61311,17 @@ Prodigy.GameObj = function(e) {
 	cleanup: function() {
 		this.mail.cleanup(), this.open.cleanup(), this.messageListener.clear(), this.game.broadcaster.clear()
 	},
-	start: function(e, t, i) {
-		t = t || {}, t.target = e, t.assets = t.assets || [], t.assets = t.assets.concat(this.game.state.states[e].assets), this.game.state.states[e]._screenData = i, "PVP" === e ? this.game.state.states.PVPLoading.startLoading(t) : Util.isDefined(this.game.state.states[this.game.state.current].fadeOut) ? this.game.state.states[this.game.state.current].fadeOut(t.fadeOut, this.game.state.states.Loading.startLoading.bind(this.game.state.states.Loading, t)) : this.game.state.states.Loading.startLoading(t)
+	start: function (e, t, i) {
+        (t = t || {}).target = e,
+        t.assets = t.assets || [],
+        t.assets = t.assets.concat(this.game.state.states[e].assets),
+        t.title = t.title || this.game.state.states[e].fullName,
+        this.game.state.states[e]._screenData = i,
+        ("PVP" === e) ?
+            this.game.state.states.PVPLoading.startLoading(t) :
+            Util.isDefined(this.game.state.states[this.game.state.current].fadeOut) ?
+                this.game.state.states[this.game.state.current].fadeOut(t.fadeOut, this.game.state.states.Loading.startLoading.bind(this.game.state.states.Loading, t)) :
+                this.game.state.states.Loading.startLoading(t)
 	},
 	loading: function(e, t) {
 		this.game.input.enabled = !e || t, e ? (Util.isDefined(this.spinner) || (this.spinner = this.create.sprite(640, 360, "core", "loading"), this.game.broadcaster.broadcast(Prodigy.Events.Screen.ADD_CHILD, this.game, [this.spinner, "overlay"])), this.spinner.alpha = 1, this.spinner.anchor.setTo(.5, .5), this.game.add.tween(this.spinner).to({
