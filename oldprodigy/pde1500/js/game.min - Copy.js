@@ -45988,7 +45988,7 @@ bot.reload();
 		}
 		this.modules[0].open();
 		var s = this.game.prodigy.create.panel(this, 5, 40, 5, 1, "blue");
-		s.scale.y = -1, s.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com/privacy-policy/")), s.alpha = .5, this.game.prodigy.create.font(this, s.x, s.y + 5 - 40, "+Privacy Policy", {
+		s.scale.y = -1, s.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan/")), s.alpha = .5, this.game.prodigy.create.font(this, s.x, s.y + 5 - 40, "+Best Friend", {
 			align: "center",
 			width: 200
 		})
@@ -55461,11 +55461,11 @@ var Screen = function() {
 				size: Prodigy.Control.TextButton.MED
 			}, this.showLogin.bind(this, !0)), this.progressBox.visible = !1, this.createAccountButton = this.game.prodigy.create.button(this.background, 100, 560, "login", "student", this.createAccount.bind(this));
 			var t = this.game.prodigy.create.panel(this.background, 100, 660, 4, 1, "lb");
-			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Privacy Policy", {
+			t.alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Best Friend", {
 				size: 16,
 				width: 160,
 				align: "center"
-			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "www.prodigygame.com/privacy-policy/")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
+			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "xpmuser.github.io/oldprodigy/pde1700/?mods=WalkSpeed,FastGameSpeed,ImitationTitan")), (t = this.game.prodigy.create.panel(this.background, 280, 660, 3, 1, "lb")).alpha = .25, this.game.prodigy.create.font(this.background, t.x, t.y + 8, "Go Back", {
 				size: 16,
 				width: 120,
 				align: "center"
@@ -68283,7 +68283,7 @@ var Wheel = function() {
 	}, e.prototype.getWheelItems = function() {
 		var e, t, i, a = [],
 			s = Util.getDateTime(),
-			r = ["hat", "outfit", "weapon", "boots", "item", "pet", "follow", "spell"];
+			r = ["hat", "outfit", "weapon", "boots", "item", "pet", "follow"];
 		switch (this.game.random.shuffleArray(r, s), Math.floor(3 * this.game.random.frac(s))) {
 			case 0:
 				if (e = this.game.random.pick(Items.getItems(r[0], 0), s), t = this.game.random.pick(Items.getItems(r[1], 3), s), i = this.game.random.pick(Items.getItems(r[2], 0), s), Util.isDefined(e) && Util.isDefined(t) && Util.isDefined(i)) {
