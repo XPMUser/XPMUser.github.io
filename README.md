@@ -175,7 +175,6 @@ Currently, these are the versions that support modpacks:
 
 ## List of Versions:
 - 1.0.0 (Map Update + Grew the game to make it take up the entire page + Hearts show up during battles instead of the bar + Problem: Removed the ability to take care of your pets + Bypassed opening Treasure Chests after winning battles + Updated the ui, menus, etc + Instead of going to a zone to just do battles, you can click on the NPC and then click on the yes button to do battles. + Another issue: Removed Multiplayer stuff + Updated the Character Creation Zone) You can apply whatever was missing on this version as modpacks for it.
-- 1.1.0 (Bugfixes)
 - 1.2.0 (Skywatch + Font changes)
 - 1.3.0 (Dark Tower)
 - 1.3.1 (Changed the Login Background + Bugfixes)
@@ -241,7 +240,6 @@ Currently, these are the versions that support modpacks:
 - 1.30.0 (Prodigy Reborn 1.0) There's no math. Use the Walkspeed mod instead of the 2 removed buttons from the settings menu. ?mods=WalkSpeed Credits: The 1.30.0 Mod: Craftersshaft Problems: Plumber's Cap isn't fully functioning correctly.
 - 3-15-3 (New Login Screen + Changed the Login Background + Tower Town and Harmony Island have been added + New Map + Updated Tutorial)
 - 3-18-5 (Arena (Harmony Island))
-- 6-136-0 (Coming Soon!)
 - 1.11.0 (Back to April 2015 for Toontown music!)
   
 You can choose any version you want!
