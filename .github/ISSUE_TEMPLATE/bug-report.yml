@@ -1,0 +1,37 @@
+name: Bug Report
+description: Something is going wrong and it needs to be fixed!
+title: "*Your bug report title here*"
+labels: Bug
+body:
+  - type: input
+    attributes:
+      label: What went wrong?
+      description: Tell me what went happened in-game that was not expected.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Which version?
+      description: Which Old Prodigy version did this bug occur in?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: How can I reproduce this?
+      description: Tell me how I can trigger this bug again.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What did the logs output? (press F12 or CTRL+SHIFT+J to see console logs)
+      description: Even if there is no error in the console, you should still list whatever was logged when the bug occurred.
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: I agree to the following
+      options:
+        - label: By checking this box, I confirm that this bug report is being made for a bug that occurred on THIS website (xpmuser.github.io), and NOT these websites (daboss7173.github.io / oldprodigy.onrender.com)
+          required: true
+        - label: By checking this box, I confirm that this issue is being used to report a problem with an existing feature, and not to suggest a new feature.
+          required: true
