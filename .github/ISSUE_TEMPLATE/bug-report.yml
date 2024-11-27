@@ -35,3 +35,5 @@ body:
           required: true
         - label: By checking this box, I confirm that this issue is being used to report a problem with an existing feature, and not to suggest a new feature.
           required: true
+        - label: By checking this box, I confirm that this issue is being used to report an honest probelm with an existing feature.
+          required: true
