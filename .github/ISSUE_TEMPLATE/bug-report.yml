@@ -6,7 +6,7 @@ body:
   - type: input
     attributes:
       label: What went wrong?
-      description: Tell me what went happened in-game that was not expected.
+      description: Tell me what went happened in-game that was not expected, but make sure the bug is actually true.
     validations:
       required: true
   - type: input
@@ -35,5 +35,5 @@ body:
           required: true
         - label: By checking this box, I confirm that this issue is being used to report a problem with an existing feature, and not to suggest a new feature.
           required: true
-        - label: By checking this box, I confirm that this issue is being used to report an honest probelm with an existing feature.
+        - label: By checking this box, I confirm that this issue is being used to report an honest problem with an existing feature.
           required: true
