@@ -4505,7 +4505,7 @@ Prodigy.Events.FriendsList = {
 		},
 		"login-bg-1": {
 			type: "singleImage",
-			v: 8
+			v: 11
 		},
 		"login-bg-2": {
 			type: "singleImage",
@@ -4521,6 +4521,12 @@ Prodigy.Events.FriendsList = {
 		},
 		"login-google-signin": {
 			type: "singleImage",
+			v: 1
+		},
+		"letter-clockwork": {
+			type: "local",
+			base: "https://web.archive.org/web/20241112102659/https://oldprodigy.onrender.com/play/assets/images/",
+			key: "letter-clockwork",
 			v: 1
 		},
 		"letter-mail-open-image": {
@@ -27513,7 +27519,7 @@ var Player = function() {
 		}
 		if (this.playerParents = [], this.playerTeachers = [], Util.isDefined(e.ownerIDs))
 			for (var i = {}, t = 0; t < e.ownerIDs.length; t++) i = e.ownerIDs[t], "parent" === i.type ? this.playerParents.push(i) : "teacher" === i.type && this.playerTeachers.push(i);
-		this.checkVersion()
+		//this.checkVersion()
 	}, e.prototype.checkVersion = function() {
 		var e = 9,
 			t = this.data.versionID || 0;
@@ -27527,6 +27533,8 @@ var Player = function() {
 				ID: 14
 			}), i = this.state.get("zone-bonfire_spire-quest-ID"), Util.isDefined(i) && i >= 14 && this.state.set("zone-bonfire_spire-quest", {
 				ID: 15
+			}), i = this.state.get("zone-shipwreck_shore-quest-ID"), Util.isDefined(i) && i >= 11 && this.state.set("zone-shipwreck_shore-quest", {
+				ID: 12
 			})
 		}
 		if (4 > t) {
@@ -29121,7 +29129,7 @@ Prodigy.ForestBoss = function(e, t) {
 			if (Util.isNullOrUndefined(t.item) || this.game.prodigy.player.backpack.hasItem(t.item.type, t.item.ID) || (i = !0), Util.isNullOrUndefined(t.animatedSprites)) var a = this.game.prodigy.create.button(this.map, 20 + t.x, 20 + t.y, "map", t.map, this.openLocation.bind(this, t, i));
 			else var a = this.game.prodigy.create.button(this.map, 20 + t.x, 20 + t.y, "map", t.map, this.openLocation.bind(this, t, i), t.animatedSprites, t.animatedSpritePos);
 			if (a.sprite.input.pixelPerfectOver = !0, a.sprite.input.pixelPerfectClick = !0, i && (a.sprite.tint = 5592405), !Util.isNullOrUndefined(t.isNew) && t.isNew(this.game)) {
-				var s = this.map.add(this.game.prodigy.create.sprite(t.iconX - this.map.x, t.iconY - this.map.y, "icons", "exclamation"));
+				var s = this.map.add(this.game.prodigy.create.sprite(t.iconX - this.map.x, t.iconY - this.map.y));
 				s.inputEnabled = !0, s.events = a.sprite.events, s.anchor.setTo(.5, .5), this.game.add.tween(s).to({
 					y: s.y - 10
 				}, 400, Phaser.Easing.Quadratic.InOut, !0, 0, GameConstants.MAX_SAFE_INTEGER, !0)
@@ -32063,8 +32071,7 @@ Prodigy.ForestBoss = function(e, t) {
 			skinColor: 4,
 			eyeColor: 2
 		},
-		equipment: {
-		}
+		equipment: {"hat":16, "outfit":16, "weapon":38}
 	},
 	title: "The Adventurer",
 	description: "Finn has a wild thirst for adventure, travel, and new challenges. He is a gifted student, but many teachers wish he would spend more time in the classroom and less out exploring the wilderness.",
@@ -32862,12 +32869,12 @@ Prodigy.ForestBoss = function(e, t) {
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"Alexa the W12-4RD", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":52, "weapon":47}'
+		equipment: '{"hat":23, "outfit":24, "weapon":47}'
 	},
 	title: "Prodidows' wizard in Daboss7173's PDE",
 	description: "If you have admin access to Prodidows, you'll also have access to this wizard in Daboss7173's PDE by signing in to Google as Prodidows!",
 	pets: [{
-                ID: 36,
+                ID: 50,
                 level: 1
 	}],
 	drops: [{
@@ -32883,7 +32890,7 @@ Prodigy.ForestBoss = function(e, t) {
 	title: "XPMUser from Daboss7173's PDE",
 	description: "This is XPMUser's main character!",
 	pets: [{
-                ID: 1,
+                ID: 50,
                 level: 1
 	}],
 	drops: [{
@@ -32903,6 +32910,31 @@ Prodigy.ForestBoss = function(e, t) {
 		type: "gold",
 		N: 500
 	}]
+}, {
+    opponent: {
+        data: '{"level":100}',
+        appearance: '{"name":"Prince Ephen", "gender":"male", "hairStyle":8,"hairColor":4,"skinColor":1,"eyeColor":8}',
+        equipment: '{"hat":23, "outfit":52, "weapon":86, "boots":18}'
+    },
+    title: "The Fire Prodigy",
+    description: "He came to Lamplight from Earth a few years ago, not knowing of his powers. Throughout the adventures with his friends, they all discovered their abilities as the six Elemental Prodigies (but there are seven elements?) and he has been known for his power since... Would you try your hand at his challenge?.",
+    pets: [{
+                ID: 34,
+                level: 100
+            }, {
+                ID: 51,
+                level: 100
+            }, {
+                ID: 101,
+                level: 100
+            }, {
+                ID: 129,
+                level: 100
+    }],
+    drops: [{
+        type: "gold",
+        N: 10000
+    }]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
 		hideMenu: !0,
@@ -34633,7 +34665,7 @@ Prodigy.ForestBoss = function(e, t) {
 	addDefaultConfig: function() {
 		var e = 0,
 			t = 0;
-		this.addPage(e), this.addMenu(e, t), this.addAutoHeal(e, t), this.addSpellbook(e, t), this.addBackpack(e, t), this.addPet(e, t), this.addEvent(e, t), this.addSocial(e, t), this.addMap(e, t), this.addSettings(e, t), this.addFriendsList(e, t), this.addBots(e, t), this.addMathLess(e, t)
+		this.addPage(e), this.addMenu(e, t), this.addAutoHeal(e, t), this.addSpellbook(e, t), this.addBackpack(e, t), this.addPet(e, t), this.addEvent(e, t), this.addSocial(e, t), this.addMap(e, t), this.addSettings(e, t), this.addFriendsList(e, t), this.addBots(e, t), this.addMathLess(e, t), this.addMailer(e, t)
 	},
 	addHouseConfig: function(e) {
 		var t = 1;
@@ -34661,7 +34693,7 @@ Prodigy.ForestBoss = function(e, t) {
 		this.game.prodigy.debug.easyMode(1,1)
 	},
 	addBots: function(e, t) {
-var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 140, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.setup(null, !0);
+var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 100, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.setup(null, !0);
 bot.reload();
 	},
 	addMailer: function(e, t) {
@@ -40767,7 +40799,7 @@ var Screen = function() {
 		}, e.prototype.screenSetup = function() {
 			this.background.add(this.game.prodigy.create.sprite(0, 0, "login-bg-1")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 100, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1-70-0");
 			var t = Util.getCookie("prodigyUsername");
-			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition v4"), this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 100, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition v10"), this.loginButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login-buttons", "loadcharacter", this.openFileForCharacter.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -42129,7 +42161,7 @@ Prodigy.Skin = function(e, t, i) {
 		}
 	}
 }), Prodigy.SkinningRelay = function(e) {
-	this.game = e, this.active = [new Prodigy.StarlightFestival(e), new Prodigy.MagicParticle(e), new Prodigy.Underwater(e)]
+	this.game = e, this.active = [new Prodigy.Winterfest(e), new Prodigy.MagicParticle(e), new Prodigy.Underwater(e)]
 }, Prodigy.SkinningRelay.prototype = {
 	constructor: Prodigy.SkinningRelay,
 	getButtons: function() {
@@ -49699,7 +49731,7 @@ var Tech = function () {
 	return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function () {
 		WalkableScreen.prototype.create.call(this, [], "tech-0")
 	}, e.prototype.screenSetup = function () {
-		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toTown.bind(this)), this.digBtn = this.game.prodigy.create.element(this.content, 1010, 280);
+		WalkableScreen.prototype.screenSetup.call(this), this.path.addCallback(3, this.toTown.bind(this)), this.createStoreNPC(670, 250, this.game.prodigy.stores.getStore(this.game.prodigy.stores.SHOPS.THE_MACHINE_SHOP), this.digBtn = this.game.prodigy.create.element(this.content, 1010, 280));
 		var t = this.digBtn.add(this.game.prodigy.create.sprite(40, 40, "icons", "star2"));
 		t.anchor.setTo(.5, .5), t.inputEnabled = !0, t.angle = -20, t.events.onInputDown.add(this.toTech, this), this.digBtn.add(this.game.prodigy.create.sprite(0, 10, "icons", "player")), this.game.add.tween(t).to({
 			angle: 20
@@ -50421,7 +50453,49 @@ Arena.AUDIO = [{
 			w: 240,
 			h: 80,
 			rect: !0
-		}, "lamplight-A3", 180, 180, a, AreaEvent.DOWN), this._zone.util.addLamp(e, t, 402, 137), this._zone.util.addLamp(e, t, 602, 137), this._zone.util.addLamp(e, t, 802, 137)
+		}, "lamplight-A3", 180, 180, a, AreaEvent.DOWN), this._zone.util.addLamp(e, t, 402, 137), this._zone.util.addLamp(e, t, 602, 137), this.addGnome(e, t, 200, 355, "Peddler", 6, 6, this.openStore.bind(this, e))
+	},
+	start: function (e, t) {
+		Prodigy.Map.prototype.start.call(this, e, t)
+	},
+	openStore: function (e, t) {
+		for (var i = Util.getDateSeed(), a = [], s = 0; s < Items.data.item.length; s++) 1 === Items.data.item[s].drop && a.push(s + 1);
+		var r = a[Math.floor(Util.pseudoRandomNumber(i) * a.length)],
+			o = e.prodigy.player.backpack.hasItem("item", r),
+			n = "You have " + o + "...do you want to sell me one of yours?",
+			h = e.prodigy.dialogue.create();
+		t && (n = "Thanks! You have " + o + " left, do you want to sell me another one?"), t || h.setText({
+			text: "Hey there, do you have any [item/" + r + "]? \n\nToday only, I'll buy them for \n[gold] 100 each!"
+		}), o ? h.setText({
+			text: n,
+			yes: this.sellItem.bind(this, e, r)
+		}) : h.setText({
+			text: "Come back tomorrow, and I'll buy something else!"
+		}), h.start("merchant")
+	},
+	sellItem: function (e, t) {
+		e.prodigy.player.changeGold(100), e.prodigy.player.backpack.consume("item", t, 1), this.openStore(e, !0)
+	},
+	openText: function (e, t) {
+		var i = e.prodigy.dialogue.create();
+		i.setText({
+			text: "This is the TRANSFORMOTRON! It will transform you into a monster! Want to try?",
+			yes: this.tryTransform.bind(this, e, t)
+		}), i.start("guard")
+	},
+	tryTransform: function (e) {
+		var t = [2, 20, 34, 36, 46, 61, 90],
+			i = t[Math.floor(Math.random() * t.length)],
+			a = e.prodigy.dialogue.create();
+		e.prodigy.player.getGold() < 0 ? a.setText({
+			text: "Uh oh! You don't have enough gold!"
+		}) : e.prodigy.player.isMember ? (e.prodigy.network.sendAnalytics("Use-Transformatron"), e.prodigy.player.changeGold(-0), e.prodigy.player.transform(i, 6e5), a.setText({
+			text: "The transformation only lasts 10 minutes, so come back when you want to transform again!"
+		})) : (e.prodigy.network.sendAnalytics("Use-Transformatron"), e.prodigy.player.transform(i, 1e3), a.setText({
+			text: "Uh oh! Only members can transform!"
+		}), a.setText({
+			callback: e.prodigy.open.membership.bind(e.prodigy.open)
+		})), a.start("guard")
 	}
 }), Prodigy.Lamplight_A3 = function(e, t) {
 	Prodigy.Map.call(this, e, "A3", "Vendor's Plaza", 1120, 540, ["lamplight-A2", "lamplight-B3", "lamplight-A4"], t.concat("npc-harvey"))
@@ -66212,39 +66286,195 @@ window.StripeUtilities = {}, window.StripeUtilities.StripeCheckoutWrapper = func
 	}
 }), Prodigy.UI.YourMail.MAIL = [{
 	id: 0,
-	subject: "The friend feature has placeholders!",
+	subject: "The Robolympics have returned!",
 	isOpened: !1,
-	image: "friends-list",
-	message: "Wanna make friends? You can chat and make friends in app.priveeai.com. Open the friend menu (looks like a member menu) and then click on the make ai friends now button!"
+	image: undefined,
+	message: "Clockwork Town is now available!",
+	attachments: []
 }, {
 	id: 1,
-	subject: "You can now catch pets in The Lost Island!",
-	isOpened: !1,
-	image: "lost-island-mailer-1",
-	message: "We've lifted the ban on catching pets in The Lost Island!"
-}, {
-	id: 2,
-	subject: "Find Bots in oldprodigyde! (1.16.5's PDE)",
+	subject: "SPLIT TEST MAIL",
 	isOpened: !1,
 	image: null,
-	message: "Click on the gear icon to open the O, A, C, E menu (used to be called the Options menu) and then click on the Find Bots button!",
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: [{
+		type: "item",
+		ID: 1
+	}, {
+		type: "item",
+		ID: 2
+	}, {
+		type: "item",
+		ID: 3
+	}, {
+		type: "item",
+		ID: 4
+	}],
+	gameMethod: {
+		name: "openStore",
+		params: [2]
+	},
+	splitTest: "test"
+}, {
+	id: 2,
+	subject: "Google Sign-in is back in business!",
+	isOpened: !1,
+	image: null,
+	message: "Load your character/wizard (save file) first before you sign in with Google!",
 	attachments: []
 }, {
 	id: 3,
-	subject: "The bots are back!",
+	subject: "Hello World 3",
 	isOpened: !1,
-	image: "after-hours",
-	message: "Unfortunately, this fake Multiplayer Mode's still controlled in Developer Mode, but the wizards (bots) can't even walk! Only your player card can be opened for now!",
-	attachments: []
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: [{
+		type: "currency",
+		ID: 11,
+		N: 50
+	}]
 }, {
 	id: 4,
-	subject: "A few of the old things are back in business!",
+	subject: "Hello World 4",
 	isOpened: !1,
-	image: "after-hours",
-	message: "Do you miss some old things? Well, here they are!",
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
 	attachments: []
 }, {
-	id: 5,
+	id: 10,
+	subject: "Hello World 10",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 20,
+	subject: "Hello World 20",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 30,
+	subject: "Hello World 30",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 40,
+	subject: "Hello World 40",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 50,
+	subject: "Hello World 50",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 60,
+	subject: "Hello World 60",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 70,
+	subject: "Hello World 70",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 80,
+	subject: "Hello World 80",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 90,
+	subject: "Hello World 90",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 100,
+	subject: "Hello World 100",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 1e3,
+	subject: "Hello World 1000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 2e3,
+	subject: "Hello World 2000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 3e3,
+	subject: "Hello World 3000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 4e3,
+	subject: "Hello World 4000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 5e3,
+	subject: "Hello World 5000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 6e3,
+	subject: "Hello World 6000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 7e3,
+	subject: "Hello World 7000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 8e3,
+	subject: "Hello World 8000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 9e3,
+	subject: "Hello World 9000",
+	isOpened: !1,
+	image: null,
+	message: "The answer to the ultimate question of life, the universe, and everything is 42.",
+	attachments: []
+}, {
+	id: 1e4,
 	subject: "Welcome to your new mail service!",
 	isOpened: !1,
 	image: null,
