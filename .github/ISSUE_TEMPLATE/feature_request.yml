@@ -6,7 +6,7 @@ body:
   - type: textarea
     attributes:
       label: What would you like to add?
-      description: Here you can go into detail about what you want to add. Try to be as specific as you can so that I can tell what it is you want to change. (Stop asking me to add new versions that I can't fix, I'll do that in my own time. No asking for apis (game servers like multiplayer mode) or any oauths yet.) If you're gonna ask for bots, you can provide a picture of a bot's player card here, in the comment section or on my DM. My discord tag is xpmuser.
+      description: Here you can go into detail about what you want to add. Try to be as specific as you can so that I can tell what it is you want to change. (Stop asking me to add new versions that I can't fix, I'll do that in my own time. No asking for apis (game servers like multiplayer mode) or any oauths yet.) If you're gonna ask for bots, you can provide a picture of a bot's player card here, in the comment section or on Instagram with a link.
       placeholder: Make a wizard do the dab because it's so trendy and would never be outdated ever.
     validations:
       required: true
@@ -48,7 +48,7 @@ body:
           required: true
         - label: By checking this box, I confirm that there are no open issues about this suggestion.
           required: true
-        - label: By checking this box, I confirm that this issue template is being used to suggest a feature, not report a bug, and that if I want to make a bug report, I should be using Discord to do that.
+        - label: By checking this box, I confirm that this issue template is being used to suggest a feature, not report a bug.
           required: true
         - label: By checking this box, I confirm that I'm not asking for any apis (servers and the real multiplayer mode) or OAuths.
           required: true
