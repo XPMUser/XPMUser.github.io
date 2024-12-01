@@ -12,7 +12,7 @@ Click on the left arrow to go back.
 
 # Contacts
 
-X: https://x.com/SCChawla7
+X: https://x.com/LFWSCXPMUser
 
 Instagram: https://www.instagram.com/shamomy2/
 
