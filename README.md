@@ -11,7 +11,9 @@ If you're playing my Old Prodigy versions, Definitive Editions, Ultimate Edition
 Click on the left arrow to go back.
 
 # Contacts
+
 YouTube Channel: https://www.youtube.com/@learningandfunwithsc
+
 Instagram: https://www.instagram.com/shamomy2/
 
 # Credits
