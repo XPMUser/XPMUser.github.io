@@ -12,7 +12,7 @@ Click on the left arrow to go back.
 
 # Contacts
 
-YouTube Channel: https://www.youtube.com/@learningandfunwithsc
+X: https://x.com/SCChawla7
 
 Instagram: https://www.instagram.com/shamomy2/
 
