@@ -10,6 +10,10 @@ If you're playing my Old Prodigy versions, Definitive Editions, Ultimate Edition
 
 Click on the left arrow to go back.
 
+# Contacts
+YouTube Channel: https://www.youtube.com/@learningandfunwithsc
+Instagram: https://www.instagram.com/shamomy2/
+
 # Credits
 
 Game restorers: Daboss7173 https://github.com/Daboss7173 and Craftersshaft https://github.com/craftersshaft/
