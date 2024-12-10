@@ -28004,7 +28004,7 @@ Util.capitalize = function(e) {
 		text: "This is the Academy...or it WAS a long time ago. We're all waiting for the Wardens to return, but until then the Academy is closed...",
 		face: 1
 	}, {
-		text: "Do you want to open the wheel and see the surprise inside?"
+		text: "Do you want to open the Bounty Rewards shop?"
 	}, {
 		text: "Collect fireflies for me.",
 		face: 0
@@ -29929,11 +29929,11 @@ Util.capitalize = function(e) {
 	}, {
 		text: "If your saved save file is on your iPad, you can put it in any drive app that keeps your files like your save files safe and available for another device."
 	}, {
-		text: "If you want to find bots (wizards) in Themy AI, then search for the bot's name."
+		text: "If you want to find bots (wizards) in my.ai, then search for the bot's name."
 	}, {
 		text: "If you want to be a member, click on the gear icon and then click on the member button."
 	}, {
-		text: "Want to make AI Friends and chat with them, click on the friend icon, and then click on the make AI friends now button."
+		text: "Never gonna give you up Never gonna let you down Never gonna run around and desert you"
 	}, {
                 text: "You'll be healed automatically after a battle!"
 	}, {
@@ -46875,7 +46875,6 @@ bot.reload();
 				top: "Visit",
 				bot: "House"
 			}, this.toHouse.bind(this));
-		if (i.setActive(t), t && this.game.prodigy.player.hasCompletedTutorial()) {
 			var a = this.game.prodigy.world.getZone("house").getState("hasClickedPlayerCardVisit");
 			if (!Util.isDefined(a) || !a) {
 				this.exclamationSprite = this.game.prodigy.create.sprite(0, 0, "icons", "exclamation"), this.base.add(this.exclamationSprite);
@@ -46884,10 +46883,10 @@ bot.reload();
 					y: this.exclamationSprite.y - 10
 				}, 400, Phaser.Easing.Quadratic.InOut, !0, 0, -1, !0)
 			}
-		}
 		this.game.prodigy.create.advButton(this.base, 125, 350, {
 			icon: "challenge",
-			top: "Battle!"
+			top: "Add for",
+                        bot: "Battle!"
 		}, this.challenge.bind(this)).setActive(!this.viewOnly), e.push(this.game.prodigy.create.advButton(this.base, 455, 350, {
 			icon: "bag",
 			top: "View",
@@ -46896,7 +46895,11 @@ bot.reload();
 			icon: "player",
 			top: "View",
 			bot: "Stats"
-		}, this.setMode.bind(this, 2, 1))), this.setupFriendRequestButton(235, 350)
+		}, this.setMode.bind(this, 2, 1))), e.push(this.game.prodigy.create.advButton(this.base, 345, 350, {
+			icon: "gift",
+			top: "Rick",
+			bot: "Roll"
+		}, this.sendGift.bind(this, 2, 1))), this.setupFriendRequestButton(235, 350)
 	},
 	setupFriendRequestButton: function(e, t) {
 		if (!Util.isDefined(this.game)) return void Util.log("Friend Button failed to render", Util.ERROR);
@@ -46906,12 +46909,12 @@ bot.reload();
 				break
 			} var n = null,
 			h = "delete-friend";
-		1 === r ? (i = "Remove", a = "Friend", n = Prodigy.Events.FriendsList.REMOVE_FRIEND, this.hideFriendsButton = !1) : 0 === r ? (i = "Cancel", a = "Request", n = Prodigy.Events.FriendsList.CANCEL_REQUEST, this.hideFriendsButton = !1) : (i = "Friend", a = "Request", n = Prodigy.Events.FriendsList.SEND_REQUEST, h = "add-friend");
+		1 === r ? (i = "Remove", a = "Friend", n = Prodigy.Events.FriendsList.REMOVE_FRIEND, this.hideFriendsButton = !1) : 0 === r ? (i = "Cancel", a = "Request", n = Prodigy.Events.FriendsList.CANCEL_REQUEST, this.hideFriendsButton = !1) : (i = "Add", a = "Friend", n = Prodigy.Events.FriendsList.SEND_REQUEST, h = "add-friend");
 		var l = (function() {
 			if (n === Prodigy.Events.FriendsList.REMOVE_FRIEND) {
 				var e = Util.isDefined(this.player.appearance.data.nick) && "" !== this.player.appearance.data.nick ? this.player.appearance.data.nick : this.player.appearance.data.name;
 				this.game.prodigy.open.confirm("Are you sure you want to remove " + e + " from your friends list?", this.game.broadcaster.broadcast.bind(this.game.broadcaster, n, "Card", [this.player.userID]), null, null, "Removing Friend")
-			} else this.game.broadcaster.broadcast(n, "Card", [this.player.userID])
+			} else this.game.prodigy.network.openWebsite("github.com/XPMUser/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
 		}).bind(this);
 		Util.isDefined(e) && Util.isDefined(t) || (e = this.cmdFriendRequest.x, t = this.cmdFriendRequest.y), Util.isDefined(this.cmdFriendRequest) && this.cmdFriendRequest.destroy(), this.cmdFriendRequest = this.game.prodigy.create.advButton(this.base, e, t, {
 			atlas: "icons-menu",
@@ -46975,31 +46978,13 @@ bot.reload();
 		}
 	},
 	toHouse: function () {
-        this.game.prodigy.world.teleport("house", null, null, this.game.prodigy.player)
+                this.game.prodigy.world.teleport("house-suburbs")
         },
 	challenge: function() {
-		var e = this.game.broadcaster.broadcast(Prodigy.Events.PlayerLocomotion.GET_TARGET, this.game, [!0]),
-			t = function(e, t) {
-				e.prodigy.world.teleport(e.prodigy.player.data.zone, t.x, t.y)
-			},
-			i = {
-				equipment: this.game.prodigy.player.equipment.data,
-				appearance: this.game.prodigy.player.appearance.data,
-				data: this.game.prodigy.player.data,
-				isMember: this.game.prodigy.player.isMember
-			};
-		this.game.prodigy.network.emitMessage({
-			action: "challenge",
-			target: this.player.userID,
-			time: 6e4,
-			data: {
-				userID: this.game.prodigy.player.userID,
-				player: i
-			}
-		}), this.game.prodigy.pvp.start(this.game.prodigy.player.userID, this.game.prodigy.player, this.player, t.bind(this, this.game, e), !1)
+		this.game.prodigy.network.openWebsite("github.com/XPMUser/XPMUser.github.io/issues/new?assignees=&labels=Suggestion&projects=&template=feature_request.yml&title=%2ACoolest+title+ever%2A")
 	},
 	sendGift: function() {
-		this.game.prodigy.open.message("This feature is coming soon!", null, null, "Send Gift")
+		this.game.prodigy.network.openWebsite("youtu.be/dQw4w9WgXcQ?feature=shared")
 	},
 	updatePlayer: function(e) {
 		this.p.reload(), this.game.input.clearEnterCallback(), e && this.setMode(0, 0)
@@ -48758,7 +48743,7 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"Techeater Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+		equipment: '{"hat":23, "outfit":24, "weapon":68, "boots":18}'
 	},
 	title: "Prodidows",
 	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
@@ -48783,7 +48768,7 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"Techeater David", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":24, "weapon":68}'
+		equipment: '{"hat":23, "outfit":24, "weapon":68, "boots":18}'
 	},
 	title: "XPMUser",
 	description: "This is XPMUser's main character!",
@@ -48808,7 +48793,7 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"Alexa the W12-4RD", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":24, "weapon":47}'
+		equipment: '{"hat":23, "outfit":24, "weapon":47, "boots":18}'
 	},
 	title: "Prodidows' wizard in Daboss7173's PDE",
 	description: "If you have admin access to Prodidows, you'll also have access to this wizard in Daboss7173's PDE by signing in to Google as Prodidows!",
@@ -48824,7 +48809,7 @@ bot.reload();
 	opponent: {
 		data: '{"level":100}',
 		appearance: '{"name":"David the W12-4RD", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":61, "outfit":52, "weapon":47}'
+		equipment: '{"hat":61, "outfit":52, "weapon":47, "boots":18}'
 	},
 	title: "XPMUser from Daboss7173's PDE",
 	description: "This is XPMUser's main character!",
@@ -48839,6 +48824,19 @@ bot.reload();
 }, {
 	opponent: {
 		data: '{"level":1}',
+		appearance: '{"name":"Donna Wildore", "gender":"female", "hairStyle":1, "hairColor":2, "skinColor":3, "eyeColor":14}',
+		equipment: '{}'
+	},
+	title: "Bot",
+	description: "This bot has been found from pde1500 version 6.",
+	pets: [],
+	drops: [{
+		type: "gold",
+		N: 500
+	}]
+}, {
+	opponent: {
+		data: '{"level":1}',
 		appearance: '{"name":"Jeremy Monsterring", "gender":"male", "hairStyle":3, "hairColor":3, "skinColor":3, "eyeColor":11}',
 		equipment: '{}'
 	},
@@ -48849,6 +48847,18 @@ bot.reload();
 		type: "gold",
 		N: 500
 	}]
+}, {
+    opponent: {
+        data: '{"level":1}',
+        appearance: '{"name":"Caitlyn Animalhelper", "gender":"female", "hairStyle":1,"hairColor":6,"skinColor":2,"eyeColor":5}'
+    },
+    title: "Bot",
+    description: "This is a bot.",
+    pets: [],
+    drops: [{
+        type: "gold",
+        N: 500
+    }]
 }, {
     opponent: {
         data: '{"level":100}',
@@ -49871,7 +49881,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	subject: "Tech Zone's now available!",
 	isOpened: !1,
 	image: "after-hours",
-	message: "You can go there from Airship Landing or a Firefly Garden!"
+	message: "You can go there from Airship Landing or the Firefly Garden!"
 }, {
 	id: 3,
 	subject: "You can now catch pets in The Lost Island!",
@@ -49880,17 +49890,17 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 	message: "We've lifted the ban on catching pets in The Lost Island!"
 }, {
 	id: 4,
-	subject: "Find Bots in oldprodigyde! (1.16.5's PDE)",
+	subject: "Holiday Events are back!",
 	isOpened: !1,
 	image: null,
-	message: "Click on the gear icon to open the O, A, C, E menu (used to be called the Options menu) and then click on the Find Bots button!",
+	message: "October will give you Pumpkinfest, November will give you Starlight Festival (Beta), and December will give you Winterfest!",
 	attachments: []
 }, {
 	id: 5,
 	subject: "The bots are back!",
 	isOpened: !1,
 	image: "after-hours",
-	message: "Unfortunately, this fake Multiplayer Mode's still controlled in Developer Mode, but the wizards (bots) can't even walk! Only your player card can be opened for now!",
+	message: "Fake Multiplayer Mode's still in beta!",
 	attachments: []
 }, {
 	id: 6,
@@ -50518,8 +50528,7 @@ Prodigy.Menu.NameChange = function(e, t, i, a) {
 		Util.isDefined(this.pages[e][t]) || this.pages[e].push([])
 	},
 	addBots: function(e, t) {
-var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 100, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.setup(null, !0);
-bot.reload();
+var bot = this.game.prodigy.create.player(this.content, new Player(this.game), 1, 100, 160); bot.forceOutfit(39); bot.showName(!0); bot.walkEnabled = !0; bot.startLoad(); bot.clickCallback = this.game.prodigy.open.card.bind(this.game.prodigy.open, new Player(this.game)); bot.setNewTarget(); bot.walk(); bot.initListeners(); bot.update(); 
 	},
 	addDefaultConfig: function() {
 		this.addPage(0), this.addMenu(0, 0), this.addSpellbook(0, 0), this.addBackpack(0, 0), this.addPet(0, 0), this.addSocial(0, 0), this.addMap(0, 0), this.addEvent(0, 0), this.addSettings(0, 0), this.addFriendsList(0, 0), this.addMailer(0, 0), this.addAutoHeal(0,0), this.addBots(0,0)
@@ -55477,7 +55486,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 5"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 6"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -68308,7 +68317,7 @@ var Wheel = function() {
 	}, e.prototype.getWheelItems = function() {
 		var e, t, i, a = [],
 			s = Util.getDateTime(),
-			r = ["hat", "outfit", "weapon", "boots", "item", "pet", "follow"];
+			r = ["hat", "outfit", "weapon", "boots", "item", "follow"];
 		switch (this.game.random.shuffleArray(r, s), Math.floor(3 * this.game.random.frac(s))) {
 			case 0:
 				if (e = this.game.random.pick(Items.getItems(r[0], 0), s), t = this.game.random.pick(Items.getItems(r[1], 3), s), i = this.game.random.pick(Items.getItems(r[2], 0), s), Util.isDefined(e) && Util.isDefined(t) && Util.isDefined(i)) {
