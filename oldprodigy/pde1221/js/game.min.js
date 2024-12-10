@@ -60,7 +60,7 @@ function ApiClient(e, t) {
         ajax_timeout: 3e4,
         root: void 0
     };
-    switch ("oldprodigy.onrender.com/") {
+    switch ("https://xpmuser-github-io-prodidows.onrender.com/") {
         case "oldprodigy.onrender.com":
         case "definitive-edition-backend.onrender.com":
         case "prodigywebdev.cloudapp.net":
@@ -72,7 +72,7 @@ function ApiClient(e, t) {
         case "play.prodigygame.com":
         case "math.prodigygame.com":
         case "prodigygame.com":
-        case "https://oldprodigy.onrender.com/":
+        case "https://xpmuser-github-io-prodidows.onrender.com/":
             d.root = "https://api.prodigygame.com/", d.url.graphql = "https://xpmuser.github.io/game-api/", d.url.account = "https://api.render.com/deploy/srv-cpepjpfsc6pc73a1ou9g?key=cDCS69byGq0", d.url.worlds = "https://xpmuser.github.io/oldprodigy/assets/", d.url.multiplayer = "https://web.archive.org/web/20160211011709/https://multiplayer.prodigygame.org/";
             break;
         default:
@@ -812,7 +812,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"npc-sprite-flora": {
 			type: "atlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/",
+			base: "assets/images/",
 			url: "npc-sprite-flora.png",
 			json: "npc-sprite-flora.json"
 		},
@@ -890,13 +890,13 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"npc-face-mist": {
 			type: "atlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/",
+			base: "assets/images/",
 			url: "npc-face-mist.png",
 			json: "npc-face-mist.json"
 		},
 		"npc-sprite-mist": {
 			type: "atlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/",
+			base: "assets/images/",
 			url: "npc-sprite-mist.png",
 			json: "npc-sprite-mist.json"
 		},
@@ -1100,7 +1100,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		map: {
 			type: "atlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1500/assets/images/general-map/6/general-",
+			base: "https://daboss7173.github.io/oldprodigy/1-24-0/assets/images/",
 			url: "map.png",
 			json: "map.json"
 		},
@@ -1142,7 +1142,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"store-tutorial": {
 			type: "atlas",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/",
+			base: "assets/images/",
 			url: "store-tutorial.png",
 			json: "store-tutorial.json"
 		},
@@ -1735,7 +1735,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		icons: {
 			type: "atlas",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/general-icons/42/",
+			base: "https://xpmuser.github.io/prodidows/1-10-0/images/",
 			url: "general-icons.png",
 			json: "general-icons.json"
 		},
@@ -5201,17 +5201,8 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"normal-outfit-male-58": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/normal/male/outfit/",
+			base: "assets/images/player/normal/male/outfit/",
 			url: "58.png",
-			x: 92,
-			y: 154,
-			w: 74,
-			h: 81
-		},
-		"normal-outfit-male-59": {
-			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
-			url: "0-1.png",
 			x: 92,
 			y: 154,
 			w: 74,
@@ -5732,17 +5723,8 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"reduced-outfit-male-58": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/outfit/",
+			base: "assets/images/player/reduced/male/outfit/",
 			url: "58.png",
-			x: 45,
-			y: 84,
-			w: 37,
-			h: 42
-		},
-		"reduced-outfit-male-59": {
-			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
-            url: "0-1.png",
 			x: 45,
 			y: 84,
 			w: 37,
@@ -6270,15 +6252,6 @@ Prodigy.extends = function(e, t, a) {
                                 w: 68,
                                 h: 78
 		},
-		"normal-outfit-female-59": {
-			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
-            url: "0-1.png",
-			x: 91,
-			y: 140,
-			w: 71,
-			h: 94
-		},
 		"normal-outfit-female-6": {
 			type: "spritesheet",
 			base: o,
@@ -6796,15 +6769,6 @@ Prodigy.extends = function(e, t, a) {
                                 type: "spritesheet",
                                 base: "https://xpmuser.github.io/prodidows/1-22-4/assets/images/outfits/reduced/female/",
                                 url: "58.png",
-			x: 45,
-			y: 86,
-			w: 35,
-			h: 39
-        },
-        "reduced-outfit-female-59": {
-            type: "spritesheet",
-            base: "https://xpmuser.github.io/prodidows/1-10-0/images/hair/",
-            url: "0-1.png",
 			x: 45,
 			y: 86,
 			w: 35,
@@ -7530,15 +7494,6 @@ Prodigy.extends = function(e, t, a) {
                                 w: 131,
                                 h: 89
 		},
-		"normal-hat-79": {
-			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/normal/hats/",
-			url: "24.png",
-			x: 49,
-			y: 53,
-			w: 137,
-			h: 78
-		},
 		"normal-hat-8": {
 			type: "spritesheet",
 			base: h,
@@ -8240,15 +8195,6 @@ Prodigy.extends = function(e, t, a) {
                                 y: 29,
                                 w: 66,
                                 h: 45
-		},
-		"reduced-hat-79": {
-			type: "spritesheet",
-			base: "https://xpmuser.github.io/prodidows/1-50-0/assets/images/player/reduced/hats/",
-			url: "24.png",
-			x: 21,
-			y: 35,
-			w: 69,
-			h: 40
 		},
 		"reduced-hat-8": {
 			type: "spritesheet",
@@ -9091,10 +9037,10 @@ Prodigy.extends = function(e, t, a) {
                                 type: "spritesheet",
                                 base: "https://xpmuser.github.io/prodidows/1-10-0/assets/images/player/normal/weapons/",
                                 url: "92.png",
-                                x: 129,
+                                x: 144,
                                 y: 142,
-                                w: 60,
-                                h: 60							
+                                w: 51,
+                                h: 52								
                         },
                         "normal-hair-male-24-1": {
                                 type: "spritesheet",
@@ -21257,7 +21203,7 @@ Prodigy.extends = function(e, t, a) {
 		},
 		"reduced-hair-female-20-16": {
 			type: "spritesheet",
-			base: "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/player/reduced/male/hair/",
+			base: "assets/images/player/reduced/male/hair/",
 			url: "5-16.png",
 			x: 42,
 			y: 44,
@@ -23226,56 +23172,6 @@ Attacks.calculateDamage = function(e, t, a) {
     animation: "Zero",
     drop: 1,
     damage: 9
-}, {
-	ID: 37,
-	name: "Frigid Blast",
-	element: "ice",
-	animation: "FrigidBlast",
-	drop: 1,
-	damage: 8,
-	type: "epic-attack",
-	epicId: 127,
-	baseAttack: "Blizzard"
-}, {
-	ID: 38,
-	name: "Storm's Wrath",
-	element: "storm",
-	animation: "StormWrath",
-	drop: 1,
-	damage: 8,
-	type: "epic-attack",
-	epicId: 125,
-	baseAttack: "StormComing"
-}, {
-	ID: 39,
-	name: "Forest's Fury",
-	element: "earth",
-	animation: "ForestFury",
-	drop: 1,
-	damage: 8,
-	type: "epic-attack",
-	epicId: 126,
-	baseAttack: "LeafWind"
-}, {
-	ID: 40,
-	name: "Tidal Twister",
-	element: "water",
-	animation: "TidalTwister",
-	drop: 1,
-	damage: 8,
-	type: "epic-attack",
-	epicId: 128,
-	baseAttack: "Fountain"
-}, {
-	ID: 41,
-	name: "Hot Snow",
-	element: "fire",
-	animation: "HotSnow",
-	drop: 1,
-	damage: 8,
-	type: "epic-attack",
-	epicId: 129,
-	baseAttack: "FireRain"
 }], Attacks.getAttack = function(e) {
     var t = Attacks.data[e - 1];
     return Util.isDefined(t) ? t : null
@@ -23479,7 +23375,7 @@ Attacks.calculateDamage = function(e, t, a) {
             d: 4
         }
     }, {
-        text: "Don't worry, I'll heal you and your pets!",
+        text: "Don't worry, I'll heal you and your pets! But I'll have to charge you [gold] 100...",
         face: 4,
         audio: {
             tag: "voice-10-8",
@@ -25305,14 +25201,6 @@ Items.getItemData = function(e, t) {
                 flavorText: "undefined",
                 h: 10,
                 d: 10
-        }, {
-                ID: 59,
-                name: "Ghost Outfit",
-                member: 1,
-                rarity: 4,
-                drop: 1,
-                flavorText: "Where's my body?",
-                h: 0
     }],
     weapon: [{
         ID: 1,
@@ -26051,10 +25939,9 @@ Items.getItemData = function(e, t) {
 		name: "Trialmaster's Training Stick",
 		member: 1,
 		rarity: 4,
-		drop: 1,
+		drop: 10,
 		flavorText: "Credits to Daboss7173 for this wand in different colors.",
-                h: 40,
-                d: 80,
+        d: 80,
 		memberAd: 0
     }],
     boots: [{
@@ -26500,7 +26387,7 @@ Items.getItemData = function(e, t) {
     }, {
         ID: 28,
         name: "Parka Hood",
-        type: "",
+        type: "cover",
         member: 1,
         rarity: 2,
         drop: 1,
@@ -26959,16 +26846,6 @@ Items.getItemData = function(e, t) {
             flavorText: "Credits to Craftersshaft and Mr. Intend for this hat.",
             h: 4,
             d: 2
-        }, {
-            ID: 79,
-            name: "Santa's Hat",
-            type: "",
-            member: 1,
-            rarity: 1,
-            drop: 1,
-            flavorText: "Ho Ho Ho, Merry Christmas!",
-            h: 10,
-            d: 10
     }],
     item: [{
         name: "Apple",
@@ -43147,8 +43024,8 @@ var SystemMenu = function() {
             Util.isDefined(this.content) && this.content.destroy(), Util.isDefined(this.soundVolumeBar) && (this.soundVolumeBar.destroy(), this.soundVolumeBar = null), Util.isDefined(this.voiceVolumeBar) && (this.voiceVolumeBar.destroy(), this.voiceVolumeBar = null), Util.isDefined(this.bgmVolumeBar) && (this.bgmVolumeBar.destroy(), this.bgmVolumeBar = null), this.content = new Prodigy.Element(this.game, this.container)
         }, e.prototype.openList = function() {
             this.clearContents(), this.title.setText("Settings");
-            var e = "Your world is: Botify";
-            Util.isDefined(this.game.prodigy.player.world) && (e = "Your world is: " + Server.getServerName(this.game.prodigy.player.world)), new BitmapFont(this.game, this.content, 20, 20, e, {
+            var e = "Your world is: Pretended Multiplayer BETA";
+            Util.isDefined(this.game.prodigy.player.world) && (e = "Your world is: " + Server.getServerName(this.game.prodigy.player.world)), new BitmapFont(this.game, this.content, 20, 10, e, {
                 width: 360,
                 align: "center"
             }), new TextButton(this.game, this.content, 50, 75, {
@@ -43251,102 +43128,116 @@ var SystemMenu = function() {
     }(),
     Leaderboard = function() {
         function e(e, t, a) {
-			Menu.call(this, e, t, 13), this.leaders = a, this.player = this.game.prodigy.player
-		}
-		return e.prototype = Object.create(Menu.prototype), e.prototype.setLoadComplete = function () {
-			this.targetID = this.game.prodigy.player.userID;
-			var e = this.game.prodigy.player.classIDs;
-			Util.isDefined(this.leaders) ? this.loadDataComplete(this.leaders) : Util.isDefined(e) && e.length > 0 ? this.game.prodigy.network.getLeaderboard("level", e[0], this.targetID, this.loadDataComplete.bind(this)) : this.loadDataComplete()
-		}, e.prototype.loadDataComplete = function (e) {
-			this.leaders = e;
-			var t = 0;
-			Util.isDefined(this.leaders) && Util.isDefined(this.leaders.leaderboard) && Util.isDefined(this.leaders.leaderboard[0]) && (t = this.leaders.leaderboard[0].user_id), t > 0 ? this.game.prodigy.network.getCharData(t, this.loadLeaderComplete.bind(this)) : this.state = 2
-		}, e.prototype.loadLeaderComplete = function (e) {
-			this.player = new Player, this.player.init(e), this.state = 2
-		}, e.prototype.menuSetup = function () {
-			Menu.prototype.menuSetup.call(this), this.currentState = 0, this.leaders = {
-				leaderboard: [{
-					username: "Borf",
-					leader_order: 1,
-					sort_column: 1,
-					user_id: 1
-				}, {
-					username: "Borf",
-					leader_order: 1,
-					sort_column: 2,
-					user_id: 1
-				}, {
-					username: "Borf",
-					leader_order: 1,
-					sort_column: 3,
-					user_id: 1
-				}],
-				userPosition: [{
-					username: "Borf",
-					leader_order: 1,
-					sort_column: 1,
-					user_id: 1
-				}, {
-					username: "Borf",
-					leader_order: 1,
-					sort_column: 2,
-					user_id: 1
-				}, {
-					username: "Borf",
-					leader_order: 1,
-					sort_column: 3,
-					user_id: 1
-				}]
-			}, Util.isDefined(this.leaders) ? (this.data = new UserEquipment(this.game, this, 466, 210, this.player, !0), new BitmapFont(this.game, this.data, 0, 0, "Top Wizard in Class", {
-				size: 30,
-				width: 348,
-				align: "center"
-			})) : new BitmapFont(this.game, this, 340, 350, "You need to be in a class to view leaderboards", {
-				size: 30,
-				width: 600,
-				align: "center"
-			});
-			var e = [];
-			this.showFrame("leaderboard", "LEADERBOARDS", e);
-			var t = new TextButton(this.game, this, 0, 0, {
-				icon: "close",
-				text: "close"
-			}, this.close.bind(this));
-			this.showBtns([], [t]), Util.isDefined(this.leaders) && (this.setupTop(this.leaders.leaderboard, "Top 3 In Your Class"), this.setupTop(this.leaders.userPosition, "Your Position", !0)), this.setupComplete = !0
-		}, e.prototype.setupTop = function (e, t, a) {
-			new BitmapFont(this.game, this, a ? 860 : 30, 150, t, {
-				size: 30,
-				width: 390,
-				align: "center"
-			});
-			for (var s = 0; 3 > s; s++) {
-				var i = "???",
-					r = "",
-					o = "",
-					n = null;
-				Util.isDefined(e) && Util.isDefined(e[s]) && (i = e[s].username, o = e[s].leader_order, r = e[s].sort_column, n = e[s].user_id, new LeaderboardIcon(this.game, this, a ? 860 : 30, 190 + 100 * s, o, i, "Level " + r, n === this.targetID))
-			}
-		}, e
-	}(),
+            Menu.call(this, e, t, 13), this.player = this.game.prodigy.player, this.classIDs = this.game.prodigy.player.classIDs, this.leaders = a, this.setup()
+        }
+        return e.prototype = Object.create(Menu.prototype), e.prototype.menuSetup = function() {
+            Menu.prototype.menuSetup.call(this), this.page = 0, this.contentSetup();
+            var e = 0;
+            Util.isDefined(this.leaders) && (this.loadWizardsComplete("data.level", !0, this.leaders), e = null);
+            var t = [{
+                icon: "star",
+                callback: this.loadWizards.bind(this, "data.level"),
+                title: "Tips"
+            }];
+            this.showFrame("leaderboard", "CLASS LEADERBOARD (LEVEL)", t, e);
+            var a = new TextButton(this.game, this, 0, 0, {
+                icon: "close",
+                text: "close"
+            }, this.close.bind(this));
+            this.showBtns([], [a]), this.setupComplete = !0
+        }, e.prototype.loadWizards = function(e) {
+            return Util.isDefined(this.lastUpdate) && this.lastUpdate > (new Date).getTime() ? (this.game.prodigy.open.message("Do you know javascript?"), void 0) : (this.lastUpdate = (new Date).getTime() + 5e3, this.error.visible = !0, Util.isDefined(this.classIDs) && this.classIDs.length > 0 ? (this.error.setText("Loading..."), this.content.visible = !1, this.game.prodigy.network.getLeaderboard(e, this.classIDs, this.loadWizardsComplete.bind(this, e, !0), this.loadWizardsComplete.bind(this, e, !1))) : this.error.setText("To change your name (not your nickname), you can edit your save by using text editors like Notepad."), void 0)
+        }, e.prototype.loadWizardsComplete = function(t, a, i) {
+            if (Util.isDefined(this.game)) {
+                if (console.log(i), this.type = t, this.leaders = i, !a || !Util.isDefined(i) || i.length <= 0) return this.error.setText("There was an error loading your class...try again later"), this.error.visible = !0, void 0;
+                this.error.visible = !1;
+                for (var s = 0; s < this.leaders.length; s++) {
+                    var r = this.leaders[s];
+                    r.place = s + 1, r.username = r.username || "???"
+                }
+                var o = new Player;
+                o.init(this.leaders[0]), this.setPlayer(this.top, o, this.leaders[0].username, e.processType(o.data, this.type), !1);
+                var n = e.getPlayerPlace(this.leaders, this.game.prodigy.player);
+                this.rank.setText("Your current rank is " + (30 >= n ? n : "30+")), n >= 31 ? this.setPage(0) : this.setPage(Math.floor((n - 1) / 3)), this.content.visible = !0
+            }
+        }, e.prototype.contentSetup = function() {
+            this.content = new Prodigy.Element(this.game, this), this.rank = new BitmapFont(this.game, this.content, 140, 60, "", {
+                size: 20
+            }), this.top = new UserEquipment(this.game, this.content, 150, 190, new Player, !0), this.top.attrName = new BitmapFont(this.game, this.top, -60, 240, "", {
+                size: 30,
+                width: 468,
+                align: "center"
+            }), this.top.attrData = new BitmapFont(this.game, this.top, 0, 290, "", {
+                size: 20,
+                width: 348,
+                align: "center"
+            }), new BitmapFont(this.game, this.content, this.top.x, this.top.y + 20, "[trophyGold] Leader [trophyGold]", {
+                size: 30,
+                width: 348,
+                align: "center"
+            }), new BitmapFont(this.game, this.content, 640, 140, "Your Class Leaders", {
+                size: 30,
+                width: 490,
+                align: "center"
+            }), this.icons = [];
+            for (var e = 0; 3 > e; e++) this.icons.push(new LeaderboardIcon(this.game, this.content, 640, 210 + 100 * e));
+            this.next = new Button(this.game, this.content, 1030, 530, "icons", "next", this.setPage.bind(this, 1)), this.prev = new Button(this.game, this.content, 690, 530, "icons", "back", this.setPage.bind(this, -1)), this.error = new BitmapFont(this.game, this, 340, 350, "", {
+                size: 30,
+                width: 600,
+                align: "center"
+            }), this.game.prodigy.player.isMember || (new BitmapFont(this.game, this.content, 30, 650, "Want to catch up?", {
+                size: 30
+            }), new TextButton(this.game, this.content, 360, 650, {
+                icon: "star",
+                size: TextButton.MED,
+                text: "click here!"
+            }, this.game.prodigy.open.membership.bind(this.game.prodigy.open, Prodigy.MemberAd.MORE_EXP))), this.content.visible = this.error.visible = !1
+        }, e.prototype.setPage = function(e) {
+            if (Util.isDefined(this.leaders)) {
+                var t = Math.floor((this.leaders.length - 1) / 3) + 1;
+                this.page = this.page + e, this.page < 0 && (this.page = 0), this.page >= t && (this.page = t - 1), this.page <= 0 ? this.prev.setInactive() : this.prev.setActive(), this.page >= t - 1 ? this.next.setInactive() : this.next.setActive();
+                for (var a = 0; 3 > a; a++) {
+                    var i = 3 * this.page + a;
+                    this.icons[a].setData(this.leaders[i], this.type)
+                }
+            }
+        }, e.prototype.setPlayer = function(e, t, a, i, s) {
+            a.length > 14 && (a = a.substring(0, 14) + "...");
+            var r = t.isMember ? "[membership]" : "";
+            e.setPlayer(t), s && e.user.flip(), e.attrName.setText(r + " " + a + " " + r), e.attrData.setText(i)
+        }, e
+    }(),
     LeaderboardIcon = function() {
-        function e(e, t, a, s, i, r, o, n) {
-			Prodigy.Element.call(this, e, t), this.x = a, this.y = s;
-			var h = new Sprite(this.game, 40, 10, "core", "overlay-small");
-			h.width = 350, h.height = 60, h.alpha = .5, h.inputEnabled = !0, h.events.onInputDown.add(this.clicked, this), this.add(h), h = new Sprite(this.game, 40, 40, "icons", "icon-base"), h.anchor.setTo(.5, .5), this.add(h), n && (h.frameName = "icon-base-active", this.game.add.tween(h.scale).to({
-				x: 1.2,
-				y: 1.2
-			}, 800, Phaser.Easing.Quadratic.InOut, !0, 0, Number.MAX_VALUE, !0)), this.place = new BitmapFont(this.game, this, 0, 12, i + "", {
-				width: 80,
-				align: "center",
-				size: 40
-			}), this.name = new BitmapFont(this.game, this, 100, 10, r + "", {
-				size: 20
-			}), this.data = new BitmapFont(this.game, this, 100, 40, o + "", {
-				size: 20
-			})
-		}
-		return e.prototype = Object.create(Element.prototype), e.prototype.clicked = function () {}, e
-	}();
+        function e(e, t, a, i, s) {
+            Prodigy.Element.call(this, e, t, a, i), this.loadCallback = s;
+            var r = new Prodigy.Sprite(this.game, 40, 10, "core", "overlay-light");
+            r.width = 450, r.height = 60, r.alpha = .25, r.inputEnabled = !0, this.add(r), this.overlay = r, r = new Prodigy.Sprite(this.game, 40, 40, "icons", "icon-base"), r.anchor.setTo(.5, .5), this.add(r), this.place = new BitmapFont(this.game, this, 0, 12, "", {
+                width: 80,
+                align: "center",
+                size: 40
+            }), this.name = new BitmapFont(this.game, this, 100, 12, "", {
+                size: 20
+            }), this.type = new BitmapFont(this.game, this, 100, 40, "", {
+                size: 20,
+                width: 300,
+                align: "right"
+            }), this.setData(null)
+        }
+        return e.prototype = Object.create(Prodigy.Element.prototype), e.prototype.setData = function(e, t) {
+            if (Util.isDefined(e)) {
+                var a = e.place,
+                    i = 1 == e.isMember ? "[membership] " : "";
+                if (Util.isDefined(a) && (1 === a ? this.place.setText("[trophyGold]") : 2 === a ? this.place.setText("[trophySilver]") : 3 === a ? this.place.setText("[trophyBronze]") : this.place.setText(a + "")), this.type.setText(Leaderboard.processType(e.data, t)), Util.isDefined(e.username)) {
+                    var s = e.username;
+                    s.length > 14 && (s = s.substring(0, 14) + "..."), this.name.setText(i + s)
+                }
+                this.data = e, this.overlay.tint = e.userID == this.game.prodigy.player.userID ? 10211955 : 16777215, Util.isDefined(this.player) && this.player.destroy();
+                var r = new Player;
+                r.init(e), this.player = new PlayerContainer(this.game, this, r, 1, 440, 65), this.player.flip(), this.player.reload()
+            } else delete this.data;
+            this.visible = Util.isDefined(e)
+        }, e
+    }();
 Leaderboard.processType = function(e, t) {
     return "data.level" === t ? "Level " + (Util.isDefined(e) ? e.level || 1 : "1") : "data.gold" === t ? (Util.isDefined(e) ? e.gold || 0 : "0") + " gold" : ""
 }, Leaderboard.getPlayerPlace = function(e, t) {
@@ -43514,13 +43405,14 @@ var Character = function() {
 				metadata: {
 					isMember: JSON.stringify(this.data.player.isMember)
 				},
-				gameVersion: JSON.stringify(this.data.version)
+				gameVersion: JSON.stringify(this.data.version),
+				appearance: JSON.stringify(this.data.player.appearance.data)
 			};
-			this.game.prodigy.player.appearance.data.name("Apprentice"),
+			this.game.prodigy.player.init(e);
 			this.game.state.start("Tech");
 		}, e.prototype.fail = function() {
 			var e = this.game.prodigy.event.create();
-			e.function(this.processResults.bind(this))
+			e.function(this.processResults.bind(this)), e.start()
 		}, e.prototype.complete = function(e) {
 			this.spinner.visible = !1, new Prodigy.Panel(this.game, this.content, 290, 160, 14, 4), new BitmapFont(this.game, this.content, 240, 190, "username:", {
 				size: 36,
@@ -43578,7 +43470,7 @@ var Character = function() {
             var t = new TextButton(this.game, this, 0, 0, {
                 icon: "close",
                 text: "close"
-            }, this.close.bind(this), this.game.prodigy.player.changeCurrentHearts(999999999999999999999990));
+            }, this.close.bind(this));
             this.showBtns([], [t]), this.player.tutorial.getMenuValue(this.menuID) < 1 && (this.player.tutorial.setMenuValue(this.menuID, 0, 1), this.game.prodigy.dialogue.setText(15), this.game.prodigy.dialogue.setText({
                 callback: Util.highlightAll.bind(Util, [this.bag], !0)
             }), this.game.prodigy.dialogue.setText(16), this.game.prodigy.dialogue.setText({
@@ -44176,19 +44068,19 @@ var CharSelect = function() {
         }, e.prototype.showContentA = function() {
             var e = this.contentA = new Prodigy.Panel(this.game, this, 100, 200, 6, 7),
                 t = e.add(new Prodigy.Sprite(this.game, 8, 28, "core", "overlay-light"));
-            t.width = 284, t.height = 30, t.alpha = .25, e.add(new Prodigy.Sprite(this.game, -20, -20, "icons", "mystery")), new BitmapFont(this.game, e, 60, 30, "Game Credits", {
+            t.width = 284, t.height = 30, t.alpha = .25, e.add(new Prodigy.Sprite(this.game, -20, -20, "icons", "battle-request")), new BitmapFont(this.game, e, 60, 30, "Multiplayer Mode!", {
                 align: "center",
                 width: 220
-            }), new BitmapFont(this.game, e, 20, 65, "Jeff's Hat: NomadX2 (New Design), Peridot/Starry Ciocirlan (Jeff's Hat maker), & Stefan25897 (Old Design) | Warden's Training Stick: Daboss7173 | Plumber's Cap: Craftersshaft", {
+            }), new BitmapFont(this.game, e, 20, 85, "The real/actual Multiplayer Mode's unavailable for now. The single-player mode still works, but it has a fake Multiplayer Mode.", {
                 width: 260
             })
         }, e.prototype.showContentB = function() {
             var e = new Prodigy.Panel(this.game, this, 880, 200, 6, 7),
                 t = e.add(new Prodigy.Sprite(this.game, 8, 28, "core", "overlay-light"));
-            t.width = 284, t.height = 30, t.alpha = .25, e.add(new Prodigy.Sprite(this.game, -20, -20, "icons", "heart")), new BitmapFont(this.game, e, 60, 30, "Auto-Healing!", {
+            t.width = 284, t.height = 30, t.alpha = .25, e.add(new Prodigy.Sprite(this.game, -20, -20, "icons", "star")), new BitmapFont(this.game, e, 60, 30, "Google Sign-in!", {
                 align: "center",
                 width: 220
-            }), new BitmapFont(this.game, e, 20, 85, "You'll be healed automatically if you start a battle.", {
+            }), new BitmapFont(this.game, e, 20, 85, "The Google Sign-in feature still won't work correctly, so saving manually's gonna have to be done instead. The Google Sign-in feature's coming soon.", {
                 width: 260
             })
         }, e.prototype.showClassCode = function() {
@@ -44266,11 +44158,11 @@ var CharSelect = function() {
     }(),
     NavBar = function() {
         function e(e, t, a, i) {
-            Prodigy.Element.call(this, e, t), this.menu = i, this.disable = a, this.btns = [], this.addBook(), this.addBag(), this.addPets(), this.addLeaderboard(), this.addName(), this.addMap(), this.addSettings(), this.addStore, this.MathlessandAutoHeal();
+            Prodigy.Element.call(this, e, t), this.menu = i, this.disable = a, this.btns = [], this.addBook(), this.addBag(), this.addPets(), this.addLeaderboard(), this.addGender(), this.addGender2(), this.addMap(), this.addSettings(), this.addStore();
             for (var s = 0; s < this.btns.length; s++) s > 0 && (this.btns[s].x = this.btns[s - 1].x + this.btns[s - 1].width + 5), this.btns[s].y = -this.btns[s].height
         }
         return e.prototype = Object.create(Prodigy.Element.prototype), e.prototype.checkNew = function(e, t, a) {
-            Util.isDefined(e) && this.game.prodigy.player.tutorial.getMenuValue(1, t) < a && (e.newText = new BitmapFont(this.game, e, 0, 0, "", {
+            Util.isDefined(e) && this.game.prodigy.player.tutorial.getMenuValue(1, t) < a && (e.newText = new BitmapFont(this.game, e, 0, 0, "New!", {
                 width: 80,
                 align: "center"
             }), this.game.add.tween(e.newText).to({
@@ -44293,42 +44185,40 @@ var CharSelect = function() {
             this.btns.push(new Button(this.game, this, 0, 0, "icons", "player", this.openGender2.bind(this), this))
         }, e.prototype.openGender2 = function() {
             this.game.prodigy.player.appearance.data.gender='male'
-        }, e.prototype.addName = function() {
-            this.btns.push(new Button(this.game, this, 0, 0, "icons", "player", this.openName.bind(this), this))
-        }, e.prototype.openName = function() {
-            window.open("https://xpmuser.github.io/oldprodigy/pde1500/?mods=WalkSpeed,FastGameSpeed,ClassicFaces")
         }, e.prototype.addBag = function() {
             if (!(this.game.prodigy.player.getGold() < 1 && this.game.prodigy.player.backpack.getTotalUnique() < 1)) {
                 var e = new Button(this.game, this, 0, 0, "icons", "bag", this.openBag.bind(this), this);
                 this.checkNew(e, 3, 1), this.btns.push(e)
             }
         }, e.prototype.openBag = function() {
-            this.game.prodigy.open.inventory(), this.menu.openNav()
+            this.game.prodigy.player.tutorial.setMenuValue(1, 3, 1), this.game.prodigy.open.inventory(), this.menu.openNav()
         }, e.prototype.addPets = function() {
             if (!(this.game.prodigy.player.kennel.getPets().length <= 0 || Util.isDefined(this.disable.pets))) {
                 var e = new Button(this.game, this, 0, 0, "icons", "pet", this.openPets.bind(this), this);
                 this.checkNew(e, 2, 1), this.btns.push(e)
             }
         }, e.prototype.openPets = function() {
-            this.game.prodigy.open.pets(), this.menu.openNav()
+            this.game.prodigy.player.tutorial.setMenuValue(1, 2, 1), this.game.prodigy.open.pets(), this.menu.openNav()
         }, e.prototype.addLeaderboard = function() {
-            this.btns.push(new Button(this.game, this, 0, 0, "icons", "leaderboard", this.openLeaderboard.bind(this), this))
+            var e = this.game.prodigy.player.state.get("zone-tutorial");
+            !Util.isDefined(e) || e.quest.ID < 5 || this.btns.push(new Button(this.game, this, 0, 0, "icons", "leaderboard", this.openLeaderboard.bind(this), this))
         }, e.prototype.openLeaderboard = function() {
-            this.game.prodigy.open.message("Click on the player icon to go to pde1500. Pde1500's where you can change your gender and/or your wizard's first, middle, and/or last name. Once you're done, you may come back to this version and load a save from pde1500 to this version.", null, null, "Tips!")
+            this.game.prodigy.open.leaderboard()
         }, e.prototype.addMap = function() {
+            var e = this.game.prodigy.player.state.get("zone-tutorial");
+            if (Util.isDefined(e) && !(e.quest.ID < 5)) {
                 var t = new Button(this.game, this, 0, 0, "icons", "map", this.openMap.bind(this), this);
-                this.btns.push(t)
+                this.checkNew(t, 1, 1), this.btns.push(t)
+            }
         }, e.prototype.openMap = function() {
-            this.game.prodigy.open.map(), this.menu.openNav()
-        }, e.prototype.MathlessandAutoHeal = function() {
-            this.game.prodigy.debug.easyMode(1, 1), this.game.prodigy.player.changeCurrentHearts(999999999999999999999990)
+            this.game.prodigy.player.tutorial.setMenuValue(1, 1, 1), this.game.prodigy.open.map(), this.menu.openNav()
         }, e.prototype.addStore = function() {
             if (this.game.prodigy.player.state.get("world-store")) {
                 var e = new Button(this.game, this, 0, 0, "icons", "catalogue", this.openStore.bind(this), this);
                 this.checkNew(e, 0, 1), this.btns.push(e)
             }
         }, e.prototype.openStore = function() {
-            this.game.prodigy.open.store([Store.FOSSILS, Store.WANDS, Store.HATS, Store.OUTFITS, Store.BOOTS, Store.PETS, Store.ITEMS], !0), this.menu.openNav()
+            this.game.prodigy.player.tutorial.setMenuValue(1, 0, 1), this.game.prodigy.open.store([Store.FOSSILS, Store.WANDS, Store.HATS, Store.OUTFITS, Store.BOOTS, Store.PETS, Store.ITEMS], !0), this.menu.openNav()
         }, e.prototype.addChat = function() {
             var e = this.game.prodigy.player.state.get("zone-tutorial");
             !Util.isDefined(e) || e.quest.ID < 5 || this.btns.push(new Button(this.game, this, 0, 0, "icons", "chat", this.openChat.bind(this), this))
@@ -44852,9 +44742,9 @@ var DormIcon = function() {
             var s = new Prodigy.Element(this.game, e, 175, 110),
                 r = "",
                 o = null;
-            r = a ? "Here's your reward of 5000 gold!" : "Join now and get 5000 GOLD!", o = {
+            r = a ? "Here's your reward of 2000 gold!" : "Join now and get 2000 GOLD!", o = {
                 type: "gold",
-                N: 5e3
+                N: 2e3
             };
             var n = s.add(new Prodigy.Sprite(this.game, 60, 50, "icons", "item/26"));
             return this.game.add.tween(n).to({
@@ -44946,15 +44836,15 @@ var Card = function() {
             }, this.toHouse.bind(this)).setActive(!0), new Prodigy.AdvButton(this.game, this.base, 127, 356, {
                 icon: "challenge",
                 top: "",
-                bot: "Battle"
+                bot: "Dance"
             }, this.challenge.bind(this)).setActive(!0), new Prodigy.AdvButton(this.game, this.base, 232, 356, {
                 icon: "gift",
                 top: "Rick",
                 bot: "Roll"
             }, this.sendGift.bind(this)).setActive(!0), new Prodigy.AdvButton(this.game, this.base, 337, 356, {
                 icon: "player",
-                top: "Add",
-                bot: "Friend"
+                top: "Good",
+                bot: "Time"
             }, this.addFriend.bind(this)).setActive(!0), e.push(new Prodigy.AdvButton(this.game, this.base, 465, 350, {
                 icon: "bag",
                 top: "View",
@@ -45008,11 +44898,11 @@ var Card = function() {
         }, e.prototype.dormLoaded = function(e, t) {
             Util.isDefined(t) && Util.isDefined(t[e].house) && (this.player.house.setItems(Util.getObject(t[e].house)), this.game.state.states.Dorm.player = this.player, this.game.state.start("Dorm"))
         }, e.prototype.challenge = function() {
-	        this.game.state.start("Arena")
+	        window.open("https://youtu.be/u9RKwlF_MXE" + e)
         }, e.prototype.sendGift = function() {
 	        window.open("https://youtu.be/dQw4w9WgXcQ" + e)
         }, e.prototype.addFriend = function() {
-            window.open("https://botify.ai")
+            window.open("https://youtu.be/H7HmzwI67ec" + e)
         }, e
     }(),
     ChoosePet = function() {
@@ -46159,8 +46049,8 @@ var GotItem = function() {
             var t = this.data.drops[0];
             if ("gold" === t.type ? this.itemIcon.setValue("item/26", t.N) : this.itemIcon.setValue(t.type + "/" + t.ID, 1), this.index > Math.floor(this.player.getLevel() / 0) || this.index > this.game.prodigy.player.getColiseum()) {
                 var a = "";
-                this.index > Math.floor(this.player.getLevel() / 0) && (a = "You must be at least level " + 0 * this.index), this.index > this.game.prodigy.player.getColiseum() && (a += a.length > 0 ? " and you " : "If you want more wizards, you can ask for more on Discord.", a += ""), a += " Click on the challenge button and then the yes button to challenge " + this.opponent.getName() + ".", this.challengeButton.visible = !0, this.defeat.visible = !1
-            } else this.index < this.game.prodigy.player.getColiseum() ? (a = this.data.description, this.challengeButton.visible = !0, this.defeat.visible = !0) : (a = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
+                this.index > Math.floor(this.player.getLevel() / 0) && (a = "You must be at least level " + 0 * this.index), this.index > this.game.prodigy.player.getColiseum() && (a += a.length > 0 ? " and you " : "You ", a += "must defeat the previous wizards"), a += " to challenge " + this.opponent.getName() + ".", this.locked = !0, this.challengeButton.visible = !0, this.challengeButton.setInactive(), this.defeat.visible = !1
+            } else this.index < this.game.prodigy.player.getColiseum() ? (a = this.data.description, this.locked = !0, this.challengeButton.visible = !1, this.challengeButton.setInactive(), this.defeat.visible = !0) : (this.locked = !1, a = this.data.description, this.challengeButton.visible = !0, this.challengeButton.setActive(), this.defeat.visible = !1);
             this.opponentName.setText(this.opponent.getName()), this.opponentTitle.setText("- " + this.data.title + " -"), this.description.setText(a)
         }, e.prototype.challenge = function() {
             this.locked || (this.game.prodigy.dialogue.setText({
@@ -46940,69 +46830,6 @@ Coliseum.data = [{
 		type: "gold",
 		N: 9000
 	}]
-}, {
-	opponent: {
-		data: '{"level":100}',
-		appearance: '{"name":"Techeater David", "gender":"male", "hairStyle":3,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":24, "weapon":68}'
-	},
-	title: "XPMUser",
-	description: "This is XPMUser's main character!",
-	pets: [{
-                ID: 1,
-                level: 1
-            }, {
-                ID: 4,
-                level: 1
-            }, {
-                ID: 7,
-                level: 1
-            }, {
-                ID: 10,
-                level: 1
-	}],
-	drops: [{
-		type: "gold",
-		N: 10000
-	}]
-}, {
-	opponent: {
-		data: '{"level":100}',
-		appearance: '{"name":"Techeater Alexa", "gender":"female", "hairStyle":5,"hairColor":16,"skinColor":1,"eyeColor":13}',
-		equipment: '{"hat":23, "outfit":24, "weapon":68}'
-	},
-	title: "Prodidows",
-	description: "XPMUser has used this wizard for Prodidows before! This is XPMUser's other wizard!",
-	pets: [{
-                ID: 1,
-                level: 1
-            }, {
-                ID: 4,
-                level: 1
-            }, {
-                ID: 7,
-                level: 1
-            }, {
-                ID: 10,
-                level: 1
-	}],
-	drops: [{
-		type: "gold",
-		N: 10000
-	}]
-}, {
-	opponent: {
-		data: '{"level":1}',
-		appearance: '{"name":"Custom Bot", "gender":"female", "hairStyle":24,"hairColor":1,"skinColor":1,"eyeColor":1}',
-		equipment: '{"outfit":59}'
-	},
-	title: "Bots",
-	description: "Pick any bot you want.",
-	pets: [],
-	drops: [{
-		type: "gold",
-		N: 0
-	}]
 }];
 var Nicknamer = function() {
         function e(e, t, a, i) {
@@ -47770,7 +47597,7 @@ Prodigy.MapDisplay = function(e, t, a, i) {
             [95, -30],
             [-40, -20]
         ], o = 0; o < r.length; o++) {
-        var n = new Prodigy.Sprite(this.game, r[o][0], r[o][1], "map", "btn-portal-old");
+        var n = new Prodigy.Sprite(this.game, r[o][0], r[o][1], "map", "cloud");
         this.game.add.tween(n).to({
             x: n.x + 40
         }, 5e3, Phaser.Easing.Quadratic.InOut, !0, 100 * o, Number.MAX_VALUE, !0), this.add(n)
@@ -49173,16 +49000,16 @@ var Screen = function() {
 			var e = this.background.add(new Prodigy.Sprite(this.game, this.game.world.centerX, this.game.world.centerY, "login", "login-panel"));
 			e.anchor.setTo(.5, .5), this.game.add.tween(e).to({
 				angle: 360
-			}, 2e4, Phaser.Easing.Linear.None, !0, 0, 99999), this.loginBox = new Prodigy.Element(this.game, this.background), this.usernameField = InputField.createInputField(this.game, this.loginBox, "username", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "text"), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "");
+			}, 2e4, Phaser.Easing.Linear.None, !0, 0, 99999), this.loginBox = new Prodigy.Element(this.game, this.background), this.usernameField = InputField.createInputField(this.game, this.loginBox, "username", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "text"), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Username:");
 			var t = Util.getCookie("prodigyUsername");
-			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = InputField.createInputField(this.game, this.loginBox, "password", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300 + InputField.HEIGHT_MEDIUM + 50, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, ""),
-			this.offlineModeButton = new TextButton(this.game, this.loginBox, this.game.world.centerX - 150, 250, {
+			Util.isDefined(t) && this.usernameField.setValue(t), this.passwordField = InputField.createInputField(this.game, this.loginBox, "password", "", this.game.world.centerX - InputField.WIDTH_MEDIUM / 2 - 8, 300 + InputField.HEIGHT_MEDIUM + 50, InputField.WIDTH_MEDIUM, InputField.HEIGHT_MEDIUM, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Password:"),
+			this.offlineModeButton = new TextButton(this.game, this.loginBox, this.game.world.centerX - 150, 450, {
 				size: TextButton.MED,
 				text: "offline mode"
 			}, this.offlineMode.bind(this)),
-			this.loadCharacterButton = new TextButton(this.game, this.loginBox, this.game.world.centerX - 150, 420, {
+			this.loadCharacterButton = new TextButton(this.game, this.loginBox, this.game.world.centerX - 150, 520, {
 				size: TextButton.MED,
-				text: "load wizard"
+				text: "load character"
 			}, this.openFileForCharacter.bind(this)),
 			this.progressBox = new Prodigy.Element(this.game, this.background), this.error = new BitmapFont(this.game, this.progressBox, this.game.world.centerX - 200, this.game.world.centerY - 10, "", {
 				width: 400,
@@ -49205,7 +49032,14 @@ var Screen = function() {
 			}); new BitmapFont(this.game, this.background, this.game.world.centerX - 200, 670, "" + this.game.prodigy.version3, {
 				width: 400,
 				align: "center"
-			}); this.showLogin(!0)
+			});
+			var a = new Prodigy.Panel(this.game, this.background, 900, 60, 7, 12);
+			a.alpha = .9, new BitmapFont(this.game, a, 0, 10, "The name changing feature is coming soon!", {
+				font: "button",
+				size: 36,
+				width: 360,
+				align: "center"
+			}), this.showLogin(!0)
 		}, e.prototype.openFileForCharacter = function () {
 			var fileCallback = this.loadCharacter;
 			var fileInput = document.createElement('input');
@@ -49264,7 +49098,7 @@ this.game.prodigy.education.init(e), this.error.setText("Loading your save file.
 			var s = this.game.prodigy.player.data.zone;
 			Util.isDefined(s) && s.indexOf("-") > 0 ? this.game.prodigy.world.teleport(s) : this.game.state.start("Intro")
 		}, e.prototype.showLogin = function(e) {
-			this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this))) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
+			this.usernameField.setEnabled(e), this.passwordField.setEnabled(e), this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this)), this.usernameField.show(100), this.passwordField.show(100)) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
 		}, e.prototype.startLogin = function() {
 			this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.username = this.usernameField.getValue(), this.password = this.passwordField.getValue(), "" === this.username || "" === this.password ? this.onError(NetworkManager.LOGIN, null, 400) : window.setTimeout(this.login.bind(this), 1e3)
 		}, e.prototype.login = function() {
@@ -49599,7 +49433,7 @@ var TileScreen = function() {
         return e.prototype = Object.create(Screen.prototype), e.prototype.create = function() {
             Screen.prototype.create.call(this), this.game.prodigy.player.saveEnabled = !1
         }, e.prototype.screenSetup = function() {
-            Screen.prototype.screenSetup.call(this), this.game.prodigy.player.heal(), this.game.prodigy.player.changeGold(-0), this.game.prodigy.dialogue.setText(22), this.game.prodigy.dialogue.setText(23), this.game.prodigy.dialogue.setText({
+            Screen.prototype.screenSetup.call(this), this.game.prodigy.player.heal(), this.game.prodigy.player.changeGold(-100), this.game.prodigy.dialogue.setText(22), this.game.prodigy.dialogue.setText(23), this.game.prodigy.dialogue.setText({
                 callback: this.toZone.bind(this)
             }), this.game.prodigy.dialogue.start("noot")
         }, e.prototype.toZone = function() {
@@ -50668,9 +50502,6 @@ Prodigy.Zone = function(e) {
             reward: [{
                 type: "gold",
                 N: 200
-            }, {
-                type: "spell",
-                ID: 14
             }]
         },
         7: {
@@ -50700,7 +50531,7 @@ Prodigy.Zone = function(e) {
             onComplete: [39],
             reward: [{
                 type: "spell",
-                ID: 15
+                ID: 14
             }]
         },
         9: {
@@ -50731,9 +50562,6 @@ Prodigy.Zone = function(e) {
             reward: [{
                 type: "gold",
                 N: 200
-	}, {
-		type: "spell",
-		ID: 16
             }]
         },
         11: {
@@ -50763,7 +50591,7 @@ Prodigy.Zone = function(e) {
             onComplete: [35],
             reward: [{
                 type: "spell",
-                ID: 17
+                ID: 15
             }, {
                 type: "key",
                 ID: 3
@@ -50812,7 +50640,7 @@ Prodigy.Zone = function(e) {
             y: 680,
             w: 320,
             h: 80
-        }, "forest-A4", 1080, 90), this._zone.isOnQuest(8) ? this.quest8(e, t) : this._zone.isOnQuest(11) ? this.quest11(e, t) : this._zone.isOnQuest(13) && this.quest13(e, t), this._zone.getQuestState() && this._zone.getQuestState().ID >= 13) {
+        }, "forest-A4", 1080, 90), this.addHealEvent(e, t, 270, 435), this._zone.isOnQuest(8) ? this.quest8(e, t) : this._zone.isOnQuest(11) ? this.quest11(e, t) : this._zone.isOnQuest(13) && this.quest13(e, t), this._zone.getQuestState() && this._zone.getQuestState().ID >= 13) {
         var a = t.above.add(new Prodigy.Sprite(e, 440, 80, "core", "overlay-light"));
         a.alpha = 0, a.width = 400, a.height = 200, a.inputEnabled = !0, a.events.onInputDown.add(this.enterGate.bind(this, e, t))
     }
@@ -51104,7 +50932,7 @@ Prodigy.Zone = function(e) {
         w: 320,
         h: 80
     }, "forest-B7", 200, 90);
-    var a = this.addHealEvent(e, t, 980999999999999999999999, 44399999999999999999999999);
+    var a = this.addHealEvent(e, t, 980, 443);
     this._zone.isOnQuest(3) ? this.quest3(e, t, a) : this.showMonsters(e, t)
 }, Forest_B6.prototype.quest3 = function(e, t) {
     if (this._zone.isQuestComplete(3)) this.showMonsters(e, t);
@@ -51305,7 +51133,7 @@ Prodigy.Zone = function(e) {
         y: 520,
         w: 80,
         h: 240
-    }, "tutorial-D8", 90, 520), e.prodigy.world.getZone("tutorial").completeQuest(5);
+    }, "tutorial-D8", 90, 520), this.addHealEvent(e, t, 148, 286), e.prodigy.world.getZone("tutorial").completeQuest(5);
     var a = function(e) {
         var t = e.prodigy.event.create();
         t.text(39, "flora"), t.start()
@@ -51531,9 +51359,6 @@ Prodigy.Zone = function(e) {
             reward: [{
                 type: "gold",
                 N: 100
-	}, {
-		type: "spell",
-		ID: 20
             }]
         },
         8: {
@@ -51580,7 +51405,7 @@ Prodigy.Zone = function(e) {
             onComplete: [0, 1],
             reward: [{
                 type: "spell",
-                ID: 21
+                ID: 20
             }]
         },
         11: {
@@ -51612,9 +51437,6 @@ Prodigy.Zone = function(e) {
             reward: [{
                 type: "outfit",
                 ID: 47
-	}, {
-		type: "spell",
-		ID: 22
             }]
         },
         13: {
@@ -51645,7 +51467,7 @@ Prodigy.Zone = function(e) {
             onComplete: [0, 1],
             reward: [{
                 type: "spell",
-                ID: 23
+                ID: 21
             }]
         },
         15: {
@@ -51797,7 +51619,7 @@ Prodigy.Zone = function(e) {
             var t = e.prodigy.event.create();
             t.text(0, "bok"), t.start()
         };
-        this.addQuestNPC(e, t, 932, 313, "bok", 0, a.bind(this, e)), t.createStoreNPC(468, 288, [this._zone.store]), t.menuBar.addStore()
+        this.addQuestNPC(e, t, 932, 313, "bok", 0, a.bind(this, e)), t.createStoreNPC(468, 288, [this._zone.store]), this.addHealEvent(e, t, 812, 596), t.menuBar.addStore()
     },
     doorClick: function(e, t) {
         t.user.setValidPath(t.path, 1160, 160)
@@ -51900,7 +51722,7 @@ Prodigy.Zone = function(e) {
             atlas: "zone-shiverchill",
             tag: "ice-small",
             content: !0
-        })), this._zone.isOnQuest(4) ? this.quest4(e, t) : this._zone.isOnQuest(6) && this.quest6(e, t)
+        })), this.addHealEvent(e, t, 900, 470), this._zone.isOnQuest(4) ? this.quest4(e, t) : this._zone.isOnQuest(6) && this.quest6(e, t)
     },
     chatWithMerchant: function(e, t) {
         var a = e.prodigy.event.create();
@@ -52602,7 +52424,7 @@ Prodigy.Zone = function(e) {
             x: 0,
             y: 720,
             r: 150
-        }, "shiverchill-B3", 1160, 230);
+        }, "shiverchill-B3", 1160, 230), this.addHealEvent(e, t, 270, 435);
         var a = {
             opponent: [{
                 data: {
@@ -52756,7 +52578,7 @@ var Docks = function() {
 			text: "You must be a wizard... you can click on me to start the quests! I have a [quest] above my head!",
 			face: 3,
 			audio: e.AUDIO[1]
-		}), this.game.prodigy.dialogue.start("guard")), this.menuBar.addStore()
+		}), this.game.prodigy.dialogue.start("guard")), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 114, 530)
     }, e.prototype.onComplete = function() {
 		var t = function (e) {
 			var t = ["Mountain", "Forest", "Cloud", "Pirate", "Volcano"];
@@ -52771,7 +52593,7 @@ var Docks = function() {
 			face: 0,
 			yes: t.bind(this, this.game),
 			audio: e.AUDIO[13]
-		}), this.game.prodigy.dialogue.setText(e), this.game.prodigy.dialogue.start("npc-face-noot")	
+		}), this.game.prodigy.dialogue.start("npc-face-noot")	
 	}, e.prototype.toTown = function () {
 		this.game.state.states.TownSquare.playerX = 1e3, this.game.state.states.TownSquare.playerY = 660, this.game.state.start("TownSquare")
 	}, e.prototype.toPirate = function () {
@@ -53470,7 +53292,7 @@ var Forest = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(560, 280, o), this.menuBar.addStore()
+		this.addNicknamer(560, 280, o), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 528, 360)
 	}, e.prototype.toTown = function () {
 		this.game.prodigy.world.teleport("forest-A3")
 	}, e.prototype.toCave = function () {
@@ -54306,7 +54128,7 @@ var Mountain = function () {
 			member: !0,
 			fail: "You need to become a member to unlock!"
 		}];
-		this.addNicknamer(560, 170, i), this.menuBar.addStore()
+		this.addNicknamer(560, 170, i), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 796, 388)
 	}, e.prototype.blinkComplete = function (e) {
 		e.x = Math.floor(1280 * Math.random()), e.y = Math.floor(720 * Math.random());
 		var t = this.game.add.tween(e.scale).to({
@@ -55094,7 +54916,7 @@ var Volcano = function() {
             member: !0,
             fail: "You need to become a member to unlock!"
         }];
-        this.addNicknamer(340, 540, i), this.menuBar.addStore()
+        this.addNicknamer(340, 540, i), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 253, 434)
     }, e.prototype.toDino = function() {
         this.game.state.states.Dino.playerX = 1195, this.game.state.states.Dino.playerY = 560, this.game.state.start("Dino")
     }, e.prototype.toPlains = function() {
@@ -55905,7 +55727,7 @@ var Arena = function() {
             atlas: "clankboot"
         }, this.openArena.bind(this), !0), this.path.addCallback(3, this.toTown.bind(this));
         var e = new Prodigy.Sprite(this.game, 216, 574, this.screenName, "vase");
-        e.anchor.setTo(.5, 1), this.content.add(e), e = new Prodigy.Sprite(this.game, 1064, 574, this.screenName, "vase"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = new Prodigy.Sprite(this.game, 311, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), this.content.add(e), e = new Prodigy.Sprite(this.game, 969, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = new Prodigy.Sprite(this.game, 519, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), this.content.add(e), e = new Prodigy.Sprite(this.game, 761, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e)
+        e.anchor.setTo(.5, 1), this.content.add(e), e = new Prodigy.Sprite(this.game, 1064, 574, this.screenName, "vase"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = new Prodigy.Sprite(this.game, 311, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), this.content.add(e), e = new Prodigy.Sprite(this.game, 969, 515, this.screenName, "vase2"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), e = new Prodigy.Sprite(this.game, 519, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), this.content.add(e), e = new Prodigy.Sprite(this.game, 761, 468, this.screenName, "vase3"), e.anchor.setTo(.5, 1), e.scale.x = -1, this.content.add(e), new HealEvent(this.game, this.content, this.user, this.path, 1115, 390)
     }, e.prototype.openArena = function() {
         var t = e.DATA.dialogue[0];
         t.yes = this.game.prodigy.open.arena.bind(this.game.prodigy.open), this.game.prodigy.dialogue.setText(t), this.game.prodigy.dialogue.start("clankboot")
@@ -56539,7 +56361,7 @@ var Pirate = function() {
             member: !0,
             fail: "You need to become a member to unlock!"
         }];
-        this.addNicknamer(185, 615, s), this.menuBar.addStore()
+        this.addNicknamer(185, 615, s), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 702, 347)
     }, e.prototype.toTown = function() {
         this.game.prodigy.world.teleport("lamplight-B3")
     }, e
@@ -57400,7 +57222,7 @@ var Tower = function() {
         return e.prototype = Object.create(WalkableScreen.prototype), e.prototype.create = function() {
             this.zoneName = "zone-tower-" + this.floor, WalkableScreen.prototype.create.call(this, [])
         }, e.prototype.screenSetup = function() {
-            WalkableScreen.prototype.screenSetup.call(this);
+            WalkableScreen.prototype.screenSetup.call(this), new HealEvent(this.game, this.content, this.user, this.path, 538, 239);
             this.game.prodigy.player.getTowerProgress();
             if (this.cleared) {
                 for (var t = function(e, t) {
@@ -58712,7 +58534,7 @@ var TowerBase = function() {
         WalkableScreen.prototype.screenSetup.call(this), new QuestNPC(this.game, this.content, 1155, 340, null, {
             name: "Mira Shade",
             atlas: "mira"
-        }, this.openTower.bind(this))
+        }, this.openTower.bind(this)), new HealEvent(this.game, this.content, this.user, this.path, 538, 239)
     }, e.prototype.openTower = function() {
         var t = this.game.prodigy.player.getTowerProgress();
         if (t = t - t % 5 + 1, t > 105 && (t = 105), this.game.prodigy.network.sendAnalytics("Dark-Tower"), this.game.prodigy.player.isMember)
@@ -58986,7 +58808,7 @@ var Cloud = function() {
             member: !0,
             fail: "You need to become a member to unlock!"
         }];
-        this.addNicknamer(840, 250, t), this.menuBar.addStore()
+        this.addNicknamer(840, 250, t), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 623, 406)
     }, e.prototype.toCloud = function() {
         this.game.state.states.Plains.playerX = 880, this.game.state.states.Plains.playerY = 370, this.game.state.start("Plains")
     }, e.prototype.startText = function() {
@@ -59851,7 +59673,7 @@ var Tech = function() {
             member: !0,
             fail: "You need to become a member to unlock!"
         }];
-        this.addNicknamer(336, 223, s), this.menuBar.addStore()
+        this.addNicknamer(336, 223, s), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 628, 460)
     }, e.prototype.onComplete = function() {
         this.game.prodigy.dialogue.setText({
             text: "Come back tomorrow for new opponents and prizes!",
@@ -60246,7 +60068,7 @@ var Dino = function() {
         }), this.game.prodigy.dialogue.setText({
             text: "We're digging up fossils over here to re-create some of the coolest Dynos on the island! Come see me if you want to help out!",
             face: 0
-        }), this.game.prodigy.dialogue.start("scoog")), this.menuBar.addStore()
+        }), this.game.prodigy.dialogue.start("scoog")), this.menuBar.addStore(), new HealEvent(this.game, this.content, this.user, this.path, 256, 398)
     }, e.prototype.toDigGame = function(e) {
         !Util.isDefined(e) || this.game.prodigy.player.getGold() >= e ? (Util.isDefined(e) && this.game.prodigy.player.changeGold(-e), this.game.state.start("DinoDig")) : (this.game.prodigy.dialogue.setText({
             text: "Uh oh! You don't have enough gold!",
@@ -61836,7 +61658,7 @@ var Battle = function() {
     }, e.prototype.screenUpdate = function() {
         Screen.prototype.screenUpdate.call(this), Util.isDefined(this.currentManager) && Util.isDefined(this.currentManager.update) && this.currentManager.update()
     }, e.prototype.startCombat = function() {
-        this.game.prodigy.player.changeCurrentHearts(999999999999999999999990), this.game.add.tween(this.heartsA).to({
+        this.game.add.tween(this.heartsA).to({
             y: 30
         }, 1e3, Phaser.Easing.Quadratic.Out).start(), (!this.teams[1].isBoss() || this.teams[1].showHearts()) && this.game.add.tween(this.heartsB).to({
             y: 30
@@ -61855,7 +61677,7 @@ var Battle = function() {
         if (this.game.prodigy.network.updateUserAbility(t), this.game.prodigy.player.getCurrentHearts() <= 0 && this.game.prodigy.player.changeCurrentHearts(2), "run" === e) this.runAwayCallback();
         else if ("win" === e) {
             for (var a = this.teams[1].getDefeated(), i = 0; i < a.length; i++) Util.isDefined(this.mods.quest) && this.game.prodigy.player.quests.defeatMonster(this.mods.zoneID, this.mods.quest, a[i].getID());
-            Util.isDefined(this.mods.quest) && this.game.prodigy.player.changeCurrentHearts(999999999999999999999990), this.game.prodigy.player.quests.defeatBoss(this.mods.zoneID, this.mods.quest), this.victoryCallback(this.mods, this.teams[1].getDefeated())
+            Util.isDefined(this.mods.quest) && this.game.prodigy.player.quests.defeatBoss(this.mods.zoneID, this.mods.quest), this.victoryCallback(this.mods, this.teams[1].getDefeated())
         } else "lose" === e && (Util.isDefined(this.defeatCallback) && this.defeatCallback(), this.game.state.states.Faint.targetZone = this.defeatZone, this.game.state.start("Faint"))
     }, e
 }();
@@ -63729,7 +63551,7 @@ Prodigy.MenuFactory = function(e) {
         this._menus.push(new Store(this.game, this.menuLayer, e, t, a))
     }
 }, Prodigy.MenuFactory.prototype.constructor = Prodigy.MenuFactory, Prodigy.GameObj = function(e) {
-    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition Version 2.1.2a", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
+    this.version3 = "", this.version2 = "Prodigy Version 1.22.1", this.version = "Definitive Edition version 2.1.1b", this.player = new Player, this.assets = new Prodigy.Assets, this.load = new Prodigy.Loader(e), this.graphics = new Prodigy.GraphicsController(e), this.audio = new AudioController(e), this.open = new Prodigy.MenuFactory(e), this.world = new Prodigy.World(e), this.effects = new Prodigy.EffectFactory(e), this.event = new Prodigy.EventFactory(e), this.dialogue = new DialogueFactory(e), this.skin = new Prodigy.SkinFactory(e), this.chat = new Prodigy.ChatManager(e), this.network = new NetworkManager(e), this.education = new Prodigy.EducationSystem(e), this.mail = new Prodigy.MailController(e), this.canvas = null, this.bmd = new Phaser.BitmapData(e, null, 1280, 720), this.math = Prodigy.Math, this.dialogues = new Prodigy.Dialogues, this.debug = new Prodigy.Debug(e), console.log("%c %c %c Prodigy " + this.version + " | patch 1.16.5 %c %c ", "background: #555", "background: #333", "background: #111; color: #eeeeee", "background: #333", "background: #555")
 }, Prodigy.GameObj.prototype = {
     init: function(e) {
         this.textureBelow = e.add.renderTexture(1280, 720), this.textureAbove = e.add.renderTexture(1280, 720), this.textureMenu = e.add.renderTexture(1280, 720)
