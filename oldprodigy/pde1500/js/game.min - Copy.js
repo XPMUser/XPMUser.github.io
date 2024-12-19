@@ -55473,7 +55473,24 @@ var Screen = function() {
 		function e(e) {
 			Screen.call(this, e, "Login", "login", "login", ["login", "sfx-ui", "icons", "icons-menu", "icons-hud", "npc-sprite-toy"]), this.showMenu = !1, this.skipUrlParams = !1
 		}
-		return e.prototype = Object.create(Screen.prototype), e.prototype.create = function() {
+		return e.onGoogleAuthLoadedCallback = null, e.isGoogleAuthLoaded = !0, e.onGoogleAuthLoaded = function (t, i) {
+			e.isGoogleAuthLoaded = t, i = Util.isDefined(i) ? i : {
+				error: "no error specified",
+				details: "no details specified"
+			}, t ? (Util.log("Login.onGoogleAuthLoaded - google auth lib loaded successfully"), Util.isDefined(e.onGoogleAuthLoadedCallback) && (e.onGoogleAuthLoadedCallback(), e.onGoogleAuthLoadedCallback = null)) : Util.log("Login.onGoogleAuthLoaded - error loading google auth lib. The error is: " + i.error + " \n details: " + i.details, Util.ERROR)
+		}, window.onGooglePlatformLoad = function () {
+			Util.log("google platform loaded"), window.gapi.load("auth2", function () {
+				var t = window.gapi.auth2.init({
+					client_id: "85699320917-pma4ke6sms19u9o0b13op6s53mthf84s.apps.googleusercontent.com",
+					cookiepolicy: "single_host_origin"
+				});
+				t.then(function () {
+					e.onGoogleAuthLoaded(!0)
+				}, function (t) {
+					e.onGoogleAuthLoaded(!0, t)
+				})
+			})
+		}, e.prototype = Object.create(Screen.prototype), e.GOOGLE_AUTH_FAIL_DEFAULT = "Signing in with Google was unsuccessful", e.GOOGLE_AUTH_POPUP_BLOCKED = "Your browser is blocking popups. To sign in with Google, please allow popups and try again.", e.GOOGLE_AUTH_USE_BROWSER_INSTEAD = "Google sign-in only works in the browser version of Prodigy. Would you like to open Prodigy in the browser?", e.prototype.create = function () {
 			this.game.prodigy.network.logout(!0), this.game.prodigy.debug.setup(this.game);
 			try {
 				$("#first-loading-screen").remove()
@@ -55486,7 +55503,7 @@ var Screen = function() {
 			var e = this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you're an iPad user.", null, "star", "Warning!");
 			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 6"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "offline", this.offlineMode.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 6"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -55506,6 +55523,29 @@ var Screen = function() {
 			}), t.setClickable(this.game.prodigy.network.openWebsite.bind(this.game.prodigy.network, "oldprodigy/choose/")), this.showLogin(!0), this.checkForAdmin(), Screen.prototype.screenSetup.call(this)
 		}, e.prototype.offlineMode = function() {
 			this.game.prodigy.start("CharSelect"), this.game.prodigy.world.teleport("intro-0")
+		}, e.prototype.onGoogleLoginButtonClick = function () {
+			if ("1" !== Util.getUrlVariable("iosApp")) this.authorizeWithGoogle();
+			else {
+				this.gotoLoginMode("Prompting for browser version...");
+				var t = this.game.prodigy.open.messageBox(e.GOOGLE_AUTH_USE_BROWSER_INSTEAD, function () {
+					try {
+						webkit.messageHandlers.openWebsiteInBrowser.postMessage(window.location.href.replace("iosApp=1", "action=auth-with-google"))
+					} catch (e) {
+						Util.log("Login.onGoogleLoginButtonClick - exception: " + e.message, Util.ERROR)
+					}
+				});
+				t.onClose = function () {
+					this.showLogin(!0)
+				}.bind(this)
+			}
+		}, e.prototype.authorizeWithGoogle = function () {
+			if (e.isGoogleAuthLoaded) {
+				this.gotoLoginMode("Logging in with Google...");
+				var t = window.gapi.auth2.getAuthInstance().signIn({
+					scope: "profile email"
+				});
+				t.then(this.onGoogleAuthorizeSuccess.bind(this), this.onGoogleAuthorizeFail.bind(this))
+			} else Util.log("Login.authorizeWithGoogle - the Google auth2 lib is not loaded so we can't prompt for google credentials", Util.ERROR)
 		}, e.prototype.openFileForCharacter = function() {
 			var e = document.createElement("input"),
 				t = this;
@@ -55530,6 +55570,8 @@ var Screen = function() {
 					i = Util.getUrlVariable("key");
 				this.showLogin(!1), this.error.setText("Logging in..."), this.closeButton.visible = !1, this.game.prodigy.network.adminLogin(e, t, i, this.game.prodigy.player, this.loadSkills.bind(this))
 			}
+		}, e.prototype.gotoLoginMode = function (e) {
+			this.game.prodigy.start("CharSelect"), this.game.prodigy.world.teleport("intro-0")
 		}, e.prototype.showLogin = function(e) {
 			this.progressBox.visible = !e, this.createAccountButton.visible = this.loginBox.visible = e, e ? (this.game.input.setEnterCallback(this.startLogin.bind(this))) : (this.game.input.clearEnterCallback(), this.usernameField.hide(100), this.passwordField.hide(100))
 		}, e.prototype.showAll = function(e) {
