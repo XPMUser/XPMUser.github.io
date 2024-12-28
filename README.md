@@ -1,7 +1,5 @@
 # XPMUser.github.io
 
-Discord Server: https://discord.gg/wTtBuTEvcb
-
 Old Prodigy Wiki: https://old-prodigy.fandom.com/wiki/Old_Prodigy_Wiki
 
 Old Prodigy Reddit Community: https://www.reddit.com/r/OldProdigy/
