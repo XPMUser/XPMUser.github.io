@@ -21,7 +21,7 @@ body:
     attributes:
       label: Any additional context (optional)
       description: Any other important context you may have for making this issue.
-      placeholder: Accidental tiktok dance.
+      placeholder: Accidental YouTube Shorts dance.
     validations:
       required: false
   - type: dropdown
@@ -30,7 +30,7 @@ body:
       description: Select which type of feature request you're submitting.
       options:
         - New Prodigy Definitive Edition or Ultimate Edition feature
-        - New modpack
+        - New modpacks in 2015-2017's versions (modified or not)
         - Something super awesome from a fork you play
         - Something super awesome from daboss7173.github.io/oldprodigy.onrender.com
         - Something you made by yourself
