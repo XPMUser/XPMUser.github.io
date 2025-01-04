@@ -138,8 +138,7 @@ Here's a list of available useful mods:
 3. RebalancedBattles
 4. ImitationTitan
 5. ClassicFaces
-6. ClassicFacesforBoys
-7. Coyblush
+6. Coyblush
 
 Some mods might work or not work in some versions.
 
@@ -147,7 +146,7 @@ Currently, these are the versions that support modpacks:
  - 1-9-0 
  - 1-10-0 
  - prodigyde
- - pde2015
+ - pde2015 (Needs to boot up first)
  - oldprodigyde
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
  - 1-24-0 
