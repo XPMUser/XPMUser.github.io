@@ -177,7 +177,7 @@ Currently, these are the versions that support modpacks:
 - 1.2.0 (Skywatch + Font changes)
 - 1.3.0 (Dark Tower)
 - 1.3.1 (Changed the Login Background + Bugfixes)
-- 1.4.0 (House Update (None of the furnitures are interactable anymore))
+- 1.4.0 (House Update and the house system looks fixed. (None of the furnitures are interactable anymore))
 - 1.4.6 (Bugfixes)
 - 1.5.0 (Changed the Login Background)
 - 1.6.0 (Quests + Pirate Isle has been renamed to Barnacle Cove + Leaderboards have been temporarily disabled)
