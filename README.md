@@ -146,7 +146,7 @@ Currently, these are the versions that support modpacks:
  - 1-9-0 
  - 1-10-0 
  - prodigyde
- - pde2015 (Needs to boot up first)
+ - pde2015 (Needs to boot up first!)
  - oldprodigyde
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
  - 1-24-0 
@@ -253,7 +253,7 @@ Lets scratch the surface shall we?
 - 2015-2016's Intro - pde2015 - oldprodigyde & pde1500 - pde1.51.0
 - 2014-2015's Academy - prodigyde - oldprodigyde & pde1500 - pde1.51.0
 - Modpacks - prodigyde - oldprodigyde, pdenot1.50.0 - pde1.51.0, pde1700, & pde2018 - pde2019 Warning: Imitation Titan doesn't work correctly for pde2018 yet, so it's still in beta.
-- Full possiblity of disguising without starting over (genders, skin tones, hair styles, hair colors, and eye colors) - prodigyde - oldprodigyde, pde1500, & pde1700
+- Full possiblity of disguising without starting over (genders, skin tones, hair styles, hair colors, and eye colors) - prodigyde - oldprodigyde, pde1500, pde1700, and pde1800
 - First Name changing possibility - pde2015 - oldprodigyde, pde1500, & pde1700
 - Middle Name & Last Name changing possiblity - pde2015 - oldprodigyde, pde1500, & pde1700
 - 2014-2016's Map - prodigyde - oldprodigyde, pde1500 - pde1.51.0, & pde1700
