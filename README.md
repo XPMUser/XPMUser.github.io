@@ -146,7 +146,7 @@ Currently, these are the versions that support modpacks:
  - 1-9-0 
  - 1-10-0 
  - prodigyde
- - pde2015 (Needs to boot up first!)
+ - pde2015
  - oldprodigyde
  - pde2019 (Prodigy Definitive Edition/Modified 2-45-0)
  - 1-24-0 
