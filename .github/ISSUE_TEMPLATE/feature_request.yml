@@ -50,7 +50,7 @@ body:
           required: true
         - label: By checking this box, I confirm that this issue template is being used to suggest a feature, not report a bug.
           required: true
-        - label: By checking this box, I confirm that I'm not asking for any apis (servers and the real multiplayer mode) or OAuths.
+        - label: By checking this box, I confirm that I'm not asking for any apis (servers and the real multiplayer mode).
           required: true
         - label: By checking this box, I confirm that this issue isn't about adding modified versions of later than 2017 or earlier than March 2015's Prodigy versions.
           required: true
