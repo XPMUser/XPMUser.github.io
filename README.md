@@ -10,7 +10,7 @@ If you're playing my Old Prodigy versions, Definitive Editions, Ultimate Edition
 
 # Credits
 
-Game restorers: Daboss7173 https://github.com/Daboss7173 and Craftersshaft https://github.com/craftersshaft/
+Game restorers: Daboss7173 https://github.com/Daboss7173, XPMUser, Craftersshaft https://github.com/craftersshaft/, etc
 
 Siteforkers: XPMUser/Ao28th28, Slappygig/Toonigy, etc https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
 
