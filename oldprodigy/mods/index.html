@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mods - Old Prodigy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 0.5rem 0;
+        }
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+        .mods-list {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem 0;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+    <script>
+        // Mods data for each version
+        const mods = {
+            "1-9-0": ["WalkSpeed", "FastGameSpeed"],
+            "1-10-0": ["WalkSpeed", "FastGameSpeed"],
+            "1-24-0": ["WalkSpeed"],
+            "1-28-1": ["FastGameSpeed"],
+            "1-29-0": ["WalkSpeed", "FastGameSpeed"],
+            "1-30-0": ["WalkSpeed"],
+            "1-30-1": ["FastGameSpeed"],
+            "1-30-2": ["WalkSpeed", "FastGameSpeed"],
+            "1-30-3-1": ["WalkSpeed"],
+            "1-46-2": ["FastGameSpeed"],
+            "1-50-0": ["WalkSpeed", "FastGameSpeed"],
+            "1-51-1": ["WalkSpeed"],
+            "1-52-0": ["FastGameSpeed"],
+            "1-70-0": ["WalkSpeed", "FastGameSpeed"],
+            "2-45-0": ["WalkSpeed"],
+            "2-50-0": ["FastGameSpeed"]
+        };
+
+        function showMods(version) {
+            const modsList = document.getElementById('mods-list');
+            modsList.innerHTML = ''; // Clear current mods
+            if (mods[version]) {
+                mods[version].forEach(mod => {
+                    const modItem = document.createElement('div');
+                    modItem.textContent = `- ${mod}`;
+                    modsList.appendChild(modItem);
+                });
+            } else {
+                modsList.textContent = 'No mods available for this version.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Mods for Old Prodigy</h1>
+        <p>Select a version to see the available mods!</p>
+    </header>
+    <div class="container">
+        <h2>Select Version</h2>
+        <select onchange="showMods(this.value)">
+            <option value="" disabled selected>Select a version</option>
+            <option value="1-9-0">1.9.0</option>
+            <option value="1-10-0">1.10.0</option>
+            <option value="1-24-0">1.24.0</option>
+            <option value="1-28-1">1.28.1</option>
+            <option value="1-29-0">1.29.0</option>
+            <option value="1-30-0">1.30.0</option>
+            <option value="1-30-1">1.30.1</option>
+            <option value="1-30-2">1.30.2</option>
+            <option value="1-30-3-1">1.30.3.1</option>
+            <option value="1-46-2">1.46.2</option>
+            <option value="1-50-0">1.50.0</option>
+            <option value="1-51-1">1.51.1</option>
+            <option value="1-52-0">1.52.0</option>
+            <option value="1-70-0">1.70.0</option>
+            <option value="2-45-0">2.45.0</option>
+            <option value="2-50-0">2.50.0</option>
+        </select>
+        <h3>Available Mods</h3>
+        <div id="mods-list" class="mods-list">
+            <p>Select a version to see mods available.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Old Prodigy Archive</p>
+    </footer>
+</body>
+</html>
