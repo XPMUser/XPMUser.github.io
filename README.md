@@ -185,6 +185,7 @@ Currently, these are the versions that support modpacks:
 - 1.12.0 (Bugfixes)
 - 1.12.2 (Reduced the map search filters and the leaderboards are back)
 - 1.13.0 (Changed the Login Background + UI Updates + Map filters have been replaced with the house button and the "go to your house!" text.)
+- 1.13.2 (Bugfixes)
 - 1.16.0 (Bugfixes)
 - 1.16.2 (Bugfixes)
 - 1.16.5 (Archived + Bugfixes)
