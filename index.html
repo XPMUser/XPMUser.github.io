@@ -1,207 +1,84 @@
 <!DOCTYPE html>
-
-<html>
-	<head>
-	<title>Main Menu</title>
-	<link rel="icon" type="./assets/favicon.png" href="./assets/favicon.png">
-	</head>
-    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Prodigy Menu</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-	body {
-		background-image: url("/oldprodigy/images/Background.png");
-		background-attachment: fixed;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center center;
-		margin: auto;
-		height: 100%;
-		background-color: #627CDE;
-	}
-	
-	.select-panel {
-        display: block;
-        position: fixed;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-	}
-	
-	.button {
-		display: block;
-		position: fixed;
-	}
-	
-	.button:hover {
-		transform: translate(0px, -3px)
-	}
-	
-	.select-panel .banner {
-		position: fixed;
-		display: block;
-		top: 20px;
-		left: 55px;
-	}
-	
-	.select-panel .overlay {
-		position: fixed;
-		display: block;
-		top: 170px;
-		left: 11px;
-	}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 25px;
+            background-color: #0066cc;
+            border-radius: 5px;
+            width: 250px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            background-color: #004d99;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
-    
+</head>
 <body>
-    
-	<div class="select-panel">
-        <img src="/oldprodigy/images/MenuPanel-3.png">
-        
-        <div class="banner">
-       	  <img alt="Version Select" src="/oldprodigy/images/MenuPanel-Banner.png">
-        </div>
-        
-        <div class="overlay">
-        	<img src="/oldprodigy/images/MenuPanel-Overlay.png">
-            
-            <a onclick="XPMUser('')" class="button" style="top: 12px; left: 12px; position: absolute">
-            	<img alt="" src="/oldprodigy/images/1-11-0.png">
-            </a>
-            
-            <a onclick="Feedbacks('')" class="button" style="top: 68px; left: 12px; position: absolute">
-            	<img alt="1-16-5" src="/oldprodigy/images/1-16-5.png">
-            </a>
-            
-            <a onclick="Help('')" class="button" style="top: 124px; left: 12px; position: absolute">
-            	<img alt="1-17-0" src="/oldprodigy/images/1-17-0.png">
-            </a>
-		
-            <a onclick="Math('')" class="button" style="top: 180px; left: 12px; position: absolute">
-            	<img alt="1-37-0" src="/oldprodigy/images/1-37-0.png">
-            </a>
-		
-            <a onclick="Subscribe('')" class="button" style="top: 236px; left: 12px; position: absolute">
-            	<img alt="Subscribe" src="/oldprodigy/images/1-24-0.png">
-            </a>	
-		
-            <a onclick="Prodidows('')" class="button" style="top: 12px; left: 270px; position: absolute">
-            	<img alt="Prodidows" src="/oldprodigy/images/1-30-0.png">
-            </a>
 
-            <a onclick="ProdigyInsider('')" class="button" style="top: 68px; left: 270px; position: absolute">
-            	<img alt="" src="/oldprodigy/images/1-50-0.png">
-            </a>		
-        </div>
-        
-        <div class="button" style="bottom: 110px; left: 150px;">
-            <a onclick="ExitSelection()">
-            	<img alt="Ao28th28" src="/oldprodigy/images/Ao28th28.png">
-            </a>
-        </div>
-        
-	</div>
-        
+    <header>
+        <h1>Old Prodigy Menu</h1>
+    </header>
+
+    <main>
+        <nav>
+            <a href="https://xpmuser.github.io/Website-Tester/" target="_blank">Prodigy Insider Program</a>
+            <a href="https://xpmuser.github.io/oldprodigy/select/" target="_blank">Select a Version</a>
+            <a href="https://xpmuser.github.io/prodidows/" target="_blank">Prodidows</a>
+            <a href="https://github.com/XPMUser/XPMUser.github.io/issues" target="_blank">Report Bugs</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Old Prodigy Menu. All rights reserved.</p>
+    </footer>
+
 </body>
-
-<script>
-var ClickSound = new Audio("/oldprodigy/audio/click.mp3"),
-Menu = {
-	Select: 0,
-	BetaPopup: 1,
-	ModSelect: 2,
-},
-currentMenu = Menu.Select,
-PlayClick = function() {
-	ClickSound.play()
-},
-ExitSelection = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://ao28th28.github.io/pickles/";
-	}, 200);
-},
-ProdigyInsider = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://xpmuser.github.io/Website-Tester/";
-	}, 200);
-},
-Prodidows = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://xpmuser.github.io/prodidows/";
-	}, 200);
-},
-Feedbacks = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://github.com/XPMUser/XPMUser.github.io/issues";
-	}, 200);
-},
-Help = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://github.com/XPMUser/XPMUser.github.io/blob/main/README.md";
-	}, 200);
-},
-Math = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://xpmuser.github.io/prodigy-classic/prodigy.html";
-	}, 200);
-},
-Accessibility = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://docs.google.com/presentation/d/1FLRmqhe4pTwIzsRQfQcsGryPFHl1nm-aelKSEXTQrQ0/edit#slide=id.g2cb090c3e69_0_49";
-	}, 200);	
-},	
-XPMUser = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://xpmuser.github.io/oldprodigy/select/";
-	}, 200);
-},
-EnterGame = function(version) {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "/oldprodigy" + version + "";
-	}, 200);
-},
-Subscribe = function() {
-	if (currentMenu != Menu.Select) {
-		return
-	};
-	PlayClick();
-	setTimeout(()=> {
-		window.location.href = "https://www.youtube.com/channel/UC0dCD_TrUDVQpFCTK6Lyz7Q?sub_confirmation=1";
-	}, 200);	
-}
-</script>
-
-</html>   
+</html>
