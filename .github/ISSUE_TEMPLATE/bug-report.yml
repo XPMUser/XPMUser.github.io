@@ -1,43 +1,52 @@
 name: Bug Report
-description: Something is going wrong and it needs to be fixed!
-title: "*Your bug report title here*"
-labels: Bug
+
+description: Something isn’t working as expected and needs to be fixed.
+
+title: "[Bug]: *Briefly describe the issue*"
+
+labels:
+  - Bug
+
 body:
   - type: input
     attributes:
       label: What went wrong?
-      description: Tell me what went happened in-game that was not expected, but make sure the bug is actually true.
+      description: Clearly describe the unexpected behavior you encountered in the game.
     validations:
       required: true
+
   - type: input
     attributes:
       label: Which version?
-      description: Which Old Prodigy version did this bug occur in?
+      description: Specify the Old Prodigy version where this bug occurred.
     validations:
       required: true
+
   - type: textarea
     attributes:
-      label: How can I reproduce this?
-      description: Tell me how I can trigger this bug again.
+      label: How can we reproduce this issue?
+      description: Provide step-by-step instructions to trigger this bug.
     validations:
       required: true
+
   - type: textarea
     attributes:
-      label: What did the logs output? (press F12 or CTRL+SHIFT+J to see console logs)
-      description: Even if there is no error in the console, you should still list whatever was logged when the bug occurred.
+      label: Console Logs (Press F12 or CTRL+SHIFT+J)
+      description: Share any relevant console logs from the developer tools. Even if no errors appear, list what was logged during the bug occurrence.
     validations:
       required: true
+
   - type: checkboxes
     attributes:
-      label: I agree to the following
+      label: Confirmation
       options:
-        - label: By checking this box, I confirm that this bug report is being made for a bug that occurred on this website (xpmuser.github.io), and not these websites (daboss7173.github.io, toonigy.github.io, and oldprodigy.onrender.com)
+        - label: I confirm that this bug report is for a bug occurring on **xpmuser.github.io** and NOT on **daboss7173.github.io, toonigy.github.io, or oldprodigy.onrender.com**.
           required: true
-        - label: By checking this box, I confirm that this issue is being used to report a problem with an existing feature, and not to suggest a new feature.
+        - label: This report is about a problem with an existing feature, not a feature request.
           required: true
-        - label: By checking this box, I confirm that this issue is being used to report an honest problem with an existing feature.
+        - label: I confirm this is a genuine issue with an existing feature.
           required: true
-        - label: By checking this box, I confirm that this issue is not to be closed as completed when the bug mentioned here isn't/wasn't fixed.
+        - label: I understand this issue should not be marked as completed unless the bug is fully fixed.
           required: true
-        - label: By checking this box, I confirm that I won't make bug threats just so that the game won't boot up when I'm a collaborator.
+        - label: I agree not to misuse bug reports to intentionally disrupt the game as a collaborator.
           required: true
