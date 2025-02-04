@@ -62,10 +62,6 @@ There are a lot of versions to choose from based on your preferences, covering Y
 I am still actively working on bettering it, so if you have any problems with bugs, glitches, etc. Just make an issue
 and I'll try to address it as soon as I can!
 
-For iPad users: Use a different device to load your save file.
-
-For Xbox users: Play Daboss7173's Definitive Edition if you want your character saved in Microsoft Edge or use a different device if you want your character saved from open source versions of Old Prodigy in Microsoft Edge.
-
 There are also forks of my mods. Check them out whenever you get the chance! They're awesome!
 
 If you want to add a house item to your house in 2014-2015's versions, Definitive, Ultimate, or Prodidows versions in 2014-2015 Mode, drag the gold or the price of the house item to drag a house item, & then put the house item wherever you want to put it.
