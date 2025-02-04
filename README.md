@@ -78,7 +78,7 @@ Credits have been given in the credits list.
 
 For more information about Prodigy, [click this link!](https://www.prodigygame.com/main-en/about-prodigy/)
 
-If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or 1.11.0 or Slappygig's (Slappygig.github.io) 1.10.0 or 1.11.0 due to the loss of your housedata.
+If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or 1.11.0 or Slappygig's (slappygig.github.io) 1.10.0 or 1.11.0 due to the loss of your housedata.
 
 If there's a bug in this repository, click on the Send Feedback button in the Main Menu, go to the bug-reports channel and report any bugs. I'll try to fix it as soon as I can.
 
@@ -266,7 +266,7 @@ The current version | The most functional build! + Friendship Mode in the game i
 Huh? The current version? This isn't Old Prodigy! Well - maybe not, but it is New Prodigy, it is more Prodigy than any of these versions.
 The full-game experience is to be experienced there. There is no other version with the intricately designed education system, and there
 is no other version that consistently gets updated by a dedicated team of truly wonderful people. For that, you need to play Prodigy as
-it is now. This is the only open-source Prodigy version that supports apis and OAuths like Google. This version also has the possibility to make friends in the game.
+it is now. This version also has the possibility to make friends in the game.
 
 In case you don't know how to get there somehow, here's the link: https://sso.prodigygame.com/game/login/
 
