@@ -78,9 +78,9 @@ Credits have been given in the credits list.
 
 For more information about Prodigy, [click this link!](https://www.prodigygame.com/main-en/about-prodigy/)
 
-If there's a problem with Daboss7173.github.io, Slappygig.github.io, or a fork of this repository, contact the person responsible for the fork. I don't recommend saving your character from Daboss7173's 1.10.0 or 1.11.0 or Slappygig's (slappygig.github.io) 1.10.0 or 1.11.0 due to the loss of your housedata.
+If there's a problem with daboss7173.github.io, oldprodigy.onrender.com, slappygig.github.io, or a fork of this repository, contact the person responsible for the fork or the site that isn't a fork, not XPMUser. I don't recommend saving your character from Daboss7173's 1.10.0 or 1.11.0 or Slappygig's 1.10.0 or 1.11.0 due to the loss of your housedata.
 
-If there's a bug in this repository, click on the Send Feedback button in the Main Menu, go to the bug-reports channel and report any bugs. I'll try to fix it as soon as I can.
+If there's a bug in this repository, click on the Send Feedback button in the Old Prodigy Menu, go to the bug-reports channel and report any bugs. I'll try to fix it as soon as I can.
 
 There are also various forks of this repository, you can check them out if you get the chance. I can not guarentee the quality of play
 as much as I can here, but I can say they have some cool stuff you might like.
@@ -94,9 +94,7 @@ repository!
 
 This is the fork that I most highly recommend checking out, as it is the most stable and has the most features. 
 
-I also recommend Ao28th28's Fork.
-
-To do so, you just click this link: https://xpmuser.github.io/oldprodigy/select or this link: https://ao28th28.github.io/oldprodigy/select
+To do so, you just click this link: https://xpmuser.github.io/oldprodigy/select
 
 Once you're there, you can select a version to play. There are lots of versions to choose from, so try not to be overwhelmed
 by the number of choices, and there are still more versions and updates to come!
