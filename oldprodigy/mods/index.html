@@ -22,22 +22,11 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-        }
-        h1, h2 {
             text-align: center;
         }
         ul {
             list-style: none;
             padding: 0;
-        }
-        ul li {
-            margin: 0.5rem 0;
-        }
-        select {
-            width: 100%;
-            padding: 0.5rem;
-            font-size: 1rem;
-            margin: 1rem 0;
         }
         .mods-list {
             margin: 1rem 0;
@@ -45,17 +34,19 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
+            text-align: left;
         }
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1rem 0;
+        button {
             background-color: #4CAF50;
             color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
         }
     </style>
     <script>
-        // Mods data for each version
         const mods = {
             "1-9-0": ["WalkSpeed", "FastGameSpeed", "ClassicFaces"],
             "1-10-0": ["WalkSpeed", "FastGameSpeed", "ClassicFaces"],
@@ -77,16 +68,28 @@
 
         function showMods(version) {
             const modsList = document.getElementById('mods-list');
-            modsList.innerHTML = ''; // Clear current mods
+            modsList.innerHTML = '';
             if (mods[version]) {
                 mods[version].forEach(mod => {
-                    const modItem = document.createElement('div');
-                    modItem.textContent = `- ${mod}`;
-                    modsList.appendChild(modItem);
+                    const label = document.createElement('label');
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.value = mod;
+                    checkbox.classList.add('mod-checkbox');
+                    label.appendChild(checkbox);
+                    label.appendChild(document.createTextNode(` ${mod}`));
+                    modsList.appendChild(label);
+                    modsList.appendChild(document.createElement('br'));
                 });
             } else {
                 modsList.textContent = 'No mods available for this version.';
             }
+        }
+
+        function playGame() {
+            const selectedMods = Array.from(document.querySelectorAll('.mod-checkbox:checked'))
+                .map(checkbox => checkbox.value);
+            alert(`Starting game with mods: ${selectedMods.join(', ') || 'None'}`);
         }
     </script>
 </head>
@@ -120,8 +123,7 @@
         <div id="mods-list" class="mods-list">
             <p>Select a version to see mods available.</p>
         </div>
+        <button onclick="playGame()">Play</button>
     </div>
-    <footer>
-    </footer>
 </body>
 </html>
