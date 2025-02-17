@@ -24,10 +24,6 @@
             padding: 2rem;
             text-align: center;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
         .mods-list {
             margin: 1rem 0;
             padding: 1rem;
@@ -44,6 +40,10 @@
             cursor: pointer;
             font-size: 1rem;
             margin-top: 1rem;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
         }
     </style>
     <script>
@@ -68,6 +68,7 @@
 
         function showMods(version) {
             const modsList = document.getElementById('mods-list');
+            const playButton = document.getElementById('play-button');
             modsList.innerHTML = '';
             if (mods[version]) {
                 mods[version].forEach(mod => {
@@ -84,12 +85,16 @@
             } else {
                 modsList.textContent = 'No mods available for this version.';
             }
+            playButton.disabled = !version;
+            playButton.setAttribute('data-version', version);
         }
 
         function playGame() {
+            const selectedVersion = document.getElementById('play-button').getAttribute('data-version');
             const selectedMods = Array.from(document.querySelectorAll('.mod-checkbox:checked'))
                 .map(checkbox => checkbox.value);
-            alert(`Starting game with mods: ${selectedMods.join(', ') || 'None'}`);
+            const modsQuery = selectedMods.length ? `?mods=${selectedMods.join(',')}` : '';
+            window.location.href = `/${selectedVersion}${modsQuery}`;
         }
     </script>
 </head>
@@ -123,7 +128,7 @@
         <div id="mods-list" class="mods-list">
             <p>Select a version to see mods available.</p>
         </div>
-        <button onclick="playGame()">Play</button>
+        <button id="play-button" onclick="playGame()" disabled>Play</button>
     </div>
 </body>
 </html>
