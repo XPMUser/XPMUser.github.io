@@ -20315,7 +20315,7 @@
 				"effects": [
 					33
 				],
-				"flavorText": "Bee Bah Boo! Go Team Blue! "
+				"flavorText": "Bee Bah Boo! Go Team Blue! "
 			},
 			"metadata": {
 				"type": "singleImage",
@@ -20466,7 +20466,7 @@
 						"N": 10000
 					}
 				],
-				"flavorText": "The warmest hat in the land, with the hottest fashion. Perfect for sipping cocoa on a mountaintop. Part of the elite Ice Crystal set.",
+				"flavorText": "The warmest hat in the land, with the hottest fashion. Perfect for sipping cocoa on a mountaintop. Part of the elite Ice Crystal set.",
 				"effects": [
 					35
 				]
@@ -41903,7 +41903,7 @@
 						"N": 1200
 					}
 				],
-				"flavorText": "You might be TOO chill with this ice blue ski outfit. ",
+				"flavorText": "You might be TOO chill with this ice blue ski outfit. ",
 				"effects": [
 					33
 				]
@@ -42033,7 +42033,7 @@
 						"N": 10000
 					}
 				],
-				"flavorText": "The finest winter fashion can be yours with this Ice Crystal ski suit. Part of the elite Ice Crystal set.",
+				"flavorText": "The finest winter fashion can be yours with this Ice Crystal ski suit. Part of the elite Ice Crystal set.",
 				"effects": [
 					35
 				]
@@ -42143,7 +42143,7 @@
 						"N": 10000
 					}
 				],
-				"flavorText": "The finest winter fashion can be yours with this Ice Crystal ski suit. Part of the elite Ice Crystal set.",
+				"flavorText": "The finest winter fashion can be yours with this Ice Crystal ski suit. Part of the elite Ice Crystal set.",
 				"effects": [
 					35
 				]
@@ -42208,7 +42208,7 @@
 						"N": 10000
 					}
 				],
-				"flavorText": "The finest winter fashion can be yours with this Ice Crystal ski suit. Part of the elite Ice Crystal set.",
+				"flavorText": "The finest winter fashion can be yours with this Ice Crystal ski suit. Part of the elite Ice Crystal set.",
 				"effects": [
 					35
 				]
@@ -42747,7 +42747,7 @@
 						"N": 20
 					}
 				],
-				"flavorText": "Let everyone know you are not only here, you are PRESENT! ",
+				"flavorText": "Let everyone know you are not only here, you are PRESENT! ",
 				"effects": [
 					33
 				]
@@ -61785,7 +61785,7 @@
 						"N": 10000
 					}
 				],
-				"flavorText": "Become one with the snow as you glide fast as the north wind. Part of the elite Ice Crystal set.",
+				"flavorText": "Become one with the snow as you glide fast as the north wind. Part of the elite Ice Crystal set.",
 				"effects": [
 					32
 				]
@@ -62110,6 +62110,31 @@
 					"y": 0.85
 				}
 			}
-		}
-	]
-}
+		},
+		{
+			"ID": 121,
+			"assetID": 137,
+			"type": "weapon",
+			"gender": 0,
+			"data": {
+				"drop": 1,
+				"name": "Trialmaster's Training Stick",
+				"price": 300,
+				"member": 1,
+				"rarity": 4,
+				"effects": [87],
+				],
+				"flavorText": "Also known as the \"Safety Wand\", it is used by all academy wizards to reduce injury during training."
+			},
+			"metadata": {
+				"v": 1,
+				"size": 0,
+				"type": "singleImage",
+				"angle": 45,
+				"vIcon": 2,
+				"anchor": {
+					"x": 0.45,
+					"y": 0.85
+				}
+			}
+		},
