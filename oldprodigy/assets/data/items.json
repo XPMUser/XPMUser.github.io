@@ -62110,31 +62110,6 @@
 					"y": 0.85
 				}
 			}
-		},
-		{
-			"ID": 121,
-			"assetID": 137,
-			"type": "weapon",
-			"gender": 0,
-			"data": {
-				"drop": 1,
-				"name": "Trialmaster's Training Stick",
-				"price": 300,
-				"member": 1,
-				"rarity": 4,
-				"effects": [87],
-				],
-				"flavorText": "Also known as the \"Safety Wand\", it is used by all academy wizards to reduce injury during training."
-			},
-			"metadata": {
-				"v": 1,
-				"size": 0,
-				"type": "singleImage",
-				"angle": 45,
-				"vIcon": 2,
-				"anchor": {
-					"x": 0.45,
-					"y": 0.85
-				}
-			}
-		},
+		}
+	]
+}
