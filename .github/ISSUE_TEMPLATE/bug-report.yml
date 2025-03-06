@@ -34,13 +34,13 @@ body:
       label: Console Logs (Press F12 or CTRL+SHIFT+J)
       description: Share any relevant console logs from the developer tools. Even if no errors appear, list what was logged during the bug occurrence.
     validations:
-      required: true
+      required: false
 
   - type: checkboxes
     attributes:
       label: Confirmation
       options:
-        - label: I confirm that this bug report is for a bug occurring on **xpmuser.github.io** and NOT on **daboss7173.github.io, toonigy.github.io, or oldprodigy.onrender.com**.
+        - label: I confirm that this bug report is for a bug occurring on "xpmuser.github.io" and NOT on other websites.
           required: true
         - label: This report is about a problem with an existing feature, not a feature request.
           required: true
@@ -49,4 +49,6 @@ body:
         - label: I understand this issue should not be marked as completed unless the bug is fully fixed.
           required: true
         - label: I agree not to misuse bug reports to intentionally disrupt the game as a collaborator.
+          required: true
+        - label: I agree to be patient when you need some time to fix this bug or other bugs.
           required: true
