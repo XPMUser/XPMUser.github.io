@@ -48178,7 +48178,7 @@ Prodigy.ForestBoss = function(e, t) {
 			if (Util.isDefined(a))
 				for (var s = 0; s < a.length; s++) delete a[s].hp;
 			var r = {
-				screen: "bg-battle-academy",
+				screen: "bg-battle-arena",
 				opponent: [Prodigy.Menu.Coliseum.data[e].opponent],
 				drops: Prodigy.Menu.Coliseum.data[e].drops,
 				catch: !0,
@@ -48186,7 +48186,7 @@ Prodigy.ForestBoss = function(e, t) {
 				difficulty: 6,
 				dropsDisabled: !1
 			};
-			this.game.prodigy.battle.start(r, i.bind(this, this.game), i.bind(this, this.game, e + 1), null, "Arena"), this.game.prodigy.player.addArenaScore(5000), this.game.prodigy.player.data.arenaRank=4
+			this.game.prodigy.battle.start(r, i.bind(this, this.game), i.bind(this, this.game, e + 1), null, "TechZone"), this.game.prodigy.player.addArenaScore(5000), this.game.prodigy.player.data.arenaRank=4
 		}
 	}
 }), Prodigy.Menu.Coliseum.data = [{
@@ -49220,6 +49220,31 @@ Prodigy.ForestBoss = function(e, t) {
     drops: [{
         type: "gold",
         N: 5000
+    }]
+}, {
+    opponent: {
+        data: '{"level":69}',
+        appearance: '{"name":"Jack", "gender":"male", "hairStyle":4,"hairColor":16,"skinColor":3,"eyeColor":1}',
+        equipment: '{"hat":43, "outfit":22, "weapon":7}'
+    },
+    title: "The Random",
+    description: "Everything about Jack seems random, out of order, misplaced. He is a spectacle to most everyone that passes by.",
+    pets: [{
+                ID: 17,
+                level: 67
+            }, {
+                ID: 78,
+                level: 46
+            }, {
+                ID: 65,
+                level: 29
+            }, {
+                ID: 95,
+                level: 3
+    }],
+    drops: [{
+        type: "gold",
+        N: 452
     }]
 }], Prodigy.Menu.Nicknamer = function(e, t, i, a) {
 	Prodigy.Control.Menu.call(this, e, t, 18, {
@@ -55918,9 +55943,9 @@ var Screen = function() {
 		}, e.prototype.screenSetup = function() {
 			if (this.game.device.iPad)
 				this.game.prodigy.open.okaymessage("The load character button doesn't work on iPads. We suggest you use another device if you are an iPad user.", null, "star", "Warning!");
-			this.game.prodigy.debug.easyMode(1, 1), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
+			this.game.prodigy.debug.easyMode(0, 0), this.background.add(this.game.prodigy.create.sprite(0, 0, "login", "bg")), this.loginBox = this.game.prodigy.create.element(this.background), this.usernameField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "username", "", 90, 230, 300, 40), this.usernameField.hide(0), this.usernameField.setLabel(this.loginBox, "Prodigy version 1.50.0");
 			var e = Util.getCookie("prodigyUsername");
-			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 15"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
+			Util.isDefined(e) && this.usernameField.setValue(e), this.passwordField = Prodigy.Control.InputField.createInputField(this.game, this.loginBox, "password", "", 90, 310, 300, 40, "password"), this.passwordField.hide(0), this.passwordField.setLabel(this.loginBox, "Definitive Edition version 16"), this.loadCharacterButton = this.game.prodigy.create.button(this.loginBox, 100, 380, "login", "loadcharacter", this.openFileForCharacter.bind(this)), this.offlineModeButton = this.game.prodigy.create.button(this.loginBox, 100, 470, "login", "google-signin-btn", this.onGoogleLoginButtonClick.bind(this)), this.progressBox = this.game.prodigy.create.element(this.background, 100, 250), this.error = this.game.prodigy.create.font(this.progressBox, 0, 0, "", {
 				width: 300,
 				align: "center"
 			}), this.closeButton = this.game.prodigy.create.textButton(this.progressBox, 0, 100, {
@@ -75890,7 +75915,7 @@ TechZone.STORE = {
 	zoneName: "zone-arena",
 	atlas: "zone-arena",
 	fullName: "Coliseum",
-	npc: "Cumulo",
+	npc: "M. Stache",
 	icon: "zone-air",
 	battle: {
 		screen: "bg-battle-arena",
@@ -85233,14 +85258,7 @@ class OldProdigy {
             Util.isDefined(callback) && callback({
 				success: true,
                 wizard: save
-            })
-            Util.log("Progress saved.", Util.INFO);
-        }).catch((error) => {
-            Util.log("Save failed.", Util.ERROR);
-            console.error(error);
-			Util.isDefined(callback) && callback({
-				success: false
-			})
+            });
         });
 	}
 	// Resets the user's wizard data. This is ran whenever the player logs out.
