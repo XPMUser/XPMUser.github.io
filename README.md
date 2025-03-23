@@ -2,6 +2,8 @@
 
 Old Prodigy Wiki: https://old-prodigy.fandom.com/wiki/Old_Prodigy_Wiki
 
+Revolt Server: https://rvlt.gg/595F7rvh
+
 Old Prodigy Reddit Community: https://www.reddit.com/r/OldProdigy/
 
 You'll need to be at least 13 years old to use Reddit, Github, YouTube (not YouTube Kids), Discord, and Fandom. If you're at least 16 years old in California, you can use Fandom.
