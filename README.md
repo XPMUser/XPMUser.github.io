@@ -1,7 +1,5 @@
 # XPMUser.github.io
 
-Old Prodigy Wiki: https://old-prodigy.fandom.com/wiki/Old_Prodigy_Wiki
-
 Revolt Server: https://rvlt.gg/YW9wGRpd
 
 Old Prodigy Reddit Community: https://www.reddit.com/r/OldProdigy/
