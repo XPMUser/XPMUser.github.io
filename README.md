@@ -10,7 +10,7 @@ If you're playing my Old Prodigy versions, Definitive Editions, Ultimate Edition
 
 Game restorers: Daboss7173 https://github.com/Daboss7173, XPMUser, Craftersshaft https://github.com/craftersshaft/, etc
 
-Siteforkers: XPMUser/Ao28th28, Slappygig/Toonigy, etc https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
+Siteforkers: XPMUser/Ao28th28, Slappygig/Toonigy, etc https://github.com/HealingMunch https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
 
 Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28, Cookie, Daboss7173, and more https://github.com/CookieTheDeveloper
 
@@ -29,10 +29,6 @@ Playtesters: Daboss7173, XPMUser/Ao28th28, Mr. Inquiry, and more
 Pictures: Prodigy Education, the mustache creator, and more
 Introducers: Ao28th28 a.k.a XPMUser, Mr. Inquiry, and more
 Original Prodigy Makers: Rohan Mahimker/Alexander Peters
-
-XPMUser is the default username of an account to use in Windows XP Mode in Windows 7. 
-I was named after the Windows XP Mode user.
-I'm Ao28th28 (The PVZ Proditany Edition (Formerly PVZ Unknown Edition and CWL) Maker).
 
 # Table of Contents 
 1. XPMUser.github.io: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#xpmusergithubio
@@ -249,23 +245,8 @@ Lets scratch the surface shall we?
   
 Yep, you heard that right, that's just scratching the surface. There are lots of versions to choose from and modpacks are supported for some of them, so you can probably imagine what months of hard work can do to something like that. 
 
-https://xpmuser.github.io/oldprodigy/choose/ You can choose any version you want.
+https://healingmunch.github.io/xpmuser.github.io/oldprodigy/choose/ You can choose any version you want.
 
 ## Prodigy Ultimate Edition
 
-There's only 1.50.0 Ultimate Edition for now, more versions are coming soon. https://xpmuser.github.io/oldprodigy/play/ 1.50.0 Ultimate Edition is somehow trying to use pde1500's updates.
-
-## The other version
-
-There's one version I haven't mentioned yet, it is the least buggy out of all of these versions.
-
-The current version | The most functional build! + Friendship Mode in the game itself!
-
-Huh? The current version? This isn't Old Prodigy! Well - maybe not, but it is New Prodigy, it is more Prodigy than any of these versions.
-The full-game experience is to be experienced there. There is no other version with the intricately designed education system, and there
-is no other version that consistently gets updated by a dedicated team of truly wonderful people. For that, you need to play Prodigy as
-it is now. This version also has the possibility to make friends in the game.
-
-In case you don't know how to get there somehow, here's the link: https://sso.prodigygame.com/game/login/
-
-https://play.prodigygame.com/ If you want to play as a student during free time and you're an adult.
+There's only 1.50.0 Ultimate Edition for now, more versions are coming soon. https://healingmunch.github.io/xpmuser.github.io/oldprodigy/play/ 1.50.0 Ultimate Edition is somehow trying to use pde1500's updates.
