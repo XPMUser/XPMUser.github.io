@@ -31,16 +31,16 @@ Introducers: Ao28th28 a.k.a XPMUser, Mr. Inquiry, and more
 Original Prodigy Makers: Rohan Mahimker/Alexander Peters
 
 # Table of Contents 
-1. XPMUser.github.io: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#xpmusergithubio
-2. Credits: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#credits
-3. Table of Contents: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#table-of-contents
-4. Old Prodigy: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#old-prodigy
-5. How to play: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#how-to-play
-6. Modpacks: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#modpacks
-7. List of Versions: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#list-of-versions
-8. Prodigy Definitive Edition: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#prodigy-definitive-edition
-9. Prodigy Ultimate Edition: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#prodigy-ultimate-edition
-10. The other version: https://github.com/XPMUser/XPMUser.github.io?tab=readme-ov-file#the-other-version
+1. XPMUser.github.io: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#xpmusergithubio
+2. Credits: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#credits
+3. Table of Contents: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#table-of-contents
+4. Old Prodigy: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#old-prodigy
+5. How to play: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#how-to-play
+6. Modpacks: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#modpacks
+7. List of Versions: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#list-of-versions
+8. Prodigy Definitive Edition: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#prodigy-definitive-edition
+9. Prodigy Ultimate Edition: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#prodigy-ultimate-edition
+10. The other version: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#the-other-version
    
 # Old Prodigy
 
