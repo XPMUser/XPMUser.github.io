@@ -9,12 +9,9 @@
 		Fast Game Speed				Daboss7173
 		Rebalanced Battles			Daboss7173
 		Classic Faces				Daboss7173
-                Mathless                                    XPMUser & Toonigy
 	
-	Written by: Daboss7173, XPMUser, & Toonigy
+	Written by: Daboss7173
 	Github: https://github.com/Daboss7173/Daboss7173.github.io
-	Github: https://github.com/XPMUser/XPMUser.github.io
-	Github: https://github.com/Toonigy/Toonigy.github.io
 */
 var GameMods = {
 	available: [{
@@ -29,10 +26,7 @@ var GameMods = {
 	}, {
 		id: "ClassicFaces",
 		patch: "initClassicFaceMod"
-	}, {
- 	         id: "Mathless",
-                 patch: "initMathlessMod"
-         }]
+	}]
 };
 class ModHandler {
 	constructor(e) {
@@ -434,8 +428,6 @@ class ModHandler {
 			o || 0 !== this.target.source.modifiers.ignoreElement || (this.game.prodigy.attacks.isStrong(this.atk.element, this.target.source.getElement()) ? n = "Powerful!" : this.game.prodigy.attacks.isWeak(this.atk.element, this.target.source.getElement()) && (n = "Weak...")), Util.isDefined(n) && (this.delayComplete = !0, this.game.prodigy.effects.characterText(n, this.target.x, this.source.y + 50, 1e3 + this.shieldTime))
 		}
 	}
-        initMathlessMod() { this.game.prodigy.debug.disableEdu=1
-                 }
 	initClassicFaceMod() {
 		var assets = this.game.prodigy.assets._assets;
 		assets.heads.base = "https://xpmuser.github.io/oldprodigy/1-50-0/images/";
