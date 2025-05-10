@@ -17286,10 +17286,10 @@
 				"name": "Trialmaster's Circlet",
 				"type": "",
 				"price": 350,
-				"member": 1,
+				"member": 0,
 				"rarity": 4,
 				"effects": [
-					83
+					88
 				],
 				"flavorText": "This ceremonial circlet is exceedingly rare and grants wisdom to those who wear it. Who would give it up?"
 			},
@@ -30291,7 +30291,7 @@
 				"member": 1,
 				"rarity": 4,
 				"effects": [
-					83
+					88
 				],
 				"flavorText": "Only the Trial Masters of past and present were given these robes and are forbidden to take them off. How did you get them?"
 			},
@@ -30349,7 +30349,7 @@
 				"member": 1,
 				"rarity": 4,
 				"effects": [
-					83
+					88
 				],
 				"flavorText": "Only the Trial Masters of past and present were given these robes and are forbidden to take them off. How did you get them?"
 			},
@@ -30407,7 +30407,7 @@
 				"member": 1,
 				"rarity": 4,
 				"effects": [
-					83
+					88
 				],
 				"flavorText": "Only the Trial Masters of past and present were given these robes and are forbidden to take them off. How did you get them?"
 			},
@@ -59874,7 +59874,7 @@
 				"member": 0,
 				"rarity": 3,
 				"effects": [
-					81
+					87
 				],
 				"flavorText": "To be held only by the Trial Masters, its powers are the stuff of legends. How did you get it?"
 			},
