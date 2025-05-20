@@ -94,14 +94,6 @@ class ModHandler {
 				this.walkSpeedBar = null;
 			}
 		}
-		
-		WalkableScreen.prototype.listener = function(e, t) {
-			e = e || 0, t = t || 0;
-			var a = this.path.findBasicPath(this.user.x + e, this.user.y + t, this.game.input.x + e, this.game.input.y + t);
-			a[0].x -= e, a[0].y -= t;
-			var i = this.path.getCallback(Math.floor(a[0].x / this.tileSize), Math.floor(a[0].y / this.tileSize));
-			this.user.setPath(a, i, walkSpeed)
-		}
 	}
 	
 	initFastGameSpeedMod() {
@@ -147,70 +139,54 @@ class ModHandler {
 	}
 	
 	initClassicFaceMod() {
-		var assets = this.game.prodigy.assets._assets;
-		assets.heads.base = "https://daboss7173.github.io/oldprodigy/1-30-0/assets/images/";
+		var Prodigy = {};
+		Prodigy.Assets = "https://daboss7173.github.io/oldprodigy/1-10-0/assets/images/";
 		
-		Prodigy.Container.PlayerContainer.getAssets = function (e, t, i, a) {
-			var s = new Array;
-			t = 1 === t ? "reduced" : "normal", a ? s.push(null) : (Util.isDefined(i) || (i = e.equipment.getEquipment("outfit")), s.push(Util.isDefined(i) ? t + "-outfit-" + e.appearance.getGender() + "-" + i : null)), s.push(t + "/face/" + e.appearance.getSkinColor()), s.push(t + "-hair-" + e.appearance.getGender() + "-" + e.appearance.getHairStyle() + "-" + e.appearance.getHairColor()), s.push(t + "/eyes/" + e.appearance.getGender() + "/" + e.appearance.getEyeColor()), s.push(Util.isDefined(e.equipment.getEquipment("hat")) ? t + "-hat-" + e.equipment.getEquipment("hat") : null), s.push("normal" === t && Util.isDefined(e.equipment.getEquipment("weapon")) ? t + "-weapon-" + e.equipment.getEquipment("weapon") : null), Util.isDefined(s[0]) || (s[0] = t + "-outfit-" + e.appearance.getGender() + "-13");
-			var r = e.equipment.getEquipment("hat");
-			if (Util.isDefined(r)) {
-				var t = Items.getItemData("hat", r).type;
-				("cover" === t || "wrap" === t) && (s[2] = null), "mask" === t && (s[2] = null)
+		PlayerContainer.getAssets = function(e, t, a) {
+			var i = new Array;
+			t = 1 === t ? "reduced" : "normal", Util.isDefined(a) || (a = e.equipment.getEquipment("outfit")), i.push(Util.isDefined(a) ? t + "-outfit-" + e.appearance.getGender() + "-" + a : null), i.push(t + "/face/" + e.appearance.getSkinColor()), i.push(t + "-hair-" + e.appearance.getGender() + "-" + e.appearance.getHairStyle() + "-" + e.appearance.getHairColor()), i.push(t + "/eyes/" + e.appearance.getGender() + "/" + e.appearance.getEyeColor()), i.push(Util.isDefined(e.equipment.getEquipment("hat")) ? t + "-hat-" + e.equipment.getEquipment("hat") : null), i.push("normal" === t && Util.isDefined(e.equipment.getEquipment("weapon")) ? t + "-weapon-" + e.equipment.getEquipment("weapon") : null), Util.isDefined(i[0]) || (i[0] = t + "-outfit-" + e.appearance.getGender() + "-13");
+			var s = e.equipment.getEquipment("hat");
+			if (Util.isDefined(s)) {
+				var t = Items.getItemData("hat", s).type;
+				("cover" === t || "wrap" === t) && (i[2] = null)
 			}
-			return s
+			return i;
 		}
 		
-		Prodigy.Container.PlayerContainer.prototype.setup = function (e, t) {
-			if (t && Util.isDefined(this.assets) && Util.isDefined(this.game)) {
+		PlayerContainer.prototype.setup = function() {
+			if (Util.isDefined(this.assets)) {
 				this.sprites.removeAll(!0);
-				var i = this.assets[0],
-					a = this.assets[1],
-					s = this.assets[2],
+				var a = this.assets[0],
+					s = this.assets[1],
+					i = this.assets[2],
 					r = this.assets[3],
 					o = this.assets[4],
 					n = this.assets[5],
-					h = this.game.prodigy.assets.getImageBounds(i),
+					h = this.game.prodigy.assets.getImageBounds(a),
 					l = Math.floor(-(64 * this.setScale - h[0])),
-					d = -h[3];
-				let isFemale = this.source.appearance.getGender() === "female";
-				if (null !== a && (this.face = this.game.prodigy.create.sprite(l - (h[0] - (1 != this.setScale ? 93 : 44)), d - (h[1] - (1 != this.setScale ? 82 : 48)), "heads", a), this.face.inputEnabled = !0, this.face.events.onInputDown.add(this.playerClicked.bind(this)), this.sprites.add(this.face), this.faceY = this.face.y), null !== r && (this.eyes = this.game.prodigy.create.sprite(l - (h[0] - (1 != this.setScale ? (isFemale ? 115 : 113) : 55)), d - (h[1] - (1 != this.setScale ? (isFemale ? 117 : 114) : (isFemale ? 66 : 65))), "heads", r), this.sprites.add(this.eyes), this.eyesY = this.eyes.y), null !== s) {
-					var p = this.game.prodigy.assets.getImageBounds(s);
-					this.hair = this.game.prodigy.create.sprite(l - (h[0] - p[0]), d - (h[1] - p[1]), s), this.sprites.add(this.hair), this.hairY = this.hair.y, this.hair.animations.add("walk", [0, 1, 2, 3], 10, !0, !0), this.hair.animations.add("stand", [0], 10, !0, !0), this.hair.animations.add("fct", [0], 10, !0, !0)
-				}
-				if (!this.headOnly) {
-					this.body = this.game.prodigy.create.sprite(l, d, i), this.body.inputEnabled = !0, this.body.events.onInputDown.add(this.playerClicked.bind(this)), this.sprites.add(this.body), this.animWalk = this.body.animations.add("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10, !0, !0), this.animStand = this.body.animations.add("stand", [8, 9, 10, 11, 12, 13, 14, 15], 10, !0, !0);
-					try {
-						this.animFunction = this.body.animations.add("fct", [16, 17, 18, 19, 20, 21, 22, 23], 10, !0, !0), this.animFunction.onComplete.add(this.functionComplete.bind(this))
-					} catch (c) {}
+					p = -h[3];
+				if (null !== s && (this.face = new Sprite(this.game, l - (h[0] - (1 != this.setScale ? 93 : 44)), p - (h[1] - (1 != this.setScale ? 82 : 48)), "heads2", s), this.face.inputEnabled = !0, this.face.events.onInputDown.add(this.playerClicked.bind(this)), this.sprites.add(this.face), this.faceY = this.face.y), null !== r && (this.eyes = new Sprite(this.game, l - (h[0] - (1 != this.setScale ? 113 : 55)), p - (h[1] - (1 != this.setScale ? 114 : 65)), "heads2", r), this.sprites.add(this.eyes), this.eyesY = this.eyes.y), null !== i) {
+					var d = this.game.prodigy.assets.getImageBounds(i);
+					this.hair = new Sprite(this.game, l - (h[0] - d[0]), p - (h[1] - d[1]), i), this.sprites.add(this.hair), this.hairY = this.hair.y, this.hair.animations.add("walk", [0, 1, 2, 3], 10, !0, !0), this.hair.animations.add("stand", [0], 10, !0, !0), this.hair.animations.add("fct", [0], 10, !0, !0)
 				}
 				if (null !== o) {
-					var g = this.game.prodigy.assets.getImageBounds(o);
-					this.hat = this.game.prodigy.create.sprite(l - (h[0] - g[0]), d - (h[1] - g[1]), o), this.sprites.add(this.hat), this.hatY = this.hat.y;
-					var u = Items.getItemData("hat", this.source.equipment.getEquipment("hat"));
-					if (Util.isDefined(u) && 1 === u.standAnimation) this.hat.animations.add("walk", [0, 1, 2, 3], 10, !0, !0), this.hat.animations.add("stand", [0, 1, 2, 3], 10, !0, !0), this.hat.animations.add("fct", [0, 1, 2, 3], 10, !0, !0);
-					else {
-						try {
-							this.hat.animations.add("walk", [0, 1, 2, 3], 10, !0, !0)
-						} catch (c) {
-							this.hat.animations.add("walk", [0], 10, !0, !0)
-						}
-						this.hat.animations.add("stand", [0], 10, !0, !0), this.hat.animations.add("fct", [0], 10, !0, !0)
-					}
+					var c = this.game.prodigy.assets.getImageBounds(o);
+					this.hat = new Sprite(this.game, l - (h[0] - c[0]), p - (h[1] - c[1]), o), this.sprites.add(this.hat), this.hatY = this.hat.y;
+					var m = Items.getItemData("hat", this.source.equipment.getEquipment("hat"));
+					Util.isDefined(m) && 1 === m.standAnimation ? (this.hat.animations.add("walk", [0, 1, 2, 3], 10, !0, !0), this.hat.animations.add("stand", [0, 1, 2, 3], 10, !0, !0), this.hat.animations.add("fct", [0, 1, 2, 3], 10, !0, !0)) : (this.hat.animations.add("walk", [0, 1, 2, 3], 10, !0, !0), this.hat.animations.add("stand", [0], 10, !0, !0), this.hat.animations.add("fct", [0], 10, !0, !0))
 				}
-				if (null !== n && !this.headOnly) {
-					var y = this.game.prodigy.assets.getImageBounds(n);
-					this.weapon = this.game.prodigy.create.sprite(l - (h[0] - y[0]), d - (h[1] - y[1]), n), this.sprites.add(this.weapon), this.weaponY = this.weapon.y
+				if (this.body = new Sprite(this.game, l, p, a), this.body.inputEnabled = !0, this.body.events.onInputDown.add(this.playerClicked.bind(this)), this.sprites.add(this.body), this.animWalk = this.body.animations.add("walk", [0, 1, 2, 3, 4, 5, 6, 7], 10, !0, !0), this.animStand = this.body.animations.add("stand", [8, 9, 10, 11, 12, 13, 14, 15], 10, !0, !0), this.animFunction = this.body.animations.add("fct", [16, 17, 18, 19, 20, 21, 22, 23], 10, !0, !0), this.animFunction.onComplete.add(this.functionComplete.bind(this)), null !== n) {
+					var u = this.game.prodigy.assets.getImageBounds(n);
+					this.weapon = new Sprite(this.game, l - (h[0] - u[0]), p - (h[1] - u[1]), n), this.sprites.add(this.weapon), this.weaponY = this.weapon.y
 				}
-				this.transforming && this.showSmoke(), this.sprites.callAll("play", null, "stand"), this.mode = 1, Util.isDefined(this.loadedCallback) && this.loadedCallback(), this.complete = !0, this.loading = !1, console.log(this.sprites)
+				this.transforming && this.showSmoke(), this.sprites.callAll("play", null, "stand"), this.mode = 1, this.complete = !0, this.loading = !1
 			}
 		}
 	}
-}
 	
 	initClassicFacesForBoysMod() {
 		var assets = this.game.assets.getAssetMap();
-		assets.heads.base = "https://xpmuser.github.io/oldprodigy/pde1221/assets/images/general-2";
+		assets.heads2.base = "https://daboss7173.github.io/oldprodigy/1-10-0/assets/images/general-head";
 		
 		PlayerContainer.getAssets = function(e, t, a) {
 			var i = new Array;
@@ -236,7 +212,7 @@ class ModHandler {
 					n = Math.floor(-(64 * this.setScale - o[0])),
 					h = -o[3];
 				let isFemale = this.source.appearance.getGender() === "female";
-				if (null !== t && (this.face = new Sprite(this.game, n - (o[0] - (1 != this.setScale ? 93 : 44)), h - (o[1] - (1 != this.setScale ? 82 : 48)), "heads", t), this.sprites.add(this.face), this.faceY = this.face.y), null !== i && (this.eyes = new Sprite(this.game, n - (o[0] - (1 != this.setScale ? (isFemale ? 115 : 113) : 55)), h - (o[1] - (1 != this.setScale ? (isFemale ? 117 : 114) : (isFemale ? 66 : 65))), "heads", i), this.sprites.add(this.eyes), this.eyesY = this.eyes.y), null !== a) {
+				if (null !== t && (this.face = new Sprite(this.game, n - (o[0] - (1 != this.setScale ? 93 : 44)), h - (o[1] - (1 != this.setScale ? 82 : 48)), "heads2", t), this.sprites.add(this.face), this.faceY = this.face.y), null !== i && (this.eyes = new Sprite(this.game, n - (o[0] - (1 != this.setScale ? (isFemale ? 115 : 113) : 55)), h - (o[1] - (1 != this.setScale ? (isFemale ? 117 : 114) : (isFemale ? 66 : 65))), "heads2", i), this.sprites.add(this.eyes), this.eyesY = this.eyes.y), null !== a) {
 					var l = this.game.assets.getImageBounds(a);
 					this.hair = new Sprite(this.game, n - (o[0] - l[0]), h - (o[1] - l[1]), a), this.sprites.add(this.hair), this.hairY = this.hair.y, this.hair.animations.add("walk", [0, 1, 2, 3], 10, !0, !0), this.hair.animations.add("stand", [0], 10, !0, !0), this.hair.animations.add("fct", [0], 10, !0, !0)
 				}
