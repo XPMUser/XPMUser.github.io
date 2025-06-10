@@ -81,10 +81,34 @@
             <a class="nav-button" href="https://healingmunch.github.io/XPMUser.github.io/prodigyde-mods.html" target="_blank">Mods</a>
             <a class="nav-button" href="https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1.51.0/?mods=WalkSpeed,FastGameSpeed" target="_blank">PDE1.51.0</a>
         </nav>
+
+        <!-- Random Pick Button -->
+        <div style="margin-top: 30px;">
+            <button class="nav-button" onclick="pickRandomVersion()">🎲 Pick For Me</button>
+        </div>
     </main>
 
     <footer>
+        <p>&copy; 2025 ProdigyDE Menu</p>
     </footer>
+
+    <script>
+        function pickRandomVersion() {
+            const versions = [
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/prodigyde/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2015/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/oldprodigyde/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pdewinter2016/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1500/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2017/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2018/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde2019/",
+                "https://healingmunch.github.io/XPMUser.github.io/oldprodigy/pde1.51.0/?mods=WalkSpeed,FastGameSpeed"
+            ];
+            const random = versions[Math.floor(Math.random() * versions.length)];
+            window.open(random, "_blank");
+        }
+    </script>
 
 </body>
 </html>
