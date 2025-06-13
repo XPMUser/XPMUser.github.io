@@ -1,95 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Old Prodigy Menu</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: BrianneTod, Pipe Dream;
-            background-image: url("https://xpmuser.github.io/oldprodigy/images/Background.png");
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            margin: auto;
-            height: 100%;
-            background-color: #627CDE;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Old Prodigy Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
 
-        header {
-            background-color: #0066cc;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 24px;
-        }
+    body {
+      margin: 0;
+      font-family: 'Press Start 2P', 'Roboto', sans-serif;
+      background: url("https://xpmuser.github.io/oldprodigy/images/Background.png") center center / cover no-repeat fixed;
+      background-color: #627CDE;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        nav {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
+    header {
+      background-color: rgba(0, 102, 204, 0.9);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #0073e6, #005bb5);
-            border-radius: 10px;
-            width: 260px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease-in-out;
-            border: 2px solid #004a99;
-        }
+    nav {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 50px 20px;
+    }
 
-        nav a:hover {
-            background: linear-gradient(135deg, #005bb5, #003f80);
-            transform: scale(1.05);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-        }
+    nav a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(145deg, #008cff, #0053b3);
+      padding: 18px 35px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      border: 2px solid #003d80;
+    }
 
-        footer {
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-        }
+    nav a:hover {
+      transform: translateY(-5px) scale(1.03);
+      background: linear-gradient(145deg, #006ed6, #004080);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+    }
 
-        footer a {
-            color: #fff;
-            text-decoration: none;
-        }
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      font-size: 14px;
+    }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: #add8ff;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>Old Prodigy Menu</h1>
-    </header>
+  <header>
+    Old Prodigy Menu
+  </header>
 
-    <main>
-        <nav>
-            <a href="https://xpmuser.github.io/Website-Tester/" target="_blank">Old Prodigy/Prodidows Insider Program</a>
-            <a href="https://xpmuser.github.io/oldprodigy/select/" target="_blank">Select a Version</a>
-            <a href="https://xpmuser.github.io/prodidows/" target="_blank">Prodidows</a>
-            <a href="https://github.com/XPMUser/XPMUser.github.io/issues" target="_blank">Send Feedback</a>
-            <a href="https://www.youtube.com/channel/UC0dCD_TrUDVQpFCTK6Lyz7Q?sub_confirmation=1" target="_blank">Subscribe</a>
-        </nav>
-    </main>
+  <main>
+    <nav>
+      <a href="https://xpmuser.github.io/Website-Tester/" target="_blank">Old Prodigy/Prodidows Insider Program</a>
+      <a href="https://xpmuser.github.io/oldprodigy/select/" target="_blank">Select a Version</a>
+      <a href="https://xpmuser.github.io/prodidows/" target="_blank">Prodidows</a>
+      <a href="https://github.com/XPMUser/XPMUser.github.io/issues" target="_blank">Send Feedback</a>
+      <a href="https://www.youtube.com/channel/UC0dCD_TrUDVQpFCTK6Lyz7Q?sub_confirmation=1" target="_blank">Subscribe</a>
+    </nav>
+  </main>
 
-    <footer>
-    </footer>
+  <footer>
+    &copy; 2025 Old Prodigy Revival by <a href="https://github.com/XPMUser" target="_blank">XPMUser</a>. All rights reserved.
+  </footer>
 
 </body>
 </html>
