@@ -10,7 +10,7 @@ If you're playing my Old Prodigy versions, Definitive Editions, Ultimate Edition
 
 Game restorers: Daboss7173 https://github.com/Daboss7173, XPMUser a.k.a HealingMunch, Craftersshaft https://github.com/craftersshaft/, etc
 
-Siteforkers: XPMUser/Ao28th28, Slappygig/Toonigy, etc https://github.com/HealingMunch https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
+Siteforkers: XPMUser/Ao28th28, Slappygig/Toonigy, etc https://github.com/XPMUser https://github.com/Ao28th28 https://github.com/slappygig https://github.com/Toonigy
 
 Old Prodigy Modifiers: Slappygig, XPMUser/Ao28th28 a.k.a HealingMunch, Cookie, Daboss7173, and more https://github.com/CookieTheDeveloper
 
@@ -29,18 +29,6 @@ Playtesters: Daboss7173, XPMUser/Ao28th28 a.k.a HealingMunch, Mr. Inquiry, and m
 Pictures: Prodigy Education, the mustache creator, and more
 Introducers: Ao28th28 a.k.a XPMUser/HealingMunch, Mr. Inquiry, and more
 Original Prodigy Makers: Rohan Mahimker/Alexander Peters
-
-# Table of Contents 
-1. XPMUser.github.io: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#xpmusergithubio
-2. Credits: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#credits
-3. Table of Contents: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#table-of-contents
-4. Old Prodigy: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#old-prodigy
-5. How to play: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#how-to-play
-6. Modpacks: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#modpacks
-7. List of Versions: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#list-of-versions
-8. Prodigy Definitive Edition: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#prodigy-definitive-edition
-9. Prodigy Ultimate Edition: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#prodigy-ultimate-edition
-10. The other version: https://github.com/HealingMunch/XPMUser.github.io?tab=readme-ov-file#the-other-version
    
 # Old Prodigy
 
@@ -88,7 +76,7 @@ repository!
 
 This is the fork that I most highly recommend checking out, as it is the most stable and has the most features. 
 
-To do so, you just click this link: https://healingmunch.github.io/XPMUser.github.io/oldprodigy/select
+To do so, you just click this link: https://xpmuser.github.io/oldprodigy/select
 
 Once you're there, you can select a version to play. There are lots of versions to choose from, so try not to be overwhelmed
 by the number of choices, and there are still more versions and updates to come!
@@ -245,8 +233,8 @@ Lets scratch the surface shall we?
   
 Yep, you heard that right, that's just scratching the surface. There are lots of versions to choose from and modpacks are supported for some of them, so you can probably imagine what months of hard work can do to something like that. 
 
-https://healingmunch.github.io/XPMUser.github.io/oldprodigy/choose/ You can choose any version you want.
+https://xpmuser.github.io/oldprodigy/choose/ You can choose any version you want.
 
 ## Prodigy Ultimate Edition
 
-There's only 1.50.0 Ultimate Edition for now, more versions are coming soon. https://healingmunch.github.io/XPMUser.github.io/oldprodigy/play/ 1.50.0 Ultimate Edition is somehow trying to use pde1500's updates.
+There's only 1.50.0 Ultimate Edition for now, more versions are coming soon. https://xpmuser.github.io/oldprodigy/play/ 1.50.0 Ultimate Edition is somehow trying to use pde1500's updates.
