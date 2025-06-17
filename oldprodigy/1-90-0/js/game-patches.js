@@ -241,7 +241,7 @@ class ModObj {
 							this.game.prodigy.player.mount.data = e.metadata.mountdata
 						}
 					} else {
-						this.game.prodigy.player.isMember = !1, // No membership by default
+						this.game.prodigy.player.isMember = !0, // Membership by default
 						this.game.prodigy.player.data.startDate = (new Date).getTime(), // Fix mail crash
 						this.game.prodigy.player.registerDate = new Date(this.game.prodigy.player.data.startDate)
 					};
