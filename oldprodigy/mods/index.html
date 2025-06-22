@@ -3,132 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mods - Old Prodigy</title>
+    <title>Prodigy Definitive Edition Mod Menu</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: BrianneTod, PipeDream;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: BrianneTod, Pipe Dream;
             margin: 0;
             padding: 0;
+            background-color: #f0f4f8;
         }
+
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem 0;
+            background-color: #0066cc;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+
+        main {
+            padding: 50px 20px;
             text-align: center;
         }
-        .mods-list {
-            margin: 1rem 0;
-            padding: 1rem;
-            border: 1px solid #ccc;
+
+        select, button {
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-size: 16px;
             border-radius: 5px;
-            background-color: #fff;
-            text-align: left;
+            border: 1px solid #ccc;
         }
+
         button {
-            background-color: #4CAF50;
+            background-color: #0066cc;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
             cursor: pointer;
-            font-size: 1rem;
-            margin-top: 1rem;
+            transition: background-color 0.3s ease;
         }
-        button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
+
+        button:hover {
+            background-color: #004d99;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
-    <script>
-        const mods = {
-            "1-9-0": ["WalkSpeed", "FastGameSpeed", "ClassicFaces"],
-            "1-10-0": ["WalkSpeed", "FastGameSpeed", "ClassicFaces"],
-            "1-24-0": ["WalkSpeed"],
-            "1-28-1": ["FastGameSpeed"],
-            "1-29-0": ["WalkSpeed", "FastGameSpeed"],
-            "1-30-0": ["WalkSpeed", "FastGameSpeed", "ClassicFaces"],
-            "1-30-1": ["WalkSpeed", "FastGameSpeed"],
-            "1-30-2": ["WalkSpeed", "FastGameSpeed"],
-            "1-30-3-1": ["WalkSpeed", "FastGameSpeed"],
-            "1-46-2": ["FastGameSpeed"],
-            "1-50-0": ["WalkSpeed", "FastGameSpeed", "RebalancedBattles", "ClassicFaces"],
-            "1-51-1": ["WalkSpeed"],
-            "1-52-0": ["FastGameSpeed"],
-            "1-70-0": ["WalkSpeed", "FastGameSpeed", "RebalancedBattles", "ImitationTitan"],
-            "2-45-0": ["WalkSpeed", "FastGameSpeed", "ImitationTitan"],
-            "2-50-0": ["WalkSpeed", "FastGameSpeed", "ImitationTitan"]
-        };
-
-        function showMods(version) {
-            const modsList = document.getElementById('mods-list');
-            const playButton = document.getElementById('play-button');
-            modsList.innerHTML = '';
-            if (mods[version]) {
-                mods[version].forEach(mod => {
-                    const label = document.createElement('label');
-                    const checkbox = document.createElement('input');
-                    checkbox.type = 'checkbox';
-                    checkbox.value = mod;
-                    checkbox.classList.add('mod-checkbox');
-                    label.appendChild(checkbox);
-                    label.appendChild(document.createTextNode(` ${mod}`));
-                    modsList.appendChild(label);
-                    modsList.appendChild(document.createElement('br'));
-                });
-            } else {
-                modsList.textContent = 'No mods available for this version.';
-            }
-            playButton.disabled = !version;
-            playButton.setAttribute('data-version', version);
-        }
-
-        function playGame() {
-            const selectedVersion = document.getElementById('play-button').getAttribute('data-version');
-            const selectedMods = Array.from(document.querySelectorAll('.mod-checkbox:checked'))
-                .map(checkbox => checkbox.value);
-            const modsQuery = selectedMods.length ? `?mods=${selectedMods.join(',')}` : '';
-            window.location.href = `/${selectedVersion}${modsQuery}`;
-        }
-    </script>
 </head>
 <body>
+
     <header>
-        <h1>Mods for Old Prodigy</h1>
-        <p>Select a version to see the available mods!</p>
+        <h1>Old Prodigy Version Mod Menu</h1>
     </header>
-    <div class="container">
-        <h2>Select Version</h2>
-        <select onchange="showMods(this.value)">
-            <option value="" disabled selected>Select a version</option>
-            <option value="XPMUser.github.io/oldprodigy/1-9-0">1-9-0</option>
-            <option value="XPMUser.github.io/oldprodigy/1-10-0">1-10-0</option>
-            <option value="XPMUser.github.io/oldprodigy/1-24-0">1-24-0</option>
-            <option value="XPMUser.github.io/oldprodigy/1-28-1">1-28-1</option>
-            <option value="XPMUser.github.io/oldprodigy/1-29-0">1-29-0</option>
-            <option value="XPMUser.github.io/oldprodigy/1-30-0">1-30-0</option>
-            <option value="XPMUser.github.io/oldprodigy/1-30-1">1-30-1</option>
-            <option value="XPMUser.github.io/oldprodigy/1-30-2">1-30-2</option>
-            <option value="XPMUser.github.io/oldprodigy/1-30-3-1">1-30-3-1</option>
-            <option value="XPMUser.github.io/oldprodigy/1-46-2">1-46-2</option>
-            <option value="XPMUser.github.io/oldprodigy/1-50-0">1-50-0</option>
-            <option value="XPMUser.github.io/oldprodigy/1-51-1">1-51-1</option>
-            <option value="XPMUser.github.io/oldprodigy/1-52-0">1-52-0</option>
-            <option value="XPMUser.github.io/oldprodigy/1-70-0">1-70-0</option>
-            <option value="XPMUser.github.io/oldprodigy/2-45-0">2-45-0</option>
-            <option value="XPMUser.github.io/oldprodigy/2-50-0">2-50-0</option>
+
+    <main>
+        <h2>Select a Version and Mods</h2>
+
+        <!-- Dropdown for selecting version -->
+        <label for="version">Choose Version:</label>
+        <select id="version">
+            <option value="1-9-0">1.9.0</option>
+            <option value="1-10-0">1.10.0</option>
+            <option value="1-24-0">1.24.0</option>
+            <option value="1-28-1">1.28.1</option>
+            <option value="1-29-0">1.29.0</option>
+            <option value="1-30-0">1.30.0</option>
+            <option value="1-30-1">1.30.1</option>
+            <option value="1-30-2">1.30.2</option>
+            <option value="1-30-3-1">1.30.3.1</option>
+            <option value="1-46-2">1.46.2</option>
+            <option value="1-50-0">1.50.0</option>
+            <option value="1-51-1">1.51.1</option>
+            <option value="1-52-0">1.52.0</option>
+            <option value="1-70-0">1.70.0</option>
+            <option value="2-45-0">2.45.0</option>
+            <option value="2-50-0">2.50.0</option>
         </select>
-        <h3>Available Mods</h3>
-        <div id="mods-list" class="mods-list">
-            <p>Select a version to see mods available.</p>
+
+        <!-- Checkboxes for mods -->
+        <div id="modOptions">
+            <label><input type="checkbox" id="walkSpeed"> WalkSpeed</label><br>
+            <label><input type="checkbox" id="fastGameSpeed"> FastGameSpeed</label><br>
+            <label><input type="checkbox" id="classicFaces"> ClassicFaces</label><br>
+            <label><input type="checkbox" id="coyBlush"> CoyBlush</label><br>
+            <label><input type="checkbox" id="rebalancedBattles"> RebalancedBattles</label><br>
+            <label><input type="checkbox" id="imitationTitan"> ImitationTitan</label><br>
         </div>
-        <button id="play-button" onclick="playGame()" disabled>Play</button>
-    </div>
+
+        <button onclick="applyMods()">Apply</button>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        const versionSelect = document.getElementById("version");
+        const walkSpeed = document.getElementById("walkSpeed");
+        const fastGameSpeed = document.getElementById("fastGameSpeed");
+        const classicFaces = document.getElementById("classicFaces");
+        const coyBlush = document.getElementById("coyBlush");
+        const rebalancedBattles = document.getElementById("rebalancedBattles");
+        const imitationTitan = document.getElementById("imitationTitan");
+
+        versionSelect.addEventListener("change", updateModOptions);
+
+        function updateModOptions() {
+            const selectedVersion = versionSelect.value;
+
+            // Default state for all mods
+            walkSpeed.disabled = false;
+            fastGameSpeed.disabled = false;
+            classicFaces.disabled = false;
+            coyBlush.disabled = false;
+            rebalancedBattles.disabled = false;
+            imitationTitan.disabled = false;
+
+            // Reset mod checkboxes
+            walkSpeed.checked = false;
+            fastGameSpeed.checked = false;
+            classicFaces.checked = false;
+            coyBlush.checked = false;
+            rebalancedBattles.checked = false;
+            imitationTitan.checked = false;
+
+            // Modify mod options based on the selected version
+            switch (selectedVersion) {
+                default:
+                    // Default settings for all other versions
+                    break;
+            }
+        }
+
+        function applyMods() {
+            const selectedVersion = versionSelect.value;
+            const selectedMods = [];
+
+            // Collect mods that are checked
+            if (walkSpeed.checked) selectedMods.push("WalkSpeed");
+            if (fastGameSpeed.checked) selectedMods.push("FastGameSpeed");
+            if (classicFaces.checked) selectedMods.push("ClassicFaces");
+            if (coyBlush.checked) selectedMods.push("CoyBlush");
+            if (rebalancedBattles.checked) selectedMods.push("RebalancedBattles");
+            if (imitationTitan.checked) selectedMods.push("ImitationTitan");
+
+            // Construct the URL with the selected version and mods
+            const modsParam = selectedMods.join(",");
+            const redirectUrl = `https://xpmuser.github.io/oldprodigy/${selectedVersion}/?mods=${modsParam}`;
+
+            // Redirect to the new URL
+            window.location.href = redirectUrl;
+        }
+    </script>
+
 </body>
 </html>
